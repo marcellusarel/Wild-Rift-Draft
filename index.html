@@ -1,0 +1,2780 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="WR Draft"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="theme-color" content="#07070f"/>
+<title>Wild Rift Draft</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{background:#07080f;color:#e0e0f0;font-family:system-ui,sans-serif;min-height:100vh;padding-bottom:90px}
+button{cursor:pointer;border:none;background:none;font-family:inherit;color:inherit}
+input{font-family:inherit}
+::-webkit-scrollbar{width:3px;height:3px}
+::-webkit-scrollbar-thumb{background:#252540;border-radius:2px}
+@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes warn{0%,100%{opacity:1}50%{opacity:.6}}
+.fade{animation:fadeIn .2s ease both}
+.pulse{animation:pulse 1.5s infinite}
+.warn{animation:warn 1.2s infinite}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+// file:// protokolü uyarısı — resimlerin çalışması için HTTP gerekli
+if (location.protocol === 'file:') {
+  document.addEventListener('DOMContentLoaded', () => {
+    const b = document.createElement('div');
+    b.innerHTML = `⚠️ Resimlerin görünmesi için dosyayı bir tarayıcıda <b>HTTP</b> üzerinden açın veya <a href="https://developer.chrome.com/docs/devtools" style="color:#4da6ff">Chrome'da izin verin</a>.`;
+    b.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a0a00;color:#ffaa44;font-size:11px;padding:8px 12px;text-align:center;border-top:1px solid #ff880033';
+    document.body.appendChild(b);
+  });
+}
+// ═══════════════════════════════════════════════════════════════
+// VERİ TABANI
+// lanes: ana koridor(lar)
+// ct:bunlar bunu ezer
+// ctBy:bunlara karşı güçlü (koridorda ezer)
+// sy: sinerji
+// dmg: AP / AD / Hybrid
+// cls: Tank / Fighter / Mage / Assassin / Marksman / Enchanter / Engage
+// ═══════════════════════════════════════════════════════════════
+const DB = {
+  // ── SUPPORT ──────────────────────────────────────────────────
+  rakan:      {name:"Rakan",       lanes:["Support"],dmg:"AP",   cls:"Engage",
+    ct:["galio","rell","nautilus","gragas","alistar","janna","morgana","thresh"],
+    ctBy:["nami","sona","soraka","blitzcrank","braum","zyra"],
+    sy:["kaisa","jinx","smolder","missfortune","lucian"]},
+  nautilus:   {name:"Nautilus",    lanes:["Support"],dmg:"AP",   cls:"Tank",
+    ct:["bard","janna","morgana","braum","leona","alistar"],
+    ctBy:["seraphine","sona","lux","rakan","yuumi","senna"],
+    sy:["kaisa","jhin","missfortune","brand","orianna"]},
+  leona:      {name:"Leona",       lanes:["Support"],dmg:"AP",   cls:"Engage",
+    ct:["galio","alistar","morgana","janna","thresh"],
+    ctBy:["blitzcrank","lux","soraka","senna","yuumi","zyra","maokai"],
+    sy:["draven","lucian","jhin","missfortune","kaisa"]},
+  lulu:       {name:"Lulu",        lanes:["Support"],dmg:"AP",   cls:"Enchanter",
+    ct:["blitzcrank","sona","nami","leona","brand","senna","bard"],
+    ctBy:["lux","annie","alistar","janna"],
+    sy:["smolder","vayne","kaisa","jinx","tristana"]},
+  milio:      {name:"Milio",       lanes:["Support"],dmg:"AP",   cls:"Enchanter",
+    ct:["blitzcrank","senna","zyra","lux","sona","bard"],
+    ctBy:["braum","rakan","alistar","pantheon"],
+    sy:["smolder","vayne","jinx","ezreal","kaisa"]},
+  braum:      {name:"Braum",       lanes:["Support"],dmg:"AP",   cls:"Tank",
+    ct:["lulu","sona","morgana","soraka"],
+    ctBy:["blitzcrank","thresh","leona","nautilus","seraphine","rell","pyke","brand","maokai"],
+    sy:["lucian","jinx","jhin","draven","smolder"]},
+  nami:       {name:"Nami",        lanes:["Support"],dmg:"AP",   cls:"Enchanter",
+    ct:["pyke","blitzcrank","braum","alistar","leona"],
+    ctBy:["janna","lux","lulu","soraka","thresh","zyra","bard","galio","karma"],
+    sy:["lucian","jhin","kaisa","smolder","ezreal"]},
+  thresh:     {name:"Thresh",      lanes:["Support"],dmg:"AP",   cls:"Tank",
+    ct:["morgana","lulu","alistar","braum","zyra","nami"],
+    ctBy:["soraka","blitzcrank","sona","yuumi"],
+    sy:["draven","jhin","missfortune","caitlyn","kaisa"]},
+  blitzcrank: {name:"Blitzcrank",  lanes:["Support"],dmg:"AP",   cls:"Tank",
+    ct:["alistar","braum","morgana","leona","rakan"],
+    ctBy:["sona","nami","soraka","senna","zyra","seraphine","janna","lulu","milio"],
+    sy:["draven","caitlyn","jhin","missfortune","jinx"]},
+  soraka:     {name:"Soraka",      lanes:["Support"],dmg:"AP",   cls:"Enchanter",
+    ct:["blitzcrank","leona","thresh","lux","nami","bard"],
+    ctBy:["braum","alistar","janna","brand","pyke","morgana"],
+    sy:["vayne","jinx","smolder","ezreal","kaisa"]},
+  janna:      {name:"Janna",       lanes:["Support"],dmg:"AP",   cls:"Enchanter",
+    ct:["sona","nami","blitzcrank","brand","lulu","karma","senna"],
+    ctBy:["alistar","braum","leona","rakan","gragas","nautilus","rell"],
+    sy:["vayne","jinx","ezreal","smolder","kaisa"]},
+  morgana:    {name:"Morgana",     lanes:["Support"],dmg:"AP",   cls:"Mage",
+    ct:["nami","yuumi","soraka","sona","karma","zyra"],
+    ctBy:["thresh","blitzcrank","lux","braum","nautilus","leona"],
+    sy:["caitlyn","jhin","lucian","draven","kaisa"]},
+  alistar:    {name:"Alistar",     lanes:["Support"],dmg:"AP",   cls:"Tank",
+    ct:["ashe","zyra","lulu","sona","morgana","janna","gragas"],
+    ctBy:["blitzcrank","rakan","thresh","pantheon","leona","yuumi","rell"],
+    sy:["kaisa","draven","jinx","jhin","lucian"]},
+  seraphine:  {name:"Seraphine",   lanes:["Support"],dmg:"AP",   cls:"Enchanter",
+    ct:["blitzcrank","nami","leona","braum","pyke"],
+    ctBy:["lux","soraka","janna","morgana","galio"],
+    sy:["kaisa","jinx","smolder","jhin","lucian"]},
+  sona:       {name:"Sona",        lanes:["Support"],dmg:"AP",   cls:"Enchanter",
+    ct:["blitzcrank","leona","thresh","pantheon","bard","pyke"],
+    ctBy:["karma","janna","soraka","lulu","milio"],
+    sy:["vayne","jinx","smolder","kaisa","ezreal"]},
+  lux:        {name:"Lux",         lanes:["Support","Mid"],dmg:"AP",cls:"Mage",
+    ct:["zed","fizz","yasuo","irelia","katarina","talon","kassadin"],
+    ctBy:["twisted_fate","kennen","brand","vex"],
+    sy:["nautilus","thresh","blitzcrank","caitlyn","jhin"]},
+  karma:      {name:"Karma",       lanes:["Support"],dmg:"AP",   cls:"Enchanter",
+    ct:["pyke","nami","bard","alistar","blitzcrank","thresh"],
+    ctBy:["janna","braum","lulu","morgana","zyra","galio","lux"],
+    sy:["jinx","kaisa","ezreal","smolder","lucian"]},
+  zyra:       {name:"Zyra",        lanes:["Support"],dmg:"AP",   cls:"Mage",
+    ct:["karma","rakan","leona","pyke","nami","blitzcrank"],
+    ctBy:["alistar","thresh","braum","morgana","senna","swain"],
+    sy:["caitlyn","jhin","lucian","draven","kaisa"]},
+  pyke:       {name:"Pyke",        lanes:["Support"],dmg:"AD",   cls:"Assassin",
+    ct:["braum","maokai","soraka","morgana","rakan"],
+    ctBy:["lux","sona","brand","senna","seraphine","zyra","zilean","karma","nami"],
+    sy:["draven","caitlyn","jhin","missfortune","jinx"]},
+  bard:       {name:"Bard",        lanes:["Support"],dmg:"AP",   cls:"Enchanter",
+    ct:["nami","senna","zilean","thresh","blitzcrank","morgana","pyke"],
+    ctBy:["alistar","galio","swain","soraka","sona","karma","lulu","milio","nautilus"],
+    sy:["ezreal","jinx","vayne","kaisa","smolder"]},
+  zilean:     {name:"Zilean",      lanes:["Support"],dmg:"AP",   cls:"Enchanter",
+    ct:["maokai","rell","pyke"],
+    ctBy:["pantheon","nautilus","braum","blitzcrank","bard"],
+    sy:["vayne","jinx","kaisa","smolder","ezreal"]},
+  yuumi:      {name:"Yuumi",       lanes:["Support"],dmg:"AP",   cls:"Enchanter",
+    ct:["nautilus","blitzcrank","leona","alistar","thresh"],
+    ctBy:["braum","brand","soraka","morgana"],
+    sy:["vayne","jinx","kaisa","smolder","ezreal"]},
+  galio:      {name:"Galio",       lanes:["Support"],dmg:"AP",   cls:"Tank",
+    ct:["senna","nami","karma","morgana","janna","alistar","lulu"],
+    ctBy:["rakan","blitzcrank","braum","leona","maokai"],
+    sy:["jinx","kaisa","smolder","lucian","caitlyn"]},
+  swain:      {name:"Swain",       lanes:["Support"],dmg:"AP",   cls:"Mage",
+    ct:["brand","syndra","orianna","akshan","fizz","zoe"],
+    ctBy:["galio","pantheon","twisted_fate","ahri","kennen"],
+    sy:["jinx","kaisa","smolder","jhin","lucian"]},
+  shen_sup:   {name:"Shen",        lanes:["Support"],dmg:"AP",   cls:"Tank",
+    ct:["sona","seraphine","nami","morgana"],
+    ctBy:["braum","blitzcrank","leona"],
+    sy:["jinx","kaisa","smolder","vayne","jhin"]},
+  singed_sup: {name:"Singed",      lanes:["Support"],dmg:"AP",   cls:"Tank",
+    ct:["morgana","lulu","nautilus"],
+    ctBy:["seraphine","sona"],
+    sy:["jinx","vayne","kaisa","smolder","ezreal"]},
+  maokai:     {name:"Maokai",      lanes:["Support"],dmg:"AP",   cls:"Tank",
+    ct:["galio","braum","leona","sona","seraphine","nami","morgana"],
+    ctBy:["blitzcrank","pyke","zilean","brand"],
+    sy:["jinx","kaisa","smolder","lucian","caitlyn"]},
+  rell:       {name:"Rell",        lanes:["Support"],dmg:"AP",   cls:"Tank",
+    ct:["zyra","janna","nami","alistar","braum"],
+    ctBy:["nautilus","lux","rakan","zilean"],
+    sy:["jinx","kaisa","smolder","lucian","draven"]},
+  sett_sup:   {name:"Sett",        lanes:["Support"],dmg:"AD",   cls:"Fighter",
+    ct:["senna","ashe","janna","morgana"],
+    ctBy:["nautilus","leona"],
+    sy:["jinx","kaisa","smolder","lucian","draven"]},
+  senna:      {name:"Senna",       lanes:["Support"],dmg:"AD",   cls:"Marksman",
+    ct:["draven","caitlyn","tristana","ezreal"],
+    ctBy:["vayne","jinx","jhin"],
+    sy:["vayne","jinx","smolder","kaisa","ezreal"]},
+  pantheon_sup:{name:"Pantheon",   lanes:["Support"],dmg:"AD",   cls:"Fighter",
+    ct:["ziggs","teemo","orianna","ahri"],
+    ctBy:["katarina","corki","zed","twisted_fate","yasuo","galio","talon"],
+    sy:["draven","caitlyn","jhin","missfortune","kaisa"]},
+  gragas_sup: {name:"Gragas",      lanes:["Support"],dmg:"AP",   cls:"Tank",
+    ct:["morgana","janna","lulu"],
+    ctBy:["rakan","alistar","leona"],
+    sy:["jinx","kaisa","smolder","lucian","caitlyn"]},
+  ornn_sup:   {name:"Ornn",        lanes:["Support"],dmg:"AP",   cls:"Tank",
+    ct:["braum","vayne","morgana"],
+    ctBy:["blitzcrank","thresh","leona","nautilus"],
+    sy:["jinx","kaisa","smolder","lucian","caitlyn"]},
+  poppy_sup:  {name:"Poppy",       lanes:["Support"],dmg:"AD",   cls:"Tank",
+    ct:["morgana","soraka","karma","janna"],
+    ctBy:["rakan","alistar","leona","pyke","pantheon"],
+    sy:["jinx","kaisa","smolder","lucian","caitlyn"]},
+
+  // ── ADC ──────────────────────────────────────────────────────
+  smolder:    {name:"Smolder",     lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
+    ct:["caitlyn","tristana","draven","lucian"],
+    ctBy:["corki","ezreal","varus","sivir","missfortune","nilah"],
+    sy:["lulu","milio","rakan","nami","soraka"]},
+  kaisa:      {name:"Kai'Sa",      lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
+    ct:["draven","missfortune","xayah","caitlyn","kogmaw"],
+    ctBy:["jinx","varus","ezreal"],
+    sy:["nautilus","rakan","amumu","leona","nami"]},
+  jhin:       {name:"Jhin",        lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["ashe","draven","lucian","tristana"],
+    ctBy:["jinx","varus","missfortune"],
+    sy:["nautilus","leona","blitzcrank","thresh","morgana"]},
+  ezreal:     {name:"Ezreal",      lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
+    ct:["samira","draven","kaisa","missfortune","ashe","vayne"],
+    ctBy:["varus","jhin","caitlyn"],
+    sy:["lulu","milio","janna","soraka","nami"]},
+  vayne:      {name:"Vayne",       lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["draven","ashe","caitlyn","lucian"],
+    ctBy:["ezreal","kaisa","jhin","sivir","xayah","varus","smolder","kogmaw"],
+    sy:["lulu","milio","braum","janna","soraka"]},
+  lucian:     {name:"Lucian",      lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["caitlyn","kogmaw","ashe","draven","ezreal"],
+    ctBy:["vayne","jinx","tristana","jhin","smolder","zeri"],
+    sy:["nami","braum","morgana","thresh","blitzcrank"]},
+  jinx:       {name:"Jinx",        lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["jhin","missfortune","draven","tristana","caitlyn","lucian","kogmaw"],
+    ctBy:["vayne","ashe","ezreal"],
+    sy:["lulu","rakan","nautilus","soraka","nami"]},
+  caitlyn:    {name:"Caitlyn",     lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["sivir","jhin","ezreal","missfortune"],
+    ctBy:["vayne","kaisa","tristana","draven","twitch","smolder","samira","zeri","ashe","corki","kalista","kogmaw","lucian","nilah"],
+    sy:["morgana","lux","blitzcrank","thresh","nautilus"]},
+  missfortune:{name:"Miss Fortune",lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["smolder","jhin","draven","ashe"],
+    ctBy:["jinx","ezreal","varus","samira","corki"],
+    sy:["amumu","leona","nautilus","blitzcrank","rakan"]},
+  draven:     {name:"Draven",      lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["caitlyn","ziggs","varus","samira","kogmaw"],
+    ctBy:["ashe","ezreal","vayne","jinx","akshan","sivir","tristana","smolder","jhin","kaisa"],
+    sy:["leona","thresh","blitzcrank","nami","alistar"]},
+  tristana:   {name:"Tristana",    lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["draven","vayne","caitlyn","lucian","kogmaw"],
+    ctBy:["jinx","ashe","ezreal","jhin","xayah"],
+    sy:["lulu","milio","braum","janna","soraka"]},
+  ashe:       {name:"Ashe",        lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["caitlyn","varus","draven"],
+    ctBy:["kalista","vayne","missfortune","corki","ezreal","twitch","jhin","kogmaw","lucian"],
+    sy:["lulu","milio","braum","thresh","nautilus"]},
+  varus:      {name:"Varus",       lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
+    ct:["smolder","missfortune","vayne","jhin","ezreal","tristana"],
+    ctBy:["jinx","ashe"],
+    sy:["nautilus","leona","blitzcrank","thresh","morgana"]},
+  xayah:      {name:"Xayah",       lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["draven","jhin","caitlyn","lucian","varus","vayne","kogmaw"],
+    ctBy:["ashe","ezreal","jinx","kaisa","nilah"],
+    sy:["rakan","nautilus","leona","thresh","blitzcrank"]},
+  kogmaw:     {name:"Kog'Maw",     lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
+    ct:["ashe","vayne","caitlyn","missfortune"],
+    ctBy:["kaisa","zeri","xayah","tristana","smolder","samira","corki","draven","jhin","kalista","lucian"],
+    sy:["lulu","milio","braum","janna","soraka"]},
+  sivir:      {name:"Sivir",       lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["vayne","draven","twitch","samira","smolder","kogmaw"],
+    ctBy:["ezreal","xayah","varus","ashe","caitlyn"],
+    sy:["lulu","milio","braum","thresh","nautilus"]},
+  samira:     {name:"Samira",      lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["caitlyn","varus","tristana","kogmaw","missfortune"],
+    ctBy:["vayne","ezreal","ashe","twitch","draven"],
+    sy:["nautilus","leona","blitzcrank","thresh","alistar"]},
+  twitch:     {name:"Twitch",      lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["ashe","samira","tristana","caitlyn","draven"],
+    ctBy:["kaisa","vayne","jhin","jinx","sivir"],
+    sy:["lulu","milio","braum","janna","soraka"]},
+  nilah:      {name:"Nilah",       lanes:["ADC"],    dmg:"AD",    cls:"Fighter",
+    ct:["smolder","xayah","caitlyn","ashe","jhin"],
+    ctBy:["samira","twitch","jinx","tristana"],
+    sy:["nautilus","leona","blitzcrank","thresh","nami"]},
+  kalista:    {name:"Kalista",     lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["ashe","kogmaw","caitlyn","draven","samira","nilah","lucian"],
+    ctBy:["ezreal","zeri","jhin"],
+    sy:["nautilus","leona","blitzcrank","thresh","alistar"]},
+  zeri:       {name:"Zeri",        lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["lucian","caitlyn","kogmaw","tristana","jhin","draven"],
+    ctBy:["ezreal","vayne","orianna"],
+    sy:["lulu","milio","braum","janna","soraka"]},
+  corki:      {name:"Corki",       lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
+    ct:["kogmaw","missfortune","draven","caitlyn","akshan"],
+    ctBy:["ziggs","jinx","jhin"],
+    sy:["nautilus","leona","blitzcrank","thresh","morgana"]},
+  akshan:     {name:"Akshan",      lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
+    ct:["vex","zed","irelia","yasuo","pantheon","veigar"],
+    ctBy:["ahri","orianna","akali","corki","galio","singed","vladimir"],
+    sy:["nautilus","leona","blitzcrank","thresh","morgana"]},
+
+  // ── MID ──────────────────────────────────────────────────────
+  ahri:       {name:"Ahri",        lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["akali","orianna","fizz","yasuo","diana","annie","syndra"],
+    ctBy:["twisted_fate","lux","ziggs","zed","galio","morgana"],
+    sy:["rakan","leona","nautilus","amumu","vi"]},
+  aurelionsol:{name:"Aurelion Sol",lanes:["Mid"],   dmg:"AP",    cls:"Mage",
+    ct:["yasuo","fizz","zed","galio","lucian","yone"],
+    ctBy:["annie","lux","orianna"],
+    sy:["amumu","nautilus","vi","leona","jarvaniv"]},
+  aurelionsol_adc:{name:"Aurelion Sol",lanes:["ADC"],dmg:"AP",   cls:"Mage",
+    ct:["vayne","lucian","tristana","ezreal"],
+    ctBy:["mel","orianna","smolder","jinx","ashe"],
+    sy:["amumu","nautilus","vi","leona","jarvaniv"]},
+  akali_mid:  {name:"Akali",       lanes:["Mid"],    dmg:"Hybrid",cls:"Assassin",
+    ct:["veigar","lissandra","twisted_fate","akshan","galio","pantheon","annie"],
+    ctBy:["irelia","lux","kayle","jayce","ekko","ahri"],
+    sy:["rakan","leona","vi","amumu","nautilus"]},
+  annie:      {name:"Annie",       lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["syndra","lissandra","viktor","fizz","morgana","lux","irelia"],
+    ctBy:["yasuo","ahri","akali","katarina","corki"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  aurora:     {name:"Aurora",      lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["vex","zed","irelia","syndra","orianna","viktor","lux"],
+    ctBy:["veigar","twisted_fate","ryze","kennen"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  brand_mid:  {name:"Brand",       lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["syndra","lux","fizz","irelia","zed","yasuo","akali","diana","talon"],
+    ctBy:["annie","twisted_fate","corki","teemo","kayle","swain"],
+    sy:["nautilus","amumu","leona","jarvaniv","vi"]},
+  corki_mid:  {name:"Corki",       lanes:["Mid"],    dmg:"Hybrid",cls:"Marksman",
+    ct:["akali","annie","pantheon","irelia","ahri","zed","akshan","katarina","orianna"],
+    ctBy:["lux","galio","kayle","morgana","diana"],
+    sy:["nautilus","leona","amumu","vi","jarvaniv"]},
+  diana:      {name:"Diana",       lanes:["Mid"],    dmg:"AP",    cls:"Assassin",
+    ct:["vex","galio","irelia","ziggs","akali","fizz","pantheon"],
+    ctBy:["zed","katarina","lux","brand","seraphine","aurelionsol","twisted_fate","orianna"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  ekko:       {name:"Ekko",        lanes:["Mid"],    dmg:"AP",    cls:"Assassin",
+    ct:["vex","lissandra","yasuo","pantheon","akali","irelia","diana","talon"],
+    ctBy:["twisted_fate","brand","veigar","ziggs","lux","zed"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  fizz:       {name:"Fizz",        lanes:["Mid"],    dmg:"AP",    cls:"Assassin",
+    ct:["lissandra","vex","akali","galio","morgana","vladimir"],
+    ctBy:["yasuo","ahri","lux","twisted_fate","corki","velkoz"],
+    sy:["rakan","leona","vi","amumu","nautilus"]},
+  galio:      {name:"Galio",       lanes:["Mid"],    dmg:"AP",    cls:"Tank",
+    ct:["morgana","ahri","swain","akshan","pantheon","lucian","yasuo","zed"],
+    ctBy:["irelia","katarina","fizz","twisted_fate","diana","aurelionsol","vex","jayce","lissandra"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  heimerdinger:{name:"Heimerdinger",lanes:["Mid"],   dmg:"AP",    cls:"Mage",
+    ct:["syndra","zed","irelia","yasuo","yone","ziggs"],
+    ctBy:["kassadin","kayle","aurelionsol"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  irelia_mid: {name:"Irelia",      lanes:["Mid"],    dmg:"AD",    cls:"Fighter",
+    ct:["vladimir","galio","akali","fizz","yasuo","vex"],
+    ctBy:["jayce","annie","diana","lux","orianna","ahri","talon","syndra","zoe","akshan","aurora","ekko","heimerdinger","mel"],
+    sy:["rakan","leona","vi","amumu","nautilus"]},
+  jayce_mid:  {name:"Jayce",       lanes:["Mid"],    dmg:"AD",    cls:"Fighter",
+    ct:["syndra","galio","irelia","lucian","zed","fizz","yasuo"],
+    ctBy:["katarina","lux","aurelionsol","corki","veigar","kassadin"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  karma_mid:  {name:"Karma",       lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["yasuo","zed","fizz","irelia","syndra"],
+    ctBy:["annie","lux","akali","corki","ahri","veigar"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  kassadin:   {name:"Kassadin",    lanes:["Mid"],    dmg:"AP",    cls:"Assassin",
+    ct:["yasuo","zed","pantheon","akshan","jayce","talon","lucian"],
+    ctBy:["katarina","diana","veigar","ekko","annie","vladimir","viktor","velkoz","syndra","ryze","kennen","lissandra","lux","norra","taliyah"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  katarina:   {name:"Katarina",    lanes:["Mid"],    dmg:"Hybrid",cls:"Assassin",
+    ct:["vex","zed","lissandra","diana","pantheon","galio","irelia","yasuo","annie","jayce","kassadin","vladimir"],
+    ctBy:["lux","veigar","brand","seraphine","ahri","corki"],
+    sy:["amumu","leona","vi","rakan","jarvaniv"]},
+  kayle_mid:  {name:"Kayle",       lanes:["Mid"],    dmg:"Hybrid",cls:"Marksman",
+    ct:["syndra","viktor","ryze","pantheon","irelia","lucian","katarina","akshan","jayce"],
+    ctBy:["aurelionsol","lux","veigar","morgana"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  kennen:     {name:"Kennen",      lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["kassadin","aurora","swain","orianna","ziggs","seraphine","irelia","lux"],
+    ctBy:["kayle","teemo","akali"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  lissandra:  {name:"Lissandra",   lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["morgana","kassadin","galio","lux","ziggs","akshan","orianna"],
+    ctBy:["katarina","akali","fizz","zed","vex","annie","ekko"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  lucian_mid: {name:"Lucian",      lanes:["Mid"],    dmg:"AD",    cls:"Marksman",
+    ct:["akali","fizz","yasuo","pantheon"],
+    ctBy:["katarina","galio","lux","veigar","ahri","seraphine","kayle","kassadin"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  lux_mid:    {name:"Lux",         lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["zed","fizz","yasuo","irelia","katarina","talon","kassadin"],
+    ctBy:["twisted_fate","kennen","brand","vex"],
+    sy:["nautilus","thresh","blitzcrank","caitlyn","jhin"]},
+  mel:        {name:"Mel",         lanes:["Mid"],   dmg:"AP",    cls:"Mage",
+    ct:["irelia","yone","fizz","syndra","diana","viktor"],
+    ctBy:["ahri","lux","ryze"],
+    sy:["nautilus","amumu","vi","leona","jarvaniv"]},
+  mel_adc:    {name:"Mel",         lanes:["ADC"],   dmg:"AP",    cls:"Mage",
+    ct:["aurelionsol","vayne","lucian","tristana"],
+    ctBy:["jinx","ashe","smolder"],
+    sy:["nautilus","amumu","vi","leona","jarvaniv"]},
+  morgana_mid:{name:"Morgana",     lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["jayce","zed","katarina","irelia","akshan","lucian","ahri","kassadin"],
+    ctBy:["lux","twisted_fate","galio","veigar","vex","zoe","lissandra"],
+    sy:["caitlyn","jhin","lucian","draven","kaisa"]},
+  norra:      {name:"Norra",       lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["zed","irelia","yasuo","fizz","kassadin"],
+    ctBy:["ryze","syndra"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  orianna:    {name:"Orianna",     lanes:["Mid"],   dmg:"AP",    cls:"Mage",
+    ct:["yasuo","irelia","syndra","zed","fizz","galio","zoe","diana"],
+    ctBy:["annie","veigar","morgana","twisted_fate","corki","ryze","vladimir","swain","ahri"],
+    sy:["amumu","jarvaniv","malphite","vi","leona"]},
+  orianna_adc:{name:"Orianna",     lanes:["ADC"],   dmg:"AP",    cls:"Mage",
+    ct:["aurelionsol","vayne","lucian","tristana","ezreal"],
+    ctBy:["jinx","ashe"],
+    sy:["amumu","jarvaniv","malphite","vi","leona"]},
+  pantheon_mid:{name:"Pantheon",   lanes:["Mid"],    dmg:"AD",    cls:"Fighter",
+    ct:["ziggs","teemo","orianna","ahri"],
+    ctBy:["katarina","corki","zed","twisted_fate","yasuo","galio","talon"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  ryze:       {name:"Ryze",        lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["syndra","orianna","irelia","zed","yasuo","pantheon","ziggs","viktor","kassadin"],
+    ctBy:["ahri","kennen","annie","corki","teemo"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  seraphine_mid:{name:"Seraphine", lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["zed","fizz","yasuo","irelia","akali","talon"],
+    ctBy:["annie","veigar","morgana","orianna"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  smolder_mid:{name:"Smolder",     lanes:["Mid"],    dmg:"Hybrid",cls:"Marksman",
+    ct:["syndra","fizz","ahri","orianna"],
+    ctBy:["galio","kassadin"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  swain_mid:  {name:"Swain",       lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["brand","syndra","orianna","akshan","fizz","zoe"],
+    ctBy:["galio","pantheon","twisted_fate","ahri","kennen"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  syndra:     {name:"Syndra",      lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["fizz","ekko","yasuo","irelia","zed","akali","kassadin"],
+    ctBy:["annie","twisted_fate","aurelionsol","veigar","vex","ryze","ahri","yone","teemo","swain","orianna","brand","heimerdinger","jayce","mel"],
+    sy:["nautilus","amumu","leona","vi","jarvaniv"]},
+  taliyah:    {name:"Taliyah",     lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["zed","fizz","ekko","zoe","katarina","kassadin"],
+    ctBy:["ryze","vladimir","aurelionsol"],
+    sy:["vi","amumu","nautilus","leona","hecarim"]},
+  talon:      {name:"Talon",       lanes:["Mid"],    dmg:"AD",    cls:"Assassin",
+    ct:["irelia","pantheon","akshan","diana","orianna"],
+    ctBy:["kassadin","veigar","ahri","twisted_fate","lux","seraphine","ekko","brand"],
+    sy:["leona","nautilus","rakan","vi","amumu"]},
+  teemo_mid:  {name:"Teemo",       lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["syndra","ryze","orianna","fizz","jayce","ziggs","yasuo","annie","brand","akali"],
+    ctBy:["twisted_fate","kayle","corki","katarina"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  twisted_fate:{name:"Twisted Fate",lanes:["Mid"],   dmg:"Hybrid",cls:"Mage",
+    ct:["syndra","morgana","ahri","yasuo","fizz","zed","irelia","galio","vladimir","talon"],
+    ctBy:["ziggs","annie","corki","akali"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  veigar:     {name:"Veigar",      lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["syndra","viktor","kassadin","fizz","zed","lucian","yasuo","vladimir","talon","ekko"],
+    ctBy:["akali","annie","brand","corki","akshan","vex"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  velkoz:     {name:"Vel'Koz",     lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["fizz","katarina","zed","yasuo","yone","irelia","kassadin"],
+    ctBy:["aurelionsol","seraphine","lissandra","galio","swain"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  vex:        {name:"Vex",         lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["lissandra","veigar","annie","galio","lux","morgana"],
+    ctBy:["yone","katarina","yasuo","ekko","irelia","zed","akshan","aurora","diana","fizz"],
+    sy:["vi","amumu","nautilus","leona","hecarim"]},
+  viktor:     {name:"Viktor",      lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["irelia","kassadin","zed","akali","fizz","yone"],
+    ctBy:["lissandra","twisted_fate","vladimir","veigar","ryze","annie"],
+    sy:["amumu","nautilus","vi","leona","jarvaniv"]},
+  vladimir:   {name:"Vladimir",    lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["akshan","kassadin","orianna","ziggs","zoe","viktor"],
+    ctBy:["irelia","fizz","katarina","twisted_fate","veigar","jayce"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  yasuo:      {name:"Yasuo",       lanes:["Mid"],    dmg:"AD",    cls:"Fighter",
+    ct:["irelia","vex","akali","fizz","pantheon"],
+    ctBy:["ahri","twisted_fate","lux","brand","ziggs","katarina","ryze","syndra","orianna","zed","akshan","aurelionsol","kassadin","norra"],
+    sy:["malphite","amumu","jarvaniv","leona","nautilus"]},
+  yone:       {name:"Yone",        lanes:["Mid"],    dmg:"Hybrid",cls:"Fighter",
+    ct:["irelia","ahri","zed","pantheon","akali","vex","syndra"],
+    ctBy:["aurelionsol","corki","ziggs","seraphine","veigar","viktor","velkoz","zoe","mel"],
+    sy:["malphite","amumu","jarvaniv","leona","nautilus"]},
+  zed_mid:    {name:"Zed",         lanes:["Mid"],    dmg:"AD",    cls:"Assassin",
+    ct:["lissandra","yasuo","vex","fizz","diana","ahri","akali","pantheon","ekko","irelia"],
+    ctBy:["ziggs","lux","twisted_fate","brand","morgana","veigar","galio","ryze","yone","viktor","aurelionsol","aurora","heimerdinger","kassadin","katarina","norra","taliyah"],
+    sy:["leona","nautilus","rakan","vi","amumu"]},
+  ziggs:      {name:"Ziggs",       lanes:["Mid"],   dmg:"AP",    cls:"Mage",
+    ct:["zed","irelia","yasuo","fizz","ahri","yone"],
+    ctBy:["diana","orianna","lux","morgana","veigar","kennen","vladimir","ryze"],
+    sy:["amumu","nautilus","vi","leona","jarvaniv"]},
+  ziggs_adc:  {name:"Ziggs",       lanes:["ADC"],   dmg:"AP",    cls:"Mage",
+    ct:["vayne","lucian","tristana","ezreal"],
+    ctBy:["jinx","ashe","smolder"],
+    sy:["amumu","nautilus","vi","leona","jarvaniv"]},
+  zoe:        {name:"Zoe",         lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["morgana","fizz","irelia","zed","yasuo","yone"],
+    ctBy:["corki","twisted_fate","vex","annie","aurelionsol","orianna","vladimir"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  zyra_mid:   {name:"Zyra",        lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:["fizz","irelia","zed","yasuo","akali","diana"],
+    ctBy:["annie","twisted_fate","corki","teemo","kayle"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  // Diğer mid seçenekler
+  akshan_mid: {name:"Akshan",      lanes:["Mid"],    dmg:"AD",    cls:"Marksman",
+    ct:["vex","zed","irelia","yasuo","pantheon","veigar"],
+    ctBy:["ahri","orianna","akali","corki","galio","singed","vladimir"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  singed_mid: {name:"Singed",      lanes:["Mid"],    dmg:"AP",    cls:"Tank",
+    ct:["ambessa","jayce","teemo","darius","camille","fiora","vayne"],
+    ctBy:["jax","malphite","yasuo","tryndamere","garen","nautilus"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+
+  // ── JUNGLE ───────────────────────────────────────────────────
+  amumu:      {name:"Amumu",       lanes:["Jungle"], dmg:"AP",    cls:"Tank",
+    ct:["lillia","nocturne","nidalee","olaf","lee_sin","master_yi"],
+    ctBy:["graves","wukong","rammus","warwick","viego","vi","tryndamere","pantheon","ekko","gragas","jarvaniv"],
+    sy:["orianna","brand","katarina","missfortune","kaisa"]},
+  warwick:    {name:"Warwick",     lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
+    ct:["amumu","olaf","kindred","morgana"],
+    ctBy:["master_yi","tryndamere","irelia","viego","vi","wukong"],
+    sy:["nautilus","leona","amumu","vi","jarvaniv"]},
+  ambessa_jg: {name:"Ambessa",     lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
+    ct:["rammus","poppy","malphite","pantheon","renekton","tryndamere","warwick"],
+    ctBy:["jax","volibear","wukong"],
+    sy:["vi","amumu","nautilus","leona","brand"]},
+  camille_jg: {name:"Camille",     lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
+    ct:["lee_sin","viego","nidalee","pantheon"],
+    ctBy:["master_yi","evelynn","amumu","khazix"],
+    sy:["janna","lulu","nautilus","ezreal","thresh"]},
+  diana:      {name:"Diana",       lanes:["Jungle"], dmg:"AP",    cls:"Assassin",
+    ct:["master_yi","kindred","jarvaniv","xin_zhao","olaf","vi","pantheon"],
+    ctBy:["gragas","evelynn","rammus"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  drmundo_jg: {name:"Dr. Mundo",   lanes:["Jungle"], dmg:"AD",    cls:"Tank",
+    ct:["irelia","fiora","camille"],
+    ctBy:["vi","evelynn","master_yi","pantheon"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  ekko_jg:    {name:"Ekko",        lanes:["Jungle"], dmg:"AP",    cls:"Assassin",
+    ct:["kindred","lillia","amumu","olaf","xin_zhao","khazix","jax","lee_sin"],
+    ctBy:["rammus","gragas","jarvaniv"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  evelynn:    {name:"Evelynn",     lanes:["Jungle"], dmg:"AP",    cls:"Assassin",
+    ct:["rengar","lee_sin","gragas","camille","vi"],
+    ctBy:["volibear","amumu","master_yi","graves","rammus","nunu","lillia"],
+    sy:["brand","mel","ahri","syndra","nautilus"]},
+  fiddlesticks:{name:"Fiddlesticks",lanes:["Jungle"],dmg:"AP",    cls:"Mage",
+    ct:["aatrox","nocturne","vi","hecarim","pantheon","diana"],
+    ctBy:["rammus","amumu","master_yi"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  fizz_jg:    {name:"Fizz",        lanes:["Jungle"], dmg:"AP",    cls:"Assassin",
+    ct:["master_yi","riven","amumu","lee_sin","olaf","jarvaniv","xin_zhao"],
+    ctBy:["pantheon","shyvana","irelia"],
+    sy:["rakan","leona","vi","amumu","nautilus"]},
+  graves:     {name:"Graves",      lanes:["Jungle"], dmg:"AD",    cls:"Marksman",
+    ct:["amumu","aatrox","evelynn","pantheon","rammus","wukong"],
+    ctBy:["olaf","rengar","jarvaniv","vi","jax","hecarim"],
+    sy:["orianna","jhin","vayne","caitlyn","zed"]},
+  gwen_jg:    {name:"Gwen",        lanes:["Jungle"], dmg:"AP",    cls:"Fighter",
+    ct:["lillia","master_yi","nocturne","fiora","riven","vi"],
+    ctBy:["shen","drmundo","gragas","nunu","volibear"],
+    sy:["amumu","vi","nautilus","brand","leona"]},
+  hecarim:    {name:"Hecarim",     lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
+    ct:["master_yi","kindred","graves","khazix","rengar","gragas","xin_zhao"],
+    ctBy:["jarvaniv","vi","amumu","kayn","aatrox","fiora","taliyah"],
+    sy:["orianna","brand","katarina","amumu","leona"]},
+  irelia_jg:  {name:"Irelia",      lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
+    ct:["rammus","hecarim","nidalee","khazix","lee_sin","olaf","wukong","graves","fizz"],
+    ctBy:["drmundo","diana","amumu"],
+    sy:["rakan","leona","vi","amumu","nautilus"]},
+  jarvaniv:   {name:"Jarvan IV",   lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
+    ct:["khazix","lee_sin","rammus","gragas","rengar","master_yi","amumu"],
+    ctBy:["olaf","wukong","nunu","pantheon"],
+    sy:["orianna","katarina","brand","missfortune","kaisa"]},
+  jax_jg:     {name:"Jax",         lanes:["Jungle"], dmg:"Hybrid",cls:"Fighter",
+    ct:["gragas","pantheon","olaf","fiora","riven"],
+    ctBy:["wukong","tryndamere","camille","master_yi","irelia"],
+    sy:["janna","lulu","milio","ezreal","caitlyn"]},
+  kayn:       {name:"Kayn",        lanes:["Jungle"], dmg:"AD",    cls:"Assassin",
+    ct:["morgana","master_yi","rengar","khazix","olaf","kindred","rammus"],
+    ctBy:["amumu","evelynn","jarvaniv","nunu"],
+    sy:["orianna","jhin","vayne","caitlyn","zed"]},
+  khazix:     {name:"Kha'Zix",     lanes:["Jungle"], dmg:"AD",    cls:"Assassin",
+    ct:["rammus","kindred","master_yi","vi","pantheon","xin_zhao","olaf","camille","lee_sin"],
+    ctBy:["amumu","evelynn","jarvaniv","shyvana","nilah"],
+    sy:["brand","mel","ahri","syndra","orianna"]},
+  kindred:    {name:"Kindred",     lanes:["Jungle"], dmg:"AD",    cls:"Marksman",
+    ct:["rammus","lillia","xin_zhao","gragas","lee_sin"],
+    ctBy:["volibear","amumu","kayn","graves","warwick","vi","talon","rengar","olaf","aatrox","diana","hecarim","khazix","maokai"],
+    sy:["orianna","jhin","vayne","caitlyn","zed"]},
+  lee_sin:    {name:"Lee Sin",     lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
+    ct:["rammus","lillia","nocturne","xin_zhao","jax","drmundo","vi","gragas"],
+    ctBy:["amumu","master_yi","jarvaniv","evelynn","khazix","rengar","talon","riven"],
+    sy:["orianna","jhin","vayne","caitlyn","zed"]},
+  lillia:     {name:"Lillia",      lanes:["Jungle"], dmg:"AP",    cls:"Fighter",
+    ct:["evelynn","vi","master_yi","jarvaniv","xin_zhao","irelia","diana"],
+    ctBy:["volibear","rammus","amumu","nunu","shyvana","olaf","aatrox","ekko","fiora","gragas","gwen","kindred","lee_sin","wukong"],
+    sy:["orianna","brand","swain","amumu","nautilus"]},
+  master_yi:  {name:"Master Yi",   lanes:["Jungle"], dmg:"AD",    cls:"Assassin",
+    ct:["rammus","viego","evelynn","lee_sin","jax","wukong"],
+    ctBy:["olaf","amumu","graves","kayn","zed","xin_zhao","tryndamere","shyvana","rengar","diana","gwen","hecarim","jarvaniv","khazix","lillia","maokai","morgana","nidalee","nocturne"],
+    sy:["orianna","jhin","vayne","caitlyn","zed"]},
+  maokai_jg:  {name:"Maokai",      lanes:["Jungle"], dmg:"AP",    cls:"Tank",
+    ct:["galio","braum","leona","sona","seraphine","nami","morgana"],
+    ctBy:["blitzcrank","pyke","zilean","brand"],
+    sy:["jinx","kaisa","smolder","lucian","caitlyn"]},
+  morgana_jg: {name:"Morgana",     lanes:["Jungle"], dmg:"AP",    cls:"Mage",
+    ct:["master_yi","nocturne","zed","olaf","rengar","lee_sin","jarvaniv"],
+    ctBy:["vi","pantheon","amumu","nunu"],
+    sy:["caitlyn","jhin","lucian","draven","kaisa"]},
+  nautilus_jg:{name:"Nautilus",    lanes:["Jungle"], dmg:"AP",    cls:"Tank",
+    ct:["master_yi","xin_zhao","shyvana","morgana","olaf","khazix","amumu","fiora"],
+    ctBy:["graves","jax","tryndamere"],
+    sy:["kaisa","jhin","missfortune","brand","orianna"]},
+  nidalee:    {name:"Nidalee",     lanes:["Jungle"], dmg:"AP",    cls:"Fighter",
+    ct:["master_yi","rengar","lee_sin","khazix","nocturne"],
+    ctBy:["amumu","rammus","pantheon"],
+    sy:["orianna","jhin","vayne","caitlyn","zed"]},
+  nocturne:   {name:"Nocturne",    lanes:["Jungle"], dmg:"AD",    cls:"Assassin",
+    ct:["rammus","master_yi","viego","kindred","talon"],
+    ctBy:["rengar","fiddlesticks","shyvana","nidalee","amumu","gragas","gwen","lee_sin","morgana"],
+    sy:["orianna","jhin","vayne","caitlyn","zed"]},
+  nunu:       {name:"Nunu",        lanes:["Jungle"], dmg:"AP",    cls:"Tank",
+    ct:["lillia","evelynn","morgana","lee_sin","xin_zhao","vi","olaf","master_yi"],
+    ctBy:["rammus","amumu","rengar"],
+    sy:["yasuo","yone","missfortune","kaisa","jinx"]},
+  olaf_jg:    {name:"Olaf",        lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
+    ct:["kindred","lillia","master_yi","jarvaniv","camille","graves"],
+    ctBy:["vi","shyvana","amumu","evelynn","nunu","maokai"],
+    sy:["malphite","nautilus","leona","amumu","vi"]},
+  pantheon_jg:{name:"Pantheon",    lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
+    ct:["tryndamere","rammus","amumu","wukong","olaf","jarvaniv","drmundo","vi","graves"],
+    ctBy:["master_yi","evelynn","shyvana","diana","camille"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  poppy_jg:   {name:"Poppy",       lanes:["Jungle"], dmg:"AD",    cls:"Tank",
+    ct:["volibear","lillia","warwick","master_yi","nocturne","ambessa"],
+    ctBy:["lee_sin","talon","gragas"],
+    sy:["jinx","kaisa","smolder","lucian","caitlyn"]},
+  rammus:     {name:"Rammus",      lanes:["Jungle"], dmg:"AP",    cls:"Tank",
+    ct:["olaf","vi","amumu","nunu","lillia","shyvana"],
+    ctBy:["master_yi","graves","jarvaniv","tryndamere","xin_zhao","viego","rengar","pantheon","kayn","khazix","kindred","lee_sin","wukong","nocturne"],
+    sy:["orianna","brand","katarina","missfortune","kaisa"]},
+  rengar:     {name:"Rengar",      lanes:["Jungle"], dmg:"AD",    cls:"Assassin",
+    ct:["graves","olaf","rammus","xin_zhao","lee_sin","camille","kindred","master_yi"],
+    ctBy:["evelynn","gragas","jarvaniv","morgana","talon","nidalee"],
+    sy:["brand","mel","ahri","syndra","orianna"]},
+  riven_jg:   {name:"Riven",       lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
+    ct:["lee_sin","vi","rammus","gragas","olaf","rengar","graves"],
+    ctBy:["irelia","amumu","jarvaniv","fiora"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  shen_jg:    {name:"Shen",        lanes:["Jungle"], dmg:"AP",    cls:"Tank",
+    ct:["lee_sin","tryndamere","olaf","fiora"],
+    ctBy:["master_yi","jarvaniv","jax"],
+    sy:["jinx","kaisa","smolder","vayne","jhin"]},
+  shyvana:    {name:"Shyvana",     lanes:["Jungle"], dmg:"Hybrid",cls:"Fighter",
+    ct:["lillia","jarvaniv","master_yi","olaf","lee_sin"],
+    ctBy:["amumu","morgana","xin_zhao","rammus","nautilus"],
+    sy:["brand","orianna","nautilus","leona","vi"]},
+  skarner:    {name:"Skarner",     lanes:["Jungle"], dmg:"AD",    cls:"Tank",
+    ct:["lillia","olaf","master_yi","kindred","evelynn"],
+    ctBy:["talon","graves"],
+    sy:["orianna","brand","katarina","missfortune","kaisa"]},
+  talon_jg:   {name:"Talon",       lanes:["Jungle"], dmg:"AD",    cls:"Assassin",
+    ct:["rengar","kindred","lee_sin","gragas","volibear","evelynn","jarvaniv"],
+    ctBy:["ekko","fiddlesticks","khazix"],
+    sy:["leona","nautilus","rakan","vi","amumu"]},
+  taliyah_jg: {name:"Taliyah",     lanes:["Jungle"], dmg:"AP",    cls:"Mage",
+    ct:["rengar","wukong","zed","hecarim","rammus"],
+    ctBy:["amumu","ambessa"],
+    sy:["vi","amumu","nautilus","leona","hecarim"]},
+  tryndamere_jg:{name:"Tryndamere",lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
+    ct:["lee_sin","fiora","rammus","camille","master_yi","amumu"],
+    ctBy:["pantheon","irelia","graves","wukong","riven"],
+    sy:["janna","lulu","milio","ezreal","caitlyn"]},
+  urgot_jg:   {name:"Urgot",       lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
+    ct:["wukong","olaf","camille","fiora","aatrox"],
+    ctBy:["riven","jax","shen"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  viego:      {name:"Viego",       lanes:["Jungle"], dmg:"AD",    cls:"Assassin",
+    ct:["rammus","warwick","xin_zhao","amumu"],
+    ctBy:["rengar","master_yi","graves","nocturne"],
+    sy:["brand","mel","syndra","ahri","orianna"]},
+  vi:         {name:"Vi",          lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
+    ct:["kindred","amumu","warwick","xin_zhao","olaf","morgana","sett"],
+    ctBy:["master_yi","khazix","evelynn","pantheon","lillia"],
+    sy:["orianna","brand","katarina","missfortune","kaisa"]},
+  volibear_jg:{name:"Volibear",    lanes:["Jungle"], dmg:"AD",    cls:"Tank",
+    ct:["lillia","evelynn","kindred","fiora","olaf"],
+    ctBy:["diana","jarvaniv","rammus"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  wukong_jg:  {name:"Wukong",      lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
+    ct:["rammus","lillia","warwick","jarvaniv","xin_zhao","lee_sin","khazix","olaf","riven","camille"],
+    ctBy:["graves","evelynn","master_yi","vi","pantheon","irelia","kennen"],
+    sy:["orianna","katarina","brand","missfortune","kaisa"]},
+  xin_zhao:   {name:"Xin Zhao",    lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
+    ct:["rammus","jax","olaf","shyvana","master_yi"],
+    ctBy:["amumu","evelynn","lee_sin","graves","khazix","kindred","nautilus"],
+    sy:["malphite","nautilus","leona","amumu","vi"]},
+  yone_jg:    {name:"Yone",        lanes:["Jungle"], dmg:"Hybrid",cls:"Fighter",
+    ct:["rammus","kindred","evelynn"],
+    ctBy:["gwen","ekko","amumu","lillia"],
+    sy:["malphite","amumu","jarvaniv","leona","nautilus"]},
+  zed_jg:     {name:"Zed",         lanes:["Jungle"], dmg:"AD",    cls:"Assassin",
+    ct:["fizz","diana","pantheon","rammus","renekton","master_yi","kindred"],
+    ctBy:["morgana","kayn","gragas","evelynn","vi"],
+    sy:["leona","nautilus","rakan","vi","amumu"]},
+
+  // ── BARON ─────────────────────────────────────────────────────
+  aatrox:     {name:"Aatrox",      lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["ambessa","irelia","fiora","jax","tryndamere","pantheon"],
+    ctBy:["sion","drmundo","garen","kayle","nasus","urgot","ornn","sett","ryze","akali"],
+    sy:["vi","amumu","nautilus","brand","orianna"]},
+  akali_baron:{name:"Akali",       lanes:["Baron"],  dmg:"Hybrid",cls:"Assassin",
+    ct:["ambessa","renekton","aatrox","fiora","jax","pantheon","galio"],
+    ctBy:["irelia","yasuo","olaf","malphite","darius","vayne","camille"],
+    sy:["rakan","leona","vi","amumu","nautilus"]},
+  ambessa:    {name:"Ambessa",     lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["renekton","warwick","irelia","pantheon","riven","malphite"],
+    ctBy:["aatrox","akali","darius","sion","yasuo","gwen","drmundo","nasus","urgot","garen","singed","rumble","poppy"],
+    sy:["vi","amumu","nautilus","leona","brand"]},
+  camille:    {name:"Camille",     lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["malphite","mordekaiser","fiora","jayce","jax","renekton","darius","riven","akali"],
+    ctBy:["yasuo","jarvaniv","garen","drmundo","wukong","shen","kennen","olaf","ornn","singed","maokai","nasus"],
+    sy:["janna","lulu","nautilus","ezreal","thresh"]},
+  darius:     {name:"Darius",      lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["malphite","akali","vayne","wukong","gragas","jayce","ambessa"],
+    ctBy:["nasus","camille","yasuo","irelia","tryndamere","ornn","riven"],
+    sy:["amumu","nautilus","leona","vi","blitzcrank"]},
+  drmundo:    {name:"Dr. Mundo",   lanes:["Baron"],  dmg:"AD",    cls:"Tank",
+    ct:["riven","gwen","darius","fiora","shen","irelia","camille","vayne","renekton"],
+    ctBy:["yasuo","akali","pantheon","jayce","vladimir","nautilus"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  fiora:      {name:"Fiora",       lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["rumble","poppy","malphite","jayce","kennen"],
+    ctBy:["aatrox","garen","akali","jax","riven","camille","renekton","nasus","irelia","olaf","ornn","volibear","pantheon","urgot","shen","sion","singed","drmundo","gwen","maokai"],
+    sy:["janna","lulu","milio","ezreal","caitlyn"]},
+  galio_baron:{name:"Galio",       lanes:["Baron"],  dmg:"AP",    cls:"Tank",
+    ct:["jayce","irelia","pantheon","olaf","sett","yasuo","fiora"],
+    ctBy:["diana","teemo","kennen"],
+    sy:["orianna","brand","katarina","missfortune","kaisa"]},
+  garen:      {name:"Garen",       lanes:["Baron"],  dmg:"AD",    cls:"Tank",
+    ct:["camille","fiora","ambessa","irelia"],
+    ctBy:["nasus","jax","yasuo","renekton","gragas","tryndamere"],
+    sy:["lulu","milio","orianna","brand","nautilus"]},
+  gnar:       {name:"Gnar",        lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["irelia","yasuo","malphite","gwen","ornn"],
+    ctBy:["sion","drmundo","urgot","darius","shen","renekton","kennen","maokai"],
+    sy:["orianna","brand","katarina","missfortune","kaisa"]},
+  gragas_baron:{name:"Gragas",     lanes:["Baron"],  dmg:"AP",    cls:"Tank",
+    ct:["fiora","diana","olaf","shen"],
+    ctBy:["camille","kennen","malphite","darius","riven"],
+    sy:["orianna","brand","katarina","jhin","kaisa"]},
+  gwen:       {name:"Gwen",        lanes:["Baron"],  dmg:"AP",    cls:"Fighter",
+    ct:["jayce","fiora","jax","renekton","yasuo","akali","riven","tryndamere"],
+    ctBy:["shen","drmundo","sion","gragas","malphite","ornn","volibear"],
+    sy:["amumu","vi","nautilus","brand","leona"]},
+  irelia:     {name:"Irelia",      lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["malphite","poppy","sett","fiora","jax","riven","darius","renekton","tryndamere","wukong","akali"],
+    ctBy:["ambessa","jayce","olaf","kayle","drmundo","garen","kennen","aatrox","teemo","graves","nasus","gnar"],
+    sy:["rakan","leona","vi","amumu","nautilus"]},
+  jax:        {name:"Jax",         lanes:["Baron"],  dmg:"Hybrid",cls:"Fighter",
+    ct:["poppy","teemo","rumble","fiora","garen","jayce","gragas","riven","shen","sett"],
+    ctBy:["yasuo","tryndamere","camille","irelia","kayle","nasus","malphite","gwen","ornn","volibear"],
+    sy:["janna","lulu","milio","ezreal","caitlyn"]},
+  jayce:      {name:"Jayce",       lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["irelia","riven","wukong","tryndamere","malphite","nasus","ornn"],
+    ctBy:["fiora","kennen","darius","kayle","shen","teemo","renekton","camille","gwen"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  ksante:     {name:"K'Sante",     lanes:["Baron"],  dmg:"AD",    cls:"Tank",
+    ct:["fiora","vayne","garen"],
+    ctBy:["irelia","sion","ornn"],
+    sy:["orianna","brand","katarina","missfortune","kaisa"]},
+  kayle:      {name:"Kayle",       lanes:["Baron"],  dmg:"Hybrid",cls:"Marksman",
+    ct:["syndra","viktor","ryze","pantheon","irelia","lucian","katarina","akshan","jayce"],
+    ctBy:["garen","fiora","singed","olaf","volibear"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  kennen:     {name:"Kennen",      lanes:["Baron"],  dmg:"AP",    cls:"Mage",
+    ct:["gnar","nasus","wukong","jayce","malphite","irelia","gragas","camille"],
+    ctBy:["jax","darius","teemo","garen","kayle","renekton","riven"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  malphite:   {name:"Malphite",    lanes:["Baron"],  dmg:"AP",    cls:"Tank",
+    ct:["rumble","mordekaiser","akali","gwen","olaf","gragas","nasus","renekton","jax"],
+    ctBy:["camille","ambessa","tryndamere","fiora","graves","wukong","yasuo","pantheon","yone","gnar","irelia","jayce"],
+    sy:["orianna","katarina","brand","missfortune","yasuo"]},
+  mordekaiser:{name:"Mordekaiser", lanes:["Baron"],  dmg:"AP",    cls:"Fighter",
+    ct:["olaf","vayne","aatrox","fiora","warwick"],
+    ctBy:["malphite","camille","shen","sion","maokai","urgot","sett","riven","renekton","poppy","wukong"],
+    sy:["amumu","nautilus","vi","brand","leona"]},
+  nasus:      {name:"Nasus",       lanes:["Baron"],  dmg:"AD",    cls:"Tank",
+    ct:["garen","camille","wukong","darius","renekton","teemo","jax","vayne","olaf","sett","fiora","irelia"],
+    ctBy:["kayle","malphite","akali","tryndamere","kennen","vladimir"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  nautilus_baron:{name:"Nautilus", lanes:["Baron"],  dmg:"AP",    cls:"Tank",
+    ct:["irelia","renekton","drmundo","olaf","fiora","camille","gwen","vayne","darius","aatrox","singed"],
+    ctBy:["graves","sion"],
+    sy:["kaisa","jhin","missfortune","brand","orianna"]},
+  olaf_baron: {name:"Olaf",        lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["fiora","tryndamere","irelia","jax","kennen","akali","graves","vayne","camille"],
+    ctBy:["nasus","yasuo","malphite","teemo","shen","urgot","ornn","wukong"],
+    sy:["malphite","nautilus","leona","amumu","vi"]},
+  ornn:       {name:"Ornn",        lanes:["Baron"],  dmg:"AP",    cls:"Tank",
+    ct:["fiora","camille","gwen","olaf","darius","shen"],
+    ctBy:["diana","malphite","nautilus","rumble","gnar","jayce"],
+    sy:["orianna","brand","katarina","missfortune","kaisa"]},
+  poppy_baron:{name:"Poppy",       lanes:["Baron"],  dmg:"AD",    cls:"Tank",
+    ct:["ambessa","teemo","mordekaiser","darius","olaf","rumble","gnar","aatrox"],
+    ctBy:["jax","riven","urgot","irelia","camille","fiora"],
+    sy:["jinx","kaisa","smolder","lucian","caitlyn"]},
+  renekton:   {name:"Renekton",    lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["gnar","mordekaiser","garen","teemo","vayne","kennen","olaf","gragas","fiora","darius","jayce","graves"],
+    ctBy:["ambessa","yasuo","camille","riven","akali","irelia","nasus","singed","malphite","drmundo","tryndamere","ryze","sett","shen","sion","rumble","pantheon","yone","wukong"],
+    sy:["amumu","vi","nautilus","leona","brand"]},
+  riven:      {name:"Riven",       lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["renekton","wukong","darius","urgot","kennen","fiora","gragas","sett","graves"],
+    ctBy:["irelia","yasuo","rengar","drmundo","singed","nasus","garen","kayle","jayce","gwen"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  rumble:     {name:"Rumble",      lanes:["Baron"],  dmg:"AP",    cls:"Fighter",
+    ct:["ambessa","renekton","ornn","tryndamere","irelia","riven","camille","olaf","aatrox"],
+    ctBy:["malphite","sion","drmundo","nasus","teemo","fiora","garen","jax"],
+    sy:["orianna","brand","katarina","missfortune","kaisa"]},
+  ryze_baron: {name:"Ryze",        lanes:["Baron"],  dmg:"AP",    cls:"Mage",
+    ct:["aatrox","darius","jayce","irelia","yasuo","renekton"],
+    ctBy:["rumble","teemo","kennen"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  sett:       {name:"Sett",        lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["renekton","mordekaiser","aatrox","kennen","vayne","drmundo","olaf"],
+    ctBy:["irelia","yasuo","kayle","nasus","shen","rengar","riven","tryndamere"],
+    sy:["amumu","nautilus","leona","vi","blitzcrank"]},
+  shen:       {name:"Shen",        lanes:["Baron"],  dmg:"AP",    cls:"Tank",
+    ct:["darius","sett","fiora","pantheon","camille","olaf","renekton","gnar"],
+    ctBy:["nasus","garen","tryndamere","jax","riven","irelia","ornn"],
+    sy:["jinx","kaisa","smolder","vayne","jhin"]},
+  singed:     {name:"Singed",      lanes:["Baron"],  dmg:"AP",    cls:"Tank",
+    ct:["ambessa","jayce","teemo","darius","camille","fiora","vayne"],
+    ctBy:["jax","malphite","yasuo","tryndamere","garen","nautilus"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  sion:       {name:"Sion",        lanes:["Baron"],  dmg:"AD",    cls:"Tank",
+    ct:["vayne","irelia","fiora","darius","olaf","riven","camille","gwen","renekton"],
+    ctBy:["malphite","teemo","kayle","nasus","akali","tryndamere"],
+    sy:["orianna","brand","katarina","missfortune","kaisa"]},
+  teemo:      {name:"Teemo",       lanes:["Baron"],  dmg:"AP",    cls:"Mage",
+    ct:["ryze","rumble","akali","yasuo","wukong","olaf","kennen","jayce","rengar","fiora"],
+    ctBy:["tryndamere","renekton","garen","nasus","kayle","darius","volibear","poppy","yone","jax"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  tryndamere: {name:"Tryndamere",  lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["singed","malphite","fiora","jax","shen","renekton","sett","darius","sion","teemo","nasus"],
+    ctBy:["kayle","galio","irelia","olaf","riven","jayce","gwen"],
+    sy:["janna","lulu","milio","ezreal","caitlyn"]},
+  urgot:      {name:"Urgot",       lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["mordekaiser","tryndamere","wukong","aatrox","olaf","camille","fiora","vayne"],
+    ctBy:["riven","garen","jax","malphite","shen"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  vladimir_baron:{name:"Vladimir", lanes:["Baron"],  dmg:"AP",    cls:"Mage",
+    ct:["aatrox","fiora","tryndamere","irelia","drmundo","nasus"],
+    ctBy:["darius","jayce","kennen","malphite","pantheon"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  volibear:   {name:"Volibear",    lanes:["Baron"],  dmg:"AD",    cls:"Tank",
+    ct:["vayne","teemo","fiora","jax","irelia","akali","gwen","camille"],
+    ctBy:["nasus","yasuo","singed","diana","jarvaniv"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
+  wukong:     {name:"Wukong",      lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["malphite","mordekaiser","jax","olaf","camille","renekton","shen","gragas"],
+    ctBy:["fiora","kayle","darius","jayce","irelia","kennen","graves","vayne","urgot","teemo","nasus"],
+    sy:["orianna","katarina","brand","missfortune","kaisa"]},
+  yasuo_baron:{name:"Yasuo",       lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
+    ct:["malphite","renekton","fiora","darius","pantheon","sett","riven","olaf","tryndamere","jax"],
+    ctBy:["teemo","kayle","vayne","gragas","wukong","kennen","galio","gwen","ryze"],
+    sy:["malphite","amumu","jarvaniv","leona","nautilus"]},
+  yone_baron: {name:"Yone",        lanes:["Baron"],  dmg:"Hybrid",cls:"Fighter",
+    ct:["malphite","teemo","jayce","fiora","jax","renekton","yasuo","akali","riven","wukong","irelia"],
+    ctBy:["gwen","kayle","nasus","singed","sion"],
+    sy:["malphite","amumu","jarvaniv","leona","nautilus"]},
+  zed_baron:  {name:"Zed",         lanes:["Baron"],  dmg:"AD",    cls:"Assassin",
+    ct:["sett","irelia","pantheon","garen","diana","malphite","gragas","renekton"],
+    ctBy:["kennen","teemo","vayne","jayce","yasuo"],
+    sy:["leona","nautilus","rakan","vi","amumu"]},
+};
+
+const ALL = Object.entries(DB).map(([id,c])=>({id,...c}));
+const LANES = ["Tümü","Baron","Jungle","Mid","ADC","Support"];
+
+// Flex şampiyonlar (aynı hero, farklı lane key'i) için isim -> tüm key'ler eşlemesi.
+// Örn: "Camille" -> ["camille","camille_jg"]. Biri picklenince/kilitlenince diğeri de kilitlenir.
+const NAME_TO_IDS = {};
+Object.keys(DB).forEach(k => {
+  const n = DB[k].name;
+  (NAME_TO_IDS[n] = NAME_TO_IDS[n] || []).push(k);
+});
+const LANE_COLOR = {Baron:"#ef9a9a",Jungle:"#a5d6a7",Mid:"#80cbc4",ADC:"#ffcc02",Support:"#ce93d8"};
+
+// ─── KENDİ HAVUZUN (Tier = öncelik sırası) ───────────────────
+// ─── META TIER LİSTESİ (oyun metasına göre, takımdan bağımsız) ──
+// S+=6, S=4, A=2
+const META_TIER = {
+  // BARON
+  ksante:6,     ambessa:6,
+  gnar:4,       wukong:4,     poppy_baron:4, malphite:4,   ornn:4,
+  sion:4,       aatrox:4,     renekton:4,    gwen:4,       fiora:4,
+  rumble:4,     camille:4,
+  jax:2,        irelia:2,     nasus:2,       singed:2,     jayce:2,
+  volibear:2,   sett:2,       riven:2,       olaf_baron:2,
+
+  // JUNGLE
+  nidalee:6,    taliyah_jg:6,
+  viego:4,      lee_sin:4,    shyvana:4,     vi:4,         xin_zhao:4,
+  hecarim:4,    evelynn:4,    aatrox_jg:4,   lillia:4,     ambessa_jg:4,
+  riven_jg:2,   wukong_jg:2,  talon_jg:2,    khazix:2,     fiddlesticks:2,
+  pantheon_jg:2,kayn:2,       zed_jg:2,      nocturne:2,   olaf_jg:2,
+  camille_jg:2, gragas:2,     master_yi:2,   jarvaniv:2,
+
+  // MID
+  aurora:6,     ryze:6,
+  taliyah:4,    twisted_fate:4,norra:4,      orianna:4,    syndra:4,
+  swain_mid:4,  aurelionsol:4, viktor:4,     kassadin:4,   ahri:4,
+  galio:2,      mel:2,        zoe:2,         kennen:2,     akali_mid:2,
+  vladimir:2,   jayce_mid:2,  zed_mid:2,     vex:2,        lissandra:2,
+  annie:2,
+
+  // ADC
+  ezreal:6,
+  zeri:4,       smolder:4,    corki:4,       lucian:4,     xayah:4,
+  jhin:4,       vayne:4,      kogmaw:4,
+  varus:2,      sivir:2,      kalista:2,     kaisa:2,      draven:2,
+  ashe:2,       missfortune:2,jinx:2,        caitlyn:2,
+  aurelionsol_adc:4, orianna_adc:4, mel_adc:2, ziggs_adc:2,
+
+  // SUPPORT
+  nami:6,       zilean:6,     nautilus:6,
+  braum:4,      galio_sup:4,  milio:4,       lulu:4,       senna:4,
+  ornn_sup:4,   rell:4,       rakan:4,
+  maokai:2,     pyke:2,       bard:2,        blitzcrank:2, soraka:2,
+  thresh:2,     karma:2,      janna:2,       zyra:2,       alistar:2,
+  sona:2,       seraphine:2,
+};
+
+function getMetaTier(id) { return META_TIER[id] || 0; }
+
+// ─── KENDİ COMFORT PİCKLERİN (takıma göre, rozetler için) ────
+const COMFORT_IDS = new Set([
+  // Baron
+  "camille","gwen","renekton","pantheon","kennen","fiora","sett","garen",
+  "darius","jayce","jax","malphite","aatrox","gnar","poppy_baron","ksante","riven",
+  // Jungle
+  "hecarim","lee_sin","riven_jg","jarvaniv","lillia","gwen_jg","vi","viego",
+  "wukong_jg","shyvana","ekko_jg","diana","aatrox_jg","yone_baron",
+  // Support
+  "nautilus","rakan","blitzcrank","braum","rell","poppy_sup","bard","galio_sup",
+  "gragas_sup","karma","thresh","leona","ornn_sup","maokai","morgana","singed_sup","zilean",
+  // ADC
+  "xayah","samira","lucian","ezreal","corki","mel","mel_adc","sivir","kaisa","smolder","zeri",
+  // Mid
+  "velkoz","aurelionsol","aurelionsol_adc","syndra","orianna","orianna_adc","ryze","aurora","ahri","corki_mid",
+  "viktor","mel","morgana_mid","galio","swain_mid","jayce_mid","ziggs_adc",
+]);
+
+function getTier(id) { return getMetaTier(id); }
+
+// META_POWER — sıralama listesi (S+ önce, sonra S, sonra A)
+const META_POWER = {
+  Baron:  ["ksante","ambessa","gnar","wukong","poppy_baron","malphite","ornn","sion",
+           "aatrox","renekton","gwen","fiora","rumble","camille",
+           "jax","irelia","nasus","singed","jayce","volibear","sett","riven","olaf_baron"],
+  Jungle: ["nidalee","taliyah_jg","viego","lee_sin","shyvana","vi","xin_zhao","hecarim",
+           "evelynn","aatrox_jg","lillia","ambessa_jg",
+           "riven_jg","wukong_jg","talon_jg","khazix","fiddlesticks","pantheon_jg",
+           "kayn","zed_jg","nocturne","olaf_jg","camille_jg","gragas","master_yi","jarvaniv"],
+  Mid:    ["aurora","ryze","taliyah","twisted_fate","norra","orianna","syndra","swain_mid",
+           "aurelionsol","viktor","kassadin","ahri",
+           "galio","mel","zoe","kennen","akali_mid","vladimir","jayce_mid","zed_mid",
+           "vex","lissandra","annie"],
+  ADC:    ["ezreal","zeri","smolder","corki","lucian","xayah","jhin","vayne","kogmaw",
+           "aurelionsol_adc","orianna_adc",
+           "varus","sivir","kalista","kaisa","draven","ashe","missfortune","jinx","caitlyn",
+           "mel_adc","ziggs_adc"],
+  Support:["nami","zilean","nautilus","braum","galio_sup","milio","lulu","senna","ornn_sup",
+           "rell","rakan",
+           "maokai","pyke","bard","blitzcrank","soraka","thresh","karma","janna","zyra",
+           "alistar","sona","seraphine"],
+};
+
+// Draft sırası
+const ORDER = [
+  {ph:1,act:"ban", t:0},{ph:1,act:"ban", t:1},{ph:1,act:"ban", t:0},
+  {ph:1,act:"ban", t:1},{ph:1,act:"ban", t:0},{ph:1,act:"ban", t:1},
+  {ph:1,act:"pick",t:0},{ph:1,act:"pick",t:1},{ph:1,act:"pick",t:1},
+  {ph:1,act:"pick",t:0},{ph:1,act:"pick",t:0},{ph:1,act:"pick",t:1},
+  {ph:2,act:"ban", t:0},{ph:2,act:"ban", t:1},{ph:2,act:"ban", t:0},
+  {ph:2,act:"ban", t:1},
+  {ph:2,act:"pick",t:1},{ph:2,act:"pick",t:0},{ph:2,act:"pick",t:0},{ph:2,act:"pick",t:1},
+];
+
+// ─── DURUM ───────────────────────────────────────────────────
+let slots   = Array(20).fill(null);
+let step    = 0;
+let lane    = "Tümü";
+let search  = "";
+let modal   = false;
+
+// ─── BUILD VERİTABANI (wildriftfire.com — Patch 7.1h) ────────
+// Sadece kendi main picklerin için (ilk 3)
+const WRF = "https://www.wildriftfire.com/images/";
+const BUILD_DB = {
+  // ── BARON ──────────────────────────────────────────────────
+  camille: {
+    items: ["Trinity Force","Hullbreaker","Sundered Sky","Death's Dance","Amaranth's Twinguard"],
+    boots: "Plated Steelcaps", enchant: "Goredrinker",
+    runes: ["Grasp of the Undying","Demolish","Second Wind","Overgrowth","Scorch"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","3","2"],
+    tier: "S"
+  },
+  gwen: {
+    items: ["Riftmaker","Nashor's Tooth","Rabadon's Deathcap","Shadowflame","Zhonya's Hourglass"],
+    boots: "Sorcerer's Shoes", enchant: "Stasis",
+    runes: ["Conqueror","Triumph","Cut Down","Legend: Alacrity","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","3","2"],
+    tier: "S"
+  },
+  renekton: {
+    items: ["Sundered Sky","Death's Dance","Serylda's Grudge","Spear of Shojin","Sterak's Gage"],
+    boots: "Plated Steelcaps", enchant: "Goredrinker",
+    runes: ["Conqueror","Demolish","Second Wind","Overgrowth","Scorch"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["2","1","3"],
+    tier: "A"
+  },
+  // ── JUNGLE ─────────────────────────────────────────────────
+  hecarim: {
+    items: ["Trinity Force","Muramana","Serylda's Grudge","Death's Dance","Sterak's Gage"],
+    boots: "Plated Steelcaps", enchant: "Zeal",
+    runes: ["Conqueror","Triumph","Cut Down","Legend: Alacrity","Overgrowth"],
+    spells: ["Flash","Ghost"],
+    skillOrder: ["1","3","2"],
+    tier: "S"
+  },
+  lee_sin: {
+    items: ["Black Cleaver","Youmuu's Ghostblade","Death's Dance","Serylda's Grudge","Guardian Angel"],
+    boots: "Plated Steelcaps", enchant: "Protobelt",
+    runes: ["Conqueror","Triumph","Cut Down","Legend: Alacrity","Bone Plating"],
+    spells: ["Flash","Smite"],
+    skillOrder: ["1","3","2"],
+    tier: "S"
+  },
+  riven: {
+    items: ["Trinity Force","Death's Dance","Serylda's Grudge","Spear of Shojin","Sterak's Gage"],
+    boots: "Gluttonous Greaves", enchant: "Goredrinker",
+    runes: ["Conqueror","Demolish","Second Wind","Overgrowth","Scorch"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["3","1","2"],
+    tier: "A"
+  },
+  // ── SUPPORT ────────────────────────────────────────────────
+  nautilus: {
+    items: ["Zeke's Convergence","Ice Overlord","Warmog's Armor","Abyssal Mask","Thornmail"],
+    boots: "Ionian Boots of Lucidity", enchant: "Protobelt",
+    runes: ["Courage of the Colossus","Demolish","Second Wind","Overgrowth","Manaflow Band"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","3","2"],
+    tier: "S"
+  },
+  rakan: {
+    items: ["Bulwark of the Mountain","Redemption","Zeke's Convergence","Radiant Virtue","Abyssal Mask"],
+    boots: "Ionian Boots of Lucidity", enchant: "Protobelt",
+    runes: ["Ice Overlord","Unshakeable","Bone Plating","Overgrowth","Transcendence"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["2","1","3"],
+    tier: "A"
+  },
+  blitzcrank: {
+    items: ["Zeke's Convergence","Ice Overlord","Warmog's Armor","Abyssal Mask","Thornmail"],
+    boots: "Ionian Boots of Lucidity", enchant: "Protobelt",
+    runes: ["Courage of the Colossus","Demolish","Second Wind","Overgrowth","Manaflow Band"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","3","2"],
+    tier: "A"
+  },
+  // ── ADC ────────────────────────────────────────────────────
+  xayah: {
+    items: ["Blade of the Ruined King","Kraken Slayer","Infinity Edge","Mortal Reminder","Guardian Angel"],
+    boots: "Berserker's Greaves", enchant: "Stasis",
+    runes: ["Fleet Footwork","Battle Zeal","Cut Down","Legend: Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","3","2"],
+    tier: "A"
+  },
+  samira: {
+    items: ["Bloodthirster","Infinity Edge","Mortal Reminder","Navori Quickblades","Guardian Angel"],
+    boots: "Berserker's Greaves", enchant: "Stasis",
+    runes: ["Conqueror","Triumph","Cut Down","Legend: Alacrity","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "B"
+  },
+  lucian: {
+    items: ["Trinity Force","Essence Reaver","Navori Quickblades","Mortal Reminder","Infinity Edge"],
+    boots: "Berserker's Greaves", enchant: "Stasis",
+    runes: ["Conqueror","Triumph","Cut Down","Legend: Alacrity","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","3","2"],
+    tier: "S"
+  },
+  // ── MID ────────────────────────────────────────────────────
+  velkoz: {
+    items: ["Luden's Tempest","Shadowflame","Rabadon's Deathcap","Void Staff","Morellonomicon"],
+    boots: "Sorcerer's Shoes", enchant: "Stasis",
+    runes: ["Arcane Comet","Manaflow Band","Transcendence","Scorch","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  aurelionsol: {
+    items: ["Rod of Ages","Rabadon's Deathcap","Shadowflame","Void Staff","Awakened Soulstealer"],
+    boots: "Sorcerer's Shoes", enchant: "Stasis",
+    runes: ["Phase Rush","Manaflow Band","Transcendence","Scorch","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["3","1","2"],
+    tier: "A"
+  },
+  syndra: {
+    items: ["Luden's Tempest","Shadowflame","Rabadon's Deathcap","Void Staff","Awakened Soulstealer"],
+    boots: "Sorcerer's Shoes", enchant: "Stasis",
+    runes: ["Electrocute","Sudden Impact","Eyeball Collector","Coup de Grace","Manaflow Band"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","3","2"],
+    tier: "A"
+  },
+};
+
+// Item slug → görsel URL
+function itemImg(name, size=32) {
+  const slug = name.toLowerCase()
+    .replace(/'/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+  const url = `${WRF}items/${slug}.png`;
+  return `<img src="${url}" title="${name}" alt="${name}" width="${size}" height="${size}"
+    onerror="this.style.opacity=.3"
+    style="border-radius:6px;object-fit:cover;background:#111128;display:block"/>`;
+}
+function runeImg(name, size=28) {
+  const slug = name.toLowerCase()
+    .replace(/'/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+  const url = `${WRF}runes/${slug}.png`;
+  return `<img src="${url}" title="${name}" alt="${name}" width="${size}" height="${size}"
+    onerror="this.style.opacity=.3"
+    style="border-radius:50%;object-fit:cover;background:#111128;display:block"/>`;
+}
+function spellImg(name, size=28) {
+  const slug = name.toLowerCase().replace(/[^a-z]/g,"");
+  const url = `${WRF}summoners/${slug}.png`;
+  return `<img src="${url}" title="${name}" alt="${name}" width="${size}" height="${size}"
+    onerror="this.style.opacity=.3"
+    style="border-radius:6px;object-fit:cover;background:#111128;display:block"/>`;
+}
+
+// ─── YAMA VERİSİ ─────────────────────────────────────────────
+let patchData = {
+  version: "7.1h",
+  date: "24 Haziran 2026",
+  buffs:   ["thresh","seraphine","skarner","gnar","sona"],
+  nerfs:   ["nunu","taliyah"],
+  changes: ["nautilus"],
+  details: {
+    thresh:    "Temel nitelikler ve yetenek hasarı güçlendirildi",
+    seraphine: "2. yetenek iyileştirme oranı ve 4. yetenek ayartma süresi arttırıldı",
+    skarner:   "Taban nitelikler ve yetenek hasarı güçlendirildi",
+    gnar:      "Taban nitelikler ve 2. yetenek hasarı güçlendirildi",
+    sona:      "2. yetenek iyileştirme ve 3. yetenek hareket hızı arttırıldı",
+    nunu:      "1. yetenek hasarı ve kartopu yağmuru azaltıldı",
+    taliyah:   "Hareket hızı ve 1. yetenek orman temizleme gücü azaltıldı",
+    nautilus:  "Orman canavarlarına karşı hasar ve kalkan oranı düşürüldü",
+  }
+};
+
+// Riot sitesinden otomatik yama çek
+async function fetchLatestPatch() {
+  try {
+    const res = await fetch("https://wildrift.leagueoflegends.com/tr-tr/news/tags/patch-notes/");
+    const html = await res.text();
+    const doc  = new DOMParser().parseFromString(html, "text/html");
+    // En üstteki yama linkini al
+    const links = [...doc.querySelectorAll("a[href*='patch-notes']")];
+    const latest = links[0]?.href;
+    if (!latest) return;
+
+    // Versiyon çek
+    const verMatch = latest.match(/(\d+-\d+[a-z]*)[^/]*$/);
+    if (!verMatch) return;
+    const ver = verMatch[1].replace(/-/g, ".").replace(/\.(\d+[a-z]?)$/, (m, p) => {
+      return isNaN(p[0]) ? p : "." + p;
+    });
+
+    // Yama sayfasını çek
+    const pRes = await fetch(latest);
+    const pHtml = await pRes.text();
+    const pDoc  = new DOMParser().parseFromString(pHtml, "text/html");
+    const text  = pDoc.body.innerText || pDoc.body.textContent || "";
+
+    // Tarih
+    const dateMatch = text.match(/(\d{4}-\d{2}-\d{2})/);
+    const date = dateMatch ? new Date(dateMatch[1]).toLocaleDateString("tr-TR", {
+      day:"numeric", month:"long", year:"numeric"
+    }) : "";
+
+    // Şampiyon isimlerini tespit et — büyük harfle yazılan başlıkları ara
+    const champNames = Object.values(DB).map(c => c.name.toUpperCase());
+    const lines = text.split("\n").map(l => l.trim()).filter(Boolean);
+
+    let buffs = [], nerfs = [], changes = [];
+    let currentSection = "";
+
+    lines.forEach(line => {
+      const up = line.toUpperCase();
+      if (up.includes("GÜÇLENDİR") || up.includes("BUFF") || up.includes("ARTTIRIL")) currentSection = "buff";
+      else if (up.includes("ZAYIFLAT") || up.includes("NERF") || up.includes("AZALTIL") || up.includes("DÜŞÜRÜL")) currentSection = "nerf";
+      else if (up.includes("DENGE") || up.includes("AYARLAMA") || up.includes("CHANGE")) currentSection = "change";
+
+      // Şampiyon ismi mi?
+      const found = Object.entries(DB).find(([id, c]) => up === c.name.toUpperCase());
+      if (found) {
+        const normId = found[0].replace(/_.*$/, "");
+        if (currentSection === "buff"   && !buffs.includes(normId))   buffs.push(normId);
+        if (currentSection === "nerf"   && !nerfs.includes(normId))   nerfs.push(normId);
+        if (currentSection === "change" && !changes.includes(normId)) changes.push(normId);
+      }
+    });
+
+    // Güncelle (boşsa mevcut veriyi koru)
+    if (buffs.length || nerfs.length || changes.length) {
+      patchData = { version: ver||patchData.version, date: date||patchData.date,
+        buffs, nerfs, changes, details: {} };
+      render();
+    }
+  } catch(e) {
+    console.log("Yama çekilemedi, mevcut veri kullanılıyor:", e.message);
+  }
+}
+
+// DB key → normalize
+function champNormName(id) {
+  const c = DB[id];
+  if (!c) return id.replace(/_.*$/,"");
+  return c.name.toLowerCase().replace(/[^a-z0-9]/g,"");
+}
+
+// Patch durumu — DB key ile eşleştir
+function getPatchStatus(id) {
+  const base = id.replace(/_.*$/,"").toLowerCase();
+  const name = champNormName(id);
+  const match = (arr) => arr.some(b =>
+    base === b || name === b || name.startsWith(b) || b.startsWith(base)
+  );
+  if (match(patchData.buffs))   return "buff";
+  if (match(patchData.nerfs))   return "nerf";
+  if (match(patchData.changes)) return "change";
+  return null;
+}
+
+// Rozet
+function patchBadge(id, small=false) {
+  const s = getPatchStatus(id);
+  if (!s) return "";
+  const cfg = {
+    buff:   {icon:"🔺", color:"#00ff88", bg:"#00ff8818", border:"#00ff8844", label:"Buff"},
+    nerf:   {icon:"🔻", color:"#ff4444", bg:"#ff444418", border:"#ff444444", label:"Nerf"},
+    change: {icon:"🔄", color:"#4da6ff", bg:"#4da6ff18", border:"#4da6ff44", label:"Denge"},
+  }[s];
+  if (small) return `<span style="font-size:11px" title="${cfg.label}">${cfg.icon}</span>`;
+  return `<span style="font-size:7px;padding:1px 6px;border-radius:3px;font-weight:800;
+    background:${cfg.bg};border:1px solid ${cfg.border};color:${cfg.color}">
+    ${cfg.icon} ${cfg.label.toUpperCase()}
+  </span>`;
+}
+
+// Otomatik çek (APK'da çalışır, file:// da mevcut veri kullanılır)
+fetchLatestPatch();
+
+// ─── SERİ DURUMU ─────────────────────────────────────────────
+let seriesFormat  = null;
+let fearless      = false;
+let currentMatch  = 1;
+let matchHistory  = [];
+let myScore       = 0;   // Serideki benim galibiyet sayım (taraf değişse bile doğru sayar)
+let oppScore      = 0;   // Rakibin galibiyet sayısı
+
+// ─── EKRAN DURUMU ────────────────────────────────────────────
+// "home" | "draft" | "champions" | "champDetail"
+let appScreen     = "home";
+let champDetailId = null;   // detay sayfasında açık şampiyon DB key
+let champLane     = "Tümü"; // şampiyonlar ekranı lane filtresi
+let champSearch   = "";     // şampiyonlar ekranı arama
+
+// ─── YENİ: TARAF & RAKİP ─────────────────────────────────────
+let mySide        = null;   // 0=Mavi, 1=Kırmızı, null=seçilmedi
+let opponentName  = "Rakip Takım";
+let setupPhase    = false;  // format seçildi, taraf/rakip ayarı bekleniyor
+
+// ─── LOCALSTORAGE ─────────────────────────────────────────────
+function saveHistory() {
+  try { localStorage.setItem("wrDraftHistory", JSON.stringify(savedMatchHistory)); } catch(e){}
+}
+function loadHistory() {
+  try {
+    const raw = localStorage.getItem("wrDraftHistory");
+    return raw ? JSON.parse(raw) : [];
+  } catch(e) { return []; }
+}
+let savedMatchHistory = loadHistory();
+
+// Fearless: önceki maçlarda sadece PICK yapılan şampiyonlar kilitlenir (ban'lar değil)
+function getFearlessLocked() {
+  if (!fearless) return new Set();
+  const locked = new Set();
+  matchHistory.forEach(m => {
+    ORDER.forEach((o, i) => {
+      const s = m.slots[i];
+      if (s && o.act === "pick") locked.add(s.id);
+    });
+  });
+  return locked;
+}
+
+// ─── YARDIMCILAR ─────────────────────────────────────────────
+function getUsed() {
+  const used = new Set();
+  // Bir id eklendiğinde, aynı gerçek şampiyona ait diğer tüm lane key'lerini de ekle
+  // (örn. camille picklenince camille_jg de otomatik kilitlenir).
+  const addWithFlex = (id) => {
+    used.add(id);
+    const n = DB[id]?.name;
+    if (n && NAME_TO_IDS[n]) NAME_TO_IDS[n].forEach(k => used.add(k));
+  };
+  slots.filter(Boolean).forEach(s => addWithFlex(s.id));
+  getFearlessLocked().forEach(id => addWithFlex(id));
+  return used;
+}
+
+function getMyPicks(team) {
+  return slots.filter((s,i)=>s&&ORDER[i]?.act==="pick"&&ORDER[i]?.t===team).map(s=>({id:s.id,...DB[s.id]}));
+}
+
+function getEnPicks(team) { return getMyPicks(1-team); }
+
+// ─── 3 BÖLÜMLÜ ÖNERİ MOTORU ─────────────────────────────────
+function computeSugg() {
+  if (step >= ORDER.length) return {ct:[],meta:[],filler:[],warns:[]};
+  const cur  = ORDER[step];
+  const myT  = cur.t;
+  // Eğer taraf seçilmişse ve bu adım kullanıcının tarafı değilse boş öneri döndür
+  if (mySide !== null && myT !== mySide) return {ct:[],meta:[],filler:[],warns:[],isEnemy:true};
+  // Ban aşamasında öneri yok
+  if (cur.act === "ban") return {ct:[],meta:[],filler:[],warns:[],isBan:true};
+  const used = getUsed();
+
+  const myPicks = getMyPicks(myT);
+  const enPicks = getEnPicks(myT);
+
+  // Kendi comfort picklerini düz set olarak topla (sadece tier 4 = senin picklerin)
+  const COMFORT_POOL = COMFORT_IDS;
+
+  // Son rakip pick
+  const lastEn     = enPicks.length ? enPicks[enPicks.length-1] : null;
+  const lastEnLane = lastEn ? lastEn.lanes[0] : null;
+
+  // Kendi seçilen koridorlar
+  const filledLanes = new Set(myPicks.flatMap(c=>c.lanes));
+
+  // ── BÖLÜM 1: ROL BAZLI CT ────────────────────────────────
+  let ctList = [];
+  if (lastEn) {
+    const enId = lastEn.id;
+    const enData = DB[enId] || lastEn;
+    const ctSet = new Set(enData.ct || []);
+    ctList = ALL
+      .filter(c => !used.has(c.id) && ctSet.has(c.id))
+      .map(c => {
+        const tierScore = getTier(c.id) * 3;
+        const laneBonus = c.lanes.includes(lastEnLane) ? 4 : 0;
+        const laneArr = META_POWER[lastEnLane] || [];
+        const mi = laneArr.indexOf(c.id);
+        const metaBonus = mi >= 0 ? (laneArr.length - mi) / laneArr.length * 2 : 0;
+        const isComfort = COMFORT_POOL.has(c.id);
+        const isBuff    = getPatchStatus(c.id) === "buff";
+        const isNerf    = getPatchStatus(c.id) === "nerf";
+        return {
+          ...c,
+          _score: 10 + tierScore + laneBonus + metaBonus
+            + (isComfort ? 5 : 0)
+            + (isBuff    ? 4 : 0)
+            + (isNerf    ? -2 : 0),
+          _why: lastEn.name + " CT",
+          _comfort: isComfort,
+          _patch: getPatchStatus(c.id),
+        };
+      })
+      .sort((a,b) => b._score - a._score)
+      .slice(0, 4);
+  }
+
+  // ── BÖLÜM 2: GENEL META GÜÇ PİCKLERİ ───────────────────
+  // Tüm koridorların meta listesini tier'a göre birleştir
+  const ctIds = new Set(ctList.map(c=>c.id));
+  const allMetaFlat = Object.entries(META_POWER).flatMap(([ln, arr]) =>
+    arr.map((id, i) => ({ id, lane: ln, metaRank: i, tier: getTier(id) }))
+  );
+  // Tekrar eden id'leri kaldır, tier > metaRank'e göre sırala
+  const seen = new Set();
+  const metaSorted = allMetaFlat
+    .filter(x => DB[x.id] && !used.has(x.id) && !ctIds.has(x.id) && !seen.has(x.id) && seen.add(x.id))
+    .sort((a,b) => (b.tier*100 - b.metaRank) - (a.tier*100 - a.metaRank));
+
+  const metaList = metaSorted.slice(0, 4).map(x => ({
+    ...DB[x.id], id: x.id,
+    _why: "Meta Pick",
+    _comfort: COMFORT_POOL.has(x.id),
+    _patch: getPatchStatus(x.id),
+  }));
+
+  // ── BÖLÜM 3: BOŞ KORİDOR TAMAMLAMA ─────────────────────
+  const allLanes  = ["Baron","Jungle","Mid","ADC","Support"];
+  const emptyLanes = allLanes.filter(l => !filledLanes.has(l));
+  const fillerIds  = new Set([...ctIds, ...metaList.map(c=>c.id)]);
+  const fillerList = [];
+
+  emptyLanes.forEach(el => {
+    const laneArr = META_POWER[el] || [];
+    const best = laneArr.find(id => DB[id] && !used.has(id) && !fillerIds.has(id));
+    if (best) {
+      fillerList.push({
+        ...DB[best], id: best,
+        _why: el + " İhtiyacı",
+        _comfort: COMFORT_POOL.has(best),
+        _patch: getPatchStatus(best),
+      });
+      fillerIds.add(best);
+    }
+  });
+
+  // ── UYARILAR ─────────────────────────────────────────────
+  const warns = [];
+  if (myPicks.length >= 2) {
+    const ap = myPicks.filter(c => ["AP","Hybrid"].includes(DB[c.id]?.dmg)).length;
+    const ad = myPicks.filter(c => ["AD","Hybrid"].includes(DB[c.id]?.dmg)).length;
+    const tk = myPicks.filter(c => ["Tank","Fighter","Engage"].includes(DB[c.id]?.cls)).length;
+    if (ap < 1) warns.push("⚠️ AP Hasar İhtiyacı Var!");
+    if (ad < 1) warns.push("⚠️ AD Hasar İhtiyacı Var!");
+    if (tk < 1) warns.push("⚠️ Ön Hat / Tank İhtiyacı Var!");
+  }
+
+  return {ct:ctList, meta:metaList, filler:fillerList, warns};
+}
+
+// ─── COMMUNITYDRAGON NUMERIC ID EŞLEŞTİRMESİ ────────────────
+// DB key -> CommunityDragon numeric ID
+// Norra (799/800) CDragon'da henüz yok → baş harfi gösterilir
+const CHAMP_ID = {
+  // SUPPORT
+  rakan:497, nautilus:111, leona:89, lulu:117, milio:902, braum:201,
+  nami:267, thresh:412, blitzcrank:53, soraka:16, janna:40, morgana:25,
+  alistar:12, seraphine:147, sona:37, lux:99, karma:43, zyra:143,
+  pyke:555, bard:432, zilean:26, yuumi:350, galio:3, swain:50,
+  shen_sup:98, singed_sup:27, ornn_sup:516, maokai:57, rell:526,
+  sett_sup:875, senna:235, pantheon_sup:80, gragas_sup:79, poppy_sup:78,
+  // ADC
+  smolder:901, kaisa:145, jhin:202, ezreal:81, vayne:67, lucian:236,
+  jinx:222, caitlyn:51, missfortune:21, draven:119, tristana:18, ashe:22,
+  varus:110, xayah:498, kogmaw:96, sivir:15, samira:360, twitch:29,
+  nilah:895, kalista:429, zeri:221, corki:42, akshan:166,
+  // MID
+  ahri:103, aurelionsol:136, aurelionsol_adc:136,
+  akali_mid:84, annie:1, aurora:893,
+  brand_mid:63, corki_mid:42, diana:131, ekko:245, fizz:105,
+  galio_mid:3, heimerdinger:74, irelia_mid:39, jayce_mid:126,
+  karma_mid:43, kassadin:38, katarina:55, kayle_mid:10, kennen:85,
+  lissandra:127, mel:800, mel_adc:800, morgana_mid:25, norra:null,
+  orianna:61, orianna_adc:61, ryze:13, seraphine_mid:147, smolder_mid:901,
+  swain_mid:50, syndra:134, taliyah:163, talon:91, teemo_mid:17,
+  twisted_fate:4, veigar:45, velkoz:161, vex:711, viktor:112,
+  vladimir:8, yasuo:157, yone:777, zed_mid:238, ziggs:115, ziggs_adc:115, zoe:142,
+  akshan_mid:166, pantheon_mid:80,
+  // JUNGLE
+  nidalee:76, taliyah_jg:163, viego:234, lee_sin:64, shyvana:102,
+  vi:254, xin_zhao:5, hecarim:120, evelynn:28, aatrox_jg:266,
+  lillia:876, ambessa_jg:799, riven_jg:92, wukong_jg:62, talon_jg:91,
+  khazix:121, fiddlesticks:9, pantheon_jg:80, kayn:141, zed_jg:238,
+  nocturne:56, olaf_jg:2, camille_jg:164, master_yi:11, jarvaniv:59,
+  rengar:107, graves:104, warwick:19, kindred:203, rammus:33, amumu:32,
+  volibear_jg:106, jax_jg:24, gwen_jg:887, irelia_jg:39, fizz_jg:105,
+  tryndamere_jg:23, ekko_jg:245, nautilus_jg:111, morgana_jg:25,
+  skarner:72, nunu:20, ksante:897, drmundo_jg:36, urgot_jg:6,
+  // BARON
+  ambessa:799, wukong:62, poppy_baron:78, malphite:54, ornn:516,
+  sion:14, aatrox:266, renekton:58, gwen:887, fiora:114, rumble:68,
+  camille:164, jax:24, irelia:39, nasus:75, singed:27, jayce:126,
+  volibear:106, sett:875, riven:92, olaf_baron:2, gnar:150,
+  darius:122, mordekaiser:82, tryndamere:23, kennen_baron:85,
+  yasuo_baron:157, yone_baron:777, shen:98, teemo:17, garen:86,
+  urgot:6, vladimir_baron:8, akali_baron:84, zed_baron:238,
+  ryze_baron:13, kayle:10, galio_baron:3, gragas_baron:79,
+  nautilus_baron:111, drmundo:36, zed:238, akali:84,
+};
+
+const CDN = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/";
+
+// Camille icin ozel foto (kullanicinin kendi yukledigi resim)
+const CAMILLE_PHOTO = "data:image/jpeg;base64,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";
+const NORRA_PHOTO = "data:image/jpeg;base64,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";
+
+// ddragon name map (CDragon'da olmayan yeni şampiyonlar için)
+const DDRAGON_FALLBACK = {
+  mel_adc:"Mel", mel:"Mel",
+  aurelionsol_adc:"AurelionSol", orianna_adc:"Orianna",
+  ziggs_adc:"Ziggs",
+};
+const DD_VER = "16.13.1";
+
+function champImg(id, size=36) {
+  const numId = CHAMP_ID[id];
+  const r = Math.round(size * 0.22);
+  const name = (DB[id]||{}).name || id;
+  const initial = name.charAt(0).toUpperCase();
+  const lc = LANE_COLOR[(DB[id]||{}).lanes?.[0]] || "#555";
+
+  // Baş harf fallback div'i (arka plan)
+  const fallbackDiv = `<span style="position:absolute;font-size:${Math.round(size*.42)}px;
+    font-weight:800;color:${lc};z-index:1">${initial}</span>`;
+
+  // Resim URL'si belirle
+  let url = null;
+  if (id === "camille" || id === "camille_jg") {
+    url = CAMILLE_PHOTO;
+  } else if (id === "norra") {
+    url = NORRA_PHOTO;
+  } else if (numId) {
+    url = `${CDN}${numId}.png`;
+  } else if (DDRAGON_FALLBACK[id]) {
+    url = `https://ddragon.leagueoflegends.com/cdn/${DD_VER}/img/champion/${DDRAGON_FALLBACK[id]}.png`;
+  }
+
+  // Resim yoksa sadece baş harf
+  if (!url) {
+    return `<div style="width:${size}px;height:${size}px;border-radius:${r}px;
+      background:#111128;flex-shrink:0;display:flex;align-items:center;
+      justify-content:center;font-size:${Math.round(size*.42)}px;
+      font-weight:800;color:${lc}">${initial}</div>`;
+  }
+
+  return `<div style="width:${size}px;height:${size}px;border-radius:${r}px;
+    overflow:hidden;flex-shrink:0;background:#111128;position:relative;
+    display:flex;align-items:center;justify-content:center">
+    ${fallbackDiv}
+    <img src="${url}" alt="" width="${size}" height="${size}"
+      onerror="this.style.opacity='0'"
+      style="border-radius:${r}px;object-fit:cover;object-position:top;
+      position:relative;z-index:2;display:block"/>
+  </div>`;
+}
+function _cdId(){ return 0; }
+
+// ─── RENDER ──────────────────────────────────────────────────
+function render() {
+
+  // ── ANA MENÜ ─────────────────────────────────────────────
+  if (appScreen === "home") {
+    const hist = savedMatchHistory;
+    document.getElementById("app").innerHTML = `
+      <div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;
+        padding:32px 16px 40px;background:#07070f">
+
+        <div style="margin-top:40px;margin-bottom:48px;text-align:center">
+          <div style="font-size:26px;font-weight:800;color:#fff;letter-spacing:1px;margin-bottom:6px">⚔️ WILD RIFT</div>
+          <div style="font-size:10px;color:#333;letter-spacing:4px">DRAFT ASISTANI</div>
+        </div>
+
+        <div style="width:100%;max-width:340px;display:flex;flex-direction:column;gap:14px">
+
+          <!-- DRAFT -->
+          <button onclick="appScreen='draft';seriesFormat=null;render()" style="
+            padding:22px 20px;border-radius:14px;font-size:15px;font-weight:800;
+            background:linear-gradient(135deg,#0d1a2e,#0d0d1e);
+            border:1px solid #3a8fff44;color:#3a8fff;
+            display:flex;align-items:center;gap:16px;text-align:left;">
+            <span style="font-size:28px">🗡️</span>
+            <span>
+              <span style="display:block;font-size:15px;color:#e0e0f0">Draft Başlat</span>
+              <span style="font-size:10px;color:#3a8fff;font-weight:600">Bo1 / Bo3 / Bo5</span>
+            </span>
+          </button>
+
+          <!-- ŞAMPIYONLAR -->
+          <button onclick="appScreen='champions';champLane='Tümü';champSearch='';render()" style="
+            padding:22px 20px;border-radius:14px;font-size:15px;font-weight:800;
+            background:linear-gradient(135deg,#1a0d2e,#0d0d1e);
+            border:1px solid #a020f044;color:#c060ff;
+            display:flex;align-items:center;gap:16px;text-align:left;">
+            <span style="font-size:28px">🏆</span>
+            <span>
+              <span style="display:block;font-size:15px;color:#e0e0f0">Şampiyonlar</span>
+              <span style="font-size:10px;color:#c060ff;font-weight:600">CT · Güçlü · Sinerjiler</span>
+            </span>
+          </button>
+
+          <!-- YAMA NOTLARI -->
+          <button onclick="appScreen='patch';render()" style="
+            padding:22px 20px;border-radius:14px;font-size:15px;font-weight:800;
+            background:linear-gradient(135deg,#1a1a0d,#0d0d1e);
+            border:1px solid #ffcc0244;color:#ffcc02;
+            display:flex;align-items:center;gap:16px;text-align:left;">
+            <span style="font-size:28px">📋</span>
+            <span>
+              <span style="display:block;font-size:15px;color:#e0e0f0">Yama Notları</span>
+              <span style="font-size:10px;color:#ffcc02;font-weight:600">
+                ${patchData.version ? patchData.version + " — Güncel" : "Yükleniyor..."}
+              </span>
+            </span>
+          </button>
+        </div>
+
+        <!-- GEÇMİŞ MAÇLAR -->
+        ${hist.length > 0 ? `
+          <div style="width:100%;max-width:340px;margin-top:32px">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+              <div style="font-size:9px;color:#444;letter-spacing:3px">📋 GEÇMİŞ MAÇLAR</div>
+              <button onclick="clearAllHistory()" style="font-size:9px;color:#333;padding:3px 8px;
+                border-radius:5px;border:1px solid #1a1a2e;background:#0d0d1e">Tümünü Sil</button>
+            </div>
+            ${hist.slice().reverse().map((m, ri) => {
+              const realIdx = hist.length - 1 - ri;
+              const bPicks = ORDER.map((o,i)=>({...o,i})).filter(o=>o.t===0&&o.act==="pick").map(o=>m.slots[o.i]).filter(Boolean);
+              const rPicks = ORDER.map((o,i)=>({...o,i})).filter(o=>o.t===1&&o.act==="pick").map(o=>m.slots[o.i]).filter(Boolean);
+              const sideLabel = m.mySide===0?"🔵 Mavi":m.mySide===1?"🔴 Kırmızı":"—";
+              const sideColor = m.mySide===0?"#3a8fff":m.mySide===1?"#ff4d4d":"#555";
+              return `<div style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:12px;
+                padding:12px;margin-bottom:8px">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+                  <div>
+                    <span style="font-size:10px;font-weight:800;color:#e0e0f0">${m.opponentName||"Rakip Takım"}</span>
+                    <span style="font-size:9px;color:#444;margin-left:6px">· Bo${m.format||1}</span>
+                    <span style="font-size:9px;color:${sideColor};margin-left:6px">${sideLabel}</span>
+                  </div>
+                  <button onclick="deleteHistory(${realIdx})" style="padding:3px 7px;border-radius:5px;
+                    border:1px solid #1a1a2e;background:#0a0a16;color:#333;font-size:11px">🗑</button>
+                </div>
+                <div style="font-size:8px;color:#333;margin-bottom:7px">${m.date||""}</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+                  <div>
+                    <div style="font-size:8px;color:#3a8fff;margin-bottom:3px">🔵 MAVİ</div>
+                    ${bPicks.map(c=>`<div style="font-size:9px;color:#777">${c.name}</div>`).join("")}
+                  </div>
+                  <div>
+                    <div style="font-size:8px;color:#ff4d4d;margin-bottom:3px">🔴 KIRMIZI</div>
+                    ${rPicks.map(c=>`<div style="font-size:9px;color:#777">${c.name}</div>`).join("")}
+                  </div>
+                </div>
+              </div>`;
+            }).join("")}
+          </div>
+        ` : ""}
+      </div>`;
+    return;
+  }
+
+  // ── YAMA NOTLARI EKRANI ──────────────────────────────────
+  if (appScreen === "patch") {
+    const groups = [
+      { key:"buffs",   label:"Güçlendirme", icon:"🔺", color:"#00ff88", border:"#00ff8833", bg:"#00ff8810" },
+      { key:"nerfs",   label:"Zayıflatma",  icon:"🔻", color:"#ff4444", border:"#ff444433", bg:"#ff444410" },
+      { key:"changes", label:"Denge",       icon:"🔄", color:"#4da6ff", border:"#4da6ff33", bg:"#4da6ff10" },
+    ];
+
+    function findChampByNorm(normName) {
+      return ALL.find(c => {
+        const n = c.name.toLowerCase().replace(/[^a-z0-9]/g,"");
+        const base = normName.replace(/_.*$/,"");
+        return n === base || n.startsWith(base) || base.startsWith(n);
+      });
+    }
+
+    document.getElementById("app").innerHTML = `
+      <div style="min-height:100vh;background:#07070f">
+
+        <!-- HEADER -->
+        <div style="padding:12px 14px;background:#0a0a18;border-bottom:1px solid #141428;
+          position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
+          display:flex;align-items:center;gap:10px">
+          <button onclick="appScreen='home';render()" style="padding:6px 12px;border-radius:8px;
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px">← Geri</button>
+          <div style="flex:1">
+            <div style="font-size:14px;font-weight:800;color:#fff">📋 Yama Notları</div>
+            <div style="font-size:9px;color:#ffcc02">${patchData.version} · ${patchData.date}</div>
+          </div>
+          <div style="font-size:9px;color:#333;text-align:right">
+            Otomatik<br>güncellenir
+          </div>
+        </div>
+
+        <div style="padding:14px;display:flex;flex-direction:column;gap:12px">
+
+          <!-- ÖZET SAYAÇLAR -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+            ${groups.map(g => `
+              <div style="background:#0d0d1e;border:1px solid ${g.border};border-radius:10px;
+                padding:10px;text-align:center">
+                <div style="font-size:20px">${g.icon}</div>
+                <div style="font-size:18px;font-weight:800;color:${g.color};margin:2px 0">
+                  ${patchData[g.key].length}
+                </div>
+                <div style="font-size:8px;color:#444">${g.label}</div>
+              </div>`).join("")}
+          </div>
+
+          <!-- DETAY GRUPLAR -->
+          ${groups.map(g => {
+            const list = patchData[g.key];
+            if (!list.length) return "";
+            return `
+              <div style="background:#0d0d1e;border:1px solid ${g.border};border-radius:14px;padding:14px">
+                <div style="font-size:11px;font-weight:800;color:${g.color};
+                  margin-bottom:12px;display:flex;align-items:center;gap:6px">
+                  <span style="font-size:16px">${g.icon}</span>
+                  ${g.label.toUpperCase()} — ${list.length} Şampiyon
+                </div>
+                <div style="display:flex;flex-direction:column;gap:8px">
+                  ${list.map(normName => {
+                    const c = findChampByNorm(normName);
+                    if (!c) return "";
+                    const lc = LANE_COLOR[c.lanes?.[0]]||"#888";
+                    const detail = patchData.details?.[normName] || "";
+                    return `<div onclick="champDetailId='${c.id}';appScreen='champDetail';render()"
+                      style="display:flex;align-items:center;gap:10px;padding:10px;
+                      border-radius:10px;background:${g.bg};cursor:pointer;
+                      border:1px solid ${g.border}">
+                      <div style="width:48px;height:48px;border-radius:9px;overflow:hidden;
+                        border:2px solid ${g.color}44;flex-shrink:0">
+                        ${champImg(c.id, 48)}
+                      </div>
+                      <div style="flex:1;min-width:0">
+                        <div style="font-size:13px;font-weight:700;color:#e0e0f0">${c.name}</div>
+                        <div style="font-size:9px;color:${lc};margin-top:1px">${c.lanes?.join(" · ")} · ${c.cls}</div>
+                        ${detail?`<div style="font-size:9px;color:#555;margin-top:3px;
+                          white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${detail}</div>`:""}
+                      </div>
+                      <span style="font-size:20px;flex-shrink:0">${g.icon}</span>
+                    </div>`;
+                  }).join("")}
+                </div>
+              </div>`;
+          }).join("")}
+
+          <!-- Riot resmi link -->
+          <div style="text-align:center;padding:8px 0 24px">
+            <a href="https://wildrift.leagueoflegends.com/tr-tr/news/tags/patch-notes/"
+              target="_blank" style="font-size:11px;color:#3a8fff;text-decoration:none;
+              padding:10px 20px;border-radius:10px;border:1px solid #3a8fff44;
+              background:#3a8fff11;display:inline-block">
+              🌐 Tüm Yama Notları →
+            </a>
+          </div>
+        </div>
+      </div>`;
+    return;
+  }
+  if (appScreen === "champions") {
+    const lc_map = {Baron:"#ef9a9a",Jungle:"#a5d6a7",Mid:"#80cbc4",ADC:"#ffcc02",Support:"#ce93d8"};
+    // Flex şampiyonları grupla (aynı isim → tek kart)
+    const seen = new Map();
+    ALL.forEach(c => {
+      const base = c.name;
+      if (!seen.has(base)) seen.set(base, {...c, allIds:[c.id], allLanes:[...c.lanes]});
+      else {
+        const ex = seen.get(base);
+        ex.allIds.push(c.id);
+        c.lanes.forEach(l => { if (!ex.allLanes.includes(l)) ex.allLanes.push(l); });
+      }
+    });
+    const champList = [...seen.values()]
+      .filter(c => {
+        if (champLane !== "Tümü" && !c.allLanes.includes(champLane)) return false;
+        if (champSearch && !c.name.toLowerCase().includes(champSearch.toLowerCase())) return false;
+        return true;
+      })
+      .sort((a,b) => a.name.localeCompare(b.name, "tr"));
+
+    document.getElementById("app").innerHTML = `
+      <div style="min-height:100vh;background:#07070f;display:flex;flex-direction:column">
+
+        <!-- HEADER -->
+        <div style="padding:12px 14px;background:#0a0a18;border-bottom:1px solid #141428;
+          position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top))">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <button onclick="appScreen='home';render()" style="padding:6px 12px;border-radius:8px;
+              border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px">← Geri</button>
+            <div style="font-size:14px;font-weight:800;color:#fff">🏆 Şampiyonlar</div>
+          </div>
+          <!-- Arama -->
+          <input type="text" id="champSearchInput" value="${champSearch}"
+            oninput="champSearch=this.value;updateChampGrid()"
+            placeholder="Şampiyon ara..." autocomplete="off"
+            style="width:100%;padding:9px 14px;border-radius:8px;border:1px solid #252540;
+            background:#080816;color:#e0e0f0;font-size:14px;outline:none;
+            font-family:inherit;box-sizing:border-box;margin-bottom:10px;caret-color:#4da6ff"/>
+          <!-- Lane filtresi -->
+          <div style="display:flex;gap:6px;overflow-x:auto;padding-bottom:2px">
+            ${["Tümü","Baron","Jungle","Mid","ADC","Support"].map(l => {
+              const lc = lc_map[l]||"#4da6ff";
+              const act = champLane===l;
+              return `<button onclick="champLane='${l}';render()" style="
+                padding:5px 12px;border-radius:20px;font-size:10px;font-weight:700;
+                white-space:nowrap;flex-shrink:0;
+                background:${act?lc+"30":"#0f0f1e"};
+                border:1px solid ${act?lc+"88":"#1a1a2e"};
+                color:${act?lc:"#444"}">${l}</button>`;
+            }).join("")}
+          </div>
+        </div>
+
+        <!-- GRID -->
+        <div id="champGrid" style="padding:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+          ${champList.map(c => {
+            const lc = lc_map[c.allLanes[0]]||"#888";
+            const flex = c.allLanes.length > 1;
+            return `<div onclick="champDetailId='${c.id}';appScreen='champDetail';render()"
+              style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:12px;
+              padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:6px;
+              cursor:pointer;position:relative">
+              ${flex?`<div style="position:absolute;top:5px;right:5px;font-size:7px;
+                padding:1px 5px;border-radius:4px;background:#ffcc0220;
+                border:1px solid #ffcc0244;color:#ffcc02;font-weight:800">FLEX</div>`:""}
+              <div style="width:56px;height:56px;border-radius:10px;overflow:hidden;border:1px solid ${lc}44">
+                ${champImg(c.id, 56)}
+              </div>
+              <div style="font-size:10px;font-weight:700;color:#e0e0f0;text-align:center;
+                word-break:break-word;line-height:1.3">${c.name} ${patchBadge(c.id, true)}</div>
+              <div style="font-size:8px;color:${lc}">${c.allLanes.join(" · ")}</div>
+            </div>`;
+          }).join("")}
+        </div>
+      </div>`;
+    return;
+  }
+
+  // ── ŞAMPIYON DETAY ────────────────────────────────────────
+  if (appScreen === "champDetail" && champDetailId) {
+    const c = DB[champDetailId];
+    if (!c) { appScreen="champions"; render(); return; }
+
+    // Flex: aynı isimde başka lane var mı?
+    const flexVariants = ALL.filter(x => x.name === c.name && x.id !== champDetailId);
+
+    // CT listesi → DB'den bul
+    const ctIds = c.ct || [];
+    const ctByIds = c.ctBy || [];
+    const synIds = c.syn || [];
+
+    function miniChamp(id) {
+      const d = DB[id];
+      if (!d) return "";
+      const lc = LANE_COLOR[d.lanes?.[0]]||"#888";
+      return `<div onclick="champDetailId='${id}';render()"
+        style="display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;
+        min-width:56px">
+        <div style="width:52px;height:52px;border-radius:10px;overflow:hidden;
+          border:1px solid ${lc}44">
+          ${champImg(id, 52)}
+        </div>
+        <div style="font-size:8px;color:#999;text-align:center;max-width:56px;
+          white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${d.name}</div>
+      </div>`;
+    }
+
+    const lc = LANE_COLOR[c.lanes?.[0]]||"#888";
+    document.getElementById("app").innerHTML = `
+      <div style="min-height:100vh;background:#07070f">
+
+        <!-- HEADER -->
+        <div style="padding:12px 14px;background:#0a0a18;border-bottom:1px solid #141428;
+          position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
+          display:flex;align-items:center;gap:10px">
+          <button onclick="appScreen='champions';render()" style="padding:6px 12px;border-radius:8px;
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← Geri</button>
+          <div style="font-size:14px;font-weight:800;color:#fff">${c.name}</div>
+        </div>
+
+        <div style="padding:14px">
+
+          <!-- ŞAMPIYON KARTI -->
+          <div style="display:flex;align-items:center;gap:14px;padding:14px;
+            background:#0d0d1e;border:1px solid #1a1a2e;border-radius:14px;margin-bottom:14px">
+            <div style="width:72px;height:72px;border-radius:12px;overflow:hidden;
+              border:2px solid ${lc}66;flex-shrink:0">
+              ${champImg(champDetailId, 72)}
+            </div>
+            <div style="flex:1">
+              <div style="font-size:18px;font-weight:800;color:#fff;margin-bottom:4px">${c.name}</div>
+              <div style="font-size:10px;color:${lc};margin-bottom:6px">${c.lanes?.join(" · ")} · ${c.cls} · ${c.dmg}</div>
+              ${patchBadge(champDetailId) ? `<div style="margin-bottom:6px">${patchBadge(champDetailId)}</div>` : ""}
+              ${flexVariants.length > 0 ? `
+                <div style="font-size:9px;color:#ffcc02;margin-bottom:6px">🔀 FLEX</div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap">
+                  ${flexVariants.map(v => {
+                    const vlc = LANE_COLOR[v.lanes?.[0]]||"#888";
+                    return `<button onclick="champDetailId='${v.id}';render()" style="
+                      padding:3px 10px;border-radius:6px;font-size:9px;font-weight:700;
+                      background:${vlc}18;border:1px solid ${vlc}44;color:${vlc}">
+                      ${v.lanes?.[0]}
+                    </button>`;
+                  }).join("")}
+                  <button onclick="champDetailId='${champDetailId}';render()" style="
+                    padding:3px 10px;border-radius:6px;font-size:9px;font-weight:700;
+                    background:${lc}33;border:2px solid ${lc};color:${lc}">
+                    ${c.lanes?.[0]} ✓
+                  </button>
+                </div>` : ""}
+            </div>
+          </div>
+
+          <!-- CT: KARŞISINDA GÜÇLÜ (bunu ezenler) -->
+          ${ctIds.length > 0 ? `
+            <div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #ff303033;
+              border-radius:12px;padding:12px">
+              <div style="font-size:10px;font-weight:800;color:#ff6060;margin-bottom:10px">
+                🚨 Karşısında Güçlü Olan (CT)
+              </div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap">
+                ${ctIds.map(id => miniChamp(id)).join("")}
+              </div>
+            </div>` : ""}
+
+          <!-- CTBY: KARŞISINDA ZAYIF -->
+          ${ctByIds.length > 0 ? `
+            <div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #4da6ff33;
+              border-radius:12px;padding:12px">
+              <div style="font-size:10px;font-weight:800;color:#4da6ff;margin-bottom:10px">
+                💪 Karşısında Zayıf Olan (Ezer)
+              </div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap">
+                ${ctByIds.map(id => miniChamp(id)).join("")}
+              </div>
+            </div>` : ""}
+
+          <!-- SİNERJİ -->
+          ${synIds.length > 0 ? `
+            <div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #00ff8833;
+              border-radius:12px;padding:12px">
+              <div style="font-size:10px;font-weight:800;color:#00ff88;margin-bottom:10px">
+                🤝 Sinerjiler
+              </div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap">
+                ${synIds.map(id => miniChamp(id)).join("")}
+              </div>
+            </div>` : ""}
+
+          ${ctIds.length===0 && ctByIds.length===0 && synIds.length===0 ? `
+            <div style="text-align:center;padding:32px;color:#333;font-size:12px">
+              Bu şampiyon için henüz veri yok
+            </div>` : ""}
+
+        </div>
+      </div>`;
+    return;
+  }
+
+  // ── DRAFT AKIŞI ──────────────────────────────────────────
+  if (appScreen === "draft" && !seriesFormat) {
+    const hist = savedMatchHistory;
+    document.getElementById("app").innerHTML = `
+      <div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;
+        padding:24px 16px 40px;background:#07070f">
+
+        <!-- LOGO -->
+        <div style="margin-top:32px;margin-bottom:32px;text-align:center">
+          <div style="font-size:24px;font-weight:800;color:#fff;letter-spacing:1px;margin-bottom:4px">⚔️ WILD RIFT DRAFT</div>
+          <div style="font-size:10px;color:#333;letter-spacing:4px">TASLAK ASISTANI</div>
+        </div>
+
+        <!-- FORMAT SEÇİMİ -->
+        <div style="width:100%;max-width:340px">
+          <div style="font-size:9px;color:#444;letter-spacing:3px;margin-bottom:10px;text-align:center">FORMAT SEÇ</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            ${[1,3,5].map(f=>`
+              <button onclick="selectFormat(${f},false)" style="
+                padding:17px 20px;border-radius:12px;font-size:14px;font-weight:800;
+                background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;
+                letter-spacing:1px;text-align:left;transition:all .15s;display:flex;align-items:center;gap:12px;"
+                onmouseenter="this.style.borderColor='#4da6ff44';this.style.background='#111128'"
+                onmouseleave="this.style.borderColor='#252540';this.style.background='#0d0d1e'">
+                <span style="font-size:18px">${f===1?"1️⃣":f===3?"3️⃣":"5️⃣"}</span>
+                <span>
+                  <span style="display:block;font-size:13px">Bo${f}</span>
+                  <span style="font-size:9px;color:#555;font-weight:600;letter-spacing:0">${f===1?"Tek Maç":f===3?"İlk 2'yi Alan Kazanır":"İlk 3'ü Alan Kazanır"}</span>
+                </span>
+              </button>
+            `).join("")}
+          </div>
+
+          <!-- FEARLESS -->
+          <div style="margin-top:16px;padding:14px 16px;background:#0d0d1e;border:1px solid #1a1a2e;border-radius:12px">
+            <div style="font-size:9px;color:#666;letter-spacing:2px;margin-bottom:8px">⚡ FEARLESS DRAFT</div>
+            <div style="font-size:10px;color:#555;margin-bottom:10px;line-height:1.6">
+              Önceki maçlarda seçilen şampiyonlar bir sonraki maçta seçilemez.
+            </div>
+            <div style="display:flex;gap:8px">
+              ${[3,5].map(f=>`
+                <button onclick="selectFormat(${f},true)" style="
+                  flex:1;padding:9px 6px;border-radius:8px;font-size:10px;font-weight:800;
+                  background:#a020f018;border:1px solid #a020f044;color:#c060ff;">
+                  Bo${f} + Fearless
+                </button>
+              `).join("")}
+            </div>
+          </div>
+        </div>
+
+        <!-- GEÇMİŞ MAÇLAR kaldırıldı — Ana Menü'de gösteriliyor -->
+        <div style="margin-top:16px;width:100%;max-width:340px">
+          <button onclick="appScreen='home';render()" style="width:100%;padding:12px;
+            border-radius:10px;font-size:12px;background:#0a0a16;
+            border:1px solid #1a1a2e;color:#444">← Ana Menüye Dön</button>
+        </div>
+      </div>`;
+    return;
+  }
+
+  // ── KURULUM EKRANI (Taraf + Rakip) ───────────────────────
+  if (setupPhase) {
+    document.getElementById("app").innerHTML = `
+      <div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;
+        justify-content:center;padding:24px 16px;background:#07070f">
+
+        <div style="font-size:20px;font-weight:800;color:#fff;margin-bottom:4px">⚔️ WILD RIFT DRAFT</div>
+        <div style="font-size:9px;color:#444;letter-spacing:3px;margin-bottom:8px">
+          Bo${seriesFormat} ${fearless?"· FEARLESS":""}
+        </div>
+        <div style="font-size:10px;color:#3a8fff;margin-bottom:32px">Maç ${currentMatch} Kurulumu</div>
+
+        <div style="width:100%;max-width:340px;display:flex;flex-direction:column;gap:14px">
+
+          <!-- RAKİP TAKIM ADI -->
+          <div style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:12px;padding:14px 16px">
+            <div style="font-size:9px;color:#444;letter-spacing:2px;margin-bottom:10px">🏴 RAKİP TAKIM</div>
+            <input id="opponentInput" type="text" value="${opponentName}"
+              oninput="opponentName=this.value"
+              placeholder="Rakip Takım Adı"
+              autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+              style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #252540;
+              background:#080816;color:#e0e0f0;font-size:15px;outline:none;
+              font-family:inherit;caret-color:#4da6ff"/>
+          </div>
+
+          <!-- TARAF SEÇİMİ -->
+          <div style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:12px;padding:14px 16px">
+            <div style="font-size:9px;color:#444;letter-spacing:2px;margin-bottom:12px">
+              🎯 ${currentMatch>1?"Maç "+currentMatch+" — ":""}SENİN TARAFI
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <button onclick="selectSide(0)" style="
+                padding:16px 10px;border-radius:10px;font-size:13px;font-weight:800;
+                background:${mySide===0?"#3a8fff33":"#0a0a18"};
+                border:2px solid ${mySide===0?"#3a8fff":"#1a1a2e"};color:${mySide===0?"#3a8fff":"#555"};
+                transition:all .15s">
+                🔵<br><span style="font-size:11px">Mavi Taraf</span>
+              </button>
+              <button onclick="selectSide(1)" style="
+                padding:16px 10px;border-radius:10px;font-size:13px;font-weight:800;
+                background:${mySide===1?"#ff4d4d33":"#0a0a18"};
+                border:2px solid ${mySide===1?"#ff4d4d":"#1a1a2e"};color:${mySide===1?"#ff4d4d":"#555"};
+                transition:all .15s">
+                🔴<br><span style="font-size:11px">Kırmızı Taraf</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- BAŞLAT -->
+          <button onclick="confirmSetup()" ${mySide===null?"disabled":""} style="
+            padding:16px;border-radius:12px;font-size:14px;font-weight:800;
+            background:${mySide===null?"#111120":"linear-gradient(135deg,#3a8fff22,#a020f022)"};
+            border:1px solid ${mySide===null?"#1a1a2e":"#a020f066"};
+            color:${mySide===null?"#333":"#c060ff"};
+            letter-spacing:1px;transition:all .2s;opacity:${mySide===null?.5:1}">
+            ▶ Taslağı Başlat
+          </button>
+
+          <button onclick="doResetSeries()" style="padding:10px;border-radius:8px;font-size:11px;
+            background:#0a0a16;border:1px solid #1a1a2e;color:#333">
+            ← Format Seçimine Dön
+          </button>
+        </div>
+      </div>`;
+    return;
+  }
+
+  // ── SERİ BİTİŞ EKRANI ────────────────────────────────────
+  const needed = seriesFormat===1?1:seriesFormat===3?2:3;
+  const seriesOver = myScore>=needed || oppScore>=needed;
+  if (seriesOver) {
+    const winner = myScore>=needed ? "🏆 SEN" : `😔 ${opponentName||"RAKİP"}`;
+    const wColor = myScore>=needed ? "#3ad48f" : "#ff4d4d";
+    document.getElementById("app").innerHTML = `
+      <div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;
+        justify-content:center;padding:24px;background:#07070f">
+        <div style="font-size:13px;color:#666;letter-spacing:2px;margin-bottom:8px">SERİ SONUCU</div>
+        <div style="font-size:28px;font-weight:800;color:${wColor};margin-bottom:4px">${winner} KAZANDI</div>
+        <div style="font-size:16px;color:#888;margin-bottom:32px">${myScore} — ${oppScore}</div>
+
+        ${matchHistory.length>0?`
+          <div style="width:100%;max-width:360px;margin-bottom:24px">
+            <div style="font-size:9px;color:#444;letter-spacing:2px;margin-bottom:8px">MAÇ GEÇMİŞİ</div>
+            ${matchHistory.map((m,i)=>matchSummaryH(m,i)).join("")}
+          </div>
+        `:""}
+
+        <button onclick="doResetSeries()" style="width:100%;max-width:320px;padding:14px;
+          border-radius:10px;font-size:13px;font-weight:800;
+          background:linear-gradient(135deg,#3a8fff18,#a020f018);
+          border:1px solid #a020f044;color:#c060ff">🔄 Yeni Seri Başlat</button>
+      </div>`;
+    return;
+  }
+
+  const cur  = step < ORDER.length ? ORDER[step] : null;
+  const done = !cur;
+  const tc   = cur ? (cur.t===0?"#3a8fff":"#ff4d4d") : "#888";
+  const sugg = computeSugg();
+  const used = getUsed();
+
+  // Takım slotları
+  const B0 = ORDER.map((o,i)=>({...o,i})).filter(o=>o.t===0&&o.act==="ban");
+  const P0 = ORDER.map((o,i)=>({...o,i})).filter(o=>o.t===0&&o.act==="pick");
+  const B1 = ORDER.map((o,i)=>({...o,i})).filter(o=>o.t===1&&o.act==="ban");
+  const P1 = ORDER.map((o,i)=>({...o,i})).filter(o=>o.t===1&&o.act==="pick");
+
+  // ── Slot HTML ────────────────────────────────────────────
+  function slotH(o, isBan) {
+    const c    = slots[o.i];
+    const isA  = o.i===step && !done;
+    const col  = o.t===0?"#3a8fff":"#ff4d4d";
+    return `<div onclick="slotClick(${o.i})" style="
+      display:flex;align-items:center;gap:6px;padding:${isBan?"3px 7px":"6px 8px"};
+      border-radius:7px;margin-bottom:3px;cursor:${isA?"pointer":"default"};
+      background:${isA?col+"22":c?"#111120":"#0a0a16"};
+      border:1px solid ${isA?col:c?"#1e1e30":"#141426"};
+      min-height:${isBan?26:40}px;
+      box-shadow:${isA?`0 0 8px ${col}44`:"none"};
+      opacity:${c&&isBan?.6:1};transition:border-color .12s;
+    ">
+      ${c ? `
+        ${isBan
+          ? `<div style="width:18px;height:18px;border-radius:4px;overflow:hidden;flex-shrink:0;opacity:.5">
+               ${champImg(c.id,18)}
+             </div>`
+          : champImg(c.id, 28)}
+        <span style="flex:1;font-size:${isBan?9:12}px;font-weight:700;
+          color:${isBan?"#555":"#e0e0f0"};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+          text-decoration:${isBan?"line-through":"none"}">${c.name}</span>
+        ${!isBan?`<span style="font-size:8px;color:${LANE_COLOR[c.lanes?.[0]]||"#888"};flex-shrink:0">${c.lanes?.[0]}</span>`:""}
+      ` : `<span style="font-size:8px;color:${isA?col:"#252540"}">${isA?(isBan?"Banla...":"Seç..."):" "}</span>`}
+    </div>`;
+  }
+
+  // ── Takım paneli ─────────────────────────────────────────
+  function teamH(col, lbl, bans, picks) {
+    return `<div style="background:#0d0d1e;border:1px solid ${col}28;border-radius:10px;padding:8px">
+      <div style="font-size:9px;font-weight:800;color:${col};letter-spacing:1.5px;
+        margin-bottom:7px;border-bottom:1px solid ${col}22;padding-bottom:5px">${lbl}</div>
+      <div style="font-size:8px;color:#3a3a50;margin-bottom:4px;letter-spacing:1px">BANLAR</div>
+      ${bans.map(o=>slotH(o,true)).join("")}
+      <div style="font-size:8px;color:#3a3a50;margin:7px 0 4px;letter-spacing:1px">SEÇIMLER</div>
+      ${picks.map(o=>slotH(o,false)).join("")}
+    </div>`;
+  }
+
+  // ── Öneri kartı ──────────────────────────────────────────
+  function cardH(c, accent) {
+    const lc = LANE_COLOR[c.lanes?.[0]] || "#888";
+    return `<div onclick="pickChamp('${c.id}')" class="fade" style="
+      display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;
+      background:#0d0d1e;border:1px solid ${c._comfort?"#00ff8822":"#1a1a2e"};cursor:pointer;margin-bottom:5px;
+      transition:border-color .12s;
+    " onmouseenter="this.style.borderColor='${c._comfort?"#00ff8866":lc}'" onmouseleave="this.style.borderColor='${c._comfort?"#00ff8822":"#1a1a2e"}'">
+      <div style="width:40px;height:40px;border-radius:8px;overflow:hidden;flex-shrink:0;
+        border:1px solid ${accent}44;background:#080816">
+        ${champImg(c.id, 40)}
+      </div>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:5px;flex-wrap:wrap">
+          <span style="font-size:12px;font-weight:700;color:#e0e0f0">${c.name}</span>
+          ${c._comfort?`<span style="font-size:7px;padding:1px 6px;border-radius:3px;font-weight:800;
+            background:#00ff8818;border:1px solid #00ff8855;color:#00ff88">🎯 COMFORT</span>`:""}
+          ${c._patch?patchBadge(c.id):""}
+        </div>
+        <div style="font-size:8px;color:${lc};margin-top:2px">${c.lanes?.join(" · ")} · ${c.cls}</div>
+        ${c._why?`<div style="margin-top:3px">
+          <span style="font-size:7px;padding:1px 6px;border-radius:3px;font-weight:700;
+            background:${accent}18;border:1px solid ${accent}44;color:${accent}">${c._why}</span>
+        </div>`:""}
+      </div>
+      <div style="padding:5px 8px;border-radius:6px;font-size:9px;font-weight:700;
+        background:${accent}18;border:1px solid ${accent}44;color:${accent};flex-shrink:0">SEÇ</div>
+    </div>`;
+  }
+
+  function buildPanelH() { return ""; }
+
+  // ── Öneri paneli ─────────────────────────────────────────
+  function suggH() {
+    if (done) return "";
+    // Rakip sırası
+    if (sugg.isEnemy) {
+      const enCol = cur.t===0?"#3a8fff":"#ff4d4d";
+      const enLbl = cur.t===0?"🔵 Mavi":"🔴 Kırmızı";
+      return `<div style="margin-bottom:10px;padding:18px;border-radius:10px;
+        background:#0a0a18;border:1px solid ${enCol}18;text-align:center">
+        <div style="font-size:20px;margin-bottom:6px">${cur.act==="ban"?"🚫":"⚔️"}</div>
+        <div style="font-size:11px;font-weight:800;color:${enCol};letter-spacing:1px">
+          ${enLbl} ${cur.act==="ban"?"BANLAMA":"SEÇİM"} SIRASI
+        </div>
+        <div style="font-size:9px;color:#333;margin-top:4px">Rakip hamlesi — öneri devre dışı</div>
+      </div>`;
+    }
+    // Ban aşaması — öneri yok
+    if (sugg.isBan) {
+      const col = cur.t===0?"#3a8fff":"#ff4d4d";
+      const lbl = cur.t===0?"🔵 Mavi":"🔴 Kırmızı";
+      return `<div style="margin-bottom:10px;padding:18px;border-radius:10px;
+        background:#0a0a18;border:1px solid #ff444422;text-align:center">
+        <div style="font-size:20px;margin-bottom:6px">🚫</div>
+        <div style="font-size:11px;font-weight:800;color:#ff6060;letter-spacing:1px">BAN AŞAMASI</div>
+        <div style="font-size:9px;color:#333;margin-top:4px">${lbl} ban yapıyor — öneri yok</div>
+      </div>`;
+    }
+    const lastEn = getEnPicks(cur.t);
+    const last   = lastEn.length ? lastEn[lastEn.length-1] : null;
+    return `<div style="margin-bottom:10px">
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
+        <div class="pulse" style="width:6px;height:6px;border-radius:3px;background:#ffcc02"></div>
+        <span style="font-size:9px;font-weight:800;color:#ffcc02;letter-spacing:2px">ÖNERİ PANELİ</span>
+        ${cur.t===0
+          ?`<span style="font-size:9px;color:#3a8fff;font-weight:700;margin-left:4px">▶ Mavi için</span>`
+          :`<span style="font-size:9px;color:#ff4d4d;font-weight:700;margin-left:4px">▶ Kırmızı için</span>`}
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:8px">
+
+        <!-- BÖLÜM 1: CT -->
+        <div style="background:#0a0a18;border:1px solid #ff303033;border-radius:10px;padding:10px">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:7px">
+            <span style="font-size:10px;font-weight:800;color:#ff6060">🚨 1. Koridor CT Önerisi</span>
+            ${last?`<span style="font-size:8px;padding:1px 7px;border-radius:4px;
+              background:#ff303020;border:1px solid #ff303050;color:#ff9090;margin-left:auto">
+              vs ${last.name} (${last.lanes?.[0]})
+            </span>`:""}
+          </div>
+          ${sugg.ct.length
+            ? sugg.ct.map(c=>cardH(c,"#ff6060")).join("")
+            : `<div style="font-size:11px;color:#333;text-align:center;padding:16px">
+                ${last?"Rakip seçime göre CT bulunamadı":"Rakip henüz pick yapmadı"}
+              </div>`}
+        </div>
+
+        <!-- BÖLÜM 2: META -->
+        <div style="background:#0a0a18;border:1px solid #ffcc0233;border-radius:10px;padding:10px">
+          <div style="font-size:10px;font-weight:800;color:#ffcc02;margin-bottom:7px">🌟 2. Meta Güç Pickleri</div>
+          ${sugg.meta.length
+            ? sugg.meta.map(c=>cardH(c,"#ffcc02")).join("")
+            : `<div style="font-size:11px;color:#333;text-align:center;padding:16px">Yeterli veri yok</div>`}
+        </div>
+
+        <!-- BÖLÜM 3: BOŞ KORİDOR -->
+        <div style="background:#0a0a18;border:1px solid #a020f033;border-radius:10px;padding:10px">
+          <div style="font-size:10px;font-weight:800;color:#c060ff;margin-bottom:7px">🗺️ 3. Boş Koridor Tamamlayıcı</div>
+          ${sugg.filler.length
+            ? sugg.filler.map(c=>cardH(c,"#c060ff")).join("")
+            : `<div style="font-size:11px;color:#333;text-align:center;padding:16px">Tüm koridorlar dolu</div>`}
+        </div>
+
+      </div>
+    </div>`;
+  }
+
+  // ── Uyarılar ─────────────────────────────────────────────
+  function warnsH() {
+    if (!sugg.warns.length) return "";
+    return `<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px">
+      ${sugg.warns.map(w=>`<div class="warn" style="
+        padding:6px 12px;border-radius:6px;font-size:10px;font-weight:800;
+        background:linear-gradient(135deg,#E8405722,#8B000022);
+        border:1px solid #E8405766;color:#ff8080">${w}</div>`).join("")}
+    </div>`;
+  }
+
+  // ── Şampiyon havuzu ──────────────────────────────────────
+  function poolH() {
+    const sugIds = new Set([
+      ...sugg.ct.map(c=>c.id),
+      ...sugg.meta.map(c=>c.id),
+      ...sugg.filler.map(c=>c.id),
+    ]);
+    const list = ALL.filter(c=>{
+      if (used.has(c.id)) return false;
+      if (lane!=="Tümü" && !c.lanes.includes(lane)) return false;
+      if (search && !c.name.toLowerCase().includes(search.toLowerCase())) return false;
+      return true;
+    }).sort((a,b) => a.name.localeCompare(b.name, "tr"));
+
+    const tabs = LANES.map(l=>{
+      const lc = LANE_COLOR[l]||"#4da6ff";
+      const act= lane===l;
+      return `<button onclick="setLane('${l}')" style="
+        padding:6px 12px;border-radius:20px;font-size:10px;font-weight:700;
+        background:${act?lc+"30":"#0f0f1e"};border:1px solid ${act?lc+"88":"#1a1a2e"};
+        color:${act?lc:"#444"};white-space:nowrap">${l}</button>`;
+    }).join("");
+
+    const rows = list.map(c=>{
+      const isSug = sugIds.has(c.id);
+      const lc    = LANE_COLOR[c.lanes?.[0]]||"#888";
+      return `<div onclick="pickChamp('${c.id}')" style="
+        display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:8px;
+        background:${isSug?"#ffcc0210":"#0d0d1e"};border:1px solid ${isSug?"#ffcc0240":"#141428"};
+        margin-bottom:5px;cursor:pointer;transition:border-color .12s;
+      " onmouseenter="this.style.borderColor='${lc}'" onmouseleave="this.style.borderColor='${isSug?"#ffcc0240":"#141428"}'">
+        <div style="width:42px;height:42px;border-radius:8px;overflow:hidden;flex-shrink:0;
+          background:#080816;border:1px solid #1a1a2e">
+          ${champImg(c.id, 42)}
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+            <span style="font-size:13px;font-weight:700;color:#e0e0f0">${c.name}</span>
+            ${isSug?`<span style="font-size:7px;padding:1px 5px;border-radius:3px;
+              background:#ffcc0222;border:1px solid #ffcc0244;color:#ffcc02;font-weight:800">★ ÖNERİ</span>`:""}
+            ${patchBadge(c.id)}
+          </div>
+          <div style="font-size:9px;color:${lc};margin-top:1px">${c.lanes?.join(" · ")} · ${c.cls} · ${c.dmg}</div>
+        </div>
+        <div style="padding:5px 10px;border-radius:6px;font-size:10px;font-weight:700;
+          background:${tc}18;border:1px solid ${tc}44;color:${tc};flex-shrink:0">SEÇ</div>
+      </div>`;
+    }).join("") || `<div style="text-align:center;padding:30px;color:#333;font-size:12px">Şampiyon bulunamadı</div>`;
+
+    return `<div style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:10px;padding:10px;margin-bottom:10px">
+      <div style="font-size:9px;font-weight:800;color:#666;letter-spacing:2px;margin-bottom:8px">ŞAMPİYON HAVUZU</div>
+      <input type="text" id="poolSearch" placeholder="Ara..." value="${search}"
+        oninput="doSearch(this.value)" autocomplete="off" autocorrect="off"
+        autocapitalize="off" spellcheck="false"
+        style="width:100%;padding:8px 12px;border-radius:8px;border:1px solid #252540;
+        background:#080816;color:#e0e0f0;font-size:16px;outline:none;margin-bottom:8px"/>
+      <div style="display:flex;gap:5px;overflow-x:auto;padding-bottom:6px;margin-bottom:8px">${tabs}</div>
+      <div id="poolList" style="max-height:320px;overflow-y:auto">${rows}</div>
+    </div>`;
+  }
+
+  // ── Draft sonu kompozisyon özeti ─────────────────────────
+  function doneH() {
+    function panel(team, col, lbl) {
+      const picks = getMyPicks(team);
+      const ap  = picks.filter(c=>["AP","Hybrid"].includes(c.dmg)).length;
+      const ad  = picks.filter(c=>["AD","Hybrid"].includes(c.dmg)).length;
+      const tk  = picks.filter(c=>["Tank","Fighter"].includes(c.cls)).length;
+      function bar(label,val,bc){
+        return `<div style="margin-bottom:5px">
+          <div style="display:flex;justify-content:space-between;font-size:8px;margin-bottom:2px">
+            <span style="color:#444">${label}</span><span style="color:${bc}">${val}/5</span>
+          </div>
+          <div style="height:4px;border-radius:2px;background:#1a1a2e">
+            <div style="height:100%;border-radius:2px;width:${(val/5)*100}%;background:${bc}"></div>
+          </div>
+        </div>`;
+      }
+      const warns=[];
+      if(ap<1)warns.push(`<span style="font-size:7px;padding:2px 6px;border-radius:4px;background:#80cbc418;border:1px solid #80cbc440;color:#80cbc4">⚠ AP Yok</span>`);
+      if(ad<1)warns.push(`<span style="font-size:7px;padding:2px 6px;border-radius:4px;background:#ef9a9a18;border:1px solid #ef9a9a40;color:#ef9a9a">⚠ AD Yok</span>`);
+      if(tk<1)warns.push(`<span style="font-size:7px;padding:2px 6px;border-radius:4px;background:#4fc3f718;border:1px solid #4fc3f740;color:#4fc3f7">⚠ Tank/Ön Hat Yok</span>`);
+      if(ap>=1&&ad>=1&&tk>=1)warns.push(`<span style="font-size:7px;padding:2px 6px;border-radius:4px;background:#60ff8018;border:1px solid #60ff8040;color:#60ff80">✓ Dengeli</span>`);
+      return `<div style="background:#0d0d1e;border:1px solid ${col}28;border-radius:10px;padding:10px">
+        <div style="font-size:9px;font-weight:800;color:${col};letter-spacing:1.5px;
+          border-bottom:1px solid ${col}22;padding-bottom:5px;margin-bottom:8px">${lbl}</div>
+        ${picks.map(c=>`<div style="display:flex;align-items:center;gap:8px;padding:5px 7px;
+          border-radius:7px;background:#111120;margin-bottom:4px">
+          <div style="width:32px;height:32px;border-radius:6px;overflow:hidden;flex-shrink:0;background:#080816">
+            ${champImg(c.id,32)}
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:11px;font-weight:700;color:#e0e0f0;
+              white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${c.name}</div>
+            <div style="font-size:8px;color:${LANE_COLOR[c.lanes?.[0]]||"#888"}">${c.lanes?.[0]} · ${c.cls}</div>
+          </div>
+        </div>`).join("")}
+        <div style="margin-top:8px;padding:7px;background:#080816;border-radius:7px">
+          ${bar("AP",ap,"#80cbc4")}${bar("AD",ad,"#ef9a9a")}${bar("Ön Hat",tk,"#4fc3f7")}
+          <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:5px">${warns.join("")}</div>
+        </div>
+      </div>`;
+    }
+    return `<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+      ${panel(0,"#3a8fff","🔵 MAVİ")}
+      ${panel(1,"#ff4d4d","🔴 KIRMIZI")}
+    </div>
+    ${seriesFormat===1?`<button onclick="doReset()" style="width:100%;padding:13px;border-radius:10px;
+      font-size:13px;font-weight:800;letter-spacing:1px;
+      background:linear-gradient(135deg,#3a8fff18,#a020f018);
+      border:1px solid #a020f044;color:#c060ff">🔄 Yeni Draft Başlat</button>`:""}`;
+  }
+
+  // Maç özet kartı
+  function matchSummaryH(m, idx) {
+    const bPicks = ORDER.map((o,i)=>({...o,i})).filter(o=>o.t===0&&o.act==="pick").map(o=>m.slots[o.i]).filter(Boolean);
+    const rPicks = ORDER.map((o,i)=>({...o,i})).filter(o=>o.t===1&&o.act==="pick").map(o=>m.slots[o.i]).filter(Boolean);
+    return `<div style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:10px;padding:10px;margin-bottom:6px">
+      <div style="font-size:9px;color:#555;letter-spacing:1px;margin-bottom:6px">MAÇ ${idx+1}</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+        <div>
+          <div style="font-size:8px;color:#3a8fff;margin-bottom:4px">🔵 MAVİ</div>
+          ${bPicks.map(c=>`<div style="font-size:10px;color:#aaa;padding:2px 0">${c.name}</div>`).join("")}
+        </div>
+        <div>
+          <div style="font-size:8px;color:#ff4d4d;margin-bottom:4px">🔴 KIRMIZI</div>
+          ${rPicks.map(c=>`<div style="font-size:10px;color:#aaa;padding:2px 0">${c.name}</div>`).join("")}
+        </div>
+      </div>
+    </div>`;
+  }
+
+  document.getElementById("app").innerHTML = `
+    <!-- HEADER -->
+    <div style="display:flex;align-items:center;justify-content:space-between;
+      padding:10px 12px;border-bottom:1px solid #141428;background:#0a0a18;
+      position:sticky;top:0;z-index:30;padding-top:max(10px,env(safe-area-inset-top))">
+      <div style="min-width:0;flex:1">
+        <div style="font-weight:800;font-size:13px;letter-spacing:1px;color:#fff">⚔️ WILD RIFT DRAFT</div>
+        <div style="font-size:9px;color:#444;margin-top:1px;display:flex;align-items:center;gap:5px;flex-wrap:wrap">
+          <span>Bo${seriesFormat}${fearless?" · Fearless":""}</span>
+          ${patchData.version?`<span style="color:#ffcc02;font-weight:700">· ${patchData.version}</span>`:""}
+          ${mySide!==null?`<span style="color:${mySide===0?"#3a8fff":"#ff4d4d"}">${mySide===0?"🔵":"🔴"} Sen</span>`:""}
+          ${opponentName?`<span style="color:#555">vs ${opponentName}</span>`:""}
+          ${seriesFormat>1?`<span style="color:#3ad48f">Sen ${myScore}</span><span style="color:#444">—</span><span style="color:#ff4d4d">${oppScore} Rakip</span>`:""}
+          ${seriesFormat>1?`<span style="color:#333">Maç ${currentMatch}</span>`:""}
+        </div>
+      </div>
+      <div style="display:flex;gap:5px;flex-shrink:0">
+        <button onclick="doUndo()" ${step===0?"disabled":""} style="padding:6px 10px;border-radius:6px;
+          font-size:11px;font-weight:700;background:#131328;border:1px solid #252540;
+          color:#888;opacity:${step===0?.4:1}">↩</button>
+        <button onclick="doReset()" style="padding:6px 10px;border-radius:6px;font-size:11px;
+          font-weight:700;background:#1a0a0a;border:1px solid #ff444466;color:#ff6060">↺</button>
+        <button onclick="saveDraftAndFinish()" style="padding:6px 10px;border-radius:6px;font-size:11px;
+          font-weight:700;background:#0a180a;border:1px solid #44ff6644;color:#60ff80"
+          title="Taslağı Kaydet ve Bitir">💾</button>
+        <button onclick="doResetSeries()" style="padding:6px 10px;border-radius:6px;font-size:11px;
+          font-weight:700;background:#0a0a1a;border:1px solid #4da6ff44;color:#4da6ff">☰</button>
+      </div>
+    </div>
+
+    <!-- PHASE BANDİ -->
+    ${!done?`<div style="padding:7px 12px;display:flex;align-items:center;gap:6px;
+      background:${tc}11;border-bottom:1px solid #141428">
+      <span style="padding:2px 7px;border-radius:4px;font-size:9px;font-weight:800;
+        background:${cur.ph===1?"#4da6ff22":"#a020f022"};
+        border:1px solid ${cur.ph===1?"#4da6ff55":"#a020f055"};
+        color:${cur.ph===1?"#4da6ff":"#c060ff"}">PHASE ${cur.ph}</span>
+      <span style="padding:2px 7px;border-radius:4px;font-size:9px;font-weight:800;
+        background:${cur.act==="ban"?"#ff444422":"#44ff6622"};
+        border:1px solid ${cur.act==="ban"?"#ff444455":"#44ff6655"};
+        color:${cur.act==="ban"?"#ff6060":"#60ff80"}">${cur.act==="ban"?"🚫 BAN":"✅ PİCK"}</span>
+      <span style="font-size:11px;font-weight:700;color:${tc}">${cur.t===0?"🔵 MAVİ":"🔴 KIRMIZI"}</span>
+      <span style="font-size:10px;color:#444;margin-left:auto">${step+1}/20</span>
+    </div>`
+    :`<div style="padding:9px;text-align:center;font-size:12px;font-weight:800;color:#c060ff;
+      letter-spacing:2px;background:linear-gradient(90deg,#a020f018,#3a8fff18);
+      border-bottom:1px solid #a020f033">🏆 DRAFT TAMAMLANDI</div>`}
+
+    <!-- ANA İÇERİK -->
+    <div style="padding:10px 10px ${done?"10px":"80px"}">
+
+      <!-- TAKIM BOARD -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+        ${teamH("#3a8fff","🔵 MAVİ",B0,P0)}
+        ${teamH("#ff4d4d","🔴 KIRMIZI",B1,P1)}
+      </div>
+
+      <!-- UYARILAR -->
+      ${warnsH()}
+
+      <!-- ÖNERİLER -->
+      ${!done ? suggH() : ""}
+
+      <!-- BUILD PANELİ -->
+      ${buildPanelH()}
+
+      <!-- ŞAMPİYON HAVUZU -->
+      ${!done ? poolH() : ""}
+
+      <!-- DRAFT SONU -->
+      ${done ? doneH() : ""}
+      ${done && seriesFormat > 1 ? `
+        <div style="margin-bottom:10px">
+          <div style="font-size:9px;color:#444;letter-spacing:2px;margin-bottom:8px;text-align:center">
+            MAÇ ${currentMatch} — KİM KAZANDI?
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <button onclick="endMatch(0)" style="padding:14px;border-radius:10px;font-size:13px;
+              font-weight:800;background:#3a8fff22;border:1px solid #3a8fff66;color:#3a8fff">
+              🔵 Mavi Kazandı
+            </button>
+            <button onclick="endMatch(1)" style="padding:14px;border-radius:10px;font-size:13px;
+              font-weight:800;background:#ff4d4d22;border:1px solid #ff4d4d66;color:#ff4d4d">
+              🔴 Kırmızı Kazandı
+            </button>
+          </div>
+        </div>
+      ` : ""}
+
+      <!-- MAÇ GEÇMİŞİ -->
+      ${matchHistory.length > 0 ? `
+        <div style="margin-bottom:10px">
+          <div style="font-size:9px;color:#444;letter-spacing:2px;margin-bottom:8px">MAÇ GEÇMİŞİ</div>
+          ${matchHistory.map((m,i) => matchSummaryH(m,i)).join("")}
+        </div>
+      ` : ""}
+    </div>
+
+    <!-- ALT BUTON -->
+    ${!done?`<div style="position:fixed;bottom:0;left:0;right:0;z-index:20;
+      padding:10px 12px;background:#0a0a18;border-top:1px solid #181828">
+      <button onclick="openModal()" style="width:100%;padding:13px;border-radius:10px;
+        font-size:13px;font-weight:800;background:${tc}22;border:1px solid ${tc}66;color:${tc}">
+        ${cur.act==="ban"?`🚫 ${cur.t===0?"Mavi":"Kırmızı"} — Ban Seç`:`✅ ${cur.t===0?"Mavi":"Kırmızı"} — Şampiyon Seç`}
+      </button>
+    </div>`:""}
+
+    <!-- MODAL (aşağıdan açılan) -->
+    ${modal&&!done?`<div id="ov" onclick="ovClick(event)" style="
+      position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.88);
+      backdrop-filter:blur(8px);display:flex;flex-direction:column">
+      <div style="margin-top:auto;background:#0d0d1e;border-radius:16px 16px 0 0;
+        border:1px solid #1a1a2e;border-bottom:none;max-height:85vh;
+        display:flex;flex-direction:column;animation:fadeIn .2s ease">
+        <div style="padding:12px 12px 8px;border-bottom:1px solid #141428">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-size:12px;font-weight:800;color:#fff">
+              ${cur.act==="ban"?"🚫 Ban Seç":"✅ Şampiyon Seç"}
+              <span style="color:${tc};font-size:10px;margin-left:8px">${cur.t===0?"(Mavi)":"(Kırmızı)"}</span>
+            </span>
+            <button onclick="closeModal()" style="width:30px;height:30px;border-radius:6px;
+              background:#131328;border:1px solid #252540;color:#888;font-size:15px;font-weight:800">✕</button>
+          </div>
+          <input autofocus type="text" placeholder="Şampiyon ara..." value="${search}"
+            oninput="doSearch(this.value)"
+            style="width:100%;padding:9px 12px;border-radius:8px;border:1px solid #252540;
+            background:#080816;color:#e0e0f0;font-size:13px;outline:none;margin-bottom:8px"/>
+          <div style="display:flex;gap:5px;overflow-x:auto;padding-bottom:2px">
+            ${LANES.map(l=>{
+              const lc=LANE_COLOR[l]||"#4da6ff"; const act=lane===l;
+              return `<button onclick="setLane('${l}')" style="padding:5px 11px;border-radius:20px;
+                font-size:10px;font-weight:700;white-space:nowrap;
+                background:${act?lc+"30":"#111120"};border:1px solid ${act?lc+"88":"#1e1e30"};
+                color:${act?lc:"#555"}">${l}</button>`;
+            }).join("")}
+          </div>
+        </div>
+        <div style="overflow-y:auto;padding:8px 10px;flex:1">${poolH().replace(/<div style="background:#0d0d1e.*?<\/div>\s*$/s,"")}</div>
+      </div>
+    </div>`:""}
+  `;
+
+  if (modal) setTimeout(()=>{const el=document.querySelector("input[autofocus]");if(el)el.focus();},60);
+}
+
+// ─── EVENT HANDLERS ──────────────────────────────────────────
+let buildPanelId = null; // hangi şampiyonun build'i açık
+
+function slotClick(i){
+  const slot = slots[i];
+  if (slot && BUILD_DB[slot.id]) {
+    // Dolu slot + build var → build panelini toggle et
+    buildPanelId = buildPanelId === slot.id ? null : slot.id;
+    render();
+  } else if(i===step){
+    modal=true; render();
+  }
+}
+function openModal() { modal=true;render(); }
+function closeModal(){ modal=false;render(); }
+function ovClick(e)  { if(e.target.id==="ov")closeModal(); }
+function setLane(l) {
+  lane=l;
+  doSearch(search);
+}
+function doSearch(v) {
+  search=v;
+  const poolEl = document.getElementById("poolList");
+  const used = getUsed();
+  const sugg = computeSugg();
+  const sugIds = new Set([
+    ...sugg.ct.map(c=>c.id),
+    ...sugg.meta.map(c=>c.id),
+    ...sugg.filler.map(c=>c.id),
+  ]);
+  const cur = step < ORDER.length ? ORDER[step] : null;
+  const tc = cur ? (cur.t===0?"#3a8fff":"#ff4d4d") : "#888";
+  const list = ALL.filter(c=>{
+    if (used.has(c.id)) return false;
+    if (lane!=="Tümü" && !c.lanes.includes(lane)) return false;
+    if (v && !c.name.toLowerCase().includes(v.toLowerCase())) return false;
+    return true;
+  }).sort((a,b) => a.name.localeCompare(b.name, "tr"));
+  if (!poolEl) { render(); return; }
+  const lc_map = {Baron:"#ef9a9a",Jungle:"#a5d6a7",Mid:"#80cbc4",ADC:"#ffcc02",Support:"#ce93d8"};
+  poolEl.innerHTML = list.map(c=>{
+    const isSug = sugIds.has(c.id);
+    const lc = lc_map[c.lanes?.[0]]||"#888";
+    return `<div onclick="pickChamp('${c.id}')" style="
+      display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:8px;
+      background:${isSug?"#ffcc0210":"#0d0d1e"};border:1px solid ${isSug?"#ffcc0240":"#141428"};
+      margin-bottom:5px;cursor:pointer;">
+      <div style="width:42px;height:42px;border-radius:8px;overflow:hidden;flex-shrink:0;
+        background:#080816;border:1px solid #1a1a2e">
+        ${champImg(c.id,42)}
+      </div>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:6px">
+          <span style="font-size:13px;font-weight:700;color:#e0e0f0">${c.name}</span>
+          ${isSug?'<span style="font-size:7px;padding:1px 5px;border-radius:3px;background:#ffcc0222;border:1px solid #ffcc0244;color:#ffcc02;font-weight:800">★ ÖNERİ</span>':""}
+        </div>
+        <div style="font-size:9px;color:${lc};margin-top:1px">${c.lanes?.join(" · ")} · ${c.cls} · ${c.dmg}</div>
+      </div>
+      <div style="padding:5px 10px;border-radius:6px;font-size:10px;font-weight:700;
+        background:${tc}18;border:1px solid ${tc}44;color:${tc};flex-shrink:0">SEÇ</div>
+    </div>`;
+  }).join("") || '<div style="text-align:center;padding:30px;color:#333;font-size:12px">Şampiyon bulunamadı</div>';
+}
+
+function pickChamp(id){
+  if(step>=ORDER.length)return;
+  const c=DB[id]; if(!c)return;
+  const used=getUsed(); if(used.has(id))return;
+  slots[step]={id,...c};
+  step++; search=""; modal=false;
+  render();
+}
+function doUndo(){
+  if(step===0)return;
+  slots[step-1]=null; step--;
+  render();
+}
+function doReset(){
+  slots=Array(20).fill(null); step=0;
+  lane="Tümü"; search=""; modal=false;
+  render();
+}
+function doResetSeries(){
+  slots=Array(20).fill(null); step=0;
+  lane="Tümü"; search=""; modal=false;
+  seriesFormat=null; fearless=false; setupPhase=false;
+  currentMatch=1; matchHistory=[];
+  myScore=0; oppScore=0;
+  mySide=null; opponentName="Rakip Takım";
+  appScreen="home";
+  render();
+}
+
+// Yeni: Format seçimi (kurulum aşamasına geç)
+function selectFormat(format, fc){
+  seriesFormat=format; fearless=fc;
+  currentMatch=1; matchHistory=[];
+  myScore=0; oppScore=0;
+  slots=Array(20).fill(null); step=0;
+  mySide=null; opponentName="Rakip Takım";
+  setupPhase=true;
+  render();
+}
+
+// Yeni: Taraf seçimi
+function selectSide(side){
+  mySide=side;
+  render();
+}
+
+// Yeni: Kurulumu onayla ve taslağa geç
+function confirmSetup(){
+  if(mySide===null)return;
+  const inp=document.getElementById("opponentInput");
+  if(inp) opponentName=inp.value||"Rakip Takım";
+  setupPhase=false;
+  render();
+}
+
+// Eski startSeries korundu (fearless butonları için)
+function startSeries(format, fc){
+  selectFormat(format, fc);
+}
+
+function endMatch(winner){ // 0=mavi, 1=kırmızı (o maçtaki kazanan taraf)
+  const iWon = winner === mySide;
+  matchHistory.push({slots:[...slots], myScore, oppScore, mySide, iWon, opponentName,
+    format:seriesFormat, date:new Date().toLocaleString("tr-TR")});
+  // localStorage'a da kaydet
+  savedMatchHistory.push({slots:[...slots], myScore, oppScore, mySide, iWon, opponentName,
+    format:seriesFormat, date:new Date().toLocaleString("tr-TR")});
+  saveHistory();
+  if(iWon) myScore++;
+  else oppScore++;
+  const needed = seriesFormat===1?1:seriesFormat===3?2:3;
+  if(myScore>=needed || oppScore>=needed){
+    slots=Array(20).fill(null); step=0; modal=false;
+    render(); return;
+  }
+  currentMatch++;
+  // Bo3/Bo5'te sonraki maç için taraf seçimi ekranına dön
+  slots=Array(20).fill(null); step=0; modal=false;
+  mySide=null; setupPhase=true;
+  render();
+}
+
+// Yeni: Taslağı kaydet ve bitir butonu (💾)
+function saveDraftAndFinish(){
+  const entry = {
+    slots:[...slots], myScore, oppScore, mySide, opponentName,
+    format:seriesFormat, date:new Date().toLocaleString("tr-TR"),
+    partial: step < ORDER.length
+  };
+  savedMatchHistory.push(entry);
+  saveHistory();
+  // Başarı bildirimi
+  const btn = event.target;
+  const orig = btn.textContent;
+  btn.textContent="✓ Kaydedildi";
+  btn.style.color="#60ff80";
+  btn.style.borderColor="#60ff8055";
+  setTimeout(()=>{ btn.textContent=orig; btn.style.color="#60ff80"; },1500);
+}
+
+// Yeni: Geçmiş sil
+function deleteHistory(idx){
+  savedMatchHistory.splice(idx,1);
+  saveHistory();
+  render();
+}
+
+// Yeni: Tümünü sil
+function clearAllHistory(){
+  if(!confirm("Tüm geçmiş silinsin mi?"))return;
+  savedMatchHistory=[];
+  saveHistory();
+  render();
+}
+
+function toggleFearless(){
+  fearless=!fearless;
+  render();
+}
+
+// Klavye kapanmasın — sadece grid'i güncelle
+function updateChampGrid() {
+  const grid = document.getElementById("champGrid");
+  if (!grid) return;
+  const lc_map = {Baron:"#ef9a9a",Jungle:"#a5d6a7",Mid:"#80cbc4",ADC:"#ffcc02",Support:"#ce93d8"};
+  const seen = new Map();
+  ALL.forEach(c => {
+    if (!seen.has(c.name)) seen.set(c.name, {...c, allIds:[c.id], allLanes:[...c.lanes]});
+    else {
+      const ex = seen.get(c.name);
+      ex.allIds.push(c.id);
+      c.lanes.forEach(l => { if (!ex.allLanes.includes(l)) ex.allLanes.push(l); });
+    }
+  });
+  const list = [...seen.values()]
+    .filter(c => {
+      if (champLane !== "Tümü" && !c.allLanes.includes(champLane)) return false;
+      if (champSearch && !c.name.toLowerCase().includes(champSearch.toLowerCase())) return false;
+      return true;
+    })
+    .sort((a,b) => a.name.localeCompare(b.name, "tr"));
+
+  grid.innerHTML = list.map(c => {
+    const lc = lc_map[c.allLanes[0]]||"#888";
+    const flex = c.allLanes.length > 1;
+    return `<div onclick="champDetailId='${c.id}';appScreen='champDetail';render()"
+      style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:12px;
+      padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:6px;
+      cursor:pointer;position:relative">
+      ${flex?`<div style="position:absolute;top:5px;right:5px;font-size:7px;
+        padding:1px 5px;border-radius:4px;background:#ffcc0220;
+        border:1px solid #ffcc0244;color:#ffcc02;font-weight:800">FLEX</div>`:""}
+      <div style="width:56px;height:56px;border-radius:10px;overflow:hidden;border:1px solid ${lc}44">
+        ${champImg(c.id,56)}
+      </div>
+      <div style="font-size:10px;font-weight:700;color:#e0e0f0;text-align:center;
+        word-break:break-word;line-height:1.3">${c.name} ${patchBadge(c.id,true)}</div>
+      <div style="font-size:8px;color:${lc}">${c.allLanes.join(" · ")}</div>
+    </div>`;
+  }).join("");
+}
+
+// İlk render — Ana Menü
+appScreen = "home";
+render();
+</script>
+</body>
+</html>
