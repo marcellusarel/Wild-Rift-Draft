@@ -219,7 +219,7 @@ const DB = {
     sy:["lulu","rakan","nautilus","soraka","nami"]},
   caitlyn:    {name:"Caitlyn",     lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
     ct:["sivir","jhin","ezreal","missfortune"],
-    ctBy:["vayne","kaisa","tristana","draven","twitch","smolder","samira","zeri","ashe","corki","kalista","kogmaw","lucian","nilah"],
+    ctBy:["vayne","kaisa","tristana","draven","twitch","smolder","samira","zeri","ashe","corki","kalista","kogmaw","lucian","nilah","yunara"],
     sy:["morgana","lux","blitzcrank","thresh","nautilus"]},
   missfortune:{name:"Miss Fortune",lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
     ct:["smolder","jhin","draven","ashe"],
@@ -242,15 +242,15 @@ const DB = {
     ctBy:["jinx","ashe"],
     sy:["nautilus","leona","blitzcrank","thresh","morgana"]},
   xayah:      {name:"Xayah",       lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
-    ct:["draven","jhin","caitlyn","lucian","varus","vayne","kogmaw"],
+    ct:["draven","jhin","caitlyn","lucian","varus","vayne","kogmaw","yunara"],
     ctBy:["ashe","ezreal","jinx","kaisa","nilah"],
     sy:["rakan","nautilus","leona","thresh","blitzcrank"]},
   kogmaw:     {name:"Kog'Maw",     lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
     ct:["ashe","vayne","caitlyn","missfortune"],
-    ctBy:["kaisa","zeri","xayah","tristana","smolder","samira","corki","draven","jhin","kalista","lucian"],
+    ctBy:["kaisa","zeri","xayah","tristana","smolder","samira","corki","draven","jhin","kalista","lucian","yunara"],
     sy:["lulu","milio","braum","janna","soraka"]},
   sivir:      {name:"Sivir",       lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
-    ct:["vayne","draven","twitch","samira","smolder","kogmaw"],
+    ct:["vayne","draven","twitch","samira","smolder","kogmaw","yunara"],
     ctBy:["ezreal","xayah","varus","ashe","caitlyn"],
     sy:["lulu","milio","braum","thresh","nautilus"]},
   samira:     {name:"Samira",      lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
@@ -263,10 +263,10 @@ const DB = {
     sy:["lulu","milio","braum","janna","soraka"]},
   nilah:      {name:"Nilah",       lanes:["ADC"],    dmg:"AD",    cls:"Fighter",
     ct:["smolder","xayah","caitlyn","ashe","jhin"],
-    ctBy:["samira","twitch","jinx","tristana"],
+    ctBy:["samira","twitch","jinx","tristana","yunara"],
     sy:["nautilus","leona","blitzcrank","thresh","nami"]},
   kalista:    {name:"Kalista",     lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
-    ct:["ashe","kogmaw","caitlyn","draven","samira","nilah","lucian"],
+    ct:["ashe","kogmaw","caitlyn","draven","samira","nilah","lucian","yunara"],
     ctBy:["ezreal","zeri","jhin"],
     sy:["nautilus","leona","blitzcrank","thresh","alistar"]},
   zeri:       {name:"Zeri",        lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
@@ -281,6 +281,10 @@ const DB = {
     ct:["vex","zed","irelia","yasuo","pantheon","veigar"],
     ctBy:["ahri","orianna","akali","corki","galio","singed","vladimir"],
     sy:["nautilus","leona","blitzcrank","thresh","morgana"]},
+  yunara:     {name:"Yunara",       lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
+    ct:["caitlyn","kogmaw","nilah"],
+    ctBy:["kalista","xayah","sivir"],
+    sy:["nautilus","leona","blitzcrank","thresh","rakan"]},
 
   // ── MID ──────────────────────────────────────────────────────
   ahri:       {name:"Ahri",        lanes:["Mid"],    dmg:"AP",    cls:"Mage",
@@ -982,7 +986,7 @@ let lane    = "Tümü";
 let search  = "";
 let modal   = false;
 
-// ─── BUILD VERİTABANI (wildriftfire.com — Patch 7.1h) ────────
+// ─── BUILD VERİTABANI (wildriftfire.com — Patch 7.1h; 7.2 eşya sistemi değişiklikleri işlenmedi) ────────
 // Sadece kendi main picklerin için (ilk 3)
 const WRF = "https://www.wildriftfire.com/images/";
 const BUILD_DB = {
@@ -1140,20 +1144,28 @@ function spellImg(name, size=28) {
 
 // ─── YAMA VERİSİ ─────────────────────────────────────────────
 let patchData = {
-  version: "7.1h",
-  date: "24 Haziran 2026",
-  buffs:   ["thresh","seraphine","skarner","gnar","sona"],
-  nerfs:   ["nunu","taliyah"],
-  changes: ["nautilus"],
+  version: "7.2",
+  date: "8 Temmuz 2026",
+  newChamps: ["yunara"],
+  buffs:   ["annie","kaisa","kayn","syndra","orianna","darius"],
+  nerfs:   ["ksante","norra","zed"],
+  changes: ["zyra","yasuo","fiddlesticks","varus","leesin"],
   details: {
-    thresh:    "Temel nitelikler ve yetenek hasarı güçlendirildi",
-    seraphine: "2. yetenek iyileştirme oranı ve 4. yetenek ayartma süresi arttırıldı",
-    skarner:   "Taban nitelikler ve yetenek hasarı güçlendirildi",
-    gnar:      "Taban nitelikler ve 2. yetenek hasarı güçlendirildi",
-    sona:      "2. yetenek iyileştirme ve 3. yetenek hareket hızı arttırıldı",
-    nunu:      "1. yetenek hasarı ve kartopu yağmuru azaltıldı",
-    taliyah:   "Hareket hızı ve 1. yetenek orman temizleme gücü azaltıldı",
-    nautilus:  "Orman canavarlarına karşı hasar ve kalkan oranı düşürüldü",
+    yunara:       "Yeni şampiyon! İyonyalı okçu — kritik vuruşlarda ekstra büyü hasarı veren melez ADC",
+    annie:        "Tibbers'ın saldırıları artık Annie'nin büyü nüfuziyetini miras alıyor",
+    kaisa:        "4. yetenekte seçilebilir iniş menzili 4'ten 5.5'e yükseltildi",
+    kayn:         "Gölge Sıçraması'ndan çıkış sonrası tepki verme süresi kısaltıldı, çıkış menzili arttırıldı",
+    syndra:       "3. yetenek geri tepme menzili 7.2'den 7.5'e yükseltildi, kombolar tutarlılaştırıldı",
+    orianna:      "4. yetenek (Şok Dalgası) menzili 3'ten 3.25'e yükseltildi",
+    darius:       "2. yetenek ile hedef öldürüldüğünde bekleme süresinin %50'si ve mananın tamamı iade ediliyor",
+    ksante:       "4. yetenek sonrası kazanılan zırh delme, sadece bonus zırha uygulanacak şekilde değiştirildi",
+    norra:        "2. yetenek sürgün süresi 2.25s'den 1.5s'ye düşürüldü (ardından %80 yavaşlatma ekleniyor)",
+    zed:          "4. yetenek sonrası geri dönüş için 0.5s bekleme eklendi, bekleme süresi arttırıldı",
+    zyra:         "Bitkilerin yetenek gücü oranı azaltıldı ancak artık büyü nüfuziyeti miras alıyorlar",
+    yasuo:        "Kalkan ve deste mekaniği yeniden dengelendi, ultimasının zırh delmesi bonus zırhla sınırlandı",
+    fiddlesticks: "1. yeteneğin korku uygulama tutarlılığı düzeltildi (görünürken korku hatası giderildi)",
+    varus:        "4. yetenekte Yara Lekesi'nin tam yığılma süresi 3s'den 1.5s'ye düşürülerek kök süresiyle uyumlu hale getirildi",
+    leesin:       "1. ve 2. yetenek hasarı azaltıldı, ultima hasarı arttırılarak dövüşçü tarzına kaydırıldı",
   }
 };
 
@@ -1213,7 +1225,8 @@ async function fetchLatestPatch() {
     // Güncelle (boşsa mevcut veriyi koru)
     if (buffs.length || nerfs.length || changes.length) {
       patchData = { version: ver||patchData.version, date: date||patchData.date,
-        buffs, nerfs, changes, details: {} };
+        newChamps: patchData.newChamps||[], buffs, nerfs, changes,
+        details: patchData.details||{} };
       render();
     }
   } catch(e) {
@@ -1235,6 +1248,7 @@ function getPatchStatus(id) {
   const match = (arr) => arr.some(b =>
     base === b || name === b || name.startsWith(b) || b.startsWith(base)
   );
+  if (match(patchData.newChamps||[])) return "new";
   if (match(patchData.buffs))   return "buff";
   if (match(patchData.nerfs))   return "nerf";
   if (match(patchData.changes)) return "change";
@@ -1246,6 +1260,7 @@ function patchBadge(id, small=false) {
   const s = getPatchStatus(id);
   if (!s) return "";
   const cfg = {
+    new:    {icon:"✨", color:"#ffcc02", bg:"#ffcc0218", border:"#ffcc0244", label:"Yeni"},
     buff:   {icon:"🔺", color:"#00ff88", bg:"#00ff8818", border:"#00ff8844", label:"Buff"},
     nerf:   {icon:"🔻", color:"#ff4444", bg:"#ff444418", border:"#ff444444", label:"Nerf"},
     change: {icon:"🔄", color:"#4da6ff", bg:"#4da6ff18", border:"#4da6ff44", label:"Denge"},
@@ -1997,7 +2012,7 @@ function spellImg(key, size=32){
 const DDRAGON_FALLBACK = {
   mel_adc:"Mel", mel:"Mel",
   aurelionsol_adc:"AurelionSol", orianna_adc:"Orianna",
-  ziggs_adc:"Ziggs",
+  ziggs_adc:"Ziggs", yunara:"Yunara",
 };
 const DD_VER = "16.13.1";
 
@@ -2150,6 +2165,7 @@ function render() {
   // ── YAMA NOTLARI EKRANI ──────────────────────────────────
   if (appScreen === "patch") {
     const groups = [
+      { key:"newChamps",label:"Yeni Şampiyon",icon:"✨", color:"#ffcc02", border:"#ffcc0233", bg:"#ffcc0210" },
       { key:"buffs",   label:"Güçlendirme", icon:"🔺", color:"#00ff88", border:"#00ff8833", bg:"#00ff8810" },
       { key:"nerfs",   label:"Zayıflatma",  icon:"🔻", color:"#ff4444", border:"#ff444433", bg:"#ff444410" },
       { key:"changes", label:"Denge",       icon:"🔄", color:"#4da6ff", border:"#4da6ff33", bg:"#4da6ff10" },
@@ -2184,15 +2200,15 @@ function render() {
         <div style="padding:14px;display:flex;flex-direction:column;gap:12px">
 
           <!-- ÖZET SAYAÇLAR -->
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
             ${groups.map(g => `
               <div style="background:#0d0d1e;border:1px solid ${g.border};border-radius:10px;
-                padding:10px;text-align:center">
-                <div style="font-size:20px">${g.icon}</div>
-                <div style="font-size:18px;font-weight:800;color:${g.color};margin:2px 0">
+                padding:8px 4px;text-align:center">
+                <div style="font-size:16px">${g.icon}</div>
+                <div style="font-size:16px;font-weight:800;color:${g.color};margin:2px 0">
                   ${patchData[g.key].length}
                 </div>
-                <div style="font-size:8px;color:#444">${g.label}</div>
+                <div style="font-size:7px;color:#444;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${g.label}</div>
               </div>`).join("")}
           </div>
 
