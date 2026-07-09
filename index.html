@@ -1166,6 +1166,101 @@ let patchData = {
     fiddlesticks: "1. yeteneğin korku uygulama tutarlılığı düzeltildi (görünürken korku hatası giderildi)",
     varus:        "4. yetenekte Yara Lekesi'nin tam yığılma süresi 3s'den 1.5s'ye düşürülerek kök süresiyle uyumlu hale getirildi",
     leesin:       "1. ve 2. yetenek hasarı azaltıldı, ultima hasarı arttırılarak dövüşçü tarzına kaydırıldı",
+  },
+  // Şampiyon detay sayfasında gösterilen, yetenek bazlı ayrıntılı yama notları
+  detailsFull: {
+    annie: [
+      { skill: "Tibbers'ı Çağır", changes: [
+        "[Yeni] Tibbers'ın saldırıları artık Annie'nin Büyü Nüfuziyeti ve Büyü Nüfuziyeti yüzdesini miras alıyor"
+      ]},
+    ],
+    kaisa: [
+      { skill: "Katil İçgüdüsü", changes: [
+        "Hedef etrafında seçilebilir maksimum iniş menzili: 4 → 5.5"
+      ]},
+    ],
+    kayn: [
+      { skill: "Gölge Sıçraması", changes: [
+        "Hedeften çıkış sonrası tepki verme süresi kısaltıldı, oyuncu girdilerine daha hızlı yanıt veriliyor",
+        "Maksimum çıkış mesafesi (Kayn / Darkin): 4 → 4.5",
+        "Maksimum çıkış mesafesi (Gölge Suikastçı): 6 → 6.5"
+      ]},
+    ],
+    syndra: [
+      { skill: "Zayıfı Dağıt", changes: [
+        "Kara Küreler'in geri tepme menzili: 7.2 → 7.5"
+      ]},
+    ],
+    orianna: [
+      { skill: "Komuta: Şok Dalgası", changes: [
+        "Menzil: 3 → 3.25"
+      ]},
+    ],
+    darius: [
+      { skill: "Sakatlayan Vuruş", changes: [
+        "Hedefi öldürmek, bu yeteneğin bekleme süresinin %50'sini ve mana maliyetinin tamamını iade ediyor"
+      ]},
+    ],
+    ksante: [
+      { skill: "Tüm Gücüyle", changes: [
+        "Bonus: %50 Zırh Delme yüzdesi → %50 Bonus Zırh Delme yüzdesi (sadece bonus zırha uygulanıyor)"
+      ]},
+    ],
+    norra: [
+      { skill: "Hiçliğe Yolculuk", changes: [
+        "Sürgün süresi: 2.25s → 1.5s",
+        "[Yeni] Sürgün bitiminde hedef, 0.75s boyunca %80 yavaşlatılıyor"
+      ]},
+    ],
+    zed: [
+      { skill: "Ölüm İşareti", changes: [
+        "[Yeni] Ultima kullanıldıktan sonra 0.5s boyunca geri dönüş kullanılamıyor",
+        "Bekleme süresi: 85/65/45 → 85/70/55"
+      ]},
+    ],
+    zyra: [
+      { skill: "Dikenli Bahçe", changes: [
+        "Bitki hasarının Yetenek Gücü oranı: %15 → %10",
+        "[Yeni] Bitkiler artık Zyra'nın Büyü Nüfuziyeti ve Büyü Nüfuziyeti yüzdesini miras alıyor"
+      ]},
+    ],
+    yasuo: [
+      { skill: "Gezginin Yolu (Kalkan)", changes: [
+        "Kalkan: 115~600 (Kritik Oranı ve seviyeye bağlı) → 125-680 (sadece seviyeye bağlı)",
+        "Kalkan oluşumu erken oyunda daha yavaş, geç oyunda daha hızlı (~%10)"
+      ]},
+      { skill: "Rüzgar Duvarı", changes: [
+        "Bekleme süresi: 18/18/18/18s → 22/20/18/16s"
+      ]},
+      { skill: "Süpüren Kılıç", changes: [
+        "Tekrar vuruşta hasar artışı için gereken yığın: 2 → 3 (maksimum hasar artışı %75 olarak sabit kaldı)"
+      ]},
+      { skill: "Son Nefes", changes: [
+        "Bonus: %40 Zırh Delme yüzdesi → %55 Bonus Zırh Delme yüzdesi"
+      ]},
+    ],
+    fiddlesticks: [
+      { skill: "Korkut", changes: [
+        "Görünür olduktan sonra hâlâ korku uygulayabildiği pencere hafifçe daraltıldı",
+        "Görünürken veya dövüşteyken yanlışlıkla korku uygulanabilmesi hatası düzeltildi"
+      ]},
+    ],
+    varus: [
+      { skill: "Yozlaşma Zinciri", changes: [
+        "Hedefte Yara Lekesi'nin tam yığılma süresi: 3s → 1.5s (kök süresiyle uyumlu hale getirildi)"
+      ]},
+    ],
+    leesin: [
+      { skill: "Ses Dalgası / Rezonanslı Vuruş", changes: [
+        "Temel hasar: 55/90/125/160 + %100 bonus Saldırı Hasarı → 60/100/140/180 + %90 bonus Saldırı Hasarı"
+      ]},
+      { skill: "Fırtına", changes: [
+        "Hasar: 90/140/190/240 + %125 bonus Saldırı Hasarı → 35/70/105/140 + %90 Saldırı Hasarı"
+      ]},
+      { skill: "Ejderhanın Öfkesi", changes: [
+        "Hasar: 100/250/400 + %180 bonus Saldırı Hasarı + %10/13/16 Hedefin Maksimum Canı → 125/350/575 + %190 bonus Saldırı Hasarı + %12/15/18 Hedefin bonus Canı"
+      ]},
+    ],
   }
 };
 
@@ -1253,6 +1348,24 @@ function getPatchStatus(id) {
   if (match(patchData.nerfs))   return "nerf";
   if (match(patchData.changes)) return "change";
   return null;
+}
+
+// Yama notu metni — aynı eşleştirme mantığı getPatchStatus ile
+function getPatchDetail(id) {
+  const base = id.replace(/_.*$/,"").toLowerCase();
+  const name = champNormName(id);
+  const keys = Object.keys(patchData.details||{});
+  const key = keys.find(k => base===k || name===k || name.startsWith(k) || k.startsWith(base));
+  return key ? (patchData.details[key]||"") : "";
+}
+
+// Yetenek bazlı, ayrıntılı yama notu (şampiyon detay sayfası için)
+function getPatchDetailFull(id) {
+  const base = id.replace(/_.*$/,"").toLowerCase();
+  const name = champNormName(id);
+  const keys = Object.keys(patchData.detailsFull||{});
+  const key = keys.find(k => base===k || name===k || name.startsWith(k) || k.startsWith(base));
+  return key ? (patchData.detailsFull[key]||null) : null;
 }
 
 // Rozet
@@ -2535,6 +2648,45 @@ function render() {
               </div>
             </div>
           </div>
+
+          <!-- SON YAMA NOTU -->
+          ${(() => {
+            const _s = getPatchStatus(champDetailId);
+            const _detail = getPatchDetail(champDetailId);
+            if (!_s || !_detail) return "";
+            const _cfg = {
+              new:    {icon:"✨", color:"#ffcc02", bg:"#ffcc0212", border:"#ffcc0244", label:"Yeni Şampiyon"},
+              buff:   {icon:"🔺", color:"#00ff88", bg:"#00ff8812", border:"#00ff8844", label:"Buff"},
+              nerf:   {icon:"🔻", color:"#ff4444", bg:"#ff444412", border:"#ff444444", label:"Nerf"},
+              change: {icon:"🔄", color:"#4da6ff", bg:"#4da6ff12", border:"#4da6ff44", label:"Denge Değişikliği"},
+            }[_s];
+            const _full = getPatchDetailFull(champDetailId);
+            const _body = _full ? `
+              <div style="display:flex;flex-direction:column;gap:12px;margin-top:2px">
+                ${_full.map(sk => `
+                  <div>
+                    <div style="font-size:11.5px;font-weight:700;color:#e8e8f0;margin-bottom:5px">${sk.skill}</div>
+                    <div style="display:flex;flex-direction:column;gap:4px">
+                      ${sk.changes.map(ch => `
+                        <div style="display:flex;gap:6px;font-size:11px;color:#bbb;line-height:1.5">
+                          <span style="color:${_cfg.color};flex-shrink:0">•</span>
+                          <span>${ch}</span>
+                        </div>`).join("")}
+                    </div>
+                  </div>`).join("")}
+              </div>` : `
+              <div style="font-size:12px;color:#ccc;line-height:1.5">${_detail}</div>`;
+            return `<div style="margin-bottom:14px;background:${_cfg.bg};border:1px solid ${_cfg.border};
+              border-radius:12px;padding:14px">
+              <div style="font-size:10px;font-weight:800;color:${_cfg.color};margin-bottom:10px;
+                display:flex;align-items:center;gap:6px">
+                <span style="font-size:14px">${_cfg.icon}</span>
+                📋 SON YAMA NOTU · ${_cfg.label}
+              </div>
+              ${_body}
+              <div style="font-size:8px;color:#555;margin-top:10px">Yama ${patchData.version} · ${patchData.date}</div>
+            </div>`;
+          })()}
 
           ${ctIds.length===0 && ctByIds.length===0 && synIds.length===0 ? `
             <div style="text-align:center;padding:32px;color:#333;font-size:12px">
