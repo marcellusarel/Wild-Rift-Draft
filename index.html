@@ -1007,55 +1007,6 @@ let modal   = false;
 // Sadece kendi main picklerin için
 const BUILD_DB = {
   // ── BARON ──────────────────────────────────────────────────
-  camille: {
-    items: ["Trinity Force","Hullbreaker","Sundered Sky","Death's Dance","Amaranth's Twinguard"],
-    boots: "Plated Steelcaps", enchant: "Goredrinker",
-    runes: ["Grasp of the Undying","Demolish","Second Wind","Overgrowth","Scorch"],
-    spells: ["Flash","Ignite"],
-    skillOrder: ["1","3","2"],
-    tier: "S"
-  },
-  gwen: {
-    items: ["Riftmaker","Nashor's Tooth","Rabadon's Deathcap","Shadowflame","Zhonya's Hourglass"],
-    boots: "Sorcerer's Shoes", enchant: "Stasis",
-    runes: ["Conqueror","Triumph","Cut Down","Legend: Alacrity","Bone Plating"],
-    spells: ["Flash","Ignite"],
-    skillOrder: ["1","3","2"],
-    tier: "S"
-  },
-  renekton: {
-    items: ["Sundered Sky","Death's Dance","Serylda's Grudge","Spear of Shojin","Sterak's Gage"],
-    boots: "Plated Steelcaps", enchant: "Goredrinker",
-    runes: ["Conqueror","Demolish","Second Wind","Overgrowth","Scorch"],
-    spells: ["Flash","Ignite"],
-    skillOrder: ["2","1","3"],
-    tier: "A"
-  },
-  // ── JUNGLE ─────────────────────────────────────────────────
-  hecarim: {
-    items: ["Trinity Force","Muramana","Serylda's Grudge","Death's Dance","Sterak's Gage"],
-    boots: "Plated Steelcaps", enchant: "Zeal",
-    runes: ["Conqueror","Triumph","Cut Down","Legend: Alacrity","Overgrowth"],
-    spells: ["Flash","Ghost"],
-    skillOrder: ["1","3","2"],
-    tier: "S"
-  },
-  lee_sin: {
-    items: ["Black Cleaver","Youmuu's Ghostblade","Death's Dance","Serylda's Grudge","Guardian Angel"],
-    boots: "Plated Steelcaps", enchant: "Protobelt",
-    runes: ["Conqueror","Triumph","Cut Down","Legend: Alacrity","Bone Plating"],
-    spells: ["Flash","Smite"],
-    skillOrder: ["1","3","2"],
-    tier: "S"
-  },
-  riven: {
-    items: ["Trinity Force","Death's Dance","Serylda's Grudge","Spear of Shojin","Sterak's Gage"],
-    boots: "Gluttonous Greaves", enchant: "Goredrinker",
-    runes: ["Conqueror","Demolish","Second Wind","Overgrowth","Scorch"],
-    spells: ["Flash","Ignite"],
-    skillOrder: ["3","1","2"],
-    tier: "A"
-  },
   // ── SUPPORT ────────────────────────────────────────────────
   nautilus: {
     items: ["Warmog's Armor","Amaranth's Twinguard","Thornmail","Frozen Heart","Force of Nature"],
@@ -1064,72 +1015,6 @@ const BUILD_DB = {
     spells: ["Flash","Ignite"],
     skillOrder: ["1","3","2"],
     tier: "S"
-  },
-  rakan: {
-    items: ["Bulwark of the Mountain","Redemption","Zeke's Convergence","Radiant Virtue","Abyssal Mask"],
-    boots: "Ionian Boots of Lucidity", enchant: "Protobelt",
-    runes: ["Ice Overlord","Unshakeable","Bone Plating","Overgrowth","Transcendence"],
-    spells: ["Flash","Ignite"],
-    skillOrder: ["2","1","3"],
-    tier: "A"
-  },
-  blitzcrank: {
-    items: ["Zeke's Convergence","Ice Overlord","Warmog's Armor","Abyssal Mask","Thornmail"],
-    boots: "Ionian Boots of Lucidity", enchant: "Protobelt",
-    runes: ["Courage of the Colossus","Demolish","Second Wind","Overgrowth","Manaflow Band"],
-    spells: ["Flash","Ignite"],
-    skillOrder: ["1","3","2"],
-    tier: "A"
-  },
-  // ── ADC ────────────────────────────────────────────────────
-  xayah: {
-    items: ["Blade of the Ruined King","Kraken Slayer","Infinity Edge","Mortal Reminder","Guardian Angel"],
-    boots: "Berserker's Greaves", enchant: "Stasis",
-    runes: ["Fleet Footwork","Battle Zeal","Cut Down","Legend: Alacrity","Bone Plating"],
-    spells: ["Flash","Barrier"],
-    skillOrder: ["1","3","2"],
-    tier: "A"
-  },
-  samira: {
-    items: ["Bloodthirster","Infinity Edge","Mortal Reminder","Navori Quickblades","Guardian Angel"],
-    boots: "Berserker's Greaves", enchant: "Stasis",
-    runes: ["Conqueror","Triumph","Cut Down","Legend: Alacrity","Bone Plating"],
-    spells: ["Flash","Ignite"],
-    skillOrder: ["1","2","3"],
-    tier: "B"
-  },
-  lucian: {
-    items: ["Trinity Force","Essence Reaver","Navori Quickblades","Mortal Reminder","Infinity Edge"],
-    boots: "Berserker's Greaves", enchant: "Stasis",
-    runes: ["Conqueror","Triumph","Cut Down","Legend: Alacrity","Bone Plating"],
-    spells: ["Flash","Ignite"],
-    skillOrder: ["1","3","2"],
-    tier: "S"
-  },
-  // ── MID ────────────────────────────────────────────────────
-  velkoz: {
-    items: ["Luden's Tempest","Shadowflame","Rabadon's Deathcap","Void Staff","Morellonomicon"],
-    boots: "Sorcerer's Shoes", enchant: "Stasis",
-    runes: ["Arcane Comet","Manaflow Band","Transcendence","Scorch","Bone Plating"],
-    spells: ["Flash","Ignite"],
-    skillOrder: ["1","2","3"],
-    tier: "A"
-  },
-  aurelionsol: {
-    items: ["Rod of Ages","Rabadon's Deathcap","Shadowflame","Void Staff","Awakened Soulstealer"],
-    boots: "Sorcerer's Shoes", enchant: "Stasis",
-    runes: ["Phase Rush","Manaflow Band","Transcendence","Scorch","Bone Plating"],
-    spells: ["Flash","Ignite"],
-    skillOrder: ["3","1","2"],
-    tier: "A"
-  },
-  syndra: {
-    items: ["Luden's Tempest","Shadowflame","Rabadon's Deathcap","Void Staff","Awakened Soulstealer"],
-    boots: "Sorcerer's Shoes", enchant: "Stasis",
-    runes: ["Electrocute","Sudden Impact","Eyeball Collector","Coup de Grace","Manaflow Band"],
-    spells: ["Flash","Ignite"],
-    skillOrder: ["1","3","2"],
-    tier: "A"
   },
 };
 
@@ -2620,37 +2505,27 @@ function render() {
                 ⚔️ Önerilen Build
               </div>
 
-              <!-- RÜNLER + SPELLER aynı satırda -->
+              <!-- RÜNLER -->
               <div style="margin-bottom:16px">
-                <div style="display:flex;justify-content:space-between;margin-bottom:8px">
-                  <div style="font-size:8.5px;color:#777;font-weight:700;letter-spacing:.4px">RÜNLER</div>
-                  <div style="font-size:8.5px;color:#777;font-weight:700;letter-spacing:.4px">SPELLER</div>
-                </div>
-                <div style="display:flex;align-items:center;justify-content:space-between">
-
-                  <!-- rün grubu -->
-                  <div style="display:flex;align-items:center;gap:10px">
-                    ${slotBox(runes[0], 52, "circle", "#ffcc0255", "#ffcc02aa", "Ana Rün", "rune")}
-                    <div style="width:1px;height:36px;background:#1e1e35"></div>
-                    <div style="display:flex;gap:8px">
-                      ${[1,2,3,4].map(n => slotBox(runes[n], 38, "circle", "#2a2a48", "#666", `Alt ${n}`, "rune")).join("")}
-                    </div>
-                  </div>
-
-                  <div style="width:1px;height:46px;background:#1e1e35;margin:0 4px"></div>
-
-                  <!-- speller -->
-                  <div style="display:flex;gap:8px">
-                    ${[0,1].map(n => slotBox(spells[n], 40, "square", "#c060ff55", "#c060ffaa", `Spell ${n+1}`, "spell")).join("")}
+                <div style="font-size:8.5px;color:#777;font-weight:700;letter-spacing:.4px;margin-bottom:8px">RÜNLER</div>
+                <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+                  ${slotBox(runes[0], 52, "circle", "#ffcc0255", "#ffcc02aa", "Ana Rün", "rune")}
+                  <div style="width:1px;height:36px;background:#1e1e35"></div>
+                  <div style="display:flex;gap:8px;flex-wrap:wrap">
+                    ${[1,2,3,4].map(n => slotBox(runes[n], 38, "circle", "#2a2a48", "#666", `Alt ${n}`, "rune")).join("")}
                   </div>
                 </div>
               </div>
 
-              <!-- İTEMLER: 6 eşit slot -->
+              <!-- İTEMLER: item slotları + sağ köşede speller -->
               <div>
                 <div style="font-size:8.5px;color:#777;font-weight:700;margin-bottom:8px;letter-spacing:.4px">İTEMLER</div>
-                <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start">
                   ${[0,1,2,3,4,5,6].map(n => slotBox(items[n], 46, "square", "#2a2a48", "#666", items[n]?"":String(n+1), "item")).join("")}
+                  <div style="width:1px;align-self:stretch;background:#1e1e35;margin:0 2px"></div>
+                  <div style="display:flex;gap:8px;margin-left:auto">
+                    ${[0,1].map(n => slotBox(spells[n], 46, "square", "#c060ff55", "#c060ffaa", `Spell ${n+1}`, "spell")).join("")}
+                  </div>
                 </div>
               </div>
               ${!build ? `<div style="font-size:9px;color:#555;margin-top:10px;text-align:center">
