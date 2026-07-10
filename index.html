@@ -1058,7 +1058,7 @@ const BUILD_DB = {
   },
   // ── SUPPORT ────────────────────────────────────────────────
   nautilus: {
-    items: ["Warmog's Armor","Amaranth's Twinguard","Frozen Heart","Force of Nature"],
+    items: ["Warmog's Armor","Amaranth's Twinguard","Thornmail","Frozen Heart","Force of Nature"],
     boots: "Mercury's Treads", enchant: "Chainlaced Crushers",
     runes: ["Ice Overlord","Courage of the Colossus","Bone Plating","Perseverance","Hexflash"],
     spells: ["Flash","Ignite"],
@@ -2549,7 +2549,7 @@ function render() {
             <div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #ff303033;
               border-radius:12px;padding:12px">
               <div style="font-size:10px;font-weight:800;color:#ff6060;margin-bottom:10px">
-                🚨 Karşısında Güçlü Olan (CT)
+                🚨 Karşısında Güçlü Olan
               </div>
               <div style="display:flex;gap:10px;flex-wrap:wrap">
                 ${ctIds.map(id => miniChamp(id)).join("")}
@@ -2561,7 +2561,7 @@ function render() {
             <div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #4da6ff33;
               border-radius:12px;padding:12px">
               <div style="font-size:10px;font-weight:800;color:#4da6ff;margin-bottom:10px">
-                💪 Karşısında Zayıf Olan (Ezer)
+                💪 Karşısında Zayıf Olan
               </div>
               <div style="display:flex;gap:10px;flex-wrap:wrap">
                 ${ctByIds.map(id => miniChamp(id)).join("")}
@@ -2650,7 +2650,7 @@ function render() {
               <div>
                 <div style="font-size:8.5px;color:#777;font-weight:700;margin-bottom:8px;letter-spacing:.4px">İTEMLER</div>
                 <div style="display:flex;gap:8px;flex-wrap:wrap">
-                  ${[0,1,2,3,4,5].map(n => slotBox(items[n], 46, "square", "#2a2a48", "#666", items[n]?"":String(n+1), "item")).join("")}
+                  ${[0,1,2,3,4,5,6].map(n => slotBox(items[n], 46, "square", "#2a2a48", "#666", items[n]?"":String(n+1), "item")).join("")}
                 </div>
               </div>
               ${!build ? `<div style="font-size:9px;color:#555;margin-top:10px;text-align:center">
