@@ -1009,7 +1009,8 @@ const BUILD_DB = {
   // ── BARON ──────────────────────────────────────────────────
   // ── SUPPORT ────────────────────────────────────────────────
   nautilus: {
-    items: ["Warmog's Armor","Amaranth's Twinguard","Thornmail","Frozen Heart","Force of Nature"],
+    starter: "Relic Shield",
+    items: ["Warmog's Armor","Amaranth's Twinguard","Thornmail","Force of Nature"],
     boots: "Mercury's Treads", enchant: "Chainlaced Crushers",
     runes: ["Ice Overlord","Courage of the Colossus","Bone Plating","Perseverance","Hexflash"],
     spells: ["Flash","Ignite"],
@@ -1029,6 +1030,15 @@ const BUILD_DB = {
     boots: "Gluttonous Greaves", enchant: "Immortal Path",
     runes: ["Conqueror","Unshakeable","Bone Plating","Overgrowth","Legend- Alacrity"],
     spells: ["Flash","Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "S"
+  },
+  blitzcrank: {
+    starter: "Relic Shield",
+    items: ["Warmog's Armor","Redemption","Knight's Vow","Amaranth's Twinguard"],
+    boots: "Ionian Boots of Lucidity", enchant: "Crimson Lucidity",
+    runes: ["Ice Overlord","Demolish","Bone Plating","Perseverance","Hexflash"],
+    spells: ["Flash","Ignite"],
     skillOrder: ["1","2","3"],
     tier: "S"
   },
@@ -2534,7 +2544,7 @@ function render() {
 
             const runes  = build ? build.runes  : [];
             const spells = build ? build.spells : [];
-            const items  = build ? [build.boots, build.enchant, ...build.items].filter(Boolean) : [];
+            const items  = build ? [build.starter, build.boots, build.enchant, ...build.items].filter(Boolean) : [];
 
             return `<div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #ffcc0233;
               border-radius:12px;padding:14px">
