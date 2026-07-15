@@ -1046,121 +1046,63 @@ const BUILD_DB = {
 
 // ─── YAMA VERİSİ ─────────────────────────────────────────────
 let patchData = {
-  version: "7.2",
-  date: "8 Temmuz 2026",
-  newChamps: ["yunara"],
-  buffs:   ["annie","kaisa","kayn","syndra","orianna","darius"],
-  nerfs:   ["ksante","norra","zed"],
-  changes: ["zyra","yasuo","fiddlesticks","varus","leesin"],
+  version: "7.2a",
+  date: "15 Temmuz 2026",
+  newChamps: [],
+  buffs:   ["skarner","yuumi"],
+  nerfs:   ["nidalee","warwick","senna"],
+  changes: [],
   details: {
-    yunara:       "Yeni şampiyon! İyonyalı okçu — kritik vuruşlarda ekstra büyü hasarı veren melez ADC",
-    annie:        "Tibbers'ın saldırıları artık Annie'nin büyü nüfuziyetini miras alıyor",
-    kaisa:        "4. yetenekte seçilebilir iniş menzili 4'ten 5.5'e yükseltildi",
-    kayn:         "Gölge Sıçraması'ndan çıkış sonrası tepki verme süresi kısaltıldı, çıkış menzili arttırıldı",
-    syndra:       "3. yetenek geri tepme menzili 7.2'den 7.5'e yükseltildi, kombolar tutarlılaştırıldı",
-    orianna:      "4. yetenek (Şok Dalgası) menzili 3'ten 3.25'e yükseltildi",
-    darius:       "2. yetenek ile hedef öldürüldüğünde bekleme süresinin %50'si ve mananın tamamı iade ediliyor",
-    ksante:       "4. yetenek sonrası kazanılan zırh delme, sadece bonus zırha uygulanacak şekilde değiştirildi",
-    norra:        "2. yetenek sürgün süresi 2.25s'den 1.5s'ye düşürüldü (ardından %80 yavaşlatma ekleniyor)",
-    zed:          "4. yetenek sonrası geri dönüş için 0.5s bekleme eklendi, bekleme süresi arttırıldı",
-    zyra:         "Bitkilerin yetenek gücü oranı azaltıldı ancak artık büyü nüfuziyeti miras alıyorlar",
-    yasuo:        "Kalkan ve deste mekaniği yeniden dengelendi, ultimasının zırh delmesi bonus zırhla sınırlandı",
-    fiddlesticks: "1. yeteneğin korku uygulama tutarlılığı düzeltildi (görünürken korku hatası giderildi)",
-    varus:        "4. yetenekte Yara Lekesi'nin tam yığılma süresi 3s'den 1.5s'ye düşürülerek kök süresiyle uyumlu hale getirildi",
-    leesin:       "1. ve 2. yetenek hasarı azaltıldı, ultima hasarı arttırılarak dövüşçü tarzına kaydırıldı",
+    nidalee:  "Orman hasarı beklentileri aştığı için Kuguar Sureti'nin taban hasarı ve Puma Sureti'nin ilave direnç oranı azaltıldı",
+    warwick:  "Avının karşılık verme şansını arttırmak için Ebedi Açlık'ın saldırı gücü oranı ve Cani Diş'in sabit hasarı azaltıldı",
+    skarner:  "Çarpışma ve baskınlarda etkisiz kaldığı için hasarı, dayanıklılığı ve kitle kontrolü güçlendirildi",
+    senna:    "Fazla iyi performans gösterdiği için Bağışlama'nın mevcut can hasarı ve Gölgelerin Şafağı'nın kalkanı azaltıldı",
+    yuumi:    "İyileştirmesi zayıf hissettirdiği için Çıldırrr'ın mana bedeli düşürüldü, Son Sayfa'nın taban iyileştirmesi arttırıldı",
   },
   // Şampiyon detay sayfasında gösterilen, yetenek bazlı ayrıntılı yama notları
   detailsFull: {
-    annie: [
-      { skill: "Tibbers'ı Çağır", changes: [
-        "[Yeni] Tibbers'ın saldırıları artık Annie'nin Büyü Nüfuziyeti ve Büyü Nüfuziyeti yüzdesini miras alıyor"
+    nidalee: [
+      { skill: "Kuguar Sureti (Atıl)", changes: [
+        "Taban Hasar: 65/100/135/170 → 55/90/125/160 (4. yetenek seviyesine bağlı)"
+      ]},
+      { skill: "Puma Sureti", changes: [
+        "İlave Zırh ve Büyü Direnci Yetenek Gücü Oranı: %3 → %2,5"
       ]},
     ],
-    kaisa: [
-      { skill: "Katil İçgüdüsü", changes: [
-        "Hedef etrafında seçilebilir maksimum iniş menzili: 4 → 5.5"
+    warwick: [
+      { skill: "Ebedi Açlık", changes: [
+        "İlave Saldırı Gücü Oranı: %20 → %15"
+      ]},
+      { skill: "Cani Diş", changes: [
+        "Sabit Hasar: %90 Yetenek Gücü → %85 Yetenek Gücü"
       ]},
     ],
-    kayn: [
-      { skill: "Gölge Sıçraması", changes: [
-        "Hedeften çıkış sonrası tepki verme süresi kısaltıldı, oyuncu girdilerine daha hızlı yanıt veriliyor",
-        "Maksimum çıkış mesafesi (Kayn / Darkin): 4 → 4.5",
-        "Maksimum çıkış mesafesi (Gölge Suikastçı): 6 → 6.5"
+    skarner: [
+      { skill: "Tektonik Zemin / Toprağın Başkaldırısı", changes: [
+        "Üçüncü Güçlendirilmiş Saldırının ve Tektonik Zemin'in Azami Can Hasarı: %10 → %11"
+      ]},
+      { skill: "Sismik Kalkan", changes: [
+        "Bekleme Süresi: 9/8/7/6s → 8/7/6/5s",
+        "Cana Bağlı Kalkan Oranı: %8 → %10"
+      ]},
+      { skill: "Ixtal Hücumu", changes: [
+        "Bekleme Süresi: 20/18/16/14s → 18/16/14/12s"
       ]},
     ],
-    syndra: [
-      { skill: "Zayıfı Dağıt", changes: [
-        "Kara Küreler'in geri tepme menzili: 7.2 → 7.5"
+    senna: [
+      { skill: "Bağışlama", changes: [
+        "Mevcut Can Hasarı: %1,2 ila %12 → %1 ila %10 (seviyeye bağlı)"
+      ]},
+      { skill: "Gölgelerin Şafağı", changes: [
+        "Kalkan: %40 Yetenek Gücü + sis yükü başına 4 → %50 Yetenek Gücü + Kara Sis yükü başına 2,5"
       ]},
     ],
-    orianna: [
-      { skill: "Komuta: Şok Dalgası", changes: [
-        "Menzil: 3 → 3.25"
+    yuumi: [
+      { skill: "Çıldırrr", changes: [
+        "Mana Bedeli: 80/90/100/110 → 65/75/85/95"
       ]},
-    ],
-    darius: [
-      { skill: "Sakatlayan Vuruş", changes: [
-        "Hedefi öldürmek, bu yeteneğin bekleme süresinin %50'sini ve mana maliyetinin tamamını iade ediyor"
-      ]},
-    ],
-    ksante: [
-      { skill: "Tüm Gücüyle", changes: [
-        "Bonus: %50 Zırh Delme yüzdesi → %50 Bonus Zırh Delme yüzdesi (sadece bonus zırha uygulanıyor)"
-      ]},
-    ],
-    norra: [
-      { skill: "Hiçliğe Yolculuk", changes: [
-        "Sürgün süresi: 2.25s → 1.5s",
-        "[Yeni] Sürgün bitiminde hedef, 0.75s boyunca %80 yavaşlatılıyor"
-      ]},
-    ],
-    zed: [
-      { skill: "Ölüm İşareti", changes: [
-        "[Yeni] Ultima kullanıldıktan sonra 0.5s boyunca geri dönüş kullanılamıyor",
-        "Bekleme süresi: 85/65/45 → 85/70/55"
-      ]},
-    ],
-    zyra: [
-      { skill: "Dikenli Bahçe", changes: [
-        "Bitki hasarının Yetenek Gücü oranı: %15 → %10",
-        "[Yeni] Bitkiler artık Zyra'nın Büyü Nüfuziyeti ve Büyü Nüfuziyeti yüzdesini miras alıyor"
-      ]},
-    ],
-    yasuo: [
-      { skill: "Gezginin Yolu (Kalkan)", changes: [
-        "Kalkan: 115~600 (Kritik Oranı ve seviyeye bağlı) → 125-680 (sadece seviyeye bağlı)",
-        "Kalkan oluşumu erken oyunda daha yavaş, geç oyunda daha hızlı (~%10)"
-      ]},
-      { skill: "Rüzgar Duvarı", changes: [
-        "Bekleme süresi: 18/18/18/18s → 22/20/18/16s"
-      ]},
-      { skill: "Süpüren Kılıç", changes: [
-        "Tekrar vuruşta hasar artışı için gereken yığın: 2 → 3 (maksimum hasar artışı %75 olarak sabit kaldı)"
-      ]},
-      { skill: "Son Nefes", changes: [
-        "Bonus: %40 Zırh Delme yüzdesi → %55 Bonus Zırh Delme yüzdesi"
-      ]},
-    ],
-    fiddlesticks: [
-      { skill: "Korkut", changes: [
-        "Görünür olduktan sonra hâlâ korku uygulayabildiği pencere hafifçe daraltıldı",
-        "Görünürken veya dövüşteyken yanlışlıkla korku uygulanabilmesi hatası düzeltildi"
-      ]},
-    ],
-    varus: [
-      { skill: "Yozlaşma Zinciri", changes: [
-        "Hedefte Yara Lekesi'nin tam yığılma süresi: 3s → 1.5s (kök süresiyle uyumlu hale getirildi)"
-      ]},
-    ],
-    leesin: [
-      { skill: "Ses Dalgası / Rezonanslı Vuruş", changes: [
-        "Temel hasar: 55/90/125/160 + %100 bonus Saldırı Hasarı → 60/100/140/180 + %90 bonus Saldırı Hasarı"
-      ]},
-      { skill: "Fırtına", changes: [
-        "Hasar: 90/140/190/240 + %125 bonus Saldırı Hasarı → 35/70/105/140 + %90 Saldırı Hasarı"
-      ]},
-      { skill: "Ejderhanın Öfkesi", changes: [
-        "Hasar: 100/250/400 + %180 bonus Saldırı Hasarı + %10/13/16 Hedefin Maksimum Canı → 125/350/575 + %190 bonus Saldırı Hasarı + %12/15/18 Hedefin bonus Canı"
+      { skill: "Son Sayfa", changes: [
+        "Taban İyileştirme: 20/30/40 → 20/35/50"
       ]},
     ],
   }
