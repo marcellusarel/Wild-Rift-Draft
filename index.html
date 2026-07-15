@@ -900,44 +900,47 @@ const LANE_COLOR = {Baron:"#ef9a9a",Jungle:"#a5d6a7",Mid:"#80cbc4",ADC:"#ffcc02"
 // S+=6, S=4, A=2
 const META_TIER = {
   // BARON
-  ksante:6,     ambessa:6,
-  gnar:4,       wukong:4,     poppy_baron:4, malphite:4,   ornn:4,
-  sion:4,       aatrox:4,     renekton:4,    gwen:4,       fiora:4,
-  rumble:4,     camille:4,
-  jax:2,        irelia:2,     nasus:2,       singed:2,     jayce:2,
-  volibear:2,   sett:2,       riven:2,       olaf_baron:2,
+  ambessa:6,    ksante:6,
+  aatrox:4,     camille:4,    fiora:4,      garen:4,      gnar:4,
+  gwen:4,       malphite:4,   mordekaiser:4,ornn:4,       poppy_baron:4,
+  renekton:4,   rumble:4,     sion:4,
+  darius:2,     irelia:2,     jax:2,        jayce:2,      nasus:2,
+  olaf_baron:2, riven:2,      ryze_baron:2, sett:2,       shen:2,
+  singed:2,     teemo:2,      volibear:2,   wukong:2,
 
   // JUNGLE
-  nidalee:6,    taliyah_jg:6,
-  viego:4,      lee_sin:4,    shyvana:4,     vi:4,         xin_zhao:4,
-  hecarim:4,    evelynn:4,    aatrox_jg:4,   lillia:4,     ambessa_jg:4,
-  riven_jg:2,   wukong_jg:2,  talon_jg:2,    khazix:2,     fiddlesticks:2,
-  pantheon_jg:2,kayn:2,       zed_jg:2,      nocturne:2,   olaf_jg:2,
-  camille_jg:2, gragas:2,     master_yi:2,   jarvaniv:2,
+  nidalee:6,    viego:6,
+  aatrox_jg:4,  ambessa_jg:4, evelynn:4,    hecarim:4,    khazix:4,
+  lee_sin:4,    lillia:4,     nocturne:4,   shyvana:4,    taliyah_jg:4,
+  vi:4,         warwick:4,    xin_zhao:4,
+  amumu:2,      fiddlesticks:2,gragas:2,    jarvaniv:2,   kayn:2,
+  kindred:2,    master_yi:2,  nunu:2,       olaf_jg:2,    pantheon_jg:2,
+  rammus:2,     rengar:2,     riven_jg:2,   talon_jg:2,   wukong_jg:2,
+  zed_jg:2,
 
   // MID
-  aurora:6,     ryze:6,
-  taliyah:4,    twisted_fate:4,norra:4,      orianna:4,    syndra:4,
-  swain_mid:4,  aurelionsol:4, viktor:4,     kassadin:4,   ahri:4,
-  galio:2,      mel:2,        zoe:2,         kennen:2,     akali_mid:2,
-  vladimir:2,   jayce_mid:2,  zed_mid:2,     vex:2,        lissandra:2,
-  annie:2,
+  aurora:6,     ryze:6,       taliyah:6,
+  ahri:4,       aurelionsol:4,kassadin:4,   orianna:4,    swain_mid:4,
+  syndra:4,     twisted_fate:4,viktor:4,
+  akali_mid:2,  annie:2,      galio:2,      heimerdinger:2,jayce_mid:2,
+  kennen:2,     lissandra:2,  mel:2,        norra:2,      vladimir:2,
+  vex:2,        veigar:2,     yasuo:2,      zed_mid:2,    ziggs:2,
+  zoe:2,        zyra_mid:2,
 
   // ADC
-  ezreal:6,
-  zeri:4,       smolder:4,    corki:4,       lucian:4,     xayah:4,
-  jhin:4,       vayne:4,      kogmaw:4,
-  varus:2,      sivir:2,      kalista:2,     kaisa:2,      draven:2,
-  ashe:2,       missfortune:2,jinx:2,        caitlyn:2,
-  aurelionsol_adc:4, orianna_adc:4, mel_adc:2, ziggs_adc:2,
+  ezreal:6,     smolder:6,
+  corki:4,      jhin:4,       kogmaw:4,     lucian:4,     vayne:4,
+  xayah:4,      zeri:4,       yunara:4,
+  ashe:2,       caitlyn:2,    draven:2,     jinx:2,       kaisa:2,
+  kalista:2,    missfortune:2,sivir:2,      varus:2,
 
   // SUPPORT
-  nami:6,       zilean:6,     nautilus:6,
-  braum:4,      galio_sup:4,  milio:4,       lulu:4,       senna:4,
-  ornn_sup:4,   rell:4,       rakan:4,
-  maokai:2,     pyke:2,       bard:2,        blitzcrank:2, soraka:2,
-  thresh:2,     karma:2,      janna:2,       zyra:2,       alistar:2,
-  sona:2,       seraphine:2,
+  nami:6,       zilean:6,
+  bard:4,       braum:4,      galio_sup:4,  leona:4,      lulu:4,
+  milio:4,      nautilus:4,   ornn_sup:4,   rell:4,       senna:4,
+  sona:4,       thresh:4,
+  alistar:2,    blitzcrank:2, janna:2,      karma:2,      maokai:2,
+  pyke:2,       rakan:2,      seraphine:2,  soraka:2,     zyra:2,
 };
 
 function getMetaTier(id) { return META_TIER[id] || 0; }
@@ -964,26 +967,65 @@ function getTier(id) { return getMetaTier(id); }
 
 // META_POWER — sıralama listesi (S+ önce, sonra S, sonra A)
 const META_POWER = {
-  Baron:  ["ksante","ambessa","gnar","wukong","poppy_baron","malphite","ornn","sion",
-           "aatrox","renekton","gwen","fiora","rumble","camille",
-           "jax","irelia","nasus","singed","jayce","volibear","sett","riven","olaf_baron"],
-  Jungle: ["nidalee","taliyah_jg","viego","lee_sin","shyvana","vi","xin_zhao","hecarim",
-           "evelynn","aatrox_jg","lillia","ambessa_jg",
-           "riven_jg","wukong_jg","talon_jg","khazix","fiddlesticks","pantheon_jg",
-           "kayn","zed_jg","nocturne","olaf_jg","camille_jg","gragas","master_yi","jarvaniv"],
-  Mid:    ["aurora","ryze","taliyah","twisted_fate","norra","orianna","syndra","swain_mid",
-           "aurelionsol","viktor","kassadin","ahri",
-           "galio","mel","zoe","kennen","akali_mid","vladimir","jayce_mid","zed_mid",
-           "vex","lissandra","annie"],
-  ADC:    ["ezreal","zeri","smolder","corki","lucian","xayah","jhin","vayne","kogmaw",
-           "aurelionsol_adc","orianna_adc",
-           "varus","sivir","kalista","kaisa","draven","ashe","missfortune","jinx","caitlyn",
-           "mel_adc","ziggs_adc"],
-  Support:["nami","zilean","nautilus","braum","galio_sup","milio","lulu","senna","ornn_sup",
-           "rell","rakan",
-           "maokai","pyke","bard","blitzcrank","soraka","thresh","karma","janna","zyra",
-           "alistar","sona","seraphine"],
+  Baron:  ["ambessa","ksante",
+           "aatrox","camille","fiora","garen","gnar","gwen","malphite","mordekaiser","ornn","poppy_baron","renekton","rumble","sion",
+           "darius","irelia","jax","jayce","nasus","olaf_baron","riven","ryze_baron","sett","shen","singed","teemo","volibear","wukong"],
+  Jungle: ["nidalee","viego",
+           "aatrox_jg","ambessa_jg","evelynn","hecarim","khazix","lee_sin","lillia","nocturne","shyvana","taliyah_jg","vi","warwick","xin_zhao",
+           "amumu","fiddlesticks","gragas","jarvaniv","kayn","kindred","master_yi","nunu","olaf_jg","pantheon_jg","rammus","rengar","riven_jg","talon_jg","wukong_jg","zed_jg"],
+  Mid:    ["aurora","ryze","taliyah",
+           "ahri","aurelionsol","kassadin","orianna","swain_mid","syndra","twisted_fate","viktor",
+           "akali_mid","annie","galio","heimerdinger","jayce_mid","kennen","lissandra","mel","norra","vladimir","vex","veigar","yasuo","zed_mid","ziggs","zoe","zyra_mid"],
+  ADC:    ["ezreal","smolder",
+           "corki","jhin","kogmaw","lucian","vayne","xayah","zeri","yunara",
+           "ashe","caitlyn","draven","jinx","kaisa","kalista","missfortune","sivir","varus"],
+  Support:["nami","zilean",
+           "bard","braum","galio_sup","leona","lulu","milio","nautilus","ornn_sup","rell","senna","sona","thresh",
+           "alistar","blitzcrank","janna","karma","maokai","pyke","rakan","seraphine","soraka","zyra"],
 };
+
+// ─── GÖRSEL TIER LIST (S+/S/A/B) — sadece bilgi amaçlı, draft önerisini etkilemez ──
+// B tier çampionları öneri sistemine hiç girmez (META_TIER/META_POWER'da yer almazlar)
+const TIER_LIST_FULL = {
+  Baron: {
+    "S+": ["ambessa","ksante"],
+    "S":  ["aatrox","camille","fiora","garen","gnar","gwen","malphite","mordekaiser","ornn","poppy_baron","renekton","rumble","sion"],
+    "A":  ["darius","irelia","jax","jayce","nasus","olaf_baron","riven","ryze_baron","sett","shen","singed","teemo","volibear","warwick","wukong"],
+    "B":  ["akali_baron","drmundo","kayle","kennen","tryndamere","urgot","yasuo_baron","yone_baron"],
+  },
+  Jungle: {
+    "S+": ["nidalee","viego"],
+    "S":  ["aatrox_jg","ambessa_jg","evelynn","hecarim","khazix","lee_sin","lillia","nocturne","shyvana","taliyah_jg","vi","warwick","xin_zhao"],
+    "A":  ["amumu","fiddlesticks","gragas_sup","jarvaniv","kayn","kindred","master_yi","nunu","olaf_jg","pantheon_jg","rammus","rengar","riven_jg","talon_jg","wukong_jg","zed_jg"],
+    "B":  ["diana","ekko_jg","fizz_jg","graves","nilah","skarner","tryndamere_jg","volibear_jg","yone_jg"],
+  },
+  Mid: {
+    "S+": ["aurora","ryze","taliyah"],
+    "S":  ["ahri","aurelionsol","kassadin","orianna","swain_mid","syndra","twisted_fate","viktor"],
+    "A":  ["akali_mid","annie","galio","heimerdinger","jayce_mid","kennen","lissandra","mel","norra","vladimir","vex","veigar","yasuo","zed_mid","ziggs","zoe","zyra_mid"],
+    "B":  ["akshan_mid","brand_mid","diana","ekko","fizz","gragas_sup","katarina","kayle_mid","lux_mid","morgana_mid","teemo_mid","velkoz","yone"],
+  },
+  ADC: {
+    "S+": ["ezreal","smolder"],
+    "S":  ["corki","jhin","kogmaw","lucian","vayne","xayah","zeri","yunara"],
+    "A":  ["ashe","caitlyn","draven","jinx","kaisa","kalista","missfortune","sivir","varus"],
+    "B":  ["samira","tristana","twitch"],
+  },
+  Support: {
+    "S+": ["nami","zilean"],
+    "S":  ["bard","braum","galio_sup","leona","lulu","milio","nautilus","ornn_sup","rell","senna","sona","thresh"],
+    "A":  ["alistar","blitzcrank","janna","karma","maokai","pyke","rakan","seraphine","soraka","zyra"],
+    "B":  ["brand_mid","lux","morgana","swain","yuumi"],
+  },
+};
+const TIER_COLORS = {
+  "S+": { color:"#ff4d6d", bg:"#ff4d6d1a", border:"#ff4d6d55" },
+  "S":  { color:"#ff9d4d", bg:"#ff9d4d1a", border:"#ff9d4d55" },
+  "A":  { color:"#ffcc02", bg:"#ffcc0218", border:"#ffcc0250" },
+  "B":  { color:"#7d8fae", bg:"#7d8fae18", border:"#7d8fae50" },
+};
+const ROLE_ICON = { Baron:"⚔️", Jungle:"🌲", Mid:"🔮", ADC:"🏹", Support:"🛡️" };
+let tierListRole = "Tümü"; // Tier List ekranı filtresi
 
 // Draft sırası
 const ORDER = [
@@ -2200,6 +2242,19 @@ function render() {
 
         <div style="padding:14px;display:flex;flex-direction:column;gap:12px">
 
+          <!-- TIER LIST BUTONU -->
+          <button onclick="tierListRole='Tümü';appScreen='tierlist';render()" style="
+            width:100%;padding:14px 16px;border-radius:12px;font-size:13px;font-weight:800;
+            background:linear-gradient(135deg,#2e1a1a,#0d0d1e);
+            border:1px solid #ff4d6d44;color:#ff4d6d;
+            display:flex;align-items:center;justify-content:space-between;">
+            <span style="display:flex;align-items:center;gap:10px">
+              <span style="font-size:20px">📊</span>
+              <span style="color:#e0e0f0">Tier List</span>
+            </span>
+            <span style="font-size:11px;color:#ff4d6d">S+ → B ›</span>
+          </button>
+
           <!-- ÖZET SAYAÇLAR -->
           <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
             ${groups.map(g => `
@@ -2260,6 +2315,95 @@ function render() {
               🌐 Tüm Yama Notları →
             </a>
           </div>
+        </div>
+      </div>`;
+    return;
+  }
+  // ── TIER LIST EKRANI ─────────────────────────────────────
+  if (appScreen === "tierlist") {
+    const roles = ["Tümü","Baron","Jungle","Mid","ADC","Support"];
+    const tierOrder = ["S+","S","A","B"];
+
+    function champCard(id, role) {
+      const c = DB[id];
+      if (!c) return "";
+      return `<div onclick="champDetailId='${id}';appScreen='champDetail';render()"
+        style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;width:64px">
+        <div style="position:relative;width:56px;height:56px">
+          <div style="width:56px;height:56px;border-radius:50%;overflow:hidden;
+            border:2px solid #ffffff22">${champImg(id, 56)}</div>
+          ${role ? `<div style="position:absolute;bottom:-2px;right:-2px;width:18px;height:18px;
+            border-radius:50%;background:#0a0a18;border:1px solid #1a1a2e;
+            display:flex;align-items:center;justify-content:center;font-size:9px">${ROLE_ICON[role]}</div>` : ""}
+        </div>
+        <div style="font-size:9px;color:#ccc;text-align:center;line-height:1.15;
+          max-width:64px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.name}</div>
+      </div>`;
+    }
+
+    function tierBand(t, entries) {
+      if (!entries.length) return "";
+      const tc = TIER_COLORS[t];
+      return `
+        <div style="display:flex;border-radius:10px;overflow:hidden;
+          border:1px solid ${tc.border};background:${tc.bg}">
+          <div style="width:38px;flex-shrink:0;display:flex;align-items:center;
+            justify-content:center;font-size:14px;font-weight:900;color:#fff;
+            background:${tc.color}">${t}</div>
+          <div style="flex:1;display:flex;flex-wrap:wrap;gap:10px;padding:10px">
+            ${entries.map(e => champCard(e.id, e.role)).join("")}
+          </div>
+        </div>`;
+    }
+
+    let bodyHtml = "";
+    if (tierListRole === "Tümü") {
+      // Tier öncelikli: her bantta TÜM lanelerin o tier'daki şampiyonları bir arada
+      bodyHtml = tierOrder.map(t => {
+        const entries = [];
+        ["Baron","Jungle","Mid","ADC","Support"].forEach(role => {
+          (TIER_LIST_FULL[role][t] || []).forEach(id => entries.push({id, role}));
+        });
+        return tierBand(t, entries);
+      }).join("");
+    } else {
+      const data = TIER_LIST_FULL[tierListRole];
+      bodyHtml = tierOrder.map(t => tierBand(t, (data[t]||[]).map(id=>({id, role:null})))).join("");
+    }
+
+    document.getElementById("app").innerHTML = `
+      <div style="min-height:100vh;background:#07070f">
+
+        <!-- HEADER -->
+        <div style="padding:12px 14px;background:#0a0a18;border-bottom:1px solid #141428;
+          position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
+          display:flex;align-items:center;gap:10px">
+          <button onclick="appScreen='patch';render()" style="padding:6px 12px;border-radius:8px;
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px">← Geri</button>
+          <div style="flex:1">
+            <div style="font-size:14px;font-weight:800;color:#fff">📊 Tier List</div>
+            <div style="font-size:9px;color:#ff4d6d">${patchData.version} · ${patchData.date}</div>
+          </div>
+        </div>
+
+        <!-- ROL FİLTRE BUTONLARI -->
+        <div style="display:flex;gap:6px;overflow-x:auto;padding:12px 14px 4px;
+          -webkit-overflow-scrolling:touch">
+          ${roles.map(r => {
+            const active = tierListRole === r;
+            return `<button onclick="tierListRole='${r}';render()" style="
+              flex-shrink:0;padding:9px 14px;border-radius:10px;font-size:11px;font-weight:700;
+              white-space:nowrap;
+              background:${active ? "#ff4d6d22" : "#0d0d1e"};
+              border:1px solid ${active ? "#ff4d6d77" : "#1a1a2e"};
+              color:${active ? "#ff4d6d" : "#888"}">
+              ${r==="Tümü"?"🗂️":ROLE_ICON[r]} ${r}
+            </button>`;
+          }).join("")}
+        </div>
+
+        <div style="padding:10px 14px 32px;display:flex;flex-direction:column;gap:8px">
+          ${bodyHtml}
         </div>
       </div>`;
     return;
