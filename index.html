@@ -156,10 +156,6 @@ const DB = {
     ct:["nautilus","blitzcrank","leona","alistar","thresh"],
     ctBy:["braum","brand","soraka","morgana"],
     sy:["vayne","jinx","kaisa","smolder","ezreal"]},
-  galio:      {name:"Galio",       lanes:["Support"],dmg:"AP",   cls:"Tank",
-    ct:["senna","nami","karma","morgana","janna","alistar","lulu"],
-    ctBy:["rakan","blitzcrank","braum","leona","maokai"],
-    sy:["jinx","kaisa","smolder","lucian","caitlyn"]},
   swain:      {name:"Swain",       lanes:["Support"],dmg:"AP",   cls:"Mage",
     ct:["brand","syndra","orianna","akshan","fizz","zoe"],
     ctBy:["galio","pantheon","twisted_fate","ahri","kennen"],
@@ -336,10 +332,6 @@ const DB = {
     ct:["akali","annie","pantheon","irelia","ahri","zed","akshan","katarina","orianna"],
     ctBy:["lux","galio","kayle","morgana","diana"],
     sy:["nautilus","leona","amumu","vi","jarvaniv"]},
-  diana:      {name:"Diana",       lanes:["Mid"],    dmg:"AP",    cls:"Assassin",
-    ct:["vex","galio","irelia","ziggs","akali","fizz","pantheon"],
-    ctBy:["zed","katarina","lux","brand","seraphine","aurelionsol","twisted_fate","orianna"],
-    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   ekko:       {name:"Ekko",        lanes:["Mid"],    dmg:"AP",    cls:"Assassin",
     ct:["vex","lissandra","yasuo","pantheon","akali","irelia","diana","talon"],
     ctBy:["twisted_fate","brand","veigar","ziggs","lux","zed"],
@@ -348,7 +340,7 @@ const DB = {
     ct:["lissandra","vex","akali","galio","morgana","vladimir"],
     ctBy:["yasuo","ahri","lux","twisted_fate","corki","velkoz"],
     sy:["rakan","leona","vi","amumu","nautilus"]},
-  galio:      {name:"Galio",       lanes:["Mid"],    dmg:"AP",    cls:"Tank",
+  galio:      {name:"Galio",       lanes:["Support","Mid"],dmg:"AP",cls:"Tank",
     ct:["morgana","ahri","swain","akshan","pantheon","lucian","yasuo","zed"],
     ctBy:["irelia","katarina","fizz","twisted_fate","diana","aurelionsol","vex","jayce","lissandra"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
@@ -379,10 +371,6 @@ const DB = {
   kayle_mid:  {name:"Kayle",       lanes:["Mid"],    dmg:"Hybrid",cls:"Marksman",
     ct:["syndra","viktor","ryze","pantheon","irelia","lucian","katarina","akshan","jayce"],
     ctBy:["aurelionsol","lux","veigar","morgana"],
-    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
-  kennen:     {name:"Kennen",      lanes:["Mid"],    dmg:"AP",    cls:"Mage",
-    ct:["kassadin","aurora","swain","orianna","ziggs","seraphine","irelia","lux"],
-    ctBy:["kayle","teemo","akali"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   lissandra:  {name:"Lissandra",   lanes:["Mid"],    dmg:"AP",    cls:"Mage",
     ct:["morgana","kassadin","galio","lux","ziggs","akshan","orianna"],
@@ -535,7 +523,7 @@ const DB = {
     ct:["lee_sin","viego","nidalee","pantheon"],
     ctBy:["master_yi","evelynn","amumu","khazix"],
     sy:["janna","lulu","nautilus","ezreal","thresh"]},
-  diana:      {name:"Diana",       lanes:["Jungle"], dmg:"AP",    cls:"Assassin",
+  diana:      {name:"Diana",       lanes:["Mid","Jungle"],dmg:"AP",cls:"Assassin",
     ct:["master_yi","kindred","jarvaniv","xin_zhao","olaf","vi","pantheon"],
     ctBy:["gragas","evelynn","rammus"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
@@ -781,7 +769,7 @@ const DB = {
     ct:["syndra","viktor","ryze","pantheon","irelia","lucian","katarina","akshan","jayce"],
     ctBy:["garen","fiora","singed","olaf","volibear"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
-  kennen:     {name:"Kennen",      lanes:["Baron"],  dmg:"AP",    cls:"Mage",
+  kennen:     {name:"Kennen",      lanes:["Mid","Baron"],dmg:"AP",cls:"Mage",
     ct:["gnar","nasus","wukong","jayce","malphite","irelia","gragas","camille"],
     ctBy:["jax","darius","teemo","garen","kayle","renekton","riven"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
@@ -1285,6 +1273,7 @@ let oppScore      = 0;   // Rakibin galibiyet sayısı
 // ─── EKRAN DURUMU ────────────────────────────────────────────
 // "home" | "draft" | "champions" | "champDetail"
 let appScreen     = "home";
+let champDetailFrom = "champions"; // Şampiyon detayına hangi ekrandan girildiği (geri tuşu için)
 let champDetailId = null;   // detay sayfasında açık şampiyon DB key
 let champLane     = "Tümü"; // şampiyonlar ekranı lane filtresi
 let champSearch   = "";     // şampiyonlar ekranı arama
@@ -1458,7 +1447,7 @@ const CHAMP_ID = {
   nami:267, thresh:412, blitzcrank:53, soraka:16, janna:40, morgana:25,
   alistar:12, seraphine:147, sona:37, lux:99, karma:43, zyra:143,
   pyke:555, bard:432, zilean:26, yuumi:350, galio:3, swain:50,
-  shen_sup:98, singed_sup:27, ornn_sup:516, maokai:57, rell:526,
+  shen_sup:98, singed_sup:27, singed_mid:27, ornn_sup:516, maokai:57, rell:526,
   sett_sup:875, senna:235, pantheon_sup:80, gragas_sup:79, poppy_sup:78,
   // ADC
   smolder:901, kaisa:145, jhin:202, ezreal:81, vayne:67, lucian:236,
@@ -1476,7 +1465,7 @@ const CHAMP_ID = {
   swain_mid:50, syndra:134, taliyah:163, talon:91, teemo_mid:17,
   twisted_fate:4, veigar:45, velkoz:161, vex:711, viktor:112,
   vladimir:8, yasuo:157, yone:777, zed_mid:238, ziggs:115, ziggs_adc:115, zoe:142,
-  akshan_mid:166, pantheon_mid:80,
+  akshan_mid:166, pantheon_mid:80, lucian_mid:236, lux_mid:99, zyra_mid:143,
   // JUNGLE
   nidalee:76, taliyah_jg:163, viego:234, lee_sin:64, shyvana:102,
   vi:254, xin_zhao:5, hecarim:120, evelynn:28, aatrox_jg:266,
@@ -1487,6 +1476,7 @@ const CHAMP_ID = {
   volibear_jg:106, jax_jg:24, gwen_jg:887, irelia_jg:39, fizz_jg:105,
   tryndamere_jg:23, ekko_jg:245, nautilus_jg:111, morgana_jg:25,
   skarner:72, nunu:20, ksante:897, drmundo_jg:36, urgot_jg:6,
+  maokai_jg:57, poppy_jg:78, shen_jg:98, yone_jg:777,
   // BARON
   ambessa:799, wukong:62, poppy_baron:78, malphite:54, ornn:516,
   sion:14, aatrox:266, renekton:58, gwen:887, fiora:114, rumble:68,
@@ -2285,7 +2275,7 @@ function render() {
                     if (!c) return "";
                     const lc = LANE_COLOR[c.lanes?.[0]]||"#888";
                     const detail = patchData.details?.[normName] || "";
-                    return `<div onclick="champDetailId='${c.id}';appScreen='champDetail';render()"
+                    return `<div onclick="champDetailId='${c.id}';champDetailFrom='patch';appScreen='champDetail';render()"
                       style="display:flex;align-items:center;gap:10px;padding:10px;
                       border-radius:10px;background:${g.bg};cursor:pointer;
                       border:1px solid ${g.border}">
@@ -2327,7 +2317,7 @@ function render() {
     function champCard(id, role) {
       const c = DB[id];
       if (!c) return "";
-      return `<div onclick="champDetailId='${id}';appScreen='champDetail';render()"
+      return `<div onclick="champDetailId='${id}';champDetailFrom='tierlist';appScreen='champDetail';render()"
         style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;width:64px">
         <div style="position:relative;width:56px;height:56px">
           <div style="width:56px;height:56px;border-radius:50%;overflow:hidden;
@@ -2467,7 +2457,7 @@ function render() {
           ${champList.map(c => {
             const lc = lc_map[c.allLanes[0]]||"#888";
             const flex = c.allLanes.length > 1;
-            return `<div onclick="champDetailId='${c.id}';appScreen='champDetail';render()"
+            return `<div onclick="champDetailId='${c.id}';champDetailFrom='champions';appScreen='champDetail';render()"
               style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:12px;
               padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:6px;
               cursor:pointer;position:relative">
@@ -2524,7 +2514,7 @@ function render() {
         <div style="padding:12px 14px;background:#0a0a18;border-bottom:1px solid #141428;
           position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
           display:flex;align-items:center;gap:10px">
-          <button onclick="appScreen='champions';render()" style="padding:6px 12px;border-radius:8px;
+          <button onclick="appScreen=champDetailFrom;render()" style="padding:6px 12px;border-radius:8px;
             border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← Geri</button>
           <div style="font-size:14px;font-weight:800;color:#fff">${c.name}</div>
         </div>
@@ -3529,7 +3519,7 @@ function updateChampGrid() {
   grid.innerHTML = list.map(c => {
     const lc = lc_map[c.allLanes[0]]||"#888";
     const flex = c.allLanes.length > 1;
-    return `<div onclick="champDetailId='${c.id}';appScreen='champDetail';render()"
+    return `<div onclick="champDetailId='${c.id}';champDetailFrom='champions';appScreen='champDetail';render()"
       style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:12px;
       padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:6px;
       cursor:pointer;position:relative">
