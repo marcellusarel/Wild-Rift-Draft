@@ -168,6 +168,10 @@ const DB = {
     ct:["morgana","lulu","nautilus"],
     ctBy:["seraphine","sona"],
     sy:["jinx","vayne","kaisa","smolder","ezreal"]},
+  galio:      {name:"Galio",       lanes:["Support"],dmg:"AP",   cls:"Tank",
+    ct:["senna","nami","karma","morgana","janna","alistar","lulu"],
+    ctBy:["rakan","blitzcrank","braum","leona","maokai"],
+    sy:["jinx","kaisa","smolder","lucian","caitlyn"]},
   maokai:     {name:"Maokai",      lanes:["Support"],dmg:"AP",   cls:"Tank",
     ct:["galio","braum","leona","sona","seraphine","nami","morgana"],
     ctBy:["blitzcrank","pyke","zilean","brand"],
@@ -336,9 +340,9 @@ const DB = {
     ct:["lissandra","vex","akali","galio","morgana","vladimir"],
     ctBy:["yasuo","ahri","lux","twisted_fate","corki","velkoz"],
     sy:["rakan","leona","vi","amumu","nautilus"]},
-  galio:      {name:"Galio",       lanes:["Support","Mid"],dmg:"AP",cls:"Tank",
-    ct:["morgana","ahri","swain","akshan","pantheon","lucian","yasuo","zed"],
-    ctBy:["irelia","katarina","fizz","twisted_fate","diana","aurelionsol","vex","jayce","lissandra"],
+  galio_mid:  {name:"Galio",       lanes:["Mid"],    dmg:"AP",    cls:"Tank",
+    ct:["morgana_mid","ahri","swain_mid","akshan_mid","pantheon_mid","lucian_mid","yasuo","zed_mid"],
+    ctBy:["irelia_mid","katarina","fizz","twisted_fate","diana","aurelionsol","vex","jayce_mid","lissandra"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   heimerdinger:{name:"Heimerdinger",lanes:["Mid"],   dmg:"AP",    cls:"Mage",
     ct:["syndra","zed","irelia","yasuo","yone","ziggs"],
@@ -498,18 +502,22 @@ const DB = {
     ctBy:["ahri","orianna","akali","corki","galio","singed","vladimir"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   singed_mid: {name:"Singed",      lanes:["Mid"],    dmg:"AP",    cls:"Tank",
-    ct:["ambessa","jayce","teemo","darius","camille","fiora","vayne"],
-    ctBy:["jax","malphite","yasuo","tryndamere","garen","nautilus"],
+    ct:["twisted_fate","orianna","akshan_mid","renekton","jayce_mid"],
+    ctBy:["vex","yasuo","ekko","irelia_mid"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
 
   // ── JUNGLE ───────────────────────────────────────────────────
+  gragas_jg:  {name:"Gragas",      lanes:["Jungle"], dmg:"AP",    cls:"Tank",
+    ct:["amumu","nocturne","lillia","nunu","fiora","olaf_jg","diana"],
+    ctBy:["camille_jg","evelynn","master_yi","graves"],
+    sy:["kaisa","jinx","missfortune","brand_mid","orianna"]},
   aatrox_jg:  {name:"Aatrox",      lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
     ct:["kindred","lillia","hecarim"],
     ctBy:["drmundo_jg","urgot_jg","olaf_jg","fiddlesticks","graves","sett"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   amumu:      {name:"Amumu",       lanes:["Jungle"], dmg:"AP",    cls:"Tank",
     ct:["lillia","nocturne","nidalee","olaf","lee_sin","master_yi"],
-    ctBy:["graves","wukong","rammus","warwick","viego","vi","tryndamere","pantheon","ekko","gragas","jarvaniv"],
+    ctBy:["graves","wukong","rammus","warwick","viego","vi","tryndamere","pantheon","ekko","gragas_jg","jarvaniv"],
     sy:["orianna","brand","katarina","missfortune","kaisa"]},
   warwick:    {name:"Warwick",     lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
     ct:["amumu","olaf","kindred","morgana"],
@@ -1278,6 +1286,59 @@ let champDetailId = null;   // detay sayfasında açık şampiyon DB key
 let champLane     = "Tümü"; // şampiyonlar ekranı lane filtresi
 let champSearch   = "";     // şampiyonlar ekranı arama
 
+// ─── SORUN 1: SAYFA YENİLEME → SON EKRANI HATIRLA ─────────────
+function saveAppState(){
+  try {
+    localStorage.setItem("wrAppState", JSON.stringify({
+      appScreen, champDetailId, champDetailFrom, champLane, champSearch
+    }));
+  } catch(e){}
+}
+function loadAppState(){
+  try {
+    const raw = localStorage.getItem("wrAppState");
+    if(!raw) return;
+    const s = JSON.parse(raw);
+    // "draft" ekranını geri yüklemiyoruz — o an aktif bir taslak verisi
+    // (slots/step/seri durumu) kaydedilmiyor, boş bir taslağa dönmek
+    // kafa karıştırır; bu durumda ana menüde kalınır.
+    if(s.appScreen === "draft") return;
+    if(s.appScreen) appScreen = s.appScreen;
+    if(s.champDetailId) champDetailId = s.champDetailId;
+    if(s.champDetailFrom) champDetailFrom = s.champDetailFrom;
+    if(s.champLane) champLane = s.champLane;
+    if(typeof s.champSearch === "string") champSearch = s.champSearch;
+    // champDetail ekranı için şampiyon artık DB'de yoksa güvenli şekilde geri dön
+    if(appScreen === "champDetail" && !DB[champDetailId]){
+      appScreen = champDetailFrom || "champions";
+    }
+  } catch(e){}
+}
+
+// ─── SORUN 2: ŞAMPİYON DETAYINDAN GERİ DÖNÜNCE SCROLL KONUMU ──
+let savedScrollY = {}; // ekran adı -> son scroll konumu
+function openChampDetail(id, from){
+  savedScrollY[from] = window.scrollY;
+  champDetailId = id;
+  champDetailFrom = from;
+  appScreen = "champDetail";
+  render();
+  window.scrollTo(0, 0); // yeni şampiyon detayı her zaman en üstten başlar
+}
+function goBackFromDetail(){
+  const from = champDetailFrom;
+  appScreen = from;
+  render();
+  requestAnimationFrame(() => window.scrollTo(0, savedScrollY[from] || 0));
+}
+// champDetail içindeyken eşleşme ikonuna tıklayıp başka şampiyona geçmek —
+// origin ekranın (champions/tierlist/patch) kaydedilmiş scroll konumuna dokunmaz
+function switchChampDetail(id){
+  champDetailId = id;
+  render();
+  window.scrollTo(0, 0);
+}
+
 // ─── YENİ: TARAF & RAKİP ─────────────────────────────────────
 let mySide        = null;   // 0=Mavi, 1=Kırmızı, null=seçilmedi
 let opponentName  = "Rakip Takım";
@@ -1471,7 +1532,7 @@ const CHAMP_ID = {
   vi:254, xin_zhao:5, hecarim:120, evelynn:28, aatrox_jg:266,
   lillia:876, ambessa_jg:799, riven_jg:92, wukong_jg:62, talon_jg:91,
   khazix:121, fiddlesticks:9, pantheon_jg:80, kayn:141, zed_jg:238,
-  nocturne:56, olaf_jg:2, camille_jg:164, master_yi:11, jarvaniv:59,
+  nocturne:56, olaf_jg:2, camille_jg:164, master_yi:11, jarvaniv:59, gragas_jg:79,
   rengar:107, graves:104, warwick:19, kindred:203, rammus:33, amumu:32,
   volibear_jg:106, jax_jg:24, gwen_jg:887, irelia_jg:39, fizz_jg:105,
   tryndamere_jg:23, ekko_jg:245, nautilus_jg:111, morgana_jg:25,
@@ -2094,6 +2155,7 @@ function _cdId(){ return 0; }
 
 // ─── RENDER ──────────────────────────────────────────────────
 function render() {
+  saveAppState();
 
   // ── ANA MENÜ ─────────────────────────────────────────────
   if (appScreen === "home") {
@@ -2280,7 +2342,7 @@ function render() {
                     if (!c) return "";
                     const lc = LANE_COLOR[c.lanes?.[0]]||"#888";
                     const detail = patchData.details?.[normName] || "";
-                    return `<div onclick="champDetailId='${c.id}';champDetailFrom='patch';appScreen='champDetail';render()"
+                    return `<div onclick="openChampDetail('${c.id}','patch')"
                       style="display:flex;align-items:center;gap:10px;padding:10px;
                       border-radius:10px;background:${g.bg};cursor:pointer;
                       border:1px solid ${g.border}">
@@ -2322,7 +2384,7 @@ function render() {
     function champCard(id, role) {
       const c = DB[id];
       if (!c) return "";
-      return `<div onclick="champDetailId='${id}';champDetailFrom='tierlist';appScreen='champDetail';render()"
+      return `<div onclick="openChampDetail('${id}','tierlist')"
         style="display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;width:64px">
         <div style="position:relative;width:56px;height:56px">
           <div style="width:56px;height:56px;border-radius:50%;overflow:hidden;
@@ -2462,7 +2524,7 @@ function render() {
           ${champList.map(c => {
             const lc = lc_map[c.allLanes[0]]||"#888";
             const flex = c.allLanes.length > 1;
-            return `<div onclick="champDetailId='${c.id}';champDetailFrom='champions';appScreen='champDetail';render()"
+            return `<div onclick="openChampDetail('${c.id}','champions')"
               style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:12px;
               padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:6px;
               cursor:pointer;position:relative">
@@ -2499,7 +2561,7 @@ function render() {
       const d = DB[id];
       if (!d) return "";
       const lc = LANE_COLOR[d.lanes?.[0]]||"#888";
-      return `<div onclick="champDetailId='${id}';render()"
+      return `<div onclick="switchChampDetail('${id}')"
         style="display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;
         min-width:56px">
         <div style="width:52px;height:52px;border-radius:10px;overflow:hidden;
@@ -2519,7 +2581,7 @@ function render() {
         <div style="padding:12px 14px;background:#0a0a18;border-bottom:1px solid #141428;
           position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
           display:flex;align-items:center;gap:10px">
-          <button onclick="appScreen=champDetailFrom;render()" style="padding:6px 12px;border-radius:8px;
+          <button onclick="goBackFromDetail()" style="padding:6px 12px;border-radius:8px;
             border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← Geri</button>
           <div style="font-size:14px;font-weight:800;color:#fff">${c.name}</div>
         </div>
@@ -3524,7 +3586,7 @@ function updateChampGrid() {
   grid.innerHTML = list.map(c => {
     const lc = lc_map[c.allLanes[0]]||"#888";
     const flex = c.allLanes.length > 1;
-    return `<div onclick="champDetailId='${c.id}';champDetailFrom='champions';appScreen='champDetail';render()"
+    return `<div onclick="openChampDetail('${c.id}','champions')"
       style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:12px;
       padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:6px;
       cursor:pointer;position:relative">
@@ -3541,8 +3603,8 @@ function updateChampGrid() {
   }).join("");
 }
 
-// İlk render — Ana Menü
-appScreen = "home";
+// İlk render — son bırakılan ekran (varsa) geri yüklenir, yoksa Ana Menü
+loadAppState();
 render();
 </script>
 </body>
