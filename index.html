@@ -35,6 +35,12 @@ input{font-family:inherit}
   padding:5px 10px;font-size:10px;line-height:1.4;color:#8a8aa0;
   text-align:right;pointer-events:none;backdrop-filter:blur(4px);
   padding-top:max(5px,env(safe-area-inset-top))"></div>
+<div id="builderFab" style="display:none;position:fixed;bottom:16px;right:16px;z-index:9997;
+  padding-bottom:env(safe-area-inset-bottom)"></div>
+<div id="builderToast" style="display:none;position:fixed;top:50%;left:50%;
+  transform:translate(-50%,-50%);z-index:9999;background:#0d0d1ef2;border:1px solid #ffcc0255;
+  border-radius:12px;padding:14px 20px;font-size:13px;font-weight:700;color:#ffcc02;
+  text-align:center;pointer-events:none"></div>
 <script>
 // Saat/tarih widget'ı — sağ üst köşe, her saniye güncellenir
 (function(){
@@ -240,7 +246,7 @@ const DB = {
     sy:["amumu","leona","nautilus","blitzcrank","rakan"]},
   draven:     {name:"Draven",      lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
     ct:["caitlyn","ziggs","varus","samira","kogmaw"],
-    ctBy:["ashe","ezreal","vayne","jinx","akshan","sivir","tristana","smolder","jhin","kaisa"],
+    ctBy:["ashe","ezreal","vayne","jinx","sivir","tristana","smolder","jhin","kaisa"],
     sy:["leona","thresh","blitzcrank","nami","alistar"]},
   tristana:   {name:"Tristana",    lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
     ct:["draven","vayne","caitlyn","lucian","kogmaw"],
@@ -287,12 +293,8 @@ const DB = {
     ctBy:["ezreal","vayne","orianna"],
     sy:["lulu","milio","braum","janna","soraka"]},
   corki:      {name:"Corki",       lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
-    ct:["kogmaw","missfortune","draven","caitlyn","akshan"],
+    ct:["kogmaw","missfortune","draven","caitlyn"],
     ctBy:["ziggs","jinx","jhin"],
-    sy:["nautilus","leona","blitzcrank","thresh","morgana"]},
-  akshan:     {name:"Akshan",      lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
-    ct:["vex","zed","irelia","yasuo","pantheon","veigar"],
-    ctBy:["ahri","orianna","akali","corki","galio","singed","vladimir"],
     sy:["nautilus","leona","blitzcrank","thresh","morgana"]},
   yunara:     {name:"Yunara",       lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
     ct:["caitlyn","kogmaw","nilah"],
@@ -313,7 +315,7 @@ const DB = {
     ctBy:["mel","orianna","smolder","jinx","ashe"],
     sy:["amumu","nautilus","vi","leona","jarvaniv"]},
   akali_mid:  {name:"Akali",       lanes:["Mid"],    dmg:"Hybrid",cls:"Assassin",
-    ct:["veigar","lissandra","twisted_fate","akshan","galio","pantheon","annie"],
+    ct:["veigar","lissandra","twisted_fate","akshan_mid","galio","pantheon","annie"],
     ctBy:["irelia","lux","kayle","jayce","ekko","ahri"],
     sy:["rakan","leona","vi","amumu","nautilus"]},
   annie:      {name:"Annie",       lanes:["Mid"],    dmg:"AP",    cls:"Mage",
@@ -329,7 +331,7 @@ const DB = {
     ctBy:["annie","twisted_fate","corki","teemo","kayle","swain"],
     sy:["nautilus","amumu","leona","jarvaniv","vi"]},
   corki_mid:  {name:"Corki",       lanes:["Mid"],    dmg:"Hybrid",cls:"Marksman",
-    ct:["akali","annie","pantheon","irelia","ahri","zed","akshan","katarina","orianna"],
+    ct:["akali","annie","pantheon","irelia","ahri","zed","akshan_mid","katarina","orianna"],
     ctBy:["lux","galio","kayle","morgana","diana"],
     sy:["nautilus","leona","amumu","vi","jarvaniv"]},
   ekko:       {name:"Ekko",        lanes:["Mid"],    dmg:"AP",    cls:"Assassin",
@@ -350,7 +352,7 @@ const DB = {
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   irelia_mid: {name:"Irelia",      lanes:["Mid"],    dmg:"AD",    cls:"Fighter",
     ct:["vladimir","galio","akali","fizz","yasuo","vex"],
-    ctBy:["jayce","annie","diana","lux","orianna","ahri","talon","syndra","zoe","akshan","aurora","ekko","heimerdinger","mel"],
+    ctBy:["jayce","annie","diana","lux","orianna","ahri","talon","syndra","zoe","akshan_mid","aurora","ekko","heimerdinger","mel"],
     sy:["rakan","leona","vi","amumu","nautilus"]},
   jayce_mid:  {name:"Jayce",       lanes:["Mid"],    dmg:"AD",    cls:"Fighter",
     ct:["syndra","galio","irelia","lucian","zed","fizz","yasuo"],
@@ -361,7 +363,7 @@ const DB = {
     ctBy:["annie","lux","akali","corki","ahri","veigar"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   kassadin:   {name:"Kassadin",    lanes:["Mid"],    dmg:"AP",    cls:"Assassin",
-    ct:["yasuo","zed","pantheon","akshan","jayce","talon","lucian"],
+    ct:["yasuo","zed","pantheon","akshan_mid","jayce","talon","lucian"],
     ctBy:["katarina","diana","veigar","ekko","annie","vladimir","viktor","velkoz","syndra","ryze","kennen_mid","lissandra","lux","norra","taliyah"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   katarina:   {name:"Katarina",    lanes:["Mid"],    dmg:"Hybrid",cls:"Assassin",
@@ -369,11 +371,11 @@ const DB = {
     ctBy:["lux","veigar","brand","seraphine","ahri","corki"],
     sy:["amumu","leona","vi","rakan","jarvaniv"]},
   kayle_mid:  {name:"Kayle",       lanes:["Mid"],    dmg:"Hybrid",cls:"Marksman",
-    ct:["syndra","viktor","ryze","pantheon","irelia","lucian","katarina","akshan","jayce"],
+    ct:["syndra","viktor","ryze","pantheon","irelia","lucian","katarina","akshan_mid","jayce"],
     ctBy:["aurelionsol","lux","veigar","morgana"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   lissandra:  {name:"Lissandra",   lanes:["Mid"],    dmg:"AP",    cls:"Mage",
-    ct:["morgana","kassadin","galio","lux","ziggs","akshan","orianna"],
+    ct:["morgana","kassadin","galio","lux","ziggs","akshan_mid","orianna"],
     ctBy:["katarina","akali","fizz","zed","vex","annie","ekko"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   lucian_mid: {name:"Lucian",      lanes:["Mid"],    dmg:"AD",    cls:"Marksman",
@@ -393,7 +395,7 @@ const DB = {
     ctBy:["jinx","ashe","smolder"],
     sy:["nautilus","amumu","vi","leona","jarvaniv"]},
   morgana_mid:{name:"Morgana",     lanes:["Mid"],    dmg:"AP",    cls:"Mage",
-    ct:["jayce","zed","katarina","irelia","akshan","lucian","ahri","kassadin"],
+    ct:["jayce","zed","katarina","irelia","akshan_mid","lucian","ahri","kassadin"],
     ctBy:["lux","twisted_fate","galio","veigar","vex","zoe","lissandra"],
     sy:["caitlyn","jhin","lucian","draven","kaisa"]},
   norra:      {name:"Norra",       lanes:["Mid"],    dmg:"AP",    cls:"Mage",
@@ -425,7 +427,7 @@ const DB = {
     ctBy:["galio","kassadin"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   swain_mid:  {name:"Swain",       lanes:["Mid"],    dmg:"AP",    cls:"Mage",
-    ct:["brand","syndra","orianna","akshan","fizz","zoe"],
+    ct:["brand","syndra","orianna","akshan_mid","fizz","zoe"],
     ctBy:["galio","pantheon","twisted_fate","ahri","kennen_mid"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   syndra:     {name:"Syndra",      lanes:["Mid"],    dmg:"AP",    cls:"Mage",
@@ -437,7 +439,7 @@ const DB = {
     ctBy:["ryze","vladimir","aurelionsol"],
     sy:["vi","amumu","nautilus","leona","hecarim"]},
   talon:      {name:"Talon",       lanes:["Mid"],    dmg:"AD",    cls:"Assassin",
-    ct:["irelia","pantheon","akshan","diana","orianna"],
+    ct:["irelia","pantheon","akshan_mid","diana","orianna"],
     ctBy:["kassadin","veigar","ahri","twisted_fate","lux","seraphine","ekko","brand"],
     sy:["leona","nautilus","rakan","vi","amumu"]},
   teemo_mid:  {name:"Teemo",       lanes:["Mid"],    dmg:"AP",    cls:"Mage",
@@ -450,7 +452,7 @@ const DB = {
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   veigar:     {name:"Veigar",      lanes:["Mid"],    dmg:"AP",    cls:"Mage",
     ct:["syndra","viktor","kassadin","fizz","zed","lucian","yasuo","vladimir","talon","ekko"],
-    ctBy:["akali","annie","brand","corki","akshan","vex"],
+    ctBy:["akali","annie","brand","corki","akshan_mid","vex"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   velkoz:     {name:"Vel'Koz",     lanes:["Mid"],    dmg:"AP",    cls:"Mage",
     ct:["fizz","katarina","zed","yasuo","yone","irelia","kassadin"],
@@ -458,19 +460,19 @@ const DB = {
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   vex:        {name:"Vex",         lanes:["Mid"],    dmg:"AP",    cls:"Mage",
     ct:["lissandra","veigar","annie","galio","lux","morgana"],
-    ctBy:["yone","katarina","yasuo","ekko","irelia","zed","akshan","aurora","diana","fizz"],
+    ctBy:["yone","katarina","yasuo","ekko","irelia","zed","akshan_mid","aurora","diana","fizz"],
     sy:["vi","amumu","nautilus","leona","hecarim"]},
   viktor:     {name:"Viktor",      lanes:["Mid"],    dmg:"AP",    cls:"Mage",
     ct:["irelia","kassadin","zed","akali","fizz","yone"],
     ctBy:["lissandra","twisted_fate","vladimir","veigar","ryze","annie"],
     sy:["amumu","nautilus","vi","leona","jarvaniv"]},
   vladimir:   {name:"Vladimir",    lanes:["Mid"],    dmg:"AP",    cls:"Mage",
-    ct:["akshan","kassadin","orianna","ziggs","zoe","viktor"],
+    ct:["akshan_mid","kassadin","orianna","ziggs","zoe","viktor"],
     ctBy:["irelia","fizz","katarina","twisted_fate","veigar","jayce"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   yasuo:      {name:"Yasuo",       lanes:["Mid"],    dmg:"AD",    cls:"Fighter",
     ct:["irelia","vex","akali","fizz","pantheon"],
-    ctBy:["ahri","twisted_fate","lux","brand","ziggs","katarina","ryze","syndra","orianna","zed","akshan","aurelionsol","kassadin","norra"],
+    ctBy:["ahri","twisted_fate","lux","brand","ziggs","katarina","ryze","syndra","orianna","zed","akshan_mid","aurelionsol","kassadin","norra"],
     sy:["malphite","amumu","jarvaniv","leona","nautilus"]},
   yone:       {name:"Yone",        lanes:["Mid"],    dmg:"Hybrid",cls:"Fighter",
     ct:["irelia","ahri","zed","pantheon","akali","vex","syndra"],
@@ -1090,6 +1092,110 @@ const BUILD_DB = {
   },
 };
 
+// ─── GİZLİ BUILD EDİTÖRÜ ───────────────────────────────────────
+// Kullanıcı arayüzünde normalde görünmez.
+// Açmak/kapamak için ana ekrandaki logoya arka arkaya 7 kez dokun.
+let BUILDER_ENABLED = (localStorage.getItem("wrBuilderEnabled") === "1");
+let CUSTOM_BUILDS = {};           // localStorage'a kaydedilen, elle girilmiş buildler
+function loadCustomBuilds(){
+  try {
+    const raw = localStorage.getItem("wrCustomBuilds");
+    if(raw) CUSTOM_BUILDS = JSON.parse(raw) || {};
+  } catch(e){ CUSTOM_BUILDS = {}; }
+}
+function saveCustomBuilds(){
+  try { localStorage.setItem("wrCustomBuilds", JSON.stringify(CUSTOM_BUILDS)); } catch(e){}
+  updateBuilderFab();
+}
+// Ekranda gösterilecek build: önce özel (elle girilmiş), yoksa hazır BUILD_DB
+function getBuild(id){
+  return CUSTOM_BUILDS[id] || BUILD_DB[id];
+}
+
+let _logoTapCount = 0;
+let _logoTapTimer = null;
+function secretTapLogo(){
+  _logoTapCount++;
+  clearTimeout(_logoTapTimer);
+  _logoTapTimer = setTimeout(()=>{ _logoTapCount = 0; }, 2500);
+  if(_logoTapCount >= 7){
+    _logoTapCount = 0;
+    BUILDER_ENABLED = !BUILDER_ENABLED;
+    try{ localStorage.setItem("wrBuilderEnabled", BUILDER_ENABLED ? "1":"0"); }catch(e){}
+    showBuilderToast(BUILDER_ENABLED ? "🛠 Build Editörü Açıldı" : "Build Editörü Kapatıldı");
+    updateBuilderFab();
+    render();
+  }
+}
+function showBuilderToast(msg){
+  const t = document.getElementById("builderToast");
+  if(!t) return;
+  t.textContent = msg;
+  t.style.display = "block";
+  clearTimeout(window._builderToastTimer);
+  window._builderToastTimer = setTimeout(()=>{ t.style.display = "none"; }, 1600);
+}
+// Sağ altta sabit duran, sadece builder modu açıkken görünen dışa aktarma butonu
+function updateBuilderFab(){
+  const fab = document.getElementById("builderFab");
+  if(!fab) return;
+  if(!BUILDER_ENABLED){ fab.style.display = "none"; fab.innerHTML=""; return; }
+  const count = Object.keys(CUSTOM_BUILDS).length;
+  fab.style.display = "block";
+  fab.innerHTML = `<button onclick="exportAllBuilds()" style="padding:11px 16px;border-radius:30px;
+    background:#0d0d1ef2;border:1px solid #ffcc0255;color:#ffcc02;font-size:12px;font-weight:800;
+    display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px #000a">
+    📋 Dışa Aktar (${count})
+  </button>`;
+}
+// Kayıtlı TÜM özel build'leri tek JSON olarak dışa aktarır (paylaş menüsü / kopyala)
+function exportAllBuilds(){
+  const count = Object.keys(CUSTOM_BUILDS).length;
+  if(count === 0){ showBuilderToast("Henüz kayıtlı özel build yok"); return; }
+  const json = JSON.stringify(CUSTOM_BUILDS, null, 2);
+  if(navigator.share){
+    navigator.share({ title: "Wild Rift Custom Builds", text: json }).catch(()=>{ showExportModal(json); });
+  } else {
+    showExportModal(json);
+  }
+}
+function showExportModal(json){
+  const wrap = document.createElement("div");
+  wrap.style.cssText = "position:fixed;inset:0;background:#000000cc;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px";
+  wrap.innerHTML = `<div style="background:#0a0a18;border:1px solid #1a1a2e;border-radius:14px;
+      max-width:420px;width:100%;max-height:80vh;display:flex;flex-direction:column;padding:16px">
+    <div style="font-size:13px;font-weight:800;color:#fff;margin-bottom:10px">📋 Tüm Build'ler (JSON)</div>
+    <textarea id="exportTa" readonly style="flex:1;min-height:220px;background:#101022;color:#9ad6ff;
+      border:1px solid #252540;border-radius:8px;padding:10px;font-size:11px;font-family:monospace;
+      resize:none;overflow:auto"></textarea>
+    <div style="display:flex;gap:8px;margin-top:12px">
+      <button id="exportCopyBtn" style="flex:1;padding:11px;border-radius:9px;background:#00ff8818;
+        border:1px solid #00ff8855;color:#00ff88;font-weight:800;font-size:12px">Kopyala</button>
+      <button id="exportCloseBtn" style="padding:11px 16px;border-radius:9px;background:#0d0d1e;
+        border:1px solid #252540;color:#888;font-weight:700;font-size:12px">Kapat</button>
+    </div>
+  </div>`;
+  document.body.appendChild(wrap);
+  const ta = wrap.querySelector("#exportTa");
+  ta.value = json;
+  wrap.querySelector("#exportCloseBtn").onclick = ()=> wrap.remove();
+  wrap.addEventListener("click", (e)=>{ if(e.target===wrap) wrap.remove(); });
+  wrap.querySelector("#exportCopyBtn").onclick = ()=>{
+    ta.focus(); ta.select();
+    let ok = false;
+    try{ ok = document.execCommand("copy"); }catch(e){}
+    if(!ok && navigator.clipboard){ navigator.clipboard.writeText(json).catch(()=>{}); }
+    showBuilderToast("Kopyalandı ✓");
+    wrap.remove();
+  };
+}
+
+// ─── BUILD EDİTÖRÜ EKRAN DURUMU (appScreen==="builder") ────────
+let builderChampId    = null;   // düzenlenen şampiyon
+let builderDraft       = null;  // taslak: {starter,boots,enchant,items[4],runes[5],spells[2],skillOrder,tier}
+let builderPicking     = null;  // açık olan seçim paneli: "rune0".."rune4","spell0","spell1","starter","boots","enchant","item0".."item3"
+let builderPickSearch  = "";
+
 // ─── YAMA VERİSİ ─────────────────────────────────────────────
 let patchData = {
   version: "7.2a",
@@ -1522,7 +1628,7 @@ const CHAMP_ID = {
   smolder:901, kaisa:145, jhin:202, ezreal:81, vayne:67, lucian:236,
   jinx:222, caitlyn:51, missfortune:21, draven:119, tristana:18, ashe:22,
   varus:110, xayah:498, kogmaw:96, sivir:15, samira:360, twitch:29,
-  nilah:895, kalista:429, zeri:221, corki:42, akshan:166,
+  nilah:895, kalista:429, zeri:221, corki:42,
   // MID
   ahri:103, aurelionsol:136, aurelionsol_adc:136,
   akali_mid:84, annie:1, aurora:893,
@@ -2093,6 +2199,112 @@ const ASSET_NAME = {
 function slugifyName(name){
   return name.toLowerCase().replace(/'/g,"").replace(/[^a-z0-9]+/g,"_").replace(/^_|_$/g,"");
 }
+
+// ─── BUILD EDİTÖRÜ FONKSİYONLARI (gizli) ───────────────────────
+function openBuilder(id){
+  if(!BUILDER_ENABLED) return;
+  const existing = getBuild(id);
+  builderDraft = existing ? {
+    starter: existing.starter||"", boots: existing.boots||"", enchant: existing.enchant||"",
+    items: [...(existing.items||[])].slice(0,4),
+    runes: [...(existing.runes||[])].slice(0,5),
+    spells: [...(existing.spells||[])].slice(0,2),
+    skillOrder: existing.skillOrder ? [...existing.skillOrder] : ["1","2","3"],
+    tier: existing.tier || "A"
+  } : { starter:"", boots:"", enchant:"", items:[], runes:[], spells:[], skillOrder:["1","2","3"], tier:"A" };
+  while(builderDraft.items.length<4) builderDraft.items.push("");
+  while(builderDraft.runes.length<5) builderDraft.runes.push("");
+  while(builderDraft.spells.length<2) builderDraft.spells.push("");
+  builderChampId = id;
+  builderPicking = null;
+  builderPickSearch = "";
+  appScreen = "builder";
+  render();
+}
+function closeBuilder(){
+  builderChampId=null; builderDraft=null; builderPicking=null;
+  appScreen="champDetail";
+  render();
+}
+function openBuilderPicker(slot){
+  builderPicking = slot;
+  builderPickSearch = "";
+  render();
+}
+function closeBuilderPicker(){
+  builderPicking = null;
+  render();
+}
+function builderPickerCategory(slot){
+  if(slot && slot.startsWith("rune")) return "rune";
+  if(slot && slot.startsWith("spell")) return "spell";
+  return "item";
+}
+function builderPickAsset(name){
+  if(!builderPicking || !builderDraft) return;
+  const slot = builderPicking;
+  if(slot==="starter") builderDraft.starter = name;
+  else if(slot==="boots") builderDraft.boots = name;
+  else if(slot==="enchant") builderDraft.enchant = name;
+  else if(slot.startsWith("item")) builderDraft.items[+slot.slice(4)] = name;
+  else if(slot.startsWith("rune")) builderDraft.runes[+slot.slice(4)] = name;
+  else if(slot.startsWith("spell")) builderDraft.spells[+slot.slice(5)] = name;
+  builderPicking = null;
+  render();
+}
+function builderClearSlot(slot){
+  builderPicking = slot;
+  builderPickAsset("");
+}
+function setBuilderTier(t){
+  if(!builderDraft) return;
+  builderDraft.tier = t; render();
+}
+function saveBuilderDraft(){
+  if(!builderChampId || !builderDraft) return;
+  const d = builderDraft;
+  CUSTOM_BUILDS[builderChampId] = {
+    ...(d.starter?{starter:d.starter}:{}),
+    items: d.items.filter(Boolean),
+    ...(d.boots?{boots:d.boots}:{}),
+    ...(d.enchant?{enchant:d.enchant}:{}),
+    runes: d.runes.filter(Boolean),
+    spells: d.spells.filter(Boolean),
+    skillOrder: d.skillOrder,
+    tier: d.tier
+  };
+  saveCustomBuilds();
+  closeBuilder();
+}
+function deleteBuilderBuild(){
+  if(!builderChampId) return;
+  if(!confirm("Bu özel build silinsin mi? (Varsayılan build varsa ona dönülür)"))return;
+  delete CUSTOM_BUILDS[builderChampId];
+  saveCustomBuilds();
+  closeBuilder();
+}
+// Klavye kapanmasın diye picker listesini ayrı güncelleyen fonksiyon
+function renderBuilderPickerList(){
+  const grid = document.getElementById("builderPickerGrid");
+  if(!grid || !builderPicking) return;
+  const cat = builderPickerCategory(builderPicking);
+  const map = cat==="rune"?RUNE_IMG:cat==="spell"?SPELL_IMG:ITEM_IMG;
+  const list = Object.keys(map)
+    .filter(k => !builderPickSearch || (ASSET_NAME[k]||k).toLowerCase().includes(builderPickSearch.toLowerCase()))
+    .sort((a,b)=>(ASSET_NAME[a]||a).localeCompare(ASSET_NAME[b]||b,"tr"));
+  grid.innerHTML = list.map(k => {
+    const nm = ASSET_NAME[k]||k;
+    const img = cat==="rune"?runeImg(k,44):cat==="spell"?spellImg(k,44):itemImg(k,44);
+    return `<div onclick="builderPickAsset('${nm.replace(/'/g,"\\'")}')" style="display:flex;
+      flex-direction:column;align-items:center;gap:4px;cursor:pointer">
+      <div style="width:44px;height:44px;border-radius:${cat==='rune'?'50%':'8px'};overflow:hidden;
+        background:#101022;border:1px solid #252540;display:flex;align-items:center;justify-content:center">
+        ${img||""}
+      </div>
+      <div style="font-size:7px;color:#999;text-align:center;line-height:1.2">${nm}</div>
+    </div>`;
+  }).join("") || '<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">Bulunamadı</div>';
+}
 function itemImg(key, size=32){
   const url = ITEM_IMG[key];
   if(!url) return "";
@@ -2172,7 +2384,7 @@ function render() {
       <div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;
         padding:32px 16px 40px;background:#07070f">
 
-        <div style="margin-top:40px;margin-bottom:48px;text-align:center">
+        <div onclick="secretTapLogo()" style="margin-top:40px;margin-bottom:48px;text-align:center;user-select:none">
           <div style="font-size:26px;font-weight:800;color:#fff;letter-spacing:1px;margin-bottom:6px">⚔️ WILD RIFT</div>
           <div style="font-size:10px;color:#333;letter-spacing:4px">DRAFT ASISTANI</div>
         </div>
@@ -2665,7 +2877,7 @@ function render() {
 
           <!-- ÖNERİLEN BUILD (rün + spell + item) -->
           ${(() => {
-            const build = BUILD_DB[champDetailId];
+            const build = getBuild(champDetailId);
 
             function slotBox(name, size, shape, borderColor, labelColor, label, kind) {
               if (!name) {
@@ -2699,8 +2911,13 @@ function render() {
 
             return `<div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #ffcc0233;
               border-radius:12px;padding:14px">
-              <div style="font-size:10px;font-weight:800;color:#ffcc02;margin-bottom:12px">
-                ⚔️ Önerilen Build
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+                <div style="font-size:10px;font-weight:800;color:#ffcc02;flex:1">
+                  ⚔️ Önerilen Build${CUSTOM_BUILDS[champDetailId] ? ' <span style="color:#00ff88">· Özel</span>' : ''}
+                </div>
+                ${BUILDER_ENABLED ? `<button onclick="openBuilder('${champDetailId}')" style="padding:4px 10px;
+                  border-radius:7px;border:1px solid #ffcc0255;background:#ffcc0218;color:#ffcc02;
+                  font-size:9px;font-weight:700;flex-shrink:0">✏️ Düzenle</button>` : ""}
               </div>
 
               <!-- RÜNLER -->
@@ -2776,6 +2993,140 @@ function render() {
             </div>` : ""}
 
         </div>
+      </div>`;
+    return;
+  }
+
+  // ── GİZLİ BUILD EDİTÖRÜ EKRANI ───────────────────────────────
+  if (appScreen === "builder" && builderChampId && builderDraft) {
+    const c = DB[builderChampId];
+    if(!c){ appScreen="champions"; render(); return; }
+    const d = builderDraft;
+
+    const miniSlot = (label, value, slotKey, shape) => {
+      const key = value ? slugifyName(value) : null;
+      const cat = builderPickerCategory(slotKey);
+      const img = key ? (cat==="rune"?runeImg(key,40):cat==="spell"?spellImg(key,40):itemImg(key,40)) : "";
+      return `<div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+        <div onclick="openBuilderPicker('${slotKey}')" style="width:44px;height:44px;
+          border-radius:${shape==="circle"?"50%":"10px"};display:flex;align-items:center;justify-content:center;
+          background:#101022;border:1.5px dashed #ffcc0255;overflow:hidden;cursor:pointer">
+          ${img || `<span style="color:#ffcc0299;font-size:18px;font-weight:800">+</span>`}
+        </div>
+        <div style="font-size:7.5px;color:#888;text-align:center;max-width:54px;white-space:nowrap;
+          overflow:hidden;text-overflow:ellipsis">${label}</div>
+      </div>`;
+    };
+
+    let pickerHtml = "";
+    if (builderPicking) {
+      const cat = builderPickerCategory(builderPicking);
+      const map = cat==="rune"?RUNE_IMG:cat==="spell"?SPELL_IMG:ITEM_IMG;
+      const title = cat==="rune"?"Rün Seç":cat==="spell"?"Spell Seç":"Item Seç";
+      const list = Object.keys(map)
+        .filter(k => !builderPickSearch || (ASSET_NAME[k]||k).toLowerCase().includes(builderPickSearch.toLowerCase()))
+        .sort((a,b)=>(ASSET_NAME[a]||a).localeCompare(ASSET_NAME[b]||b,"tr"));
+      const itemsHtml = list.map(k => {
+        const nm = ASSET_NAME[k]||k;
+        const img = cat==="rune"?runeImg(k,44):cat==="spell"?spellImg(k,44):itemImg(k,44);
+        return `<div onclick="builderPickAsset('${nm.replace(/'/g,"\\'")}')" style="display:flex;
+          flex-direction:column;align-items:center;gap:4px;cursor:pointer">
+          <div style="width:44px;height:44px;border-radius:${cat==='rune'?'50%':'8px'};overflow:hidden;
+            background:#101022;border:1px solid #252540;display:flex;align-items:center;justify-content:center">
+            ${img||""}
+          </div>
+          <div style="font-size:7px;color:#999;text-align:center;line-height:1.2">${nm}</div>
+        </div>`;
+      }).join("") || '<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">Bulunamadı</div>';
+
+      pickerHtml = `<div style="position:fixed;inset:0;background:#000000cc;z-index:100;display:flex;
+        align-items:flex-end" onclick="if(event.target===this)closeBuilderPicker()">
+        <div style="background:#0a0a18;border-top-left-radius:16px;border-top-right-radius:16px;
+          max-height:78vh;width:100%;display:flex;flex-direction:column;border:1px solid #1a1a2e">
+          <div style="padding:14px;border-bottom:1px solid #141428;display:flex;align-items:center;gap:10px">
+            <div style="font-size:13px;font-weight:800;color:#fff;flex:1">${title}</div>
+            <button onclick="builderClearSlot('${builderPicking}')" style="padding:5px 10px;border-radius:7px;
+              border:1px solid #ff444455;background:#ff444418;color:#ff6060;font-size:10px">Temizle</button>
+            <button onclick="closeBuilderPicker()" style="padding:5px 10px;border-radius:7px;
+              border:1px solid #252540;background:#0d0d1e;color:#888;font-size:10px">Kapat</button>
+          </div>
+          <div style="padding:10px 14px">
+            <input value="${builderPickSearch}" oninput="builderPickSearch=this.value;renderBuilderPickerList()"
+              placeholder="Ara..." style="width:100%;padding:9px 12px;border-radius:9px;
+              background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
+          </div>
+          <div id="builderPickerGrid" style="overflow-y:auto;padding:10px 14px 20px;
+            display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+            ${itemsHtml}
+          </div>
+        </div>
+      </div>`;
+    }
+
+    document.getElementById("app").innerHTML = `
+      <div style="min-height:100vh;background:#07070f">
+        <div style="padding:12px 14px;background:#0a0a18;border-bottom:1px solid #141428;
+          position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
+          display:flex;align-items:center;gap:10px">
+          <button onclick="closeBuilder()" style="padding:6px 12px;border-radius:8px;
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← İptal</button>
+          <div style="font-size:14px;font-weight:800;color:#fff">🛠 Build Düzenle · ${c.name}</div>
+        </div>
+
+        <div style="padding:14px">
+
+          <div style="margin-bottom:14px">
+            <div style="font-size:8.5px;color:#777;font-weight:700;margin-bottom:8px;letter-spacing:.4px">TIER</div>
+            <div style="display:flex;gap:6px">
+              ${["S","A","B","C"].map(t=>`<button onclick="setBuilderTier('${t}')" style="
+                flex:1;padding:8px;border-radius:8px;font-size:12px;font-weight:800;
+                background:${d.tier===t?'#ffcc0225':'#0d0d1e'};border:1px solid ${d.tier===t?'#ffcc02':'#252540'};
+                color:${d.tier===t?'#ffcc02':'#888'}">${t}</button>`).join("")}
+            </div>
+          </div>
+
+          <div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #ffcc0233;border-radius:12px;padding:14px">
+            <div style="font-size:8.5px;color:#777;font-weight:700;margin-bottom:10px;letter-spacing:.4px">RÜNLER</div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              ${miniSlot("Ana Rün", d.runes[0], "rune0", "circle")}
+              ${[1,2,3,4].map(n=>miniSlot(`Alt ${n}`, d.runes[n], "rune"+n, "circle")).join("")}
+            </div>
+          </div>
+
+          <div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #c060ff33;border-radius:12px;padding:14px">
+            <div style="font-size:8.5px;color:#777;font-weight:700;margin-bottom:10px;letter-spacing:.4px">SPELLER</div>
+            <div style="display:flex;gap:10px">
+              ${miniSlot("Spell 1", d.spells[0], "spell0", "square")}
+              ${miniSlot("Spell 2", d.spells[1], "spell1", "square")}
+            </div>
+          </div>
+
+          <div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #4da6ff33;border-radius:12px;padding:14px">
+            <div style="font-size:8.5px;color:#777;font-weight:700;margin-bottom:10px;letter-spacing:.4px">İTEMLER</div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+              ${miniSlot("Starter", d.starter, "starter", "square")}
+              ${miniSlot("Bot", d.boots, "boots", "square")}
+              ${miniSlot("Enchant", d.enchant, "enchant", "square")}
+            </div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              ${[0,1,2,3].map(n=>miniSlot(`Item ${n+1}`, d.items[n], "item"+n, "square")).join("")}
+            </div>
+          </div>
+
+          <div style="display:flex;gap:8px">
+            <button onclick="saveBuilderDraft()" style="flex:1;padding:12px;border-radius:10px;
+              background:#00ff8818;border:1px solid #00ff8855;color:#00ff88;font-weight:800;font-size:13px">
+              💾 Kaydet ve Sabitle
+            </button>
+            ${CUSTOM_BUILDS[builderChampId] ? `
+            <button onclick="deleteBuilderBuild()" style="padding:12px 16px;border-radius:10px;
+              background:#ff444418;border:1px solid #ff444455;color:#ff6060;font-weight:800;font-size:13px">
+              🗑 Sil
+            </button>` : ""}
+          </div>
+        </div>
+
+        ${pickerHtml}
       </div>`;
     return;
   }
@@ -3613,6 +3964,8 @@ function updateChampGrid() {
 
 // İlk render — son bırakılan ekran (varsa) geri yüklenir, yoksa Ana Menü
 loadAppState();
+loadCustomBuilds();
+updateBuilderFab();
 render();
 </script>
 </body>
