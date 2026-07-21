@@ -764,7 +764,7 @@ const DB = {
     ctBy:["shen","drmundo","sion","gragas","malphite","ornn","volibear"],
     sy:["amumu","vi","nautilus","brand","leona"]},
   irelia:     {name:"Irelia",      lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
-    ct:["malphite","poppy","sett","fiora","jax","riven","darius","renekton","tryndamere","wukong","akali"],
+    ct:["malphite","poppy","sett","fiora","jax","riven","darius","renekton","tryndamere","akali"],
     ctBy:["ambessa","jayce","olaf","kayle","drmundo","garen","kennen","aatrox","teemo","graves","nasus","gnar"],
     sy:["rakan","leona","vi","amumu","nautilus"]},
   jax:        {name:"Jax",         lanes:["Baron"],  dmg:"Hybrid",cls:"Fighter",
@@ -873,7 +873,7 @@ const DB = {
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   wukong:     {name:"Wukong",      lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
     ct:["malphite","mordekaiser","jax","olaf","camille","renekton","shen","gragas"],
-    ctBy:["fiora","kayle","darius","jayce","irelia","kennen","graves","vayne","urgot","teemo","nasus"],
+    ctBy:["fiora","kayle","darius","jayce","kennen","graves","vayne","urgot","teemo","nasus"],
     sy:["orianna","katarina","brand","missfortune","kaisa"]},
   yasuo_baron:{name:"Yasuo",       lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
     ct:["malphite","renekton","fiora","darius","pantheon","sett","riven","olaf","tryndamere","jax"],
@@ -1054,7 +1054,7 @@ let modal   = false;
 // ─── BUILD VERİTABANI (Patch 7.2) ────────
 // Sadece kendi main picklerin için
 const BUILD_DB = {
-  // ── ÖZEL/İTHAL EDİLMİŞ BUİLDLER (93 şampiyon) ────────────────
+  // ── 200 ŞAMPIYON İÇİN ELLE DOĞRULANMIŞ BUİLDLER ──────────────
   galio: {
     starter: "Bulwark of the Mountain",
     items: ["Redemption","Knight's Vow","Radiant Virtue","Amaranth's Twinguard"],
@@ -1373,7 +1373,7 @@ const BUILD_DB = {
   kayn: {
     starter: "Boots of Dynamism",
     items: ["Youmuu's Ghostblade","Serpent's Fang","Serylda's Grudge","Edge of Night"],
-    enchant: "Eclipse",
+    boots: "Zırhezen Çizmeler", enchant: "Eclipse",
     runes: ["First Strike","Sudden Impact","Hubris","Eyeball Collector","Coup de Grace"],
     spells: ["Flash","Chilling Smite"],
     skillOrder: ["1","2","3"],
@@ -1481,7 +1481,7 @@ const BUILD_DB = {
   nocturne: {
     starter: "Boots of Dynamism",
     items: ["Serpent's Fang","Serylda's Grudge","Sundered Sky","Guardian Angel"],
-    enchant: "Duskblade of Draktharr",
+    boots: "Zırhezen Çizmeler", enchant: "Duskblade of Draktharr",
     runes: ["First Strike","Sudden Impact","Chain Assault","Eyeball Collector","Axiom Arcanist"],
     spells: ["Flash","Chilling Smite"],
     skillOrder: ["1","2","3"],
@@ -1524,7 +1524,7 @@ const BUILD_DB = {
     tier: "A"
   },
   blitzcrank: {
-    starter: "Relic Shield",
+    starter: "Bulwark of the Mountain",
     items: ["Warmog's Armor","Redemption","Knight's Vow","Amaranth's Twinguard"],
     boots: "Ionian Boots of Lucidity", enchant: "Crimson Lucidity",
     runes: ["Ice Overlord","Demolish","Bone Plating","Perseverance","Hexflash"],
@@ -1688,7 +1688,7 @@ const BUILD_DB = {
   pyke: {
     starter: "Bulwark of the Mountain",
     items: ["Serpent's Fang","Youmuu's Ghostblade","Serylda's Grudge","Guardian Angel"],
-    boots: "Boots of Dynamism",
+    boots: "Boots of Dynamism", enchant: "Zırhezen Çizmeler",
     runes: ["Fleet Footwork","Unshakeable","Bone Plating","Perseverance","Hexflash"],
     spells: ["Flash","Ignite"],
     skillOrder: ["1","2","3"],
@@ -1715,7 +1715,7 @@ const BUILD_DB = {
   senna: {
     starter: "Black Mist Scythe",
     items: ["Duskblade of Draktharr","Lord Dominik's Regards","Serpent's Fang","Youmuu's Ghostblade"],
-    boots: "Boots of Dynamism",
+    boots: "Boots of Dynamism", enchant: "Zırhezen Çizmeler",
     runes: ["Fleet Footwork","Cheap Shot","Chain Assault","Zombie Ward","Cut Down"],
     spells: ["Flash","Ignite"],
     skillOrder: ["1","2","3"],
@@ -1818,7 +1818,7 @@ const BUILD_DB = {
     runes: ["Aery","Font of Life","Bone Plating","Revitalize","Transcendence"],
     spells: ["Flash","Heal"],
     skillOrder: ["1","2","3"],
-    tier: "A"
+    tier: "B"
   },
   soraka: {
     starter: "Black Mist Scythe",
@@ -1892,7 +1892,970 @@ const BUILD_DB = {
     skillOrder: ["1","2","3"],
     tier: "A"
   },
-  // ── MEVCUT DİĞER BUİLDLER ─────────────────────────────────────
+  ryze: {
+    starter: "Boots of Mana",
+    items: ["Rod of Ages","Rabadon's Deathcap","Stasis Enchant","Banshee's Veil"],
+    boots: "Spellslinger's Shoes", enchant: "Archangel's Staff",
+    runes: ["Phase Rush","Manaflow Band","Transcendence","Gathering Storm","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  ryze_baron: {
+    starter: "Plated Steelcaps",
+    items: ["Rod of Ages","Rabadon's Deathcap","Stasis Enchant","Banshee's Veil"],
+    boots: "Armored Advance", enchant: "Archangel's Staff",
+    runes: ["Phase Rush","Battle Zeal","Cut Down","Legend- Tenacity","Manaflow Band"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  ezreal: {
+    starter: "Gluttonous Greaves",
+    items: ["Muramana","Serylda's Grudge","Spear of Shojin","Guardian Angel"],
+    boots: "Immortal Path", enchant: "Trinity Force",
+    runes: ["Conqueror","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  kalista: {
+    starter: "Berserker's Greaves",
+    items: ["Guinsoo's Rageblade","Runaan's Hurricane","Terminus","Wit's End"],
+    boots: "Gunmetal Greaves", enchant: "Blade of the Ruined King",
+    runes: ["Lethal Tempo","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "C"
+  },
+  lucian: {
+    starter: "Gluttonous Greaves",
+    items: ["Mortal Reminder","Infinity Edge","Magnetic Blaster","Guardian Angel"],
+    boots: "Immortal Path", enchant: "Essence Reaver",
+    runes: ["Empowerment","Brutal","Cut Down","Legend- Alacrity","Sudden Impact"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  vayne: {
+    starter: "Berserker's Greaves",
+    items: ["Guinsoo's Rageblade","Blade of the Ruined King","Terminus","Guardian Angel"],
+    boots: "Gunmetal Greaves", enchant: "Kraken Slayer",
+    runes: ["Lethal Tempo","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  jhin: {
+    starter: "Boots of Dynamism",
+    items: ["Magnetic Blaster","Infinity Edge","Lord Dominik's Regards","Guardian Angel"],
+    boots: "Zırhezen Çizmeler", enchant: "The Collector",
+    runes: ["Dark Harvest","Battle Zeal","Cut Down","Legend- Bloodline","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  ashe: {
+    starter: "Berserker's Greaves",
+    items: ["Guinsoo's Rageblade","Blade of the Ruined King","Runaan's Hurricane","Galeforce"],
+    boots: "Gunmetal Greaves", enchant: "Kraken Slayer",
+    runes: ["Lethal Tempo","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  caitlyn: {
+    starter: "Gluttonous Greaves",
+    items: ["Magnetic Blaster","Mortal Reminder","Galeforce","Infinity Edge"],
+    boots: "Immortal Path", enchant: "The Collector",
+    runes: ["Lethal Tempo","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  corki: {
+    starter: "Gluttonous Greaves",
+    items: ["Bloodthirster","Magnetic Blaster","Infinity Edge","Lord Dominik's Regards"],
+    boots: "Immortal Path", enchant: "Essence Reaver",
+    runes: ["Conqueror","Brutal","Cut Down","Legend- Bloodline","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  corki_mid: {
+    starter: "Gluttonous Greaves",
+    items: ["Bloodthirster","Magnetic Blaster","Infinity Edge","Lord Dominik's Regards"],
+    boots: "Immortal Path", enchant: "Essence Reaver",
+    runes: ["Conqueror","Brutal","Cut Down","Legend- Bloodline","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  draven: {
+    starter: "Gluttonous Greaves",
+    items: ["The Collector","Infinity Edge","Essence Reaver","Lord Dominik's Regards"],
+    boots: "Immortal Path", enchant: "Bloodthirster",
+    runes: ["Conqueror","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  jinx: {
+    starter: "Berserker's Greaves",
+    items: ["Magnetic Blaster","Runaan's Hurricane","Lord Dominik's Regards","Infinity Edge"],
+    boots: "Gunmetal Greaves", enchant: "Bloodthirster",
+    runes: ["Lethal Tempo","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  kaisa: {
+    starter: "Gluttonous Greaves",
+    items: ["Guinsoo's Rageblade","Terminus","Blade of the Ruined King","Blade of the Ruined King"],
+    boots: "Immortal Path", enchant: "Kraken Slayer",
+    runes: ["Lethal Tempo","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  kogmaw: {
+    starter: "Berserker's Greaves",
+    items: ["Guinsoo's Rageblade","Runaan's Hurricane","Terminus","Navori Quickblades"],
+    boots: "Gunmetal Greaves", enchant: "Blade of the Ruined King",
+    runes: ["Lethal Tempo","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  lucian_mid: {
+    starter: "Gluttonous Greaves",
+    items: ["Magnetic Blaster","Lord Dominik's Regards","Infinity Edge","Bloodthirster"],
+    boots: "Immortal Path", enchant: "Essence Reaver",
+    runes: ["Empowerment","Brutal","Cut Down","Legend- Bloodline","Sudden Impact"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  mel_adc: {
+    starter: "Boots of Mana",
+    items: ["Infinity Orb","Rabadon's Deathcap","Cosmic Drive","Void Staff"],
+    boots: "Spellslinger's Shoes", enchant: "Blackfire Torch",
+    runes: ["Arcane Comet","Manaflow Band","Absolute Focus","Gathering Storm","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  mel: {
+    starter: "Boots of Mana",
+    items: ["Infinity Orb","Rabadon's Deathcap","Cosmic Drive","Banshee's Veil"],
+    boots: "Spellslinger's Shoes", enchant: "Blackfire Torch",
+    runes: ["Arcane Comet","Manaflow Band","Absolute Focus","Gathering Storm","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  missfortune: {
+    starter: "Gluttonous Greaves",
+    items: ["The Collector","Lord Dominik's Regards","Bloodthirster","Infinity Edge"],
+    boots: "Immortal Path", enchant: "Duskblade of Draktharr",
+    runes: ["Conqueror","Brutal","Cut Down","Legend- Bloodline","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  nilah: {
+    starter: "Gluttonous Greaves",
+    items: ["Bloodthirster","Lord Dominik's Regards","Infinity Edge","Guardian Angel"],
+    boots: "Immortal Path", enchant: "The Collector",
+    runes: ["Conqueror","Brutal","Cut Down","Legend- Bloodline","Sudden Impact"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  orianna: {
+    starter: "Boots of Mana",
+    items: ["Infinity Orb","Rabadon's Deathcap","Oceanid's Trident","Banshee's Veil"],
+    boots: "Spellslinger's Shoes", enchant: "Blackfire Torch",
+    runes: ["Phase Rush","Manaflow Band","Transcendence","Gathering Storm","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  orianna_adc: {
+    starter: "Boots of Mana",
+    items: ["Blackfire Torch","Infinity Orb","Rabadon's Deathcap","Banshee's Veil"],
+    boots: "Spellslinger's Shoes", enchant: "Archangel's Staff",
+    runes: ["Conqueror","Manaflow Band","Transcendence","Gathering Storm","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  samira: {
+    starter: "Gluttonous Greaves",
+    items: ["Bloodthirster","Lord Dominik's Regards","Infinity Edge","Guardian Angel"],
+    boots: "Immortal Path", enchant: "The Collector",
+    runes: ["Conqueror","Brutal","Coup de Grace","Legend- Bloodline","Sudden Impact"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  sivir: {
+    starter: "Berserker's Greaves",
+    items: ["Magnetic Blaster","Lord Dominik's Regards","Navori Quickblades","Infinity Edge"],
+    boots: "Gunmetal Greaves", enchant: "Bloodthirster",
+    runes: ["Lethal Tempo","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  smolder: {
+    starter: "Ionian Boots of Lucidity",
+    items: ["Trinity Force","Serylda's Grudge","Magnetic Blaster","Guardian Angel"],
+    boots: "Crimson Lucidity", enchant: "Muramana",
+    runes: ["Fleet Footwork","Unshakeable","Bone Plating","Overgrowth","Transcendence"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  smolder_mid: {
+    starter: "Ionian Boots of Lucidity",
+    items: ["Trinity Force","Serylda's Grudge","Magnetic Blaster","Guardian Angel"],
+    boots: "Crimson Lucidity", enchant: "Muramana",
+    runes: ["Fleet Footwork","Unshakeable","Bone Plating","Overgrowth","Transcendence"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  tristana: {
+    starter: "Berserker's Greaves",
+    items: ["Navori Quickblades","Magnetic Blaster","Infinity Edge","Soul Transfer"],
+    boots: "Gunmetal Greaves", enchant: "Bloodthirster",
+    runes: ["Lethal Tempo","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  twitch: {
+    starter: "Berserker's Greaves",
+    items: ["Blade of the Ruined King","Infinity Edge","Soul Transfer","Guardian Angel"],
+    boots: "Gunmetal Greaves", enchant: "Runaan's Hurricane",
+    runes: ["Lethal Tempo","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  varus: {
+    starter: "Berserker's Greaves",
+    items: ["Guinsoo's Rageblade","Runaan's Hurricane","Terminus","Amaranth's Twinguard"],
+    boots: "Gunmetal Greaves", enchant: "Blade of the Ruined King",
+    runes: ["Lethal Tempo","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  xayah: {
+    starter: "Berserker's Greaves",
+    items: ["Magnetic Blaster","Lord Dominik's Regards","Infinity Edge","Guardian Angel"],
+    boots: "Gunmetal Greaves", enchant: "Bloodthirster",
+    runes: ["Conqueror","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  yunara: {
+    starter: "Berserker's Greaves",
+    items: ["Guinsoo's Rageblade","Runaan's Hurricane","Terminus","Guardian Angel"],
+    boots: "Gunmetal Greaves", enchant: "Kraken Slayer",
+    runes: ["Lethal Tempo","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  zeri: {
+    starter: "Berserker's Greaves",
+    items: ["Bloodthirster","Lord Dominik's Regards","Infinity Edge","Guardian Angel"],
+    boots: "Gunmetal Greaves", enchant: "Essence Reaver",
+    runes: ["Conqueror","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  ziggs: {
+    starter: "Boots of Mana",
+    items: ["Blackfire Torch","Infinity Orb","Rabadon's Deathcap","Banshee's Veil"],
+    boots: "Spellslinger's Shoes", enchant: "Liandry's Torment",
+    runes: ["Arcane Comet","Manaflow Band","Absolute Focus","Scorch","Coup de Grace"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  ziggs_adc: {
+    starter: "Boots of Mana",
+    items: ["Blackfire Torch","Infinity Orb","Rabadon's Deathcap","Banshee's Veil"],
+    boots: "Spellslinger's Shoes", enchant: "Liandry's Torment",
+    runes: ["Arcane Comet","Manaflow Band","Absolute Focus","Scorch","Coup de Grace"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  aurelionsol: {
+    starter: "Boots of Mana",
+    items: ["Liandry's Torment","Rabadon's Deathcap","Stasis Enchant","Void Staff"],
+    boots: "Spellslinger's Shoes", enchant: "Rylai's Crystal Scepter",
+    runes: ["Dark Harvest","Manaflow Band","Absolute Focus","Gathering Storm","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  aurelionsol_adc: {
+    starter: "Boots of Mana",
+    items: ["Liandry's Torment","Rabadon's Deathcap","Stasis Enchant","Void Staff"],
+    boots: "Spellslinger's Shoes", enchant: "Rylai's Crystal Scepter",
+    runes: ["Arcane Comet","Battle Zeal","Cut Down","Legend- Bloodline","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  akali_baron: {
+    starter: "Boots of Mana",
+    items: ["Stormsurge","Rabadon's Deathcap","Stasis Enchant","Void Staff"],
+    boots: "Spellslinger's Shoes", enchant: "Infinity Orb",
+    runes: ["Fleet Footwork","Unshakeable","Bone Plating","Perseverance","Sudden Impact"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  akali_mid: {
+    starter: "Boots of Mana",
+    items: ["Lich Bane","Rabadon's Deathcap","Banshee's Veil","Void Staff"],
+    boots: "Spellslinger's Shoes", enchant: "Infinity Orb",
+    runes: ["Electrocute","Sudden Impact","Chain Assault","Eyeball Collector","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  darius: {
+    starter: "Plated Steelcaps",
+    items: ["Sterak's Gage","Dead Man's Plate","Amaranth's Twinguard","Guardian Angel"],
+    boots: "Armored Advance", enchant: "Trinity Force",
+    runes: ["Conqueror","Axiom Arcanist","Celerity","Nimbus Cloak","Triumph"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  fiora: {
+    starter: "Gluttonous Greaves",
+    items: ["Eclipse","Spear of Shojin","Hullbreaker","Guardian Angel"],
+    boots: "Immortal Path", enchant: "Trinity Force",
+    runes: ["Conqueror","Demolish","Second Wind","Overgrowth","Sudden Impact"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  garen: {
+    starter: "Plated Steelcaps",
+    items: ["Sterak's Gage","Spear of Shojin","Sundered Sky","Guardian Angel"],
+    boots: "Armored Advance", enchant: "Black Cleaver",
+    runes: ["Conqueror","Demolish","Second Wind","Perseverance","Cut Down"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  gnar: {
+    starter: "Plated Steelcaps",
+    items: ["Black Cleaver","Sterak's Gage","Amaranth's Twinguard","Guardian Angel"],
+    boots: "Armored Advance", enchant: "Trinity Force",
+    runes: ["Fleet Footwork","Unshakeable","Bone Plating","Overgrowth","Legend- Alacrity"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  jayce: {
+    starter: "Gluttonous Greaves",
+    items: ["Muramana","Serylda's Grudge","Spear of Shojin","Edge of Night"],
+    boots: "Immortal Path", enchant: "Eclipse",
+    runes: ["Conqueror","Battle Zeal","Cut Down","Legend- Bloodline","Demolish"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  jayce_mid: {
+    starter: "Mercury's Treads",
+    items: ["Muramana","Spear of Shojin","Serpent's Fang","Serylda's Grudge"],
+    boots: "Chainlaced Crushers", enchant: "Eclipse",
+    runes: ["First Strike","Sudden Impact","Tyrant","Relentless Hunter","Scorch"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  ksante: {
+    starter: "Plated Steelcaps",
+    items: ["Unending Despair","Amaranth's Twinguard","Thornmail","Force of Nature"],
+    boots: "Armored Advance", enchant: "Iceborn Gauntlet",
+    runes: ["Grasp of the Undying","Demolish","Second Wind","Perseverance","Last Stand"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  kayle: {
+    starter: "Boots of Mana",
+    items: ["Lich Bane","Rabadon's Deathcap","Void Staff","Stasis Enchant"],
+    boots: "Spellslinger's Shoes", enchant: "Nashor's Tooth",
+    runes: ["Conqueror","Botanist","Absolute Focus","Gathering Storm","Legend- Alacrity"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  kayle_mid: {
+    starter: "Boots of Mana",
+    items: ["Dusk and Dawn","Rabadon's Deathcap","Void Staff","Stasis Enchant"],
+    boots: "Spellslinger's Shoes", enchant: "Nashor's Tooth",
+    runes: ["Conqueror","Botanist","Absolute Focus","Gathering Storm","Legend- Alacrity"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  kennen: {
+    starter: "Boots of Mana",
+    items: ["Stormsurge","Rabadon's Deathcap","Protobelt Enchant","Void Staff"],
+    boots: "Spellslinger's Shoes", enchant: "Infinity Orb",
+    runes: ["Electrocute","Battle Zeal","Cut Down","Legend- Bloodline","Absolute Focus"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  kennen_mid: {
+    starter: "Boots of Mana",
+    items: ["Stormsurge","Rabadon's Deathcap","Stasis Enchant","Void Staff"],
+    boots: "Spellslinger's Shoes", enchant: "Infinity Orb",
+    runes: ["Electrocute","Sudden Impact","Tyrant","Eyeball Collector","Scorch"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  malphite: {
+    starter: "Plated Steelcaps",
+    items: ["Thornmail","Amaranth's Twinguard","Randuin's Omen","Force of Nature"],
+    boots: "Armored Advance", enchant: "Iceborn Gauntlet",
+    runes: ["Grasp of the Undying","Demolish","Second Wind","Overgrowth","Brutal"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  mordekaiser: {
+    starter: "Plated Steelcaps",
+    items: ["Liandry's Torment","Unending Despair","Bloodletter's Curse","Amaranth's Twinguard"],
+    boots: "Armored Advance", enchant: "Riftmaker",
+    runes: ["Conqueror","Demolish","Second Wind","Perseverance","Transcendence"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  nasus: {
+    starter: "Plated Steelcaps",
+    items: ["Sundered Sky","Death's Dance","Serylda's Grudge","Amaranth's Twinguard"],
+    boots: "Armored Advance", enchant: "Trinity Force",
+    runes: ["Phase Rush","Unshakeable","Second Wind","Overgrowth","Transcendence"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  renekton: {
+    starter: "Plated Steelcaps",
+    items: ["Blade of the Ruined King","Amaranth's Twinguard","Sterak's Gage","Guardian Angel"],
+    boots: "Armored Advance", enchant: "Hullbreaker",
+    runes: ["Conqueror","Brutal","Last Stand","Legend- Bloodline","Demolish"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  olaf_baron: {
+    starter: "Plated Steelcaps",
+    items: ["Death's Dance","Experimental Hexplate","Spear of Shojin","Amaranth's Twinguard"],
+    boots: "Armored Advance", enchant: "Trinity Force",
+    runes: ["Conqueror","Brutal","Last Stand","Legend- Bloodline","Second Wind"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  olaf_jg: {
+    starter: "Plated Steelcaps",
+    items: ["Sundered Sky","Death's Dance","Mortal Reminder","Amaranth's Twinguard"],
+    boots: "Armored Advance", enchant: "Trinity Force",
+    runes: ["Conqueror","Triumph","Last Stand","Legend- Bloodline","Nimbus Cloak"],
+    spells: ["Flash","Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  riven: {
+    starter: "Gluttonous Greaves",
+    items: ["Eclipse","Serylda's Grudge","Death's Dance","Guardian Angel"],
+    boots: "Immortal Path", enchant: "Trinity Force",
+    runes: ["Conqueror","Battle Zeal","Cut Down","Legend- Alacrity","Demolish"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  riven_jg: {
+    starter: "Gluttonous Greaves",
+    items: ["Serpent's Fang","Serylda's Grudge","Sundered Sky","Guardian Angel"],
+    boots: "Immortal Path", enchant: "Eclipse",
+    runes: ["Conqueror","Battle Zeal","Cut Down","Legend- Alacrity","Sudden Impact"],
+    spells: ["Flash","Chilling Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  rumble: {
+    starter: "Plated Steelcaps",
+    items: ["Bloodletter's Curse","Rabadon's Deathcap","Infinity Orb","Void Staff"],
+    boots: "Armored Advance", enchant: "Liandry's Torment",
+    runes: ["Phase Rush","Battle Zeal","Cut Down","Legend- Alacrity","Transcendence"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  sion: {
+    starter: "Plated Steelcaps",
+    items: ["Unending Despair","Thornmail","Amaranth's Twinguard","Force of Nature"],
+    boots: "Armored Advance", enchant: "Hollow Radiance",
+    runes: ["Grasp of the Undying","Demolish","Second Wind","Overgrowth","Manaflow Band"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  teemo: {
+    starter: "Boots of Mana",
+    items: ["Nashor's Tooth","Blackfire Torch","Stormsurge","Rabadon's Deathcap"],
+    boots: "Spellslinger's Shoes", enchant: "Liandry's Torment",
+    runes: ["Fleet Footwork","Brutal","Cut Down","Legend- Alacrity","Scorch"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  teemo_mid: {
+    starter: "Boots of Mana",
+    items: ["Blackfire Torch","Stormsurge","Rabadon's Deathcap","Infinity Orb"],
+    boots: "Spellslinger's Shoes", enchant: "Liandry's Torment",
+    runes: ["Electrocute","Empowered Attack","Chain Assault","Eyeball Collector","Scorch"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  tryndamere_jg: {
+    starter: "Berserker's Greaves",
+    items: ["Essence Reaver","Blade of the Ruined King","Mortal Reminder","Guardian Angel"],
+    boots: "Gunmetal Greaves", enchant: "Magnetic Blaster",
+    runes: ["Lethal Tempo","Brutal","Last Stand","Legend- Alacrity","Nimbus Cloak"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  tryndamere: {
+    starter: "Berserker's Greaves",
+    items: ["Blade of the Ruined King","Mortal Reminder","Infinity Edge","Guardian Angel"],
+    boots: "Gunmetal Greaves", enchant: "Magnetic Blaster",
+    runes: ["Lethal Tempo","Battle Zeal","Last Stand","Legend- Alacrity","Sudden Impact"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  urgot: {
+    starter: "Mercury's Treads",
+    items: ["Dead Man's Plate","Black Cleaver","Overlord's Bloodmail","Guardian Angel"],
+    boots: "Chainlaced Crushers", enchant: "Kraken Slayer",
+    runes: ["Conqueror","Brutal","Last Stand","Legend- Bloodline","Perseverance"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  urgot_jg: {
+    starter: "Mercury's Treads",
+    items: ["Dead Man's Plate","Force of Nature","Sterak's Gage","Amaranth's Twinguard"],
+    boots: "Chainlaced Crushers", enchant: "Kraken Slayer",
+    runes: ["Empowerment","Courage of the Colossus","Bone Plating","Perseverance","Sudden Impact"],
+    spells: ["Flash","Chilling Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  vladimir_baron: {
+    starter: "Boots of Mana",
+    items: ["Riftmaker","Stormsurge","Rabadon's Deathcap","Void Staff"],
+    boots: "Spellslinger's Shoes", enchant: "Infinity Orb",
+    runes: ["Phase Rush","Axiom Arcanist","Celerity","Nimbus Cloak","Battle Zeal"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  vladimir: {
+    starter: "Boots of Mana",
+    items: ["Rabadon's Deathcap","Infinity Orb","Protobelt Enchant","Stormsurge"],
+    boots: "Spellslinger's Shoes", enchant: "Blackfire Torch",
+    runes: ["Phase Rush","Axiom Arcanist","Celerity","Nimbus Cloak","Battle Zeal"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  volibear: {
+    starter: "Plated Steelcaps",
+    items: ["Hollow Radiance","Thornmail","Unending Despair","Amaranth's Twinguard"],
+    boots: "Armored Advance", enchant: "Dusk and Dawn",
+    runes: ["Conqueror","Demolish","Second Wind","Overgrowth","Battle Zeal"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  volibear_jg: {
+    starter: "Plated Steelcaps",
+    items: ["Riftmaker","Unending Despair","Hollow Radiance","Randuin's Omen"],
+    boots: "Armored Advance", enchant: "Dusk and Dawn",
+    runes: ["Conqueror","Brutal","Last Stand","Legend- Bloodline","Sudden Impact"],
+    spells: ["Flash","Chilling Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  wukong_jg: {
+    starter: "Boots of Dynamism",
+    items: ["Sundered Sky","Death's Dance","Amaranth's Twinguard","Guardian Angel"],
+    boots: "Zırhezen Çizmeler", enchant: "Trinity Force",
+    runes: ["Conqueror","Unshakeable","Bone Plating","Perseverance","Sudden Impact"],
+    spells: ["Flash","Chilling Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  wukong: {
+    starter: "Plated Steelcaps",
+    items: ["Sundered Sky","Death's Dance","Thornmail","Amaranth's Twinguard"],
+    boots: "Armored Advance", enchant: "Divine Sunderer",
+    runes: ["Grasp of the Undying","Unshakeable","Bone Plating","Overgrowth","Sudden Impact"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  yasuo_baron: {
+    starter: "Berserker's Greaves",
+    items: ["Death's Dance","Mortal Reminder","Infinity Edge","Guardian Angel"],
+    boots: "Gunmetal Greaves", enchant: "Blade of the Ruined King",
+    runes: ["Conqueror","Courage of the Colossus","Bone Plating","Overgrowth","Legend- Alacrity"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  yasuo: {
+    starter: "Berserker's Greaves",
+    items: ["Galeforce","Infinity Edge","Mortal Reminder","Guardian Angel"],
+    boots: "Gunmetal Greaves", enchant: "Blade of the Ruined King",
+    runes: ["Conqueror","Brutal","Cut Down","Legend- Alacrity","Sudden Impact"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  yone_baron: {
+    starter: "Berserker's Greaves",
+    items: ["Lord Dominik's Regards","Essence Reaver","Infinity Edge","Guardian Angel"],
+    boots: "Gunmetal Greaves", enchant: "Blade of the Ruined King",
+    runes: ["Grasp of the Undying","Demolish","Second Wind","Perseverance","Legend- Alacrity"],
+    spells: ["Flash","Teleport"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  yone: {
+    starter: "Gluttonous Greaves",
+    items: ["Bloodthirster","Death's Dance","Infinity Edge","Guardian Angel"],
+    boots: "Immortal Path", enchant: "Blade of the Ruined King",
+    runes: ["Conqueror","Battle Zeal","Last Stand","Legend- Bloodline","Sudden Impact"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  yone_jg: {
+    starter: "Gluttonous Greaves",
+    items: ["Infinity Edge","Death's Dance","Amaranth's Twinguard","Guardian Angel"],
+    boots: "Immortal Path", enchant: "Blade of the Ruined King",
+    runes: ["Conqueror","Battle Zeal","Cut Down","Legend- Alacrity","Sudden Impact"],
+    spells: ["Flash","Chilling Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  zed_baron: {
+    starter: "Gluttonous Greaves",
+    items: ["Eclipse","Serylda's Grudge","Edge of Night","Guardian Angel"],
+    boots: "Immortal Path", enchant: "Trinity Force",
+    runes: ["Conqueror","Unshakeable","Second Wind","Overgrowth","Sudden Impact"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  zed_mid: {
+    starter: "Gluttonous Greaves",
+    items: ["Serpent's Fang","Serylda's Grudge","Edge of Night","Duskblade of Draktharr"],
+    boots: "Immortal Path", enchant: "Youmuu's Ghostblade",
+    runes: ["Conqueror","Sudden Impact","Hubris","Eyeball Collector","Transcendence"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  zed_jg: {
+    starter: "Gluttonous Greaves",
+    items: ["Serpent's Fang","Youmuu's Ghostblade","Edge of Night","Guardian Angel"],
+    boots: "Immortal Path", enchant: "Eclipse",
+    runes: ["Conqueror","Sudden Impact","Hubris","Eyeball Collector","Transcendence"],
+    spells: ["Flash","Chilling Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  syndra: {
+    starter: "Boots of Mana",
+    items: ["Infinity Orb","Rabadon's Deathcap","Void Staff","Stasis Enchant"],
+    boots: "Spellslinger's Shoes", enchant: "Stormsurge",
+    runes: ["Electrocute","Cheap Shot","Chain Assault","Zombie Ward","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  ahri: {
+    starter: "Boots of Mana",
+    items: ["Infinity Orb","Rabadon's Deathcap","Void Staff","Banshee's Veil"],
+    boots: "Spellslinger's Shoes", enchant: "Malignance",
+    runes: ["Electrocute","Sudden Impact","Chain Assault","Zombie Ward","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  akshan_mid: {
+    starter: "Berserker's Greaves",
+    items: ["Kraken Slayer","Magnetic Blaster","Infinity Edge","Mortal Reminder"],
+    boots: "Gunmetal Greaves", enchant: "The Collector",
+    runes: ["Empowerment","Brutal","Cut Down","Legend- Alacrity","Sudden Impact"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  annie: {
+    starter: "Boots of Mana",
+    items: ["Infinity Orb","Rabadon's Deathcap","Void Staff","Stasis Enchant"],
+    boots: "Spellslinger's Shoes", enchant: "Malignance",
+    runes: ["Electrocute","Hexflash","Transcendence","Nimbus Cloak","Zombie Ward"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  aurora: {
+    starter: "Boots of Mana",
+    items: ["Infinity Orb","Rabadon's Deathcap","Void Staff","Stasis Enchant"],
+    boots: "Spellslinger's Shoes", enchant: "Luden's Echo",
+    runes: ["Electrocute","Sudden Impact","Chain Assault","Zombie Ward","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  brand_mid: {
+    starter: "Boots of Mana",
+    items: ["Blackfire Torch","Rabadon's Deathcap","Infinity Orb","Void Staff"],
+    boots: "Spellslinger's Shoes", enchant: "Liandry's Torment",
+    runes: ["Electrocute","Battle Zeal","Cut Down","Legend- Bloodline","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  heimerdinger: {
+    starter: "Boots of Mana",
+    items: ["Rabadon's Deathcap","Malignance","Void Staff","Banshee's Veil"],
+    boots: "Spellslinger's Shoes", enchant: "Blackfire Torch",
+    runes: ["First Strike","Axiom Arcanist","Transcendence","Gathering Storm","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  kassadin: {
+    starter: "Boots of Mana",
+    items: ["Malignance","Rabadon's Deathcap","Infinity Orb","Void Staff"],
+    boots: "Spellslinger's Shoes", enchant: "Archangel's Staff",
+    runes: ["First Strike","Manaflow Band","Transcendence","Gathering Storm","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  katarina: {
+    starter: "Boots of Mana",
+    items: ["Rabadon's Deathcap","Banshee's Veil","Void Staff","Riftmaker"],
+    boots: "Spellslinger's Shoes", enchant: "Infinity Orb",
+    runes: ["First Strike","Sudden Impact","Chain Assault","Zombie Ward","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  lissandra: {
+    starter: "Boots of Mana",
+    items: ["Infinity Orb","Rabadon's Deathcap","Cryptbloom","Stasis Enchant"],
+    boots: "Spellslinger's Shoes", enchant: "Malignance",
+    runes: ["Electrocute","Axiom Arcanist","Transcendence","Gathering Storm","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  norra: {
+    starter: "Boots of Mana",
+    items: ["Malignance","Rabadon's Deathcap","Cryptbloom","Banshee's Veil"],
+    boots: "Spellslinger's Shoes", enchant: "Infinity Orb",
+    runes: ["Dark Harvest","Sudden Impact","Tyrant","Zombie Ward","Absolute Focus"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  twisted_fate: {
+    starter: "Boots of Mana",
+    items: ["Lich Bane","Rabadon's Deathcap","Infinity Orb","Void Staff"],
+    boots: "Spellslinger's Shoes", enchant: "Nashor's Tooth",
+    runes: ["Fleet Footwork","Botanist","Absolute Focus","Nimbus Cloak","Zombie Ward"],
+    spells: ["Flash","Ghost"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  veigar: {
+    starter: "Boots of Mana",
+    items: ["Rabadon's Deathcap","Infinity Orb","Void Staff","Banshee's Veil"],
+    boots: "Spellslinger's Shoes", enchant: "Stormsurge",
+    runes: ["Electrocute","Axiom Arcanist","Transcendence","Gathering Storm","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  velkoz: {
+    starter: "Boots of Mana",
+    items: ["Infinity Orb","Rabadon's Deathcap","Void Staff","Banshee's Veil"],
+    boots: "Spellslinger's Shoes", enchant: "Blackfire Torch",
+    runes: ["Arcane Comet","Manaflow Band","Transcendence","Scorch","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  vex: {
+    starter: "Boots of Mana",
+    items: ["Infinity Orb","Rabadon's Deathcap","Void Staff","Stasis Enchant"],
+    boots: "Spellslinger's Shoes", enchant: "Luden's Echo",
+    runes: ["Electrocute","Cheap Shot","Chain Assault","Zombie Ward","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  viktor: {
+    starter: "Boots of Mana",
+    items: ["Lich Bane","Rabadon's Deathcap","Void Staff","Infinity Orb"],
+    boots: "Spellslinger's Shoes", enchant: "Luden's Echo",
+    runes: ["Fleet Footwork","Empowered Attack","Chain Assault","Zombie Ward","Bone Plating"],
+    spells: ["Flash","Barrier"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  zoe: {
+    starter: "Boots of Mana",
+    items: ["Rabadon's Deathcap","Infinity Orb","Void Staff","Banshee's Veil"],
+    boots: "Spellslinger's Shoes", enchant: "Lich Bane",
+    runes: ["First Strike","Sudden Impact","Chain Assault","Zombie Ward","Nimbus Cloak"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  pantheon_mid: {
+    starter: "Boots of Dynamism",
+    items: ["Blade of the Ruined King","Mortal Reminder","Serpent's Fang","Guardian Angel"],
+    boots: "Zırhezen Çizmeler", enchant: "Galeforce",
+    runes: ["First Strike","Sudden Impact","Chain Assault","Zombie Ward","Hexflash"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  pantheon_jg: {
+    starter: "Boots of Dynamism",
+    items: ["Blade of the Ruined King","Mortal Reminder","Serpent's Fang","Guardian Angel"],
+    boots: "Zırhezen Çizmeler", enchant: "Galeforce",
+    runes: ["Conqueror","Sudden Impact","Chain Assault","Eyeball Collector","Hexflash"],
+    spells: ["Flash","Chilling Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  rengar: {
+    starter: "Gluttonous Greaves",
+    items: ["Infinity Edge","Mortal Reminder","Duskblade of Draktharr","Guardian Angel"],
+    boots: "Immortal Path", enchant: "Essence Reaver",
+    runes: ["First Strike","Sudden Impact","Chain Assault","Zombie Ward","Transcendence"],
+    spells: ["Flash","Chilling Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  skarner: {
+    starter: "Plated Steelcaps",
+    items: ["Unending Despair","Stoneplate Enchant","Amaranth's Twinguard","Thornmail"],
+    boots: "Armored Advance", enchant: "Heartsteel",
+    runes: ["Ice Overlord","Unshakeable","Second Wind","Overgrowth","Transcendence"],
+    spells: ["Flash","Chilling Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  taliyah: {
+    starter: "Boots of Mana",
+    items: ["Infinity Orb","Rabadon's Deathcap","Void Staff","Stasis Enchant"],
+    boots: "Spellslinger's Shoes", enchant: "Blackfire Torch",
+    runes: ["Dark Harvest","Cheap Shot","Chain Assault","Zombie Ward","Bone Plating"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  taliyah_jg: {
+    starter: "Boots of Mana",
+    items: ["Infinity Orb","Rabadon's Deathcap","Void Staff","Stasis Enchant"],
+    boots: "Spellslinger's Shoes", enchant: "Blackfire Torch",
+    runes: ["Dark Harvest","Cheap Shot","Chain Assault","Zombie Ward","Absolute Focus"],
+    spells: ["Flash","Chilling Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  talon: {
+    starter: "Gluttonous Greaves",
+    items: ["Serpent's Fang","Serylda's Grudge","Trinity Force","Guardian Angel"],
+    boots: "Immortal Path", enchant: "Youmuu's Ghostblade",
+    runes: ["First Strike","Sudden Impact","Chain Assault","Zombie Ward","Triumph"],
+    spells: ["Flash","Ignite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  talon_jg: {
+    starter: "Boots of Dynamism",
+    items: ["Serpent's Fang","Serylda's Grudge","Edge of Night","Guardian Angel"],
+    boots: "Zırhezen Çizmeler", enchant: "Youmuu's Ghostblade",
+    runes: ["First Strike","Brutal","Cut Down","Legend- Alacrity","Bone Plating"],
+    spells: ["Flash","Chilling Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  vi: {
+    starter: "Plated Steelcaps",
+    items: ["Sundered Sky","Death's Dance","Amaranth's Twinguard","Guardian Angel"],
+    boots: "Armored Advance", enchant: "Trinity Force",
+    runes: ["Conqueror","Unshakeable","Bone Plating","Overgrowth","Sudden Impact"],
+    spells: ["Flash","Chilling Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  xin_zhao: {
+    starter: "Gluttonous Greaves",
+    items: ["Sundered Sky","Serylda's Grudge","Death's Dance","Guardian Angel"],
+    boots: "Immortal Path", enchant: "Trinity Force",
+    runes: ["Conqueror","Brutal","Cut Down","Legend- Bloodline","Overgrowth"],
+    spells: ["Flash","Chilling Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  warwick: {
+    starter: "Gluttonous Greaves",
+    items: ["Terminus","Kraken Slayer","Blade of the Ruined King","Guardian Angel"],
+    boots: "Immortal Path", enchant: "Trinity Force",
+    runes: ["Empowerment","Brutal","Cut Down","Legend- Bloodline","Sudden Impact"],
+    spells: ["Flash","Chilling Smite"],
+    skillOrder: ["1","2","3"],
+    tier: "A"
+  },
+  // ── DİĞER BUİLDLER ────────────────────────────────────────────
   nautilus: {
     starter: "Relic Shield",
     items: ["Warmog's Armor","Amaranth's Twinguard","Thornmail","Force of Nature"],
@@ -1900,14 +2863,6 @@ const BUILD_DB = {
     runes: ["Ice Overlord","Courage of the Colossus","Bone Plating","Perseverance","Hexflash"],
     spells: ["Flash","Ignite"],
     skillOrder: ["1","3","2"],
-    tier: "S"
-  },
-  gwen: {
-    items: ["Dusk and Dawn","Riftmaker","Rabadon's Deathcap","Stasis Enchant","Void Staff"],
-    boots: "Boots of Mana", enchant: "Spellslinger's Shoes",
-    runes: ["Conqueror","Relentless Hunter","Last Stand","Legend- Alacrity","Sudden Impact"],
-    spells: ["Flash","Ignite"],
-    skillOrder: ["1","2","3"],
     tier: "S"
   },
 };
