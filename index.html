@@ -37,6 +37,8 @@ input{font-family:inherit}
   padding-top:max(5px,env(safe-area-inset-top))"></div>
 <div id="builderFab" style="display:none;position:fixed;bottom:16px;right:16px;z-index:9997;
   padding-bottom:env(safe-area-inset-bottom)"></div>
+<div id="profileFab" style="display:none;position:fixed;bottom:64px;right:16px;z-index:9997;
+  padding-bottom:env(safe-area-inset-bottom)"></div>
 <div id="builderToast" style="display:none;position:fixed;top:50%;left:50%;
   transform:translate(-50%,-50%);z-index:9999;background:#0d0d1ef2;border:1px solid #ffcc0255;
   border-radius:12px;padding:14px 20px;font-size:13px;font-weight:700;color:#ffcc02;
@@ -2887,6 +2889,62 @@ function getBuild(id){
   return CUSTOM_BUILDS[id] || BUILD_DB[id];
 }
 
+// ─── GİZLİ ŞAMPİYON DERİNLİK PROFİLİ EDİTÖRÜ ───────────────────
+// Şampiyon profil ekranında GÖRÜNMEZ. Sadece Builder Modu içinde
+// gizli bir düzenleme ekranından girilir ve TXT olarak dışa aktarılır.
+const PROFILE_FIELDS = [
+  { group:"1. FORM MİMARİSİ", fields:[
+    { key:"hasForms", label:"Çift Form", type:"single", opts:["Var","Yok"] },
+    { key:"formAName", label:"Form A Adı", type:"text" },
+    { key:"formBName", label:"Form B Adı", type:"text" },
+  ]},
+  { group:"2. HAREKETLİLİK PARAMETRELERİ", fields:[
+    { key:"moveSpeed", label:"Taban Hareket Hızı", type:"single", opts:["Çok Yavaş","Yavaş","Ortalama","Hızlı","Çok Hızlı"] },
+    { key:"passiveSpeedBoost", label:"Pasif Hız Artışı", type:"single", opts:["Var","Yok"] },
+    { key:"mobilityTool", label:"Mobilite Aracı", type:"single", opts:["Dash","Blink","Hook/Grapple","Leap","Stealth","Yarı-Global","Yok"] },
+    { key:"toolCondition", label:"Aracın Koşulu", type:"single", opts:["Koşulsuz","Koşullu"] },
+    { key:"toolFrequency", label:"Aracın Sıklığı", type:"single", opts:["Spamlanabilir","Sınırlı","Tek Seferlik"] },
+    { key:"mobilityTag", label:"Gerçek Mobilite Etiketi", type:"single", opts:["Gerçek Hareketlilik","Yanıltıcı Hareketlilik","Patlamalı Hareketlilik","Gerçek Hantal"] },
+  ]},
+  { group:"3. CC VE TEHDİT MİMARİSİ", fields:[
+    { key:"ccTypes", label:"CC Tipleri", type:"multi", opts:["Suppression","Knockup/Knockback","Stun/Freeze/Sleep","Root/Snare","Silence/Ground","Soft CC/Slow"] },
+    { key:"hasCleanseSkill", label:"Öz CC Çıkışı (Cleanse Skill)", type:"single", opts:["Var","Yok"] },
+    { key:"ccSensitivity", label:"CC Hassasiyeti", type:"single", opts:["CC Yerse Sıkıntı Yaşar","CC'ye Dirençli"] },
+  ]},
+  { group:"4. KAYNAK, RESET VE ULTİ PENCERESİ", fields:[
+    { key:"resourceType", label:"Kaynak Tipi", type:"single", opts:["Mana","Enerji","Öfke (Rage)","Kaynaksız"] },
+    { key:"hasReset", label:"Reset Mekaniği", type:"single", opts:["Var","Yok"] },
+    { key:"ultDependency", label:"Ulti Bağımlılık Penceresi", type:"single", opts:["Aşırı Bağımlı","Düşük Bağımlı"] },
+  ]},
+  { group:"5. DRAFT & TAKIM SAVAŞI NİTELİK HAVUZU", fields:[
+    { key:"teamfightRole", label:"Takım Savaşı Rolü", type:"multi", opts:["Engage","Disengage","Peel","Frontline","Backline Dalışı","Poke","Wave Clear","Split Push","Pick/Execute","Zone Control"] },
+    { key:"durabilityProfile", label:"Dayanıklılık Profili", type:"multi", opts:["Doğal Tank","Sustain","Kalkan","Kırılgan"] },
+    { key:"damageProfile", label:"Hasar Profili", type:"multi", opts:["Burst","Sürdürülebilir DPS","Tank Eritici","Anti-Dive","Anti-Heal Uygulayıcı"] },
+    { key:"powerCurve", label:"Güç Eğrisi", type:"single", opts:["Erken Oyun","Orta Oyun","Geç Oyun"] },
+    { key:"scalingType", label:"Yapı", type:"single", opts:["Snowball Bağımlı","Tutarlı"] },
+    { key:"objectiveControl", label:"Objektif Gücü (Baron/Ejder Hızı)", type:"text" },
+    { key:"globalTeleport", label:"Global/Teleport", type:"single", opts:["Var","Yok"] },
+    { key:"duelist", label:"Duelist (1v1)", type:"single", opts:["Var","Yok"] },
+  ]},
+];
+
+let CUSTOM_CHAMP_PROFILES = {};   // localStorage'a kaydedilen şampiyon derinlik profilleri
+function loadCustomProfiles(){
+  try {
+    const raw = localStorage.getItem("wrCustomProfiles");
+    if(raw) CUSTOM_CHAMP_PROFILES = JSON.parse(raw) || {};
+  } catch(e){ CUSTOM_CHAMP_PROFILES = {}; }
+}
+function saveCustomProfiles(){
+  try { localStorage.setItem("wrCustomProfiles", JSON.stringify(CUSTOM_CHAMP_PROFILES)); } catch(e){}
+  updateProfileFab();
+}
+function blankProfileDraft(){
+  const d = {};
+  PROFILE_FIELDS.forEach(g => g.fields.forEach(f => { d[f.key] = f.type==="multi" ? [] : ""; }));
+  return d;
+}
+
 let _logoTapCount = 0;
 let _logoTapTimer = null;
 function secretTapLogo(){
@@ -2899,6 +2957,7 @@ function secretTapLogo(){
     try{ localStorage.setItem("wrBuilderEnabled", BUILDER_ENABLED ? "1":"0"); }catch(e){}
     showBuilderToast(BUILDER_ENABLED ? "🛠 Build Editörü Açıldı" : "Build Editörü Kapatıldı");
     updateBuilderFab();
+    updateProfileFab();
     render();
   }
 }
@@ -2960,6 +3019,76 @@ function showExportModal(json){
     let ok = false;
     try{ ok = document.execCommand("copy"); }catch(e){}
     if(!ok && navigator.clipboard){ navigator.clipboard.writeText(json).catch(()=>{}); }
+    showBuilderToast("Kopyalandı ✓");
+    wrap.remove();
+  };
+}
+
+// Sağ altta, builderFab'ın hemen üstünde duran şampiyon profili dışa aktarma butonu
+function updateProfileFab(){
+  const fab = document.getElementById("profileFab");
+  if(!fab) return;
+  const count = Object.keys(CUSTOM_CHAMP_PROFILES).length;
+  if(!BUILDER_ENABLED || count===0){ fab.style.display = "none"; fab.innerHTML=""; return; }
+  fab.style.display = "block";
+  fab.innerHTML = `<button onclick="exportAllProfiles()" style="padding:11px 16px;border-radius:30px;
+    background:#0d0d1ef2;border:1px solid #c060ff55;color:#c060ff;font-size:12px;font-weight:800;
+    display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px #000a">
+    📊 Profil Aktar (${count})
+  </button>`;
+}
+// Kayıtlı tüm şampiyon derinlik profillerini okunaklı TXT olarak dışa aktarır
+function exportAllProfiles(){
+  const ids = Object.keys(CUSTOM_CHAMP_PROFILES);
+  if(ids.length===0){ showBuilderToast("Henüz kayıtlı profil yok"); return; }
+  let txt = "";
+  ids.forEach(id => {
+    const c = DB[id];
+    const d = CUSTOM_CHAMP_PROFILES[id];
+    txt += `\n=== ${c ? c.name : id} (${id}) ===\n`;
+    PROFILE_FIELDS.forEach(g => {
+      txt += `\n${g.group}\n`;
+      g.fields.forEach(f => {
+        const v = d[f.key];
+        const val = Array.isArray(v) ? (v.length ? v.join(", ") : "-") : (v || "-");
+        txt += `- ${f.label}: ${val}\n`;
+      });
+    });
+    txt += "\n";
+  });
+  txt = txt.trim() + "\n";
+  if(navigator.share){
+    navigator.share({ title: "Wild Rift Champion Profiles", text: txt }).catch(()=>{ showProfileExportModal(txt); });
+  } else {
+    showProfileExportModal(txt);
+  }
+}
+function showProfileExportModal(txt){
+  const wrap = document.createElement("div");
+  wrap.style.cssText = "position:fixed;inset:0;background:#000000cc;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px";
+  wrap.innerHTML = `<div style="background:#0a0a18;border:1px solid #1a1a2e;border-radius:14px;
+      max-width:420px;width:100%;max-height:80vh;display:flex;flex-direction:column;padding:16px">
+    <div style="font-size:13px;font-weight:800;color:#fff;margin-bottom:10px">📊 Şampiyon Profilleri (TXT)</div>
+    <textarea id="profileExportTa" readonly style="flex:1;min-height:220px;background:#101022;color:#d0a8ff;
+      border:1px solid #252540;border-radius:8px;padding:10px;font-size:11px;font-family:monospace;
+      resize:none;overflow:auto;white-space:pre-wrap"></textarea>
+    <div style="display:flex;gap:8px;margin-top:12px">
+      <button id="profileExportCopyBtn" style="flex:1;padding:11px;border-radius:9px;background:#c060ff18;
+        border:1px solid #c060ff55;color:#c060ff;font-weight:800;font-size:12px">Kopyala</button>
+      <button id="profileExportCloseBtn" style="padding:11px 16px;border-radius:9px;background:#0d0d1e;
+        border:1px solid #252540;color:#888;font-weight:700;font-size:12px">Kapat</button>
+    </div>
+  </div>`;
+  document.body.appendChild(wrap);
+  const ta = wrap.querySelector("#profileExportTa");
+  ta.value = txt;
+  wrap.querySelector("#profileExportCloseBtn").onclick = ()=> wrap.remove();
+  wrap.addEventListener("click", (e)=>{ if(e.target===wrap) wrap.remove(); });
+  wrap.querySelector("#profileExportCopyBtn").onclick = ()=>{
+    ta.focus(); ta.select();
+    let ok = false;
+    try{ ok = document.execCommand("copy"); }catch(e){}
+    if(!ok && navigator.clipboard){ navigator.clipboard.writeText(txt).catch(()=>{}); }
     showBuilderToast("Kopyalandı ✓");
     wrap.remove();
   };
@@ -4025,6 +4154,50 @@ function closeBuilder(){
   appScreen="champDetail";
   render();
 }
+
+// ─── ŞAMPİYON DERİNLİK PROFİLİ EDİTÖRÜ FONKSİYONLARI (gizli) ───
+let profileChampId = null;   // düzenlenen şampiyon
+let profileDraft    = null;  // taslak: PROFILE_FIELDS anahtarlarına göre
+function openProfileEditor(id){
+  if(!BUILDER_ENABLED) return;
+  const existing = CUSTOM_CHAMP_PROFILES[id];
+  const blank = blankProfileDraft();
+  profileDraft = existing ? Object.assign(blank, existing) : blank;
+  profileChampId = id;
+  appScreen = "champProfile";
+  render();
+}
+function closeProfileEditor(){
+  profileChampId=null; profileDraft=null;
+  appScreen="champDetail";
+  render();
+}
+function setProfileSingle(key, val){
+  profileDraft[key] = (profileDraft[key]===val) ? "" : val;
+  render();
+}
+function toggleProfileMulti(key, val){
+  const arr = profileDraft[key] || [];
+  const i = arr.indexOf(val);
+  if(i>=0) arr.splice(i,1); else arr.push(val);
+  profileDraft[key] = arr;
+  render();
+}
+function setProfileText(key, val){
+  profileDraft[key] = val;
+}
+function saveProfileDraft(){
+  CUSTOM_CHAMP_PROFILES[profileChampId] = profileDraft;
+  saveCustomProfiles();
+  showBuilderToast("💾 Profil Kaydedildi");
+  closeProfileEditor();
+}
+function deleteProfileDraft(){
+  delete CUSTOM_CHAMP_PROFILES[profileChampId];
+  saveCustomProfiles();
+  showBuilderToast("🗑 Profil Silindi");
+  closeProfileEditor();
+}
 function openBuilderPicker(slot){
   builderPicking = slot;
   builderPickSearch = "";
@@ -4788,6 +4961,9 @@ function render() {
                 ${BUILDER_ENABLED ? `<button onclick="openBuilder('${champDetailId}')" style="padding:4px 10px;
                   border-radius:7px;border:1px solid #ffcc0255;background:#ffcc0218;color:#ffcc02;
                   font-size:9px;font-weight:700;flex-shrink:0">✏️ Düzenle</button>` : ""}
+                ${BUILDER_ENABLED ? `<button onclick="openProfileEditor('${champDetailId}')" style="padding:4px 10px;
+                  border-radius:7px;border:1px solid #c060ff55;background:#c060ff18;color:#c060ff;
+                  font-size:9px;font-weight:700;flex-shrink:0">📊 Profil${CUSTOM_CHAMP_PROFILES[champDetailId] ? ' ✓' : ''}</button>` : ""}
               </div>
 
               <!-- RÜNLER -->
@@ -4997,6 +5173,73 @@ function render() {
         </div>
 
         ${pickerHtml}
+      </div>`;
+    return;
+  }
+
+  // ── ŞAMPİYON DERİNLİK PROFİLİ EDİTÖRÜ (appScreen==="champProfile") ──
+  if (appScreen === "champProfile" && profileChampId && profileDraft) {
+    const c = DB[profileChampId];
+    if(!c){ appScreen="champions"; render(); return; }
+    const d = profileDraft;
+
+    const groupsHtml = PROFILE_FIELDS.map(g => {
+      const fieldsHtml = g.fields.map(f => {
+        if(f.type === "text"){
+          return `<div style="margin-bottom:12px">
+            <div style="font-size:8.5px;color:#888;font-weight:700;margin-bottom:6px">${f.label}</div>
+            <input value="${(d[f.key]||"").replace(/"/g,'&quot;')}" oninput="setProfileText('${f.key}',this.value)"
+              placeholder="Serbest metin..." style="width:100%;padding:8px 10px;border-radius:8px;
+              background:#101022;border:1px solid #252540;color:#e0e0f0;font-size:12px;outline:none">
+          </div>`;
+        }
+        const isMulti = f.type === "multi";
+        const selected = isMulti ? (d[f.key]||[]) : d[f.key];
+        const optsHtml = f.opts.map(o => {
+          const active = isMulti ? selected.includes(o) : selected===o;
+          const fn = isMulti ? `toggleProfileMulti('${f.key}','${o.replace(/'/g,"\\'")}')`
+                              : `setProfileSingle('${f.key}','${o.replace(/'/g,"\\'")}')`;
+          return `<button onclick="${fn}" style="padding:6px 10px;border-radius:7px;font-size:10.5px;
+            font-weight:700;background:${active?'#c060ff25':'#0d0d1e'};border:1px solid ${active?'#c060ff':'#252540'};
+            color:${active?'#c060ff':'#888'}">${o}</button>`;
+        }).join("");
+        return `<div style="margin-bottom:12px">
+          <div style="font-size:8.5px;color:#888;font-weight:700;margin-bottom:6px">${f.label}</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">${optsHtml}</div>
+        </div>`;
+      }).join("");
+      return `<div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #c060ff33;
+        border-radius:12px;padding:14px">
+        <div style="font-size:9.5px;color:#c060ff;font-weight:800;margin-bottom:12px;letter-spacing:.4px">${g.group}</div>
+        ${fieldsHtml}
+      </div>`;
+    }).join("");
+
+    document.getElementById("app").innerHTML = `
+      <div style="min-height:100vh;background:#07070f">
+        <div style="padding:12px 14px;background:#0a0a18;border-bottom:1px solid #141428;
+          position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
+          display:flex;align-items:center;gap:10px">
+          <button onclick="closeProfileEditor()" style="padding:6px 12px;border-radius:8px;
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← İptal</button>
+          <div style="font-size:14px;font-weight:800;color:#fff">📊 Profil Düzenle · ${c.name}</div>
+        </div>
+
+        <div style="padding:14px">
+          ${groupsHtml}
+
+          <div style="display:flex;gap:8px">
+            <button onclick="saveProfileDraft()" style="flex:1;padding:12px;border-radius:10px;
+              background:#00ff8818;border:1px solid #00ff8855;color:#00ff88;font-weight:800;font-size:13px">
+              💾 Kaydet
+            </button>
+            ${CUSTOM_CHAMP_PROFILES[profileChampId] ? `
+            <button onclick="deleteProfileDraft()" style="padding:12px 16px;border-radius:10px;
+              background:#ff444418;border:1px solid #ff444455;color:#ff6060;font-weight:800;font-size:13px">
+              🗑 Sil
+            </button>` : ""}
+          </div>
+        </div>
       </div>`;
     return;
   }
@@ -5835,7 +6078,9 @@ function updateChampGrid() {
 // İlk render — son bırakılan ekran (varsa) geri yüklenir, yoksa Ana Menü
 loadAppState();
 loadCustomBuilds();
+loadCustomProfiles();
 updateBuilderFab();
+updateProfileFab();
 render();
 </script>
 </body>
