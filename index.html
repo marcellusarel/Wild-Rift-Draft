@@ -4902,80 +4902,111 @@ let builderPickSearch  = "";
 
 // ─── YAMA VERİSİ ─────────────────────────────────────────────
 let patchData = {
-  version: "7.2a",
-  date: "15 Temmuz 2026",
+  version: "7.2b",
+  date: "29 Temmuz 2026",
   newChamps: [],
-  buffs:   ["skarner","yuumi"],
-  nerfs:   ["nidalee","warwick","senna"],
+  buffs:   ["aurora","ekko","lee_sin"],
+  nerfs:   ["jayce","nidalee","ambessa","sona","hecarim","zilean","kayle"],
   changes: [],
   details: {
-    nidalee:  "Orman hasarı beklentileri aştığı için Kuguar Sureti'nin taban hasarı ve Puma Sureti'nin ilave direnç oranı azaltıldı",
-    warwick:  "Avının karşılık verme şansını arttırmak için Ebedi Açlık'ın saldırı gücü oranı ve Cani Diş'in sabit hasarı azaltıldı",
-    skarner:  "Çarpışma ve baskınlarda etkisiz kaldığı için hasarı, dayanıklılığı ve kitle kontrolü güçlendirildi",
-    senna:    "Fazla iyi performans gösterdiği için Bağışlama'nın mevcut can hasarı ve Gölgelerin Şafağı'nın kalkanı azaltıldı",
-    yuumi:    "İyileştirmesi zayıf hissettirdiği için Çıldırrr'ın mana bedeli düşürüldü, Son Sayfa'nın taban iyileştirmesi arttırıldı",
+    jayce:    "Koridor düellolarında fazla dayanıklı olduğu için taban zırhı düşürüldü, rakiplere karşılık verme fırsatı arttırıldı",
+    nidalee:  "İkinci nerf turuna rağmen hâlâ fazla güçlü olduğu için taban zırh ve büyü direnci düşürüldü",
+    ambessa:  "Ultisi her tip hedefe karşı fazla bitirici olduğu için infaz hasarı ve can kaybına bağlı hasarı düşürüldü",
+    sona:     "Önceki güçlendirmeler ve item değişiklikleri sonrası takımına fazla katkı sağladığı için iyileştirmesi ve ulti bekleme süresi ayarlandı",
+    hecarim:  "Orman temizliği ve top yekun ivmesi fazla güçlü olduğu için vuruşta kazandığı hareket hızı bonusu düşürüldü",
+    zilean:   "Özellikle üst seviye ve profesyonel oyunda destek koridorunda fazla baskın olduğu için hasarı ve ulti bekleme süresi ayarlandı",
+    kayle:    "Bounty sistemiyle geç oyun gücüne fazla kolay ulaştığı için erken oyun hasarı ve iyileştirmesi düşürüldü, mana bedelleri dengelendi",
+    aurora:   "Son item/rün değişikliklerinden beklenenden fazla etkilendiği için 1. ve 3. yeteneklerinin hasarı arttırıldı",
+    ekko:     "Son yamadan beri tüm build yollarında zayıf kaldığı için genel güç seviyesi yukarı çekildi",
+    lee_sin:  "Dövüşçü oynanış tarzına daha uygun olması için dayanıklılığı (kalkan ve omnivamp) arttırıldı",
   },
   // Şampiyon detay sayfasında gösterilen, yetenek bazlı ayrıntılı yama notları
   detailsFull: {
+    jayce: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Zırh: 46 → 37"
+      ]},
+    ],
     nidalee: [
-      { skill: "Kuguar Sureti (Atıl)", changes: [
-        "Taban Hasar: 65/100/135/170 → 55/90/125/160 (4. yetenek seviyesine bağlı)"
-      ]},
-      { skill: "Puma Sureti", changes: [
-        "İlave Zırh ve Büyü Direnci Yetenek Gücü Oranı: %3 → %2,5"
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Zırh: 46 → 37",
+        "Taban Büyü Direnci: 40 → 36"
       ]},
     ],
-    warwick: [
-      { skill: "Ebedi Açlık", changes: [
-        "İlave Saldırı Gücü Oranı: %20 → %15"
-      ]},
-      { skill: "Cani Diş", changes: [
-        "Sabit Hasar: %90 Yetenek Gücü → %85 Yetenek Gücü"
+    ambessa: [
+      { skill: "Public Execution (Ulti)", changes: [
+        "Hasar Azaltma: %30/40/50 → %10/20/30",
+        "Can Kaybına Bağlı Taban Hasar: %20/30/40 → %10/17,5/25"
       ]},
     ],
-    skarner: [
-      { skill: "Tektonik Zemin / Toprağın Başkaldırısı", changes: [
-        "Üçüncü Güçlendirilmiş Saldırının ve Tektonik Zemin'in Azami Can Hasarı: %10 → %11"
+    sona: [
+      { skill: "Aria of Perseverance", changes: [
+        "İyileştirme: 45/60/75/90 → 35/50/65/80"
       ]},
-      { skill: "Sismik Kalkan", changes: [
-        "Bekleme Süresi: 9/8/7/6s → 8/7/6/5s",
-        "Cana Bağlı Kalkan Oranı: %8 → %10"
-      ]},
-      { skill: "Ixtal Hücumu", changes: [
-        "Bekleme Süresi: 20/18/16/14s → 18/16/14/12s"
+      { skill: "Crescendo", changes: [
+        "Bekleme Süresi: 80/70/60s → 80/75/70s"
       ]},
     ],
-    senna: [
-      { skill: "Bağışlama", changes: [
-        "Mevcut Can Hasarı: %1,2 ila %12 → %1 ila %10 (seviyeye bağlı)"
-      ]},
-      { skill: "Gölgelerin Şafağı", changes: [
-        "Kalkan: %40 Yetenek Gücü + sis yükü başına 4 → %50 Yetenek Gücü + Kara Sis yükü başına 2,5"
+    hecarim: [
+      { skill: "Rampage", changes: [
+        "Vuruşta Hareket Hızı Bonusu: %30 → %18"
       ]},
     ],
-    yuumi: [
-      { skill: "Çıldırrr", changes: [
-        "Mana Bedeli: 80/90/100/110 → 65/75/85/95"
+    zilean: [
+      { skill: "Time Bomb", changes: [
+        "Taban Hasar: 70/140/210/280 → 60/125/190/255"
       ]},
-      { skill: "Son Sayfa", changes: [
-        "Taban İyileştirme: 20/30/40 → 20/35/50"
+      { skill: "Chronoshift", changes: [
+        "Bekleme Süresi: 100/85/70s → 110/95/80s"
+      ]},
+    ],
+    kayle: [
+      { skill: "Radiant Blast", changes: [
+        "Mana Bedeli: 80/85/90/95 → 70/80/90/100",
+        "Hasar: 70/120/170/220 → 60/100/140/180"
+      ]},
+      { skill: "Celestial Blessing", changes: [
+        "Mana Bedeli: 85/90/95/100 → 75/80/85/90",
+        "İyileştirme: 95/125/155/185 + %40 Yetenek Gücü → 60/95/130/165 + %30 Yetenek Gücü"
+      ]},
+    ],
+    aurora: [
+      { skill: "Twofold Hex", changes: [
+        "İlk Kullanım Hasarı: 35/65/95/125 + %30 YG → 40/70/100/130 + %33 YG",
+        "Tekrar Kullanım Hasarı: 35/65/95/125 + %30 YG → 40/70/100/130 + %33 YG"
+      ]},
+      { skill: "The Weirding", changes: [
+        "Hasar: 75/125/175/225 → 80/130/180/230"
+      ]},
+    ],
+    ekko: [
+      { skill: "Z-Drive Resonance", changes: [
+        "Yetenek Gücü Oranı: %70 → %80"
+      ]},
+      { skill: "Parallel Convergence", changes: [
+        "Eksik Can Oranı: %2 + %0,015 YG → %3 + %0,025 YG"
+      ]},
+    ],
+    lee_sin: [
+      { skill: "Safeguard/Iron Will", changes: [
+        "Kalkan: 80/140/200/260 → 100/160/220/280",
+        "Omnivamp: %16/24/32/40 → %20/30/40/50"
       ]},
     ],
   },
-  // ── İTEM YAMA NOTLARI (7.2a resmi yama notlarına göre) ──
+  // ── İTEM YAMA NOTLARI (7.2b resmi yama notlarına göre) ──
   // Anahtarlar ITEM_IMG içindeki item key'leriyle birebir aynı olmalı (örn. "boots_of_dynamism")
-  itemBuffs:  [],
-  itemNerfs:  ["tear_of_the_goddess","manamune","muramana","seraphs_embrace","blade_of_the_ruined_king","zirhezen_cizmeler"],
+  itemBuffs:  ["iceborn_gauntlet","ludens_echo","magnetic_blaster","lord_dominiks_regards","navori_quickblades"],
+  itemNerfs:  [],
   itemNew:    [],
   itemDetails: {
-    tear_of_the_goddess: "Manamune ve Başmelek Asası fazla performans gösterdiği için yığılma hızı yavaşlatıldı — Mana Yükü: yığın başına +6 → +5 Azami Mana",
-    manamune: "Tear artık temel item olduğu için gücüne çok hızlı ulaşıyordu — Mana Yükü: yığın başına +18 → +14 Azami Mana",
-    muramana: "Şok pasifinin hasarı azaltıldı — İlave Saldırı Gücü Oranı: %6 → %4,5",
-    seraphs_embrace: "Güncellenen item ilerlemesiyle fazla kalkan sağlıyordu — Yaşam Hattı kalkan oranı: Mana'nın %20'si → %16'sı",
-    blade_of_the_ruined_king: "Saldırı gücü buff'ının ardından yakın dövüşçülerde beklenenden güçlü performans gösterdi — Mevcut Can Hasarı (yakın dövüş): %10 → %8,5",
-    zirhezen_cizmeler: "Diğer 3. kademe çizmelere göre fazla güçlüydü — Zırh Delme: 12 → 10, Saldırı Gücü: 25 → 20 (İngilizce adı: Armorcrusher Boots)",
+    iceborn_gauntlet: "Tasarlandığı şampiyonlarda bile zayıf kaldığı için koridorda ilk alım olarak daha cazip hale getirildi — Fiyat: 3100 → 3000, Azami Can: 250 → 300",
+    ludens_echo: "Diğer üst düzey büyücü itemlerine göre geride kaldığı için burst büyücü kimliğini güçlendirmek amacıyla pasifi arttırıldı — Yankı Hasarı: 110 + %10 Yetenek Gücü → 140 + %15 Yetenek Gücü, Bekleme Süresi: 10 → 9",
+    magnetic_blaster: "Kritik vuruş nişancıları geride kaldığı için ölçeklenmelerini iyileştirmek amacıyla Saldırı Gücü arttırıldı — Saldırı Gücü: 25 → 30",
+    lord_dominiks_regards: "Kritik vuruş nişancılarının tanklara karşı gücünü desteklemek için Saldırı Gücü arttırıldı — Saldırı Gücü: 25 → 30",
+    navori_quickblades: "Hedeflediği şampiyonlarda zayıf kaldığı için daha erken devreye girmesi amacıyla fiyatı düşürüldü — Fiyat: 2800 → 2700",
   },
-  // ── RÜN YAMA NOTLARI (elle güncellenir) ──
+  // ── RÜN YAMA NOTLARI ── (dokunulmadı)
   // Anahtarlar RUNE_IMG içindeki rün key'leriyle birebir aynı olmalı
   runeBuffs:  [],
   runeNerfs:  [],
