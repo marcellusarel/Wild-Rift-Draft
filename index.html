@@ -556,7 +556,7 @@ const DB = {
     ctBy:["volibear","amumu","master_yi","graves","rammus","nunu","lillia"],
     sy:["brand","mel","ahri","syndra","nautilus"]},
   fiddlesticks:{name:"Fiddlesticks",lanes:["Jungle"],dmg:"AP",    cls:"Mage",
-    ct:["aatrox","nocturne","vi","hecarim","pantheon","diana_jg","aatrox_jg"],
+    ct:["nocturne","vi","hecarim","pantheon","diana_jg","aatrox_jg"],
     ctBy:["rammus","amumu","master_yi"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   fizz_jg:    {name:"Fizz",        lanes:["Jungle"], dmg:"AP",    cls:"Assassin",
@@ -564,7 +564,7 @@ const DB = {
     ctBy:["pantheon","shyvana","irelia"],
     sy:["rakan","leona","vi","amumu","nautilus"]},
   graves:     {name:"Graves",      lanes:["Jungle"], dmg:"AD",    cls:"Marksman",
-    ct:["amumu","aatrox","evelynn","pantheon","rammus","wukong","aatrox_jg"],
+    ct:["amumu","evelynn","pantheon","rammus","wukong","aatrox_jg"],
     ctBy:["olaf","rengar","jarvaniv","vi","jax","hecarim"],
     sy:["orianna","jhin","vayne","caitlyn","zed"]},
   gwen_jg:    {name:"Gwen",        lanes:["Jungle"], dmg:"AP",    cls:"Fighter",
@@ -573,7 +573,7 @@ const DB = {
     sy:["amumu","vi","nautilus","brand","leona"]},
   hecarim:    {name:"Hecarim",     lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
     ct:["master_yi","kindred","graves","khazix","rengar","gragas","xin_zhao"],
-    ctBy:["jarvaniv","vi","amumu","kayn","aatrox","fiora","taliyah","aatrox_jg"],
+    ctBy:["jarvaniv","vi","amumu","kayn","fiora","taliyah","aatrox_jg"],
     sy:["orianna","brand","katarina","amumu","leona"]},
   irelia_jg:  {name:"Irelia",      lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
     ct:["rammus","hecarim","nidalee","khazix","lee_sin","olaf","wukong","graves","fizz"],
@@ -597,7 +597,7 @@ const DB = {
     sy:["brand","mel","ahri","syndra","orianna"]},
   kindred:    {name:"Kindred",     lanes:["Jungle"], dmg:"AD",    cls:"Marksman",
     ct:["rammus","lillia","xin_zhao","gragas","lee_sin"],
-    ctBy:["volibear","amumu","kayn","graves","warwick","vi","talon","rengar","olaf","aatrox","diana_jg","hecarim","khazix","maokai","aatrox_jg"],
+    ctBy:["volibear","amumu","kayn","graves","warwick","vi","talon","rengar","olaf","diana_jg","hecarim","khazix","maokai","aatrox_jg"],
     sy:["orianna","jhin","vayne","caitlyn","zed"]},
   lee_sin:    {name:"Lee Sin",     lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
     ct:["rammus","lillia","nocturne","xin_zhao","jax","drmundo","vi","gragas"],
@@ -605,7 +605,7 @@ const DB = {
     sy:["orianna","jhin","vayne","caitlyn","zed"]},
   lillia:     {name:"Lillia",      lanes:["Jungle"], dmg:"AP",    cls:"Fighter",
     ct:["evelynn","vi","master_yi","jarvaniv","xin_zhao","irelia","diana_jg"],
-    ctBy:["volibear","rammus","amumu","nunu","shyvana","olaf","aatrox","ekko","fiora","gragas","gwen","kindred","lee_sin","wukong","aatrox_jg"],
+    ctBy:["volibear","rammus","amumu","nunu","shyvana","olaf","ekko","fiora","gragas","gwen","kindred","lee_sin","wukong","aatrox_jg"],
     sy:["orianna","brand","swain","amumu","nautilus"]},
   master_yi:  {name:"Master Yi",   lanes:["Jungle"], dmg:"AD",    cls:"Assassin",
     ct:["rammus","viego","evelynn","lee_sin","jax","wukong"],
@@ -684,7 +684,7 @@ const DB = {
     ctBy:["pantheon","irelia","graves","wukong","riven"],
     sy:["janna","lulu","milio","ezreal","caitlyn"]},
   urgot_jg:   {name:"Urgot",       lanes:["Jungle"], dmg:"AD",    cls:"Fighter",
-    ct:["wukong","olaf","camille","fiora","aatrox","aatrox_jg"],
+    ct:["wukong","olaf","camille","fiora","aatrox_jg"],
     ctBy:["riven","jax","shen"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   viego:      {name:"Viego",       lanes:["Jungle"], dmg:"AD",    cls:"Assassin",
@@ -726,15 +726,19 @@ const DB = {
     ctBy:["irelia","yasuo","olaf","malphite","darius","vayne","camille"],
     sy:["rakan","leona","vi","amumu","nautilus"]},
   ambessa:    {name:"Ambessa",     lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
-    ct:["renekton","warwick","irelia","pantheon","riven","malphite"],
+    ct:["renekton","warwick","irelia","pantheon","riven","malphite","chogath"],
     ctBy:["aatrox","akali","darius","sion","yasuo","gwen","drmundo","nasus","urgot","garen","singed","rumble","poppy"],
     sy:["vi","amumu","nautilus","leona","brand"]},
   camille:    {name:"Camille",     lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
     ct:["malphite","mordekaiser","fiora","jayce","jax","renekton","darius","riven","akali"],
     ctBy:["yasuo","jarvaniv","garen","drmundo","wukong","shen","kennen","olaf","ornn","singed","maokai","nasus"],
     sy:["janna","lulu","nautilus","ezreal","thresh"]},
+  chogath:    {name:"Cho'Gath",    lanes:["Baron"],  dmg:"AP",    cls:"Tank",
+    ct:["ambessa","darius","fiora","gnar","irelia","sett","renekton"],
+    ctBy:["kennen","malphite","kayle","jax","sion"],
+    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   darius:     {name:"Darius",      lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
-    ct:["malphite","akali","vayne","wukong","gragas","jayce","ambessa"],
+    ct:["malphite","akali","vayne","wukong","gragas","jayce","ambessa","chogath"],
     ctBy:["nasus","camille","yasuo","irelia","tryndamere","ornn","riven"],
     sy:["amumu","nautilus","leona","vi","blitzcrank"]},
   drmundo:    {name:"Dr. Mundo",   lanes:["Baron"],  dmg:"AD",    cls:"Tank",
@@ -742,7 +746,7 @@ const DB = {
     ctBy:["yasuo","akali","pantheon","jayce","vladimir","nautilus"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   fiora:      {name:"Fiora",       lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
-    ct:["rumble","poppy","malphite","jayce","kennen"],
+    ct:["rumble","poppy","malphite","jayce","kennen","chogath"],
     ctBy:["aatrox","garen","akali","jax","riven","camille","renekton","nasus","irelia","olaf","ornn","volibear","pantheon","urgot","shen","sion","singed","drmundo","gwen","maokai"],
     sy:["janna","lulu","milio","ezreal","caitlyn"]},
   galio_baron:{name:"Galio",       lanes:["Baron"],  dmg:"AP",    cls:"Tank",
@@ -754,7 +758,7 @@ const DB = {
     ctBy:["nasus","jax","yasuo","renekton","gragas","tryndamere"],
     sy:["lulu","milio","orianna","brand","nautilus"]},
   gnar:       {name:"Gnar",        lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
-    ct:["irelia","yasuo","malphite","gwen","ornn"],
+    ct:["irelia","yasuo","malphite","gwen","ornn","chogath"],
     ctBy:["sion","drmundo","urgot","darius","shen","renekton","kennen","maokai"],
     sy:["orianna","brand","katarina","missfortune","kaisa"]},
   gragas_baron:{name:"Gragas",     lanes:["Baron"],  dmg:"AP",    cls:"Tank",
@@ -766,12 +770,12 @@ const DB = {
     ctBy:["shen","drmundo","sion","gragas","malphite","ornn","volibear"],
     sy:["amumu","vi","nautilus","brand","leona"]},
   irelia:     {name:"Irelia",      lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
-    ct:["malphite","poppy","sett","fiora","jax","riven","darius","renekton","tryndamere","akali"],
+    ct:["malphite","poppy","sett","fiora","jax","riven","darius","renekton","tryndamere","akali","chogath"],
     ctBy:["ambessa","jayce","olaf","kayle","drmundo","garen","kennen","aatrox","teemo","graves","nasus","gnar"],
     sy:["rakan","leona","vi","amumu","nautilus"]},
   jax:        {name:"Jax",         lanes:["Baron"],  dmg:"Hybrid",cls:"Fighter",
     ct:["poppy","teemo","rumble","fiora","garen","jayce","gragas","riven","shen","sett"],
-    ctBy:["yasuo","tryndamere","camille","irelia","kayle","nasus","malphite","gwen","ornn","volibear"],
+    ctBy:["yasuo","tryndamere","camille","irelia","kayle","nasus","malphite","gwen","ornn","volibear","chogath"],
     sy:["janna","lulu","milio","ezreal","caitlyn"]},
   jayce:      {name:"Jayce",       lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
     ct:["irelia","riven","wukong","tryndamere","malphite","nasus","ornn"],
@@ -783,11 +787,11 @@ const DB = {
     sy:["orianna","brand","katarina","missfortune","kaisa"]},
   kayle:      {name:"Kayle",       lanes:["Baron"],  dmg:"Hybrid",cls:"Marksman",
     ct:["malphite","teemo","nasus","tryndamere","irelia","riven","jayce","camille","jax"],
-    ctBy:["garen","fiora","singed","olaf","volibear"],
+    ctBy:["garen","fiora","singed","olaf","volibear","chogath"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   kennen:     {name:"Kennen",      lanes:["Baron"],  dmg:"AP",cls:"Mage",
     ct:["gnar","nasus","wukong","jayce","malphite","irelia","gragas","camille"],
-    ctBy:["jax","darius","teemo","garen","kayle","renekton","riven"],
+    ctBy:["jax","darius","teemo","garen","kayle","renekton","riven","chogath"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   kennen_mid: {name:"Kennen",      lanes:["Mid"],    dmg:"AP",cls:"Mage",
     ct:["kassadin","aurora","swain_mid","orianna","ziggs","seraphine_mid","irelia_mid","lux"],
@@ -795,7 +799,7 @@ const DB = {
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   malphite:   {name:"Malphite",    lanes:["Baron"],  dmg:"AP",    cls:"Tank",
     ct:["rumble","mordekaiser","akali","gwen","olaf","gragas","nasus","renekton","jax"],
-    ctBy:["camille","ambessa","tryndamere","fiora","graves","wukong","yasuo","pantheon","yone","gnar","irelia","jayce"],
+    ctBy:["camille","ambessa","tryndamere","fiora","graves","wukong","yasuo","pantheon","yone","gnar","irelia","jayce","chogath"],
     sy:["orianna","katarina","brand","missfortune","yasuo"]},
   mordekaiser:{name:"Mordekaiser", lanes:["Baron"],  dmg:"AP",    cls:"Fighter",
     ct:["olaf","vayne","aatrox","fiora","warwick"],
@@ -822,7 +826,7 @@ const DB = {
     ctBy:["jax","riven","urgot","irelia","camille","fiora"],
     sy:["jinx","kaisa","smolder","lucian","caitlyn"]},
   renekton:   {name:"Renekton",    lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
-    ct:["gnar","mordekaiser","garen","teemo","vayne","kennen","olaf","gragas","fiora","darius","jayce","graves"],
+    ct:["gnar","mordekaiser","garen","teemo","vayne","kennen","olaf","gragas","fiora","darius","jayce","graves","chogath"],
     ctBy:["ambessa","yasuo","camille","riven","akali","irelia","nasus","singed","malphite","drmundo","tryndamere","ryze","sett","shen","sion","rumble","pantheon","yone","wukong"],
     sy:["amumu","vi","nautilus","leona","brand"]},
   riven:      {name:"Riven",       lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
@@ -838,7 +842,7 @@ const DB = {
     ctBy:["rumble","teemo","kennen"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   sett:       {name:"Sett",        lanes:["Baron"],  dmg:"AD",    cls:"Fighter",
-    ct:["renekton","mordekaiser","aatrox","kennen","vayne","drmundo","olaf","aatrox_jg"],
+    ct:["renekton","mordekaiser","aatrox","kennen","vayne","drmundo","olaf","chogath"],
     ctBy:["irelia","yasuo","kayle","nasus","shen","rengar","riven","tryndamere"],
     sy:["amumu","nautilus","leona","vi","blitzcrank"]},
   shen:       {name:"Shen",        lanes:["Baron"],  dmg:"AP",    cls:"Tank",
@@ -999,7 +1003,7 @@ const TIER_LIST_FULL = {
     "S+": ["ambessa","ksante"],
     "S":  ["aatrox","camille","fiora","garen","gnar","gwen","malphite","mordekaiser","ornn","poppy_baron","renekton","rumble","sion"],
     "A":  ["darius","irelia","jax","jayce","nasus","olaf_baron","riven","ryze_baron","sett","shen","singed","teemo","volibear","warwick","wukong"],
-    "B":  ["akali_baron","drmundo","kayle","kennen","tryndamere","urgot","yasuo_baron","yone_baron"],
+    "B":  ["akali_baron","drmundo","kayle","kennen","tryndamere","urgot","yasuo_baron","yone_baron","chogath"],
   },
   Jungle: {
     "S+": ["nidalee","viego"],
@@ -4902,109 +4906,128 @@ let builderPickSearch  = "";
 
 // ─── YAMA VERİSİ ─────────────────────────────────────────────
 let patchData = {
-  version: "7.2b",
-  date: "29 Temmuz 2026",
+  version: "7.2c",
+  date: "12 Ağustos 2026",
   newChamps: [],
-  buffs:   ["aurora","ekko","lee_sin"],
-  nerfs:   ["jayce","nidalee","ambessa","sona","hecarim","zilean","kayle"],
-  changes: [],
+  buffs:   ["chogath","jinx"],
+  nerfs:   ["nilah","leona","nasus","ryze","warwick","kogmaw"],
+  changes: ["rumble"],
   details: {
-    jayce:    "Koridor düellolarında fazla dayanıklı olduğu için taban zırhı düşürüldü, rakiplere karşılık verme fırsatı arttırıldı",
-    nidalee:  "İkinci nerf turuna rağmen hâlâ fazla güçlü olduğu için taban zırh ve büyü direnci düşürüldü",
-    ambessa:  "Ultisi her tip hedefe karşı fazla bitirici olduğu için infaz hasarı ve can kaybına bağlı hasarı düşürüldü",
-    sona:     "Önceki güçlendirmeler ve item değişiklikleri sonrası takımına fazla katkı sağladığı için iyileştirmesi ve ulti bekleme süresi ayarlandı",
-    hecarim:  "Orman temizliği ve top yekun ivmesi fazla güçlü olduğu için vuruşta kazandığı hareket hızı bonusu düşürüldü",
-    zilean:   "Özellikle üst seviye ve profesyonel oyunda destek koridorunda fazla baskın olduğu için hasarı ve ulti bekleme süresi ayarlandı",
-    kayle:    "Bounty sistemiyle geç oyun gücüne fazla kolay ulaştığı için erken oyun hasarı ve iyileştirmesi düşürüldü, mana bedelleri dengelendi",
-    aurora:   "Son item/rün değişikliklerinden beklenenden fazla etkilendiği için 1. ve 3. yeteneklerinin hasarı arttırıldı",
-    ekko:     "Son yamadan beri tüm build yollarında zayıf kaldığı için genel güç seviyesi yukarı çekildi",
-    lee_sin:  "Dövüşçü oynanış tarzına daha uygun olması için dayanıklılığı (kalkan ve omnivamp) arttırıldı",
+    chogath:  "Çıkışından beri beklenenin altında kaldığı için hasarı ve Feast ölçeklenmesi arttırıldı, ultisi daha sık kullanılabilir hale getirildi",
+    jinx:     "Kritik vuruş item güçlendirmelerine rağmen hâlâ zayıf kaldığı için koridor gücü ve takım savaşı reset potansiyeli arttırıldı",
+    nilah:    "Yüksek seviye oyunda fazla baskın olduğu için kritik ölçeklenmesi ve ulti sürdürülebilir hasarı düşürüldü",
+    leona:    "Koridor aşamasında fazla dayanıklı olup poke'a fazla kolay katlandığı için erken oyun dayanıklılığı geç oyuna kaydırıldı",
+    nasus:    "Diğer ölçeklenen şampiyonlar gibi kontrol altına alınması fazla zorlaştığı için erken oyun dayanıklılığı düşürüldü, ulti bekleme süresi arttırıldı",
+    ryze:     "Archangel's Staff ve diğer büyücü item güncellemelerinden beri fazla güçlü olduğu için erken oyun savaş gücü düşürüldü",
+    warwick:  "Ultisindeki değişiklikten beri öncelikli hedefleri fazla etkili avladığı ve erken/orta oyunu fazla kontrol ettiği için pick potansiyeli düşürüldü",
+    kogmaw:   "Büyücü item revizyonu sonrası AP Kog'Maw güvenli mesafeden fazla hasar yağdırdığı için kısıtlamalar eklendi",
+    rumble:   "Yetenek Gücü'ne yatırım yapmadan fazla hasar verdiği için hasar profili AP build'lerini ödüllendirecek, özellikle Tehlike Bölgesi'nde yüksek canlı hedeflere karşı şekilde kaydırıldı",
   },
   // Şampiyon detay sayfasında gösterilen, yetenek bazlı ayrıntılı yama notları
   detailsFull: {
-    jayce: [
+    chogath: [
+      { skill: "Vorpal Spikes", changes: [
+        "Taban Hasar: 15/35/55/75 + (%2,15/2,5/2,85/3,2 + %0,5 × Feast Stack) × Hedefin Azami Canı → 20/45/70/95 + (%2,3/2,7/3,1/3,5 + %0,6 × Feast Stack) × Hedefin Azami Canı"
+      ]},
+      { skill: "Feast", changes: [
+        "Bekleme Süresi: 80/70/60s → 70/60/50s",
+        "Bonus Cana Bağlı Hasar Oranı: %8 → %10"
+      ]},
+    ],
+    jinx: [
       { skill: "Taban İstatistikler", changes: [
-        "Taban Zırh: 46 → 37"
+        "Taban Saldırı Gücü: 54 → 58"
+      ]},
+      { skill: "Get Excited!", changes: [
+        "Saldırı Hızı: %12 → %25"
       ]},
     ],
-    nidalee: [
+    nilah: [
+      { skill: "Formless Blade", changes: [
+        "Kritik Şans - Zırh Delme Oranı: %35 → %28"
+      ]},
+      { skill: "Apotheosis", changes: [
+        "Süreğen Hasar: 60/120/180 + %140 Bonus Saldırı Gücü → 60/110/160 + %50 Bonus Saldırı Gücü"
+      ]},
+    ],
+    leona: [
       { skill: "Taban İstatistikler", changes: [
-        "Taban Zırh: 46 → 37",
-        "Taban Büyü Direnci: 40 → 36"
+        "Taban Can: 750 → 690",
+        "Taban Zırh: 55 → 50",
+        "Seviye Başına Can: 120 → 128"
+      ]},
+      { skill: "Eclipse", changes: [
+        "Bekleme Süresi: 14/13/12/11s → 13/12/11/10s",
+        "Bonus Zırh: 40/60/80/100 → 30/50/70/90",
+        "Bonus Büyü Direnci: 40/60/80/100 → 30/50/70/90"
       ]},
     ],
-    ambessa: [
-      { skill: "Public Execution (Ulti)", changes: [
-        "Hasar Azaltma: %30/40/50 → %10/20/30",
-        "Can Kaybına Bağlı Taban Hasar: %20/30/40 → %10/17,5/25"
+    nasus: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Zırh: 46 → 40"
+      ]},
+      { skill: "Fury of the Sands", changes: [
+        "Bekleme Süresi: 75/70/65s → 90/80/70s"
       ]},
     ],
-    sona: [
-      { skill: "Aria of Perseverance", changes: [
-        "İyileştirme: 45/60/75/90 → 35/50/65/80"
+    ryze: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Can: 660 → 630",
+        "Taban Zırh: 40 → 37"
       ]},
-      { skill: "Crescendo", changes: [
-        "Bekleme Süresi: 80/70/60s → 80/75/70s"
-      ]},
-    ],
-    hecarim: [
-      { skill: "Rampage", changes: [
-        "Vuruşta Hareket Hızı Bonusu: %30 → %18"
+      { skill: "Rune Prison", changes: [
+        "Hasar: 70/110/150/190 + %65 Yetenek Gücü + %4 Bonus Mana → 50/90/130/170 + %55 Yetenek Gücü + %3 Bonus Mana"
       ]},
     ],
-    zilean: [
-      { skill: "Time Bomb", changes: [
-        "Taban Hasar: 70/140/210/280 → 60/125/190/255"
-      ]},
-      { skill: "Chronoshift", changes: [
-        "Bekleme Süresi: 100/85/70s → 110/95/80s"
+    warwick: [
+      { skill: "Infinite Duress", changes: [
+        "Bekleme Süresi: 80/70/60s → 100/90/80s",
+        "Taban Hasar: 125/300/475 → 100/275/450"
       ]},
     ],
-    kayle: [
-      { skill: "Radiant Blast", changes: [
-        "Mana Bedeli: 80/85/90/95 → 70/80/90/100",
-        "Hasar: 70/120/170/220 → 60/100/140/180"
-      ]},
-      { skill: "Celestial Blessing", changes: [
-        "Mana Bedeli: 85/90/95/100 → 75/80/85/90",
-        "İyileştirme: 95/125/155/185 + %40 Yetenek Gücü → 60/95/130/165 + %30 Yetenek Gücü"
+    kogmaw: [
+      { skill: "Living Artillery", changes: [
+        "Mana Bedeli: 40 - 400 (kullanım sayısına bağlı) → 50 - 500 (kullanım sayısına bağlı)",
+        "Menzil: 12/14/16 → 11/13/15",
+        "Taban Hasar: 100/140/180 → 80/120/160"
       ]},
     ],
-    aurora: [
-      { skill: "Twofold Hex", changes: [
-        "İlk Kullanım Hasarı: 35/65/95/125 + %30 YG → 40/70/100/130 + %33 YG",
-        "Tekrar Kullanım Hasarı: 35/65/95/125 + %30 YG → 40/70/100/130 + %33 YG"
+    rumble: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Can: 690 → 660",
+        "Seviye Başına Can: 120 → 128"
       ]},
-      { skill: "The Weirding", changes: [
-        "Hasar: 75/125/175/225 → 80/130/180/230"
+      { skill: "Flamespitter", changes: [
+        "Hasar: 120/160/200/240 + %110 Yetenek Gücü + %6/8/10/12 Hedefin Azami Canı → 100/140/180/220 + %125 Yetenek Gücü + %7/8/9/10 Hedefin Azami Canı",
+        "Tehlike Bölgesi Hasarı: 180/240/300/360 + %165 Yetenek Gücü + %9/12/15/18 Hedefin Azami Canı → 150/210/270/330 + %187,5 Yetenek Gücü + %10,5/12/13,5/15 Hedefin Azami Canı"
       ]},
-    ],
-    ekko: [
-      { skill: "Z-Drive Resonance", changes: [
-        "Yetenek Gücü Oranı: %70 → %80"
+      { skill: "Scrap Shield", changes: [
+        "Kalkan: 40/70/100/130 + %6 Azami Can → 40/80/120/160 + %4 Azami Can",
+        "Tehlike Bölgesi Kalkanı: 60/105/150/195 + %9 Azami Can → 60/120/180/240 + %6 Azami Can"
       ]},
-      { skill: "Parallel Convergence", changes: [
-        "Eksik Can Oranı: %2 + %0,015 YG → %3 + %0,025 YG"
-      ]},
-    ],
-    lee_sin: [
-      { skill: "Safeguard/Iron Will", changes: [
-        "Kalkan: 80/140/200/260 → 100/160/220/280",
-        "Omnivamp: %16/24/32/40 → %20/30/40/50"
+      { skill: "Electro Harpoon", changes: [
+        "Bonus Yetenek Gücü Hasarı: %40 → %50",
+        "Tehlike Bölgesi Bonus Yetenek Gücü Hasarı: %60 → %75"
       ]},
     ],
   },
-  // ── İTEM YAMA NOTLARI (7.2b resmi yama notlarına göre) ──
-  // Anahtarlar ITEM_IMG içindeki item key'leriyle birebir aynı olmalı (örn. "boots_of_dynamism")
-  itemBuffs:  ["iceborn_gauntlet","ludens_echo","magnetic_blaster","lord_dominiks_regards","navori_quickblades"],
-  itemNerfs:  [],
+  // ── İTEM YAMA NOTLARI (7.2c resmi yama notlarına göre) ──
+  // Anahtarlar ITEM_IMG içindeki item key'leriyle birebir aynı olmalı
+  itemBuffs:  ["berserkers_greaves","mercurys_treads","plated_steelcaps","sunfire_aegis","stridebreaker","mikaels_blessing","kaenic_rookern"],
+  itemNerfs:  ["gunmetal_greaves","chainlaced_crushers","armored_advance","spellslingers_shoes"],
   itemNew:    [],
   itemDetails: {
-    iceborn_gauntlet: "Tasarlandığı şampiyonlarda bile zayıf kaldığı için koridorda ilk alım olarak daha cazip hale getirildi — Fiyat: 3100 → 3000, Azami Can: 250 → 300",
-    ludens_echo: "Diğer üst düzey büyücü itemlerine göre geride kaldığı için burst büyücü kimliğini güçlendirmek amacıyla pasifi arttırıldı — Yankı Hasarı: 110 + %10 Yetenek Gücü → 140 + %15 Yetenek Gücü, Bekleme Süresi: 10 → 9",
-    magnetic_blaster: "Kritik vuruş nişancıları geride kaldığı için ölçeklenmelerini iyileştirmek amacıyla Saldırı Gücü arttırıldı — Saldırı Gücü: 25 → 30",
-    lord_dominiks_regards: "Kritik vuruş nişancılarının tanklara karşı gücünü desteklemek için Saldırı Gücü arttırıldı — Saldırı Gücü: 25 → 30",
-    navori_quickblades: "Hedeflediği şampiyonlarda zayıf kaldığı için daha erken devreye girmesi amacıyla fiyatı düşürüldü — Fiyat: 2800 → 2700",
+    berserkers_greaves: "Tier 2/Tier 3 bot arasındaki güç farkı fazla açıldığı için Tier 2 seçenekler güçlendirildi — Saldırı Hızı: %30 → %35",
+    mercurys_treads: "Tier 2/Tier 3 bot arasındaki güç farkı fazla açıldığı için Tier 2 seçenekler güçlendirildi — Direnç: %15 → %30",
+    plated_steelcaps: "Tier 2/Tier 3 bot arasındaki güç farkı fazla açıldığı için Tier 2 seçenekler güçlendirildi — Hasar Azaltma: %6 → %10",
+    gunmetal_greaves: "Tier 2/Tier 3 bot arasındaki güç farkını dengelemek için Tier 3 yükseltmelerden güç budandı — Hareket Hızı (Yakın/Menzilli): %15/12 → %10/7",
+    chainlaced_crushers: "Tier 2/Tier 3 bot arasındaki güç farkını dengelemek için Tier 3 yükseltmelerden güç budandı — Büyü Direnci: 35 → 30",
+    armored_advance: "Tier 2/Tier 3 bot arasındaki güç farkını dengelemek için Tier 3 yükseltmelerden güç budandı — Zırh: 35 → 30",
+    spellslingers_shoes: "Tier 2/Tier 3 bot arasındaki güç farkını dengelemek için Tier 3 yükseltmelerden güç budandı — Yetenek Gücü: 40 → 35, Big Bully Gerçek Hasar: 22 → 18",
+    sunfire_aegis: "Özellikle fiziksel hasara karşı ilk item seçeneği olarak geride kaldığı için yüksek zırh kimliğini pekiştirmek amacıyla zırhı arttırıldı — Can: 425 → 350, Zırh: 20 → 40",
+    stridebreaker: "Yüksek Saldırı Hızı'na bağımlı şampiyonlar için yeterli güç sunmadığı için güçlendirildi — Saldırı Hızı: %15 → %25",
+    mikaels_blessing: "Güçlü bir koruma item'ı olma rolüne tam oturmadığı için doğrudan güçlendirildi — İyileştirme/Kalkan Değeri: %6 → %9, Purify Bekleme Süresi: 90s → 75s",
+    kaenic_rookern: "Büyücü item revizyonundan sonra geride kaldığı için, özellikle yüksek can biriktiren şampiyonlar için rekabetçi bir Büyü Direnci seçeneği olarak güçlendirildi — Büyü Direnci: 75 → 80, Magebane Kalkanı: 70~180 (seviyeye bağlı) + %10 Azami Can → 50~150 (seviyeye bağlı) + %14 Azami Can",
   },
   // ── RÜN YAMA NOTLARI ── (dokunulmadı)
   // Anahtarlar RUNE_IMG içindeki rün key'leriyle birebir aynı olmalı
@@ -5423,7 +5446,7 @@ const CHAMP_ID = {
   ambessa:799, wukong:62, poppy_baron:78, malphite:54, ornn:516,
   sion:14, aatrox:266, renekton:58, gwen:887, fiora:114, rumble:68,
   camille:164, jax:24, irelia:39, nasus:75, singed:27, jayce:126,
-  volibear:106, sett:875, riven:92, olaf_baron:2, gnar:150,
+  volibear:106, sett:875, riven:92, olaf_baron:2, gnar:150, chogath:31,
   darius:122, mordekaiser:82, tryndamere:23, kennen_baron:85,
   yasuo_baron:157, yone_baron:777, shen:98, teemo:17, garen:86,
   urgot:6, vladimir_baron:8, akali_baron:84, zed_baron:238,
