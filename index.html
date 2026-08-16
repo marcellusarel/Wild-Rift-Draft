@@ -26,15 +26,88 @@ input{font-family:inherit}
 .fade{animation:fadeIn .2s ease both}
 .pulse{animation:pulse 1.5s infinite}
 .warn{animation:warn 1.2s infinite}
+
+/* ── WILD RIFT HEXTECH THEME (Ana Ekran) ───────────────────── */
+@keyframes wrGlow{0%,100%{opacity:.55;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.06)}}
+@keyframes wrDrift{0%{background-position:0 0,0 0,30px 52px,30px 52px}100%{background-position:0 120px,0 120px,30px 172px,30px 172px}}
+@keyframes wrShimmer{0%{transform:translateX(-120%) skewX(-15deg)}100%{transform:translateX(220%) skewX(-15deg)}}
+
+.wr-home-bg{
+  position:relative;isolation:isolate;
+  background:
+    radial-gradient(ellipse 640px 380px at 50% -6%, #2a4d8840 0%, transparent 68%),
+    radial-gradient(ellipse 420px 420px at 108% 6%, #a020f01f 0%, transparent 62%),
+    radial-gradient(ellipse 420px 420px at -8% 65%, #ffcc0212 0%, transparent 60%),
+    linear-gradient(180deg,#07070f 0%,#0a0a18 45%,#07070f 100%);
+}
+.wr-home-bg::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(30deg,#ffcc020a 12%,transparent 12.5%,transparent 87%,#ffcc020a 87.5%,#ffcc020a),
+    linear-gradient(150deg,#ffcc020a 12%,transparent 12.5%,transparent 87%,#ffcc020a 87.5%,#ffcc020a),
+    linear-gradient(30deg,#ffcc020a 12%,transparent 12.5%,transparent 87%,#ffcc020a 87.5%,#ffcc020a),
+    linear-gradient(150deg,#ffcc020a 12%,transparent 12.5%,transparent 87%,#ffcc020a 87.5%,#ffcc020a);
+  background-size:60px 104px;
+  background-position:0 0,0 0,30px 52px,30px 52px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 55% at 50% 0%,#000 0%,transparent 75%);
+  mask-image:radial-gradient(ellipse 70% 55% at 50% 0%,#000 0%,transparent 75%);
+  animation:wrDrift 14s linear infinite;
+}
+.wr-home-bg > *{position:relative;z-index:1}
+
+.wr-crest-glow{
+  position:absolute;top:-18px;left:50%;width:220px;height:220px;
+  background:radial-gradient(circle,#3a8fff33 0%,#a020f01a 45%,transparent 72%);
+  filter:blur(2px);animation:wrGlow 3.6s ease-in-out infinite;pointer-events:none;z-index:0;
+}
+
+.wr-title{
+  font-size:29px;font-weight:800;letter-spacing:2px;
+  background:linear-gradient(180deg,#fff9e6 0%,#ffdd6b 38%,#ffcc02 62%,#c99400 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 10px #ffcc0255);
+}
+.wr-divider{display:flex;align-items:center;gap:9px;width:100%;max-width:220px;margin:10px auto 0}
+.wr-divider::before,.wr-divider::after{content:"";flex:1;height:1px;
+  background:linear-gradient(90deg,transparent,#8a6d2f99,transparent)}
+.wr-divider span{color:#c99400;font-size:8px;transform:rotate(45deg);flex-shrink:0}
+
+.wr-card{
+  position:relative;overflow:hidden;
+  clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px);
+  transition:transform .12s ease,filter .12s ease;
+}
+.wr-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--wr-accent,#ffcc02),transparent);
+  opacity:.7;
+}
+.wr-card::after{
+  content:"";position:absolute;top:0;left:-30%;width:26%;height:100%;
+  background:linear-gradient(100deg,transparent,#ffffff14,transparent);
+  transform:skewX(-15deg);pointer-events:none;
+}
+.wr-card:active{transform:scale(.97);filter:brightness(1.12)}
+
+.wr-hex-badge{
+  width:46px;height:46px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:21px;
+  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+  background:linear-gradient(160deg,var(--wr-accent-soft,#ffcc0233),#0a0a18 70%);
+  border:1px solid var(--wr-accent,#ffcc02);
+  box-shadow:0 0 14px -2px var(--wr-accent,#ffcc02);
+}
+
+.wr-section-label{
+  display:flex;align-items:center;gap:8px;font-size:9px;color:#7a7a9a;
+  letter-spacing:3px;font-weight:700;margin-bottom:10px;
+}
+.wr-section-label::after{content:"";flex:1;height:1px;
+  background:linear-gradient(90deg,#7a7a9a44,transparent)}
 </style>
 </head>
 <body>
 <div id="app"></div>
-<div id="clockWidget" style="position:fixed;top:8px;right:8px;z-index:9998;
-  background:#0d0d1eee;border:1px solid #252540;border-radius:8px;
-  padding:5px 10px;font-size:10px;line-height:1.4;color:#8a8aa0;
-  text-align:right;pointer-events:none;backdrop-filter:blur(4px);
-  padding-top:max(5px,env(safe-area-inset-top))"></div>
 <div id="builderFab" style="display:none;position:fixed;bottom:16px;right:16px;z-index:9997;
   padding-bottom:env(safe-area-inset-bottom)"></div>
 <div id="profileFab" style="display:none;position:fixed;bottom:64px;right:16px;z-index:9997;
@@ -44,18 +117,6 @@ input{font-family:inherit}
   border-radius:12px;padding:14px 20px;font-size:13px;font-weight:700;color:#ffcc02;
   text-align:center;pointer-events:none"></div>
 <script>
-// Saat/tarih widget'ı — sağ üst köşe, her saniye güncellenir
-(function(){
-  const el = document.getElementById('clockWidget');
-  function tick(){
-    const now = new Date();
-    const time = now.toLocaleTimeString('tr-TR', {hour:'2-digit',minute:'2-digit',second:'2-digit'});
-    const date = now.toLocaleDateString('tr-TR', {day:'2-digit',month:'2-digit',year:'numeric'});
-    el.innerHTML = `<div style="font-weight:700;color:#e0e0f0">${time}</div><div>${date}</div>`;
-  }
-  tick();
-  setInterval(tick, 1000);
-})();
 // file:// protokolü uyarısı — resimlerin çalışması için HTTP gerekli
 if (location.protocol === 'file:') {
   document.addEventListener('DOMContentLoaded', () => {
@@ -957,24 +1018,6 @@ const META_TIER = {
 
 function getMetaTier(id) { return META_TIER[id] || 0; }
 
-// ─── KENDİ COMFORT PİCKLERİN (takıma göre, rozetler için) ────
-const COMFORT_IDS = new Set([
-  // Baron
-  "camille","gwen","renekton","kennen","fiora","sett","garen",
-  "darius","jayce","jax","malphite","aatrox","gnar","poppy_baron","ksante","riven",
-  // Jungle
-  "hecarim","lee_sin","riven_jg","jarvaniv","lillia","gwen_jg","vi","viego",
-  "wukong_jg","shyvana","ekko_jg","diana_jg","aatrox_jg","yone_baron",
-  // Support
-  "nautilus","rakan","blitzcrank","braum","rell","poppy_sup","bard","galio_sup",
-  "gragas_sup","karma","thresh","leona","ornn_sup","maokai","morgana","singed_sup","zilean",
-  // ADC
-  "xayah","samira","lucian","ezreal","corki","mel","mel_adc","sivir","kaisa","smolder","zeri",
-  // Mid
-  "velkoz","aurelionsol","aurelionsol_adc","syndra","orianna","orianna_adc","ryze","aurora","ahri","corki_mid",
-  "viktor","mel","morgana_mid","galio","swain_mid","jayce_mid","ziggs_adc","kennen_mid",
-]);
-
 function getTier(id) { return getMetaTier(id); }
 
 // META_POWER — sıralama listesi (S+ önce, sonra S, sonra A)
@@ -1004,30 +1047,35 @@ const TIER_LIST_FULL = {
     "S":  ["aatrox","camille","fiora","garen","gnar","gwen","malphite","mordekaiser","ornn","poppy_baron","renekton","rumble","sion"],
     "A":  ["darius","irelia","jax","jayce","nasus","olaf_baron","riven","ryze_baron","sett","shen","singed","teemo","volibear","warwick","wukong"],
     "B":  ["akali_baron","drmundo","kayle","kennen","tryndamere","urgot","yasuo_baron","yone_baron","chogath"],
+    "C":  [],
   },
   Jungle: {
     "S+": ["nidalee","viego"],
     "S":  ["aatrox_jg","ambessa_jg","evelynn","hecarim","khazix","lee_sin","lillia","nocturne","shyvana","taliyah_jg","vi","warwick","xin_zhao"],
     "A":  ["amumu","fiddlesticks","gragas_sup","jarvaniv","kayn","kindred","master_yi","nunu","olaf_jg","pantheon_jg","rammus","rengar","riven_jg","talon_jg","wukong_jg","zed_jg"],
     "B":  ["diana_jg","ekko_jg","fizz_jg","graves","nilah","skarner","tryndamere_jg","volibear_jg","yone_jg"],
+    "C":  [],
   },
   Mid: {
     "S+": ["aurora","ryze","taliyah"],
     "S":  ["ahri","aurelionsol","kassadin","orianna","swain_mid","syndra","twisted_fate","viktor"],
     "A":  ["akali_mid","annie","galio","heimerdinger","jayce_mid","kennen_mid","lissandra","mel","norra","vladimir","vex","veigar","yasuo","zed_mid","ziggs","zoe","zyra_mid"],
     "B":  ["akshan_mid","brand_mid","diana","ekko","fizz","gragas_sup","katarina","kayle_mid","lux_mid","morgana_mid","teemo_mid","velkoz","yone"],
+    "C":  [],
   },
   ADC: {
     "S+": ["ezreal","smolder"],
     "S":  ["corki","jhin","kogmaw","lucian","vayne","xayah","zeri","yunara"],
     "A":  ["ashe","caitlyn","draven","jinx","kaisa","kalista","missfortune","sivir","varus"],
     "B":  ["samira","tristana","twitch"],
+    "C":  [],
   },
   Support: {
     "S+": ["nami","zilean"],
     "S":  ["bard","braum","galio_sup","leona","lulu","milio","nautilus","ornn_sup","rell","senna","sona","thresh"],
     "A":  ["alistar","blitzcrank","janna","karma","maokai","pyke","rakan","seraphine","soraka","zyra"],
     "B":  ["brand_mid","lux","morgana","swain","yuumi"],
+    "C":  [],
   },
 };
 const TIER_COLORS = {
@@ -1035,8 +1083,15 @@ const TIER_COLORS = {
   "S":  { color:"#ff9d4d", bg:"#ff9d4d1a", border:"#ff9d4d55" },
   "A":  { color:"#ffcc02", bg:"#ffcc0218", border:"#ffcc0250" },
   "B":  { color:"#7d8fae", bg:"#7d8fae18", border:"#7d8fae50" },
+  "C":  { color:"#5a6478", bg:"#5a647818", border:"#5a647850" },
 };
-const ROLE_ICON = { Baron:"⚔️", Jungle:"🌲", Mid:"🔮", ADC:"🏹", Support:"🛡️" };
+const ROLE_ICON = {
+  Baron: "data:image/png;base64,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",
+  Jungle: "data:image/png;base64,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",
+  Mid: "data:image/png;base64,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",
+  ADC: "data:image/png;base64,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",
+  Support: "data:image/png;base64,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",
+};
 let tierListRole = "Tümü"; // Tier List ekranı filtresi
 
 // Draft sırası
@@ -2900,6 +2955,48 @@ function saveCustomBuilds(){
 // Ekranda gösterilecek build: önce özel (elle girilmiş), yoksa hazır BUILD_DB
 function getBuild(id){
   return CUSTOM_BUILDS[id] || BUILD_DB[id];
+}
+
+// ─── GİZLİ CT (KARŞI PICK) EDİTÖRÜ ──────────────────────────────
+// Şampiyonların "ct" (karşısında güçlü olan) / "ctBy" (karşısında zayıf olan)
+// listelerini elden düzenlemeyi sağlar. Karşılıklı ilişki otomatik senkronize edilir:
+// B, A.ct içindeyse (B, A'yı eziyor demek) → A otomatik olarak B.ctBy içine eklenir.
+let CUSTOM_CT = {};   // { champId: { ct:[...], ctBy:[...] } } — localStorage'a kaydedilir
+function loadCustomCT(){
+  try {
+    const raw = localStorage.getItem("wrCustomCT");
+    if(raw) CUSTOM_CT = JSON.parse(raw) || {};
+  } catch(e){ CUSTOM_CT = {}; }
+}
+function saveCustomCT(){
+  try { localStorage.setItem("wrCustomCT", JSON.stringify(CUSTOM_CT)); } catch(e){}
+}
+function getCT(id){
+  const ov = CUSTOM_CT[id];
+  if(ov && Array.isArray(ov.ct)) return ov.ct;
+  return (DB[id] && DB[id].ct) || [];
+}
+function getCTBy(id){
+  const ov = CUSTOM_CT[id];
+  if(ov && Array.isArray(ov.ctBy)) return ov.ctBy;
+  return (DB[id] && DB[id].ctBy) || [];
+}
+
+// ─── GİZLİ TIER LIST EDİTÖRÜ ────────────────────────────────────
+// Görsel Tier List (S+/S/A/B/C) ekranındaki dağılımı elden düzenlemeyi sağlar.
+// Sadece görsel amaçlıdır — draft önerisi motorunu (META_TIER/META_POWER) etkilemez.
+let CUSTOM_TIER_LIST = {};   // { role: { "S+":[...], "S":[...], "A":[...], "B":[...], "C":[...] } }
+function loadCustomTierList(){
+  try {
+    const raw = localStorage.getItem("wrCustomTierList");
+    if(raw) CUSTOM_TIER_LIST = JSON.parse(raw) || {};
+  } catch(e){ CUSTOM_TIER_LIST = {}; }
+}
+function saveCustomTierListStore(){
+  try { localStorage.setItem("wrCustomTierList", JSON.stringify(CUSTOM_TIER_LIST)); } catch(e){}
+}
+function getTierListForRole(role){
+  return CUSTOM_TIER_LIST[role] || TIER_LIST_FULL[role];
 }
 
 // ─── GİZLİ ŞAMPİYON DERİNLİK PROFİLİ EDİTÖRÜ ───────────────────
@@ -5317,9 +5414,6 @@ function computeSugg() {
   const myPicks = getMyPicks(myT);
   const enPicks = getEnPicks(myT);
 
-  // Kendi comfort picklerini düz set olarak topla (sadece tier 4 = senin picklerin)
-  const COMFORT_POOL = COMFORT_IDS;
-
   // Son rakip pick
   const lastEn     = enPicks.length ? enPicks[enPicks.length-1] : null;
   const lastEnLane = lastEn ? lastEn.lanes[0] : null;
@@ -5332,7 +5426,7 @@ function computeSugg() {
   if (lastEn) {
     const enId = lastEn.id;
     const enData = DB[enId] || lastEn;
-    const ctSet = new Set(enData.ct || []);
+    const ctSet = new Set(getCT(enId));
     ctList = ALL
       .filter(c => !used.has(c.id) && ctSet.has(c.id))
       .map(c => {
@@ -5341,17 +5435,14 @@ function computeSugg() {
         const laneArr = META_POWER[lastEnLane] || [];
         const mi = laneArr.indexOf(c.id);
         const metaBonus = mi >= 0 ? (laneArr.length - mi) / laneArr.length * 2 : 0;
-        const isComfort = COMFORT_POOL.has(c.id);
         const isBuff    = getPatchStatus(c.id) === "buff";
         const isNerf    = getPatchStatus(c.id) === "nerf";
         return {
           ...c,
           _score: 10 + tierScore + laneBonus + metaBonus
-            + (isComfort ? 5 : 0)
             + (isBuff    ? 4 : 0)
             + (isNerf    ? -2 : 0),
           _why: lastEn.name + " CT",
-          _comfort: isComfort,
           _patch: getPatchStatus(c.id),
         };
       })
@@ -5374,7 +5465,6 @@ function computeSugg() {
   const metaList = metaSorted.slice(0, 4).map(x => ({
     ...DB[x.id], id: x.id,
     _why: "Meta Pick",
-    _comfort: COMFORT_POOL.has(x.id),
     _patch: getPatchStatus(x.id),
   }));
 
@@ -5397,9 +5487,8 @@ function computeSugg() {
         const ENEMY_WEIGHT= 8;   // rakibe karşı ihtiyaç — takım ihtiyacıyla eşit ağırlıkta
         const metaScore   = laneArr.length - x.idx;         // meta sıra ağırlığı (küçük tabanlı, elemek için)
         const needScore   = ownTags.length * OWN_WEIGHT + enemyTags.length * ENEMY_WEIGHT;
-        const comfortScr  = COMFORT_POOL.has(x.id) ? 3 : 0;
         const patchScr    = getPatchStatus(x.id)==="buff" ? 2 : (getPatchStatus(x.id)==="nerf" ? -1 : 0);
-        return { id:x.id, ownTags, enemyTags, _total: metaScore + needScore + comfortScr + patchScr };
+        return { id:x.id, ownTags, enemyTags, _total: metaScore + needScore + patchScr };
       })
       .sort((a,b) => b._total - a._total);
 
@@ -5410,7 +5499,6 @@ function computeSugg() {
         _why: el + " İhtiyacı",
         _ownTags: best.ownTags.map(t=>t.tag),
         _enemyTags: best.enemyTags.map(t=>t.tag),
-        _comfort: COMFORT_POOL.has(best.id),
         _patch: getPatchStatus(best.id),
       });
       fillerIds.add(best.id);
@@ -6056,6 +6144,218 @@ function closeProfileEditor(){
   appScreen="champDetail";
   render();
 }
+
+// ─── CT (KARŞI PICK) EDİTÖRÜ FONKSİYONLARI (gizli) ─────────────
+let ctEditorChampId   = null;   // düzenlenen şampiyon
+let ctEditorDraft      = null;  // taslak: {ct:[...], ctBy:[...]}
+let ctEditorOriginal   = null;  // açılıştaki hâl — kaydederken karşılıklı senkron için diff alınır
+let ctEditorPicking    = null;  // "ct" | "ctBy" | null — açık olan şampiyon seçim paneli
+let ctEditorPickSearch = "";
+function openCTEditor(id){
+  if(!BUILDER_ENABLED) return;
+  ctEditorDraft = { ct:[...getCT(id)], ctBy:[...getCTBy(id)] };
+  ctEditorOriginal = { ct:[...ctEditorDraft.ct], ctBy:[...ctEditorDraft.ctBy] };
+  ctEditorChampId = id;
+  ctEditorPicking = null;
+  ctEditorPickSearch = "";
+  appScreen = "ctEditor";
+  render();
+}
+function closeCTEditor(){
+  ctEditorChampId=null; ctEditorDraft=null; ctEditorOriginal=null; ctEditorPicking=null;
+  appScreen="champDetail";
+  render();
+}
+function openCTPicker(listKey){
+  ctEditorPicking = listKey;
+  ctEditorPickSearch = "";
+  render();
+}
+function closeCTPicker(){
+  ctEditorPicking = null;
+  render();
+}
+// Seçim panelinde bir şampiyona dokununca listeye ekler/çıkarır (toggle)
+function ctToggleChamp(id){
+  if(!ctEditorDraft || !ctEditorPicking) return;
+  const list = ctEditorDraft[ctEditorPicking];
+  const i = list.indexOf(id);
+  if(i>=0) list.splice(i,1); else list.push(id);
+  render();
+  renderCTPickerList();
+}
+function ctRemoveChamp(listKey, id){
+  if(!ctEditorDraft) return;
+  ctEditorDraft[listKey] = ctEditorDraft[listKey].filter(x=>x!==id);
+  render();
+}
+// Klavye kapanmasın diye seçim listesini ayrı güncelleyen fonksiyon
+function renderCTPickerList(){
+  const grid = document.getElementById("ctPickerGrid");
+  if(!grid || !ctEditorPicking || !ctEditorDraft) return;
+  const selected = new Set(ctEditorDraft[ctEditorPicking]);
+  const q = ctEditorPickSearch.toLowerCase();
+  const list = ALL
+    .filter(c => c.id !== ctEditorChampId && (!q || c.name.toLowerCase().includes(q)))
+    .sort((a,b)=> (selected.has(b.id)-selected.has(a.id)) || a.name.localeCompare(b.name,"tr"));
+  grid.innerHTML = list.map(c => {
+    const on = selected.has(c.id);
+    const lc = LANE_COLOR[c.lanes?.[0]]||"#888";
+    return `<div onclick="ctToggleChamp('${c.id}')" style="display:flex;flex-direction:column;
+      align-items:center;gap:4px;cursor:pointer;position:relative">
+      <div style="width:44px;height:44px;border-radius:10px;overflow:hidden;
+        border:2px solid ${on?'#00ff88':lc+'44'}">
+        ${champImg(c.id,44)}
+      </div>
+      ${on?'<div style="position:absolute;top:-2px;right:2px;width:16px;height:16px;border-radius:50%;background:#00ff88;color:#07070f;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center">✓</div>':""}
+      <div style="font-size:7px;color:#999;text-align:center;max-width:52px;white-space:nowrap;
+        overflow:hidden;text-overflow:ellipsis">${c.name}</div>
+    </div>`;
+  }).join("") || '<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">Bulunamadı</div>';
+}
+// Kaydet: taslağı CUSTOM_CT'ye yazar, ayrıca karşılıklı ilişkiyi (ct <-> ctBy)
+// diğer şampiyonların kayıtlarında da otomatik günceller.
+function saveCTDraft(){
+  if(!ctEditorChampId || !ctEditorDraft || !ctEditorOriginal) return;
+  const A = ctEditorChampId;
+  const before = ctEditorOriginal, after = ctEditorDraft;
+
+  const addedCt   = after.ct.filter(x => !before.ct.includes(x));
+  const removedCt = before.ct.filter(x => !after.ct.includes(x));
+  const addedCtBy   = after.ctBy.filter(x => !before.ctBy.includes(x));
+  const removedCtBy = before.ctBy.filter(x => !after.ctBy.includes(x));
+
+  // B, A'yı eziyorsa (A.ct'ye eklendiyse) → B.ctBy'ye A eklenir
+  addedCt.forEach(B => {
+    const cur = { ct:[...getCT(B)], ctBy:[...getCTBy(B)] };
+    if(!cur.ctBy.includes(A)) cur.ctBy.push(A);
+    CUSTOM_CT[B] = cur;
+  });
+  removedCt.forEach(B => {
+    const cur = { ct:[...getCT(B)], ctBy:[...getCTBy(B)] };
+    cur.ctBy = cur.ctBy.filter(x=>x!==A);
+    CUSTOM_CT[B] = cur;
+  });
+  // A, C'yi eziyorsa (A.ctBy'ye eklendiyse) → C.ct'ye A eklenir
+  addedCtBy.forEach(C => {
+    const cur = { ct:[...getCT(C)], ctBy:[...getCTBy(C)] };
+    if(!cur.ct.includes(A)) cur.ct.push(A);
+    CUSTOM_CT[C] = cur;
+  });
+  removedCtBy.forEach(C => {
+    const cur = { ct:[...getCT(C)], ctBy:[...getCTBy(C)] };
+    cur.ct = cur.ct.filter(x=>x!==A);
+    CUSTOM_CT[C] = cur;
+  });
+
+  CUSTOM_CT[A] = { ct:[...after.ct], ctBy:[...after.ctBy] };
+  saveCustomCT();
+  closeCTEditor();
+}
+function resetCTDraft(){
+  if(!confirm("Bu şampiyonun CT verisi orijinal (varsayılan) haline döndürülsün mü? Karşılıklı bağlantılar diğer şampiyonlarda korunur.")) return;
+  delete CUSTOM_CT[ctEditorChampId];
+  saveCustomCT();
+  closeCTEditor();
+}
+
+// ─── TIER LIST EDİTÖRÜ FONKSİYONLARI (gizli) ───────────────────
+let tierEditorRole    = null;   // düzenlenen rol: Baron/Jungle/Mid/ADC/Support
+let tierEditorDraft    = null;  // taslak: {"S+":[...],"S":[...],"A":[...],"B":[...],"C":[...]}
+let tierEditorPicking  = null;  // hangi banda ekleniyor: "S+"|"S"|"A"|"B"|"C"|null
+let tierEditorPickSearch = "";
+const TIER_EDITOR_ORDER = ["S+","S","A","B","C"];
+function openTierEditor(role){
+  if(!BUILDER_ENABLED) return;
+  const src = getTierListForRole(role);
+  tierEditorDraft = {};
+  TIER_EDITOR_ORDER.forEach(t => tierEditorDraft[t] = [...(src[t]||[])]);
+  tierEditorRole = role;
+  tierEditorPicking = null;
+  tierEditorPickSearch = "";
+  appScreen = "tierEditor";
+  render();
+}
+function closeTierEditor(){
+  tierEditorRole=null; tierEditorDraft=null; tierEditorPicking=null;
+  appScreen="tierlist";
+  render();
+}
+function openTierPicker(band){
+  tierEditorPicking = band;
+  tierEditorPickSearch = "";
+  render();
+}
+function closeTierPicker(){
+  tierEditorPicking = null;
+  render();
+}
+// Seçim panelinde bir şampiyona dokununca o bandın listesine ekler/çıkarır (toggle).
+// Şampiyon aynı rolde başka bir bantta ise oradan otomatik çıkarılır (tek bant kuralı).
+function tierToggleChamp(id){
+  if(!tierEditorDraft || !tierEditorPicking) return;
+  const band = tierEditorPicking;
+  const list = tierEditorDraft[band];
+  const i = list.indexOf(id);
+  if(i>=0){
+    list.splice(i,1);
+  } else {
+    TIER_EDITOR_ORDER.forEach(t => {
+      if(t!==band) tierEditorDraft[t] = tierEditorDraft[t].filter(x=>x!==id);
+    });
+    list.push(id);
+  }
+  render();
+  renderTierPickerList();
+}
+function tierRemoveChamp(band, id){
+  if(!tierEditorDraft) return;
+  tierEditorDraft[band] = tierEditorDraft[band].filter(x=>x!==id);
+  render();
+}
+function saveTierDraft(){
+  if(!tierEditorRole || !tierEditorDraft) return;
+  const out = {};
+  TIER_EDITOR_ORDER.forEach(t => out[t] = [...tierEditorDraft[t]]);
+  CUSTOM_TIER_LIST[tierEditorRole] = out;
+  saveCustomTierListStore();
+  closeTierEditor();
+}
+function resetTierDraft(){
+  if(!confirm("Bu rolün tier listesi orijinal (varsayılan) haline döndürülsün mü?")) return;
+  delete CUSTOM_TIER_LIST[tierEditorRole];
+  saveCustomTierListStore();
+  closeTierEditor();
+}
+// Klavye kapanmasın diye seçim listesini ayrı güncelleyen fonksiyon
+function renderTierPickerList(){
+  const grid = document.getElementById("tierPickerGrid");
+  if(!grid || !tierEditorPicking || !tierEditorDraft || !tierEditorRole) return;
+  const band = tierEditorPicking;
+  const d = tierEditorDraft;
+  const tc = TIER_COLORS[band];
+  const rolePool = ALL.filter(x => x.lanes && x.lanes.includes(tierEditorRole));
+  const selected = new Set(d[band]);
+  const q = tierEditorPickSearch.toLowerCase();
+  const list = rolePool
+    .filter(x => !q || x.name.toLowerCase().includes(q))
+    .sort((a,b)=> (selected.has(b.id)-selected.has(a.id)) || a.name.localeCompare(b.name,"tr"));
+  grid.innerHTML = list.map(x => {
+    const on = selected.has(x.id);
+    const otherBand = TIER_EDITOR_ORDER.find(t => t!==band && d[t].includes(x.id));
+    return `<div onclick="tierToggleChamp('${x.id}')" style="display:flex;flex-direction:column;
+      align-items:center;gap:4px;cursor:pointer;position:relative">
+      <div style="width:44px;height:44px;border-radius:10px;overflow:hidden;
+        border:2px solid ${on?tc.color:'#33334455'}">
+        ${champImg(x.id,44)}
+      </div>
+      ${on?`<div style="position:absolute;top:-2px;right:2px;width:16px;height:16px;border-radius:50%;background:${tc.color};color:#07070f;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center">✓</div>`:""}
+      <div style="font-size:7px;color:#999;text-align:center;max-width:52px;white-space:nowrap;
+        overflow:hidden;text-overflow:ellipsis">${x.name}</div>
+      ${(!on && otherBand)?`<div style="font-size:6px;color:#555">${otherBand}'de</div>`:""}
+    </div>`;
+  }).join("") || '<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">Bulunamadı</div>';
+}
 function setProfileSingle(key, val){
   profileDraft[key] = (profileDraft[key]===val) ? "" : val;
   render();
@@ -6237,64 +6537,88 @@ function render() {
   if (appScreen === "home") {
     const hist = savedMatchHistory;
     document.getElementById("app").innerHTML = `
-      <div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;
-        padding:32px 16px 40px;background:#07070f">
+      <div class="wr-home-bg" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;
+        padding:32px 16px 40px">
 
-        <div onclick="secretTapLogo()" style="margin-top:40px;margin-bottom:48px;text-align:center;user-select:none">
-          <div style="font-size:26px;font-weight:800;color:#fff;letter-spacing:1px;margin-bottom:6px">⚔️ WILD RIFT</div>
-          <div style="font-size:10px;color:#333;letter-spacing:4px">DRAFT ASISTANI</div>
+        <div onclick="secretTapLogo()" style="position:relative;margin-top:36px;margin-bottom:40px;
+          text-align:center;user-select:none">
+          <div class="wr-crest-glow"></div>
+          <div style="display:flex;align-items:center;justify-content:center;gap:10px">
+            <span style="color:#c99400;font-size:11px;transform:rotate(45deg)">◆</span>
+            <div class="wr-title">WILD RIFT</div>
+            <span style="color:#c99400;font-size:11px;transform:rotate(45deg)">◆</span>
+          </div>
+          <div style="font-size:10px;color:#6b6b8a;letter-spacing:5px;margin-top:4px">DRAFT ASİSTANI</div>
+          <div class="wr-divider"><span>◆</span></div>
         </div>
 
-        <div style="width:100%;max-width:340px;display:flex;flex-direction:column;gap:14px">
+        <div style="width:100%;max-width:340px;display:flex;flex-direction:column;gap:16px">
 
           <!-- DRAFT -->
-          <button onclick="appScreen='draft';seriesFormat=null;render()" style="
-            padding:22px 20px;border-radius:14px;font-size:15px;font-weight:800;
-            background:linear-gradient(135deg,#0d1a2e,#0d0d1e);
-            border:1px solid #3a8fff44;color:#3a8fff;
-            display:flex;align-items:center;gap:16px;text-align:left;">
-            <span style="font-size:28px">🗡️</span>
-            <span>
-              <span style="display:block;font-size:15px;color:#e0e0f0">Draft Başlat</span>
-              <span style="font-size:10px;color:#3a8fff;font-weight:600">Bo1 / Bo3 / Bo5</span>
+          <button onclick="appScreen='draft';seriesFormat=null;render()" class="wr-card" style="
+            --wr-accent:#3a8fff;--wr-accent-soft:#3a8fff40;padding:20px 18px;font-size:15px;font-weight:800;
+            background:linear-gradient(135deg,#0d1a2e,#0a0a18 75%);
+            border:1px solid #3a8fff3a;color:#3a8fff;
+            display:flex;align-items:center;gap:15px;text-align:left;">
+            <div class="wr-hex-badge">🗡️</div>
+            <span style="flex:1">
+              <span style="display:block;font-size:15px;color:#f0f0fa;letter-spacing:.3px">Draft Başlat</span>
+              <span style="font-size:10px;color:#3a8fff;font-weight:700;letter-spacing:.5px">Bo1 / Bo3 / Bo5</span>
             </span>
+            <span style="color:#3a8fff88;font-size:16px">›</span>
           </button>
 
           <!-- ŞAMPIYONLAR -->
-          <button onclick="appScreen='champions';champLane='Tümü';champSearch='';render()" style="
-            padding:22px 20px;border-radius:14px;font-size:15px;font-weight:800;
-            background:linear-gradient(135deg,#1a0d2e,#0d0d1e);
-            border:1px solid #a020f044;color:#c060ff;
-            display:flex;align-items:center;gap:16px;text-align:left;">
-            <span style="font-size:28px">🏆</span>
-            <span>
-              <span style="display:block;font-size:15px;color:#e0e0f0">Şampiyonlar</span>
-              <span style="font-size:10px;color:#c060ff;font-weight:600">CT · Güçlü · Sinerjiler</span>
+          <button onclick="appScreen='champions';champLane='Tümü';champSearch='';render()" class="wr-card" style="
+            --wr-accent:#c060ff;--wr-accent-soft:#c060ff40;padding:20px 18px;font-size:15px;font-weight:800;
+            background:linear-gradient(135deg,#1a0d2e,#0a0a18 75%);
+            border:1px solid #a020f03a;color:#c060ff;
+            display:flex;align-items:center;gap:15px;text-align:left;">
+            <div class="wr-hex-badge">🏆</div>
+            <span style="flex:1">
+              <span style="display:block;font-size:15px;color:#f0f0fa;letter-spacing:.3px">Şampiyonlar</span>
+              <span style="font-size:10px;color:#c060ff;font-weight:700;letter-spacing:.5px">CT · Güçlü · Sinerjiler</span>
             </span>
+            <span style="color:#c060ff88;font-size:16px">›</span>
+          </button>
+
+          <!-- TIER LIST -->
+          <button onclick="tierListRole='Tümü';appScreen='tierlist';render()" class="wr-card" style="
+            --wr-accent:#ff4d6d;--wr-accent-soft:#ff4d6d40;padding:20px 18px;font-size:15px;font-weight:800;
+            background:linear-gradient(135deg,#2e1a1a,#0a0a18 75%);
+            border:1px solid #ff4d6d3a;color:#ff4d6d;
+            display:flex;align-items:center;gap:15px;text-align:left;">
+            <div class="wr-hex-badge">📊</div>
+            <span style="flex:1">
+              <span style="display:block;font-size:15px;color:#f0f0fa;letter-spacing:.3px">Tier List</span>
+              <span style="font-size:10px;color:#ff4d6d;font-weight:700;letter-spacing:.5px">S+ → C</span>
+            </span>
+            <span style="color:#ff4d6d88;font-size:16px">›</span>
           </button>
 
           <!-- YAMA NOTLARI -->
-          <button onclick="appScreen='patch';render()" style="
-            padding:22px 20px;border-radius:14px;font-size:15px;font-weight:800;
-            background:linear-gradient(135deg,#1a1a0d,#0d0d1e);
-            border:1px solid #ffcc0244;color:#ffcc02;
-            display:flex;align-items:center;gap:16px;text-align:left;">
-            <span style="font-size:28px">📋</span>
-            <span>
-              <span style="display:block;font-size:15px;color:#e0e0f0">Yama Notları</span>
-              <span style="font-size:10px;color:#ffcc02;font-weight:600">
+          <button onclick="appScreen='patch';render()" class="wr-card" style="
+            --wr-accent:#ffcc02;--wr-accent-soft:#ffcc0240;padding:20px 18px;font-size:15px;font-weight:800;
+            background:linear-gradient(135deg,#1a1a0d,#0a0a18 75%);
+            border:1px solid #ffcc023a;color:#ffcc02;
+            display:flex;align-items:center;gap:15px;text-align:left;">
+            <div class="wr-hex-badge">📋</div>
+            <span style="flex:1">
+              <span style="display:block;font-size:15px;color:#f0f0fa;letter-spacing:.3px">Yama Notları</span>
+              <span style="font-size:10px;color:#ffcc02;font-weight:700;letter-spacing:.5px">
                 ${patchData.version ? patchData.version + " — Güncel" : "Yükleniyor..."}
               </span>
             </span>
+            <span style="color:#ffcc0288;font-size:16px">›</span>
           </button>
         </div>
 
         <!-- GEÇMİŞ MAÇLAR -->
         ${hist.length > 0 ? `
-          <div style="width:100%;max-width:340px;margin-top:32px">
+          <div style="width:100%;max-width:340px;margin-top:36px">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-              <div style="font-size:9px;color:#444;letter-spacing:3px">📋 GEÇMİŞ MAÇLAR</div>
-              <button onclick="clearAllHistory()" style="font-size:9px;color:#333;padding:3px 8px;
+              <div class="wr-section-label" style="flex:1;margin-bottom:0">📋 GEÇMİŞ MAÇLAR</div>
+              <button onclick="clearAllHistory()" style="font-size:9px;color:#555;padding:3px 8px;margin-left:8px;
                 border-radius:5px;border:1px solid #1a1a2e;background:#0d0d1e">Tümünü Sil</button>
             </div>
             ${hist.slice().reverse().map((m, ri) => {
@@ -6303,7 +6627,7 @@ function render() {
               const rPicks = ORDER.map((o,i)=>({...o,i})).filter(o=>o.t===1&&o.act==="pick").map(o=>m.slots[o.i]).filter(Boolean);
               const sideLabel = m.mySide===0?"🔵 Mavi":m.mySide===1?"🔴 Kırmızı":"—";
               const sideColor = m.mySide===0?"#3a8fff":m.mySide===1?"#ff4d4d":"#555";
-              return `<div style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:12px;
+              return `<div class="wr-card" style="--wr-accent:#252545;background:#0d0d1e;border:1px solid #1a1a2e;
                 padding:12px;margin-bottom:8px">
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
                   <div>
@@ -6405,19 +6729,6 @@ function render() {
         </div>
 
         <div style="padding:14px;display:flex;flex-direction:column;gap:12px">
-
-          <!-- TIER LIST BUTONU -->
-          <button onclick="tierListRole='Tümü';appScreen='tierlist';render()" style="
-            width:100%;padding:14px 16px;border-radius:12px;font-size:13px;font-weight:800;
-            background:linear-gradient(135deg,#2e1a1a,#0d0d1e);
-            border:1px solid #ff4d6d44;color:#ff4d6d;
-            display:flex;align-items:center;justify-content:space-between;">
-            <span style="display:flex;align-items:center;gap:10px">
-              <span style="font-size:20px">📊</span>
-              <span style="color:#e0e0f0">Tier List</span>
-            </span>
-            <span style="font-size:11px;color:#ff4d6d">S+ → B ›</span>
-          </button>
 
           <!-- ÖZET SAYAÇLAR -->
           <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
@@ -6526,7 +6837,7 @@ function render() {
   // ── TIER LIST EKRANI ─────────────────────────────────────
   if (appScreen === "tierlist") {
     const roles = ["Tümü","Baron","Jungle","Mid","ADC","Support"];
-    const tierOrder = ["S+","S","A","B"];
+    const tierOrder = ["S+","S","A","B","C"];
 
     function champCard(id, role) {
       const c = DB[id];
@@ -6538,7 +6849,8 @@ function render() {
             border:2px solid #ffffff22">${champImg(id, 56)}</div>
           ${role ? `<div style="position:absolute;bottom:-2px;right:-2px;width:18px;height:18px;
             border-radius:50%;background:#0a0a18;border:1px solid #1a1a2e;
-            display:flex;align-items:center;justify-content:center;font-size:9px">${ROLE_ICON[role]}</div>` : ""}
+            display:flex;align-items:center;justify-content:center;padding:2px">
+            <img src="${ROLE_ICON[role]}" style="width:100%;height:100%;object-fit:contain" alt="${role}"></div>` : ""}
         </div>
         <div style="font-size:9px;color:#ccc;text-align:center;line-height:1.15;
           max-width:64px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.name}</div>
@@ -6566,12 +6878,12 @@ function render() {
       bodyHtml = tierOrder.map(t => {
         const entries = [];
         ["Baron","Jungle","Mid","ADC","Support"].forEach(role => {
-          (TIER_LIST_FULL[role][t] || []).forEach(id => entries.push({id, role}));
+          (getTierListForRole(role)[t] || []).forEach(id => entries.push({id, role}));
         });
         return tierBand(t, entries);
       }).join("");
     } else {
-      const data = TIER_LIST_FULL[tierListRole];
+      const data = getTierListForRole(tierListRole);
       bodyHtml = tierOrder.map(t => tierBand(t, (data[t]||[]).map(id=>({id, role:null})))).join("");
     }
 
@@ -6582,12 +6894,15 @@ function render() {
         <div style="padding:12px 14px;background:#0a0a18;border-bottom:1px solid #141428;
           position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
           display:flex;align-items:center;gap:10px">
-          <button onclick="appScreen='patch';render()" style="padding:6px 12px;border-radius:8px;
+          <button onclick="appScreen='home';render()" style="padding:6px 12px;border-radius:8px;
             border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px">← Geri</button>
           <div style="flex:1">
             <div style="font-size:14px;font-weight:800;color:#fff">📊 Tier List</div>
             <div style="font-size:9px;color:#ff4d6d">${patchData.version} · ${patchData.date}</div>
           </div>
+          ${BUILDER_ENABLED && tierListRole!=="Tümü" ? `<button onclick="openTierEditor('${tierListRole}')" style="padding:6px 12px;
+            border-radius:8px;border:1px solid #ff4d6d55;background:#ff4d6d18;color:#ff4d6d;
+            font-size:11px;font-weight:700;flex-shrink:0">✏️ Düzenle</button>` : ""}
         </div>
 
         <!-- ROL FİLTRE BUTONLARI -->
@@ -6601,7 +6916,7 @@ function render() {
               background:${active ? "#ff4d6d22" : "#0d0d1e"};
               border:1px solid ${active ? "#ff4d6d77" : "#1a1a2e"};
               color:${active ? "#ff4d6d" : "#888"}">
-              ${r==="Tümü"?"🗂️":ROLE_ICON[r]} ${r}
+              ${r==="Tümü"?"🗂️ "+r:`<img src="${ROLE_ICON[r]}" style="width:13px;height:13px;object-fit:contain;vertical-align:-2px;margin-right:3px" alt="${r}">${r}`}
             </button>`;
           }).join("")}
         </div>
@@ -6700,8 +7015,8 @@ function render() {
     const flexVariants = ALL.filter(x => x.name === c.name && x.id !== champDetailId);
 
     // CT listesi → DB'den bul
-    const ctIds = c.ct || [];
-    const ctByIds = c.ctBy || [];
+    const ctIds = getCT(champDetailId);
+    const ctByIds = getCTBy(champDetailId);
     const synIds = c.syn || [];
 
     function miniChamp(id) {
@@ -6848,6 +7163,9 @@ function render() {
                 ${BUILDER_ENABLED ? `<button onclick="openProfileEditor('${champDetailId}')" style="padding:4px 10px;
                   border-radius:7px;border:1px solid #c060ff55;background:#c060ff18;color:#c060ff;
                   font-size:9px;font-weight:700;flex-shrink:0">📊 Profil${getChampProfile(champDetailId) ? ' ✓' : ''}</button>` : ""}
+                ${BUILDER_ENABLED ? `<button onclick="openCTEditor('${champDetailId}')" style="padding:4px 10px;
+                  border-radius:7px;border:1px solid #ff606055;background:#ff606018;color:#ff6060;
+                  font-size:9px;font-weight:700;flex-shrink:0">🎯 CT${CUSTOM_CT[champDetailId] ? ' ✓' : ''}</button>` : ""}
               </div>
 
               <!-- RÜNLER -->
@@ -7128,6 +7446,243 @@ function render() {
     return;
   }
 
+  // ── GİZLİ CT (KARŞI PICK) EDİTÖRÜ (appScreen==="ctEditor") ──
+  if (appScreen === "ctEditor" && ctEditorChampId && ctEditorDraft) {
+    const c = DB[ctEditorChampId];
+    if(!c){ appScreen="champions"; render(); return; }
+    const d = ctEditorDraft;
+
+    function chipRow(listKey, ids, color){
+      return `<div style="display:flex;gap:8px;flex-wrap:wrap">
+        ${ids.map(id => {
+          const dc = DB[id];
+          if(!dc) return "";
+          return `<div style="display:flex;align-items:center;gap:5px;padding:4px 6px 4px 4px;
+            border-radius:20px;background:#0d0d1e;border:1px solid ${color}44">
+            <div style="width:26px;height:26px;border-radius:50%;overflow:hidden">${champImg(id,26)}</div>
+            <span style="font-size:10px;color:#e0e0f0">${dc.name}</span>
+            <button onclick="ctRemoveChamp('${listKey}','${id}')" style="width:16px;height:16px;
+              border-radius:50%;border:none;background:#ff444425;color:#ff6060;font-size:10px;
+              line-height:1;cursor:pointer">✕</button>
+          </div>`;
+        }).join("")}
+        <button onclick="openCTPicker('${listKey}')" style="padding:6px 12px;border-radius:20px;
+          border:1px dashed ${color}66;background:transparent;color:${color};font-size:10px;font-weight:700">
+          + Ekle
+        </button>
+      </div>`;
+    }
+
+    let pickerHtml = "";
+    if (ctEditorPicking) {
+      const title = ctEditorPicking==="ct" ? "Karşısında Güçlü Olan Ekle/Çıkar" : "Karşısında Zayıf Olan Ekle/Çıkar";
+      const selected = new Set(d[ctEditorPicking]);
+      const q0 = ctEditorPickSearch.toLowerCase();
+      const initList = ALL
+        .filter(x => x.id !== ctEditorChampId && (!q0 || x.name.toLowerCase().includes(q0)))
+        .sort((a,b)=> (selected.has(b.id)-selected.has(a.id)) || a.name.localeCompare(b.name,"tr"));
+      const initHtml = initList.map(x => {
+        const on = selected.has(x.id);
+        const xlc = LANE_COLOR[x.lanes?.[0]]||"#888";
+        return `<div onclick="ctToggleChamp('${x.id}')" style="display:flex;flex-direction:column;
+          align-items:center;gap:4px;cursor:pointer;position:relative">
+          <div style="width:44px;height:44px;border-radius:10px;overflow:hidden;
+            border:2px solid ${on?'#00ff88':xlc+'44'}">
+            ${champImg(x.id,44)}
+          </div>
+          ${on?'<div style="position:absolute;top:-2px;right:2px;width:16px;height:16px;border-radius:50%;background:#00ff88;color:#07070f;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center">✓</div>':""}
+          <div style="font-size:7px;color:#999;text-align:center;max-width:52px;white-space:nowrap;
+            overflow:hidden;text-overflow:ellipsis">${x.name}</div>
+        </div>`;
+      }).join("");
+      pickerHtml = `<div style="position:fixed;inset:0;background:#000000cc;z-index:100;display:flex;
+        align-items:flex-end" onclick="if(event.target===this)closeCTPicker()">
+        <div style="background:#0a0a18;border-top-left-radius:16px;border-top-right-radius:16px;
+          max-height:78vh;width:100%;display:flex;flex-direction:column;border:1px solid #1a1a2e">
+          <div style="padding:14px;border-bottom:1px solid #141428;display:flex;align-items:center;gap:10px">
+            <div style="font-size:13px;font-weight:800;color:#fff;flex:1">${title}</div>
+            <button onclick="closeCTPicker()" style="padding:5px 10px;border-radius:7px;
+              border:1px solid #252540;background:#0d0d1e;color:#888;font-size:10px">Kapat</button>
+          </div>
+          <div style="padding:10px 14px">
+            <input value="${ctEditorPickSearch}" oninput="ctEditorPickSearch=this.value;renderCTPickerList()"
+              placeholder="Şampiyon ara..." style="width:100%;padding:9px 12px;border-radius:9px;
+              background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
+          </div>
+          <div id="ctPickerGrid" style="overflow-y:auto;padding:10px 14px 20px;
+            display:grid;grid-template-columns:repeat(4,1fr);gap:12px 8px">${initHtml}</div>
+        </div>
+      </div>`;
+    }
+
+    document.getElementById("app").innerHTML = `
+      <div style="min-height:100vh;background:#07070f">
+        <div style="padding:12px 14px;background:#0a0a18;border-bottom:1px solid #141428;
+          position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
+          display:flex;align-items:center;gap:10px">
+          <button onclick="closeCTEditor()" style="padding:6px 12px;border-radius:8px;
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← İptal</button>
+          <div style="font-size:14px;font-weight:800;color:#fff">🎯 CT Düzenle · ${c.name}</div>
+        </div>
+
+        <div style="padding:14px">
+          <div style="font-size:10px;color:#666;line-height:1.6;margin-bottom:14px">
+            Buradaki değişiklikler kaydedilince karşı taraftaki şampiyonların listesine de
+            otomatik olarak işlenir (karşılıklı ilişki senkron tutulur).
+          </div>
+
+          <div style="margin-bottom:16px;background:#0d0d1e;border:1px solid #ff303033;
+            border-radius:12px;padding:14px">
+            <div style="font-size:10px;font-weight:800;color:#ff6060;margin-bottom:10px">
+              🚨 Karşısında Güçlü Olan (bunlar ${c.name}'i ezer)
+            </div>
+            ${chipRow("ct", d.ct, "#ff6060")}
+          </div>
+
+          <div style="margin-bottom:16px;background:#0d0d1e;border:1px solid #4da6ff33;
+            border-radius:12px;padding:14px">
+            <div style="font-size:10px;font-weight:800;color:#4da6ff;margin-bottom:10px">
+              💪 Karşısında Zayıf Olan (${c.name} bunları ezer)
+            </div>
+            ${chipRow("ctBy", d.ctBy, "#4da6ff")}
+          </div>
+
+          <div style="display:flex;gap:8px">
+            <button onclick="saveCTDraft()" style="flex:1;padding:12px;border-radius:10px;
+              background:#00ff8818;border:1px solid #00ff8855;color:#00ff88;font-weight:800;font-size:13px">
+              💾 Kaydet
+            </button>
+            ${CUSTOM_CT[ctEditorChampId] ? `
+            <button onclick="resetCTDraft()" style="padding:12px 16px;border-radius:10px;
+              background:#ff444418;border:1px solid #ff444455;color:#ff6060;font-weight:800;font-size:13px">
+              ↺ Sıfırla
+            </button>` : ""}
+          </div>
+        </div>
+
+        ${pickerHtml}
+      </div>`;
+    return;
+  }
+
+  // ── GİZLİ TIER LIST EDİTÖRÜ (appScreen==="tierEditor") ──────
+  if (appScreen === "tierEditor" && tierEditorRole && tierEditorDraft) {
+    const role = tierEditorRole;
+    const d = tierEditorDraft;
+    const rolePool = ALL.filter(x => x.lanes && x.lanes.includes(role));
+
+    function tierChipRow(band){
+      const tc = TIER_COLORS[band];
+      const ids = d[band];
+      return `<div style="display:flex;gap:8px;flex-wrap:wrap">
+        ${ids.map(id => {
+          const dc = DB[id];
+          if(!dc) return "";
+          return `<div style="display:flex;align-items:center;gap:5px;padding:4px 6px 4px 4px;
+            border-radius:20px;background:#0d0d1e;border:1px solid ${tc.border}">
+            <div style="width:26px;height:26px;border-radius:50%;overflow:hidden">${champImg(id,26)}</div>
+            <span style="font-size:10px;color:#e0e0f0">${dc.name}</span>
+            <button onclick="tierRemoveChamp('${band}','${id}')" style="width:16px;height:16px;
+              border-radius:50%;border:none;background:#ff444425;color:#ff6060;font-size:10px;
+              line-height:1;cursor:pointer">✕</button>
+          </div>`;
+        }).join("")}
+        <button onclick="openTierPicker('${band}')" style="padding:6px 12px;border-radius:20px;
+          border:1px dashed ${tc.color}66;background:transparent;color:${tc.color};font-size:10px;font-weight:700">
+          + Ekle
+        </button>
+      </div>`;
+    }
+
+    let pickerHtml = "";
+    if (tierEditorPicking) {
+      const band = tierEditorPicking;
+      const tc = TIER_COLORS[band];
+      const selected = new Set(d[band]);
+      const q = tierEditorPickSearch.toLowerCase();
+      const list = rolePool
+        .filter(x => !q || x.name.toLowerCase().includes(q))
+        .sort((a,b)=> (selected.has(b.id)-selected.has(a.id)) || a.name.localeCompare(b.name,"tr"));
+      const gridHtml = list.map(x => {
+        const on = selected.has(x.id);
+        // Aynı şampiyon başka bir bantta zaten varsa küçük bir etiketle göster
+        const otherBand = TIER_EDITOR_ORDER.find(t => t!==band && d[t].includes(x.id));
+        return `<div onclick="tierToggleChamp('${x.id}')" style="display:flex;flex-direction:column;
+          align-items:center;gap:4px;cursor:pointer;position:relative">
+          <div style="width:44px;height:44px;border-radius:10px;overflow:hidden;
+            border:2px solid ${on?tc.color:'#33334455'}">
+            ${champImg(x.id,44)}
+          </div>
+          ${on?`<div style="position:absolute;top:-2px;right:2px;width:16px;height:16px;border-radius:50%;background:${tc.color};color:#07070f;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center">✓</div>`:""}
+          <div style="font-size:7px;color:#999;text-align:center;max-width:52px;white-space:nowrap;
+            overflow:hidden;text-overflow:ellipsis">${x.name}</div>
+          ${(!on && otherBand)?`<div style="font-size:6px;color:#555">${otherBand}'de</div>`:""}
+        </div>`;
+      }).join("") || '<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">Bulunamadı</div>';
+
+      pickerHtml = `<div style="position:fixed;inset:0;background:#000000cc;z-index:100;display:flex;
+        align-items:flex-end" onclick="if(event.target===this)closeTierPicker()">
+        <div style="background:#0a0a18;border-top-left-radius:16px;border-top-right-radius:16px;
+          max-height:78vh;width:100%;display:flex;flex-direction:column;border:1px solid #1a1a2e">
+          <div style="padding:14px;border-bottom:1px solid #141428;display:flex;align-items:center;gap:10px">
+            <div style="font-size:13px;font-weight:800;color:${tc.color};flex:1">${band} Bandına Ekle/Çıkar</div>
+            <button onclick="closeTierPicker()" style="padding:5px 10px;border-radius:7px;
+              border:1px solid #252540;background:#0d0d1e;color:#888;font-size:10px">Kapat</button>
+          </div>
+          <div style="padding:10px 14px">
+            <input value="${tierEditorPickSearch}" oninput="tierEditorPickSearch=this.value;renderTierPickerList()"
+              placeholder="Şampiyon ara..." style="width:100%;padding:9px 12px;border-radius:9px;
+              background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
+          </div>
+          <div id="tierPickerGrid" style="overflow-y:auto;padding:10px 14px 20px;
+            display:grid;grid-template-columns:repeat(4,1fr);gap:12px 8px">${gridHtml}</div>
+        </div>
+      </div>`;
+    }
+
+    document.getElementById("app").innerHTML = `
+      <div style="min-height:100vh;background:#07070f">
+        <div style="padding:12px 14px;background:#0a0a18;border-bottom:1px solid #141428;
+          position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
+          display:flex;align-items:center;gap:10px">
+          <button onclick="closeTierEditor()" style="padding:6px 12px;border-radius:8px;
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← İptal</button>
+          <div style="font-size:14px;font-weight:800;color:#fff">📊 Tier List Düzenle · <img src="${ROLE_ICON[role]}" style="width:16px;height:16px;object-fit:contain;vertical-align:-3px;margin:0 1px" alt="${role}"> ${role}</div>
+        </div>
+
+        <div style="padding:14px">
+          <div style="font-size:10px;color:#666;line-height:1.6;margin-bottom:14px">
+            Bir şampiyon aynı rolde yalnızca tek bantta olabilir; başka bir banda eklersen oradan otomatik çıkar.
+            Bu liste tamamen görseldir, draft önerilerini etkilemez.
+          </div>
+
+          ${TIER_EDITOR_ORDER.map(band => {
+            const tc = TIER_COLORS[band];
+            return `<div style="margin-bottom:14px;background:#0d0d1e;border:1px solid ${tc.border};
+              border-radius:12px;padding:14px">
+              <div style="font-size:10px;font-weight:800;color:${tc.color};margin-bottom:10px">${band} TIER</div>
+              ${tierChipRow(band)}
+            </div>`;
+          }).join("")}
+
+          <div style="display:flex;gap:8px">
+            <button onclick="saveTierDraft()" style="flex:1;padding:12px;border-radius:10px;
+              background:#00ff8818;border:1px solid #00ff8855;color:#00ff88;font-weight:800;font-size:13px">
+              💾 Kaydet
+            </button>
+            ${CUSTOM_TIER_LIST[role] ? `
+            <button onclick="resetTierDraft()" style="padding:12px 16px;border-radius:10px;
+              background:#ff444418;border:1px solid #ff444455;color:#ff6060;font-weight:800;font-size:13px">
+              ↺ Sıfırla
+            </button>` : ""}
+          </div>
+        </div>
+
+        ${pickerHtml}
+      </div>`;
+    return;
+  }
+
   // ── DRAFT AKIŞI ──────────────────────────────────────────
   if (appScreen === "draft" && !seriesFormat) {
     const hist = savedMatchHistory;
@@ -7342,9 +7897,9 @@ function render() {
     const lc = LANE_COLOR[c.lanes?.[0]] || "#888";
     return `<div onclick="pickChamp('${c.id}')" class="fade" style="
       display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;
-      background:#0d0d1e;border:1px solid ${c._comfort?"#00ff8822":"#1a1a2e"};cursor:pointer;margin-bottom:5px;
+      background:#0d0d1e;border:1px solid #1a1a2e;cursor:pointer;margin-bottom:5px;
       transition:border-color .12s;
-    " onmouseenter="this.style.borderColor='${c._comfort?"#00ff8866":lc}'" onmouseleave="this.style.borderColor='${c._comfort?"#00ff8822":"#1a1a2e"}'">
+    " onmouseenter="this.style.borderColor='${lc}'" onmouseleave="this.style.borderColor='#1a1a2e'">
       <div style="width:40px;height:40px;border-radius:8px;overflow:hidden;flex-shrink:0;
         border:1px solid ${accent}44;background:#080816">
         ${champImg(c.id, 40)}
@@ -7352,8 +7907,6 @@ function render() {
       <div style="flex:1;min-width:0">
         <div style="display:flex;align-items:center;gap:5px;flex-wrap:wrap">
           <span style="font-size:12px;font-weight:700;color:#e0e0f0">${c.name}</span>
-          ${c._comfort?`<span style="font-size:7px;padding:1px 6px;border-radius:3px;font-weight:800;
-            background:#00ff8818;border:1px solid #00ff8855;color:#00ff88">🎯 COMFORT</span>`:""}
           ${c._patch?patchBadge(c.id):""}
         </div>
         <div style="font-size:8px;color:${lc};margin-top:2px">${c.lanes?.join(" · ")} · ${c.cls}</div>
@@ -7982,6 +8535,8 @@ function updateChampGrid() {
 loadAppState();
 loadCustomBuilds();
 loadCustomProfiles();
+loadCustomCT();
+loadCustomTierList();
 updateBuilderFab();
 updateProfileFab();
 render();
