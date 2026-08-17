@@ -112,6 +112,8 @@ input{font-family:inherit}
   padding-bottom:env(safe-area-inset-bottom)"></div>
 <div id="profileFab" style="display:none;position:fixed;bottom:64px;right:16px;z-index:9997;
   padding-bottom:env(safe-area-inset-bottom)"></div>
+<div id="tierFab" style="display:none;position:fixed;bottom:112px;right:16px;z-index:9997;
+  padding-bottom:env(safe-area-inset-bottom)"></div>
 <div id="builderToast" style="display:none;position:fixed;top:50%;left:50%;
   transform:translate(-50%,-50%);z-index:9999;background:#0d0d1ef2;border:1px solid #ffcc0255;
   border-radius:12px;padding:14px 20px;font-size:13px;font-weight:700;color:#ffcc02;
@@ -1041,41 +1043,44 @@ const META_POWER = {
 
 // ─── GÖRSEL TIER LIST (S+/S/A/B) — sadece bilgi amaçlı, draft önerisini etkilemez ──
 // B tier çampionları öneri sistemine hiç girmez (META_TIER/META_POWER'da yer almazlar)
+// Patch güncellemesi ile yenilendi — kaynak: kullanıcı tarafından verilen güncel tier list.
+// Not: eski veride birkaç id hatası vardı (galio_sup / gragas_sup gerçek DB id'leri değildi,
+// nilah'ın Jungle varyantı hiç yoktu) — bu güncellemeyle doğru id'lere düzeltildi.
 const TIER_LIST_FULL = {
   Baron: {
-    "S+": ["ambessa","ksante"],
-    "S":  ["aatrox","camille","fiora","garen","gnar","gwen","malphite","mordekaiser","ornn","poppy_baron","renekton","rumble","sion"],
-    "A":  ["darius","irelia","jax","jayce","nasus","olaf_baron","riven","ryze_baron","sett","shen","singed","teemo","volibear","warwick","wukong"],
-    "B":  ["akali_baron","drmundo","kayle","kennen","tryndamere","urgot","yasuo_baron","yone_baron","chogath"],
-    "C":  [],
+    "S+": ["yone_baron"],
+    "S":  ["darius","gnar","ksante","shen","volibear","camille","jax","poppy_baron","malphite","aatrox","gwen","ornn"],
+    "A":  ["kayle","kennen","sion","ambessa","tryndamere","garen","mordekaiser","rumble","fiora","irelia","nasus","teemo","singed","ryze_baron","sett","olaf_baron"],
+    "B":  ["drmundo","renekton","jayce","riven","chogath"],
+    "C":  ["urgot","akali_baron","yasuo_baron"],
   },
   Jungle: {
-    "S+": ["nidalee","viego"],
-    "S":  ["aatrox_jg","ambessa_jg","evelynn","hecarim","khazix","lee_sin","lillia","nocturne","shyvana","taliyah_jg","vi","warwick","xin_zhao"],
-    "A":  ["amumu","fiddlesticks","gragas_sup","jarvaniv","kayn","kindred","master_yi","nunu","olaf_jg","pantheon_jg","rammus","rengar","riven_jg","talon_jg","wukong_jg","zed_jg"],
-    "B":  ["diana_jg","ekko_jg","fizz_jg","graves","nilah","skarner","tryndamere_jg","volibear_jg","yone_jg"],
-    "C":  [],
+    "S+": ["nidalee"],
+    "S":  ["hecarim","lee_sin","warwick","kindred","nocturne","pantheon_jg","jarvaniv","rammus","wukong_jg","amumu","vi","nunu","kayn"],
+    "A":  ["tryndamere_jg","ekko_jg","lillia","xin_zhao","evelynn","diana_jg","rengar","yone_jg","khazix","aatrox_jg","shyvana","taliyah_jg","viego","riven_jg","talon_jg","fiddlesticks","olaf_jg","gragas_jg","master_yi"],
+    "B":  ["zed_jg","ambessa_jg","volibear_jg","fizz_jg","skarner"],
+    "C":  ["graves"],
   },
   Mid: {
-    "S+": ["aurora","ryze","taliyah"],
-    "S":  ["ahri","aurelionsol","kassadin","orianna","swain_mid","syndra","twisted_fate","viktor"],
-    "A":  ["akali_mid","annie","galio","heimerdinger","jayce_mid","kennen_mid","lissandra","mel","norra","vladimir","vex","veigar","yasuo","zed_mid","ziggs","zoe","zyra_mid"],
-    "B":  ["akshan_mid","brand_mid","diana","ekko","fizz","gragas_sup","katarina","kayle_mid","lux_mid","morgana_mid","teemo_mid","velkoz","yone"],
+    "S+": ["ahri","ryze"],
+    "S":  ["yone","annie","galio_mid","taliyah","twisted_fate","kassadin","aurelionsol","orianna"],
+    "A":  ["zoe","morgana_mid","velkoz","kayle_mid","viktor","syndra","norra","aurora","heimerdinger","kennen_mid","akali_mid","brand_mid","teemo_mid","zyra_mid","jayce_mid","zed_mid","vex","lissandra"],
+    "B":  ["akshan_mid","ziggs","diana","veigar","yasuo","vladimir","ekko","lux_mid","fizz","katarina","mel"],
     "C":  [],
   },
   ADC: {
-    "S+": ["ezreal","smolder"],
-    "S":  ["corki","jhin","kogmaw","lucian","vayne","xayah","zeri","yunara"],
-    "A":  ["ashe","caitlyn","draven","jinx","kaisa","kalista","missfortune","sivir","varus"],
-    "B":  ["samira","tristana","twitch"],
-    "C":  [],
+    "S+": ["smolder","ezreal"],
+    "S":  ["yunara","varus","missfortune","zeri","xayah","jhin","kogmaw","vayne"],
+    "A":  ["jinx","samira","lucian","corki","kalista","kaisa","draven","ashe"],
+    "B":  ["sivir","twitch","tristana","nilah"],
+    "C":  ["caitlyn"],
   },
   Support: {
-    "S+": ["nami","zilean"],
-    "S":  ["bard","braum","galio_sup","leona","lulu","milio","nautilus","ornn_sup","rell","senna","sona","thresh"],
-    "A":  ["alistar","blitzcrank","janna","karma","maokai","pyke","rakan","seraphine","soraka","zyra"],
-    "B":  ["brand_mid","lux","morgana","swain","yuumi"],
-    "C":  [],
+    "S+": [],
+    "S":  ["leona","braum","nami","zilean","thresh","bard","rakan","pyke","sona","swain","senna","rell"],
+    "A":  ["morgana","lulu","milio","ornn_sup","maokai","galio","nautilus","seraphine","soraka","blitzcrank","zyra","karma"],
+    "B":  ["alistar","janna","lux"],
+    "C":  ["yuumi"],
   },
 };
 const TIER_COLORS = {
@@ -2994,6 +2999,7 @@ function loadCustomTierList(){
 }
 function saveCustomTierListStore(){
   try { localStorage.setItem("wrCustomTierList", JSON.stringify(CUSTOM_TIER_LIST)); } catch(e){}
+  updateTierFab();
 }
 function getTierListForRole(role){
   return CUSTOM_TIER_LIST[role] || TIER_LIST_FULL[role];
@@ -4876,6 +4882,7 @@ function secretTapLogo(){
     showBuilderToast(BUILDER_ENABLED ? "🛠 Build Editörü Açıldı" : "Build Editörü Kapatıldı");
     updateBuilderFab();
     updateProfileFab();
+    updateTierFab();
     render();
   }
 }
@@ -5010,6 +5017,31 @@ function showProfileExportModal(txt){
     showBuilderToast("Kopyalandı ✓");
     wrap.remove();
   };
+}
+
+// profileFab'ın hemen üstünde duran, özel tier list düzenlemelerini dışa aktarma butonu
+function updateTierFab(){
+  const fab = document.getElementById("tierFab");
+  if(!fab) return;
+  const count = Object.keys(CUSTOM_TIER_LIST).length;
+  if(!BUILDER_ENABLED || count===0){ fab.style.display = "none"; fab.innerHTML=""; return; }
+  fab.style.display = "block";
+  fab.innerHTML = `<button onclick="exportAllTierLists()" style="padding:11px 16px;border-radius:30px;
+    background:#0d0d1ef2;border:1px solid #4dd2ff55;color:#4dd2ff;font-size:12px;font-weight:800;
+    display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px #000a">
+    🏆 Tier List Aktar (${count})
+  </button>`;
+}
+// Elle düzenlenmiş (CUSTOM_TIER_LIST) tüm rollerin tier listesini tek JSON olarak dışa aktarır
+function exportAllTierLists(){
+  const roles = Object.keys(CUSTOM_TIER_LIST);
+  if(roles.length===0){ showBuilderToast("Henüz özelleştirilmiş tier list yok"); return; }
+  const json = JSON.stringify(CUSTOM_TIER_LIST, null, 2);
+  if(navigator.share){
+    navigator.share({ title: "Wild Rift Custom Tier List", text: json }).catch(()=>{ showExportModal(json); });
+  } else {
+    showExportModal(json);
+  }
 }
 
 // ─── BUILD EDİTÖRÜ EKRAN DURUMU (appScreen==="builder") ────────
@@ -8539,6 +8571,7 @@ loadCustomCT();
 loadCustomTierList();
 updateBuilderFab();
 updateProfileFab();
+updateTierFab();
 render();
 </script>
 </body>
