@@ -8,9 +8,11 @@
 <meta name="apple-mobile-web-app-title" content="WR Draft"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="theme-color" content="#07070f"/>
-<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"/>
 <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png"/>
-<link rel="apple-touch-icon" href="icon-192.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="icon-16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="icon-180.png"/>
 <link rel="manifest" href="manifest.json"/>
 <title>Wild Rift Draft</title>
 <style>
@@ -6575,6 +6577,9 @@ function render() {
         <div onclick="secretTapLogo()" style="position:relative;margin-top:36px;margin-bottom:40px;
           text-align:center;user-select:none">
           <div class="wr-crest-glow"></div>
+          <img src="icon-192.png" alt="WF" width="84" height="84" style="position:relative;z-index:1;
+            border-radius:22px;box-shadow:0 6px 22px #000a,0 0 0 1px #ffcc0233;margin-bottom:10px"
+            onerror="this.style.display='none'"/>
           <div style="display:flex;align-items:center;justify-content:center;gap:10px">
             <span style="color:#c99400;font-size:11px;transform:rotate(45deg)">◆</span>
             <div class="wr-title">WILD RIFT</div>
