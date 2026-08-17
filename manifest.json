@@ -1,6 +1,6 @@
 {
-  "name": "Wild Rift Draft Asistanı",
-  "short_name": "WF Draft",
+  "name": "Wild Rift Draft",
+  "short_name": "Wild Rift Draft",
   "description": "Wild Rift için draft, tier list ve build asistanı",
   "start_url": "./index.html",
   "scope": "./",
