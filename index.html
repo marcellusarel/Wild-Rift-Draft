@@ -1045,43 +1045,41 @@ const META_POWER = {
 
 // ─── GÖRSEL TIER LIST (S+/S/A/B) — sadece bilgi amaçlı, draft önerisini etkilemez ──
 // B tier çampionları öneri sistemine hiç girmez (META_TIER/META_POWER'da yer almazlar)
-// Patch güncellemesi ile yenilendi — kaynak: kullanıcı tarafından verilen güncel tier list.
-// Not: eski veride birkaç id hatası vardı (galio_sup / gragas_sup gerçek DB id'leri değildi,
-// nilah'ın Jungle varyantı hiç yoktu) — bu güncellemeyle doğru id'lere düzeltildi.
+// Uygulama içi tier list editörüyle düzenlenip dışa aktarılan son sürüm buraya işlendi.
 const TIER_LIST_FULL = {
   Baron: {
     "S+": ["yone_baron"],
-    "S":  ["darius","gnar","ksante","shen","volibear","camille","jax","poppy_baron","malphite","aatrox","gwen","ornn"],
-    "A":  ["kayle","kennen","sion","ambessa","tryndamere","garen","mordekaiser","rumble","fiora","irelia","nasus","teemo","singed","ryze_baron","sett","olaf_baron"],
-    "B":  ["drmundo","renekton","jayce","riven","chogath"],
-    "C":  ["urgot","akali_baron","yasuo_baron"],
+    "S":  ["darius","gnar","ksante","volibear","camille","jax","poppy_baron","malphite","aatrox","gwen","rumble"],
+    "A":  ["kennen","sion","ambessa","garen","mordekaiser","fiora","irelia","singed","ryze_baron","sett","olaf_baron","renekton","ornn","wukong","chogath"],
+    "B":  ["drmundo","jayce","riven","shen","teemo","nasus","kayle","tryndamere","akali_baron","galio_baron"],
+    "C":  ["urgot","yasuo_baron","nautilus_baron"],
   },
   Jungle: {
     "S+": ["nidalee"],
-    "S":  ["hecarim","lee_sin","warwick","kindred","nocturne","pantheon_jg","jarvaniv","rammus","wukong_jg","amumu","vi","nunu","kayn"],
-    "A":  ["tryndamere_jg","ekko_jg","lillia","xin_zhao","evelynn","diana_jg","rengar","yone_jg","khazix","aatrox_jg","shyvana","taliyah_jg","viego","riven_jg","talon_jg","fiddlesticks","olaf_jg","gragas_jg","master_yi"],
-    "B":  ["zed_jg","ambessa_jg","volibear_jg","fizz_jg","skarner"],
-    "C":  ["graves"],
+    "S":  ["hecarim","lee_sin","nocturne","pantheon_jg","jarvaniv","rammus","vi"],
+    "A":  ["ekko_jg","lillia","xin_zhao","evelynn","diana_jg","rengar","yone_jg","khazix","aatrox_jg","shyvana","taliyah_jg","viego","riven_jg","talon_jg","fiddlesticks","olaf_jg","master_yi","kayn","warwick","kindred","volibear_jg","nunu","wukong_jg","poppy_jg","camille_jg","gwen_jg"],
+    "B":  ["zed_jg","ambessa_jg","fizz_jg","skarner","tryndamere_jg","shen_jg","drmundo_jg","gragas_jg","graves","amumu","morgana_jg","nautilus_jg"],
+    "C":  ["maokai_jg"],
   },
   Mid: {
-    "S+": ["ahri","ryze"],
-    "S":  ["yone","annie","galio_mid","taliyah","twisted_fate","kassadin","aurelionsol","orianna"],
-    "A":  ["zoe","morgana_mid","velkoz","kayle_mid","viktor","syndra","norra","aurora","heimerdinger","kennen_mid","akali_mid","brand_mid","teemo_mid","zyra_mid","jayce_mid","zed_mid","vex","lissandra"],
-    "B":  ["akshan_mid","ziggs","diana","veigar","yasuo","vladimir","ekko","lux_mid","fizz","katarina","mel"],
-    "C":  [],
+    "S+": ["ryze","orianna"],
+    "S":  ["yone","annie","galio_mid","taliyah","twisted_fate","kassadin","aurelionsol","ahri","aurora"],
+    "A":  ["zoe","morgana_mid","velkoz","viktor","syndra","norra","kennen_mid","akali_mid","jayce_mid","zed_mid","vex","lissandra","mel","ekko","singed_mid"],
+    "B":  ["akshan_mid","ziggs","diana","veigar","yasuo","vladimir","lux_mid","fizz","katarina","zyra_mid","kayle_mid","heimerdinger"],
+    "C":  ["brand_mid","teemo_mid","talon"],
   },
   ADC: {
-    "S+": ["smolder","ezreal"],
-    "S":  ["yunara","varus","missfortune","zeri","xayah","jhin","kogmaw","vayne"],
-    "A":  ["jinx","samira","lucian","corki","kalista","kaisa","draven","ashe"],
+    "S+": ["ezreal"],
+    "S":  ["yunara","varus","missfortune","zeri","xayah","jhin","kogmaw","vayne","smolder","aurelionsol_adc","ziggs_adc","orianna_adc"],
+    "A":  ["jinx","samira","lucian","corki","kalista","kaisa","draven","ashe","mel_adc"],
     "B":  ["sivir","twitch","tristana","nilah"],
     "C":  ["caitlyn"],
   },
   Support: {
-    "S+": [],
-    "S":  ["leona","braum","nami","zilean","thresh","bard","rakan","pyke","sona","swain","senna","rell"],
-    "A":  ["morgana","lulu","milio","ornn_sup","maokai","galio","nautilus","seraphine","soraka","blitzcrank","zyra","karma"],
-    "B":  ["alistar","janna","lux"],
+    "S+": ["bard","zilean"],
+    "S":  ["braum","nami","thresh","rakan","pyke","senna","rell","nautilus","poppy_sup"],
+    "A":  ["morgana","lulu","milio","ornn_sup","galio","seraphine","soraka","blitzcrank","karma","leona","alistar","sett_sup","sona","singed_sup"],
+    "B":  ["janna","lux","swain","zyra","maokai","gragas_sup","shen_sup"],
     "C":  ["yuumi"],
   },
 };
@@ -5312,6 +5310,7 @@ fetchLatestPatch();
 // ─── SERİ DURUMU ─────────────────────────────────────────────
 let seriesFormat  = null;
 let fearless      = false;
+let _fmtFearless  = false; // format seçim ekranındaki Fearless toggle'ının geçici (henüz seçilmemiş) durumu
 let currentMatch  = 1;
 let matchHistory  = [];
 let myScore       = 0;   // Serideki benim galibiyet sayım (taraf değişse bile doğru sayar)
@@ -5351,6 +5350,14 @@ function loadAppState(){
     if(appScreen === "champDetail" && !DB[champDetailId]){
       appScreen = champDetailFrom || "champions";
     }
+    // Gizli editör ekranları (builder/profil/CT/tier list) düzenleme taslağını
+    // localStorage'a kaydetmez — sayfa yenilenince veya yanlışlıkla kapanınca
+    // bu ekranlar gereken state olmadan açık kalıp draft/ban ekranına düşmesin diye
+    // hepsini güvenli şekilde ana menüye geri alıyoruz.
+    if(appScreen === "builder" && !(builderChampId && builderDraft)) appScreen = "home";
+    if(appScreen === "champProfile" && !(profileChampId && profileDraft)) appScreen = "home";
+    if(appScreen === "ctEditor" && !(ctEditorChampId && ctEditorDraft)) appScreen = "home";
+    if(appScreen === "tierEditor" && !(tierEditorRole && tierEditorDraft)) appScreen = "home";
   } catch(e){}
 }
 
@@ -7724,49 +7731,80 @@ function render() {
   if (appScreen === "draft" && !seriesFormat) {
     const hist = savedMatchHistory;
     document.getElementById("app").innerHTML = `
-      <div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;
-        padding:24px 16px 40px;background:#07070f">
+      <div class="wr-home-bg" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;
+        padding:28px 16px 40px">
 
         <!-- LOGO -->
-        <div style="margin-top:32px;margin-bottom:32px;text-align:center">
-          <div style="font-size:24px;font-weight:800;color:#fff;letter-spacing:1px;margin-bottom:4px">⚔️ WILD RIFT DRAFT</div>
-          <div style="font-size:10px;color:#333;letter-spacing:4px">TASLAK ASISTANI</div>
+        <div style="position:relative;margin-top:8px;margin-bottom:28px;text-align:center;user-select:none">
+          <div class="wr-crest-glow" style="top:6px"></div>
+          <img src="icon-192.png" alt="WF" width="58" height="58" style="position:relative;z-index:1;
+            border-radius:16px;box-shadow:0 6px 18px #000a,0 0 0 1px #ffcc0233;margin-bottom:8px"
+            onerror="this.style.display='none'"/>
+          <div style="font-size:19px;font-weight:800;letter-spacing:1.5px;
+            background:linear-gradient(180deg,#fff9e6 0%,#ffdd6b 38%,#ffcc02 62%,#c99400 100%);
+            -webkit-background-clip:text;background-clip:text;color:transparent;
+            filter:drop-shadow(0 0 8px #ffcc0244)">DRAFT BAŞLAT</div>
+          <div style="font-size:9px;color:#5a5a78;letter-spacing:4px;margin-top:3px">FORMAT SEÇ</div>
         </div>
 
-        <!-- FORMAT SEÇİMİ -->
-        <div style="width:100%;max-width:340px">
-          <div style="font-size:9px;color:#444;letter-spacing:3px;margin-bottom:10px;text-align:center">FORMAT SEÇ</div>
-          <div style="display:flex;flex-direction:column;gap:10px">
-            ${[1,3,5].map(f=>`
-              <button onclick="selectFormat(${f},false)" style="
-                padding:17px 20px;border-radius:12px;font-size:14px;font-weight:800;
-                background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;
-                letter-spacing:1px;text-align:left;transition:all .15s;display:flex;align-items:center;gap:12px;"
-                onmouseenter="this.style.borderColor='#4da6ff44';this.style.background='#111128'"
-                onmouseleave="this.style.borderColor='#252540';this.style.background='#0d0d1e'">
-                <span style="font-size:18px">${f===1?"1️⃣":f===3?"3️⃣":"5️⃣"}</span>
-                <span>
-                  <span style="display:block;font-size:13px">Bo${f}</span>
-                  <span style="font-size:9px;color:#555;font-weight:600;letter-spacing:0">${f===1?"Tek Maç":f===3?"İlk 2'yi Alan Kazanır":"İlk 3'ü Alan Kazanır"}</span>
-                </span>
-              </button>
-            `).join("")}
-          </div>
+        <!-- FORMAT KARTLARI -->
+        <div style="width:100%;max-width:340px;display:flex;flex-direction:column;gap:12px">
 
-          <!-- FEARLESS -->
-          <div style="margin-top:16px;padding:14px 16px;background:#0d0d1e;border:1px solid #1a1a2e;border-radius:12px">
-            <div style="font-size:9px;color:#666;letter-spacing:2px;margin-bottom:8px">⚡ FEARLESS DRAFT</div>
-            <div style="font-size:10px;color:#555;margin-bottom:10px;line-height:1.6">
-              Önceki maçlarda seçilen şampiyonlar bir sonraki maçta seçilemez.
+          <button onclick="selectFormat(1,false)" class="wr-card" style="
+            --wr-accent:#3a8fff;--wr-accent-soft:#3a8fff40;padding:17px 18px;
+            background:linear-gradient(135deg,#0d1a2e,#0a0a18 75%);
+            border:1px solid #3a8fff3a;color:#e0e0f0;
+            display:flex;align-items:center;gap:14px;text-align:left;">
+            <div class="wr-hex-badge" style="font-size:18px">1️⃣</div>
+            <span style="flex:1">
+              <span style="display:block;font-size:14px;font-weight:800;color:#f0f0fa;letter-spacing:.3px">Bo1</span>
+              <span style="font-size:10px;color:#3a8fff;font-weight:700;letter-spacing:.3px">Tek Maç</span>
+            </span>
+            <span style="color:#3a8fff88;font-size:16px">›</span>
+          </button>
+
+          <button onclick="selectFormat(3,_fmtFearless)" class="wr-card" style="
+            --wr-accent:#c060ff;--wr-accent-soft:#c060ff40;padding:17px 18px;
+            background:linear-gradient(135deg,#1a0d2e,#0a0a18 75%);
+            border:1px solid #c060ff3a;color:#e0e0f0;
+            display:flex;align-items:center;gap:14px;text-align:left;">
+            <div class="wr-hex-badge" style="font-size:18px">3️⃣</div>
+            <span style="flex:1">
+              <span style="display:block;font-size:14px;font-weight:800;color:#f0f0fa;letter-spacing:.3px">Bo3${_fmtFearless?' <span style="color:#c060ff;font-size:10px;font-weight:800">+ FEARLESS</span>':''}</span>
+              <span style="font-size:10px;color:#c060ff;font-weight:700;letter-spacing:.3px">İlk 2'yi Alan Kazanır</span>
+            </span>
+            <span style="color:#c060ff88;font-size:16px">›</span>
+          </button>
+
+          <button onclick="selectFormat(5,_fmtFearless)" class="wr-card" style="
+            --wr-accent:#ffcc02;--wr-accent-soft:#ffcc0240;padding:17px 18px;
+            background:linear-gradient(135deg,#1e1a0a,#0a0a18 75%);
+            border:1px solid #ffcc023a;color:#e0e0f0;
+            display:flex;align-items:center;gap:14px;text-align:left;">
+            <div class="wr-hex-badge" style="font-size:18px">5️⃣</div>
+            <span style="flex:1">
+              <span style="display:block;font-size:14px;font-weight:800;color:#f0f0fa;letter-spacing:.3px">Bo5${_fmtFearless?' <span style="color:#ffcc02;font-size:10px;font-weight:800">+ FEARLESS</span>':''}</span>
+              <span style="font-size:10px;color:#ffcc02;font-weight:700;letter-spacing:.3px">İlk 3'ü Alan Kazanır</span>
+            </span>
+            <span style="color:#ffcc0288;font-size:16px">›</span>
+          </button>
+
+          <!-- FEARLESS TOGGLE -->
+          <div style="margin-top:4px;padding:14px 16px;background:#0d0d1e;border:1px solid #1a1a2e;
+            border-radius:14px;display:flex;align-items:center;gap:12px">
+            <div onclick="_fmtFearless=!_fmtFearless;render()" style="flex-shrink:0;width:42px;height:24px;
+              border-radius:20px;position:relative;cursor:pointer;transition:background .15s;
+              background:${_fmtFearless?'#c060ff':'#252540'}">
+              <div style="position:absolute;top:3px;left:${_fmtFearless?'21px':'3px'};width:18px;height:18px;
+                border-radius:50%;background:#fff;transition:left .15s;box-shadow:0 1px 4px #0008"></div>
             </div>
-            <div style="display:flex;gap:8px">
-              ${[3,5].map(f=>`
-                <button onclick="selectFormat(${f},true)" style="
-                  flex:1;padding:9px 6px;border-radius:8px;font-size:10px;font-weight:800;
-                  background:#a020f018;border:1px solid #a020f044;color:#c060ff;">
-                  Bo${f} + Fearless
-                </button>
-              `).join("")}
+            <div style="flex:1">
+              <div style="font-size:11px;font-weight:800;color:${_fmtFearless?'#c060ff':'#888'};letter-spacing:1px">
+                ⚡ FEARLESS DRAFT ${_fmtFearless?'AÇIK':'KAPALI'}
+              </div>
+              <div style="font-size:9px;color:#555;line-height:1.5;margin-top:2px">
+                Bo3 / Bo5'te önceki maçta seçilen şampiyonlar tekrar seçilemez. Bo1'i etkilemez.
+              </div>
             </div>
           </div>
         </div>
@@ -8438,6 +8476,7 @@ function doResetSeries(){
 // Yeni: Format seçimi (kurulum aşamasına geç)
 function selectFormat(format, fc){
   seriesFormat=format; fearless=fc;
+  _fmtFearless=false;
   currentMatch=1; matchHistory=[];
   myScore=0; oppScore=0;
   slots=Array(20).fill(null); step=0;
