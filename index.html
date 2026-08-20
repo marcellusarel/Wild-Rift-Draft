@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 <meta name="apple-mobile-web-app-title" content="WR Draft"/>
@@ -1046,6 +1046,16 @@ const META_POWER = {
 // ─── GÖRSEL TIER LIST (S+/S/A/B) — sadece bilgi amaçlı, draft önerisini etkilemez ──
 // B tier çampionları öneri sistemine hiç girmez (META_TIER/META_POWER'da yer almazlar)
 // Uygulama içi tier list editörüyle düzenlenip dışa aktarılan son sürüm buraya işlendi.
+// NOT: Bu, tier-list.json fetch edilemezse kullanılan YEDEK (fallback) veridir.
+// GitHub'a bağlıysan gerçek/güncel veri LIVE_TIER_LIST_FULL üzerinden (tier-list.json) gelir.
+let LIVE_TIER_LIST_FULL = null;
+async function loadLiveTierList(){
+  try {
+    const res = await fetch("tier-list.json?_=" + Date.now());
+    if(res.ok) LIVE_TIER_LIST_FULL = await res.json();
+  } catch(e){ /* offline veya dosya yok — embedded TIER_LIST_FULL kullanılır */ }
+  render();
+}
 const TIER_LIST_FULL = {
   Baron: {
     "S+": ["yone_baron"],
@@ -2957,9 +2967,18 @@ function saveCustomBuilds(){
   try { localStorage.setItem("wrCustomBuilds", JSON.stringify(CUSTOM_BUILDS)); } catch(e){}
   updateBuilderFab();
 }
-// Ekranda gösterilecek build: önce özel (elle girilmiş), yoksa hazır BUILD_DB
+// Ekranda gösterilecek build: önce özel (elle girilmiş), yoksa canlı (GitHub'dan çekilen), yoksa gömülü BUILD_DB
+let LIVE_BUILD_DB = null;
+async function loadLiveBuilds(){
+  try {
+    const res = await fetch("builds.json?_=" + Date.now());
+    if(res.ok) LIVE_BUILD_DB = await res.json();
+  } catch(e){}
+  render();
+}
+function baseBuildDB(){ return LIVE_BUILD_DB || BUILD_DB; }
 function getBuild(id){
-  return CUSTOM_BUILDS[id] || BUILD_DB[id];
+  return CUSTOM_BUILDS[id] || baseBuildDB()[id];
 }
 
 // ─── GİZLİ CT (KARŞI PICK) EDİTÖRÜ ──────────────────────────────
@@ -2979,12 +2998,125 @@ function saveCustomCT(){
 function getCT(id){
   const ov = CUSTOM_CT[id];
   if(ov && Array.isArray(ov.ct)) return ov.ct;
+  if(LIVE_CT_DATA && LIVE_CT_DATA[id] && Array.isArray(LIVE_CT_DATA[id].ct)) return LIVE_CT_DATA[id].ct;
   return (DB[id] && DB[id].ct) || [];
 }
 function getCTBy(id){
   const ov = CUSTOM_CT[id];
   if(ov && Array.isArray(ov.ctBy)) return ov.ctBy;
+  if(LIVE_CT_DATA && LIVE_CT_DATA[id] && Array.isArray(LIVE_CT_DATA[id].ctBy)) return LIVE_CT_DATA[id].ctBy;
   return (DB[id] && DB[id].ctBy) || [];
+}
+let LIVE_CT_DATA = null;
+async function loadLiveCT(){
+  try {
+    const res = await fetch("ct-data.json?_=" + Date.now());
+    if(res.ok) LIVE_CT_DATA = await res.json();
+  } catch(e){}
+  render();
+}
+// Tüm şampiyonlar için taban CT haritasını döndürür (LIVE varsa o, yoksa DB'deki gömülü veriden inşa edilir).
+// GitHub'a kaydederken KISMİ veriyle dosyanın üzerine yazmamak için bu kullanılır.
+function baseCTData(){
+  if(LIVE_CT_DATA) return LIVE_CT_DATA;
+  const out = {};
+  Object.keys(DB).forEach(id => {
+    const c = DB[id];
+    if((c.ct&&c.ct.length) || (c.ctBy&&c.ctBy.length)) out[id] = { ct:c.ct||[], ctBy:c.ctBy||[] };
+  });
+  return out;
+}
+
+// ─── GITHUB ENTEGRASYONU ────────────────────────────────────────
+// Editörlerde "Kaydet" dendiğinde, sadece bu cihaza (localStorage) değil,
+// doğrudan GitHub repo'suna da yazar — böylece değişiklik herkes için canlıya çıkar.
+// Token yalnızca bu cihazda saklanır, hiçbir sunucuya gönderilmez.
+let GH_CONFIG = { owner:"", repo:"", branch:"main", token:"" };
+function loadGHConfig(){
+  try {
+    const raw = localStorage.getItem("wrGHConfig");
+    if(raw) GH_CONFIG = Object.assign({owner:"",repo:"",branch:"main",token:""}, JSON.parse(raw));
+  } catch(e){}
+}
+function saveGHConfigFromForm(){
+  GH_CONFIG = {
+    owner: (document.getElementById("ghOwnerInput")?.value||"").trim(),
+    repo: (document.getElementById("ghRepoInput")?.value||"").trim(),
+    branch: (document.getElementById("ghBranchInput")?.value||"main").trim() || "main",
+    token: (document.getElementById("ghTokenInput")?.value||"").trim(),
+  };
+  try { localStorage.setItem("wrGHConfig", JSON.stringify(GH_CONFIG)); } catch(e){}
+  showBuilderToast("GitHub ayarları kaydedildi ✓");
+  render();
+}
+// UTF-8 güvenli base64 encode/decode (Türkçe karakterler için)
+function _utf8ToB64(str){ return btoa(unescape(encodeURIComponent(str))); }
+function _b64ToUtf8(str){ return decodeURIComponent(escape(atob(str))); }
+
+async function githubGetFile(path){
+  const { owner, repo, branch, token } = GH_CONFIG;
+  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${encodeURIComponent(branch)}`;
+  const res = await fetch(url, {
+    headers: { "Authorization": `Bearer ${token}`, "Accept": "application/vnd.github+json" }
+  });
+  if(res.status === 404) return { exists:false, sha:null, content:null };
+  if(!res.ok) throw new Error(`GitHub okuma hatası (${res.status}): ${(await res.text()).slice(0,200)}`);
+  const data = await res.json();
+  return { exists:true, sha:data.sha, content: _b64ToUtf8(data.content.replace(/\n/g,"")) };
+}
+async function githubPutFile(path, contentStr, message){
+  const { owner, repo, branch, token } = GH_CONFIG;
+  if(!owner || !repo || !token) throw new Error("GitHub ayarları eksik (Ayarlar ekranından gir)");
+  const existing = await githubGetFile(path);
+  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+  const body = {
+    message: message || `Update ${path}`,
+    content: _utf8ToB64(contentStr),
+    branch,
+  };
+  if(existing.exists) body.sha = existing.sha;
+  const res = await fetch(url, {
+    method: "PUT",
+    headers: {
+      "Authorization": `Bearer ${token}`,
+      "Accept": "application/vnd.github+json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(body)
+  });
+  if(!res.ok) throw new Error(`GitHub yazma hatası (${res.status}): ${(await res.text()).slice(0,300)}`);
+  return await res.json();
+}
+async function testGHConnection(){
+  const el = document.getElementById("ghTestResult");
+  if(el) el.innerHTML = `<span style="color:#888">Test ediliyor...</span>`;
+  saveGHConfigFromForm();
+  try {
+    const r = await githubGetFile("tier-list.json");
+    if(el) el.innerHTML = r.exists
+      ? `<span style="color:#00ff88">✓ Bağlantı başarılı — tier-list.json bulundu.</span>`
+      : `<span style="color:#ffcc02">⚠ Bağlantı başarılı ama tier-list.json henüz repo'da yok. İlk kayıtta otomatik oluşturulacak.</span>`;
+  } catch(e){
+    if(el) el.innerHTML = `<span style="color:#ff6666">✗ ${e.message}</span>`;
+  }
+}
+// Ortak yardımcı: editörlerdeki "Kaydet" fonksiyonlarının hepsi bunu çağırır.
+// GitHub ayarlanmamışsa sessizce false döner (sadece localStorage'a kaydedilmiş olur).
+async function syncToGitHub(path, mergedData, commitMessage){
+  if(!(GH_CONFIG.token && GH_CONFIG.owner && GH_CONFIG.repo)) return false;
+  showBuilderToast("GitHub'a kaydediliyor...");
+  try {
+    await githubPutFile(path, JSON.stringify(mergedData, null, 2), commitMessage);
+    showBuilderToast("✓ GitHub'a kaydedildi — birkaç saniyede canlıya çıkar");
+    return true;
+  } catch(e){
+    showBuilderToast("⚠ GitHub'a yazılamadı, sadece bu cihazda kaydedildi: " + e.message);
+    return false;
+  }
+}
+// Tier list'i canlı (fetch edilmiş) haliyle döndürür — yoksa uygulama içine gömülü olana düşer
+function baseTierListFull(){
+  return LIVE_TIER_LIST_FULL || TIER_LIST_FULL;
 }
 
 // ─── GİZLİ TIER LIST EDİTÖRÜ ────────────────────────────────────
@@ -3002,7 +3134,7 @@ function saveCustomTierListStore(){
   updateTierFab();
 }
 function getTierListForRole(role){
-  return CUSTOM_TIER_LIST[role] || TIER_LIST_FULL[role];
+  return CUSTOM_TIER_LIST[role] || baseTierListFull()[role];
 }
 
 // ─── GİZLİ ŞAMPİYON DERİNLİK PROFİLİ EDİTÖRÜ ───────────────────
@@ -4676,9 +4808,18 @@ poppy_sup: {
 },
 };
 
-// Bir şampiyon için gösterilecek profil: önce özel (elle girilmiş), yoksa gömülü varsayılan
+// Bir şampiyon için gösterilecek profil: önce özel (elle girilmiş), yoksa canlı (GitHub), yoksa gömülü varsayılan
+let LIVE_CHAMP_PROFILES = null;
+async function loadLiveProfiles(){
+  try {
+    const res = await fetch("profiles.json?_=" + Date.now());
+    if(res.ok) LIVE_CHAMP_PROFILES = await res.json();
+  } catch(e){}
+  render();
+}
+function baseChampProfiles(){ return LIVE_CHAMP_PROFILES || DEFAULT_CHAMP_PROFILES; }
 function getChampProfile(id){
-  return CUSTOM_CHAMP_PROFILES[id] || DEFAULT_CHAMP_PROFILES[id];
+  return CUSTOM_CHAMP_PROFILES[id] || baseChampProfiles()[id];
 }
 
 // ─── DRAFT KOMPOZİSYON ANALİZ MOTORU ────────────────────────
@@ -6255,8 +6396,9 @@ function renderCTPickerList(){
   }).join("") || '<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">Bulunamadı</div>';
 }
 // Kaydet: taslağı CUSTOM_CT'ye yazar, ayrıca karşılıklı ilişkiyi (ct <-> ctBy)
-// diğer şampiyonların kayıtlarında da otomatik günceller.
-function saveCTDraft(){
+// diğer şampiyonların kayıtlarında da otomatik günceller. Etkilenen tüm şampiyonlar
+// tek seferde GitHub'daki ct-data.json'a yazılır.
+async function saveCTDraft(){
   if(!ctEditorChampId || !ctEditorDraft || !ctEditorOriginal) return;
   const A = ctEditorChampId;
   const before = ctEditorOriginal, after = ctEditorDraft;
@@ -6266,31 +6408,42 @@ function saveCTDraft(){
   const addedCtBy   = after.ctBy.filter(x => !before.ctBy.includes(x));
   const removedCtBy = before.ctBy.filter(x => !after.ctBy.includes(x));
 
+  const touched = new Set([A]);
+
   // B, A'yı eziyorsa (A.ct'ye eklendiyse) → B.ctBy'ye A eklenir
   addedCt.forEach(B => {
     const cur = { ct:[...getCT(B)], ctBy:[...getCTBy(B)] };
     if(!cur.ctBy.includes(A)) cur.ctBy.push(A);
-    CUSTOM_CT[B] = cur;
+    CUSTOM_CT[B] = cur; touched.add(B);
   });
   removedCt.forEach(B => {
     const cur = { ct:[...getCT(B)], ctBy:[...getCTBy(B)] };
     cur.ctBy = cur.ctBy.filter(x=>x!==A);
-    CUSTOM_CT[B] = cur;
+    CUSTOM_CT[B] = cur; touched.add(B);
   });
   // A, C'yi eziyorsa (A.ctBy'ye eklendiyse) → C.ct'ye A eklenir
   addedCtBy.forEach(C => {
     const cur = { ct:[...getCT(C)], ctBy:[...getCTBy(C)] };
     if(!cur.ct.includes(A)) cur.ct.push(A);
-    CUSTOM_CT[C] = cur;
+    CUSTOM_CT[C] = cur; touched.add(C);
   });
   removedCtBy.forEach(C => {
     const cur = { ct:[...getCT(C)], ctBy:[...getCTBy(C)] };
     cur.ct = cur.ct.filter(x=>x!==A);
-    CUSTOM_CT[C] = cur;
+    CUSTOM_CT[C] = cur; touched.add(C);
   });
 
   CUSTOM_CT[A] = { ct:[...after.ct], ctBy:[...after.ctBy] };
   saveCustomCT();
+
+  const merged = Object.assign({}, baseCTData());
+  touched.forEach(id => { merged[id] = { ct:[...getCT(id)], ctBy:[...getCTBy(id)] }; });
+  const ok = await syncToGitHub("ct-data.json", merged, `CT güncellendi: ${A} (+${touched.size-1} bağlantılı)`);
+  if(ok){
+    LIVE_CT_DATA = merged;
+    touched.forEach(id => delete CUSTOM_CT[id]); // GitHub'daki taban artık güncel
+    saveCustomCT();
+  }
   closeCTEditor();
 }
 function resetCTDraft(){
@@ -6354,12 +6507,21 @@ function tierRemoveChamp(band, id){
   tierEditorDraft[band] = tierEditorDraft[band].filter(x=>x!==id);
   render();
 }
-function saveTierDraft(){
+async function saveTierDraft(){
   if(!tierEditorRole || !tierEditorDraft) return;
   const out = {};
   TIER_EDITOR_ORDER.forEach(t => out[t] = [...tierEditorDraft[t]]);
   CUSTOM_TIER_LIST[tierEditorRole] = out;
   saveCustomTierListStore();
+
+  const merged = Object.assign({}, baseTierListFull());
+  merged[tierEditorRole] = out;
+  const ok = await syncToGitHub("tier-list.json", merged, `Tier list güncellendi: ${tierEditorRole}`);
+  if(ok){
+    LIVE_TIER_LIST_FULL = merged;              // yerelde de anında güncel göster
+    delete CUSTOM_TIER_LIST[tierEditorRole];   // artık GitHub'daki taban veri güncel, yerel override'a gerek yok
+    saveCustomTierListStore();
+  }
   closeTierEditor();
 }
 function resetTierDraft(){
@@ -6411,10 +6573,20 @@ function toggleProfileMulti(key, val){
 function setProfileText(key, val){
   profileDraft[key] = val;
 }
-function saveProfileDraft(){
+async function saveProfileDraft(){
   CUSTOM_CHAMP_PROFILES[profileChampId] = profileDraft;
   saveCustomProfiles();
-  showBuilderToast("💾 Profil Kaydedildi");
+
+  const merged = Object.assign({}, baseChampProfiles());
+  merged[profileChampId] = profileDraft;
+  const ok = await syncToGitHub("profiles.json", merged, `Profil güncellendi: ${profileChampId}`);
+  if(ok){
+    LIVE_CHAMP_PROFILES = merged;
+    delete CUSTOM_CHAMP_PROFILES[profileChampId];
+    saveCustomProfiles();
+  } else if(!GH_CONFIG.token){
+    showBuilderToast("💾 Profil Kaydedildi (sadece bu cihazda)");
+  }
   closeProfileEditor();
 }
 function deleteProfileDraft(){
@@ -6457,10 +6629,10 @@ function setBuilderTier(t){
   if(!builderDraft) return;
   builderDraft.tier = t; render();
 }
-function saveBuilderDraft(){
+async function saveBuilderDraft(){
   if(!builderChampId || !builderDraft) return;
   const d = builderDraft;
-  CUSTOM_BUILDS[builderChampId] = {
+  const entry = {
     ...(d.starter?{starter:d.starter}:{}),
     items: d.items.filter(Boolean),
     ...(d.boots?{boots:d.boots}:{}),
@@ -6470,7 +6642,17 @@ function saveBuilderDraft(){
     skillOrder: d.skillOrder,
     tier: d.tier
   };
+  CUSTOM_BUILDS[builderChampId] = entry;
   saveCustomBuilds();
+
+  const merged = Object.assign({}, baseBuildDB());
+  merged[builderChampId] = entry;
+  const ok = await syncToGitHub("builds.json", merged, `Build güncellendi: ${builderChampId}`);
+  if(ok){
+    LIVE_BUILD_DB = merged;
+    delete CUSTOM_BUILDS[builderChampId];
+    saveCustomBuilds();
+  }
   closeBuilder();
 }
 function deleteBuilderBuild(){
@@ -6701,6 +6883,70 @@ function render() {
         <div style="width:100%;display:flex;justify-content:flex-end;margin-top:auto;padding-top:24px;margin-bottom:20px">
           <img src="assets/branding/hero_banner.png" alt="Wild Rift Draft Asistanı"
             style="width:190px;height:auto;margin-right:-8px;filter:drop-shadow(0 0 16px #a020f066)" />
+        </div>
+
+        ${BUILDER_ENABLED ? `
+        <div style="width:100%;max-width:340px;margin-bottom:8px">
+          <button onclick="appScreen='ghSettings';render()" style="width:100%;padding:10px;
+            border-radius:10px;font-size:11px;background:#0a0a16;
+            border:1px solid #1a1a2e;color:#666;display:flex;align-items:center;justify-content:center;gap:6px">
+            ⚙️ GitHub Ayarları ${GH_CONFIG.token ? '<span style="color:#00ff88">● Bağlı</span>' : '<span style="color:#ff6666">● Ayarlanmadı</span>'}
+          </button>
+        </div>` : ""}
+      </div>`;
+    return;
+  }
+
+  // ── GITHUB AYARLARI EKRANI (gizli, Builder Modu açıkken görünür) ──
+  if (appScreen === "ghSettings") {
+    document.getElementById("app").innerHTML = `
+      <div style="min-height:100vh;background:#07070f">
+        <div style="padding:12px 14px;background:#0a0a18;border-bottom:1px solid #141428;
+          position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
+          display:flex;align-items:center;gap:10px">
+          <button onclick="appScreen='home';render()" style="padding:6px 12px;border-radius:8px;
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← Geri</button>
+          <div style="font-size:14px;font-weight:800;color:#fff">⚙️ GitHub Ayarları</div>
+        </div>
+        <div style="padding:16px">
+          <div style="font-size:10px;color:#666;line-height:1.7;margin-bottom:18px;padding:12px;
+            background:#0d0d1e;border:1px solid #1a1a2e;border-radius:10px">
+            Buraya girdiğin bilgiler yalnızca bu cihazda (localStorage) saklanır, hiçbir sunucuya
+            gönderilmez. Token'ı yalnızca <b>Contents: Read and write</b> izniyle, sadece bu repo'ya
+            sınırlı oluşturman önerilir.
+          </div>
+
+          <label style="font-size:10px;color:#888;font-weight:700;letter-spacing:.5px">REPO SAHİBİ (kullanıcı adı)</label>
+          <input id="ghOwnerInput" value="${GH_CONFIG.owner||''}" placeholder="marcellusarel"
+            style="width:100%;margin-top:6px;margin-bottom:14px;padding:11px 12px;border-radius:9px;
+            background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
+
+          <label style="font-size:10px;color:#888;font-weight:700;letter-spacing:.5px">REPO ADI</label>
+          <input id="ghRepoInput" value="${GH_CONFIG.repo||''}" placeholder="Wild-Rift-Draft"
+            style="width:100%;margin-top:6px;margin-bottom:14px;padding:11px 12px;border-radius:9px;
+            background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
+
+          <label style="font-size:10px;color:#888;font-weight:700;letter-spacing:.5px">BRANCH</label>
+          <input id="ghBranchInput" value="${GH_CONFIG.branch||'main'}" placeholder="main"
+            style="width:100%;margin-top:6px;margin-bottom:14px;padding:11px 12px;border-radius:9px;
+            background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
+
+          <label style="font-size:10px;color:#888;font-weight:700;letter-spacing:.5px">TOKEN (github_pat_...)</label>
+          <input id="ghTokenInput" type="password" value="${GH_CONFIG.token||''}" placeholder="github_pat_..."
+            style="width:100%;margin-top:6px;margin-bottom:18px;padding:11px 12px;border-radius:9px;
+            background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
+
+          <button onclick="saveGHConfigFromForm()" style="width:100%;padding:13px;border-radius:10px;
+            font-size:13px;font-weight:800;background:#00ff8822;border:1px solid #00ff8866;color:#00ff88">
+            💾 Kaydet
+          </button>
+
+          <button onclick="testGHConnection()" style="width:100%;margin-top:10px;padding:11px;border-radius:10px;
+            font-size:12px;font-weight:700;background:#0d0d1e;border:1px solid #252540;color:#888">
+            🔌 Bağlantıyı Test Et
+          </button>
+
+          <div id="ghTestResult" style="margin-top:12px;font-size:11px;line-height:1.6"></div>
         </div>
       </div>`;
     return;
@@ -8385,7 +8631,7 @@ let buildPanelId = null; // hangi şampiyonun build'i açık
 
 function slotClick(i){
   const slot = slots[i];
-  if (slot && BUILD_DB[slot.id]) {
+  if (slot && getBuild(slot.id)) {
     // Dolu slot + build var → build panelini toggle et
     buildPanelId = buildPanelId === slot.id ? null : slot.id;
     render();
@@ -8607,8 +8853,34 @@ function updateChampGrid() {
   }).join("");
 }
 
+// ─── MOBİL KLAVYE FIX ────────────────────────────────────────
+// Klavye açıldığında arama kutusu (özellikle alttan açılan modallarda)
+// bazı Android/Chrome sürümlerinde ekranın dışında/klavyenin arkasında
+// kalabiliyordu. interactive-widget=resizes-content meta etiketi ana
+// çözüm; bu da eski tarayıcılar için ek güvenlik önlemi — odaklanan
+// her input/textarea kısa bir gecikmeyle görünür alana kaydırılır.
+document.addEventListener("focusin", (e) => {
+  const t = e.target;
+  if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA")) {
+    setTimeout(() => {
+      try { t.scrollIntoView({ block: "center", behavior: "smooth" }); } catch(err){}
+    }, 300);
+  }
+});
+// visualViewport destekleniyorsa, klavye yüksekliğini CSS değişkeni olarak yayınla
+// (ileride belirli modallarda ekstra padding-bottom için kullanılabilir)
+if (window.visualViewport) {
+  const _updateKbVar = () => {
+    const kb = Math.max(0, window.innerHeight - window.visualViewport.height);
+    document.documentElement.style.setProperty("--kb-height", kb + "px");
+  };
+  window.visualViewport.addEventListener("resize", _updateKbVar);
+  _updateKbVar();
+}
+
 // İlk render — son bırakılan ekran (varsa) geri yüklenir, yoksa Ana Menü
 loadAppState();
+loadGHConfig();
 loadCustomBuilds();
 loadCustomProfiles();
 loadCustomCT();
@@ -8617,6 +8889,10 @@ updateBuilderFab();
 updateProfileFab();
 updateTierFab();
 render();
+loadLiveTierList(); // arka planda tier-list.json'ı çeker, gelince otomatik render eder
+loadLiveBuilds();    // builds.json
+loadLiveProfiles();  // profiles.json
+loadLiveCT();        // ct-data.json
 </script>
 </body>
 </html>

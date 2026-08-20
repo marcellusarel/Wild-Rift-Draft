@@ -1,0 +1,250 @@
+{
+  "Baron": {
+    "S+": [
+      "yone_baron"
+    ],
+    "S": [
+      "darius",
+      "gnar",
+      "ksante",
+      "volibear",
+      "camille",
+      "jax",
+      "poppy_baron",
+      "malphite",
+      "aatrox",
+      "gwen",
+      "rumble"
+    ],
+    "A": [
+      "kennen",
+      "sion",
+      "ambessa",
+      "garen",
+      "mordekaiser",
+      "fiora",
+      "irelia",
+      "singed",
+      "ryze_baron",
+      "sett",
+      "olaf_baron",
+      "renekton",
+      "ornn",
+      "wukong",
+      "chogath"
+    ],
+    "B": [
+      "drmundo",
+      "jayce",
+      "riven",
+      "shen",
+      "teemo",
+      "nasus",
+      "kayle",
+      "tryndamere",
+      "akali_baron",
+      "galio_baron"
+    ],
+    "C": [
+      "urgot",
+      "yasuo_baron",
+      "nautilus_baron"
+    ]
+  },
+  "Jungle": {
+    "S+": [
+      "nidalee"
+    ],
+    "S": [
+      "hecarim",
+      "lee_sin",
+      "nocturne",
+      "pantheon_jg",
+      "jarvaniv",
+      "rammus",
+      "vi"
+    ],
+    "A": [
+      "ekko_jg",
+      "lillia",
+      "xin_zhao",
+      "evelynn",
+      "diana_jg",
+      "rengar",
+      "yone_jg",
+      "khazix",
+      "aatrox_jg",
+      "shyvana",
+      "taliyah_jg",
+      "viego",
+      "riven_jg",
+      "talon_jg",
+      "fiddlesticks",
+      "olaf_jg",
+      "master_yi",
+      "kayn",
+      "warwick",
+      "kindred",
+      "volibear_jg",
+      "nunu",
+      "wukong_jg",
+      "poppy_jg",
+      "camille_jg",
+      "gwen_jg"
+    ],
+    "B": [
+      "zed_jg",
+      "ambessa_jg",
+      "fizz_jg",
+      "skarner",
+      "tryndamere_jg",
+      "shen_jg",
+      "drmundo_jg",
+      "gragas_jg",
+      "graves",
+      "amumu",
+      "morgana_jg",
+      "nautilus_jg"
+    ],
+    "C": [
+      "maokai_jg"
+    ]
+  },
+  "Mid": {
+    "S+": [
+      "ryze",
+      "orianna"
+    ],
+    "S": [
+      "yone",
+      "annie",
+      "galio_mid",
+      "taliyah",
+      "twisted_fate",
+      "kassadin",
+      "aurelionsol",
+      "ahri",
+      "aurora"
+    ],
+    "A": [
+      "zoe",
+      "morgana_mid",
+      "velkoz",
+      "viktor",
+      "syndra",
+      "norra",
+      "kennen_mid",
+      "akali_mid",
+      "jayce_mid",
+      "zed_mid",
+      "vex",
+      "lissandra",
+      "mel",
+      "ekko",
+      "singed_mid"
+    ],
+    "B": [
+      "akshan_mid",
+      "ziggs",
+      "diana",
+      "veigar",
+      "yasuo",
+      "vladimir",
+      "lux_mid",
+      "fizz",
+      "katarina",
+      "zyra_mid",
+      "kayle_mid",
+      "heimerdinger"
+    ],
+    "C": [
+      "brand_mid",
+      "teemo_mid",
+      "talon"
+    ]
+  },
+  "ADC": {
+    "S+": [
+      "ezreal"
+    ],
+    "S": [
+      "yunara",
+      "varus",
+      "missfortune",
+      "zeri",
+      "xayah",
+      "jhin",
+      "kogmaw",
+      "vayne",
+      "smolder",
+      "aurelionsol_adc",
+      "ziggs_adc",
+      "orianna_adc"
+    ],
+    "A": [
+      "jinx",
+      "samira",
+      "lucian",
+      "corki",
+      "kalista",
+      "kaisa",
+      "draven",
+      "ashe",
+      "mel_adc"
+    ],
+    "B": [
+      "sivir",
+      "twitch",
+      "tristana",
+      "nilah"
+    ],
+    "C": [
+      "caitlyn"
+    ]
+  },
+  "Support": {
+    "S+": [
+      "bard",
+      "zilean"
+    ],
+    "S": [
+      "braum",
+      "nami",
+      "thresh",
+      "rakan",
+      "pyke",
+      "senna",
+      "rell",
+      "nautilus",
+      "poppy_sup"
+    ],
+    "A": [
+      "morgana",
+      "lulu",
+      "milio",
+      "ornn_sup",
+      "galio",
+      "seraphine",
+      "soraka",
+      "blitzcrank",
+      "karma",
+      "leona",
+      "alistar",
+      "sett_sup",
+      "sona",
+      "singed_sup"
+    ],
+    "B": [
+      "janna",
+      "lux",
+      "swain",
+      "zyra",
+      "maokai",
+      "gragas_sup",
+      "shen_sup"
+    ],
+    "C": [
+      "yuumi"
+    ]
+  }
+}
