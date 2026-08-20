@@ -53,11 +53,11 @@
   },
   "Jungle": {
     "S+": [
-      "nidalee"
+      "nidalee",
+      "lee_sin"
     ],
     "S": [
       "hecarim",
-      "lee_sin",
       "nocturne",
       "pantheon_jg",
       "jarvaniv",
