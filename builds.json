@@ -4678,7 +4678,7 @@
   "yone": {
     "starter": "Gluttonous Greaves",
     "items": [
-      "Bloodthirster",
+      "Essence Reaver",
       "Death's Dance",
       "Infinity Edge",
       "Guardian Angel"
@@ -4686,11 +4686,11 @@
     "boots": "Immortal Path",
     "enchant": "Blade of the Ruined King",
     "runes": [
-      "Conqueror",
-      "Battle Zeal",
-      "Last Stand",
-      "Legend- Bloodline",
-      "Sudden Impact"
+      "Grasp of the Undying",
+      "Perseverance",
+      "Second Wind",
+      "Perseverance",
+      "Legend- Alacrity"
     ],
     "spells": [
       "Flash",
