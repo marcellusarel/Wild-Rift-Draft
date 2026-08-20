@@ -1,0 +1,7293 @@
+{
+  "lux": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Zone Control",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kalkan",
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta-yüksek, R ile uzak mesafeden objektif hasarına katkı",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "lux_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Zone Control",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kalkan",
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta-yüksek, R ile uzak mesafeden objektif hasarına katkı",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "ahri": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Root/Snare",
+      "Silence/Ground"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "aurelionsol": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yarı-Global",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Wave Clear",
+      "Pick/Execute",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta-yüksek, R ile yıldızını objektif çukuruna sürükleyerek katkı sağlar",
+    "globalTeleport": "Var",
+    "duelist": "Yok"
+  },
+  "akali_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Enerji",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "annie": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Wave Clear"
+    ],
+    "durabilityProfile": [
+      "Kalkan",
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, R stunuyla takım savaşını başlatıp objektifi güvenceye alır",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "aurora": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Pick/Execute",
+      "Backline Dalışı",
+      "Split Push",
+      "Wave Clear"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük-orta, veri sınırlı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "brand_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Wave Clear",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, alevli mermi zinciriyle objektif hasarı çok hızlı",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "corki_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Wave Clear",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R ile objektif hasarı güçlü",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "ekko": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "fizz": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "galio_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Silence/Ground",
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Poke"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Anti-Dive"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, R ile takımı objektif savaşına hızlıca toplar",
+    "globalTeleport": "Var",
+    "duelist": "Yok"
+  },
+  "heimerdinger": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Yavaş",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Wave Clear",
+      "Poke"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, turretleriyle objektif çukurunu güçlü şekilde kilitler",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "irelia_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı",
+      "Frontline",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Kalkan",
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "jayce_mid": {
+    "hasForms": "Var",
+    "formAName": "Çekiç Formu (Mercury Hammer)",
+    "formBName": "Top Formu (Mercury Cannon)",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Zone Control",
+      "Wave Clear",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta, top formuyla uzak mesafeden katkı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "karma_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Peel",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, mantra ile poke/heal esnekliği objektif kavgalarında faydalı",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "kassadin": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Blink",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Silence/Ground"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük-orta, R ile objektif savaşına anında katılabilir",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "katarina": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Blink",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı",
+      "Wave Clear"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük, R ile takım savaşını hızlı bitirip objektife geçebilir",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "kayle_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Wave Clear",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta-yüksek, R ile uzaktan takımı objektif kavgasında korur",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "lissandra": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Blink",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Pick/Execute",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, R ile rakip takımı objektif çukurunda dondurabilir",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "lucian_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "mel": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Wave Clear",
+      "Zone Control",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, poke ve stack baskısıyla dolaylı katkı",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "morgana_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Var",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Poke",
+      "Wave Clear"
+    ],
+    "durabilityProfile": [
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, R alanı takım savaşını objektif çukurunda dondurabilir",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "norra": {
+    "hasForms": "Var",
+    "formAName": "Norra",
+    "formBName": "Yuriko",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Soft CC/Slow",
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Wave Clear",
+      "Pick/Execute",
+      "Disengage"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük-orta, veri sınırlı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "orianna": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Poke",
+      "Zone Control",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, R büyük savaşları kazandırarak dolaylı hızlandırır",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "pantheon_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Leap",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Yüksek, R ile global olarak objektif savaşına anında iniş yapabilir",
+    "globalTeleport": "Var",
+    "duelist": "Var"
+  },
+  "ryze": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Blink",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Pick/Execute",
+      "Wave Clear",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R ile takımı objektif bölgesine anında taşır",
+    "globalTeleport": "Var",
+    "duelist": "Yok"
+  },
+  "seraphine_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Wave Clear",
+      "Zone Control",
+      "Peel"
+    ],
+    "durabilityProfile": [
+      "Kalkan",
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, zincir CC'siyle objektif savaşını başlatabilir",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "smolder_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Wave Clear",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük, stack biriktirene kadar objektifte zayıf",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "swain_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Wave Clear",
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Anti-Heal Uygulayıcı"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R alanı canavar/objektif çevresinde takımı besler",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "singed_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Hızlı",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Disengage",
+      "Split Push",
+      "Wave Clear",
+      "Zone Control",
+      "Frontline",
+      "Engage"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük, split push ile dolaylı baskı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "syndra": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Pick/Execute",
+      "Zone Control",
+      "Disengage"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta-yüksek, R ile tekli hedefi anında bitirebilir",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "taliyah": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Zone Control",
+      "Poke",
+      "Wave Clear",
+      "Disengage"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R duvarı ile rakibi objektif çukurundan tamamen izole edebilir",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "talon": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Enerji",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "teemo_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Silence/Ground",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Wave Clear"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, mantar tuzaklarıyla objektif çukurunu gizlice kilitleyebilir",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "twisted_fate": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Wave Clear",
+      "Zone Control",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, R ile rakip konumlarını görüp objektif zamanlamasını okuyabilir",
+    "globalTeleport": "Var",
+    "duelist": "Yok"
+  },
+  "veigar": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Zone Control",
+      "Wave Clear"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta, R ile tekli hedefi anında bitirebilir",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "velkoz": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Zone Control",
+      "Pick/Execute",
+      "Wave Clear"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R hattıyla uzaktan objektif hasarına doğrudan katkı",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "vex": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Zone Control",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kalkan",
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, R hedefin kaçışını doğrudan engeller",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "viktor": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Poke",
+      "Wave Clear"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R alanı objektif çukurunu güçlü şekilde kilitler",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "vladimir": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Sustain",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, R ile objektif öncesi alan hasarı sağlar",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "yasuo": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Backline Dalışı",
+      "Pick/Execute",
+      "Disengage",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "yone": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Backline Dalışı",
+      "Pick/Execute",
+      "Frontline",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "zed_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Blink",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Enerji",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "ziggs": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Wave Clear",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R ile Baron/Ejder'i uzaktan güvenle hızlandırır",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "zoe": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Blink",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Poke",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "zyra_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare",
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Poke",
+      "Engage"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, bitki tuzaklarıyla objektif çukurunu zorlaştırır",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "akshan_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük-orta, R ile uzaktan objektif kavgasına katkı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "diana": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "kennen_mid": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "gragas_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Disengage",
+      "Frontline",
+      "Peel"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Anti-Dive"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta-yüksek, R ile rakibin objektif çukurunda toparlanmasını engeller",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "aatrox_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, sustain ile ormanda hızlı temizlik yapar",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "amumu": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Yavaş",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Anti-Dive"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R ile büyük savaşları tek başına başlatabilir",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "warwick": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Suppression"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, düşük canlı hedeflere karşı hızlı bitirme sağlar",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "ambessa_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "camille_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Hook/Grapple",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "diana_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "drmundo_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, yüksek can havuzuyla uzun objektif kavgalarında dayanıklı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "ekko_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "evelynn": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Stealth",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Yanıltıcı Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük, gizlilikle rakip gank/counter'ını zorlaştırır",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "fiddlesticks": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Stealth",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Yanıltıcı Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Pick/Execute",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Yüksek, R ile korkuluk baskını objektif çukurunda sürpriz avantaj sağlar",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "fizz_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "graves": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta-yüksek, duman bombasıyla objektif çukurunda görüş avantajı sağlar",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "gwen_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Root/Snare",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kalkan",
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük, sis alanıyla objektif tırmanışında yavaş ama güvenli",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "hecarim": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Hızlı",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Yüksek, R ile takımı objektif savaşına hızlıca toplar",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "irelia_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı",
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Kalkan",
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "jarvaniv": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Anti-Dive"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Yüksek, R duvarıyla rakibi objektif çukurunda hapsedebilir",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "jax_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Leap",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Frontline",
+      "Backline Dalışı",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "kayn": {
+    "hasForms": "Var",
+    "formAName": "Karasilah (Rhaast)",
+    "formBName": "Gölge Suikastçısı",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan",
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük-orta, duvar geçişiyle objektif çukuruna sürpriz giriş yapar",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "khazix": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Leap",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "kindred": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Backline Dalışı",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Yüksek, R ölümsüzlük alanıyla Baron/Ejder çalmayı doğrudan hedefler",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "lee_sin": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Enerji",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Pick/Execute",
+      "Peel"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta-yüksek, R ile rakibi objektif çukurundan uzağa fırlatabilir",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "lillia": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R uyku alanı Baron/Ejder etrafında güçlü kilit sağlar",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "master_yi": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Backline Dalışı",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "maokai_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Root/Snare",
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Peel"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Anti-Dive"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta-yüksek, R fideleriyle geniş alandan objektif çukuruna erişebilir",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "morgana_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Var",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Peel",
+      "Poke"
+    ],
+    "durabilityProfile": [
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, R alanı takım savaşını objektif çukurunda dondurabilir",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "nautilus_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Yavaş",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Hook/Grapple",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Root/Snare",
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Anti-Dive"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "nidalee": {
+    "hasForms": "Var",
+    "formAName": "İnsan Formu",
+    "formBName": "Kugar (Puma) Formu",
+    "moveSpeed": "Hızlı",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Leap",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Yüksek, mızrak pokeyle uzaktan objektif hasarı hızlandırır",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "nocturne": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Silence/Ground",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Yüksek, R ile global olarak herhangi bir objektif savaşına dalabilir",
+    "globalTeleport": "Var",
+    "duelist": "Var"
+  },
+  "nunu": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Çok yüksek, R ile canavar/objektif avlama ve çalma hızı doğrudan artar",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "olaf_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Leap",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Var",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Frontline",
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "pantheon_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Leap",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Pick/Execute",
+      "Peel"
+    ],
+    "durabilityProfile": [
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Yüksek, R ile global olarak objektif savaşına anında iniş yapabilir",
+    "globalTeleport": "Var",
+    "duelist": "Var"
+  },
+  "poppy_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Engage",
+      "Disengage",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Anti-Dive"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "rammus": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Anti-Dive"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta-yüksek, R ile savaşı objektif çukurunda hızlı başlatır",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "rengar": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Leap",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük, R gizliliğiyle rakibi çalma girişiminde sürpriz avantaj sağlar",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "riven_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Frontline",
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kalkan",
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "shen_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Silence/Ground"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Engage",
+      "Frontline",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Anti-Dive"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R ile takım arkadaşını global olarak objektif savaşına taşır",
+    "globalTeleport": "Var",
+    "duelist": "Yok"
+  },
+  "shyvana": {
+    "hasForms": "Var",
+    "formAName": "İnsan Formu",
+    "formBName": "Ejder Formu",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Frontline",
+      "Engage"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, ejder formunda canavar/objektif temizliği çok hızlı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "skarner": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Suppression",
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Pick/Execute",
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Tank Eritici"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R ile rakibi objektiften uzağa sürükleyebilir",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "talon_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Enerji",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük, duvar aşarak objektif çukuruna sürpriz giriş yapar",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "taliyah_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Zone Control",
+      "Poke",
+      "Disengage"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R duvarı ile rakibi objektif çukurundan tamamen izole edebilir",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "tryndamere_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Öfke (Rage)",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Sustain",
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "urgot_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Yavaş",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Zone Control",
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "viego": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta, R hayalet formuyla objektif çukuruna görülmeden yaklaşabilir",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "vi": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Pick/Execute",
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta-yüksek, R ile rakibi objektif çukurundan direkt hedefe fırlatabilir",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "volibear_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Leap",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "wukong_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "xin_zhao": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta-yüksek, R ile hedefi objektif kavgasından izole edebilir",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "yone_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Backline Dalışı",
+      "Pick/Execute",
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "zed_jg": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Blink",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Enerji",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük-orta, gölge takasıyla objektif çalma girişimlerinde sürpriz sağlar",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "aatrox": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, sustain ile solo koridorda uzun süre baskı kurar",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "akali_baron": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Enerji",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "ambessa": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "camille": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Hook/Grapple",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "chogath": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Çok Yavaş",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Suppression"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Frontline",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Tank Eritici"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "darius": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Frontline",
+      "Pick/Execute",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "drmundo": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Frontline",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, yüksek can havuzuyla uzun objektif kavgalarında dayanıklı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "fiora": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Var",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Split Push",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük, split push ile dolaylı baskı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "galio_baron": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Silence/Ground",
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Peel"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Anti-Dive"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, R ile takımı objektif savaşına hızlıca toplar",
+    "globalTeleport": "Var",
+    "duelist": "Yok"
+  },
+  "garen": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Silence/Ground"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Frontline",
+      "Pick/Execute",
+      "Split Push",
+      "Wave Clear"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "gnar": {
+    "hasForms": "Var",
+    "formAName": "Mini Gnar",
+    "formBName": "Mega Gnar",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Leap",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Poke",
+      "Split Push",
+      "Disengage"
+    ],
+    "durabilityProfile": [
+      "Kırılgan",
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "gragas_baron": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Disengage",
+      "Frontline",
+      "Peel",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Anti-Dive"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta-yüksek, R ile rakibin objektif çukurunda toparlanmasını engeller",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "gwen": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Root/Snare",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Split Push",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kalkan",
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük, sis alanıyla split push baskısı dolaylı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "irelia": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı",
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Kalkan",
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "jax": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Leap",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Frontline",
+      "Backline Dalışı",
+      "Pick/Execute",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "jayce": {
+    "hasForms": "Var",
+    "formAName": "Çekiç Formu (Mercury Hammer)",
+    "formBName": "Top Formu (Mercury Cannon)",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Zone Control",
+      "Split Push",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta, top formuyla uzak mesafeden katkı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "ksante": {
+    "hasForms": "Var",
+    "formAName": "Normal Form",
+    "formBName": "All Out (Saldırgan Mod)",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Anti-Dive"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "kayle": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Wave Clear",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta-yüksek, R ile uzaktan takımı objektif kavgasında korur",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "kennen": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "malphite": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Tek Seferlik",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Anti-Dive"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R ile büyük savaşları başlatıp objektif kontrolünü kolaylaştırır",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "mordekaiser": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Frontline",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük-orta, R rakibi savaştan çıkarır ama objektifi doğrudan hızlandırmaz",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "nasus": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Split Push",
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta, split push ile dolaylı baskı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "nautilus_baron": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Yavaş",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Hook/Grapple",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Root/Snare",
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Anti-Dive"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "olaf_baron": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Leap",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Var",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Frontline",
+      "Pick/Execute",
+      "Backline Dalışı",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "ornn": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Peel"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Anti-Dive"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, eşya yükseltmeleri ve R ile takım gücünü hızlandırır",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "poppy_baron": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Engage",
+      "Disengage",
+      "Zone Control",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Anti-Dive"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "renekton": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Öfke (Rage)",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Frontline",
+      "Pick/Execute",
+      "Backline Dalışı",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "riven": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Frontline",
+      "Pick/Execute",
+      "Backline Dalışı",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Kalkan",
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "rumble": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Wave Clear",
+      "Poke"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R alanıyla Baron/Ejder çukurunu güçlü şekilde kilitler",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "ryze_baron": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Blink",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Pick/Execute",
+      "Wave Clear"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R ile takımı objektif bölgesine anında taşır",
+    "globalTeleport": "Var",
+    "duelist": "Yok"
+  },
+  "sett": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Frontline",
+      "Pick/Execute",
+      "Peel",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "shen": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Silence/Ground"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Engage",
+      "Frontline",
+      "Zone Control",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Anti-Dive"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R ile takım arkadaşını global olarak objektif savaşına taşır",
+    "globalTeleport": "Var",
+    "duelist": "Yok"
+  },
+  "singed": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Hızlı",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Disengage",
+      "Split Push",
+      "Wave Clear",
+      "Zone Control",
+      "Frontline",
+      "Engage"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük, split push ile dolaylı baskı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "sion": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute",
+      "Split Push",
+      "Wave Clear"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta-yüksek, R ile takımı objektif savaşına hızlıca sokar",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "teemo": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Silence/Ground",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Wave Clear"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, mantar tuzaklarıyla objektif çukurunu gizlice kilitleyebilir",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "tryndamere": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Öfke (Rage)",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Backline Dalışı",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Sustain",
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "urgot": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Yavaş",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Zone Control",
+      "Wave Clear",
+      "Split Push",
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "vladimir_baron": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Sustain",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, R ile objektif öncesi alan hasarı sağlar",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "volibear": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Leap",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute",
+      "Split Push",
+      "Wave Clear"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "wukong": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Backline Dalışı",
+      "Split Push"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "yasuo_baron": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Backline Dalışı",
+      "Pick/Execute",
+      "Disengage"
+    ],
+    "durabilityProfile": [
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "yone_baron": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Backline Dalışı",
+      "Pick/Execute",
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "zed_baron": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Blink",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Enerji",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük, top koridorunda solo baskı objektife dolaylı katkı sağlar",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "smolder": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Wave Clear",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük, stack biriktirene kadar objektifte zayıf",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "kaisa": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Blink",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Backline Dalışı",
+      "Pick/Execute",
+      "Poke"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "jhin": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Pick/Execute",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta-yüksek, R ile uzaktan objektif hızlandırır",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "ezreal": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Blink",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, R ile uzak mesafeden katkı",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "vayne": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Disengage"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük, split push ile dolaylı baskı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "lucian": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "jinx": {
+    "hasForms": "Var",
+    "formAName": "Pow-Pow (Minigun)",
+    "formBName": "Fishbones (Roketatar)",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Wave Clear",
+      "Pick/Execute",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Orta-yüksek, Fishbones modu objektifte güçlü",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "caitlyn": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Root/Snare",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, R ile uzun menzilden katkı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "missfortune": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Wave Clear",
+      "Zone Control",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "draven": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "tristana": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Leap",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Backline Dalışı",
+      "Pick/Execute",
+      "Wave Clear",
+      "Disengage"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "ashe": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Soft CC/Slow",
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, E ile görüş sağlar",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "varus": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Zone Control",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "xayah": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Leap",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Pick/Execute",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "kogmaw": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Yavaş",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Wave Clear",
+      "Poke",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R ile uzaktan objektif hızlandırır",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "sivir": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Wave Clear",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R ile takım objektif hızını doğrudan artırır",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "samira": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Backline Dalışı",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "twitch": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Stealth",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Yanıltıcı Hareketlilik",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Backline Dalışı",
+      "Pick/Execute",
+      "Wave Clear"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "nilah": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Backline Dalışı",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "kalista": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Disengage",
+      "Peel",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "zeri": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Backline Dalışı",
+      "Wave Clear"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "corki": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Wave Clear",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R ile objektif hasarı güçlü",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "yunara": {
+    "hasForms": "Var",
+    "formAName": "Normal Form",
+    "formBName": "Transcendence (Ulti Formu)",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Wave Clear",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük-orta, veri sınırlı",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "aurelionsol_adc": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yarı-Global",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Wave Clear",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük-orta, split push ile dolaylı baskı",
+    "globalTeleport": "Var",
+    "duelist": "Yok"
+  },
+  "mel_adc": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Wave Clear",
+      "Zone Control",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Tank Eritici"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, poke ve stack baskısıyla dolaylı katkı",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "orianna_adc": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Poke",
+      "Zone Control",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta, R büyük savaşları kazandırarak dolaylı hızlandırır",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "ziggs_adc": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Wave Clear",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek, R ile Baron/Ejder'i uzaktan güvenle hızlandırır",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "nami": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Peel",
+      "Poke"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Doğrudan artırmaz, orta seviye katkı",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "zilean": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Yavaş",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Poke",
+      "Zone Control",
+      "Disengage"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "bard": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Hızlı",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Leap",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Disengage",
+      "Peel",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Chime buffları ile dolaylı artırır",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "braum": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Peel",
+      "Frontline",
+      "Disengage"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "galio": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yarı-Global",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Silence/Ground"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Peel"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "leona": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "lulu": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Soft CC/Slow",
+      "Knockup/Knockback",
+      "Silence/Ground"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Disengage",
+      "Poke"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "milio": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Var",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Disengage",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kalkan",
+      "Sustain"
+    ],
+    "damageProfile": [],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "nautilus": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Yavaş",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Hook/Grapple",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Root/Snare",
+      "Knockup/Knockback",
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "ornn_sup": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Yavaş",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Yüksek (duvar stunu ile hızlandırır)",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "rell": {
+    "hasForms": "Var",
+    "formAName": "İnsan Formu",
+    "formBName": "At Formu (Zırh Aracı)",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Knockup/Knockback",
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "senna": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Stealth",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Yanıltıcı Hareketlilik",
+    "ccTypes": [
+      "Root/Snare",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Pick/Execute",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük-orta",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "sona": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "thresh": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Yavaş",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Hook/Grapple",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Peel",
+      "Pick/Execute",
+      "Zone Control",
+      "Disengage"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "alistar": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Var",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Peel"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "blitzcrank": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Hook/Grapple",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Silence/Ground"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Engage",
+      "Frontline"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "janna": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Disengage",
+      "Peel",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "karma": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Poke",
+      "Zone Control",
+      "Disengage"
+    ],
+    "durabilityProfile": [
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "maokai": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Root/Snare",
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Zone Control",
+      "Peel"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "pyke": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Hızlı",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep",
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Pick/Execute",
+      "Engage",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Snowball Bağımlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "rakan": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Hızlı",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Peel",
+      "Disengage",
+      "Backline Dalışı"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "seraphine": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Soft CC/Slow",
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Peel",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "soraka": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare",
+      "Silence/Ground"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Sustain",
+      "Kırılgan"
+    ],
+    "damageProfile": [],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "zyra": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Yavaş",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare",
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Poke",
+      "Zone Control",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Burst",
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük-orta (bitkiler ile)",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "morgana": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Yavaş",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare",
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Var",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Zone Control",
+      "Engage",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Kırılgan",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS",
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "swain": {
+    "hasForms": "Var",
+    "formAName": "Normal Form",
+    "formBName": "Demonic Ascension (Ulti Formu)",
+    "moveSpeed": "Yavaş",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Root/Snare",
+      "Knockup/Knockback"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Zone Control",
+      "Frontline",
+      "Engage"
+    ],
+    "durabilityProfile": [
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "yuumi": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Hızlı",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Yanıltıcı Hareketlilik",
+    "ccTypes": [
+      "Root/Snare",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Zone Control"
+    ],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
+  },
+  "shen_sup": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Gerçek Hareketlilik",
+    "ccTypes": [
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Enerji",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Frontline",
+      "Engage"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Var",
+    "duelist": "Var"
+  },
+  "singed_sup": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Frontline",
+      "Zone Control",
+      "Peel",
+      "Engage"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [
+      "Sürdürülebilir DPS"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "sett_sup": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Yok",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Gerçek Hantal",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Kaynaksız",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Frontline",
+      "Pick/Execute"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Sustain"
+    ],
+    "damageProfile": [
+      "Tank Eritici",
+      "Burst"
+    ],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "gragas_sup": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Aşırı Bağımlı",
+    "teamfightRole": [
+      "Engage",
+      "Disengage",
+      "Frontline",
+      "Peel"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank",
+      "Kalkan"
+    ],
+    "damageProfile": [
+      "Burst"
+    ],
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Orta",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  },
+  "poppy_sup": {
+    "hasForms": "Yok",
+    "formAName": "",
+    "formBName": "",
+    "moveSpeed": "Ortalama",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [
+      "Knockup/Knockback",
+      "Stun/Freeze/Sleep"
+    ],
+    "hasCleanseSkill": "Yok",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Mana",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [
+      "Peel",
+      "Engage",
+      "Frontline",
+      "Disengage"
+    ],
+    "durabilityProfile": [
+      "Doğal Tank"
+    ],
+    "damageProfile": [],
+    "powerCurve": "Erken Oyun",
+    "scalingType": "Tutarlı",
+    "objectiveControl": "Düşük",
+    "globalTeleport": "Yok",
+    "duelist": "Var"
+  }
+}

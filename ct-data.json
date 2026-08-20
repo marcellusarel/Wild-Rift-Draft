@@ -1,0 +1,3766 @@
+{
+  "rakan": {
+    "ct": [
+      "galio",
+      "rell",
+      "nautilus",
+      "gragas",
+      "alistar",
+      "janna",
+      "morgana",
+      "thresh"
+    ],
+    "ctBy": [
+      "nami",
+      "sona",
+      "soraka",
+      "blitzcrank",
+      "braum",
+      "zyra"
+    ]
+  },
+  "nautilus": {
+    "ct": [
+      "bard",
+      "janna",
+      "morgana",
+      "braum",
+      "leona",
+      "alistar"
+    ],
+    "ctBy": [
+      "seraphine",
+      "sona",
+      "lux",
+      "rakan",
+      "yuumi",
+      "senna"
+    ]
+  },
+  "leona": {
+    "ct": [
+      "galio",
+      "alistar",
+      "morgana",
+      "janna",
+      "thresh"
+    ],
+    "ctBy": [
+      "blitzcrank",
+      "lux",
+      "soraka",
+      "senna",
+      "yuumi",
+      "zyra",
+      "maokai"
+    ]
+  },
+  "lulu": {
+    "ct": [
+      "blitzcrank",
+      "sona",
+      "nami",
+      "leona",
+      "brand",
+      "senna",
+      "bard"
+    ],
+    "ctBy": [
+      "lux",
+      "annie",
+      "alistar",
+      "janna"
+    ]
+  },
+  "milio": {
+    "ct": [
+      "blitzcrank",
+      "senna",
+      "zyra",
+      "lux",
+      "sona",
+      "bard"
+    ],
+    "ctBy": [
+      "braum",
+      "rakan",
+      "alistar",
+      "pantheon"
+    ]
+  },
+  "braum": {
+    "ct": [
+      "lulu",
+      "sona",
+      "morgana",
+      "soraka"
+    ],
+    "ctBy": [
+      "blitzcrank",
+      "thresh",
+      "leona",
+      "nautilus",
+      "seraphine",
+      "rell",
+      "pyke",
+      "brand",
+      "maokai"
+    ]
+  },
+  "nami": {
+    "ct": [
+      "pyke",
+      "blitzcrank",
+      "braum",
+      "alistar",
+      "leona"
+    ],
+    "ctBy": [
+      "janna",
+      "lux",
+      "lulu",
+      "soraka",
+      "thresh",
+      "zyra",
+      "bard",
+      "galio",
+      "karma"
+    ]
+  },
+  "thresh": {
+    "ct": [
+      "morgana",
+      "lulu",
+      "alistar",
+      "braum",
+      "zyra",
+      "nami"
+    ],
+    "ctBy": [
+      "soraka",
+      "blitzcrank",
+      "sona",
+      "yuumi"
+    ]
+  },
+  "blitzcrank": {
+    "ct": [
+      "alistar",
+      "braum",
+      "morgana",
+      "leona",
+      "rakan"
+    ],
+    "ctBy": [
+      "sona",
+      "nami",
+      "soraka",
+      "senna",
+      "zyra",
+      "seraphine",
+      "janna",
+      "lulu",
+      "milio"
+    ]
+  },
+  "soraka": {
+    "ct": [
+      "blitzcrank",
+      "leona",
+      "thresh",
+      "lux",
+      "nami",
+      "bard"
+    ],
+    "ctBy": [
+      "braum",
+      "alistar",
+      "janna",
+      "brand",
+      "pyke",
+      "morgana"
+    ]
+  },
+  "janna": {
+    "ct": [
+      "sona",
+      "nami",
+      "blitzcrank",
+      "brand",
+      "lulu",
+      "karma",
+      "senna"
+    ],
+    "ctBy": [
+      "alistar",
+      "braum",
+      "leona",
+      "rakan",
+      "gragas",
+      "nautilus",
+      "rell"
+    ]
+  },
+  "morgana": {
+    "ct": [
+      "nami",
+      "yuumi",
+      "soraka",
+      "sona",
+      "karma",
+      "zyra"
+    ],
+    "ctBy": [
+      "thresh",
+      "blitzcrank",
+      "lux",
+      "braum",
+      "nautilus",
+      "leona"
+    ]
+  },
+  "alistar": {
+    "ct": [
+      "ashe",
+      "zyra",
+      "lulu",
+      "sona",
+      "morgana",
+      "janna",
+      "gragas"
+    ],
+    "ctBy": [
+      "blitzcrank",
+      "rakan",
+      "thresh",
+      "pantheon",
+      "leona",
+      "yuumi",
+      "rell"
+    ]
+  },
+  "seraphine": {
+    "ct": [
+      "blitzcrank",
+      "nami",
+      "leona",
+      "braum",
+      "pyke"
+    ],
+    "ctBy": [
+      "lux",
+      "soraka",
+      "janna",
+      "morgana",
+      "galio"
+    ]
+  },
+  "sona": {
+    "ct": [
+      "blitzcrank",
+      "leona",
+      "thresh",
+      "pantheon",
+      "bard",
+      "pyke"
+    ],
+    "ctBy": [
+      "karma",
+      "janna",
+      "soraka",
+      "lulu",
+      "milio"
+    ]
+  },
+  "lux": {
+    "ct": [
+      "zed",
+      "fizz",
+      "yasuo",
+      "irelia",
+      "katarina",
+      "talon",
+      "kassadin"
+    ],
+    "ctBy": [
+      "twisted_fate",
+      "kennen_mid",
+      "brand",
+      "vex"
+    ]
+  },
+  "karma": {
+    "ct": [
+      "pyke",
+      "nami",
+      "bard",
+      "alistar",
+      "blitzcrank",
+      "thresh"
+    ],
+    "ctBy": [
+      "janna",
+      "braum",
+      "lulu",
+      "morgana",
+      "zyra",
+      "galio",
+      "lux"
+    ]
+  },
+  "zyra": {
+    "ct": [
+      "karma",
+      "rakan",
+      "leona",
+      "pyke",
+      "nami",
+      "blitzcrank"
+    ],
+    "ctBy": [
+      "alistar",
+      "thresh",
+      "braum",
+      "morgana",
+      "senna",
+      "swain"
+    ]
+  },
+  "pyke": {
+    "ct": [
+      "braum",
+      "maokai",
+      "soraka",
+      "morgana",
+      "rakan"
+    ],
+    "ctBy": [
+      "lux",
+      "sona",
+      "brand",
+      "senna",
+      "seraphine",
+      "zyra",
+      "zilean",
+      "karma",
+      "nami"
+    ]
+  },
+  "bard": {
+    "ct": [
+      "nami",
+      "senna",
+      "zilean",
+      "thresh",
+      "blitzcrank",
+      "morgana",
+      "pyke"
+    ],
+    "ctBy": [
+      "alistar",
+      "galio",
+      "swain",
+      "soraka",
+      "sona",
+      "karma",
+      "lulu",
+      "milio",
+      "nautilus"
+    ]
+  },
+  "zilean": {
+    "ct": [
+      "maokai",
+      "rell",
+      "pyke"
+    ],
+    "ctBy": [
+      "pantheon",
+      "nautilus",
+      "braum",
+      "blitzcrank",
+      "bard"
+    ]
+  },
+  "yuumi": {
+    "ct": [
+      "nautilus",
+      "blitzcrank",
+      "leona",
+      "alistar",
+      "thresh"
+    ],
+    "ctBy": [
+      "braum",
+      "brand",
+      "soraka",
+      "morgana"
+    ]
+  },
+  "swain": {
+    "ct": [
+      "lux",
+      "karma",
+      "zyra"
+    ],
+    "ctBy": [
+      "thresh",
+      "leona",
+      "galio",
+      "alistar",
+      "braum"
+    ]
+  },
+  "shen_sup": {
+    "ct": [
+      "sona",
+      "seraphine",
+      "nami",
+      "morgana"
+    ],
+    "ctBy": [
+      "braum",
+      "blitzcrank",
+      "leona"
+    ]
+  },
+  "singed_sup": {
+    "ct": [
+      "morgana",
+      "lulu",
+      "nautilus"
+    ],
+    "ctBy": [
+      "seraphine",
+      "sona"
+    ]
+  },
+  "galio": {
+    "ct": [
+      "senna",
+      "nami",
+      "karma",
+      "morgana",
+      "janna",
+      "alistar",
+      "lulu"
+    ],
+    "ctBy": [
+      "rakan",
+      "blitzcrank",
+      "braum",
+      "leona",
+      "maokai"
+    ]
+  },
+  "maokai": {
+    "ct": [
+      "galio",
+      "braum",
+      "leona",
+      "sona",
+      "seraphine",
+      "nami",
+      "morgana"
+    ],
+    "ctBy": [
+      "blitzcrank",
+      "pyke",
+      "zilean",
+      "brand"
+    ]
+  },
+  "rell": {
+    "ct": [
+      "zyra",
+      "janna",
+      "nami",
+      "alistar",
+      "braum"
+    ],
+    "ctBy": [
+      "nautilus",
+      "lux",
+      "rakan",
+      "zilean"
+    ]
+  },
+  "sett_sup": {
+    "ct": [
+      "senna",
+      "ashe",
+      "janna",
+      "morgana"
+    ],
+    "ctBy": [
+      "nautilus",
+      "leona"
+    ]
+  },
+  "senna": {
+    "ct": [
+      "draven",
+      "caitlyn",
+      "tristana",
+      "ezreal"
+    ],
+    "ctBy": [
+      "vayne",
+      "jinx",
+      "jhin"
+    ]
+  },
+  "gragas_sup": {
+    "ct": [
+      "morgana",
+      "janna",
+      "lulu"
+    ],
+    "ctBy": [
+      "rakan",
+      "alistar",
+      "leona"
+    ]
+  },
+  "ornn_sup": {
+    "ct": [
+      "braum",
+      "vayne",
+      "morgana"
+    ],
+    "ctBy": [
+      "blitzcrank",
+      "thresh",
+      "leona",
+      "nautilus"
+    ]
+  },
+  "poppy_sup": {
+    "ct": [
+      "morgana",
+      "soraka",
+      "karma",
+      "janna"
+    ],
+    "ctBy": [
+      "rakan",
+      "alistar",
+      "leona",
+      "pyke",
+      "pantheon"
+    ]
+  },
+  "smolder": {
+    "ct": [
+      "caitlyn",
+      "tristana",
+      "draven",
+      "lucian"
+    ],
+    "ctBy": [
+      "corki",
+      "ezreal",
+      "varus",
+      "sivir",
+      "missfortune",
+      "nilah"
+    ]
+  },
+  "kaisa": {
+    "ct": [
+      "draven",
+      "missfortune",
+      "xayah",
+      "caitlyn",
+      "kogmaw"
+    ],
+    "ctBy": [
+      "jinx",
+      "varus",
+      "ezreal"
+    ]
+  },
+  "jhin": {
+    "ct": [
+      "ashe",
+      "draven",
+      "lucian",
+      "tristana"
+    ],
+    "ctBy": [
+      "jinx",
+      "varus",
+      "missfortune"
+    ]
+  },
+  "ezreal": {
+    "ct": [
+      "samira",
+      "draven",
+      "kaisa",
+      "missfortune",
+      "ashe",
+      "vayne"
+    ],
+    "ctBy": [
+      "varus",
+      "jhin",
+      "caitlyn"
+    ]
+  },
+  "vayne": {
+    "ct": [
+      "draven",
+      "ashe",
+      "caitlyn",
+      "lucian"
+    ],
+    "ctBy": [
+      "ezreal",
+      "kaisa",
+      "jhin",
+      "sivir",
+      "xayah",
+      "varus",
+      "smolder",
+      "kogmaw"
+    ]
+  },
+  "lucian": {
+    "ct": [
+      "caitlyn",
+      "kogmaw",
+      "ashe",
+      "draven",
+      "ezreal"
+    ],
+    "ctBy": [
+      "vayne",
+      "jinx",
+      "tristana",
+      "jhin",
+      "smolder",
+      "zeri"
+    ]
+  },
+  "jinx": {
+    "ct": [
+      "jhin",
+      "missfortune",
+      "draven",
+      "tristana",
+      "caitlyn",
+      "lucian",
+      "kogmaw"
+    ],
+    "ctBy": [
+      "vayne",
+      "ashe",
+      "ezreal"
+    ]
+  },
+  "caitlyn": {
+    "ct": [
+      "sivir",
+      "jhin",
+      "ezreal",
+      "missfortune"
+    ],
+    "ctBy": [
+      "vayne",
+      "kaisa",
+      "tristana",
+      "draven",
+      "twitch",
+      "smolder",
+      "samira",
+      "zeri",
+      "ashe",
+      "corki",
+      "kalista",
+      "kogmaw",
+      "lucian",
+      "nilah",
+      "yunara"
+    ]
+  },
+  "missfortune": {
+    "ct": [
+      "smolder",
+      "jhin",
+      "draven",
+      "ashe"
+    ],
+    "ctBy": [
+      "jinx",
+      "ezreal",
+      "varus",
+      "samira",
+      "corki"
+    ]
+  },
+  "draven": {
+    "ct": [
+      "caitlyn",
+      "ziggs",
+      "varus",
+      "samira",
+      "kogmaw"
+    ],
+    "ctBy": [
+      "ashe",
+      "ezreal",
+      "vayne",
+      "jinx",
+      "sivir",
+      "tristana",
+      "smolder",
+      "jhin",
+      "kaisa"
+    ]
+  },
+  "tristana": {
+    "ct": [
+      "draven",
+      "vayne",
+      "caitlyn",
+      "lucian",
+      "kogmaw"
+    ],
+    "ctBy": [
+      "jinx",
+      "ashe",
+      "ezreal",
+      "jhin",
+      "xayah"
+    ]
+  },
+  "ashe": {
+    "ct": [
+      "caitlyn",
+      "varus",
+      "draven"
+    ],
+    "ctBy": [
+      "kalista",
+      "vayne",
+      "missfortune",
+      "corki",
+      "ezreal",
+      "twitch",
+      "jhin",
+      "kogmaw",
+      "lucian"
+    ]
+  },
+  "varus": {
+    "ct": [
+      "smolder",
+      "missfortune",
+      "vayne",
+      "jhin",
+      "ezreal",
+      "tristana"
+    ],
+    "ctBy": [
+      "jinx",
+      "ashe"
+    ]
+  },
+  "xayah": {
+    "ct": [
+      "draven",
+      "jhin",
+      "caitlyn",
+      "lucian",
+      "varus",
+      "vayne",
+      "kogmaw",
+      "yunara"
+    ],
+    "ctBy": [
+      "ashe",
+      "ezreal",
+      "jinx",
+      "kaisa",
+      "nilah"
+    ]
+  },
+  "kogmaw": {
+    "ct": [
+      "ashe",
+      "vayne",
+      "caitlyn",
+      "missfortune"
+    ],
+    "ctBy": [
+      "kaisa",
+      "zeri",
+      "xayah",
+      "tristana",
+      "smolder",
+      "samira",
+      "corki",
+      "draven",
+      "jhin",
+      "kalista",
+      "lucian",
+      "yunara"
+    ]
+  },
+  "sivir": {
+    "ct": [
+      "vayne",
+      "draven",
+      "twitch",
+      "samira",
+      "smolder",
+      "kogmaw",
+      "yunara"
+    ],
+    "ctBy": [
+      "ezreal",
+      "xayah",
+      "varus",
+      "ashe",
+      "caitlyn"
+    ]
+  },
+  "samira": {
+    "ct": [
+      "caitlyn",
+      "varus",
+      "tristana",
+      "kogmaw",
+      "missfortune"
+    ],
+    "ctBy": [
+      "vayne",
+      "ezreal",
+      "ashe",
+      "twitch",
+      "draven"
+    ]
+  },
+  "twitch": {
+    "ct": [
+      "ashe",
+      "samira",
+      "tristana",
+      "caitlyn",
+      "draven"
+    ],
+    "ctBy": [
+      "kaisa",
+      "vayne",
+      "jhin",
+      "jinx",
+      "sivir"
+    ]
+  },
+  "nilah": {
+    "ct": [
+      "smolder",
+      "xayah",
+      "caitlyn",
+      "ashe",
+      "jhin"
+    ],
+    "ctBy": [
+      "samira",
+      "twitch",
+      "jinx",
+      "tristana",
+      "yunara"
+    ]
+  },
+  "kalista": {
+    "ct": [
+      "ashe",
+      "kogmaw",
+      "caitlyn",
+      "draven",
+      "samira",
+      "nilah",
+      "lucian",
+      "yunara"
+    ],
+    "ctBy": [
+      "ezreal",
+      "zeri",
+      "jhin"
+    ]
+  },
+  "zeri": {
+    "ct": [
+      "lucian",
+      "caitlyn",
+      "kogmaw",
+      "tristana",
+      "jhin",
+      "draven"
+    ],
+    "ctBy": [
+      "ezreal",
+      "vayne",
+      "orianna"
+    ]
+  },
+  "corki": {
+    "ct": [
+      "kogmaw",
+      "missfortune",
+      "draven",
+      "caitlyn"
+    ],
+    "ctBy": [
+      "ziggs",
+      "jinx",
+      "jhin"
+    ]
+  },
+  "yunara": {
+    "ct": [
+      "caitlyn",
+      "kogmaw",
+      "nilah"
+    ],
+    "ctBy": [
+      "kalista",
+      "xayah",
+      "sivir"
+    ]
+  },
+  "ahri": {
+    "ct": [
+      "akali",
+      "orianna",
+      "fizz",
+      "yasuo",
+      "diana",
+      "annie",
+      "syndra"
+    ],
+    "ctBy": [
+      "twisted_fate",
+      "lux",
+      "ziggs",
+      "zed",
+      "galio",
+      "morgana"
+    ]
+  },
+  "aurelionsol": {
+    "ct": [
+      "yasuo",
+      "fizz",
+      "zed",
+      "galio",
+      "lucian",
+      "yone"
+    ],
+    "ctBy": [
+      "annie",
+      "lux",
+      "orianna"
+    ]
+  },
+  "aurelionsol_adc": {
+    "ct": [
+      "vayne",
+      "lucian",
+      "tristana",
+      "ezreal"
+    ],
+    "ctBy": [
+      "mel",
+      "orianna",
+      "smolder",
+      "jinx",
+      "ashe"
+    ]
+  },
+  "akali_mid": {
+    "ct": [
+      "veigar",
+      "lissandra",
+      "twisted_fate",
+      "akshan_mid",
+      "galio",
+      "pantheon",
+      "annie"
+    ],
+    "ctBy": [
+      "irelia",
+      "lux",
+      "kayle",
+      "jayce",
+      "ekko",
+      "ahri"
+    ]
+  },
+  "annie": {
+    "ct": [
+      "syndra",
+      "lissandra",
+      "viktor",
+      "fizz",
+      "morgana",
+      "lux",
+      "irelia"
+    ],
+    "ctBy": [
+      "yasuo",
+      "ahri",
+      "akali",
+      "katarina",
+      "corki"
+    ]
+  },
+  "aurora": {
+    "ct": [
+      "vex",
+      "zed",
+      "irelia",
+      "syndra",
+      "orianna",
+      "viktor",
+      "lux"
+    ],
+    "ctBy": [
+      "veigar",
+      "twisted_fate",
+      "ryze",
+      "kennen_mid"
+    ]
+  },
+  "brand_mid": {
+    "ct": [
+      "syndra",
+      "lux",
+      "fizz",
+      "irelia",
+      "zed",
+      "yasuo",
+      "akali",
+      "diana",
+      "talon"
+    ],
+    "ctBy": [
+      "annie",
+      "twisted_fate",
+      "corki",
+      "teemo",
+      "kayle",
+      "swain"
+    ]
+  },
+  "corki_mid": {
+    "ct": [
+      "akali",
+      "annie",
+      "pantheon",
+      "irelia",
+      "ahri",
+      "zed",
+      "akshan_mid",
+      "katarina",
+      "orianna"
+    ],
+    "ctBy": [
+      "lux",
+      "galio",
+      "kayle",
+      "morgana",
+      "diana"
+    ]
+  },
+  "ekko": {
+    "ct": [
+      "vex",
+      "lissandra",
+      "yasuo",
+      "pantheon",
+      "akali",
+      "irelia",
+      "diana",
+      "talon"
+    ],
+    "ctBy": [
+      "twisted_fate",
+      "brand",
+      "veigar",
+      "ziggs",
+      "lux",
+      "zed"
+    ]
+  },
+  "fizz": {
+    "ct": [
+      "lissandra",
+      "vex",
+      "akali",
+      "galio",
+      "morgana",
+      "vladimir"
+    ],
+    "ctBy": [
+      "yasuo",
+      "ahri",
+      "lux",
+      "twisted_fate",
+      "corki",
+      "velkoz"
+    ]
+  },
+  "galio_mid": {
+    "ct": [
+      "morgana_mid",
+      "ahri",
+      "swain_mid",
+      "akshan_mid",
+      "pantheon_mid",
+      "lucian_mid",
+      "yasuo",
+      "zed_mid"
+    ],
+    "ctBy": [
+      "irelia_mid",
+      "katarina",
+      "fizz",
+      "twisted_fate",
+      "diana",
+      "aurelionsol",
+      "vex",
+      "jayce_mid",
+      "lissandra"
+    ]
+  },
+  "heimerdinger": {
+    "ct": [
+      "syndra",
+      "zed",
+      "irelia",
+      "yasuo",
+      "yone",
+      "ziggs"
+    ],
+    "ctBy": [
+      "kassadin",
+      "kayle",
+      "aurelionsol"
+    ]
+  },
+  "irelia_mid": {
+    "ct": [
+      "vladimir",
+      "galio",
+      "akali",
+      "fizz",
+      "yasuo",
+      "vex"
+    ],
+    "ctBy": [
+      "jayce",
+      "annie",
+      "diana",
+      "lux",
+      "orianna",
+      "ahri",
+      "talon",
+      "syndra",
+      "zoe",
+      "akshan_mid",
+      "aurora",
+      "ekko",
+      "heimerdinger",
+      "mel"
+    ]
+  },
+  "jayce_mid": {
+    "ct": [
+      "syndra",
+      "galio",
+      "irelia",
+      "lucian",
+      "zed",
+      "fizz",
+      "yasuo"
+    ],
+    "ctBy": [
+      "katarina",
+      "lux",
+      "aurelionsol",
+      "corki",
+      "veigar",
+      "kassadin"
+    ]
+  },
+  "karma_mid": {
+    "ct": [
+      "yasuo",
+      "zed",
+      "fizz",
+      "irelia",
+      "syndra"
+    ],
+    "ctBy": [
+      "annie",
+      "lux",
+      "akali",
+      "corki",
+      "ahri",
+      "veigar"
+    ]
+  },
+  "kassadin": {
+    "ct": [
+      "yasuo",
+      "zed",
+      "pantheon",
+      "akshan_mid",
+      "jayce",
+      "talon",
+      "lucian"
+    ],
+    "ctBy": [
+      "katarina",
+      "diana",
+      "veigar",
+      "ekko",
+      "annie",
+      "vladimir",
+      "viktor",
+      "velkoz",
+      "syndra",
+      "ryze",
+      "kennen_mid",
+      "lissandra",
+      "lux",
+      "norra",
+      "taliyah"
+    ]
+  },
+  "katarina": {
+    "ct": [
+      "vex",
+      "zed",
+      "lissandra",
+      "diana",
+      "pantheon",
+      "galio",
+      "irelia",
+      "yasuo",
+      "annie",
+      "jayce",
+      "kassadin",
+      "vladimir"
+    ],
+    "ctBy": [
+      "lux",
+      "veigar",
+      "brand",
+      "seraphine",
+      "ahri",
+      "corki"
+    ]
+  },
+  "kayle_mid": {
+    "ct": [
+      "syndra",
+      "viktor",
+      "ryze",
+      "pantheon",
+      "irelia",
+      "lucian",
+      "katarina",
+      "akshan_mid",
+      "jayce"
+    ],
+    "ctBy": [
+      "aurelionsol",
+      "lux",
+      "veigar",
+      "morgana"
+    ]
+  },
+  "lissandra": {
+    "ct": [
+      "morgana",
+      "kassadin",
+      "galio",
+      "lux",
+      "ziggs",
+      "akshan_mid",
+      "orianna"
+    ],
+    "ctBy": [
+      "katarina",
+      "akali",
+      "fizz",
+      "zed",
+      "vex",
+      "annie",
+      "ekko"
+    ]
+  },
+  "lucian_mid": {
+    "ct": [
+      "akali",
+      "fizz",
+      "yasuo",
+      "pantheon"
+    ],
+    "ctBy": [
+      "katarina",
+      "galio",
+      "lux",
+      "veigar",
+      "ahri",
+      "seraphine",
+      "kayle",
+      "kassadin"
+    ]
+  },
+  "lux_mid": {
+    "ct": [
+      "zed",
+      "fizz",
+      "yasuo",
+      "irelia",
+      "katarina",
+      "talon",
+      "kassadin"
+    ],
+    "ctBy": [
+      "twisted_fate",
+      "kennen_mid",
+      "brand",
+      "vex"
+    ]
+  },
+  "mel": {
+    "ct": [
+      "irelia",
+      "yone",
+      "fizz",
+      "syndra",
+      "diana",
+      "viktor"
+    ],
+    "ctBy": [
+      "ahri",
+      "lux",
+      "ryze"
+    ]
+  },
+  "mel_adc": {
+    "ct": [
+      "aurelionsol",
+      "vayne",
+      "lucian",
+      "tristana"
+    ],
+    "ctBy": [
+      "jinx",
+      "ashe",
+      "smolder"
+    ]
+  },
+  "morgana_mid": {
+    "ct": [
+      "jayce",
+      "zed",
+      "katarina",
+      "irelia",
+      "akshan_mid",
+      "lucian",
+      "ahri",
+      "kassadin"
+    ],
+    "ctBy": [
+      "lux",
+      "twisted_fate",
+      "galio",
+      "veigar",
+      "vex",
+      "zoe",
+      "lissandra"
+    ]
+  },
+  "norra": {
+    "ct": [
+      "zed",
+      "irelia",
+      "yasuo",
+      "fizz",
+      "kassadin"
+    ],
+    "ctBy": [
+      "ryze",
+      "syndra"
+    ]
+  },
+  "orianna": {
+    "ct": [
+      "yasuo",
+      "irelia",
+      "syndra",
+      "zed",
+      "fizz",
+      "galio",
+      "zoe",
+      "diana"
+    ],
+    "ctBy": [
+      "annie",
+      "veigar",
+      "morgana",
+      "twisted_fate",
+      "corki",
+      "ryze",
+      "vladimir",
+      "swain",
+      "ahri"
+    ]
+  },
+  "orianna_adc": {
+    "ct": [
+      "aurelionsol",
+      "vayne",
+      "lucian",
+      "tristana",
+      "ezreal"
+    ],
+    "ctBy": [
+      "jinx",
+      "ashe"
+    ]
+  },
+  "pantheon_mid": {
+    "ct": [
+      "ziggs",
+      "teemo",
+      "orianna",
+      "ahri"
+    ],
+    "ctBy": [
+      "katarina",
+      "corki",
+      "zed",
+      "twisted_fate",
+      "yasuo",
+      "galio",
+      "talon"
+    ]
+  },
+  "ryze": {
+    "ct": [
+      "syndra",
+      "orianna",
+      "irelia",
+      "zed",
+      "yasuo",
+      "pantheon",
+      "ziggs",
+      "viktor",
+      "kassadin"
+    ],
+    "ctBy": [
+      "ahri",
+      "kennen_mid",
+      "annie",
+      "corki",
+      "teemo"
+    ]
+  },
+  "seraphine_mid": {
+    "ct": [
+      "zed",
+      "fizz",
+      "yasuo",
+      "irelia",
+      "akali",
+      "talon"
+    ],
+    "ctBy": [
+      "annie",
+      "veigar",
+      "morgana",
+      "orianna"
+    ]
+  },
+  "smolder_mid": {
+    "ct": [
+      "syndra",
+      "fizz",
+      "ahri",
+      "orianna"
+    ],
+    "ctBy": [
+      "galio",
+      "kassadin"
+    ]
+  },
+  "swain_mid": {
+    "ct": [
+      "brand",
+      "syndra",
+      "orianna",
+      "akshan_mid",
+      "fizz",
+      "zoe"
+    ],
+    "ctBy": [
+      "galio",
+      "pantheon",
+      "twisted_fate",
+      "ahri",
+      "kennen_mid"
+    ]
+  },
+  "syndra": {
+    "ct": [
+      "fizz",
+      "ekko",
+      "yasuo",
+      "irelia",
+      "zed",
+      "akali",
+      "kassadin"
+    ],
+    "ctBy": [
+      "annie",
+      "twisted_fate",
+      "aurelionsol",
+      "veigar",
+      "vex",
+      "ryze",
+      "ahri",
+      "yone",
+      "teemo",
+      "swain",
+      "orianna",
+      "brand",
+      "heimerdinger",
+      "jayce",
+      "mel"
+    ]
+  },
+  "taliyah": {
+    "ct": [
+      "zed",
+      "fizz",
+      "ekko",
+      "zoe",
+      "katarina",
+      "kassadin"
+    ],
+    "ctBy": [
+      "ryze",
+      "vladimir",
+      "aurelionsol"
+    ]
+  },
+  "talon": {
+    "ct": [
+      "irelia",
+      "pantheon",
+      "akshan_mid",
+      "diana",
+      "orianna"
+    ],
+    "ctBy": [
+      "kassadin",
+      "veigar",
+      "ahri",
+      "twisted_fate",
+      "lux",
+      "seraphine",
+      "ekko",
+      "brand"
+    ]
+  },
+  "teemo_mid": {
+    "ct": [
+      "syndra",
+      "ryze",
+      "orianna",
+      "fizz",
+      "jayce",
+      "ziggs",
+      "yasuo",
+      "annie",
+      "brand",
+      "akali"
+    ],
+    "ctBy": [
+      "twisted_fate",
+      "kayle",
+      "corki",
+      "katarina"
+    ]
+  },
+  "twisted_fate": {
+    "ct": [
+      "syndra",
+      "morgana",
+      "ahri",
+      "yasuo",
+      "fizz",
+      "zed",
+      "irelia",
+      "galio",
+      "vladimir",
+      "talon"
+    ],
+    "ctBy": [
+      "ziggs",
+      "annie",
+      "corki",
+      "akali"
+    ]
+  },
+  "veigar": {
+    "ct": [
+      "syndra",
+      "viktor",
+      "kassadin",
+      "fizz",
+      "zed",
+      "lucian",
+      "yasuo",
+      "vladimir",
+      "talon",
+      "ekko"
+    ],
+    "ctBy": [
+      "akali",
+      "annie",
+      "brand",
+      "corki",
+      "akshan_mid",
+      "vex"
+    ]
+  },
+  "velkoz": {
+    "ct": [
+      "fizz",
+      "katarina",
+      "zed",
+      "yasuo",
+      "yone",
+      "irelia",
+      "kassadin"
+    ],
+    "ctBy": [
+      "aurelionsol",
+      "seraphine",
+      "lissandra",
+      "galio",
+      "swain"
+    ]
+  },
+  "vex": {
+    "ct": [
+      "lissandra",
+      "veigar",
+      "annie",
+      "galio",
+      "lux",
+      "morgana"
+    ],
+    "ctBy": [
+      "yone",
+      "katarina",
+      "yasuo",
+      "ekko",
+      "irelia",
+      "zed",
+      "akshan_mid",
+      "aurora",
+      "diana",
+      "fizz"
+    ]
+  },
+  "viktor": {
+    "ct": [
+      "irelia",
+      "kassadin",
+      "zed",
+      "akali",
+      "fizz",
+      "yone"
+    ],
+    "ctBy": [
+      "lissandra",
+      "twisted_fate",
+      "vladimir",
+      "veigar",
+      "ryze",
+      "annie"
+    ]
+  },
+  "vladimir": {
+    "ct": [
+      "akshan_mid",
+      "kassadin",
+      "orianna",
+      "ziggs",
+      "zoe",
+      "viktor"
+    ],
+    "ctBy": [
+      "irelia",
+      "fizz",
+      "katarina",
+      "twisted_fate",
+      "veigar",
+      "jayce"
+    ]
+  },
+  "yasuo": {
+    "ct": [
+      "irelia",
+      "vex",
+      "akali",
+      "fizz",
+      "pantheon"
+    ],
+    "ctBy": [
+      "ahri",
+      "twisted_fate",
+      "lux",
+      "brand",
+      "ziggs",
+      "katarina",
+      "ryze",
+      "syndra",
+      "orianna",
+      "zed",
+      "akshan_mid",
+      "aurelionsol",
+      "kassadin",
+      "norra"
+    ]
+  },
+  "yone": {
+    "ct": [
+      "irelia",
+      "ahri",
+      "zed",
+      "pantheon",
+      "akali",
+      "vex",
+      "syndra"
+    ],
+    "ctBy": [
+      "aurelionsol",
+      "corki",
+      "ziggs",
+      "seraphine",
+      "veigar",
+      "viktor",
+      "velkoz",
+      "zoe",
+      "mel"
+    ]
+  },
+  "zed_mid": {
+    "ct": [
+      "lissandra",
+      "yasuo",
+      "vex",
+      "fizz",
+      "diana",
+      "ahri",
+      "akali",
+      "pantheon",
+      "ekko",
+      "irelia"
+    ],
+    "ctBy": [
+      "ziggs",
+      "lux",
+      "twisted_fate",
+      "brand",
+      "morgana",
+      "veigar",
+      "galio",
+      "ryze",
+      "yone",
+      "viktor",
+      "aurelionsol",
+      "aurora",
+      "heimerdinger",
+      "kassadin",
+      "katarina",
+      "norra",
+      "taliyah"
+    ]
+  },
+  "ziggs": {
+    "ct": [
+      "zed",
+      "irelia",
+      "yasuo",
+      "fizz",
+      "ahri",
+      "yone"
+    ],
+    "ctBy": [
+      "diana",
+      "orianna",
+      "lux",
+      "morgana",
+      "veigar",
+      "kennen_mid",
+      "vladimir",
+      "ryze"
+    ]
+  },
+  "ziggs_adc": {
+    "ct": [
+      "vayne",
+      "lucian",
+      "tristana",
+      "ezreal"
+    ],
+    "ctBy": [
+      "jinx",
+      "ashe",
+      "smolder"
+    ]
+  },
+  "zoe": {
+    "ct": [
+      "morgana",
+      "fizz",
+      "irelia",
+      "zed",
+      "yasuo",
+      "yone"
+    ],
+    "ctBy": [
+      "corki",
+      "twisted_fate",
+      "vex",
+      "annie",
+      "aurelionsol",
+      "orianna",
+      "vladimir"
+    ]
+  },
+  "zyra_mid": {
+    "ct": [
+      "fizz",
+      "irelia",
+      "zed",
+      "yasuo",
+      "akali",
+      "diana"
+    ],
+    "ctBy": [
+      "annie",
+      "twisted_fate",
+      "corki",
+      "teemo",
+      "kayle"
+    ]
+  },
+  "akshan_mid": {
+    "ct": [
+      "vex",
+      "zed",
+      "irelia",
+      "yasuo",
+      "pantheon",
+      "veigar"
+    ],
+    "ctBy": [
+      "ahri",
+      "orianna",
+      "akali",
+      "corki",
+      "galio",
+      "singed",
+      "vladimir"
+    ]
+  },
+  "singed_mid": {
+    "ct": [
+      "twisted_fate",
+      "orianna",
+      "akshan_mid",
+      "renekton",
+      "jayce_mid"
+    ],
+    "ctBy": [
+      "vex",
+      "yasuo",
+      "ekko",
+      "irelia_mid"
+    ]
+  },
+  "gragas_jg": {
+    "ct": [
+      "amumu",
+      "nocturne",
+      "lillia",
+      "nunu",
+      "fiora",
+      "olaf_jg",
+      "diana_jg"
+    ],
+    "ctBy": [
+      "camille_jg",
+      "evelynn",
+      "master_yi",
+      "graves"
+    ]
+  },
+  "aatrox_jg": {
+    "ct": [
+      "kindred",
+      "lillia",
+      "hecarim"
+    ],
+    "ctBy": [
+      "drmundo_jg",
+      "urgot_jg",
+      "olaf_jg",
+      "fiddlesticks",
+      "graves",
+      "sett"
+    ]
+  },
+  "amumu": {
+    "ct": [
+      "lillia",
+      "nocturne",
+      "nidalee",
+      "olaf",
+      "lee_sin",
+      "master_yi"
+    ],
+    "ctBy": [
+      "graves",
+      "wukong",
+      "rammus",
+      "warwick",
+      "viego",
+      "vi",
+      "tryndamere",
+      "pantheon",
+      "ekko",
+      "gragas_jg",
+      "jarvaniv"
+    ]
+  },
+  "warwick": {
+    "ct": [
+      "amumu",
+      "olaf",
+      "kindred",
+      "morgana"
+    ],
+    "ctBy": [
+      "master_yi",
+      "tryndamere",
+      "irelia",
+      "viego",
+      "vi",
+      "wukong"
+    ]
+  },
+  "ambessa_jg": {
+    "ct": [
+      "rammus",
+      "poppy",
+      "malphite",
+      "pantheon",
+      "renekton",
+      "tryndamere",
+      "warwick"
+    ],
+    "ctBy": [
+      "jax",
+      "volibear",
+      "wukong"
+    ]
+  },
+  "camille_jg": {
+    "ct": [
+      "lee_sin",
+      "viego",
+      "nidalee",
+      "pantheon"
+    ],
+    "ctBy": [
+      "master_yi",
+      "evelynn",
+      "amumu",
+      "khazix"
+    ]
+  },
+  "diana": {
+    "ct": [
+      "vex",
+      "galio",
+      "irelia",
+      "ziggs",
+      "akali",
+      "fizz",
+      "pantheon"
+    ],
+    "ctBy": [
+      "zed",
+      "katarina",
+      "lux",
+      "brand",
+      "seraphine",
+      "aurelionsol",
+      "twisted_fate",
+      "orianna"
+    ]
+  },
+  "diana_jg": {
+    "ct": [
+      "master_yi",
+      "kindred",
+      "jarvaniv",
+      "xin_zhao",
+      "olaf",
+      "vi",
+      "pantheon"
+    ],
+    "ctBy": [
+      "gragas",
+      "evelynn",
+      "rammus"
+    ]
+  },
+  "drmundo_jg": {
+    "ct": [
+      "irelia",
+      "fiora",
+      "camille",
+      "aatrox_jg"
+    ],
+    "ctBy": [
+      "vi",
+      "evelynn",
+      "master_yi",
+      "pantheon"
+    ]
+  },
+  "ekko_jg": {
+    "ct": [
+      "kindred",
+      "lillia",
+      "amumu",
+      "olaf",
+      "xin_zhao",
+      "khazix",
+      "jax",
+      "lee_sin"
+    ],
+    "ctBy": [
+      "rammus",
+      "gragas",
+      "jarvaniv"
+    ]
+  },
+  "evelynn": {
+    "ct": [
+      "rengar",
+      "lee_sin",
+      "gragas",
+      "camille",
+      "vi"
+    ],
+    "ctBy": [
+      "volibear",
+      "amumu",
+      "master_yi",
+      "graves",
+      "rammus",
+      "nunu",
+      "lillia"
+    ]
+  },
+  "fiddlesticks": {
+    "ct": [
+      "nocturne",
+      "vi",
+      "hecarim",
+      "pantheon",
+      "diana_jg",
+      "aatrox_jg"
+    ],
+    "ctBy": [
+      "rammus",
+      "amumu",
+      "master_yi"
+    ]
+  },
+  "fizz_jg": {
+    "ct": [
+      "master_yi",
+      "riven",
+      "amumu",
+      "lee_sin",
+      "olaf",
+      "jarvaniv",
+      "xin_zhao"
+    ],
+    "ctBy": [
+      "pantheon",
+      "shyvana",
+      "irelia"
+    ]
+  },
+  "graves": {
+    "ct": [
+      "amumu",
+      "evelynn",
+      "pantheon",
+      "rammus",
+      "wukong",
+      "aatrox_jg"
+    ],
+    "ctBy": [
+      "olaf",
+      "rengar",
+      "jarvaniv",
+      "vi",
+      "jax",
+      "hecarim"
+    ]
+  },
+  "gwen_jg": {
+    "ct": [
+      "lillia",
+      "master_yi",
+      "nocturne",
+      "fiora",
+      "riven",
+      "vi"
+    ],
+    "ctBy": [
+      "shen",
+      "drmundo",
+      "gragas",
+      "nunu",
+      "volibear"
+    ]
+  },
+  "hecarim": {
+    "ct": [
+      "master_yi",
+      "kindred",
+      "graves",
+      "khazix",
+      "rengar",
+      "gragas",
+      "xin_zhao"
+    ],
+    "ctBy": [
+      "jarvaniv",
+      "vi",
+      "amumu",
+      "kayn",
+      "fiora",
+      "taliyah",
+      "aatrox_jg"
+    ]
+  },
+  "irelia_jg": {
+    "ct": [
+      "rammus",
+      "hecarim",
+      "nidalee",
+      "khazix",
+      "lee_sin",
+      "olaf",
+      "wukong",
+      "graves",
+      "fizz"
+    ],
+    "ctBy": [
+      "drmundo",
+      "diana_jg",
+      "amumu"
+    ]
+  },
+  "jarvaniv": {
+    "ct": [
+      "khazix",
+      "lee_sin",
+      "rammus",
+      "gragas",
+      "rengar",
+      "master_yi",
+      "amumu"
+    ],
+    "ctBy": [
+      "olaf",
+      "wukong",
+      "nunu",
+      "pantheon"
+    ]
+  },
+  "jax_jg": {
+    "ct": [
+      "gragas",
+      "pantheon",
+      "olaf",
+      "fiora",
+      "riven"
+    ],
+    "ctBy": [
+      "wukong",
+      "tryndamere",
+      "camille",
+      "master_yi",
+      "irelia"
+    ]
+  },
+  "kayn": {
+    "ct": [
+      "morgana",
+      "master_yi",
+      "rengar",
+      "khazix",
+      "olaf",
+      "kindred",
+      "rammus"
+    ],
+    "ctBy": [
+      "amumu",
+      "evelynn",
+      "jarvaniv",
+      "nunu"
+    ]
+  },
+  "khazix": {
+    "ct": [
+      "rammus",
+      "kindred",
+      "master_yi",
+      "vi",
+      "pantheon",
+      "xin_zhao",
+      "olaf",
+      "camille",
+      "lee_sin"
+    ],
+    "ctBy": [
+      "amumu",
+      "evelynn",
+      "jarvaniv",
+      "shyvana",
+      "nilah"
+    ]
+  },
+  "kindred": {
+    "ct": [
+      "rammus",
+      "lillia",
+      "xin_zhao",
+      "gragas",
+      "lee_sin"
+    ],
+    "ctBy": [
+      "volibear",
+      "amumu",
+      "kayn",
+      "graves",
+      "warwick",
+      "vi",
+      "talon",
+      "rengar",
+      "olaf",
+      "diana_jg",
+      "hecarim",
+      "khazix",
+      "maokai",
+      "aatrox_jg"
+    ]
+  },
+  "lee_sin": {
+    "ct": [
+      "rammus",
+      "lillia",
+      "nocturne",
+      "xin_zhao",
+      "jax",
+      "drmundo",
+      "vi",
+      "gragas"
+    ],
+    "ctBy": [
+      "amumu",
+      "master_yi",
+      "jarvaniv",
+      "evelynn",
+      "khazix",
+      "rengar",
+      "talon",
+      "riven"
+    ]
+  },
+  "lillia": {
+    "ct": [
+      "evelynn",
+      "vi",
+      "master_yi",
+      "jarvaniv",
+      "xin_zhao",
+      "irelia",
+      "diana_jg"
+    ],
+    "ctBy": [
+      "volibear",
+      "rammus",
+      "amumu",
+      "nunu",
+      "shyvana",
+      "olaf",
+      "ekko",
+      "fiora",
+      "gragas",
+      "gwen",
+      "kindred",
+      "lee_sin",
+      "wukong",
+      "aatrox_jg"
+    ]
+  },
+  "master_yi": {
+    "ct": [
+      "rammus",
+      "viego",
+      "evelynn",
+      "lee_sin",
+      "jax",
+      "wukong"
+    ],
+    "ctBy": [
+      "olaf",
+      "amumu",
+      "graves",
+      "kayn",
+      "zed",
+      "xin_zhao",
+      "tryndamere",
+      "shyvana",
+      "rengar",
+      "diana_jg",
+      "gwen",
+      "hecarim",
+      "jarvaniv",
+      "khazix",
+      "lillia",
+      "maokai",
+      "morgana",
+      "nidalee",
+      "nocturne"
+    ]
+  },
+  "maokai_jg": {
+    "ct": [
+      "kindred",
+      "master_yi",
+      "olaf_jg",
+      "kayn",
+      "xin_zhao",
+      "jarvaniv"
+    ],
+    "ctBy": [
+      "pantheon_jg",
+      "khazix",
+      "jax_jg"
+    ]
+  },
+  "morgana_jg": {
+    "ct": [
+      "master_yi",
+      "nocturne",
+      "zed",
+      "olaf",
+      "rengar",
+      "lee_sin",
+      "jarvaniv"
+    ],
+    "ctBy": [
+      "vi",
+      "pantheon",
+      "amumu",
+      "nunu"
+    ]
+  },
+  "nautilus_jg": {
+    "ct": [
+      "master_yi",
+      "xin_zhao",
+      "shyvana",
+      "morgana",
+      "olaf",
+      "khazix",
+      "amumu",
+      "fiora"
+    ],
+    "ctBy": [
+      "graves",
+      "jax",
+      "tryndamere"
+    ]
+  },
+  "nidalee": {
+    "ct": [
+      "master_yi",
+      "rengar",
+      "lee_sin",
+      "khazix",
+      "nocturne"
+    ],
+    "ctBy": [
+      "amumu",
+      "rammus",
+      "pantheon"
+    ]
+  },
+  "nocturne": {
+    "ct": [
+      "rammus",
+      "master_yi",
+      "viego",
+      "kindred",
+      "talon"
+    ],
+    "ctBy": [
+      "rengar",
+      "fiddlesticks",
+      "shyvana",
+      "nidalee",
+      "amumu",
+      "gragas",
+      "gwen",
+      "lee_sin",
+      "morgana"
+    ]
+  },
+  "nunu": {
+    "ct": [
+      "lillia",
+      "evelynn",
+      "morgana",
+      "lee_sin",
+      "xin_zhao",
+      "vi",
+      "olaf",
+      "master_yi"
+    ],
+    "ctBy": [
+      "rammus",
+      "amumu",
+      "rengar"
+    ]
+  },
+  "olaf_jg": {
+    "ct": [
+      "kindred",
+      "lillia",
+      "master_yi",
+      "jarvaniv",
+      "camille",
+      "graves",
+      "aatrox_jg"
+    ],
+    "ctBy": [
+      "vi",
+      "shyvana",
+      "amumu",
+      "evelynn",
+      "nunu",
+      "maokai"
+    ]
+  },
+  "pantheon_jg": {
+    "ct": [
+      "tryndamere",
+      "rammus",
+      "amumu",
+      "wukong",
+      "olaf",
+      "jarvaniv",
+      "drmundo",
+      "vi",
+      "graves"
+    ],
+    "ctBy": [
+      "master_yi",
+      "evelynn",
+      "shyvana",
+      "diana_jg",
+      "camille"
+    ]
+  },
+  "poppy_jg": {
+    "ct": [
+      "volibear",
+      "lillia",
+      "warwick",
+      "master_yi",
+      "nocturne",
+      "ambessa"
+    ],
+    "ctBy": [
+      "lee_sin",
+      "talon",
+      "gragas"
+    ]
+  },
+  "rammus": {
+    "ct": [
+      "olaf",
+      "vi",
+      "amumu",
+      "nunu",
+      "lillia",
+      "shyvana"
+    ],
+    "ctBy": [
+      "master_yi",
+      "graves",
+      "jarvaniv",
+      "tryndamere",
+      "xin_zhao",
+      "viego",
+      "rengar",
+      "pantheon",
+      "kayn",
+      "khazix",
+      "kindred",
+      "lee_sin",
+      "wukong",
+      "nocturne"
+    ]
+  },
+  "rengar": {
+    "ct": [
+      "graves",
+      "olaf",
+      "rammus",
+      "xin_zhao",
+      "lee_sin",
+      "camille",
+      "kindred",
+      "master_yi"
+    ],
+    "ctBy": [
+      "evelynn",
+      "gragas",
+      "jarvaniv",
+      "morgana",
+      "talon",
+      "nidalee"
+    ]
+  },
+  "riven_jg": {
+    "ct": [
+      "lee_sin",
+      "vi",
+      "rammus",
+      "gragas",
+      "olaf",
+      "rengar",
+      "graves"
+    ],
+    "ctBy": [
+      "irelia",
+      "amumu",
+      "jarvaniv",
+      "fiora"
+    ]
+  },
+  "shen_jg": {
+    "ct": [
+      "lee_sin",
+      "tryndamere",
+      "olaf",
+      "fiora"
+    ],
+    "ctBy": [
+      "master_yi",
+      "jarvaniv",
+      "jax"
+    ]
+  },
+  "shyvana": {
+    "ct": [
+      "lillia",
+      "jarvaniv",
+      "master_yi",
+      "olaf",
+      "lee_sin"
+    ],
+    "ctBy": [
+      "amumu",
+      "morgana",
+      "xin_zhao",
+      "rammus",
+      "nautilus"
+    ]
+  },
+  "skarner": {
+    "ct": [
+      "lillia",
+      "olaf",
+      "master_yi",
+      "kindred",
+      "evelynn"
+    ],
+    "ctBy": [
+      "talon",
+      "graves"
+    ]
+  },
+  "talon_jg": {
+    "ct": [
+      "rengar",
+      "kindred",
+      "lee_sin",
+      "gragas",
+      "volibear",
+      "evelynn",
+      "jarvaniv"
+    ],
+    "ctBy": [
+      "ekko",
+      "fiddlesticks",
+      "khazix"
+    ]
+  },
+  "taliyah_jg": {
+    "ct": [
+      "rengar",
+      "wukong",
+      "zed",
+      "hecarim",
+      "rammus"
+    ],
+    "ctBy": [
+      "amumu",
+      "ambessa"
+    ]
+  },
+  "tryndamere_jg": {
+    "ct": [
+      "lee_sin",
+      "fiora",
+      "rammus",
+      "camille",
+      "master_yi",
+      "amumu"
+    ],
+    "ctBy": [
+      "pantheon",
+      "irelia",
+      "graves",
+      "wukong",
+      "riven"
+    ]
+  },
+  "urgot_jg": {
+    "ct": [
+      "wukong",
+      "olaf",
+      "camille",
+      "fiora",
+      "aatrox_jg"
+    ],
+    "ctBy": [
+      "riven",
+      "jax",
+      "shen"
+    ]
+  },
+  "viego": {
+    "ct": [
+      "rammus",
+      "warwick",
+      "xin_zhao",
+      "amumu"
+    ],
+    "ctBy": [
+      "rengar",
+      "master_yi",
+      "graves",
+      "nocturne"
+    ]
+  },
+  "vi": {
+    "ct": [
+      "kindred",
+      "amumu",
+      "warwick",
+      "xin_zhao",
+      "olaf",
+      "morgana",
+      "sett"
+    ],
+    "ctBy": [
+      "master_yi",
+      "khazix",
+      "evelynn",
+      "pantheon",
+      "lillia"
+    ]
+  },
+  "volibear_jg": {
+    "ct": [
+      "lillia",
+      "evelynn",
+      "kindred",
+      "fiora",
+      "olaf"
+    ],
+    "ctBy": [
+      "diana_jg",
+      "jarvaniv",
+      "rammus"
+    ]
+  },
+  "wukong_jg": {
+    "ct": [
+      "rammus",
+      "lillia",
+      "warwick",
+      "jarvaniv",
+      "xin_zhao",
+      "lee_sin",
+      "khazix",
+      "olaf",
+      "riven",
+      "camille"
+    ],
+    "ctBy": [
+      "graves",
+      "evelynn",
+      "master_yi",
+      "vi",
+      "pantheon",
+      "irelia",
+      "kennen"
+    ]
+  },
+  "xin_zhao": {
+    "ct": [
+      "rammus",
+      "jax",
+      "olaf",
+      "shyvana",
+      "master_yi"
+    ],
+    "ctBy": [
+      "amumu",
+      "evelynn",
+      "lee_sin",
+      "graves",
+      "khazix",
+      "kindred",
+      "nautilus"
+    ]
+  },
+  "yone_jg": {
+    "ct": [
+      "rammus",
+      "kindred",
+      "evelynn"
+    ],
+    "ctBy": [
+      "gwen",
+      "ekko",
+      "amumu",
+      "lillia"
+    ]
+  },
+  "zed_jg": {
+    "ct": [
+      "fizz",
+      "diana_jg",
+      "pantheon",
+      "rammus",
+      "renekton",
+      "master_yi",
+      "kindred"
+    ],
+    "ctBy": [
+      "morgana",
+      "kayn",
+      "gragas",
+      "evelynn",
+      "vi"
+    ]
+  },
+  "aatrox": {
+    "ct": [
+      "ambessa",
+      "irelia",
+      "fiora",
+      "jax",
+      "tryndamere",
+      "pantheon"
+    ],
+    "ctBy": [
+      "sion",
+      "drmundo",
+      "garen",
+      "kayle",
+      "nasus",
+      "urgot",
+      "ornn",
+      "sett",
+      "ryze",
+      "akali"
+    ]
+  },
+  "akali_baron": {
+    "ct": [
+      "ambessa",
+      "renekton",
+      "aatrox",
+      "fiora",
+      "jax",
+      "pantheon",
+      "galio"
+    ],
+    "ctBy": [
+      "irelia",
+      "yasuo",
+      "olaf",
+      "malphite",
+      "darius",
+      "vayne",
+      "camille"
+    ]
+  },
+  "ambessa": {
+    "ct": [
+      "renekton",
+      "warwick",
+      "irelia",
+      "pantheon",
+      "riven",
+      "malphite",
+      "chogath"
+    ],
+    "ctBy": [
+      "aatrox",
+      "akali",
+      "darius",
+      "sion",
+      "yasuo",
+      "gwen",
+      "drmundo",
+      "nasus",
+      "urgot",
+      "garen",
+      "singed",
+      "rumble",
+      "poppy"
+    ]
+  },
+  "camille": {
+    "ct": [
+      "malphite",
+      "mordekaiser",
+      "fiora",
+      "jayce",
+      "jax",
+      "renekton",
+      "darius",
+      "riven",
+      "akali"
+    ],
+    "ctBy": [
+      "yasuo",
+      "jarvaniv",
+      "garen",
+      "drmundo",
+      "wukong",
+      "shen",
+      "kennen",
+      "olaf",
+      "ornn",
+      "singed",
+      "maokai",
+      "nasus"
+    ]
+  },
+  "chogath": {
+    "ct": [
+      "ambessa",
+      "darius",
+      "fiora",
+      "gnar",
+      "irelia",
+      "sett",
+      "renekton"
+    ],
+    "ctBy": [
+      "kennen",
+      "malphite",
+      "kayle",
+      "jax",
+      "sion"
+    ]
+  },
+  "darius": {
+    "ct": [
+      "malphite",
+      "akali",
+      "vayne",
+      "wukong",
+      "gragas",
+      "jayce",
+      "ambessa",
+      "chogath"
+    ],
+    "ctBy": [
+      "nasus",
+      "camille",
+      "yasuo",
+      "irelia",
+      "tryndamere",
+      "ornn",
+      "riven"
+    ]
+  },
+  "drmundo": {
+    "ct": [
+      "riven",
+      "gwen",
+      "darius",
+      "fiora",
+      "shen",
+      "irelia",
+      "camille",
+      "vayne",
+      "renekton"
+    ],
+    "ctBy": [
+      "yasuo",
+      "akali",
+      "pantheon",
+      "jayce",
+      "vladimir",
+      "nautilus"
+    ]
+  },
+  "fiora": {
+    "ct": [
+      "rumble",
+      "poppy",
+      "malphite",
+      "jayce",
+      "kennen",
+      "chogath"
+    ],
+    "ctBy": [
+      "aatrox",
+      "garen",
+      "akali",
+      "jax",
+      "riven",
+      "camille",
+      "renekton",
+      "nasus",
+      "irelia",
+      "olaf",
+      "ornn",
+      "volibear",
+      "pantheon",
+      "urgot",
+      "shen",
+      "sion",
+      "singed",
+      "drmundo",
+      "gwen",
+      "maokai"
+    ]
+  },
+  "galio_baron": {
+    "ct": [
+      "jayce",
+      "irelia",
+      "pantheon",
+      "olaf",
+      "sett",
+      "yasuo",
+      "fiora"
+    ],
+    "ctBy": [
+      "diana",
+      "teemo",
+      "kennen"
+    ]
+  },
+  "garen": {
+    "ct": [
+      "camille",
+      "fiora",
+      "ambessa",
+      "irelia"
+    ],
+    "ctBy": [
+      "nasus",
+      "jax",
+      "yasuo",
+      "renekton",
+      "gragas",
+      "tryndamere"
+    ]
+  },
+  "gnar": {
+    "ct": [
+      "irelia",
+      "yasuo",
+      "malphite",
+      "gwen",
+      "ornn",
+      "chogath"
+    ],
+    "ctBy": [
+      "sion",
+      "drmundo",
+      "urgot",
+      "darius",
+      "shen",
+      "renekton",
+      "kennen",
+      "maokai"
+    ]
+  },
+  "gragas_baron": {
+    "ct": [
+      "fiora",
+      "diana",
+      "olaf",
+      "shen"
+    ],
+    "ctBy": [
+      "camille",
+      "kennen",
+      "malphite",
+      "darius",
+      "riven"
+    ]
+  },
+  "gwen": {
+    "ct": [
+      "jayce",
+      "fiora",
+      "jax",
+      "renekton",
+      "yasuo",
+      "akali",
+      "riven",
+      "tryndamere"
+    ],
+    "ctBy": [
+      "shen",
+      "drmundo",
+      "sion",
+      "gragas",
+      "malphite",
+      "ornn",
+      "volibear"
+    ]
+  },
+  "irelia": {
+    "ct": [
+      "malphite",
+      "poppy",
+      "sett",
+      "fiora",
+      "jax",
+      "riven",
+      "darius",
+      "renekton",
+      "tryndamere",
+      "akali",
+      "chogath"
+    ],
+    "ctBy": [
+      "ambessa",
+      "jayce",
+      "olaf",
+      "kayle",
+      "drmundo",
+      "garen",
+      "kennen",
+      "aatrox",
+      "teemo",
+      "graves",
+      "nasus",
+      "gnar"
+    ]
+  },
+  "jax": {
+    "ct": [
+      "poppy",
+      "teemo",
+      "rumble",
+      "fiora",
+      "garen",
+      "jayce",
+      "gragas",
+      "riven",
+      "shen",
+      "sett"
+    ],
+    "ctBy": [
+      "yasuo",
+      "tryndamere",
+      "camille",
+      "irelia",
+      "kayle",
+      "nasus",
+      "malphite",
+      "gwen",
+      "ornn",
+      "volibear",
+      "chogath"
+    ]
+  },
+  "jayce": {
+    "ct": [
+      "irelia",
+      "riven",
+      "wukong",
+      "tryndamere",
+      "malphite",
+      "nasus",
+      "ornn"
+    ],
+    "ctBy": [
+      "fiora",
+      "kennen",
+      "darius",
+      "kayle",
+      "shen",
+      "teemo",
+      "renekton",
+      "camille",
+      "gwen"
+    ]
+  },
+  "ksante": {
+    "ct": [
+      "fiora",
+      "vayne",
+      "garen"
+    ],
+    "ctBy": [
+      "irelia",
+      "sion",
+      "ornn"
+    ]
+  },
+  "kayle": {
+    "ct": [
+      "malphite",
+      "teemo",
+      "nasus",
+      "tryndamere",
+      "irelia",
+      "riven",
+      "jayce",
+      "camille",
+      "jax"
+    ],
+    "ctBy": [
+      "garen",
+      "fiora",
+      "singed",
+      "olaf",
+      "volibear",
+      "chogath"
+    ]
+  },
+  "kennen": {
+    "ct": [
+      "gnar",
+      "nasus",
+      "wukong",
+      "jayce",
+      "malphite",
+      "irelia",
+      "gragas",
+      "camille"
+    ],
+    "ctBy": [
+      "jax",
+      "darius",
+      "teemo",
+      "garen",
+      "kayle",
+      "renekton",
+      "riven",
+      "chogath"
+    ]
+  },
+  "kennen_mid": {
+    "ct": [
+      "kassadin",
+      "aurora",
+      "swain_mid",
+      "orianna",
+      "ziggs",
+      "seraphine_mid",
+      "irelia_mid",
+      "lux"
+    ],
+    "ctBy": [
+      "kayle_mid",
+      "teemo_mid",
+      "akali_mid"
+    ]
+  },
+  "malphite": {
+    "ct": [
+      "rumble",
+      "mordekaiser",
+      "akali",
+      "gwen",
+      "olaf",
+      "gragas",
+      "nasus",
+      "renekton",
+      "jax"
+    ],
+    "ctBy": [
+      "camille",
+      "ambessa",
+      "tryndamere",
+      "fiora",
+      "graves",
+      "wukong",
+      "yasuo",
+      "pantheon",
+      "yone",
+      "gnar",
+      "irelia",
+      "jayce",
+      "chogath"
+    ]
+  },
+  "mordekaiser": {
+    "ct": [
+      "olaf",
+      "vayne",
+      "aatrox",
+      "fiora",
+      "warwick"
+    ],
+    "ctBy": [
+      "malphite",
+      "camille",
+      "shen",
+      "sion",
+      "maokai",
+      "urgot",
+      "sett",
+      "riven",
+      "renekton",
+      "poppy",
+      "wukong"
+    ]
+  },
+  "nasus": {
+    "ct": [
+      "garen",
+      "camille",
+      "wukong",
+      "darius",
+      "renekton",
+      "teemo",
+      "jax",
+      "vayne",
+      "olaf",
+      "sett",
+      "fiora",
+      "irelia"
+    ],
+    "ctBy": [
+      "kayle",
+      "malphite",
+      "akali",
+      "tryndamere",
+      "kennen",
+      "vladimir"
+    ]
+  },
+  "nautilus_baron": {
+    "ct": [
+      "irelia",
+      "renekton",
+      "drmundo",
+      "olaf",
+      "fiora",
+      "camille",
+      "gwen",
+      "vayne",
+      "darius",
+      "aatrox",
+      "singed"
+    ],
+    "ctBy": [
+      "graves",
+      "sion"
+    ]
+  },
+  "olaf_baron": {
+    "ct": [
+      "fiora",
+      "tryndamere",
+      "irelia",
+      "jax",
+      "kennen",
+      "akali",
+      "graves",
+      "vayne",
+      "camille"
+    ],
+    "ctBy": [
+      "nasus",
+      "yasuo",
+      "malphite",
+      "teemo",
+      "shen",
+      "urgot",
+      "ornn",
+      "wukong"
+    ]
+  },
+  "ornn": {
+    "ct": [
+      "fiora",
+      "camille",
+      "gwen",
+      "olaf",
+      "darius",
+      "shen"
+    ],
+    "ctBy": [
+      "diana",
+      "malphite",
+      "nautilus",
+      "rumble",
+      "gnar",
+      "jayce"
+    ]
+  },
+  "poppy_baron": {
+    "ct": [
+      "ambessa",
+      "teemo",
+      "mordekaiser",
+      "darius",
+      "olaf",
+      "rumble",
+      "gnar",
+      "aatrox"
+    ],
+    "ctBy": [
+      "jax",
+      "riven",
+      "urgot",
+      "irelia",
+      "camille",
+      "fiora"
+    ]
+  },
+  "renekton": {
+    "ct": [
+      "gnar",
+      "mordekaiser",
+      "garen",
+      "teemo",
+      "vayne",
+      "kennen",
+      "olaf",
+      "gragas",
+      "fiora",
+      "darius",
+      "jayce",
+      "graves",
+      "chogath"
+    ],
+    "ctBy": [
+      "ambessa",
+      "yasuo",
+      "camille",
+      "riven",
+      "akali",
+      "irelia",
+      "nasus",
+      "singed",
+      "malphite",
+      "drmundo",
+      "tryndamere",
+      "ryze",
+      "sett",
+      "shen",
+      "sion",
+      "rumble",
+      "pantheon",
+      "yone",
+      "wukong"
+    ]
+  },
+  "riven": {
+    "ct": [
+      "renekton",
+      "wukong",
+      "darius",
+      "urgot",
+      "kennen",
+      "fiora",
+      "gragas",
+      "sett",
+      "graves"
+    ],
+    "ctBy": [
+      "irelia",
+      "yasuo",
+      "rengar",
+      "drmundo",
+      "singed",
+      "nasus",
+      "garen",
+      "kayle",
+      "jayce",
+      "gwen"
+    ]
+  },
+  "rumble": {
+    "ct": [
+      "ambessa",
+      "renekton",
+      "ornn",
+      "tryndamere",
+      "irelia",
+      "riven",
+      "camille",
+      "olaf",
+      "aatrox"
+    ],
+    "ctBy": [
+      "malphite",
+      "sion",
+      "drmundo",
+      "nasus",
+      "teemo",
+      "fiora",
+      "garen",
+      "jax"
+    ]
+  },
+  "ryze_baron": {
+    "ct": [
+      "aatrox",
+      "darius",
+      "jayce",
+      "irelia",
+      "yasuo",
+      "renekton"
+    ],
+    "ctBy": [
+      "rumble",
+      "teemo",
+      "kennen"
+    ]
+  },
+  "sett": {
+    "ct": [
+      "renekton",
+      "mordekaiser",
+      "aatrox",
+      "kennen",
+      "vayne",
+      "drmundo",
+      "olaf",
+      "chogath"
+    ],
+    "ctBy": [
+      "irelia",
+      "yasuo",
+      "kayle",
+      "nasus",
+      "shen",
+      "rengar",
+      "riven",
+      "tryndamere"
+    ]
+  },
+  "shen": {
+    "ct": [
+      "darius",
+      "sett",
+      "fiora",
+      "pantheon",
+      "camille",
+      "olaf",
+      "renekton",
+      "gnar"
+    ],
+    "ctBy": [
+      "nasus",
+      "garen",
+      "tryndamere",
+      "jax",
+      "riven",
+      "irelia",
+      "ornn"
+    ]
+  },
+  "singed": {
+    "ct": [
+      "ambessa",
+      "jayce",
+      "teemo",
+      "darius",
+      "camille",
+      "fiora",
+      "vayne"
+    ],
+    "ctBy": [
+      "jax",
+      "malphite",
+      "yasuo",
+      "tryndamere",
+      "garen",
+      "nautilus"
+    ]
+  },
+  "sion": {
+    "ct": [
+      "vayne",
+      "irelia",
+      "fiora",
+      "darius",
+      "olaf",
+      "riven",
+      "camille",
+      "gwen",
+      "renekton"
+    ],
+    "ctBy": [
+      "malphite",
+      "teemo",
+      "kayle",
+      "nasus",
+      "akali",
+      "tryndamere"
+    ]
+  },
+  "teemo": {
+    "ct": [
+      "ryze",
+      "rumble",
+      "akali",
+      "yasuo",
+      "wukong",
+      "olaf",
+      "kennen",
+      "jayce",
+      "rengar",
+      "fiora"
+    ],
+    "ctBy": [
+      "tryndamere",
+      "renekton",
+      "garen",
+      "nasus",
+      "kayle",
+      "darius",
+      "volibear",
+      "poppy",
+      "yone",
+      "jax"
+    ]
+  },
+  "tryndamere": {
+    "ct": [
+      "singed",
+      "malphite",
+      "fiora",
+      "jax",
+      "shen",
+      "renekton",
+      "sett",
+      "darius",
+      "sion",
+      "teemo",
+      "nasus"
+    ],
+    "ctBy": [
+      "kayle",
+      "galio",
+      "irelia",
+      "olaf",
+      "riven",
+      "jayce",
+      "gwen"
+    ]
+  },
+  "urgot": {
+    "ct": [
+      "mordekaiser",
+      "tryndamere",
+      "wukong",
+      "aatrox",
+      "olaf",
+      "camille",
+      "fiora",
+      "vayne"
+    ],
+    "ctBy": [
+      "riven",
+      "garen",
+      "jax",
+      "malphite",
+      "shen"
+    ]
+  },
+  "vladimir_baron": {
+    "ct": [
+      "aatrox",
+      "fiora",
+      "tryndamere",
+      "irelia",
+      "drmundo",
+      "nasus"
+    ],
+    "ctBy": [
+      "darius",
+      "jayce",
+      "kennen",
+      "malphite",
+      "pantheon"
+    ]
+  },
+  "volibear": {
+    "ct": [
+      "vayne",
+      "teemo",
+      "fiora",
+      "jax",
+      "irelia",
+      "akali",
+      "gwen",
+      "camille"
+    ],
+    "ctBy": [
+      "nasus",
+      "yasuo",
+      "singed",
+      "diana",
+      "jarvaniv"
+    ]
+  },
+  "wukong": {
+    "ct": [
+      "malphite",
+      "mordekaiser",
+      "jax",
+      "olaf",
+      "camille",
+      "renekton",
+      "shen",
+      "gragas"
+    ],
+    "ctBy": [
+      "fiora",
+      "kayle",
+      "darius",
+      "jayce",
+      "kennen",
+      "graves",
+      "vayne",
+      "urgot",
+      "teemo",
+      "nasus"
+    ]
+  },
+  "yasuo_baron": {
+    "ct": [
+      "malphite",
+      "renekton",
+      "fiora",
+      "darius",
+      "pantheon",
+      "sett",
+      "riven",
+      "olaf",
+      "tryndamere",
+      "jax"
+    ],
+    "ctBy": [
+      "teemo",
+      "kayle",
+      "vayne",
+      "gragas",
+      "wukong",
+      "kennen",
+      "galio",
+      "gwen",
+      "ryze"
+    ]
+  },
+  "yone_baron": {
+    "ct": [
+      "malphite",
+      "teemo",
+      "jayce",
+      "fiora",
+      "jax",
+      "renekton",
+      "yasuo",
+      "akali",
+      "riven",
+      "wukong",
+      "irelia"
+    ],
+    "ctBy": [
+      "gwen",
+      "kayle",
+      "nasus",
+      "singed",
+      "sion"
+    ]
+  },
+  "zed_baron": {
+    "ct": [
+      "sett",
+      "irelia",
+      "pantheon",
+      "garen",
+      "diana",
+      "malphite",
+      "gragas",
+      "renekton"
+    ],
+    "ctBy": [
+      "kennen",
+      "teemo",
+      "vayne",
+      "jayce",
+      "yasuo"
+    ]
+  }
+}
