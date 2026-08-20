@@ -139,6 +139,14 @@ if (location.protocol === 'file:') {
 // dmg: AP / AD / Hybrid
 // cls: Tank / Fighter / Mage / Assassin / Marksman / Enchanter / Engage
 // ═══════════════════════════════════════════════════════════════
+// Kullanıcının serbest metin girdiği yerleri (arama kutuları, rakip takım adı vb.)
+// HTML içine basmadan önce kaçışlamak (escape) için. Bu olmadan biri örneğin
+// " onmouseover="... yazarak attribute'tan kaçıp script çalıştırabilir (XSS).
+function escHtml(str){
+  return String(str ?? "").replace(/[&<>"']/g, ch => ({
+    "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
+  }[ch]));
+}
 const DB = {
   // ── SUPPORT ──────────────────────────────────────────────────
   rakan:      {name:"Rakan",       lanes:["Support"],dmg:"AP",   cls:"Engage",
@@ -6863,7 +6871,7 @@ function render() {
                 padding:12px;margin-bottom:8px">
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
                   <div>
-                    <span style="font-size:10px;font-weight:800;color:#e0e0f0">${m.opponentName||"Rakip Takım"}</span>
+                    <span style="font-size:10px;font-weight:800;color:#e0e0f0">${escHtml(m.opponentName||"Rakip Takım")}</span>
                     <span style="font-size:9px;color:#444;margin-left:6px">· Bo${m.format||1}</span>
                     <span style="font-size:9px;color:${sideColor};margin-left:6px">${sideLabel}</span>
                   </div>
@@ -7256,7 +7264,7 @@ function render() {
             <div style="font-size:14px;font-weight:800;color:#fff">🏆 Şampiyonlar</div>
           </div>
           <!-- Arama -->
-          <input type="text" id="champSearchInput" value="${champSearch}"
+          <input type="text" id="champSearchInput" value="${escHtml(champSearch)}"
             oninput="champSearch=this.value;updateChampGrid()"
             placeholder="Şampiyon ara..." autocomplete="off"
             style="width:100%;padding:9px 14px;border-radius:8px;border:1px solid #252540;
@@ -7595,7 +7603,7 @@ function render() {
               border:1px solid #252540;background:#0d0d1e;color:#888;font-size:10px">Kapat</button>
           </div>
           <div style="padding:10px 14px">
-            <input value="${builderPickSearch}" oninput="builderPickSearch=this.value;renderBuilderPickerList()"
+            <input value="${escHtml(builderPickSearch)}" oninput="builderPickSearch=this.value;renderBuilderPickerList()"
               placeholder="Ara..." style="width:100%;padding:9px 12px;border-radius:9px;
               background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
           </div>
@@ -7801,7 +7809,7 @@ function render() {
               border:1px solid #252540;background:#0d0d1e;color:#888;font-size:10px">Kapat</button>
           </div>
           <div style="padding:10px 14px">
-            <input value="${ctEditorPickSearch}" oninput="ctEditorPickSearch=this.value;renderCTPickerList()"
+            <input value="${escHtml(ctEditorPickSearch)}" oninput="ctEditorPickSearch=this.value;renderCTPickerList()"
               placeholder="Şampiyon ara..." style="width:100%;padding:9px 12px;border-radius:9px;
               background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
           </div>
@@ -7926,7 +7934,7 @@ function render() {
               border:1px solid #252540;background:#0d0d1e;color:#888;font-size:10px">Kapat</button>
           </div>
           <div style="padding:10px 14px">
-            <input value="${tierEditorPickSearch}" oninput="tierEditorPickSearch=this.value;renderTierPickerList()"
+            <input value="${escHtml(tierEditorPickSearch)}" oninput="tierEditorPickSearch=this.value;renderTierPickerList()"
               placeholder="Şampiyon ara..." style="width:100%;padding:9px 12px;border-radius:9px;
               background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
           </div>
@@ -8088,7 +8096,7 @@ function render() {
           <!-- RAKİP TAKIM ADI -->
           <div style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:12px;padding:14px 16px">
             <div style="font-size:9px;color:#444;letter-spacing:2px;margin-bottom:10px">🏴 RAKİP TAKIM</div>
-            <input id="opponentInput" type="text" value="${opponentName}"
+            <input id="opponentInput" type="text" value="${escHtml(opponentName)}"
               oninput="opponentName=this.value"
               placeholder="Rakip Takım Adı"
               autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
@@ -8143,7 +8151,7 @@ function render() {
   const needed = seriesFormat===1?1:seriesFormat===3?2:3;
   const seriesOver = myScore>=needed || oppScore>=needed;
   if (seriesOver) {
-    const winner = myScore>=needed ? "🏆 SEN" : `😔 ${opponentName||"RAKİP"}`;
+    const winner = myScore>=needed ? "🏆 SEN" : `😔 ${escHtml(opponentName||"RAKİP")}`;
     const wColor = myScore>=needed ? "#3ad48f" : "#ff4d4d";
     document.getElementById("app").innerHTML = `
       <div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;
@@ -8397,7 +8405,7 @@ function render() {
 
     return `<div style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:10px;padding:10px;margin-bottom:10px">
       <div style="font-size:9px;font-weight:800;color:#666;letter-spacing:2px;margin-bottom:8px">ŞAMPİYON HAVUZU</div>
-      <input type="text" id="poolSearch" placeholder="Ara..." value="${search}"
+      <input type="text" id="poolSearch" placeholder="Ara..." value="${escHtml(search)}"
         oninput="doSearch(this.value)" autocomplete="off" autocorrect="off"
         autocapitalize="off" spellcheck="false"
         style="width:100%;padding:8px 12px;border-radius:8px;border:1px solid #252540;
@@ -8498,7 +8506,7 @@ function render() {
           <span>Bo${seriesFormat}${fearless?" · Fearless":""}</span>
           ${patchData.version?`<span style="color:#ffcc02;font-weight:700">· ${patchData.version}</span>`:""}
           ${mySide!==null?`<span style="color:${mySide===0?"#3a8fff":"#ff4d4d"}">${mySide===0?"🔵":"🔴"} Sen</span>`:""}
-          ${opponentName?`<span style="color:#555">vs ${opponentName}</span>`:""}
+          ${opponentName?`<span style="color:#555">vs ${escHtml(opponentName)}</span>`:""}
           ${seriesFormat>1?`<span style="color:#3ad48f">Sen ${myScore}</span><span style="color:#444">—</span><span style="color:#ff4d4d">${oppScore} Rakip</span>`:""}
           ${seriesFormat>1?`<span style="color:#333">Maç ${currentMatch}</span>`:""}
         </div>
@@ -8610,7 +8618,7 @@ function render() {
             <button onclick="closeModal()" style="width:30px;height:30px;border-radius:6px;
               background:#131328;border:1px solid #252540;color:#888;font-size:15px;font-weight:800">✕</button>
           </div>
-          <input autofocus type="text" placeholder="Şampiyon ara..." value="${search}"
+          <input autofocus type="text" placeholder="Şampiyon ara..." value="${escHtml(search)}"
             oninput="doSearch(this.value)"
             style="width:100%;padding:9px 12px;border-radius:8px;border:1px solid #252540;
             background:#080816;color:#e0e0f0;font-size:13px;outline:none;margin-bottom:8px"/>
