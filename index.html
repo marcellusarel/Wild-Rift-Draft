@@ -3088,16 +3088,22 @@ async function githubPutFile(path, contentStr, message){
   return await res.json();
 }
 async function testGHConnection(){
+  // NOT: saveGHConfigFromForm() içeride render() çağırıyor ve bu, #app'in tüm
+  // innerHTML'ini yeniden oluşturuyor. Bu yüzden render()'dan ÖNCE alınmış bir
+  // ghTestResult referansı DOM'dan kopmuş (detached) olur ve ona yazılan sonuç
+  // ekranda hiç görünmez. Çözüm: elementi render()'dan SONRA yeniden almak.
+  saveGHConfigFromForm();
   const el = document.getElementById("ghTestResult");
   if(el) el.innerHTML = `<span style="color:#888">Test ediliyor...</span>`;
-  saveGHConfigFromForm();
   try {
     const r = await githubGetFile("tier-list.json");
-    if(el) el.innerHTML = r.exists
+    const el2 = document.getElementById("ghTestResult");
+    if(el2) el2.innerHTML = r.exists
       ? `<span style="color:#00ff88">✓ Bağlantı başarılı — tier-list.json bulundu.</span>`
       : `<span style="color:#ffcc02">⚠ Bağlantı başarılı ama tier-list.json henüz repo'da yok. İlk kayıtta otomatik oluşturulacak.</span>`;
   } catch(e){
-    if(el) el.innerHTML = `<span style="color:#ff6666">✗ ${e.message}</span>`;
+    const el2 = document.getElementById("ghTestResult");
+    if(el2) el2.innerHTML = `<span style="color:#ff6666">✗ ${e.message}</span>`;
   }
 }
 // Ortak yardımcı: editörlerdeki "Kaydet" fonksiyonlarının hepsi bunu çağırır.
