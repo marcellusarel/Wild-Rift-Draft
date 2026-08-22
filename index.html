@@ -1221,6 +1221,15 @@ const DB = {
 
 const ALL = Object.entries(DB).map(([id,c])=>({id,...c}));
 const LANES = ["Tümü","Baron","Jungle","Mid","ADC","Support"];
+// Koridor adının görünen (dile göre) metnini döndürür — dahili karşılaştırma
+// değerleri (Baron/Jungle/Mid/ADC/Support) HİÇBİR ZAMAN değişmez, sadece
+// ekrana basılan metin bu fonksiyondan geçer.
+const LANE_NAME_TR = { Tümü:"Tümü", Baron:"Üst", Jungle:"Orman", Mid:"Orta", ADC:"Nişancı", Support:"Destek" };
+function tl(lane){
+  if (!lane) return lane;
+  if (lane === "Tümü") return t('all');
+  return (LANG === "tr") ? (LANE_NAME_TR[lane] || lane) : lane;
+}
 
 // Flex şampiyonlar (aynı hero, farklı lane key'i) için isim -> tüm key'ler eşlemesi.
 // Örn: "Camille" -> ["camille","camille_jg"]. Biri picklenince/kilitlenince diğeri de kilitlenir.
@@ -6409,7 +6418,7 @@ const ASSET_NAME = {
   bloodthirster: "Bloodthirster",
   bone_plating: "Bone Plating",
   boots_of_dynamism: "Boots of Dynamism",
-  zirhezen_cizmeler: "Zırhezen Çizmeler",
+  zirhezen_cizmeler: "Armorbreaker Boots",
   boots_of_mana: "Boots of Mana",
   boots_of_speed: "Boots of Speed",
   botanist: "Botanist",
@@ -6636,6 +6645,272 @@ const ASSET_NAME = {
   zekes_convergence: "Zeke's Convergence",
   zombie_ward: "Zombie Ward",
 };
+
+const ITEM_NAME_TR = {
+  absolute_focus: "Mutlak Odak",
+  abyssal_mask: "Uçurum Maskesi",
+  aery: "Peri Aery",
+  aether_wisp: "Esir Buğusu",
+  amaranths_twinguard: "Amaranth'ın İkiz Kalkanı",
+  amplifying_tome: "Güçlendirme Kitabı",
+  arcane_comet: "Gizemli Kuyrukluyıldız",
+  archangels_staff: "Başmelek Asası",
+  ardent_censer: "Ateşli Buhurdan",
+  armored_advance: "Zırhlı İlerleyiş",
+  axiom_arc: "Aksiyom Yayı",
+  axiom_arcanist: "Aksiyom Büyücüsü",
+  b_f_sword: "B. F. Kılıç",
+  bamis_cinder: "Bami'nin Közü",
+  bandle_fantasy: "Bandle Fantazisi",
+  banshees_veil: "Banshee'nin Peçesi",
+  barrier: "Kalkan",
+  battle_zeal: "Savaş Şevki",
+  berserkers_greaves: "Deli Dolu Çizmeler",
+  black_cleaver: "Kara Satır",
+  black_mist_scythe: "Kara Sis Tırpanı",
+  black_spear: "Kara Mızrak",
+  blackfire_torch: "Kara Ateş Meşalesi",
+  chainlaced_crushers: "Zincir Bağlı Ezicler",
+  blade_of_the_ruined_king: "Yıkık Kralın Kılıcı",
+  blasting_wand: "Patlayıcı Değnek",
+  blighting_jewel: "Musallat Mücevher",
+  bloodletters_curse: "Kan Alıcının Laneti",
+  bloodthirster: "Kanasusamış Kılıç",
+  bone_plating: "Kemik Kaplama",
+  boots_of_dynamism: "Dinamizm Çizmeleri",
+  zirhezen_cizmeler: "Zırhezen Çizmeler",
+  boots_of_mana: "Mana Çizmeleri",
+  boots_of_speed: "Hız Çizmeleri",
+  botanist: "Botanikçi",
+  bramble_vest: "Diken Yelek",
+  brawlers_gloves: "Kavgacı Eldivenleri",
+  brutal: "Vahşi",
+  bulwark_of_the_mountain: "Dağın Siperi",
+  catalyst_of_aeons: "Çağların Katalizörü",
+  caulfields_warhammer: "Caulfield'ın Savaş Çekici",
+  celerity: "Çeviklik",
+  celestial_opposition: "Göksel Karşıtlık",
+  chain_assault: "Zincir Saldırı",
+  chain_vest: "Zincir Yelek",
+  cheap_shot: "Ucuz Atış",
+  chempunk_chainsword: "Kimyapunk Zincirkılıcı",
+  chilling_smite: "Dondurucu Ezici Darbe",
+  clarity: "Berrak Zihin",
+  cleanse: "Arındır",
+  cloak_of_agility: "Çeviklik Pelerini",
+  cloth_armor: "Kumaş Zırh",
+  conqueror: "Fatih",
+  cosmic_drive: "Kozmik Güdü",
+  coup_de_grace: "Ölüm Darbesi",
+  courage_of_the_colossus: "Devin Cesareti",
+  crimson_lucidity: "Kızıl Berraklık",
+  crown_of_the_shattered_queen: "Kırık Kraliçenin Tacı",
+  cryptbloom: "Mezar Çiçeği",
+  cut_down: "Yere Serme",
+  dagger: "Hançer",
+  dark_harvest: "Karanlık Hasat",
+  dash: "Atılım",
+  dawncore: "Şafak Özü",
+  dawnshroud: "Şafak Örtüsü",
+  dead_mans_plate: "Ölü Adamın Zırhı",
+  deaths_dance: "Ölümün Dansı",
+  demolish: "Yıkım",
+  divine_sunderer: "İlahi Parçalayıcı",
+  dream_maker: "Rüya Yapıcı",
+  duskblade_of_draktharr: "Draktharr'ın Alacakaranlık Bıçağı",
+  dusk_and_dawn: "Alacakaranlık ve Şafak",
+  eclipse: "Tutulma",
+  edge_of_night: "Gecenin Kenarı",
+  electrocute: "Elektroşok",
+  empowered_attack: "Güçlendirilmiş Saldırı",
+  empowerment: "Güçlendirme",
+  essence_reaver: "Öz Hırsızı",
+  executioners_calling: "Cellatın Çağrısı",
+  exhaust: "Tüket",
+  experimental_hexplate: "Deneysel Hexlevha",
+  eyeball_collection: "Göz Küresi Koleksiyoncusu",
+  eyeball_collector: "Göz Küresi Koleksiyoncusu",
+  fated_ashes: "Kader Külleri",
+  fiendish_codex: "Şeytani Kodeks",
+  fimbulwinter: "Fimbulwinter",
+  first_strike: "İlk Vuruş",
+  flash: "Sıçra",
+  fleet_footwork: "Çevik Ayak İşi",
+  font_of_life: "Yaşam Pınarı",
+  forbidden_idol: "Yasak İdol",
+  force_of_nature: "Doğanın Gücü",
+  frozen_heart: "Donmuş Kalp",
+  galeforce: "Fırtına Gücü",
+  gamblers_blade: "Kumarbazın Kılıcı",
+  gathering_storm: "Toplanan Fırtına",
+  ghost: "Hayalet",
+  giants_belt: "Devin Kemeri",
+  glacial_shroud: "Buzul Örtüsü",
+  glorious_enchant: "Şanlı Efsun",
+  gluttonous_greaves: "Oburluk Çizmeleri",
+  goredrinker: "Kan İçen",
+  grasp_of_the_undying: "Ölümsüzün Pençesi",
+  guardian: "Koruyucu",
+  guardian_angel: "Koruyucu Melek",
+  guinsoos_rageblade: "Guinsoo'nun Öfke Kılıcı",
+  gunmetal_greaves: "Çelik Çizmeler",
+  harmonic_echo: "Uyumlu Yankı",
+  haunting_guise: "Musallat Kılık",
+  heal: "İyileştir",
+  heartsteel: "Kalp Çeliği",
+  hellfire_hatchet: "Cehennem Ateşi Baltası",
+  hexdrinker: "Hex İçen",
+  hexflash: "Hex Sıçraması",
+  hextech_alternator: "Hextech Alternatör",
+  hollow_radiance: "Boş Işıma",
+  horizon_focus: "Ufuk Odağı",
+  hubris: "Kibir",
+  hullbreaker: "Gövde Kırıcı",
+  ice_overlord: "Buz Efendisi",
+  iceborn_gauntlet: "Buzdoğan Eldiveni",
+  ignite: "Tutuştur",
+  imperial_mandate: "İmparatorluk Fermanı",
+  infinity_edge: "Sonsuzluk Ağzı",
+  infinity_orb: "Sonsuzluk Küresi",
+  ingenious_hunter: "Yaratıcı Avcı",
+  ionian_boots_of_lucidity: "Ionia'nın Berraklık Çizmeleri",
+  immortal_path: "Ölümsüz Yol",
+  ixtali_seedjar: "Ixtali Tohum Kavanozu",
+  jaurims_fist: "Jaurim'in Yumruğu",
+  kaenic_rookern: "Kaenic Rookern",
+  kindlegem: "Ateşleyici Mücevher",
+  kircheis_shard: "Kircheis Parçası",
+  knights_vow: "Şövalyenin Yemini",
+  kraken_slayer: "Kraken Katili",
+  last_stand: "Son Direniş",
+  last_whisper: "Son Fısıltı",
+  legend_alacrity: "Efsane: Çeviklik",
+  legend_bloodline: "Efsane: Kan Bağı",
+  legend_tenacity: "Efsane: Azim",
+  lethal_tempo: "Öldürücü Tempo",
+  lich_bane: "Lich'in Laneti",
+  liandrys_torment: "Liandry'nin İşkencesi",
+  locket_enchant: "Madalyon Efsunu",
+  long_sword: "Uzun Kılıç",
+  lord_dominiks_regards: "Lord Dominik'in Selamı",
+  lost_chapter: "Kayıp Bölüm",
+  ludens_echo: "Luden'in Yankısı",
+  magnetic_blaster: "Manyetik Fırlatıcı",
+  malignance: "Kötücüllük",
+  manaflow_band: "Mana Akışı Bandı",
+  manamune: "Manamune",
+  mantle_of_the_twelfth_hour: "On İkinci Saatin Cübbesi",
+  mark: "İşaret",
+  maw_of_malmortius: "Malmortius'un Ağzı",
+  mejais_soulstealer: "Mejai'nin Ruh Hırsızı",
+  mercurys_treads: "Mercury'nin Adımları",
+  mercurial_scimitar: "Mercurial Pala",
+  mikaels_blessing: "Mikael'in Kutsaması",
+  morellonomicon: "Morellonomicon",
+  mortal_reminder: "Ölümlülük Hatırlatıcısı",
+  muramana: "Muramana",
+  nashors_talon: "Nashor'un Pençesi",
+  nashors_tooth: "Nashor'un Dişi",
+  navori_quickblades: "Navori Hızlı Kılıçları",
+  needlessly_large_rod: "Gereksiz Büyük Değnek",
+  negatron_cloak: "Negatron Pelerini",
+  nimbus_cloak: "Nimbus Pelerini",
+  noonquiver: "Öğle Sadağı",
+  null_magic_mantle: "Sıfır Büyü Cübbesi",
+  nullifying_orb: "Etkisizleştirici Küre",
+  oblivion_orb: "Unutuş Küresi",
+  oceanids_trident: "Okyanus Perisi'nin Üç Dişli Mızrağı",
+  overgrowth: "Aşırı Büyüme",
+  overlords_bloodmail: "Efendinin Kan Zırhı",
+  perplexity: "Şaşkınlık",
+  perseverance: "Azim",
+  phage: "Faj",
+  phantom_dancer: "Hayalet Dansçı",
+  phase_rush: "Evre Atılımı",
+  plated_steelcaps: "Çelik Kaplamalı Çizme",
+  prophets_pendant: "Kahinin Kolyesi",
+  protobelt_enchant: "Protokemer Efsunu",
+  psychic_projector: "Ruhsal Projektör",
+  quicksilver_enchant: "Cıva Efsunu",
+  rabadons_deathcap: "Rabadon'un Ölüm Şapkası",
+  radiant_virtue: "Işıltılı Erdem",
+  randuins_omen: "Randuin'in Alameti",
+  recurve_bow: "Kompozit Yay",
+  redemption: "Kurtuluş",
+  relentless_hunter: "Amansız Avcı",
+  relic_shield: "Kutsal Emanet Kalkanı",
+  revitalize: "Canlandırma",
+  riftmaker: "Rift Yapıcı",
+  ring_of_revelation: "İfşa Halkası",
+  rod_of_ages: "Çağların Asası",
+  ruby_crystal: "Yakut Kristal",
+  runaans_hurricane: "Runaan'ın Kasırgası",
+  rylais_crystal_scepter: "Rylai'nin Kristal Asası",
+  sapphire_crystal: "Safir Kristal",
+  scorch: "Yakıp Kavurma",
+  searing_crown: "Kavurucu Taç",
+  second_wind: "İkinci Nefes",
+  seekers_armguard: "Arayıcının Kolçağı",
+  seraphs_embrace: "Seraph'ın Kucaklaşması",
+  serpents_fang: "Yılanın Dişi",
+  serrated_dirk: "Dişli Hançer",
+  seryldas_grudge: "Serylda'nın Kini",
+  sheen: "Parlaklık",
+  shurelyas_battlesong: "Shurelya'nın Savaş Şarkısı",
+  shimmering_spark: "Parıldayan Kıvılcım",
+  smite: "Ezici Darbe",
+  soul_transfer: "Ruh Transferi",
+  soul_weep: "Ruh Ağıtı",
+  spear_of_shojin: "Shojin'in Mızrağı",
+  spellslingers_shoes: "Büyü Fırlatanın Ayakkabıları",
+  spectral_sickle: "Hayaletimsi Orak",
+  spectres_cowl: "Hayaletin Kukuletası",
+  staff_of_flowing_waters: "Akan Suların Asası",
+  stasis_enchant: "Durağanlık Efsunu",
+  steraks_gage: "Sterak'ın Rehini",
+  stinger: "İğne",
+  stoneplate_enchant: "Taş Levha Efsunu",
+  stormsurge: "Fırtına Dalgası",
+  stridebreaker: "Adım Kırıcı",
+  sudden_impact: "Ani Darbe",
+  sundered_sky: "Parçalanmış Gökyüzü",
+  sunfire_aegis: "Güneşateşi Kalkanı",
+  surging_scales: "Kabaran Pullar",
+  sweeping_lens: "Tarayıcı Mercek",
+  tear_of_the_goddess: "Tanrıçanın Gözyaşı",
+  teleport: "Işınlanma",
+  terminus: "Terminus",
+  the_collector: "Koleksiyoncu",
+  thornmail: "Dikenli Zırh",
+  titanic_hydra: "Devasa Hydra",
+  transcendence: "Aşkınlık",
+  trinity_force: "Üçlü Güç",
+  triumph: "Zafer",
+  tyrant: "Tiran",
+  unending_despair: "Bitmeyen Umutsuzluk",
+  unshakeable: "Sarsılmaz",
+  vampiric_scepter: "Vampirik Asa",
+  vigilant_wardstone: "Tetikte Gözcü Taşı",
+  void_staff: "Boşluk Asası",
+  veil_enchant: "Peçe Efsunu",
+  wardens_mail: "Bekçinin Zırhı",
+  warding_totem: "Gözcü Totemi",
+  warmogs_armor: "Warmog'un Zırhı",
+  winged_moonplate: "Kanatlı Ay Levhası",
+  winters_approach: "Kışın Gelişi",
+  wits_end: "Aklın Sonu",
+  yordle_trap: "Yordle Tuzağı",
+  youmuus_ghostblade: "Youmuu'nun Hayalet Kılıcı",
+  zeal: "Şevk",
+  zekes_convergence: "Zeke'nin Yakınsaması",
+  zombie_ward: "Zombi Gözcü",
+};
+
+// Dile göre item/rün/büyü ismini döndürür (an = asset name)
+function an(key){
+  if (LANG === "tr") return ITEM_NAME_TR[key] || ASSET_NAME[key] || key;
+  return ASSET_NAME[key] || key;
+}
 // Görünen isim ("Warmog's Armor") → asset anahtarı ("warmogs_armor")
 const TR_CHAR_MAP = {"ı":"i","İ":"i","I":"i","ş":"s","Ş":"s","ğ":"g","Ğ":"g","ü":"u","Ü":"u","ö":"o","Ö":"o","ç":"c","Ç":"c"};
 function slugifyName(name){
@@ -7031,10 +7306,10 @@ function renderBuilderPickerList(){
   const cat = builderPickerCategory(builderPicking);
   const map = cat==="rune"?RUNE_IMG:cat==="spell"?SPELL_IMG:ITEM_IMG;
   const list = Object.keys(map)
-    .filter(k => !builderPickSearch || (ASSET_NAME[k]||k).toLowerCase().includes(builderPickSearch.toLowerCase()))
-    .sort((a,b)=>(ASSET_NAME[a]||a).localeCompare(ASSET_NAME[b]||b,"tr"));
+    .filter(k => !builderPickSearch || (an(k)).toLowerCase().includes(builderPickSearch.toLowerCase()))
+    .sort((a,b)=>(an(a)).localeCompare(an(b),"tr"));
   grid.innerHTML = list.map(k => {
-    const nm = ASSET_NAME[k]||k;
+    const nm = an(k);
     const img = cat==="rune"?runeImg(k,44):cat==="spell"?spellImg(k,44):itemImg(k,44);
     return `<div onclick="builderPickAsset('${nm.replace(/'/g,"\\'")}')" style="display:flex;
       flex-direction:column;align-items:center;gap:4px;cursor:pointer">
@@ -7049,17 +7324,17 @@ function renderBuilderPickerList(){
 function itemImg(key, size=32){
   const url = ITEM_IMG[key];
   if(!url) return "";
-  return `<img src="${url}" alt="${ASSET_NAME[key]||key}" title="${ASSET_NAME[key]||key}" width="${size}" height="${size}" style="border-radius:6px;object-fit:cover" loading="lazy" onerror="this.style.display='none'">`;
+  return `<img src="${url}" alt="${an(key)}" title="${an(key)}" width="${size}" height="${size}" style="border-radius:6px;object-fit:cover" loading="lazy" onerror="this.style.display='none'">`;
 }
 function runeImg(key, size=32){
   const url = RUNE_IMG[key];
   if(!url) return "";
-  return `<img src="${url}" alt="${ASSET_NAME[key]||key}" title="${ASSET_NAME[key]||key}" width="${size}" height="${size}" style="border-radius:50%;object-fit:cover" loading="lazy" onerror="this.style.display='none'">`;
+  return `<img src="${url}" alt="${an(key)}" title="${an(key)}" width="${size}" height="${size}" style="border-radius:50%;object-fit:cover" loading="lazy" onerror="this.style.display='none'">`;
 }
 function spellImg(key, size=32){
   const url = SPELL_IMG[key];
   if(!url) return "";
-  return `<img src="${url}" alt="${ASSET_NAME[key]||key}" title="${ASSET_NAME[key]||key}" width="${size}" height="${size}" style="border-radius:6px;object-fit:cover" loading="lazy" onerror="this.style.display='none'">`;
+  return `<img src="${url}" alt="${an(key)}" title="${an(key)}" width="${size}" height="${size}" style="border-radius:6px;object-fit:cover" loading="lazy" onerror="this.style.display='none'">`;
 }
 
 
@@ -7343,7 +7618,7 @@ function render() {
 
     // İtem/rün için genel satır oluşturucu (şampiyon kartıyla aynı görünümde)
     function assetPatchRow(key, g, imgMap, imgFn, detailMap) {
-      const nm = ASSET_NAME[key] || key;
+      const nm = an(key) || key;
       const detail = detailMap?.[key] || "";
       return `<div style="display:flex;align-items:center;gap:10px;padding:10px;
         border-radius:10px;background:${g.bg};border:1px solid ${g.border}">
@@ -7420,7 +7695,7 @@ function render() {
                       </div>
                       <div style="flex:1;min-width:0">
                         <div style="font-size:13px;font-weight:700;color:#e0e0f0">${c.name}</div>
-                        <div style="font-size:9px;color:${lc};margin-top:1px">${c.lanes?.join(" · ")} · ${c.cls}</div>
+                        <div style="font-size:9px;color:${lc};margin-top:1px">${c.lanes?.map(tl).join(" · ")} · ${c.cls}</div>
                         ${detail?`<div style="font-size:9px;color:#555;margin-top:3px;
                           white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${detail}</div>`:""}
                       </div>
@@ -7500,7 +7775,7 @@ function render() {
           ${role ? `<div style="position:absolute;bottom:-2px;right:-2px;width:18px;height:18px;
             border-radius:50%;background:#0a0a18;border:1px solid #1a1a2e;
             display:flex;align-items:center;justify-content:center;padding:2px">
-            <img src="${ROLE_ICON[role]}" style="width:100%;height:100%;object-fit:contain" alt="${role}"></div>` : ""}
+            <img src="${ROLE_ICON[role]}" style="width:100%;height:100%;object-fit:contain" alt="${tl(role)}"></div>` : ""}
         </div>
         <div style="font-size:9px;color:#ccc;text-align:center;line-height:1.15;
           max-width:64px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.name}</div>
@@ -7566,7 +7841,7 @@ function render() {
               background:${active ? "#ff4d6d22" : "#0d0d1e"};
               border:1px solid ${active ? "#ff4d6d77" : "#1a1a2e"};
               color:${active ? "#ff4d6d" : "#888"}">
-              ${r==="Tümü"?"🗂️ "+t('all'):`<img src="${ROLE_ICON[r]}" style="width:13px;height:13px;object-fit:contain;vertical-align:-2px;margin-right:3px" alt="${r}">${r}`}
+              ${r==="Tümü"?"🗂️ "+t('all'):`<img src="${ROLE_ICON[r]}" style="width:13px;height:13px;object-fit:contain;vertical-align:-2px;margin-right:3px" alt="${tl(r)}">${tl(r)}`}
             </button>`;
           }).join("")}
         </div>
@@ -7626,7 +7901,7 @@ function render() {
                 white-space:nowrap;flex-shrink:0;
                 background:${act?lc+"30":"#0f0f1e"};
                 border:1px solid ${act?lc+"88":"#1a1a2e"};
-                color:${act?lc:"#444"}">${l==="Tümü"?t('all'):l}</button>`;
+                color:${act?lc:"#444"}">${tl(l)}</button>`;
             }).join("")}
           </div>
         </div>
@@ -7709,7 +7984,7 @@ function render() {
             </div>
             <div style="flex:1">
               <div style="font-size:18px;font-weight:800;color:#fff;margin-bottom:4px">${c.name}</div>
-              <div style="font-size:10px;color:${lc};margin-bottom:6px">${c.lanes?.join(" · ")} · ${c.cls} · ${c.dmg}</div>
+              <div style="font-size:10px;color:${lc};margin-bottom:6px">${c.lanes?.map(tl).join(" · ")} · ${c.cls} · ${c.dmg}</div>
               ${patchBadge(champDetailId) ? `<div style="margin-bottom:6px">${patchBadge(champDetailId)}</div>` : ""}
               ${flexVariants.length > 0 ? `
                 <div style="font-size:9px;color:#ffcc02;margin-bottom:6px">🔀 FLEX</div>
@@ -7725,7 +8000,7 @@ function render() {
                   <button onclick="champDetailId='${champDetailId}';render()" style="
                     padding:3px 10px;border-radius:6px;font-size:9px;font-weight:700;
                     background:${lc}33;border:2px solid ${lc};color:${lc}">
-                    ${c.lanes?.[0]} ✓
+                    ${tl(c.lanes?.[0])} ✓
                   </button>
                 </div>` : ""}
             </div>
@@ -7922,10 +8197,10 @@ function render() {
       const map = cat==="rune"?RUNE_IMG:cat==="spell"?SPELL_IMG:ITEM_IMG;
       const title = cat==="rune"?t('picker_pick_rune'):cat==="spell"?t('picker_pick_spell'):t('picker_pick_item');
       const list = Object.keys(map)
-        .filter(k => !builderPickSearch || (ASSET_NAME[k]||k).toLowerCase().includes(builderPickSearch.toLowerCase()))
-        .sort((a,b)=>(ASSET_NAME[a]||a).localeCompare(ASSET_NAME[b]||b,"tr"));
+        .filter(k => !builderPickSearch || (an(k)).toLowerCase().includes(builderPickSearch.toLowerCase()))
+        .sort((a,b)=>(an(a)).localeCompare(an(b),"tr"));
       const itemsHtml = list.map(k => {
-        const nm = ASSET_NAME[k]||k;
+        const nm = an(k);
         const img = cat==="rune"?runeImg(k,44):cat==="spell"?spellImg(k,44):itemImg(k,44);
         return `<div onclick="builderPickAsset('${nm.replace(/'/g,"\\'")}')" style="display:flex;
           flex-direction:column;align-items:center;gap:4px;cursor:pointer">
@@ -8296,7 +8571,7 @@ function render() {
           display:flex;align-items:center;gap:10px">
           <button onclick="closeTierEditor()" style="padding:6px 12px;border-radius:8px;
             border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← ${t('cancel')}</button>
-          <div style="font-size:14px;font-weight:800;color:#fff">📊 ${t('tier_edit_title')} · <img src="${ROLE_ICON[role]}" style="width:16px;height:16px;object-fit:contain;vertical-align:-3px;margin:0 1px" alt="${role}"> ${role}</div>
+          <div style="font-size:14px;font-weight:800;color:#fff">📊 ${t('tier_edit_title')} · <img src="${ROLE_ICON[role]}" style="width:16px;height:16px;object-fit:contain;vertical-align:-3px;margin:0 1px" alt="${tl(role)}"> ${tl(role)}</div>
         </div>
 
         <div style="padding:14px">
@@ -8554,7 +8829,7 @@ function render() {
         <span style="flex:1;font-size:${isBan?9:12}px;font-weight:700;
           color:${isBan?"#555":"#e0e0f0"};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
           text-decoration:${isBan?"line-through":"none"}">${c.name}</span>
-        ${!isBan?`<span style="font-size:8px;color:${LANE_COLOR[c.lanes?.[0]]||"#888"};flex-shrink:0">${c.lanes?.[0]}</span>`:""}
+        ${!isBan?`<span style="font-size:8px;color:${LANE_COLOR[c.lanes?.[0]]||"#888"};flex-shrink:0">${tl(c.lanes?.[0])}</span>`:""}
       ` : `<span style="font-size:8px;color:${isA?col:"#252540"}">${isA?(isBan?t('draft_ban_dots'):t('draft_pick_dots')):" "}</span>`}
     </div>`;
   }
@@ -8588,7 +8863,7 @@ function render() {
           <span style="font-size:12px;font-weight:700;color:#e0e0f0">${c.name}</span>
           ${c._patch?patchBadge(c.id):""}
         </div>
-        <div style="font-size:8px;color:${lc};margin-top:2px">${c.lanes?.join(" · ")} · ${c.cls}</div>
+        <div style="font-size:8px;color:${lc};margin-top:2px">${c.lanes?.map(tl).join(" · ")} · ${c.cls}</div>
         ${c._why?`<div style="margin-top:3px">
           <span style="font-size:7px;padding:1px 6px;border-radius:3px;font-weight:700;
             background:${accent}18;border:1px solid ${accent}44;color:${accent}">${tw(c._why)}</span>
@@ -8718,7 +8993,7 @@ function render() {
       return `<button onclick="setLane('${l}')" style="
         padding:6px 12px;border-radius:20px;font-size:10px;font-weight:700;
         background:${act?lc+"30":"#0f0f1e"};border:1px solid ${act?lc+"88":"#1a1a2e"};
-        color:${act?lc:"#444"};white-space:nowrap">${l==="Tümü"?t('all'):l}</button>`;
+        color:${act?lc:"#444"};white-space:nowrap">${tl(l)}</button>`;
     }).join("");
 
     const rows = list.map(c=>{
@@ -8740,7 +9015,7 @@ function render() {
               background:#ffcc0222;border:1px solid #ffcc0244;color:#ffcc02;font-weight:800">★ ${t('draft_suggestion_star')}</span>`:""}
             ${patchBadge(c.id)}
           </div>
-          <div style="font-size:9px;color:${lc};margin-top:1px">${c.lanes?.join(" · ")} · ${c.cls} · ${c.dmg}</div>
+          <div style="font-size:9px;color:${lc};margin-top:1px">${c.lanes?.map(tl).join(" · ")} · ${c.cls} · ${c.dmg}</div>
         </div>
         <div style="padding:5px 10px;border-radius:6px;font-size:10px;font-weight:700;
           background:${tc}18;border:1px solid ${tc}44;color:${tc};flex-shrink:0">${t('draft_pick_btn')}</div>
@@ -8798,7 +9073,7 @@ function render() {
           <div style="flex:1;min-width:0">
             <div style="font-size:11px;font-weight:700;color:#e0e0f0;
               white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${c.name}</div>
-            <div style="font-size:8px;color:${LANE_COLOR[c.lanes?.[0]]||"#888"}">${c.lanes?.[0]} · ${c.cls}</div>
+            <div style="font-size:8px;color:${LANE_COLOR[c.lanes?.[0]]||"#888"}">${tl(c.lanes?.[0])} · ${c.cls}</div>
           </div>
         </div>`).join("")}
         <div style="margin-top:8px;padding:7px;background:#080816;border-radius:7px">
@@ -8972,7 +9247,7 @@ function render() {
               return `<button onclick="setLane('${l}')" style="padding:5px 11px;border-radius:20px;
                 font-size:10px;font-weight:700;white-space:nowrap;
                 background:${act?lc+"30":"#111120"};border:1px solid ${act?lc+"88":"#1e1e30"};
-                color:${act?lc:"#555"}">${l==="Tümü"?t('all'):l}</button>`;
+                color:${act?lc:"#555"}">${tl(l)}</button>`;
             }).join("")}
           </div>
         </div>
@@ -9040,7 +9315,7 @@ function doSearch(v) {
           <span style="font-size:13px;font-weight:700;color:#e0e0f0">${c.name}</span>
           ${isSug?'<span style="font-size:7px;padding:1px 5px;border-radius:3px;background:#ffcc0222;border:1px solid #ffcc0244;color:#ffcc02;font-weight:800">★ '+t('draft_suggestion_star')+'</span>':""}
         </div>
-        <div style="font-size:9px;color:${lc};margin-top:1px">${c.lanes?.join(" · ")} · ${c.cls} · ${c.dmg}</div>
+        <div style="font-size:9px;color:${lc};margin-top:1px">${c.lanes?.map(tl).join(" · ")} · ${c.cls} · ${c.dmg}</div>
       </div>
       <div style="padding:5px 10px;border-radius:6px;font-size:10px;font-weight:700;
         background:${tc}18;border:1px solid ${tc}44;color:${tc};flex-shrink:0">${t('draft_pick_btn')}</div>
