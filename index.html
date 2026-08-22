@@ -110,6 +110,12 @@ input{font-family:inherit}
 </head>
 <body>
 <div id="app"></div>
+<button id="langToggleBtn" onclick="toggleLang()" title="Language / Dil" style="position:fixed;top:10px;right:10px;
+  z-index:9998;background:#12122a;border:1px solid #2a2a4a;color:#fff;font-size:11px;font-weight:800;
+  padding:7px 12px;border-radius:20px;cursor:pointer;box-shadow:0 2px 10px #0008;
+  font-family:inherit;letter-spacing:.3px">
+  <span id="langToggleLabel">🇹🇷 TR</span>
+</button>
 <div id="builderFab" style="display:none;position:fixed;bottom:16px;right:16px;z-index:9997;
   padding-bottom:env(safe-area-inset-bottom)"></div>
 <div id="profileFab" style="display:none;position:fixed;bottom:64px;right:16px;z-index:9997;
@@ -147,6 +153,251 @@ function escHtml(str){
     "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
   }[ch]));
 }
+
+// ═══════════════════════════════════════════════════════════════
+// DİL DESTEĞİ (i18n) — Türkçe / English
+// t("anahtar") ile çeviri metni alınır. Bir dilde eksik anahtar varsa
+// Türkçe'ye, o da yoksa anahtarın kendisine düşer (hiçbir zaman kırılmaz).
+// ═══════════════════════════════════════════════════════════════
+let LANG = (function(){ try{ return localStorage.getItem("wrLang") || "tr"; }catch(e){ return "tr"; } })();
+const I18N = { tr:{}, en:{} };
+function addI18n(dict){
+  Object.keys(dict).forEach(k => {
+    I18N.tr[k] = dict[k].tr;
+    I18N.en[k] = dict[k].en;
+  });
+}
+function t(key, vars){
+  let s = (I18N[LANG] && I18N[LANG][key] != null) ? I18N[LANG][key]
+        : (I18N.tr[key] != null ? I18N.tr[key] : key);
+  if (vars) Object.keys(vars).forEach(k => { s = s.split("{"+k+"}").join(vars[k]); });
+  return s;
+}
+function toggleLang(){
+  LANG = (LANG === "tr") ? "en" : "tr";
+  try{ localStorage.setItem("wrLang", LANG); }catch(e){}
+  updateLangBtn();
+  render();
+}
+function updateLangBtn(){
+  const b = document.getElementById("langToggleLabel");
+  if (b) b.textContent = (LANG === "tr") ? "🇹🇷 TR" : "🇬🇧 EN";
+}
+// I18N_BLOCKS_START
+
+// -- Ana Menü (home) --
+addI18n({
+  home_subtitle:        { tr:"DRAFT ASİSTANI",              en:"DRAFT ASSISTANT" },
+  home_draft_title:      { tr:"Draft Başlat",                en:"Start Draft" },
+  home_champions_title:  { tr:"Şampiyonlar",                 en:"Champions" },
+  home_champions_sub:    { tr:"CT · Güçlü · Sinerjiler",     en:"Counters · Strong vs · Synergies" },
+  home_patch_title:      { tr:"Yama Notları",                en:"Patch Notes" },
+  current:                { tr:"Güncel",                      en:"Current" },
+  loading:                { tr:"Yükleniyor...",               en:"Loading..." },
+  home_history_title:    { tr:"GEÇMİŞ MAÇLAR",              en:"MATCH HISTORY" },
+  clear_all:              { tr:"Tümünü Sil",                  en:"Clear All" },
+  side_blue:              { tr:"Mavi",                        en:"Blue" },
+  side_red:                { tr:"Kırmızı",                     en:"Red" },
+  side_blue_upper:        { tr:"MAVİ",                        en:"BLUE" },
+  side_red_upper:          { tr:"KIRMIZI",                     en:"RED" },
+  default_opponent:      { tr:"Rakip Takım",                 en:"Opponent Team" },
+  gh_settings_title:     { tr:"GitHub Ayarları",             en:"GitHub Settings" },
+  connected:              { tr:"Bağlı",                       en:"Connected" },
+  not_configured:        { tr:"Ayarlanmadı",                 en:"Not Configured" },
+  all:                     { tr:"Tümü",                        en:"All" },
+  back:                    { tr:"Geri",                        en:"Back" },
+});
+
+// -- GitHub Ayarları --
+addI18n({
+  gh_settings_desc: { tr:"Buraya girdiğin bilgiler yalnızca bu cihazda (localStorage) saklanır, hiçbir sunucuya gönderilmez. Token'ı yalnızca <b>Contents: Read and write</b> izniyle, sadece bu repo'ya sınırlı oluşturman önerilir.",
+                       en:"What you enter here is stored only on this device (localStorage) and never sent to any server. It's recommended to create a token limited to <b>Contents: Read and write</b> on this repo only." },
+  gh_owner_label:   { tr:"REPO SAHİBİ (kullanıcı adı)", en:"REPO OWNER (username)" },
+  gh_repo_label:     { tr:"REPO ADI",                    en:"REPO NAME" },
+  gh_token_label:    { tr:"TOKEN (github_pat_...)",      en:"TOKEN (github_pat_...)" },
+  save:               { tr:"Kaydet",                      en:"Save" },
+  test_connection:   { tr:"Bağlantıyı Test Et",          en:"Test Connection" },
+  toast_gh_saved:    { tr:"GitHub ayarları kaydedildi ✓", en:"GitHub settings saved ✓" },
+  gh_read_error:     { tr:"GitHub okuma hatası",         en:"GitHub read error" },
+  testing:            { tr:"Test ediliyor...",            en:"Testing..." },
+  gh_test_ok_found:  { tr:"Bağlantı başarılı — tier-list.json bulundu.", en:"Connection successful — tier-list.json found." },
+  gh_test_ok_missing:{ tr:"Bağlantı başarılı ama tier-list.json henüz repo'da yok. İlk kayıtta otomatik oluşturulacak.",
+                       en:"Connection successful, but tier-list.json doesn't exist in the repo yet. It will be created automatically on the first save." },
+  toast_gh_syncing:  { tr:"GitHub'a kaydediliyor...",    en:"Saving to GitHub..." },
+  toast_gh_sync_ok:  { tr:"GitHub'a kaydedildi — birkaç saniyede canlıya çıkar", en:"Saved to GitHub — will go live in a few seconds" },
+  toast_gh_sync_fail:{ tr:"GitHub'a yazılamadı, sadece bu cihazda kaydedildi: ", en:"Couldn't write to GitHub, saved on this device only: " },
+});
+
+// -- Yama Notları --
+addI18n({
+  patch_new_champ:     { tr:"Yeni Şampiyon",       en:"New Champion" },
+  patch_buff:           { tr:"Güçlendirme",         en:"Buff" },
+  patch_nerf:            { tr:"Zayıflatma",          en:"Nerf" },
+  patch_change:          { tr:"Denge",               en:"Adjustment" },
+  patch_new_item:       { tr:"Yeni Item",           en:"New Item" },
+  patch_new_rune:       { tr:"Yeni Rün",            en:"New Rune" },
+  patch_auto_updates:  { tr:"Otomatik<br>güncellenir", en:"Auto<br>updates" },
+  champion_word:        { tr:"Şampiyon",            en:"Champion" },
+  patch_item_changes:  { tr:"İTEM DEĞİŞİKLİKLERİ", en:"ITEM CHANGES" },
+  patch_rune_changes:  { tr:"RÜN DEĞİŞİKLİKLERİ",  en:"RUNE CHANGES" },
+  patch_all_link:       { tr:"Tüm Yama Notları →",  en:"All Patch Notes →" },
+});
+
+// -- Şampiyonlar --
+addI18n({
+  champ_search_placeholder: { tr:"Şampiyon ara...", en:"Search champions..." },
+  edit:                       { tr:"Düzenle",          en:"Edit" },
+});
+
+// -- Şampiyon Detay --
+addI18n({
+  cd_strong_against:  { tr:"Karşısında Güçlü Olan",   en:"Strong Against" },
+  cd_weak_against:    { tr:"Karşısında Zayıf Olan",   en:"Weak Against" },
+  cd_synergies:        { tr:"Sinerjiler",               en:"Synergies" },
+  cd_suggested_build: { tr:"Önerilen Build",          en:"Suggested Build" },
+  cd_custom:            { tr:"Özel",                     en:"Custom" },
+  cd_profile:           { tr:"Profil",                   en:"Profile" },
+  cd_runes:             { tr:"RÜNLER",                  en:"RUNES" },
+  cd_main_rune:        { tr:"Ana Rün",                 en:"Main Rune" },
+  cd_sub:                { tr:"Alt",                     en:"Sub" },
+  cd_items:             { tr:"İTEMLER",                 en:"ITEMS" },
+  cd_no_build_data:   { tr:"Bu şampiyon için henüz build verisi eklenmedi.", en:"No build data has been added for this champion yet." },
+  cd_balance_change:  { tr:"Denge Değişikliği",       en:"Balance Change" },
+  cd_last_patch_note: { tr:"SON YAMA NOTU",           en:"LATEST PATCH NOTE" },
+  patch_word:           { tr:"Yama",                    en:"Patch" },
+  cd_no_data:           { tr:"Bu şampiyon için henüz veri yok", en:"No data available for this champion yet" },
+});
+
+// -- Build Editörü --
+addI18n({
+  not_found:              { tr:"Bulunamadı",       en:"Not found" },
+  clear:                   { tr:"Temizle",           en:"Clear" },
+  close:                    { tr:"Kapat",             en:"Close" },
+  search_dots:             { tr:"Ara...",             en:"Search..." },
+  cancel:                  { tr:"İptal",             en:"Cancel" },
+  builder_edit_title:     { tr:"Build Düzenle",     en:"Edit Build" },
+  builder_spells:         { tr:"SPELLER",           en:"SPELLS" },
+  builder_boots:           { tr:"Bot",               en:"Boots" },
+  builder_save_pin:       { tr:"Kaydet ve Sabitle", en:"Save & Pin" },
+  delete:                   { tr:"Sil",               en:"Delete" },
+  picker_pick_rune:       { tr:"Rün Seç",           en:"Pick Rune" },
+  picker_pick_spell:      { tr:"Spell Seç",         en:"Pick Spell" },
+  picker_pick_item:       { tr:"Item Seç",          en:"Pick Item" },
+  profile_edit_title:     { tr:"Profil Düzenle",    en:"Edit Profile" },
+});
+
+// -- CT (Karşı Pick) Editörü --
+addI18n({
+  add:                { tr:"Ekle",  en:"Add" },
+  ct_add_strong:     { tr:"Karşısında Güçlü Olan Ekle/Çıkar", en:"Add/Remove Strong Against" },
+  ct_add_weak:        { tr:"Karşısında Zayıf Olan Ekle/Çıkar", en:"Add/Remove Weak Against" },
+  ct_edit_title:      { tr:"CT Düzenle", en:"Edit Counters" },
+  ct_edit_desc:        { tr:"Buradaki değişiklikler kaydedilince karşı taraftaki şampiyonların listesine de otomatik olarak işlenir (karşılıklı ilişki senkron tutulur).",
+                        en:"Changes saved here are automatically reflected on the matching champions' lists too (the relationship stays synced both ways)." },
+  ct_they_beat:        { tr:"bunlar {name}'i ezer", en:"these beat {name}" },
+  ct_champ_beats:      { tr:"{name} bunları ezer",  en:"{name} beats these" },
+  reset:                { tr:"Sıfırla",  en:"Reset" },
+});
+
+// -- Tier List Editörü --
+addI18n({
+  tier_in_band:      { tr:"{band}'de",            en:"in {band}" },
+  tier_add_to_band:  { tr:"{band} Bandına Ekle/Çıkar", en:"Add/Remove from {band} Tier" },
+  tier_edit_title:    { tr:"Tier List Düzenle",     en:"Edit Tier List" },
+  tier_edit_desc:      { tr:"Bir şampiyon aynı rolde yalnızca tek bantta olabilir; başka bir banda eklersen oradan otomatik çıkar. Bu liste tamamen görseldir, draft önerilerini etkilemez.",
+                        en:"A champion can only be in one tier per role; adding it to another tier removes it from the previous one automatically. This list is purely visual and doesn't affect draft suggestions." },
+});
+
+// -- Draft: Format Seçimi & Kurulum --
+addI18n({
+  draft_start_title:     { tr:"DRAFT BAŞLAT",     en:"START DRAFT" },
+  draft_choose_format:   { tr:"FORMAT SEÇ",         en:"CHOOSE FORMAT" },
+  draft_single_match:    { tr:"Tek Maç",            en:"Single Match" },
+  draft_first_to_2:      { tr:"İlk 2'yi Alan Kazanır", en:"First to 2 Wins" },
+  draft_first_to_3:      { tr:"İlk 3'ü Alan Kazanır", en:"First to 3 Wins" },
+  on:                      { tr:"AÇIK",               en:"ON" },
+  off:                     { tr:"KAPALI",             en:"OFF" },
+  draft_fearless_desc:   { tr:"Bo3 / Bo5'te önceki maçta seçilen şampiyonlar tekrar seçilemez. Bo1'i etkilemez.",
+                          en:"In Bo3 / Bo5, champions picked in a previous match can't be picked again. Doesn't affect Bo1." },
+  draft_back_to_home:    { tr:"Ana Menüye Dön",     en:"Back to Home" },
+  draft_match_setup:     { tr:"Maç {n} Kurulumu",   en:"Match {n} Setup" },
+  draft_opponent_team:              { tr:"RAKİP TAKIM",          en:"OPPONENT TEAM" },
+  draft_opponent_team_placeholder: { tr:"Rakip Takım Adı",       en:"Opponent Team Name" },
+  draft_match_n:                     { tr:"Maç {n}",               en:"Match {n}" },
+  draft_your_side:                   { tr:"SENİN TARAFIN",         en:"YOUR SIDE" },
+  draft_blue_side:                   { tr:"Mavi Taraf",            en:"Blue Side" },
+  draft_red_side:                    { tr:"Kırmızı Taraf",         en:"Red Side" },
+  draft_start_draft_btn:            { tr:"Taslağı Başlat",        en:"Start Draft" },
+  draft_back_to_format:             { tr:"Format Seçimine Dön",   en:"Back to Format Selection" },
+  draft_you:                          { tr:"SEN",                    en:"YOU" },
+  draft_opponent_upper:             { tr:"RAKİP",                  en:"OPPONENT" },
+  draft_series_result:              { tr:"SERİ SONUCU",           en:"SERIES RESULT" },
+  draft_won:                          { tr:"KAZANDI",                en:"WON" },
+  draft_match_history:              { tr:"MAÇ GEÇMİŞİ",           en:"MATCH HISTORY" },
+  draft_new_series:                  { tr:"Yeni Seri Başlat",      en:"Start New Series" },
+  draft_ban_dots:      { tr:"Banla...", en:"Ban..." },
+  draft_pick_dots:      { tr:"Seç...",   en:"Pick..." },
+  draft_bans:            { tr:"BANLAR",    en:"BANS" },
+  draft_picks:           { tr:"SEÇIMLER", en:"PICKS" },
+  draft_team_tag:        { tr:"TAKIM",     en:"TEAM" },
+  draft_vs_enemy_tag:    { tr:"RAKİBE KARŞI", en:"VS ENEMY" },
+  draft_pick_btn:        { tr:"SEÇ",       en:"PICK" },
+  draft_turn_ban:        { tr:"BANLAMA SIRASI", en:"BAN TURN" },
+  draft_turn_pick:       { tr:"SEÇİM SIRASI",   en:"PICK TURN" },
+  draft_enemy_turn_desc:{ tr:"Rakip hamlesi — öneri devre dışı", en:"Opponent's move — suggestions disabled" },
+  draft_ban_phase:            { tr:"BAN AŞAMASI",                    en:"BAN PHASE" },
+  draft_ban_phase_desc:      { tr:"{side} ban yapıyor — öneri yok",  en:"{side} is banning — no suggestions" },
+  draft_suggestion_panel:    { tr:"ÖNERİ PANELİ",                   en:"SUGGESTION PANEL" },
+  draft_for_blue:              { tr:"Mavi için",                       en:"For Blue" },
+  draft_for_red:                { tr:"Kırmızı için",                    en:"For Red" },
+  draft_lane_ct_suggestion:  { tr:"1. Koridor CT Önerisi",           en:"1. Lane Counter Suggestion" },
+  draft_no_ct_found:          { tr:"Rakip seçime göre CT bulunamadı", en:"No counter found for opponent's pick" },
+  draft_enemy_no_pick:        { tr:"Rakip henüz pick yapmadı",        en:"Opponent hasn't picked yet" },
+  draft_meta_picks:            { tr:"2. Meta Güç Pickleri",           en:"2. Meta Power Picks" },
+  draft_not_enough_data:      { tr:"Yeterli veri yok",                en:"Not enough data" },
+  draft_empty_lane_filler:    { tr:"3. Boş Koridor Tamamlayıcı",     en:"3. Empty Lane Filler" },
+  draft_all_lanes_full:       { tr:"Tüm koridorlar dolu",             en:"All lanes full" },
+  draft_suggestion_star:      { tr:"ÖNERİ",              en:"SUGGESTED" },
+  champ_not_found:              { tr:"Şampiyon bulunamadı", en:"No champions found" },
+  draft_champion_pool:        { tr:"ŞAMPİYON HAVUZU",    en:"CHAMPION POOL" },
+  draft_frontline:              { tr:"Ön Hat",              en:"Frontline" },
+  draft_start_new:            { tr:"Yeni Draft Başlat",  en:"Start New Draft" },
+  draft_match_word:            { tr:"MAÇ",                 en:"MATCH" },
+  draft_you_short:              { tr:"Sen",                  en:"You" },
+  draft_opponent_word:         { tr:"Rakip",                en:"Opponent" },
+  draft_save_finish_title:    { tr:"Taslağı Kaydet ve Bitir", en:"Save Draft & Finish" },
+  draft_ban_short:              { tr:"BAN",                  en:"BAN" },
+  draft_pick_short:             { tr:"PİCK",                 en:"PICK" },
+  draft_completed:              { tr:"DRAFT TAMAMLANDI",   en:"DRAFT COMPLETE" },
+  draft_who_won:                { tr:"KİM KAZANDI?",       en:"WHO WON?" },
+  draft_blue_won:               { tr:"Mavi Kazandı",        en:"Blue Won" },
+  draft_red_won:                { tr:"Kırmızı Kazandı",     en:"Red Won" },
+  draft_pick_ban:               { tr:"Ban Seç",              en:"Pick Ban" },
+  draft_pick_champion:          { tr:"Şampiyon Seç",         en:"Pick Champion" },
+  need_suffix:                    { tr:"İhtiyacı",             en:"Need" },
+});
+
+// -- Toast / Confirm Mesajları --
+addI18n({
+  toast_builder_on:        { tr:"Build Editörü Açıldı",   en:"Build Editor Enabled" },
+  toast_builder_off:       { tr:"Build Editörü Kapatıldı", en:"Build Editor Disabled" },
+  toast_no_custom_builds: { tr:"Henüz kayıtlı özel build yok", en:"No custom builds saved yet" },
+  toast_copied:              { tr:"Kopyalandı ✓",            en:"Copied ✓" },
+  toast_no_saved_profile: { tr:"Henüz kayıtlı profil yok", en:"No saved profiles yet" },
+  toast_no_custom_tierlist:{ tr:"Henüz özelleştirilmiş tier list yok", en:"No customized tier list yet" },
+  confirm_reset_ct:         { tr:"Bu şampiyonun CT verisi orijinal (varsayılan) haline döndürülsün mü? Karşılıklı bağlantılar diğer şampiyonlarda korunur.",
+                             en:"Reset this champion's counter data back to the original (default)? Mutual links on other champions will be preserved." },
+  confirm_reset_tier:       { tr:"Bu rolün tier listesi orijinal (varsayılan) haline döndürülsün mü?",
+                             en:"Reset this role's tier list back to the original (default)?" },
+  toast_profile_saved:     { tr:"Profil Kaydedildi (sadece bu cihazda)", en:"Profile Saved (this device only)" },
+  toast_profile_deleted:   { tr:"Profil Silindi",          en:"Profile Deleted" },
+  confirm_delete_build:    { tr:"Bu özel build silinsin mi? (Varsayılan build varsa ona dönülür)",
+                             en:"Delete this custom build? (Will revert to default build if one exists)" },
+  confirm_delete_history:  { tr:"Tüm geçmiş silinsin mi?", en:"Delete all history?" },
+});
+
+// I18N_BLOCKS_END
+
 const DB = {
   // ── SUPPORT ──────────────────────────────────────────────────
   rakan:      {name:"Rakan",       lanes:["Support"],dmg:"AP",   cls:"Engage",
@@ -3054,7 +3305,7 @@ function saveGHConfigFromForm(){
     token: (document.getElementById("ghTokenInput")?.value||"").trim(),
   };
   try { localStorage.setItem("wrGHConfig", JSON.stringify(GH_CONFIG)); } catch(e){}
-  showBuilderToast("GitHub ayarları kaydedildi ✓");
+  showBuilderToast(t('toast_gh_saved'));
   render();
 }
 // UTF-8 güvenli base64 encode/decode (Türkçe karakterler için)
@@ -3068,7 +3319,7 @@ async function githubGetFile(path){
     headers: { "Authorization": `Bearer ${token}`, "Accept": "application/vnd.github+json" }
   });
   if(res.status === 404) return { exists:false, sha:null, content:null };
-  if(!res.ok) throw new Error(`GitHub okuma hatası (${res.status}): ${(await res.text()).slice(0,200)}`);
+  if(!res.ok) throw new Error(`${t('gh_read_error')} (${res.status}): ${(await res.text()).slice(0,200)}`);
   const data = await res.json();
   return { exists:true, sha:data.sha, content: _b64ToUtf8(data.content.replace(/\n/g,"")) };
 }
@@ -3102,13 +3353,13 @@ async function testGHConnection(){
   // ekranda hiç görünmez. Çözüm: elementi render()'dan SONRA yeniden almak.
   saveGHConfigFromForm();
   const el = document.getElementById("ghTestResult");
-  if(el) el.innerHTML = `<span style="color:#888">Test ediliyor...</span>`;
+  if(el) el.innerHTML = `<span style="color:#888">${t('testing')}</span>`;
   try {
     const r = await githubGetFile("tier-list.json");
     const el2 = document.getElementById("ghTestResult");
     if(el2) el2.innerHTML = r.exists
-      ? `<span style="color:#00ff88">✓ Bağlantı başarılı — tier-list.json bulundu.</span>`
-      : `<span style="color:#ffcc02">⚠ Bağlantı başarılı ama tier-list.json henüz repo'da yok. İlk kayıtta otomatik oluşturulacak.</span>`;
+      ? `<span style="color:#00ff88">✓ ${t('gh_test_ok_found')}</span>`
+      : `<span style="color:#ffcc02">⚠ ${t('gh_test_ok_missing')}</span>`;
   } catch(e){
     const el2 = document.getElementById("ghTestResult");
     if(el2) el2.innerHTML = `<span style="color:#ff6666">✗ ${e.message}</span>`;
@@ -3118,13 +3369,13 @@ async function testGHConnection(){
 // GitHub ayarlanmamışsa sessizce false döner (sadece localStorage'a kaydedilmiş olur).
 async function syncToGitHub(path, mergedData, commitMessage){
   if(!(GH_CONFIG.token && GH_CONFIG.owner && GH_CONFIG.repo)) return false;
-  showBuilderToast("GitHub'a kaydediliyor...");
+  showBuilderToast(t('toast_gh_syncing'));
   try {
     await githubPutFile(path, JSON.stringify(mergedData, null, 2), commitMessage);
-    showBuilderToast("✓ GitHub'a kaydedildi — birkaç saniyede canlıya çıkar");
+    showBuilderToast("✓ " + t('toast_gh_sync_ok'));
     return true;
   } catch(e){
-    showBuilderToast("⚠ GitHub'a yazılamadı, sadece bu cihazda kaydedildi: " + e.message);
+    showBuilderToast("⚠ " + t('toast_gh_sync_fail') + e.message);
     return false;
   }
 }
@@ -3154,6 +3405,47 @@ function getTierListForRole(role){
 // ─── GİZLİ ŞAMPİYON DERİNLİK PROFİLİ EDİTÖRÜ ───────────────────
 // Şampiyon profil ekranında GÖRÜNMEZ. Sadece Builder Modu içinde
 // gizli bir düzenleme ekranından girilir ve TXT olarak dışa aktarılır.
+// Derinlik profili alanlarının/seçeneklerinin İngilizce görünüm çevirisi.
+// NOT: Bu, sadece EKRANDA GÖSTERİLEN metni değiştirir — profil verisinin
+// kendisi (DEFAULT_CHAMP_PROFILES, karşılaştırma mantığı) her zaman bu
+// Türkçe orijinal string'lerle çalışmaya devam eder, böylece draft analiz
+// motoru kırılmaz.
+const PROF_I18N = {
+  "1. FORM MİMARİSİ":"1. FORM ARCHITECTURE", "2. HAREKETLİLİK PARAMETRELERİ":"2. MOBILITY PARAMETERS",
+  "3. CC VE TEHDİT MİMARİSİ":"3. CC & THREAT ARCHITECTURE", "4. KAYNAK, RESET VE ULTİ PENCERESİ":"4. RESOURCE, RESET & ULT WINDOW",
+  "5. DRAFT & TAKIM SAVAŞI NİTELİK HAVUZU":"5. DRAFT & TEAMFIGHT TRAIT POOL",
+  "Çift Form":"Dual Form", "Form A Adı":"Form A Name", "Form B Adı":"Form B Name",
+  "Taban Hareket Hızı":"Base Move Speed", "Pasif Hız Artışı":"Passive Speed Boost", "Mobilite Aracı":"Mobility Tool",
+  "Aracın Koşulu":"Tool Condition", "Aracın Sıklığı":"Tool Frequency", "Gerçek Mobilite Etiketi":"True Mobility Tag",
+  "CC Tipleri":"CC Types", "Öz CC Çıkışı (Cleanse Skill)":"Self CC Removal (Cleanse Skill)", "CC Hassasiyeti":"CC Sensitivity",
+  "Kaynak Tipi":"Resource Type", "Reset Mekaniği":"Reset Mechanic", "Ulti Bağımlılık Penceresi":"Ult Dependency Window",
+  "Takım Savaşı Rolü":"Teamfight Role", "Dayanıklılık Profili":"Durability Profile", "Hasar Profili":"Damage Profile",
+  "Güç Eğrisi":"Power Curve", "Yapı":"Scaling Type", "Objektif Gücü (Baron/Ejder Hızı)":"Objective Power (Baron/Dragon Speed)",
+  "Global/Teleport":"Global/Teleport", "Duelist (1v1)":"Duelist (1v1)",
+  "Var":"Yes", "Yok":"No",
+  "Çok Yavaş":"Very Slow", "Yavaş":"Slow", "Ortalama":"Average", "Hızlı":"Fast", "Çok Hızlı":"Very Fast",
+  "Dash":"Dash", "Blink":"Blink", "Hook/Grapple":"Hook/Grapple", "Leap":"Leap", "Stealth":"Stealth", "Yarı-Global":"Semi-Global",
+  "Koşulsuz":"Unconditional", "Koşullu":"Conditional",
+  "Spamlanabilir":"Spammable", "Sınırlı":"Limited", "Tek Seferlik":"One-Time",
+  "Gerçek Hareketlilik":"True Mobility", "Yanıltıcı Hareketlilik":"Deceptive Mobility",
+  "Patlamalı Hareketlilik":"Burst Mobility", "Gerçek Hantal":"Truly Immobile",
+  "Suppression":"Suppression", "Knockup/Knockback":"Knockup/Knockback", "Stun/Freeze/Sleep":"Stun/Freeze/Sleep",
+  "Root/Snare":"Root/Snare", "Silence/Ground":"Silence/Ground", "Soft CC/Slow":"Soft CC/Slow",
+  "CC Yerse Sıkıntı Yaşar":"Struggles If CC'd", "CC'ye Dirençli":"CC Resistant",
+  "Mana":"Mana", "Enerji":"Energy", "Öfke (Rage)":"Rage", "Kaynaksız":"Resourceless",
+  "Aşırı Bağımlı":"Heavily Dependent", "Düşük Bağımlı":"Low Dependency",
+  "Engage":"Engage", "Disengage":"Disengage", "Peel":"Peel", "Frontline":"Frontline",
+  "Backline Dalışı":"Backline Dive", "Poke":"Poke", "Wave Clear":"Wave Clear", "Split Push":"Split Push",
+  "Pick/Execute":"Pick/Execute", "Zone Control":"Zone Control",
+  "Doğal Tank":"Natural Tank", "Sustain":"Sustain", "Kalkan":"Shield", "Kırılgan":"Fragile",
+  "Burst":"Burst", "Sürdürülebilir DPS":"Sustained DPS", "Tank Eritici":"Tank Melter",
+  "Anti-Dive":"Anti-Dive", "Anti-Heal Uygulayıcı":"Anti-Heal Applier",
+  "Erken Oyun":"Early Game", "Orta Oyun":"Mid Game", "Geç Oyun":"Late Game",
+  "Snowball Bağımlı":"Snowball Dependent", "Tutarlı":"Consistent",
+  "Serbest metin...":"Free text...",
+};
+function pt(s){ return (LANG==="en" && PROF_I18N[s]) ? PROF_I18N[s] : s; }
+
 const PROFILE_FIELDS = [
   { group:"1. FORM MİMARİSİ", fields:[
     { key:"hasForms", label:"Çift Form", type:"single", opts:["Var","Yok"] },
@@ -4895,6 +5187,62 @@ function compStats(picks){
 
 // Kendi takım (my) ve rakip takım (en) picklerine göre uyarı listesi üretir.
 // 3+ pick olmadan anlamlı sinyal yok, o yüzden erken döner.
+// Uyarı / rozet metinlerinin İngilizce görünüm çevirisi.
+// NOT: warns[] içindeki asıl (Türkçe) metin WARN_RESOLVERS.key ile
+// substring eşleşmesinde kullanıldığı için DEĞİŞTİRİLMEZ — sadece
+// ekrana basılırken tw() ile çevrilir.
+const WARN_TAG_I18N = {
+  "⚠️ Sert CC (Stun/Knockup/Suppression) Yok": "⚠️ No Hard CC (Stun/Knockup/Suppression)",
+  "⚠️ Engage / Savaş Başlatıcı Yok": "⚠️ No Engage / Fight Starter",
+  "⚠️ Rakip Dalış/Mobil Ağırlıklı, Peel'iniz Yok": "⚠️ Enemy Dive/Mobility Heavy, No Peel",
+  "⚠️ Sadece Burst Hasar, Sürdürülebilir DPS Yok": "⚠️ Only Burst Damage, No Sustained DPS",
+  "⚠️ Ön Hat / Tank Yok": "⚠️ No Frontline / Tank",
+  "⚠️ Rakip Split Push Tehdidi, Wave Clear'ınız Yok": "⚠️ Enemy Split Push Threat, No Wave Clear",
+  "⚠️ Rakipte Sustain Var, Anti-Heal Yok": "⚠️ Enemy Has Sustain, No Anti-Heal",
+  "⚠️ Rakip Burst Ağırlıklı, Dayanıklılığınız Yok": "⚠️ Enemy Burst Heavy, No Durability",
+  "⚠️ Rakip Poke Ağırlıklı, Engage/Sustain'iniz Yok": "⚠️ Enemy Poke Heavy, No Engage/Sustain",
+  "⚠️ Rakipte Ağır CC Zinciri Var, Cleanse'iniz Yok": "⚠️ Enemy Has Heavy CC Chain, No Cleanse",
+  "⚠️ Rakip Çok Tanky, Tank Eritici Hasarınız Yok": "⚠️ Enemy Very Tanky, No Tank-Melting Damage",
+  "⚠️ Rakipte Sert CC Var, Peel/Tank İhtiyacı": "⚠️ Enemy Has Hard CC, Need Peel/Tank",
+  "⚠️ Rakip Engage Ağırlıklı, Karşı Engage/Disengage Yok": "⚠️ Enemy Engage Heavy, No Counter-Engage/Disengage",
+  "⚠️ Rakip Zone Control Ağırlıklı, Mobilite/Engage Yok": "⚠️ Enemy Zone Control Heavy, No Mobility/Engage",
+  "⚠️ Geç Oyuna Kilitli, Erken Baskıya Açık": "⚠️ Locked Into Late Game, Vulnerable to Early Pressure",
+  "⚠️ Erken Oyun Ağırlıklı, Oyun Uzarsa Zorlanabilir": "⚠️ Early Game Heavy, May Struggle If Game Drags",
+  "⚠️ Rakipte Global/TP Var, Sizde Yok": "⚠️ Enemy Has Global/TP, You Don't",
+  "⚠️ Poke veya Engage Yok, Savaşı Siz Başlatamazsınız": "⚠️ No Poke or Engage, You Can't Start Fights",
+  "⚠️ Takım Aşırı Kırılgan, Kalkan/Tank Yok": "⚠️ Team Too Fragile, No Shield/Tank",
+  "🎯 Sert CC": "🎯 Hard CC",
+  "⚔️ Engage": "⚔️ Engage",
+  "🛡️ Peel": "🛡️ Peel",
+  "🔁 Sürdürülebilir DPS": "🔁 Sustained DPS",
+  "🛡️ Ön Hat/Tank": "🛡️ Frontline/Tank",
+  "🌊 Wave Clear": "🌊 Wave Clear",
+  "☠️ Anti-Heal": "☠️ Anti-Heal",
+  "⏱️ Erken Güç": "⏱️ Early Power",
+  "⏱️ Geç Oyun Gücü": "⏱️ Late Game Power",
+  "🌍 Global/TP": "🌍 Global/TP",
+  "🎯 Poke/Engage": "🎯 Poke/Engage",
+  "🛡️ Kalkan/Tank": "🛡️ Shield/Tank",
+  "🛡️ Dayanıklılık": "🛡️ Durability",
+  "⚔️ Engage/Sustain": "⚔️ Engage/Sustain",
+  "🧼 Cleanse": "🧼 Cleanse",
+  "🗡️ Tank Eritici": "🗡️ Tank Melter",
+  "🛡️ Peel/Tank": "🛡️ Peel/Tank",
+  "⚔️ Karşı Engage": "⚔️ Counter-Engage",
+  "💨 Mobilite/Engage": "💨 Mobility/Engage",
+  "✓ Güçlü CC Zinciri": "✓ Strong CC Chain",
+  "✓ Dengeli Engage/Peel": "✓ Balanced Engage/Peel",
+  "✓ Dengeli Hasar Tipi": "✓ Balanced Damage Type",
+  "✓ Sağlam Ön Hat": "✓ Solid Frontline",
+  "✓ Güçlü Wave Clear": "✓ Strong Wave Clear",
+  "✓ Rakip Sustain'ine Karşı Anti-Heal Var": "✓ Anti-Heal Against Enemy Sustain",
+  "✓ Split Push Tehdidi": "✓ Split Push Threat",
+  "✓ Yüksek Mobilite": "✓ High Mobility",
+  "✓ Güçlü Poke": "✓ Strong Poke",
+  "✓ Tutarlı Scaling": "✓ Consistent Scaling",
+};
+function tw(s){ return (LANG==="en" && WARN_TAG_I18N[s]) ? WARN_TAG_I18N[s] : s; }
+
 function buildCompWarnings(myPicks, enPicks){
   const warns = [];
   if(myPicks.length < 3) return warns;
@@ -5034,7 +5382,7 @@ function secretTapLogo(){
     _logoTapCount = 0;
     BUILDER_ENABLED = !BUILDER_ENABLED;
     try{ localStorage.setItem("wrBuilderEnabled", BUILDER_ENABLED ? "1":"0"); }catch(e){}
-    showBuilderToast(BUILDER_ENABLED ? "🛠 Build Editörü Açıldı" : "Build Editörü Kapatıldı");
+    showBuilderToast(BUILDER_ENABLED ? "🛠 " + t('toast_builder_on') : t('toast_builder_off'));
     updateBuilderFab();
     updateProfileFab();
     updateTierFab();
@@ -5065,7 +5413,7 @@ function updateBuilderFab(){
 // Kayıtlı TÜM özel build'leri tek JSON olarak dışa aktarır (paylaş menüsü / kopyala)
 function exportAllBuilds(){
   const count = Object.keys(CUSTOM_BUILDS).length;
-  if(count === 0){ showBuilderToast("Henüz kayıtlı özel build yok"); return; }
+  if(count === 0){ showBuilderToast(t('toast_no_custom_builds')); return; }
   const json = JSON.stringify(CUSTOM_BUILDS, null, 2);
   if(navigator.share){
     navigator.share({ title: "Wild Rift Custom Builds", text: json }).catch(()=>{ showExportModal(json); });
@@ -5099,7 +5447,7 @@ function showExportModal(json){
     let ok = false;
     try{ ok = document.execCommand("copy"); }catch(e){}
     if(!ok && navigator.clipboard){ navigator.clipboard.writeText(json).catch(()=>{}); }
-    showBuilderToast("Kopyalandı ✓");
+    showBuilderToast(t('toast_copied'));
     wrap.remove();
   };
 }
@@ -5120,7 +5468,7 @@ function updateProfileFab(){
 // Kayıtlı tüm şampiyon derinlik profillerini okunaklı TXT olarak dışa aktarır
 function exportAllProfiles(){
   const ids = Object.keys(CUSTOM_CHAMP_PROFILES);
-  if(ids.length===0){ showBuilderToast("Henüz kayıtlı profil yok"); return; }
+  if(ids.length===0){ showBuilderToast(t('toast_no_saved_profile')); return; }
   let txt = "";
   ids.forEach(id => {
     const c = DB[id];
@@ -5169,7 +5517,7 @@ function showProfileExportModal(txt){
     let ok = false;
     try{ ok = document.execCommand("copy"); }catch(e){}
     if(!ok && navigator.clipboard){ navigator.clipboard.writeText(txt).catch(()=>{}); }
-    showBuilderToast("Kopyalandı ✓");
+    showBuilderToast(t('toast_copied'));
     wrap.remove();
   };
 }
@@ -5190,7 +5538,7 @@ function updateTierFab(){
 // Elle düzenlenmiş (CUSTOM_TIER_LIST) tüm rollerin tier listesini tek JSON olarak dışa aktarır
 function exportAllTierLists(){
   const roles = Object.keys(CUSTOM_TIER_LIST);
-  if(roles.length===0){ showBuilderToast("Henüz özelleştirilmiş tier list yok"); return; }
+  if(roles.length===0){ showBuilderToast(t('toast_no_custom_tierlist')); return; }
   const json = JSON.stringify(CUSTOM_TIER_LIST, null, 2);
   if(navigator.share){
     navigator.share({ title: "Wild Rift Custom Tier List", text: json }).catch(()=>{ showExportModal(json); });
@@ -5542,7 +5890,7 @@ function switchChampDetail(id){
 
 // ─── YENİ: TARAF & RAKİP ─────────────────────────────────────
 let mySide        = null;   // 0=Mavi, 1=Kırmızı, null=seçilmedi
-let opponentName  = "Rakip Takım";
+let opponentName  = t('default_opponent');
 let setupPhase    = false;  // format seçildi, taraf/rakip ayarı bekleniyor
 
 // ─── LOCALSTORAGE ─────────────────────────────────────────────
@@ -5692,7 +6040,7 @@ function computeSugg() {
     if (best) {
       fillerList.push({
         ...DB[best.id], id: best.id,
-        _why: el + " İhtiyacı",
+        _why: el + " " + t('need_suffix'),
         _ownTags: best.ownTags.map(t=>t.tag),
         _enemyTags: best.enemyTags.map(t=>t.tag),
         _patch: getPatchStatus(best.id),
@@ -6407,7 +6755,7 @@ function renderCTPickerList(){
       <div style="font-size:7px;color:#999;text-align:center;max-width:52px;white-space:nowrap;
         overflow:hidden;text-overflow:ellipsis">${c.name}</div>
     </div>`;
-  }).join("") || '<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">Bulunamadı</div>';
+  }).join("") || `<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">${t('not_found')}</div>`;
 }
 // Kaydet: taslağı CUSTOM_CT'ye yazar, ayrıca karşılıklı ilişkiyi (ct <-> ctBy)
 // diğer şampiyonların kayıtlarında da otomatik günceller. Etkilenen tüm şampiyonlar
@@ -6461,7 +6809,7 @@ async function saveCTDraft(){
   closeCTEditor();
 }
 function resetCTDraft(){
-  if(!confirm("Bu şampiyonun CT verisi orijinal (varsayılan) haline döndürülsün mü? Karşılıklı bağlantılar diğer şampiyonlarda korunur.")) return;
+  if(!confirm(t('confirm_reset_ct'))) return;
   delete CUSTOM_CT[ctEditorChampId];
   saveCustomCT();
   closeCTEditor();
@@ -6539,7 +6887,7 @@ async function saveTierDraft(){
   closeTierEditor();
 }
 function resetTierDraft(){
-  if(!confirm("Bu rolün tier listesi orijinal (varsayılan) haline döndürülsün mü?")) return;
+  if(!confirm(t('confirm_reset_tier'))) return;
   delete CUSTOM_TIER_LIST[tierEditorRole];
   saveCustomTierListStore();
   closeTierEditor();
@@ -6571,7 +6919,7 @@ function renderTierPickerList(){
         overflow:hidden;text-overflow:ellipsis">${x.name}</div>
       ${(!on && otherBand)?`<div style="font-size:6px;color:#555">${otherBand}'de</div>`:""}
     </div>`;
-  }).join("") || '<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">Bulunamadı</div>';
+  }).join("") || `<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">${t('not_found')}</div>`;
 }
 function setProfileSingle(key, val){
   profileDraft[key] = (profileDraft[key]===val) ? "" : val;
@@ -6599,14 +6947,14 @@ async function saveProfileDraft(){
     delete CUSTOM_CHAMP_PROFILES[profileChampId];
     saveCustomProfiles();
   } else if(!GH_CONFIG.token){
-    showBuilderToast("💾 Profil Kaydedildi (sadece bu cihazda)");
+    showBuilderToast("💾 " + t('toast_profile_saved'));
   }
   closeProfileEditor();
 }
 function deleteProfileDraft(){
   delete CUSTOM_CHAMP_PROFILES[profileChampId];
   saveCustomProfiles();
-  showBuilderToast("🗑 Profil Silindi");
+  showBuilderToast("🗑 " + t('toast_profile_deleted'));
   closeProfileEditor();
 }
 function openBuilderPicker(slot){
@@ -6671,7 +7019,7 @@ async function saveBuilderDraft(){
 }
 function deleteBuilderBuild(){
   if(!builderChampId) return;
-  if(!confirm("Bu özel build silinsin mi? (Varsayılan build varsa ona dönülür)"))return;
+  if(!confirm(t('confirm_delete_build')))return;
   delete CUSTOM_BUILDS[builderChampId];
   saveCustomBuilds();
   closeBuilder();
@@ -6696,7 +7044,7 @@ function renderBuilderPickerList(){
       </div>
       <div style="font-size:7px;color:#999;text-align:center;line-height:1.2">${nm}</div>
     </div>`;
-  }).join("") || '<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">Bulunamadı</div>';
+  }).join("") || `<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">${t('not_found')}</div>`;
 }
 function itemImg(key, size=32){
   const url = ITEM_IMG[key];
@@ -6788,7 +7136,7 @@ function render() {
             <div class="wr-title">WILD RIFT</div>
             <span style="color:#c99400;font-size:11px;transform:rotate(45deg)">◆</span>
           </div>
-          <div style="font-size:10px;color:#6b6b8a;letter-spacing:5px;margin-top:4px">DRAFT ASİSTANI</div>
+          <div style="font-size:10px;color:#6b6b8a;letter-spacing:5px;margin-top:4px">${t('home_subtitle')}</div>
           <div class="wr-divider"><span>◆</span></div>
         </div>
 
@@ -6802,7 +7150,7 @@ function render() {
             display:flex;align-items:center;gap:15px;text-align:left;">
             <div class="wr-hex-badge">🗡️</div>
             <span style="flex:1">
-              <span style="display:block;font-size:15px;color:#f0f0fa;letter-spacing:.3px">Draft Başlat</span>
+              <span style="display:block;font-size:15px;color:#f0f0fa;letter-spacing:.3px">${t('home_draft_title')}</span>
               <span style="font-size:10px;color:#3a8fff;font-weight:700;letter-spacing:.5px">Bo1 / Bo3 / Bo5</span>
             </span>
             <span style="color:#3a8fff88;font-size:16px">›</span>
@@ -6816,8 +7164,8 @@ function render() {
             display:flex;align-items:center;gap:15px;text-align:left;">
             <div class="wr-hex-badge">🏆</div>
             <span style="flex:1">
-              <span style="display:block;font-size:15px;color:#f0f0fa;letter-spacing:.3px">Şampiyonlar</span>
-              <span style="font-size:10px;color:#c060ff;font-weight:700;letter-spacing:.5px">CT · Güçlü · Sinerjiler</span>
+              <span style="display:block;font-size:15px;color:#f0f0fa;letter-spacing:.3px">${t('home_champions_title')}</span>
+              <span style="font-size:10px;color:#c060ff;font-weight:700;letter-spacing:.5px">${t('home_champions_sub')}</span>
             </span>
             <span style="color:#c060ff88;font-size:16px">›</span>
           </button>
@@ -6844,9 +7192,9 @@ function render() {
             display:flex;align-items:center;gap:15px;text-align:left;">
             <div class="wr-hex-badge">📋</div>
             <span style="flex:1">
-              <span style="display:block;font-size:15px;color:#f0f0fa;letter-spacing:.3px">Yama Notları</span>
+              <span style="display:block;font-size:15px;color:#f0f0fa;letter-spacing:.3px">${t('home_patch_title')}</span>
               <span style="font-size:10px;color:#ffcc02;font-weight:700;letter-spacing:.5px">
-                ${patchData.version ? patchData.version + " — Güncel" : "Yükleniyor..."}
+                ${patchData.version ? patchData.version + " — " + t('current') : t('loading')}
               </span>
             </span>
             <span style="color:#ffcc0288;font-size:16px">›</span>
@@ -6857,21 +7205,21 @@ function render() {
         ${hist.length > 0 ? `
           <div style="width:100%;max-width:340px;margin-top:36px">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-              <div class="wr-section-label" style="flex:1;margin-bottom:0">📋 GEÇMİŞ MAÇLAR</div>
+              <div class="wr-section-label" style="flex:1;margin-bottom:0">📋 ${t('home_history_title')}</div>
               <button onclick="clearAllHistory()" style="font-size:9px;color:#555;padding:3px 8px;margin-left:8px;
-                border-radius:5px;border:1px solid #1a1a2e;background:#0d0d1e">Tümünü Sil</button>
+                border-radius:5px;border:1px solid #1a1a2e;background:#0d0d1e">${t('clear_all')}</button>
             </div>
             ${hist.slice().reverse().map((m, ri) => {
               const realIdx = hist.length - 1 - ri;
               const bPicks = ORDER.map((o,i)=>({...o,i})).filter(o=>o.t===0&&o.act==="pick").map(o=>m.slots[o.i]).filter(Boolean);
               const rPicks = ORDER.map((o,i)=>({...o,i})).filter(o=>o.t===1&&o.act==="pick").map(o=>m.slots[o.i]).filter(Boolean);
-              const sideLabel = m.mySide===0?"🔵 Mavi":m.mySide===1?"🔴 Kırmızı":"—";
+              const sideLabel = m.mySide===0?"🔵 "+t('side_blue'):m.mySide===1?"🔴 "+t('side_red'):"—";
               const sideColor = m.mySide===0?"#3a8fff":m.mySide===1?"#ff4d4d":"#555";
               return `<div class="wr-card" style="--wr-accent:#252545;background:#0d0d1e;border:1px solid #1a1a2e;
                 padding:12px;margin-bottom:8px">
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
                   <div>
-                    <span style="font-size:10px;font-weight:800;color:#e0e0f0">${escHtml(m.opponentName||"Rakip Takım")}</span>
+                    <span style="font-size:10px;font-weight:800;color:#e0e0f0">${escHtml(m.opponentName||t('default_opponent'))}</span>
                     <span style="font-size:9px;color:#444;margin-left:6px">· Bo${m.format||1}</span>
                     <span style="font-size:9px;color:${sideColor};margin-left:6px">${sideLabel}</span>
                   </div>
@@ -6881,11 +7229,11 @@ function render() {
                 <div style="font-size:8px;color:#333;margin-bottom:7px">${m.date||""}</div>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
                   <div>
-                    <div style="font-size:8px;color:#3a8fff;margin-bottom:3px">🔵 MAVİ</div>
+                    <div style="font-size:8px;color:#3a8fff;margin-bottom:3px">🔵 ${t('side_blue_upper')}</div>
                     ${bPicks.map(c=>`<div style="font-size:9px;color:#777">${c.name}</div>`).join("")}
                   </div>
                   <div>
-                    <div style="font-size:8px;color:#ff4d4d;margin-bottom:3px">🔴 KIRMIZI</div>
+                    <div style="font-size:8px;color:#ff4d4d;margin-bottom:3px">🔴 ${t('side_red_upper')}</div>
                     ${rPicks.map(c=>`<div style="font-size:9px;color:#777">${c.name}</div>`).join("")}
                   </div>
                 </div>
@@ -6895,7 +7243,7 @@ function render() {
         ` : ""}
 
         <div style="width:100%;display:flex;justify-content:flex-end;margin-top:auto;padding-top:24px;margin-bottom:20px">
-          <img src="assets/branding/hero_banner.png" alt="Wild Rift Draft Asistanı"
+          <img src="assets/branding/hero_banner.png" alt="Wild Rift Draft Assistant"
             style="width:190px;height:auto;margin-right:-8px;filter:drop-shadow(0 0 16px #a020f066)" />
         </div>
 
@@ -6904,7 +7252,7 @@ function render() {
           <button onclick="appScreen='ghSettings';render()" style="width:100%;padding:10px;
             border-radius:10px;font-size:11px;background:#0a0a16;
             border:1px solid #1a1a2e;color:#666;display:flex;align-items:center;justify-content:center;gap:6px">
-            ⚙️ GitHub Ayarları ${GH_CONFIG.token ? '<span style="color:#00ff88">● Bağlı</span>' : '<span style="color:#ff6666">● Ayarlanmadı</span>'}
+            ⚙️ ${t('gh_settings_title')} ${GH_CONFIG.token ? '<span style="color:#00ff88">● '+t('connected')+'</span>' : '<span style="color:#ff6666">● '+t('not_configured')+'</span>'}
           </button>
         </div>` : ""}
       </div>`;
@@ -6919,23 +7267,21 @@ function render() {
           position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
           display:flex;align-items:center;gap:10px">
           <button onclick="appScreen='home';render()" style="padding:6px 12px;border-radius:8px;
-            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← Geri</button>
-          <div style="font-size:14px;font-weight:800;color:#fff">⚙️ GitHub Ayarları</div>
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← ${t('back')}</button>
+          <div style="font-size:14px;font-weight:800;color:#fff">⚙️ ${t('gh_settings_title')}</div>
         </div>
         <div style="padding:16px">
           <div style="font-size:10px;color:#666;line-height:1.7;margin-bottom:18px;padding:12px;
             background:#0d0d1e;border:1px solid #1a1a2e;border-radius:10px">
-            Buraya girdiğin bilgiler yalnızca bu cihazda (localStorage) saklanır, hiçbir sunucuya
-            gönderilmez. Token'ı yalnızca <b>Contents: Read and write</b> izniyle, sadece bu repo'ya
-            sınırlı oluşturman önerilir.
+            ${t('gh_settings_desc')}
           </div>
 
-          <label style="font-size:10px;color:#888;font-weight:700;letter-spacing:.5px">REPO SAHİBİ (kullanıcı adı)</label>
+          <label style="font-size:10px;color:#888;font-weight:700;letter-spacing:.5px">${t('gh_owner_label')}</label>
           <input id="ghOwnerInput" value="${GH_CONFIG.owner||''}" placeholder="marcellusarel"
             style="width:100%;margin-top:6px;margin-bottom:14px;padding:11px 12px;border-radius:9px;
             background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
 
-          <label style="font-size:10px;color:#888;font-weight:700;letter-spacing:.5px">REPO ADI</label>
+          <label style="font-size:10px;color:#888;font-weight:700;letter-spacing:.5px">${t('gh_repo_label')}</label>
           <input id="ghRepoInput" value="${GH_CONFIG.repo||''}" placeholder="Wild-Rift-Draft"
             style="width:100%;margin-top:6px;margin-bottom:14px;padding:11px 12px;border-radius:9px;
             background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
@@ -6945,19 +7291,19 @@ function render() {
             style="width:100%;margin-top:6px;margin-bottom:14px;padding:11px 12px;border-radius:9px;
             background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
 
-          <label style="font-size:10px;color:#888;font-weight:700;letter-spacing:.5px">TOKEN (github_pat_...)</label>
+          <label style="font-size:10px;color:#888;font-weight:700;letter-spacing:.5px">${t('gh_token_label')}</label>
           <input id="ghTokenInput" type="password" value="${GH_CONFIG.token||''}" placeholder="github_pat_..."
             style="width:100%;margin-top:6px;margin-bottom:18px;padding:11px 12px;border-radius:9px;
             background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
 
           <button onclick="saveGHConfigFromForm()" style="width:100%;padding:13px;border-radius:10px;
             font-size:13px;font-weight:800;background:#00ff8822;border:1px solid #00ff8866;color:#00ff88">
-            💾 Kaydet
+            💾 ${t('save')}
           </button>
 
           <button onclick="testGHConnection()" style="width:100%;margin-top:10px;padding:11px;border-radius:10px;
             font-size:12px;font-weight:700;background:#0d0d1e;border:1px solid #252540;color:#888">
-            🔌 Bağlantıyı Test Et
+            🔌 ${t('test_connection')}
           </button>
 
           <div id="ghTestResult" style="margin-top:12px;font-size:11px;line-height:1.6"></div>
@@ -6969,22 +7315,22 @@ function render() {
   // ── YAMA NOTLARI EKRANI ──────────────────────────────────
   if (appScreen === "patch") {
     const groups = [
-      { key:"newChamps",label:"Yeni Şampiyon",icon:"✨", color:"#ffcc02", border:"#ffcc0233", bg:"#ffcc0210" },
-      { key:"buffs",   label:"Güçlendirme", icon:"🔺", color:"#00ff88", border:"#00ff8833", bg:"#00ff8810" },
-      { key:"nerfs",   label:"Zayıflatma",  icon:"🔻", color:"#ff4444", border:"#ff444433", bg:"#ff444410" },
-      { key:"changes", label:"Denge",       icon:"🔄", color:"#4da6ff", border:"#4da6ff33", bg:"#4da6ff10" },
+      { key:"newChamps",label:t('patch_new_champ'),icon:"✨", color:"#ffcc02", border:"#ffcc0233", bg:"#ffcc0210" },
+      { key:"buffs",   label:t('patch_buff'), icon:"🔺", color:"#00ff88", border:"#00ff8833", bg:"#00ff8810" },
+      { key:"nerfs",   label:t('patch_nerf'),  icon:"🔻", color:"#ff4444", border:"#ff444433", bg:"#ff444410" },
+      { key:"changes", label:t('patch_change'),       icon:"🔄", color:"#4da6ff", border:"#4da6ff33", bg:"#4da6ff10" },
     ];
     // İtem yama grupları — anahtarlar ITEM_IMG key'leriyle aynı
     const itemGroups = [
-      { key:"itemNew",   label:"Yeni Item",     icon:"✨", color:"#ffcc02", border:"#ffcc0233", bg:"#ffcc0210" },
-      { key:"itemBuffs", label:"Güçlendirme",   icon:"🔺", color:"#00ff88", border:"#00ff8833", bg:"#00ff8810" },
-      { key:"itemNerfs", label:"Zayıflatma",    icon:"🔻", color:"#ff4444", border:"#ff444433", bg:"#ff444410" },
+      { key:"itemNew",   label:t('patch_new_item'),     icon:"✨", color:"#ffcc02", border:"#ffcc0233", bg:"#ffcc0210" },
+      { key:"itemBuffs", label:t('patch_buff'),   icon:"🔺", color:"#00ff88", border:"#00ff8833", bg:"#00ff8810" },
+      { key:"itemNerfs", label:t('patch_nerf'),    icon:"🔻", color:"#ff4444", border:"#ff444433", bg:"#ff444410" },
     ];
     // Rün yama grupları — anahtarlar RUNE_IMG key'leriyle aynı
     const runeGroups = [
-      { key:"runeNew",   label:"Yeni Rün",      icon:"✨", color:"#ffcc02", border:"#ffcc0233", bg:"#ffcc0210" },
-      { key:"runeBuffs", label:"Güçlendirme",   icon:"🔺", color:"#00ff88", border:"#00ff8833", bg:"#00ff8810" },
-      { key:"runeNerfs", label:"Zayıflatma",    icon:"🔻", color:"#ff4444", border:"#ff444433", bg:"#ff444410" },
+      { key:"runeNew",   label:t('patch_new_rune'),      icon:"✨", color:"#ffcc02", border:"#ffcc0233", bg:"#ffcc0210" },
+      { key:"runeBuffs", label:t('patch_buff'),   icon:"🔺", color:"#00ff88", border:"#00ff8833", bg:"#00ff8810" },
+      { key:"runeNerfs", label:t('patch_nerf'),    icon:"🔻", color:"#ff4444", border:"#ff444433", bg:"#ff444410" },
     ];
 
     function findChampByNorm(normName) {
@@ -7022,13 +7368,13 @@ function render() {
           position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
           display:flex;align-items:center;gap:10px">
           <button onclick="appScreen='home';render()" style="padding:6px 12px;border-radius:8px;
-            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px">← Geri</button>
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px">← ${t('back')}</button>
           <div style="flex:1">
-            <div style="font-size:14px;font-weight:800;color:#fff">📋 Yama Notları</div>
+            <div style="font-size:14px;font-weight:800;color:#fff">📋 ${t('home_patch_title')}</div>
             <div style="font-size:9px;color:#ffcc02">${patchData.version} · ${patchData.date}</div>
           </div>
           <div style="font-size:9px;color:#333;text-align:right">
-            Otomatik<br>güncellenir
+            ${t('patch_auto_updates')}
           </div>
         </div>
 
@@ -7056,7 +7402,7 @@ function render() {
                 <div style="font-size:11px;font-weight:800;color:${g.color};
                   margin-bottom:12px;display:flex;align-items:center;gap:6px">
                   <span style="font-size:16px">${g.icon}</span>
-                  ${g.label.toUpperCase()} — ${list.length} Şampiyon
+                  ${g.label.toUpperCase()} — ${list.length} ${t('champion_word')}
                 </div>
                 <div style="display:flex;flex-direction:column;gap:8px">
                   ${list.map(normName => {
@@ -7088,7 +7434,7 @@ function render() {
           <!-- İTEM YAMA NOTLARI -->
           ${itemGroups.some(g => (patchData[g.key]||[]).length) ? `
           <div style="font-size:10px;font-weight:800;color:#666;letter-spacing:.5px;
-            margin-top:4px;padding-left:2px">🗡️ İTEM DEĞİŞİKLİKLERİ</div>
+            margin-top:4px;padding-left:2px">🗡️ ${t('patch_item_changes')}</div>
           ${itemGroups.map(g => {
             const list = patchData[g.key] || [];
             if (!list.length) return "";
@@ -7108,7 +7454,7 @@ function render() {
           <!-- RÜN YAMA NOTLARI -->
           ${runeGroups.some(g => (patchData[g.key]||[]).length) ? `
           <div style="font-size:10px;font-weight:800;color:#666;letter-spacing:.5px;
-            margin-top:4px;padding-left:2px">🔮 RÜN DEĞİŞİKLİKLERİ</div>
+            margin-top:4px;padding-left:2px">🔮 ${t('patch_rune_changes')}</div>
           ${runeGroups.map(g => {
             const list = patchData[g.key] || [];
             if (!list.length) return "";
@@ -7131,7 +7477,7 @@ function render() {
               target="_blank" style="font-size:11px;color:#3a8fff;text-decoration:none;
               padding:10px 20px;border-radius:10px;border:1px solid #3a8fff44;
               background:#3a8fff11;display:inline-block">
-              🌐 Tüm Yama Notları →
+              🌐 ${t('patch_all_link')}
             </a>
           </div>
         </div>
@@ -7199,14 +7545,14 @@ function render() {
           position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
           display:flex;align-items:center;gap:10px">
           <button onclick="appScreen='home';render()" style="padding:6px 12px;border-radius:8px;
-            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px">← Geri</button>
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px">← ${t('back')}</button>
           <div style="flex:1">
             <div style="font-size:14px;font-weight:800;color:#fff">📊 Tier List</div>
             <div style="font-size:9px;color:#ff4d6d">${patchData.version} · ${patchData.date}</div>
           </div>
           ${BUILDER_ENABLED && tierListRole!=="Tümü" ? `<button onclick="openTierEditor('${tierListRole}')" style="padding:6px 12px;
             border-radius:8px;border:1px solid #ff4d6d55;background:#ff4d6d18;color:#ff4d6d;
-            font-size:11px;font-weight:700;flex-shrink:0">✏️ Düzenle</button>` : ""}
+            font-size:11px;font-weight:700;flex-shrink:0">✏️ ${t('edit')}</button>` : ""}
         </div>
 
         <!-- ROL FİLTRE BUTONLARI -->
@@ -7220,7 +7566,7 @@ function render() {
               background:${active ? "#ff4d6d22" : "#0d0d1e"};
               border:1px solid ${active ? "#ff4d6d77" : "#1a1a2e"};
               color:${active ? "#ff4d6d" : "#888"}">
-              ${r==="Tümü"?"🗂️ "+r:`<img src="${ROLE_ICON[r]}" style="width:13px;height:13px;object-fit:contain;vertical-align:-2px;margin-right:3px" alt="${r}">${r}`}
+              ${r==="Tümü"?"🗂️ "+t('all'):`<img src="${ROLE_ICON[r]}" style="width:13px;height:13px;object-fit:contain;vertical-align:-2px;margin-right:3px" alt="${r}">${r}`}
             </button>`;
           }).join("")}
         </div>
@@ -7260,13 +7606,13 @@ function render() {
           position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top))">
           <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
             <button onclick="appScreen='home';render()" style="padding:6px 12px;border-radius:8px;
-              border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px">← Geri</button>
-            <div style="font-size:14px;font-weight:800;color:#fff">🏆 Şampiyonlar</div>
+              border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px">← ${t('back')}</button>
+            <div style="font-size:14px;font-weight:800;color:#fff">🏆 ${t('home_champions_title')}</div>
           </div>
           <!-- Arama -->
           <input type="text" id="champSearchInput" value="${escHtml(champSearch)}"
             oninput="champSearch=this.value;updateChampGrid()"
-            placeholder="Şampiyon ara..." autocomplete="off"
+            placeholder="${t('champ_search_placeholder')}" autocomplete="off"
             style="width:100%;padding:9px 14px;border-radius:8px;border:1px solid #252540;
             background:#080816;color:#e0e0f0;font-size:14px;outline:none;
             font-family:inherit;box-sizing:border-box;margin-bottom:10px;caret-color:#4da6ff"/>
@@ -7280,7 +7626,7 @@ function render() {
                 white-space:nowrap;flex-shrink:0;
                 background:${act?lc+"30":"#0f0f1e"};
                 border:1px solid ${act?lc+"88":"#1a1a2e"};
-                color:${act?lc:"#444"}">${l}</button>`;
+                color:${act?lc:"#444"}">${l==="Tümü"?t('all'):l}</button>`;
             }).join("")}
           </div>
         </div>
@@ -7348,7 +7694,7 @@ function render() {
           position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
           display:flex;align-items:center;gap:10px">
           <button onclick="goBackFromDetail()" style="padding:6px 12px;border-radius:8px;
-            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← Geri</button>
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← ${t('back')}</button>
           <div style="font-size:14px;font-weight:800;color:#fff">${c.name}</div>
         </div>
 
@@ -7390,7 +7736,7 @@ function render() {
             <div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #ff303033;
               border-radius:12px;padding:12px">
               <div style="font-size:10px;font-weight:800;color:#ff6060;margin-bottom:10px">
-                🚨 Karşısında Güçlü Olan
+                🚨 ${t('cd_strong_against')}
               </div>
               <div style="display:flex;gap:10px;flex-wrap:wrap">
                 ${ctIds.map(id => miniChamp(id)).join("")}
@@ -7402,7 +7748,7 @@ function render() {
             <div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #4da6ff33;
               border-radius:12px;padding:12px">
               <div style="font-size:10px;font-weight:800;color:#4da6ff;margin-bottom:10px">
-                💪 Karşısında Zayıf Olan
+                💪 ${t('cd_weak_against')}
               </div>
               <div style="display:flex;gap:10px;flex-wrap:wrap">
                 ${ctByIds.map(id => miniChamp(id)).join("")}
@@ -7414,7 +7760,7 @@ function render() {
             <div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #00ff8833;
               border-radius:12px;padding:12px">
               <div style="font-size:10px;font-weight:800;color:#00ff88;margin-bottom:10px">
-                🤝 Sinerjiler
+                🤝 ${t('cd_synergies')}
               </div>
               <div style="display:flex;gap:10px;flex-wrap:wrap">
                 ${synIds.map(id => miniChamp(id)).join("")}
@@ -7459,14 +7805,14 @@ function render() {
               border-radius:12px;padding:14px">
               <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
                 <div style="font-size:10px;font-weight:800;color:#ffcc02;flex:1">
-                  ⚔️ Önerilen Build${CUSTOM_BUILDS[champDetailId] ? ' <span style="color:#00ff88">· Özel</span>' : ''}
+                  ⚔️ ${t('cd_suggested_build')}${CUSTOM_BUILDS[champDetailId] ? ' <span style="color:#00ff88">· '+t('cd_custom')+'</span>' : ''}
                 </div>
                 ${BUILDER_ENABLED ? `<button onclick="openBuilder('${champDetailId}')" style="padding:4px 10px;
                   border-radius:7px;border:1px solid #ffcc0255;background:#ffcc0218;color:#ffcc02;
-                  font-size:9px;font-weight:700;flex-shrink:0">✏️ Düzenle</button>` : ""}
+                  font-size:9px;font-weight:700;flex-shrink:0">✏️ ${t('edit')}</button>` : ""}
                 ${BUILDER_ENABLED ? `<button onclick="openProfileEditor('${champDetailId}')" style="padding:4px 10px;
                   border-radius:7px;border:1px solid #c060ff55;background:#c060ff18;color:#c060ff;
-                  font-size:9px;font-weight:700;flex-shrink:0">📊 Profil${getChampProfile(champDetailId) ? ' ✓' : ''}</button>` : ""}
+                  font-size:9px;font-weight:700;flex-shrink:0">📊 ${t('cd_profile')}${getChampProfile(champDetailId) ? ' ✓' : ''}</button>` : ""}
                 ${BUILDER_ENABLED ? `<button onclick="openCTEditor('${champDetailId}')" style="padding:4px 10px;
                   border-radius:7px;border:1px solid #ff606055;background:#ff606018;color:#ff6060;
                   font-size:9px;font-weight:700;flex-shrink:0">🎯 CT${CUSTOM_CT[champDetailId] ? ' ✓' : ''}</button>` : ""}
@@ -7474,19 +7820,19 @@ function render() {
 
               <!-- RÜNLER -->
               <div style="margin-bottom:16px">
-                <div style="font-size:8.5px;color:#777;font-weight:700;letter-spacing:.4px;margin-bottom:8px">RÜNLER</div>
+                <div style="font-size:8.5px;color:#777;font-weight:700;letter-spacing:.4px;margin-bottom:8px">${t('cd_runes')}</div>
                 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-                  ${slotBox(runes[0], 52, "circle", "#ffcc0255", "#ffcc02aa", "Ana Rün", "rune")}
+                  ${slotBox(runes[0], 52, "circle", "#ffcc0255", "#ffcc02aa", t('cd_main_rune'), "rune")}
                   <div style="width:1px;height:36px;background:#1e1e35"></div>
                   <div style="display:flex;gap:8px;flex-wrap:wrap">
-                    ${[1,2,3,4].map(n => slotBox(runes[n], 38, "circle", "#2a2a48", "#666", `Alt ${n}`, "rune")).join("")}
+                    ${[1,2,3,4].map(n => slotBox(runes[n], 38, "circle", "#2a2a48", "#666", `${t('cd_sub')} ${n}`, "rune")).join("")}
                   </div>
                 </div>
               </div>
 
               <!-- İTEMLER: item slotları + sağ köşede speller -->
               <div>
-                <div style="font-size:8.5px;color:#777;font-weight:700;margin-bottom:8px;letter-spacing:.4px">İTEMLER</div>
+                <div style="font-size:8.5px;color:#777;font-weight:700;margin-bottom:8px;letter-spacing:.4px">${t('cd_items')}</div>
                 <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start">
                   ${[0,1,2,3,4,5,6].map(n => slotBox(items[n], 46, "square", "#2a2a48", "#666", items[n]?"":String(n+1), "item")).join("")}
                   <div style="width:1px;align-self:stretch;background:#1e1e35;margin:0 2px"></div>
@@ -7496,7 +7842,7 @@ function render() {
                 </div>
               </div>
               ${!build ? `<div style="font-size:9px;color:#555;margin-top:10px;text-align:center">
-                Bu şampiyon için henüz build verisi eklenmedi.</div>` : ""}
+                ${t('cd_no_build_data')}</div>` : ""}
             </div>`;
           })()}
 
@@ -7506,10 +7852,10 @@ function render() {
             const _detail = getPatchDetail(champDetailId);
             if (!_s || !_detail) return "";
             const _cfg = {
-              new:    {icon:"✨", color:"#ffcc02", bg:"#ffcc0212", border:"#ffcc0244", label:"Yeni Şampiyon"},
+              new:    {icon:"✨", color:"#ffcc02", bg:"#ffcc0212", border:"#ffcc0244", label:t('patch_new_champ')},
               buff:   {icon:"🔺", color:"#00ff88", bg:"#00ff8812", border:"#00ff8844", label:"Buff"},
               nerf:   {icon:"🔻", color:"#ff4444", bg:"#ff444412", border:"#ff444444", label:"Nerf"},
-              change: {icon:"🔄", color:"#4da6ff", bg:"#4da6ff12", border:"#4da6ff44", label:"Denge Değişikliği"},
+              change: {icon:"🔄", color:"#4da6ff", bg:"#4da6ff12", border:"#4da6ff44", label:t('cd_balance_change')},
             }[_s];
             const _full = getPatchDetailFull(champDetailId);
             const _body = _full ? `
@@ -7532,16 +7878,16 @@ function render() {
               <div style="font-size:10px;font-weight:800;color:${_cfg.color};margin-bottom:10px;
                 display:flex;align-items:center;gap:6px">
                 <span style="font-size:14px">${_cfg.icon}</span>
-                📋 SON YAMA NOTU · ${_cfg.label}
+                📋 ${t('cd_last_patch_note')} · ${_cfg.label}
               </div>
               ${_body}
-              <div style="font-size:8px;color:#555;margin-top:10px">Yama ${patchData.version} · ${patchData.date}</div>
+              <div style="font-size:8px;color:#555;margin-top:10px">${t('patch_word')} ${patchData.version} · ${patchData.date}</div>
             </div>`;
           })()}
 
           ${ctIds.length===0 && ctByIds.length===0 && synIds.length===0 ? `
             <div style="text-align:center;padding:32px;color:#333;font-size:12px">
-              Bu şampiyon için henüz veri yok
+              ${t('cd_no_data')}
             </div>` : ""}
 
         </div>
@@ -7574,7 +7920,7 @@ function render() {
     if (builderPicking) {
       const cat = builderPickerCategory(builderPicking);
       const map = cat==="rune"?RUNE_IMG:cat==="spell"?SPELL_IMG:ITEM_IMG;
-      const title = cat==="rune"?"Rün Seç":cat==="spell"?"Spell Seç":"Item Seç";
+      const title = cat==="rune"?t('picker_pick_rune'):cat==="spell"?t('picker_pick_spell'):t('picker_pick_item');
       const list = Object.keys(map)
         .filter(k => !builderPickSearch || (ASSET_NAME[k]||k).toLowerCase().includes(builderPickSearch.toLowerCase()))
         .sort((a,b)=>(ASSET_NAME[a]||a).localeCompare(ASSET_NAME[b]||b,"tr"));
@@ -7589,7 +7935,7 @@ function render() {
           </div>
           <div style="font-size:7px;color:#999;text-align:center;line-height:1.2">${nm}</div>
         </div>`;
-      }).join("") || '<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">Bulunamadı</div>';
+      }).join("") || `<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">${t('not_found')}</div>`;
 
       pickerHtml = `<div style="position:fixed;inset:0;background:#000000cc;z-index:100;display:flex;
         align-items:flex-end" onclick="if(event.target===this)closeBuilderPicker()">
@@ -7598,13 +7944,13 @@ function render() {
           <div style="padding:14px;border-bottom:1px solid #141428;display:flex;align-items:center;gap:10px">
             <div style="font-size:13px;font-weight:800;color:#fff;flex:1">${title}</div>
             <button onclick="builderClearSlot('${builderPicking}')" style="padding:5px 10px;border-radius:7px;
-              border:1px solid #ff444455;background:#ff444418;color:#ff6060;font-size:10px">Temizle</button>
+              border:1px solid #ff444455;background:#ff444418;color:#ff6060;font-size:10px">${t('clear')}</button>
             <button onclick="closeBuilderPicker()" style="padding:5px 10px;border-radius:7px;
-              border:1px solid #252540;background:#0d0d1e;color:#888;font-size:10px">Kapat</button>
+              border:1px solid #252540;background:#0d0d1e;color:#888;font-size:10px">${t('close')}</button>
           </div>
           <div style="padding:10px 14px">
             <input value="${escHtml(builderPickSearch)}" oninput="builderPickSearch=this.value;renderBuilderPickerList()"
-              placeholder="Ara..." style="width:100%;padding:9px 12px;border-radius:9px;
+              placeholder="${t('search_dots')}" style="width:100%;padding:9px 12px;border-radius:9px;
               background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
           </div>
           <div id="builderPickerGrid" style="overflow-y:auto;padding:10px 14px 20px;
@@ -7621,8 +7967,8 @@ function render() {
           position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
           display:flex;align-items:center;gap:10px">
           <button onclick="closeBuilder()" style="padding:6px 12px;border-radius:8px;
-            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← İptal</button>
-          <div style="font-size:14px;font-weight:800;color:#fff">🛠 Build Düzenle · ${c.name}</div>
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← ${t('cancel')}</button>
+          <div style="font-size:14px;font-weight:800;color:#fff">🛠 ${t('builder_edit_title')} · ${c.name}</div>
         </div>
 
         <div style="padding:14px">
@@ -7630,23 +7976,23 @@ function render() {
           <div style="margin-bottom:14px">
             <div style="font-size:8.5px;color:#777;font-weight:700;margin-bottom:8px;letter-spacing:.4px">TIER</div>
             <div style="display:flex;gap:6px">
-              ${["S","A","B","C"].map(t=>`<button onclick="setBuilderTier('${t}')" style="
+              ${["S","A","B","C"].map(t2=>`<button onclick="setBuilderTier('${t2}')" style="
                 flex:1;padding:8px;border-radius:8px;font-size:12px;font-weight:800;
-                background:${d.tier===t?'#ffcc0225':'#0d0d1e'};border:1px solid ${d.tier===t?'#ffcc02':'#252540'};
-                color:${d.tier===t?'#ffcc02':'#888'}">${t}</button>`).join("")}
+                background:${d.tier===t2?'#ffcc0225':'#0d0d1e'};border:1px solid ${d.tier===t2?'#ffcc02':'#252540'};
+                color:${d.tier===t2?'#ffcc02':'#888'}">${t2}</button>`).join("")}
             </div>
           </div>
 
           <div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #ffcc0233;border-radius:12px;padding:14px">
-            <div style="font-size:8.5px;color:#777;font-weight:700;margin-bottom:10px;letter-spacing:.4px">RÜNLER</div>
+            <div style="font-size:8.5px;color:#777;font-weight:700;margin-bottom:10px;letter-spacing:.4px">${t('cd_runes')}</div>
             <div style="display:flex;gap:10px;flex-wrap:wrap">
-              ${miniSlot("Ana Rün", d.runes[0], "rune0", "circle")}
-              ${[1,2,3,4].map(n=>miniSlot(`Alt ${n}`, d.runes[n], "rune"+n, "circle")).join("")}
+              ${miniSlot(t('cd_main_rune'), d.runes[0], "rune0", "circle")}
+              ${[1,2,3,4].map(n=>miniSlot(`${t('cd_sub')} ${n}`, d.runes[n], "rune"+n, "circle")).join("")}
             </div>
           </div>
 
           <div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #c060ff33;border-radius:12px;padding:14px">
-            <div style="font-size:8.5px;color:#777;font-weight:700;margin-bottom:10px;letter-spacing:.4px">SPELLER</div>
+            <div style="font-size:8.5px;color:#777;font-weight:700;margin-bottom:10px;letter-spacing:.4px">${t('builder_spells')}</div>
             <div style="display:flex;gap:10px">
               ${miniSlot("Spell 1", d.spells[0], "spell0", "square")}
               ${miniSlot("Spell 2", d.spells[1], "spell1", "square")}
@@ -7654,10 +8000,10 @@ function render() {
           </div>
 
           <div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #4da6ff33;border-radius:12px;padding:14px">
-            <div style="font-size:8.5px;color:#777;font-weight:700;margin-bottom:10px;letter-spacing:.4px">İTEMLER</div>
+            <div style="font-size:8.5px;color:#777;font-weight:700;margin-bottom:10px;letter-spacing:.4px">${t('cd_items')}</div>
             <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">
               ${miniSlot("Starter", d.starter, "starter", "square")}
-              ${miniSlot("Bot", d.boots, "boots", "square")}
+              ${miniSlot(t('builder_boots'), d.boots, "boots", "square")}
               ${miniSlot("Enchant", d.enchant, "enchant", "square")}
             </div>
             <div style="display:flex;gap:10px;flex-wrap:wrap">
@@ -7668,12 +8014,12 @@ function render() {
           <div style="display:flex;gap:8px">
             <button onclick="saveBuilderDraft()" style="flex:1;padding:12px;border-radius:10px;
               background:#00ff8818;border:1px solid #00ff8855;color:#00ff88;font-weight:800;font-size:13px">
-              💾 Kaydet ve Sabitle
+              💾 ${t('builder_save_pin')}
             </button>
             ${CUSTOM_BUILDS[builderChampId] ? `
             <button onclick="deleteBuilderBuild()" style="padding:12px 16px;border-radius:10px;
               background:#ff444418;border:1px solid #ff444455;color:#ff6060;font-weight:800;font-size:13px">
-              🗑 Sil
+              🗑 ${t('delete')}
             </button>` : ""}
           </div>
         </div>
@@ -7693,9 +8039,9 @@ function render() {
       const fieldsHtml = g.fields.map(f => {
         if(f.type === "text"){
           return `<div style="margin-bottom:12px">
-            <div style="font-size:8.5px;color:#888;font-weight:700;margin-bottom:6px">${f.label}</div>
+            <div style="font-size:8.5px;color:#888;font-weight:700;margin-bottom:6px">${pt(f.label)}</div>
             <input value="${(d[f.key]||"").replace(/"/g,'&quot;')}" oninput="setProfileText('${f.key}',this.value)"
-              placeholder="Serbest metin..." style="width:100%;padding:8px 10px;border-radius:8px;
+              placeholder="${pt('Serbest metin...')}" style="width:100%;padding:8px 10px;border-radius:8px;
               background:#101022;border:1px solid #252540;color:#e0e0f0;font-size:12px;outline:none">
           </div>`;
         }
@@ -7707,16 +8053,16 @@ function render() {
                               : `setProfileSingle('${f.key}','${o.replace(/'/g,"\\'")}')`;
           return `<button onclick="${fn}" style="padding:6px 10px;border-radius:7px;font-size:10.5px;
             font-weight:700;background:${active?'#c060ff25':'#0d0d1e'};border:1px solid ${active?'#c060ff':'#252540'};
-            color:${active?'#c060ff':'#888'}">${o}</button>`;
+            color:${active?'#c060ff':'#888'}">${pt(o)}</button>`;
         }).join("");
         return `<div style="margin-bottom:12px">
-          <div style="font-size:8.5px;color:#888;font-weight:700;margin-bottom:6px">${f.label}</div>
+          <div style="font-size:8.5px;color:#888;font-weight:700;margin-bottom:6px">${pt(f.label)}</div>
           <div style="display:flex;gap:6px;flex-wrap:wrap">${optsHtml}</div>
         </div>`;
       }).join("");
       return `<div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #c060ff33;
         border-radius:12px;padding:14px">
-        <div style="font-size:9.5px;color:#c060ff;font-weight:800;margin-bottom:12px;letter-spacing:.4px">${g.group}</div>
+        <div style="font-size:9.5px;color:#c060ff;font-weight:800;margin-bottom:12px;letter-spacing:.4px">${pt(g.group)}</div>
         ${fieldsHtml}
       </div>`;
     }).join("");
@@ -7727,8 +8073,8 @@ function render() {
           position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
           display:flex;align-items:center;gap:10px">
           <button onclick="closeProfileEditor()" style="padding:6px 12px;border-radius:8px;
-            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← İptal</button>
-          <div style="font-size:14px;font-weight:800;color:#fff">📊 Profil Düzenle · ${c.name}</div>
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← ${t('cancel')}</button>
+          <div style="font-size:14px;font-weight:800;color:#fff">📊 ${t('profile_edit_title')} · ${c.name}</div>
         </div>
 
         <div style="padding:14px">
@@ -7737,12 +8083,12 @@ function render() {
           <div style="display:flex;gap:8px">
             <button onclick="saveProfileDraft()" style="flex:1;padding:12px;border-radius:10px;
               background:#00ff8818;border:1px solid #00ff8855;color:#00ff88;font-weight:800;font-size:13px">
-              💾 Kaydet
+              💾 ${t('save')}
             </button>
             ${CUSTOM_CHAMP_PROFILES[profileChampId] ? `
             <button onclick="deleteProfileDraft()" style="padding:12px 16px;border-radius:10px;
               background:#ff444418;border:1px solid #ff444455;color:#ff6060;font-weight:800;font-size:13px">
-              🗑 Sil
+              🗑 ${t('delete')}
             </button>` : ""}
           </div>
         </div>
@@ -7772,14 +8118,14 @@ function render() {
         }).join("")}
         <button onclick="openCTPicker('${listKey}')" style="padding:6px 12px;border-radius:20px;
           border:1px dashed ${color}66;background:transparent;color:${color};font-size:10px;font-weight:700">
-          + Ekle
+          + ${t('add')}
         </button>
       </div>`;
     }
 
     let pickerHtml = "";
     if (ctEditorPicking) {
-      const title = ctEditorPicking==="ct" ? "Karşısında Güçlü Olan Ekle/Çıkar" : "Karşısında Zayıf Olan Ekle/Çıkar";
+      const title = ctEditorPicking==="ct" ? t('ct_add_strong') : t('ct_add_weak');
       const selected = new Set(d[ctEditorPicking]);
       const q0 = ctEditorPickSearch.toLowerCase();
       const initList = ALL
@@ -7806,11 +8152,11 @@ function render() {
           <div style="padding:14px;border-bottom:1px solid #141428;display:flex;align-items:center;gap:10px">
             <div style="font-size:13px;font-weight:800;color:#fff;flex:1">${title}</div>
             <button onclick="closeCTPicker()" style="padding:5px 10px;border-radius:7px;
-              border:1px solid #252540;background:#0d0d1e;color:#888;font-size:10px">Kapat</button>
+              border:1px solid #252540;background:#0d0d1e;color:#888;font-size:10px">${t('close')}</button>
           </div>
           <div style="padding:10px 14px">
             <input value="${escHtml(ctEditorPickSearch)}" oninput="ctEditorPickSearch=this.value;renderCTPickerList()"
-              placeholder="Şampiyon ara..." style="width:100%;padding:9px 12px;border-radius:9px;
+              placeholder="${t('champ_search_placeholder')}" style="width:100%;padding:9px 12px;border-radius:9px;
               background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
           </div>
           <div id="ctPickerGrid" style="overflow-y:auto;padding:10px 14px 20px;
@@ -7825,20 +8171,19 @@ function render() {
           position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
           display:flex;align-items:center;gap:10px">
           <button onclick="closeCTEditor()" style="padding:6px 12px;border-radius:8px;
-            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← İptal</button>
-          <div style="font-size:14px;font-weight:800;color:#fff">🎯 CT Düzenle · ${c.name}</div>
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← ${t('cancel')}</button>
+          <div style="font-size:14px;font-weight:800;color:#fff">🎯 ${t('ct_edit_title')} · ${c.name}</div>
         </div>
 
         <div style="padding:14px">
           <div style="font-size:10px;color:#666;line-height:1.6;margin-bottom:14px">
-            Buradaki değişiklikler kaydedilince karşı taraftaki şampiyonların listesine de
-            otomatik olarak işlenir (karşılıklı ilişki senkron tutulur).
+            ${t('ct_edit_desc')}
           </div>
 
           <div style="margin-bottom:16px;background:#0d0d1e;border:1px solid #ff303033;
             border-radius:12px;padding:14px">
             <div style="font-size:10px;font-weight:800;color:#ff6060;margin-bottom:10px">
-              🚨 Karşısında Güçlü Olan (bunlar ${c.name}'i ezer)
+              🚨 ${t('cd_strong_against')} (${t('ct_they_beat', {name:c.name})})
             </div>
             ${chipRow("ct", d.ct, "#ff6060")}
           </div>
@@ -7846,7 +8191,7 @@ function render() {
           <div style="margin-bottom:16px;background:#0d0d1e;border:1px solid #4da6ff33;
             border-radius:12px;padding:14px">
             <div style="font-size:10px;font-weight:800;color:#4da6ff;margin-bottom:10px">
-              💪 Karşısında Zayıf Olan (${c.name} bunları ezer)
+              💪 ${t('cd_weak_against')} (${t('ct_champ_beats', {name:c.name})})
             </div>
             ${chipRow("ctBy", d.ctBy, "#4da6ff")}
           </div>
@@ -7854,12 +8199,12 @@ function render() {
           <div style="display:flex;gap:8px">
             <button onclick="saveCTDraft()" style="flex:1;padding:12px;border-radius:10px;
               background:#00ff8818;border:1px solid #00ff8855;color:#00ff88;font-weight:800;font-size:13px">
-              💾 Kaydet
+              💾 ${t('save')}
             </button>
             ${CUSTOM_CT[ctEditorChampId] ? `
             <button onclick="resetCTDraft()" style="padding:12px 16px;border-radius:10px;
               background:#ff444418;border:1px solid #ff444455;color:#ff6060;font-weight:800;font-size:13px">
-              ↺ Sıfırla
+              ↺ ${t('reset')}
             </button>` : ""}
           </div>
         </div>
@@ -7893,7 +8238,7 @@ function render() {
         }).join("")}
         <button onclick="openTierPicker('${band}')" style="padding:6px 12px;border-radius:20px;
           border:1px dashed ${tc.color}66;background:transparent;color:${tc.color};font-size:10px;font-weight:700">
-          + Ekle
+          + ${t('add')}
         </button>
       </div>`;
     }
@@ -7920,22 +8265,22 @@ function render() {
           ${on?`<div style="position:absolute;top:-2px;right:2px;width:16px;height:16px;border-radius:50%;background:${tc.color};color:#07070f;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center">✓</div>`:""}
           <div style="font-size:7px;color:#999;text-align:center;max-width:52px;white-space:nowrap;
             overflow:hidden;text-overflow:ellipsis">${x.name}</div>
-          ${(!on && otherBand)?`<div style="font-size:6px;color:#555">${otherBand}'de</div>`:""}
+          ${(!on && otherBand)?`<div style="font-size:6px;color:#555">${t('tier_in_band',{band:otherBand})}</div>`:""}
         </div>`;
-      }).join("") || '<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">Bulunamadı</div>';
+      }).join("") || `<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">${t('not_found')}</div>`;
 
       pickerHtml = `<div style="position:fixed;inset:0;background:#000000cc;z-index:100;display:flex;
         align-items:flex-end" onclick="if(event.target===this)closeTierPicker()">
         <div style="background:#0a0a18;border-top-left-radius:16px;border-top-right-radius:16px;
           max-height:78vh;width:100%;display:flex;flex-direction:column;border:1px solid #1a1a2e">
           <div style="padding:14px;border-bottom:1px solid #141428;display:flex;align-items:center;gap:10px">
-            <div style="font-size:13px;font-weight:800;color:${tc.color};flex:1">${band} Bandına Ekle/Çıkar</div>
+            <div style="font-size:13px;font-weight:800;color:${tc.color};flex:1">${t('tier_add_to_band',{band})}</div>
             <button onclick="closeTierPicker()" style="padding:5px 10px;border-radius:7px;
-              border:1px solid #252540;background:#0d0d1e;color:#888;font-size:10px">Kapat</button>
+              border:1px solid #252540;background:#0d0d1e;color:#888;font-size:10px">${t('close')}</button>
           </div>
           <div style="padding:10px 14px">
             <input value="${escHtml(tierEditorPickSearch)}" oninput="tierEditorPickSearch=this.value;renderTierPickerList()"
-              placeholder="Şampiyon ara..." style="width:100%;padding:9px 12px;border-radius:9px;
+              placeholder="${t('champ_search_placeholder')}" style="width:100%;padding:9px 12px;border-radius:9px;
               background:#0d0d1e;border:1px solid #252540;color:#e0e0f0;font-size:13px;outline:none">
           </div>
           <div id="tierPickerGrid" style="overflow-y:auto;padding:10px 14px 20px;
@@ -7950,14 +8295,13 @@ function render() {
           position:sticky;top:0;z-index:30;padding-top:max(12px,env(safe-area-inset-top));
           display:flex;align-items:center;gap:10px">
           <button onclick="closeTierEditor()" style="padding:6px 12px;border-radius:8px;
-            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← İptal</button>
-          <div style="font-size:14px;font-weight:800;color:#fff">📊 Tier List Düzenle · <img src="${ROLE_ICON[role]}" style="width:16px;height:16px;object-fit:contain;vertical-align:-3px;margin:0 1px" alt="${role}"> ${role}</div>
+            border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px;flex-shrink:0">← ${t('cancel')}</button>
+          <div style="font-size:14px;font-weight:800;color:#fff">📊 ${t('tier_edit_title')} · <img src="${ROLE_ICON[role]}" style="width:16px;height:16px;object-fit:contain;vertical-align:-3px;margin:0 1px" alt="${role}"> ${role}</div>
         </div>
 
         <div style="padding:14px">
           <div style="font-size:10px;color:#666;line-height:1.6;margin-bottom:14px">
-            Bir şampiyon aynı rolde yalnızca tek bantta olabilir; başka bir banda eklersen oradan otomatik çıkar.
-            Bu liste tamamen görseldir, draft önerilerini etkilemez.
+            ${t('tier_edit_desc')}
           </div>
 
           ${TIER_EDITOR_ORDER.map(band => {
@@ -7972,12 +8316,12 @@ function render() {
           <div style="display:flex;gap:8px">
             <button onclick="saveTierDraft()" style="flex:1;padding:12px;border-radius:10px;
               background:#00ff8818;border:1px solid #00ff8855;color:#00ff88;font-weight:800;font-size:13px">
-              💾 Kaydet
+              💾 ${t('save')}
             </button>
             ${CUSTOM_TIER_LIST[role] ? `
             <button onclick="resetTierDraft()" style="padding:12px 16px;border-radius:10px;
               background:#ff444418;border:1px solid #ff444455;color:#ff6060;font-weight:800;font-size:13px">
-              ↺ Sıfırla
+              ↺ ${t('reset')}
             </button>` : ""}
           </div>
         </div>
@@ -8003,8 +8347,8 @@ function render() {
           <div style="font-size:19px;font-weight:800;letter-spacing:1.5px;
             background:linear-gradient(180deg,#fff9e6 0%,#ffdd6b 38%,#ffcc02 62%,#c99400 100%);
             -webkit-background-clip:text;background-clip:text;color:transparent;
-            filter:drop-shadow(0 0 8px #ffcc0244)">DRAFT BAŞLAT</div>
-          <div style="font-size:9px;color:#5a5a78;letter-spacing:4px;margin-top:3px">FORMAT SEÇ</div>
+            filter:drop-shadow(0 0 8px #ffcc0244)">${t('draft_start_title')}</div>
+          <div style="font-size:9px;color:#5a5a78;letter-spacing:4px;margin-top:3px">${t('draft_choose_format')}</div>
         </div>
 
         <!-- FORMAT KARTLARI -->
@@ -8018,7 +8362,7 @@ function render() {
             <div class="wr-hex-badge" style="font-size:18px">1️⃣</div>
             <span style="flex:1">
               <span style="display:block;font-size:14px;font-weight:800;color:#f0f0fa;letter-spacing:.3px">Bo1</span>
-              <span style="font-size:10px;color:#3a8fff;font-weight:700;letter-spacing:.3px">Tek Maç</span>
+              <span style="font-size:10px;color:#3a8fff;font-weight:700;letter-spacing:.3px">${t('draft_single_match')}</span>
             </span>
             <span style="color:#3a8fff88;font-size:16px">›</span>
           </button>
@@ -8031,7 +8375,7 @@ function render() {
             <div class="wr-hex-badge" style="font-size:18px">3️⃣</div>
             <span style="flex:1">
               <span style="display:block;font-size:14px;font-weight:800;color:#f0f0fa;letter-spacing:.3px">Bo3${_fmtFearless?' <span style="color:#c060ff;font-size:10px;font-weight:800">+ FEARLESS</span>':''}</span>
-              <span style="font-size:10px;color:#c060ff;font-weight:700;letter-spacing:.3px">İlk 2'yi Alan Kazanır</span>
+              <span style="font-size:10px;color:#c060ff;font-weight:700;letter-spacing:.3px">${t('draft_first_to_2')}</span>
             </span>
             <span style="color:#c060ff88;font-size:16px">›</span>
           </button>
@@ -8044,7 +8388,7 @@ function render() {
             <div class="wr-hex-badge" style="font-size:18px">5️⃣</div>
             <span style="flex:1">
               <span style="display:block;font-size:14px;font-weight:800;color:#f0f0fa;letter-spacing:.3px">Bo5${_fmtFearless?' <span style="color:#ffcc02;font-size:10px;font-weight:800">+ FEARLESS</span>':''}</span>
-              <span style="font-size:10px;color:#ffcc02;font-weight:700;letter-spacing:.3px">İlk 3'ü Alan Kazanır</span>
+              <span style="font-size:10px;color:#ffcc02;font-weight:700;letter-spacing:.3px">${t('draft_first_to_3')}</span>
             </span>
             <span style="color:#ffcc0288;font-size:16px">›</span>
           </button>
@@ -8060,10 +8404,10 @@ function render() {
             </div>
             <div style="flex:1">
               <div style="font-size:11px;font-weight:800;color:${_fmtFearless?'#c060ff':'#888'};letter-spacing:1px">
-                ⚡ FEARLESS DRAFT ${_fmtFearless?'AÇIK':'KAPALI'}
+                ⚡ FEARLESS DRAFT ${_fmtFearless?t('on'):t('off')}
               </div>
               <div style="font-size:9px;color:#555;line-height:1.5;margin-top:2px">
-                Bo3 / Bo5'te önceki maçta seçilen şampiyonlar tekrar seçilemez. Bo1'i etkilemez.
+                ${t('draft_fearless_desc')}
               </div>
             </div>
           </div>
@@ -8073,7 +8417,7 @@ function render() {
         <div style="margin-top:16px;width:100%;max-width:340px">
           <button onclick="appScreen='home';render()" style="width:100%;padding:12px;
             border-radius:10px;font-size:12px;background:#0a0a16;
-            border:1px solid #1a1a2e;color:#444">← Ana Menüye Dön</button>
+            border:1px solid #1a1a2e;color:#444">← ${t('draft_back_to_home')}</button>
         </div>
       </div>`;
     return;
@@ -8089,16 +8433,16 @@ function render() {
         <div style="font-size:9px;color:#444;letter-spacing:3px;margin-bottom:8px">
           Bo${seriesFormat} ${fearless?"· FEARLESS":""}
         </div>
-        <div style="font-size:10px;color:#3a8fff;margin-bottom:32px">Maç ${currentMatch} Kurulumu</div>
+        <div style="font-size:10px;color:#3a8fff;margin-bottom:32px">${t('draft_match_setup',{n:currentMatch})}</div>
 
         <div style="width:100%;max-width:340px;display:flex;flex-direction:column;gap:14px">
 
           <!-- RAKİP TAKIM ADI -->
           <div style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:12px;padding:14px 16px">
-            <div style="font-size:9px;color:#444;letter-spacing:2px;margin-bottom:10px">🏴 RAKİP TAKIM</div>
+            <div style="font-size:9px;color:#444;letter-spacing:2px;margin-bottom:10px">🏴 ${t('draft_opponent_team')}</div>
             <input id="opponentInput" type="text" value="${escHtml(opponentName)}"
               oninput="opponentName=this.value"
-              placeholder="Rakip Takım Adı"
+              placeholder="${t('draft_opponent_team_placeholder')}"
               autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
               style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid #252540;
               background:#080816;color:#e0e0f0;font-size:15px;outline:none;
@@ -8108,7 +8452,7 @@ function render() {
           <!-- TARAF SEÇİMİ -->
           <div style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:12px;padding:14px 16px">
             <div style="font-size:9px;color:#444;letter-spacing:2px;margin-bottom:12px">
-              🎯 ${currentMatch>1?"Maç "+currentMatch+" — ":""}SENİN TARAFI
+              🎯 ${currentMatch>1?t('draft_match_n',{n:currentMatch})+" — ":""}${t('draft_your_side')}
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
               <button onclick="selectSide(0)" style="
@@ -8116,14 +8460,14 @@ function render() {
                 background:${mySide===0?"#3a8fff33":"#0a0a18"};
                 border:2px solid ${mySide===0?"#3a8fff":"#1a1a2e"};color:${mySide===0?"#3a8fff":"#555"};
                 transition:all .15s">
-                🔵<br><span style="font-size:11px">Mavi Taraf</span>
+                🔵<br><span style="font-size:11px">${t('draft_blue_side')}</span>
               </button>
               <button onclick="selectSide(1)" style="
                 padding:16px 10px;border-radius:10px;font-size:13px;font-weight:800;
                 background:${mySide===1?"#ff4d4d33":"#0a0a18"};
                 border:2px solid ${mySide===1?"#ff4d4d":"#1a1a2e"};color:${mySide===1?"#ff4d4d":"#555"};
                 transition:all .15s">
-                🔴<br><span style="font-size:11px">Kırmızı Taraf</span>
+                🔴<br><span style="font-size:11px">${t('draft_red_side')}</span>
               </button>
             </div>
           </div>
@@ -8135,12 +8479,12 @@ function render() {
             border:1px solid ${mySide===null?"#1a1a2e":"#a020f066"};
             color:${mySide===null?"#333":"#c060ff"};
             letter-spacing:1px;transition:all .2s;opacity:${mySide===null?.5:1}">
-            ▶ Taslağı Başlat
+            ▶ ${t('draft_start_draft_btn')}
           </button>
 
           <button onclick="doResetSeries()" style="padding:10px;border-radius:8px;font-size:11px;
             background:#0a0a16;border:1px solid #1a1a2e;color:#333">
-            ← Format Seçimine Dön
+            ← ${t('draft_back_to_format')}
           </button>
         </div>
       </div>`;
@@ -8151,18 +8495,18 @@ function render() {
   const needed = seriesFormat===1?1:seriesFormat===3?2:3;
   const seriesOver = myScore>=needed || oppScore>=needed;
   if (seriesOver) {
-    const winner = myScore>=needed ? "🏆 SEN" : `😔 ${escHtml(opponentName||"RAKİP")}`;
+    const winner = myScore>=needed ? "🏆 "+t('draft_you') : `😔 ${escHtml(opponentName||t('draft_opponent_upper'))}`;
     const wColor = myScore>=needed ? "#3ad48f" : "#ff4d4d";
     document.getElementById("app").innerHTML = `
       <div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;
         justify-content:center;padding:24px;background:#07070f">
-        <div style="font-size:13px;color:#666;letter-spacing:2px;margin-bottom:8px">SERİ SONUCU</div>
-        <div style="font-size:28px;font-weight:800;color:${wColor};margin-bottom:4px">${winner} KAZANDI</div>
+        <div style="font-size:13px;color:#666;letter-spacing:2px;margin-bottom:8px">${t('draft_series_result')}</div>
+        <div style="font-size:28px;font-weight:800;color:${wColor};margin-bottom:4px">${winner} ${t('draft_won')}</div>
         <div style="font-size:16px;color:#888;margin-bottom:32px">${myScore} — ${oppScore}</div>
 
         ${matchHistory.length>0?`
           <div style="width:100%;max-width:360px;margin-bottom:24px">
-            <div style="font-size:9px;color:#444;letter-spacing:2px;margin-bottom:8px">MAÇ GEÇMİŞİ</div>
+            <div style="font-size:9px;color:#444;letter-spacing:2px;margin-bottom:8px">${t('draft_match_history')}</div>
             ${matchHistory.map((m,i)=>matchSummaryH(m,i)).join("")}
           </div>
         `:""}
@@ -8170,7 +8514,7 @@ function render() {
         <button onclick="doResetSeries()" style="width:100%;max-width:320px;padding:14px;
           border-radius:10px;font-size:13px;font-weight:800;
           background:linear-gradient(135deg,#3a8fff18,#a020f018);
-          border:1px solid #a020f044;color:#c060ff">🔄 Yeni Seri Başlat</button>
+          border:1px solid #a020f044;color:#c060ff">🔄 ${t('draft_new_series')}</button>
       </div>`;
     return;
   }
@@ -8211,7 +8555,7 @@ function render() {
           color:${isBan?"#555":"#e0e0f0"};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
           text-decoration:${isBan?"line-through":"none"}">${c.name}</span>
         ${!isBan?`<span style="font-size:8px;color:${LANE_COLOR[c.lanes?.[0]]||"#888"};flex-shrink:0">${c.lanes?.[0]}</span>`:""}
-      ` : `<span style="font-size:8px;color:${isA?col:"#252540"}">${isA?(isBan?"Banla...":"Seç..."):" "}</span>`}
+      ` : `<span style="font-size:8px;color:${isA?col:"#252540"}">${isA?(isBan?t('draft_ban_dots'):t('draft_pick_dots')):" "}</span>`}
     </div>`;
   }
 
@@ -8220,9 +8564,9 @@ function render() {
     return `<div style="background:#0d0d1e;border:1px solid ${col}28;border-radius:10px;padding:8px">
       <div style="font-size:9px;font-weight:800;color:${col};letter-spacing:1.5px;
         margin-bottom:7px;border-bottom:1px solid ${col}22;padding-bottom:5px">${lbl}</div>
-      <div style="font-size:8px;color:#3a3a50;margin-bottom:4px;letter-spacing:1px">BANLAR</div>
+      <div style="font-size:8px;color:#3a3a50;margin-bottom:4px;letter-spacing:1px">${t('draft_bans')}</div>
       ${bans.map(o=>slotH(o,true)).join("")}
-      <div style="font-size:8px;color:#3a3a50;margin:7px 0 4px;letter-spacing:1px">SEÇIMLER</div>
+      <div style="font-size:8px;color:#3a3a50;margin:7px 0 4px;letter-spacing:1px">${t('draft_picks')}</div>
       ${picks.map(o=>slotH(o,false)).join("")}
     </div>`;
   }
@@ -8247,21 +8591,21 @@ function render() {
         <div style="font-size:8px;color:${lc};margin-top:2px">${c.lanes?.join(" · ")} · ${c.cls}</div>
         ${c._why?`<div style="margin-top:3px">
           <span style="font-size:7px;padding:1px 6px;border-radius:3px;font-weight:700;
-            background:${accent}18;border:1px solid ${accent}44;color:${accent}">${c._why}</span>
+            background:${accent}18;border:1px solid ${accent}44;color:${accent}">${tw(c._why)}</span>
         </div>`:""}
         ${(c._ownTags&&c._ownTags.length)?`<div style="margin-top:3px;display:flex;flex-wrap:wrap;gap:3px">
-          <span style="font-size:6px;color:#4da6ff;font-weight:800;align-self:center">🔵 TAKIM:</span>
-          ${c._ownTags.map(t=>`<span style="font-size:7px;padding:1px 6px;border-radius:3px;font-weight:700;
-            background:#4da6ff18;border:1px solid #4da6ff44;color:#4da6ff">${t}</span>`).join("")}
+          <span style="font-size:6px;color:#4da6ff;font-weight:800;align-self:center">🔵 ${t('draft_team_tag')}:</span>
+          ${c._ownTags.map(t2=>`<span style="font-size:7px;padding:1px 6px;border-radius:3px;font-weight:700;
+            background:#4da6ff18;border:1px solid #4da6ff44;color:#4da6ff">${tw(t2)}</span>`).join("")}
         </div>`:""}
         ${(c._enemyTags&&c._enemyTags.length)?`<div style="margin-top:3px;display:flex;flex-wrap:wrap;gap:3px">
-          <span style="font-size:6px;color:#ff9a3c;font-weight:800;align-self:center">🟠 RAKİBE KARŞI:</span>
-          ${c._enemyTags.map(t=>`<span style="font-size:7px;padding:1px 6px;border-radius:3px;font-weight:700;
-            background:#ff9a3c18;border:1px solid #ff9a3c44;color:#ff9a3c">${t}</span>`).join("")}
+          <span style="font-size:6px;color:#ff9a3c;font-weight:800;align-self:center">🟠 ${t('draft_vs_enemy_tag')}:</span>
+          ${c._enemyTags.map(t2=>`<span style="font-size:7px;padding:1px 6px;border-radius:3px;font-weight:700;
+            background:#ff9a3c18;border:1px solid #ff9a3c44;color:#ff9a3c">${tw(t2)}</span>`).join("")}
         </div>`:""}
       </div>
       <div style="padding:5px 8px;border-radius:6px;font-size:9px;font-weight:700;
-        background:${accent}18;border:1px solid ${accent}44;color:${accent};flex-shrink:0">SEÇ</div>
+        background:${accent}18;border:1px solid ${accent}44;color:${accent};flex-shrink:0">${t('draft_pick_btn')}</div>
     </div>`;
   }
 
@@ -8273,25 +8617,25 @@ function render() {
     // Rakip sırası
     if (sugg.isEnemy) {
       const enCol = cur.t===0?"#3a8fff":"#ff4d4d";
-      const enLbl = cur.t===0?"🔵 Mavi":"🔴 Kırmızı";
+      const enLbl = cur.t===0?"🔵 "+t('side_blue'):"🔴 "+t('side_red');
       return `<div style="margin-bottom:10px;padding:18px;border-radius:10px;
         background:#0a0a18;border:1px solid ${enCol}18;text-align:center">
         <div style="font-size:20px;margin-bottom:6px">${cur.act==="ban"?"🚫":"⚔️"}</div>
         <div style="font-size:11px;font-weight:800;color:${enCol};letter-spacing:1px">
-          ${enLbl} ${cur.act==="ban"?"BANLAMA":"SEÇİM"} SIRASI
+          ${enLbl} ${cur.act==="ban"?t('draft_turn_ban'):t('draft_turn_pick')}
         </div>
-        <div style="font-size:9px;color:#333;margin-top:4px">Rakip hamlesi — öneri devre dışı</div>
+        <div style="font-size:9px;color:#333;margin-top:4px">${t('draft_enemy_turn_desc')}</div>
       </div>`;
     }
     // Ban aşaması — öneri yok
     if (sugg.isBan) {
       const col = cur.t===0?"#3a8fff":"#ff4d4d";
-      const lbl = cur.t===0?"🔵 Mavi":"🔴 Kırmızı";
+      const lbl = cur.t===0?"🔵 "+t('side_blue'):"🔴 "+t('side_red');
       return `<div style="margin-bottom:10px;padding:18px;border-radius:10px;
         background:#0a0a18;border:1px solid #ff444422;text-align:center">
         <div style="font-size:20px;margin-bottom:6px">🚫</div>
-        <div style="font-size:11px;font-weight:800;color:#ff6060;letter-spacing:1px">BAN AŞAMASI</div>
-        <div style="font-size:9px;color:#333;margin-top:4px">${lbl} ban yapıyor — öneri yok</div>
+        <div style="font-size:11px;font-weight:800;color:#ff6060;letter-spacing:1px">${t('draft_ban_phase')}</div>
+        <div style="font-size:9px;color:#333;margin-top:4px">${t('draft_ban_phase_desc',{side:lbl})}</div>
       </div>`;
     }
     const lastEn = getEnPicks(cur.t);
@@ -8299,10 +8643,10 @@ function render() {
     return `<div style="margin-bottom:10px">
       <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
         <div class="pulse" style="width:6px;height:6px;border-radius:3px;background:#ffcc02"></div>
-        <span style="font-size:9px;font-weight:800;color:#ffcc02;letter-spacing:2px">ÖNERİ PANELİ</span>
+        <span style="font-size:9px;font-weight:800;color:#ffcc02;letter-spacing:2px">${t('draft_suggestion_panel')}</span>
         ${cur.t===0
-          ?`<span style="font-size:9px;color:#3a8fff;font-weight:700;margin-left:4px">▶ Mavi için</span>`
-          :`<span style="font-size:9px;color:#ff4d4d;font-weight:700;margin-left:4px">▶ Kırmızı için</span>`}
+          ?`<span style="font-size:9px;color:#3a8fff;font-weight:700;margin-left:4px">▶ ${t('draft_for_blue')}</span>`
+          :`<span style="font-size:9px;color:#ff4d4d;font-weight:700;margin-left:4px">▶ ${t('draft_for_red')}</span>`}
       </div>
 
       <div style="display:grid;grid-template-columns:1fr;gap:8px">
@@ -8310,7 +8654,7 @@ function render() {
         <!-- BÖLÜM 1: CT -->
         <div style="background:#0a0a18;border:1px solid #ff303033;border-radius:10px;padding:10px">
           <div style="display:flex;align-items:center;gap:6px;margin-bottom:7px">
-            <span style="font-size:10px;font-weight:800;color:#ff6060">🚨 1. Koridor CT Önerisi</span>
+            <span style="font-size:10px;font-weight:800;color:#ff6060">🚨 ${t('draft_lane_ct_suggestion')}</span>
             ${last?`<span style="font-size:8px;padding:1px 7px;border-radius:4px;
               background:#ff303020;border:1px solid #ff303050;color:#ff9090;margin-left:auto">
               vs ${last.name} (${last.lanes?.[0]})
@@ -8319,24 +8663,24 @@ function render() {
           ${sugg.ct.length
             ? sugg.ct.map(c=>cardH(c,"#ff6060")).join("")
             : `<div style="font-size:11px;color:#333;text-align:center;padding:16px">
-                ${last?"Rakip seçime göre CT bulunamadı":"Rakip henüz pick yapmadı"}
+                ${last?t('draft_no_ct_found'):t('draft_enemy_no_pick')}
               </div>`}
         </div>
 
         <!-- BÖLÜM 2: META -->
         <div style="background:#0a0a18;border:1px solid #ffcc0233;border-radius:10px;padding:10px">
-          <div style="font-size:10px;font-weight:800;color:#ffcc02;margin-bottom:7px">🌟 2. Meta Güç Pickleri</div>
+          <div style="font-size:10px;font-weight:800;color:#ffcc02;margin-bottom:7px">🌟 ${t('draft_meta_picks')}</div>
           ${sugg.meta.length
             ? sugg.meta.map(c=>cardH(c,"#ffcc02")).join("")
-            : `<div style="font-size:11px;color:#333;text-align:center;padding:16px">Yeterli veri yok</div>`}
+            : `<div style="font-size:11px;color:#333;text-align:center;padding:16px">${t('draft_not_enough_data')}</div>`}
         </div>
 
         <!-- BÖLÜM 3: BOŞ KORİDOR -->
         <div style="background:#0a0a18;border:1px solid #a020f033;border-radius:10px;padding:10px">
-          <div style="font-size:10px;font-weight:800;color:#c060ff;margin-bottom:7px">🗺️ 3. Boş Koridor Tamamlayıcı</div>
+          <div style="font-size:10px;font-weight:800;color:#c060ff;margin-bottom:7px">🗺️ ${t('draft_empty_lane_filler')}</div>
           ${sugg.filler.length
             ? sugg.filler.map(c=>cardH(c,"#c060ff")).join("")
-            : `<div style="font-size:11px;color:#333;text-align:center;padding:16px">Tüm koridorlar dolu</div>`}
+            : `<div style="font-size:11px;color:#333;text-align:center;padding:16px">${t('draft_all_lanes_full')}</div>`}
         </div>
 
       </div>
@@ -8350,7 +8694,7 @@ function render() {
       ${sugg.warns.map(w=>`<div class="warn" style="
         padding:6px 12px;border-radius:6px;font-size:10px;font-weight:800;
         background:linear-gradient(135deg,#E8405722,#8B000022);
-        border:1px solid #E8405766;color:#ff8080">${w}</div>`).join("")}
+        border:1px solid #E8405766;color:#ff8080">${tw(w)}</div>`).join("")}
     </div>`;
   }
 
@@ -8374,7 +8718,7 @@ function render() {
       return `<button onclick="setLane('${l}')" style="
         padding:6px 12px;border-radius:20px;font-size:10px;font-weight:700;
         background:${act?lc+"30":"#0f0f1e"};border:1px solid ${act?lc+"88":"#1a1a2e"};
-        color:${act?lc:"#444"};white-space:nowrap">${l}</button>`;
+        color:${act?lc:"#444"};white-space:nowrap">${l==="Tümü"?t('all'):l}</button>`;
     }).join("");
 
     const rows = list.map(c=>{
@@ -8393,19 +8737,19 @@ function render() {
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
             <span style="font-size:13px;font-weight:700;color:#e0e0f0">${c.name}</span>
             ${isSug?`<span style="font-size:7px;padding:1px 5px;border-radius:3px;
-              background:#ffcc0222;border:1px solid #ffcc0244;color:#ffcc02;font-weight:800">★ ÖNERİ</span>`:""}
+              background:#ffcc0222;border:1px solid #ffcc0244;color:#ffcc02;font-weight:800">★ ${t('draft_suggestion_star')}</span>`:""}
             ${patchBadge(c.id)}
           </div>
           <div style="font-size:9px;color:${lc};margin-top:1px">${c.lanes?.join(" · ")} · ${c.cls} · ${c.dmg}</div>
         </div>
         <div style="padding:5px 10px;border-radius:6px;font-size:10px;font-weight:700;
-          background:${tc}18;border:1px solid ${tc}44;color:${tc};flex-shrink:0">SEÇ</div>
+          background:${tc}18;border:1px solid ${tc}44;color:${tc};flex-shrink:0">${t('draft_pick_btn')}</div>
       </div>`;
-    }).join("") || `<div style="text-align:center;padding:30px;color:#333;font-size:12px">Şampiyon bulunamadı</div>`;
+    }).join("") || `<div style="text-align:center;padding:30px;color:#333;font-size:12px">${t('champ_not_found')}</div>`;
 
     return `<div style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:10px;padding:10px;margin-bottom:10px">
-      <div style="font-size:9px;font-weight:800;color:#666;letter-spacing:2px;margin-bottom:8px">ŞAMPİYON HAVUZU</div>
-      <input type="text" id="poolSearch" placeholder="Ara..." value="${escHtml(search)}"
+      <div style="font-size:9px;font-weight:800;color:#666;letter-spacing:2px;margin-bottom:8px">${t('draft_champion_pool')}</div>
+      <input type="text" id="poolSearch" placeholder="${t('search_dots')}" value="${escHtml(search)}"
         oninput="doSearch(this.value)" autocomplete="off" autocorrect="off"
         autocapitalize="off" spellcheck="false"
         style="width:100%;padding:8px 12px;border-radius:8px;border:1px solid #252540;
@@ -8458,22 +8802,22 @@ function render() {
           </div>
         </div>`).join("")}
         <div style="margin-top:8px;padding:7px;background:#080816;border-radius:7px">
-          ${bar("AP",ap,"#80cbc4")}${bar("AD",ad,"#ef9a9a")}${bar("Ön Hat",myStats.naturalTank+myStats.frontline,"#4fc3f7")}
+          ${bar("AP",ap,"#80cbc4")}${bar("AD",ad,"#ef9a9a")}${bar(t('draft_frontline'),myStats.naturalTank+myStats.frontline,"#4fc3f7")}
           ${(strengths.length || weaknesses.length) ? `<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:6px">
-            ${strengths.map(t=>badge(t,true)).join("")}
-            ${weaknesses.map(t=>badge(t,false)).join("")}
+            ${strengths.map(t=>badge(tw(t),true)).join("")}
+            ${weaknesses.map(t=>badge(tw(t),false)).join("")}
           </div>` : ""}
         </div>
       </div>`;
     }
     return `<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
-      ${panel(0,"#3a8fff","🔵 MAVİ")}
-      ${panel(1,"#ff4d4d","🔴 KIRMIZI")}
+      ${panel(0,"#3a8fff","🔵 "+t('side_blue_upper'))}
+      ${panel(1,"#ff4d4d","🔴 "+t('side_red_upper'))}
     </div>
     ${seriesFormat===1?`<button onclick="doReset()" style="width:100%;padding:13px;border-radius:10px;
       font-size:13px;font-weight:800;letter-spacing:1px;
       background:linear-gradient(135deg,#3a8fff18,#a020f018);
-      border:1px solid #a020f044;color:#c060ff">🔄 Yeni Draft Başlat</button>`:""}`;
+      border:1px solid #a020f044;color:#c060ff">🔄 ${t('draft_start_new')}</button>`:""}`;
   }
 
   // Maç özet kartı
@@ -8481,14 +8825,14 @@ function render() {
     const bPicks = ORDER.map((o,i)=>({...o,i})).filter(o=>o.t===0&&o.act==="pick").map(o=>m.slots[o.i]).filter(Boolean);
     const rPicks = ORDER.map((o,i)=>({...o,i})).filter(o=>o.t===1&&o.act==="pick").map(o=>m.slots[o.i]).filter(Boolean);
     return `<div style="background:#0d0d1e;border:1px solid #1a1a2e;border-radius:10px;padding:10px;margin-bottom:6px">
-      <div style="font-size:9px;color:#555;letter-spacing:1px;margin-bottom:6px">MAÇ ${idx+1}</div>
+      <div style="font-size:9px;color:#555;letter-spacing:1px;margin-bottom:6px">${t('draft_match_word')} ${idx+1}</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
         <div>
-          <div style="font-size:8px;color:#3a8fff;margin-bottom:4px">🔵 MAVİ</div>
+          <div style="font-size:8px;color:#3a8fff;margin-bottom:4px">🔵 ${t('side_blue_upper')}</div>
           ${bPicks.map(c=>`<div style="font-size:10px;color:#aaa;padding:2px 0">${c.name}</div>`).join("")}
         </div>
         <div>
-          <div style="font-size:8px;color:#ff4d4d;margin-bottom:4px">🔴 KIRMIZI</div>
+          <div style="font-size:8px;color:#ff4d4d;margin-bottom:4px">🔴 ${t('side_red_upper')}</div>
           ${rPicks.map(c=>`<div style="font-size:10px;color:#aaa;padding:2px 0">${c.name}</div>`).join("")}
         </div>
       </div>
@@ -8505,10 +8849,10 @@ function render() {
         <div style="font-size:9px;color:#444;margin-top:1px;display:flex;align-items:center;gap:5px;flex-wrap:wrap">
           <span>Bo${seriesFormat}${fearless?" · Fearless":""}</span>
           ${patchData.version?`<span style="color:#ffcc02;font-weight:700">· ${patchData.version}</span>`:""}
-          ${mySide!==null?`<span style="color:${mySide===0?"#3a8fff":"#ff4d4d"}">${mySide===0?"🔵":"🔴"} Sen</span>`:""}
+          ${mySide!==null?`<span style="color:${mySide===0?"#3a8fff":"#ff4d4d"}">${mySide===0?"🔵":"🔴"} ${t('draft_you_short')}</span>`:""}
           ${opponentName?`<span style="color:#555">vs ${escHtml(opponentName)}</span>`:""}
-          ${seriesFormat>1?`<span style="color:#3ad48f">Sen ${myScore}</span><span style="color:#444">—</span><span style="color:#ff4d4d">${oppScore} Rakip</span>`:""}
-          ${seriesFormat>1?`<span style="color:#333">Maç ${currentMatch}</span>`:""}
+          ${seriesFormat>1?`<span style="color:#3ad48f">${t('draft_you_short')} ${myScore}</span><span style="color:#444">—</span><span style="color:#ff4d4d">${oppScore} ${t('draft_opponent_word')}</span>`:""}
+          ${seriesFormat>1?`<span style="color:#333">${t('draft_match_word')} ${currentMatch}</span>`:""}
         </div>
       </div>
       <div style="display:flex;gap:5px;flex-shrink:0">
@@ -8519,7 +8863,7 @@ function render() {
           font-weight:700;background:#1a0a0a;border:1px solid #ff444466;color:#ff6060">↺</button>
         <button onclick="saveDraftAndFinish()" style="padding:6px 10px;border-radius:6px;font-size:11px;
           font-weight:700;background:#0a180a;border:1px solid #44ff6644;color:#60ff80"
-          title="Taslağı Kaydet ve Bitir">💾</button>
+          title="${t('draft_save_finish_title')}">💾</button>
         <button onclick="doResetSeries()" style="padding:6px 10px;border-radius:6px;font-size:11px;
           font-weight:700;background:#0a0a1a;border:1px solid #4da6ff44;color:#4da6ff">☰</button>
       </div>
@@ -8535,21 +8879,21 @@ function render() {
       <span style="padding:2px 7px;border-radius:4px;font-size:9px;font-weight:800;
         background:${cur.act==="ban"?"#ff444422":"#44ff6622"};
         border:1px solid ${cur.act==="ban"?"#ff444455":"#44ff6655"};
-        color:${cur.act==="ban"?"#ff6060":"#60ff80"}">${cur.act==="ban"?"🚫 BAN":"✅ PİCK"}</span>
-      <span style="font-size:11px;font-weight:700;color:${tc}">${cur.t===0?"🔵 MAVİ":"🔴 KIRMIZI"}</span>
+        color:${cur.act==="ban"?"#ff6060":"#60ff80"}">${cur.act==="ban"?"🚫 "+t('draft_ban_short'):"✅ "+t('draft_pick_short')}</span>
+      <span style="font-size:11px;font-weight:700;color:${tc}">${cur.t===0?"🔵 "+t('side_blue_upper'):"🔴 "+t('side_red_upper')}</span>
       <span style="font-size:10px;color:#444;margin-left:auto">${step+1}/20</span>
     </div>`
     :`<div style="padding:9px;text-align:center;font-size:12px;font-weight:800;color:#c060ff;
       letter-spacing:2px;background:linear-gradient(90deg,#a020f018,#3a8fff18);
-      border-bottom:1px solid #a020f033">🏆 DRAFT TAMAMLANDI</div>`}
+      border-bottom:1px solid #a020f033">🏆 ${t('draft_completed')}</div>`}
 
     <!-- ANA İÇERİK -->
     <div style="padding:10px 10px ${done?"10px":"80px"}">
 
       <!-- TAKIM BOARD -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
-        ${teamH("#3a8fff","🔵 MAVİ",B0,P0)}
-        ${teamH("#ff4d4d","🔴 KIRMIZI",B1,P1)}
+        ${teamH("#3a8fff","🔵 "+t('side_blue_upper'),B0,P0)}
+        ${teamH("#ff4d4d","🔴 "+t('side_red_upper'),B1,P1)}
       </div>
 
       <!-- UYARILAR -->
@@ -8569,16 +8913,16 @@ function render() {
       ${done && seriesFormat > 1 ? `
         <div style="margin-bottom:10px">
           <div style="font-size:9px;color:#444;letter-spacing:2px;margin-bottom:8px;text-align:center">
-            MAÇ ${currentMatch} — KİM KAZANDI?
+            ${t('draft_match_word')} ${currentMatch} — ${t('draft_who_won')}
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
             <button onclick="endMatch(0)" style="padding:14px;border-radius:10px;font-size:13px;
               font-weight:800;background:#3a8fff22;border:1px solid #3a8fff66;color:#3a8fff">
-              🔵 Mavi Kazandı
+              🔵 ${t('draft_blue_won')}
             </button>
             <button onclick="endMatch(1)" style="padding:14px;border-radius:10px;font-size:13px;
               font-weight:800;background:#ff4d4d22;border:1px solid #ff4d4d66;color:#ff4d4d">
-              🔴 Kırmızı Kazandı
+              🔴 ${t('draft_red_won')}
             </button>
           </div>
         </div>
@@ -8587,7 +8931,7 @@ function render() {
       <!-- MAÇ GEÇMİŞİ -->
       ${matchHistory.length > 0 ? `
         <div style="margin-bottom:10px">
-          <div style="font-size:9px;color:#444;letter-spacing:2px;margin-bottom:8px">MAÇ GEÇMİŞİ</div>
+          <div style="font-size:9px;color:#444;letter-spacing:2px;margin-bottom:8px">${t('draft_match_history')}</div>
           ${matchHistory.map((m,i) => matchSummaryH(m,i)).join("")}
         </div>
       ` : ""}
@@ -8598,7 +8942,7 @@ function render() {
       padding:10px 12px;background:#0a0a18;border-top:1px solid #181828">
       <button onclick="openModal()" style="width:100%;padding:13px;border-radius:10px;
         font-size:13px;font-weight:800;background:${tc}22;border:1px solid ${tc}66;color:${tc}">
-        ${cur.act==="ban"?`🚫 ${cur.t===0?"Mavi":"Kırmızı"} — Ban Seç`:`✅ ${cur.t===0?"Mavi":"Kırmızı"} — Şampiyon Seç`}
+        ${cur.act==="ban"?`🚫 ${cur.t===0?t('side_blue'):t('side_red')} — ${t('draft_pick_ban')}`:`✅ ${cur.t===0?t('side_blue'):t('side_red')} — ${t('draft_pick_champion')}`}
       </button>
     </div>`:""}
 
@@ -8612,13 +8956,13 @@ function render() {
         <div style="padding:12px 12px 8px;border-bottom:1px solid #141428">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
             <span style="font-size:12px;font-weight:800;color:#fff">
-              ${cur.act==="ban"?"🚫 Ban Seç":"✅ Şampiyon Seç"}
-              <span style="color:${tc};font-size:10px;margin-left:8px">${cur.t===0?"(Mavi)":"(Kırmızı)"}</span>
+              ${cur.act==="ban"?"🚫 "+t('draft_pick_ban'):"✅ "+t('draft_pick_champion')}
+              <span style="color:${tc};font-size:10px;margin-left:8px">${cur.t===0?"("+t('side_blue')+")":"("+t('side_red')+")"}</span>
             </span>
             <button onclick="closeModal()" style="width:30px;height:30px;border-radius:6px;
               background:#131328;border:1px solid #252540;color:#888;font-size:15px;font-weight:800">✕</button>
           </div>
-          <input autofocus type="text" placeholder="Şampiyon ara..." value="${escHtml(search)}"
+          <input autofocus type="text" placeholder="${t('champ_search_placeholder')}" value="${escHtml(search)}"
             oninput="doSearch(this.value)"
             style="width:100%;padding:9px 12px;border-radius:8px;border:1px solid #252540;
             background:#080816;color:#e0e0f0;font-size:13px;outline:none;margin-bottom:8px"/>
@@ -8628,7 +8972,7 @@ function render() {
               return `<button onclick="setLane('${l}')" style="padding:5px 11px;border-radius:20px;
                 font-size:10px;font-weight:700;white-space:nowrap;
                 background:${act?lc+"30":"#111120"};border:1px solid ${act?lc+"88":"#1e1e30"};
-                color:${act?lc:"#555"}">${l}</button>`;
+                color:${act?lc:"#555"}">${l==="Tümü"?t('all'):l}</button>`;
             }).join("")}
           </div>
         </div>
@@ -8694,14 +9038,14 @@ function doSearch(v) {
       <div style="flex:1;min-width:0">
         <div style="display:flex;align-items:center;gap:6px">
           <span style="font-size:13px;font-weight:700;color:#e0e0f0">${c.name}</span>
-          ${isSug?'<span style="font-size:7px;padding:1px 5px;border-radius:3px;background:#ffcc0222;border:1px solid #ffcc0244;color:#ffcc02;font-weight:800">★ ÖNERİ</span>':""}
+          ${isSug?'<span style="font-size:7px;padding:1px 5px;border-radius:3px;background:#ffcc0222;border:1px solid #ffcc0244;color:#ffcc02;font-weight:800">★ '+t('draft_suggestion_star')+'</span>':""}
         </div>
         <div style="font-size:9px;color:${lc};margin-top:1px">${c.lanes?.join(" · ")} · ${c.cls} · ${c.dmg}</div>
       </div>
       <div style="padding:5px 10px;border-radius:6px;font-size:10px;font-weight:700;
-        background:${tc}18;border:1px solid ${tc}44;color:${tc};flex-shrink:0">SEÇ</div>
+        background:${tc}18;border:1px solid ${tc}44;color:${tc};flex-shrink:0">${t('draft_pick_btn')}</div>
     </div>`;
-  }).join("") || '<div style="text-align:center;padding:30px;color:#333;font-size:12px">Şampiyon bulunamadı</div>';
+  }).join("") || `<div style="text-align:center;padding:30px;color:#333;font-size:12px">${t('champ_not_found')}</div>`;
 }
 
 function pickChamp(id){
@@ -8728,7 +9072,7 @@ function doResetSeries(){
   seriesFormat=null; fearless=false; setupPhase=false;
   currentMatch=1; matchHistory=[];
   myScore=0; oppScore=0;
-  mySide=null; opponentName="Rakip Takım";
+  mySide=null; opponentName=t('default_opponent');
   appScreen="home";
   render();
 }
@@ -8740,7 +9084,7 @@ function selectFormat(format, fc){
   currentMatch=1; matchHistory=[];
   myScore=0; oppScore=0;
   slots=Array(20).fill(null); step=0;
-  mySide=null; opponentName="Rakip Takım";
+  mySide=null; opponentName=t('default_opponent');
   setupPhase=true;
   render();
 }
@@ -8755,7 +9099,7 @@ function selectSide(side){
 function confirmSetup(){
   if(mySide===null)return;
   const inp=document.getElementById("opponentInput");
-  if(inp) opponentName=inp.value||"Rakip Takım";
+  if(inp) opponentName=inp.value||t('default_opponent');
   setupPhase=false;
   render();
 }
@@ -8814,7 +9158,7 @@ function deleteHistory(idx){
 
 // Yeni: Tümünü sil
 function clearAllHistory(){
-  if(!confirm("Tüm geçmiş silinsin mi?"))return;
+  if(!confirm(t('confirm_delete_history')))return;
   savedMatchHistory=[];
   saveHistory();
   render();
@@ -8892,6 +9236,10 @@ if (window.visualViewport) {
   _updateKbVar();
 }
 
+// ═══════════════════════════════════════════════════════════════
+// ÇEVİRİ SÖZLÜKLERİ (i18n dictionaries) — ekran ekran eklenir
+// ═══════════════════════════════════════════════════════════════
+
 // İlk render — son bırakılan ekran (varsa) geri yüklenir, yoksa Ana Menü
 loadAppState();
 loadGHConfig();
@@ -8902,6 +9250,7 @@ loadCustomTierList();
 updateBuilderFab();
 updateProfileFab();
 updateTierFab();
+updateLangBtn();
 render();
 loadLiveTierList(); // arka planda tier-list.json'ı çeker, gelince otomatik render eder
 loadLiveBuilds();    // builds.json
