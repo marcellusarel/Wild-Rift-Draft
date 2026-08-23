@@ -1,7 +1,10 @@
 {
   "Baron": {
     "S+": [
-      "yone_baron"
+      "yone_baron",
+      "aatrox",
+      "gwen",
+      "rumble"
     ],
     "S": [
       "darius",
@@ -12,9 +15,8 @@
       "jax",
       "poppy_baron",
       "malphite",
-      "aatrox",
-      "gwen",
-      "rumble"
+      "renekton",
+      "wukong"
     ],
     "A": [
       "kennen",
@@ -28,9 +30,7 @@
       "ryze_baron",
       "sett",
       "olaf_baron",
-      "renekton",
       "ornn",
-      "wukong",
       "chogath"
     ],
     "B": [
