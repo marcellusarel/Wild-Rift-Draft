@@ -16,7 +16,8 @@
       "soraka",
       "blitzcrank",
       "braum",
-      "zyra"
+      "zyra",
+      "senna"
     ]
   },
   "nautilus": {
@@ -93,7 +94,8 @@
       "lulu",
       "sona",
       "morgana",
-      "soraka"
+      "soraka",
+      "senna"
     ],
     "ctBy": [
       "blitzcrank",
@@ -140,7 +142,8 @@
       "soraka",
       "blitzcrank",
       "sona",
-      "yuumi"
+      "yuumi",
+      "senna"
     ]
   },
   "blitzcrank": {
@@ -236,7 +239,8 @@
       "pantheon",
       "leona",
       "yuumi",
-      "rell"
+      "rell",
+      "senna"
     ]
   },
   "seraphine": {
@@ -499,22 +503,29 @@
   },
   "senna": {
     "ct": [
-      "draven",
-      "caitlyn",
-      "tristana",
-      "ezreal"
+      "blitzcrank",
+      "leona",
+      "thresh",
+      "nautilus",
+      "pyke",
+      "rakan",
+      "alistar"
     ],
     "ctBy": [
-      "vayne",
-      "jinx",
-      "jhin"
+      "galio",
+      "janna",
+      "lulu",
+      "gragas_sup",
+      "braum",
+      "bard"
     ]
   },
   "gragas_sup": {
     "ct": [
       "morgana",
       "janna",
-      "lulu"
+      "lulu",
+      "senna"
     ],
     "ctBy": [
       "rakan",
