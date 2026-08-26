@@ -5564,128 +5564,134 @@ let builderPickSearch  = "";
 
 // ─── YAMA VERİSİ ─────────────────────────────────────────────
 let patchData = {
-  version: "7.2c",
-  date: "12 Ağustos 2026",
+  version: "7.2d",
+  date: "26 Ağustos 2026",
   newChamps: [],
-  buffs:   ["chogath","jinx"],
-  nerfs:   ["nilah","leona","nasus","ryze","warwick","kogmaw"],
-  changes: ["rumble"],
+  buffs:   ["syndra","yuumi","vladimir","veigar","mordekaiser","fiora","renekton","caitlyn"],
+  nerfs:   ["pantheon","twistedfate","gwen","yone","thresh"],
+  changes: [],
   details: {
-    chogath:  "Çıkışından beri beklenenin altında kaldığı için hasarı ve Feast ölçeklenmesi arttırıldı, ultisi daha sık kullanılabilir hale getirildi",
-    jinx:     "Kritik vuruş item güçlendirmelerine rağmen hâlâ zayıf kaldığı için koridor gücü ve takım savaşı reset potansiyeli arttırıldı",
-    nilah:    "Yüksek seviye oyunda fazla baskın olduğu için kritik ölçeklenmesi ve ulti sürdürülebilir hasarı düşürüldü",
-    leona:    "Koridor aşamasında fazla dayanıklı olup poke'a fazla kolay katlandığı için erken oyun dayanıklılığı geç oyuna kaydırıldı",
-    nasus:    "Diğer ölçeklenen şampiyonlar gibi kontrol altına alınması fazla zorlaştığı için erken oyun dayanıklılığı düşürüldü, ulti bekleme süresi arttırıldı",
-    ryze:     "Archangel's Staff ve diğer büyücü item güncellemelerinden beri fazla güçlü olduğu için erken oyun savaş gücü düşürüldü",
-    warwick:  "Ultisindeki değişiklikten beri öncelikli hedefleri fazla etkili avladığı ve erken/orta oyunu fazla kontrol ettiği için pick potansiyeli düşürüldü",
-    kogmaw:   "Büyücü item revizyonu sonrası AP Kog'Maw güvenli mesafeden fazla hasar yağdırdığı için kısıtlamalar eklendi",
-    rumble:   "Yetenek Gücü'ne yatırım yapmadan fazla hasar verdiği için hasar profili AP build'lerini ödüllendirecek, özellikle Tehlike Bölgesi'nde yüksek canlı hedeflere karşı şekilde kaydırıldı",
+    syndra:      "Büyücü item değişikliklerinden sonra yetenek gücü oranları görece düşük kaldığı için erken oyun hasar baskısı arttırıldı, üçüncü yeteneğinin bekleme süresi de düşürüldü",
+    yuumi:       "Hem kendini hem takım arkadaşlarını güvende tutmakta zorlandığı için destek araçları güçlendirildi, ikinci yeteneğinin bekleme süresi de azaltıldı",
+    vladimir:    "Güç kazanmak için item'lara fazla bağımlı kaldığı için nitelik dönüşüm oranları ve yetenek hasarı arttırıldı",
+    veigar:      "Koridor aşamasını güvenli atlatması ve yük biriktirmesi zorlaştığı için birinci yeteneğinin menzili arttırıldı",
+    mordekaiser: "Item revizyonuyla büyü nüfuzu kaybettikten sonra geride kaldığı için taban büyü nüfuzu arttırıldı, üçüncü yeteneğinin bekleme süresi de düşürüldü",
+    fiora:       "Çizme değişikliklerinden sonra normal saldırıya dayalı dövüşçüler zorlandığı için önceki zayıflatmalarının bir kısmı geri alındı",
+    renekton:    "Çizme değişikliklerinden sonra güç kaybettiği için yetenek hasarı arttırıldı",
+    caitlyn:     "İleri safha hasarı ve tuzak kontrolü yetersiz kaldığı için pasif hasarı ve tuzak yenilenme süresi iyileştirildi",
+    pantheon:    "Erken oyunda, özellikle destansı canavarlara karşı infaz gücü fazla güvenilir kaldığı için birinci yeteneğinin kritik vuruş can eşiği düşürüldü",
+    twistedfate: "Üçüncü yeteneği yetenek gücüne göre fazla ölçeklendiği ve bazı dizilimlerde aşırı hasara yol açtığı için oranı düşürüldü",
+    gwen:        "Çizme değişikliklerinden en çok kârlı çıkanlardan biri olduğu için koridor ve orman hasarı hafifletildi",
+    yone:        "Baron koridorunda fazla güvenli güçlendiği için taban zırhı düşürüldü",
+    thresh:      "İlk yeteneğini isabet ettirdikten sonra fazla sık kanca atabildiği için isabet halinde sağladığı bekleme süresi iadesi azaltıldı",
   },
   // Şampiyon detay sayfasında gösterilen, yetenek bazlı ayrıntılı yama notları
   detailsFull: {
-    chogath: [
-      { skill: "Vorpal Spikes", changes: [
-        "Taban Hasar: 15/35/55/75 + (%2,15/2,5/2,85/3,2 + %0,5 × Feast Stack) × Hedefin Azami Canı → 20/45/70/95 + (%2,3/2,7/3,1/3,5 + %0,6 × Feast Stack) × Hedefin Azami Canı"
+    syndra: [
+      { skill: "Karanlık Küre", changes: [
+        "Taban Hasar: 70/115/160/205 → 80/130/180/230"
       ]},
-      { skill: "Feast", changes: [
-        "Bekleme Süresi: 80/70/60s → 70/60/50s",
-        "Bonus Cana Bağlı Hasar Oranı: %8 → %10"
+      { skill: "İrade Gücü", changes: [
+        "Hasarının Yetenek Gücü Oranı: %45 → %60"
+      ]},
+      { skill: "Zayıflara Acıma", changes: [
+        "Bekleme Süresi: 17s → 15s",
+        "Hasarının Yetenek Gücü Oranı: %35 → %50"
       ]},
     ],
-    jinx: [
+    yuumi: [
+      { skill: "Sen ve Ben!", changes: [
+        "Bekleme Süresi: 10/5/0s → 8/4/0s",
+        "Pasifin Sağladığı İyileştirme ve Kalkan Gücü: %6/7/8/9 → %8/9/10/11"
+      ]},
+      { skill: "Çıldırr", changes: [
+        "Bekleme Süresi: 10s → 9s",
+        "Kalkan: 85/110/135/160 + %30 Yetenek Gücü → 80/110/140/170 + %40 Yetenek Gücü"
+      ]},
+    ],
+    vladimir: [
+      { skill: "Kızıl Akit", changes: [
+        "İlave Canın Yetenek Gücüne Dönüşüm Oranı: %4,5 → %5",
+        "Yetenek Gücünün Cana Dönüşüm Oranı: %140 → %150"
+      ]},
+      { skill: "Kan Nakli", changes: [
+        "Kızıl Akım İlave Hasar Oranı: %75 → %85"
+      ]},
+      { skill: "Kan Yağmuru", changes: [
+        "Asgari Hasar: 20/40/60/80 + %35 Yetenek Gücü + Azami Canın %2,5'i → 30/50/70/90 + %35 Yetenek Gücü + Azami Canın %3'ü"
+      ]},
+    ],
+    veigar: [
+      { skill: "Uğursuz Saldırı", changes: [
+        "Menzil: 7,75 → 9"
+      ]},
+    ],
+    mordekaiser: [
+      { skill: "Karanlık Azap", changes: [
+        "Büyü Nüfuzu: %1/3/5/7 → %3/6/9/12"
+      ]},
+      { skill: "Ecelin Eli", changes: [
+        "Bekleme Süresi: 17,5/15/12,5/10s → 15/13/11/9s"
+      ]},
+    ],
+    fiora: [
+      { skill: "Düellocunun Dansı", changes: [
+        "Hasar: %3,5 + %0,05 İlave Saldırı Gücü → %4 + %0,055 İlave Saldırı Gücü"
+      ]},
+    ],
+    renekton: [
+      { skill: "Ezik Katili", changes: [
+        "Normal Hasar İçin İlave Saldırı Gücü Oranı: %90 → %100"
+      ]},
+      { skill: "İnsafsız Yırtıcı", changes: [
+        "Taban Hasar: 24/48/72/96 → 20/60/100/140",
+        "Hiddet Saltanatı Taban Hasarı: 36/72/108/144 → 30/90/150/210"
+      ]},
+    ],
+    caitlyn: [
+      { skill: "Tam Kafadan", changes: [
+        "Hasar: %50-%100 (seviyeye bağlı) Saldırı Gücü + 125 × Kritik Vuruş İhtimali → %60-%110 (seviyeye bağlı) Saldırı Gücü + 200 × Kritik Vuruş İhtimali"
+      ]},
+      { skill: "Yordle Kapanı", changes: [
+        "Dolma Süresi: 27/22/17/12s → 25/20/15/10s"
+      ]},
+    ],
+    pantheon: [
+      { skill: "Meteor Mızrağı", changes: [
+        "Cana Bağlı Kritik Vuruş Eşiği: %35 → %25"
+      ]},
+    ],
+    twistedfate: [
+      { skill: "Şans Destesi", changes: [
+        "Yetenek Gücü Oranı: %45 Yetenek Gücü → %35 Yetenek Gücü"
+      ]},
+    ],
+    gwen: [
+      { skill: "Kırt Kırt!", changes: [
+        "İsabet Başına Yetenek Gücü Oranı: %7 → %6",
+        "Son İsabet Yetenek Gücü Oranı: %35 → %30",
+        "Orman Canavarlarına Karşı Hasar Çarpanı: %105 → %100"
+      ]},
+    ],
+    yone: [
       { skill: "Taban İstatistikler", changes: [
-        "Taban Saldırı Gücü: 54 → 58"
-      ]},
-      { skill: "Get Excited!", changes: [
-        "Saldırı Hızı: %12 → %25"
+        "Taban Zırh: 43 → 37"
       ]},
     ],
-    nilah: [
-      { skill: "Formless Blade", changes: [
-        "Kritik Şans - Zırh Delme Oranı: %35 → %28"
-      ]},
-      { skill: "Apotheosis", changes: [
-        "Süreğen Hasar: 60/120/180 + %140 Bonus Saldırı Gücü → 60/110/160 + %50 Bonus Saldırı Gücü"
-      ]},
-    ],
-    leona: [
-      { skill: "Taban İstatistikler", changes: [
-        "Taban Can: 750 → 690",
-        "Taban Zırh: 55 → 50",
-        "Seviye Başına Can: 120 → 128"
-      ]},
-      { skill: "Eclipse", changes: [
-        "Bekleme Süresi: 14/13/12/11s → 13/12/11/10s",
-        "Bonus Zırh: 40/60/80/100 → 30/50/70/90",
-        "Bonus Büyü Direnci: 40/60/80/100 → 30/50/70/90"
-      ]},
-    ],
-    nasus: [
-      { skill: "Taban İstatistikler", changes: [
-        "Taban Zırh: 46 → 40"
-      ]},
-      { skill: "Fury of the Sands", changes: [
-        "Bekleme Süresi: 75/70/65s → 90/80/70s"
-      ]},
-    ],
-    ryze: [
-      { skill: "Taban İstatistikler", changes: [
-        "Taban Can: 660 → 630",
-        "Taban Zırh: 40 → 37"
-      ]},
-      { skill: "Rune Prison", changes: [
-        "Hasar: 70/110/150/190 + %65 Yetenek Gücü + %4 Bonus Mana → 50/90/130/170 + %55 Yetenek Gücü + %3 Bonus Mana"
-      ]},
-    ],
-    warwick: [
-      { skill: "Infinite Duress", changes: [
-        "Bekleme Süresi: 80/70/60s → 100/90/80s",
-        "Taban Hasar: 125/300/475 → 100/275/450"
-      ]},
-    ],
-    kogmaw: [
-      { skill: "Living Artillery", changes: [
-        "Mana Bedeli: 40 - 400 (kullanım sayısına bağlı) → 50 - 500 (kullanım sayısına bağlı)",
-        "Menzil: 12/14/16 → 11/13/15",
-        "Taban Hasar: 100/140/180 → 80/120/160"
-      ]},
-    ],
-    rumble: [
-      { skill: "Taban İstatistikler", changes: [
-        "Taban Can: 690 → 660",
-        "Seviye Başına Can: 120 → 128"
-      ]},
-      { skill: "Flamespitter", changes: [
-        "Hasar: 120/160/200/240 + %110 Yetenek Gücü + %6/8/10/12 Hedefin Azami Canı → 100/140/180/220 + %125 Yetenek Gücü + %7/8/9/10 Hedefin Azami Canı",
-        "Tehlike Bölgesi Hasarı: 180/240/300/360 + %165 Yetenek Gücü + %9/12/15/18 Hedefin Azami Canı → 150/210/270/330 + %187,5 Yetenek Gücü + %10,5/12/13,5/15 Hedefin Azami Canı"
-      ]},
-      { skill: "Scrap Shield", changes: [
-        "Kalkan: 40/70/100/130 + %6 Azami Can → 40/80/120/160 + %4 Azami Can",
-        "Tehlike Bölgesi Kalkanı: 60/105/150/195 + %9 Azami Can → 60/120/180/240 + %6 Azami Can"
-      ]},
-      { skill: "Electro Harpoon", changes: [
-        "Bonus Yetenek Gücü Hasarı: %40 → %50",
-        "Tehlike Bölgesi Bonus Yetenek Gücü Hasarı: %60 → %75"
+    thresh: [
+      { skill: "Ölüm Cezası", changes: [
+        "İsabet Halinde Bekleme Süresinde Azalma: 3s → 2s"
       ]},
     ],
   },
-  // ── İTEM YAMA NOTLARI (7.2c resmi yama notlarına göre) ──
+  // ── İTEM YAMA NOTLARI (7.2d resmi yama notlarına göre) ──
   // Anahtarlar ITEM_IMG içindeki item key'leriyle birebir aynı olmalı
-  itemBuffs:  ["berserkers_greaves","mercurys_treads","plated_steelcaps","sunfire_aegis","stridebreaker","mikaels_blessing","kaenic_rookern"],
-  itemNerfs:  ["gunmetal_greaves","chainlaced_crushers","armored_advance","spellslingers_shoes"],
+  itemBuffs:  ["edge_of_night","lich_bane"],
+  itemNerfs:  [],
   itemNew:    [],
   itemDetails: {
-    berserkers_greaves: "Tier 2/Tier 3 bot arasındaki güç farkı fazla açıldığı için Tier 2 seçenekler güçlendirildi — Saldırı Hızı: %30 → %35",
-    mercurys_treads: "Tier 2/Tier 3 bot arasındaki güç farkı fazla açıldığı için Tier 2 seçenekler güçlendirildi — Direnç: %15 → %30",
-    plated_steelcaps: "Tier 2/Tier 3 bot arasındaki güç farkı fazla açıldığı için Tier 2 seçenekler güçlendirildi — Hasar Azaltma: %6 → %10",
-    gunmetal_greaves: "Tier 2/Tier 3 bot arasındaki güç farkını dengelemek için Tier 3 yükseltmelerden güç budandı — Hareket Hızı (Yakın/Menzilli): %15/12 → %10/7",
-    chainlaced_crushers: "Tier 2/Tier 3 bot arasındaki güç farkını dengelemek için Tier 3 yükseltmelerden güç budandı — Büyü Direnci: 35 → 30",
-    armored_advance: "Tier 2/Tier 3 bot arasındaki güç farkını dengelemek için Tier 3 yükseltmelerden güç budandı — Zırh: 35 → 30",
-    spellslingers_shoes: "Tier 2/Tier 3 bot arasındaki güç farkını dengelemek için Tier 3 yükseltmelerden güç budandı — Yetenek Gücü: 40 → 35, Big Bully Gerçek Hasar: 22 → 18",
-    sunfire_aegis: "Özellikle fiziksel hasara karşı ilk item seçeneği olarak geride kaldığı için yüksek zırh kimliğini pekiştirmek amacıyla zırhı arttırıldı — Can: 425 → 350, Zırh: 20 → 40",
-    stridebreaker: "Yüksek Saldırı Hızı'na bağımlı şampiyonlar için yeterli güç sunmadığı için güçlendirildi — Saldırı Hızı: %15 → %25",
-    mikaels_blessing: "Güçlü bir koruma item'ı olma rolüne tam oturmadığı için doğrudan güçlendirildi — İyileştirme/Kalkan Değeri: %6 → %9, Purify Bekleme Süresi: 90s → 75s",
-    kaenic_rookern: "Büyücü item revizyonundan sonra geride kaldığı için, özellikle yüksek can biriktiren şampiyonlar için rekabetçi bir Büyü Direnci seçeneği olarak güçlendirildi — Büyü Direnci: 75 → 80, Magebane Kalkanı: 70~180 (seviyeye bağlı) + %10 Azami Can → 50~150 (seviyeye bağlı) + %14 Azami Can",
+    edge_of_night: "Fiyatı düştükten sonra bile diğer zırh delme seçenekleriyle boy ölçüşemediği için sabit zırh delme değeri arttırıldı — Zırh Delme: 8 → 12",
+    lich_bane: "Yüksek bedeli birçok dizilime rahatça dahil edilmesini zorlaştırdığı için daha erişilebilir olması amacıyla bedeli düşürüldü — Bedel: 2900 → 2800",
   },
   // ── RÜN YAMA NOTLARI ── (dokunulmadı)
   // Anahtarlar RUNE_IMG içindeki rün key'leriyle birebir aynı olmalı
