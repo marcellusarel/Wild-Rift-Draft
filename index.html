@@ -2,6 +2,25 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<script>
+// ─── AÇILIŞTA TEK SEFERLİK ZORUNLU TAZE YÜKLEME ─────────────────
+// Telefon (özellikle "ana ekrana ekle" ile açılan PWA'larda) sayfayı bazen
+// eski önbellekten/askıya alınmış haliyle gösterebiliyor. Uygulama her
+// GERÇEKTEN yeni açıldığında (yeni sekme/oturum), sunucudan taze bir kopya
+// zorunlu olarak indirilsin diye bir kerelik otomatik yenileme yapıyoruz.
+// sessionStorage sayesinde sonsuz döngü olmuyor — aynı oturumda tekrar tetiklenmez.
+(function(){
+  try{
+    if(!sessionStorage.getItem('wrFreshLoad')){
+      sessionStorage.setItem('wrFreshLoad','1');
+      location.replace(location.pathname + '?_fresh=' + Date.now());
+    }
+  }catch(e){}
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
@@ -126,6 +145,12 @@ input{font-family:inherit}
   transform:translate(-50%,-50%);z-index:9999;background:#0d0d1ef2;border:1px solid #ffcc0255;
   border-radius:12px;padding:14px 20px;font-size:13px;font-weight:700;color:#ffcc02;
   text-align:center;pointer-events:none"></div>
+<button id="bugReportFab" onclick="openBugReport()" title="Hata Bildir / Report a Bug"
+  style="position:fixed;bottom:16px;left:16px;z-index:9997;padding-bottom:env(safe-area-inset-bottom);
+  padding:10px 14px;border-radius:30px;background:#0d0d1ef2;border:1px solid #ff4d4d55;color:#ff4d4d;
+  font-size:12px;font-weight:800;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px #000a">
+  🐞 <span id="bugReportFabLabel">Hata Bildir</span>
+</button>
 <script>
 // file:// protokolü uyarısı — resimlerin çalışması için HTTP gerekli
 if (location.protocol === 'file:') {
@@ -159,6 +184,10 @@ function escHtml(str){
 // t("anahtar") ile çeviri metni alınır. Bir dilde eksik anahtar varsa
 // Türkçe'ye, o da yoksa anahtarın kendisine düşer (hiçbir zaman kırılmaz).
 // ═══════════════════════════════════════════════════════════════
+// ⚠️ BURAYI DEĞİŞTİR: Hata bildirimlerinin gideceği e-posta adresi.
+// ⚠️ CHANGE THIS: the email address bug reports should be sent to.
+const FEEDBACK_EMAIL = "marcellus.arel@gmail.com";
+
 let LANG = (function(){ try{ return localStorage.getItem("wrLang") || "tr"; }catch(e){ return "tr"; } })();
 const I18N = { tr:{}, en:{} };
 function addI18n(dict){
@@ -179,9 +208,78 @@ function toggleLang(){
   updateLangBtn();
   render();
 }
+
+// ─── ANA EKRAN "?" BİLGİ KUTUSU ─────────────────────────────────
+// Ana ekrandaki Draft/Şampiyonlar/Tier List/Yama Notları kartlarının sağ üst
+// köşesindeki "?" ikonuna basılınca, o bölümün ne işe yaradığını açıklayan
+// küçük bir bilgi kutusu açar. TR/EN otomatik olarak aktif dile göre gösterilir.
+function showHomeInfo(titleKey, bodyKey){
+  const wrap = document.createElement("div");
+  wrap.id = "homeInfoOverlay";
+  wrap.style.cssText = "position:fixed;inset:0;background:#000000cc;z-index:10000;display:flex;align-items:center;justify-content:center;padding:24px";
+  wrap.innerHTML = `<div style="background:#0a0a18;border:1px solid #1a1a2e;border-radius:14px;
+      max-width:340px;width:100%;padding:18px" onclick="event.stopPropagation()">
+    <div style="font-size:14px;font-weight:800;color:#fff;margin-bottom:10px">${t(titleKey)}</div>
+    <div style="font-size:13px;line-height:1.5;color:#c8c8d8">${t(bodyKey)}</div>
+    <button onclick="document.getElementById('homeInfoOverlay').remove()" style="margin-top:16px;width:100%;
+      padding:11px;border-radius:9px;background:#0d0d1e;border:1px solid #252540;color:#ccc;
+      font-weight:700;font-size:12px">${t('home_info_close')}</button>
+  </div>`;
+  wrap.onclick = () => wrap.remove();
+  document.body.appendChild(wrap);
+}
+// ─── HATA BİLDİRME ───────────────────────────────────────────────
+// Kullanıcı uygulamanın herhangi bir ekranında sol alttaki "🐞" butonuna
+// basıp gördüğü hatayı/öneriyi yazar. "Gönder"e basınca telefonun e-posta
+// uygulaması, FEEDBACK_EMAIL adresine önceden doldurulmuş bir mail ile açılır
+// (hangi ekrandan gönderildiği ve cihaz bilgisi otomatik eklenir).
+function openBugReport(){
+  const wrap = document.createElement("div");
+  wrap.id = "bugReportOverlay";
+  wrap.style.cssText = "position:fixed;inset:0;background:#000000cc;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px";
+  wrap.innerHTML = `<div style="background:#0a0a18;border:1px solid #1a1a2e;border-radius:14px;
+      max-width:400px;width:100%;padding:18px" onclick="event.stopPropagation()">
+    <div style="font-size:14px;font-weight:800;color:#fff;margin-bottom:8px">${t('bug_modal_title')}</div>
+    <div style="font-size:12px;line-height:1.5;color:#999;margin-bottom:12px">${t('bug_modal_desc')}</div>
+    <textarea id="bugReportText" placeholder="${t('bug_modal_placeholder')}" style="width:100%;min-height:120px;
+      background:#101022;color:#e0e0f0;border:1px solid #252540;border-radius:8px;padding:10px;
+      font-size:13px;font-family:inherit;resize:vertical"></textarea>
+    <div style="display:flex;gap:8px;margin-top:14px">
+      <button onclick="sendBugReport()" style="flex:1;padding:11px;border-radius:9px;background:#ff4d4d18;
+        border:1px solid #ff4d4d55;color:#ff4d4d;font-weight:800;font-size:12px">${t('bug_modal_send')}</button>
+      <button onclick="document.getElementById('bugReportOverlay').remove()" style="padding:11px 16px;
+        border-radius:9px;background:#0d0d1e;border:1px solid #252540;color:#888;font-weight:700;
+        font-size:12px">${t('bug_modal_cancel')}</button>
+    </div>
+  </div>`;
+  wrap.onclick = () => wrap.remove();
+  document.body.appendChild(wrap);
+  setTimeout(()=>{ const ta=document.getElementById("bugReportText"); if(ta) ta.focus(); }, 50);
+}
+function sendBugReport(){
+  const ta = document.getElementById("bugReportText");
+  const msg = (ta?.value || "").trim();
+  if(!msg){ showBuilderToast(t('bug_modal_empty')); return; }
+  const screenInfo = `Ekran / Screen: ${appScreen}`;
+  const deviceInfo = `Cihaz / Device: ${navigator.userAgent}`;
+  const body = `${msg}\n\n---\n${screenInfo}\n${deviceInfo}\nTarih / Date: ${new Date().toISOString()}`;
+  const subject = "Wild Rift Draft - Hata Bildirimi / Bug Report";
+  const mailto = `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailto;
+  const el = document.getElementById("bugReportOverlay");
+  if(el) el.remove();
+}
+function homeInfoBadge(titleKey, bodyKey, accent){
+  return `<div onclick="event.stopPropagation();showHomeInfo('${titleKey}','${bodyKey}')"
+    style="position:absolute;top:8px;right:8px;width:20px;height:20px;border-radius:50%;
+    background:#0a0a18d0;border:1px solid ${accent}55;color:${accent};font-size:11px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;z-index:2">?</div>`;
+}
 function updateLangBtn(){
   const b = document.getElementById("langToggleLabel");
   if (b) b.textContent = (LANG === "tr") ? "🇹🇷 TR" : "🇬🇧 EN";
+  const bug = document.getElementById("bugReportFabLabel");
+  if (bug) bug.textContent = t('bug_fab_label');
 }
 // I18N_BLOCKS_START
 
@@ -192,6 +290,24 @@ addI18n({
   home_champions_title:  { tr:"Şampiyonlar",                 en:"Champions" },
   home_champions_sub:    { tr:"CT · Güçlü · Sinerjiler",     en:"Counters · Strong vs · Synergies" },
   home_patch_title:      { tr:"Yama Notları",                en:"Patch Notes" },
+  home_tierlist_title:   { tr:"Tier List",                   en:"Tier List" },
+  home_info_draft: { tr:"Wild Rift özel turnuva çekilişi formatı (scrim veya turnuva) maçları için draft asistanı görevi görür.",
+                      en:"Acts as a draft assistant for Wild Rift custom tournament-draw format matches (scrims or tournaments)." },
+  home_info_champions: { tr:"Şampiyonların karşısında güçlü veya güçsüz olduğu şampiyonları ve genel olarak tercih edilen rün ve eşya bilgilerini içerir.",
+                          en:"Contains which champions each champion is strong or weak against, along with commonly preferred rune and item builds." },
+  home_info_tierlist: { tr:"Güncel yamada koridorlara göre en güçlü, tercih edilmesi önerilen şampiyonların sıralaması.",
+                         en:"A ranking, by lane, of the strongest and most recommended champions in the current patch." },
+  home_info_patch: { tr:"Wild Rift'te mevcut olan en güncel yama notunun; şampiyonlar, item ve eşyaların aldığı zayıflatma, güçlendirme veya yenilemelerin bulunduğu kısım.",
+                      en:"The section covering the latest available Wild Rift patch notes — the nerfs, buffs, and reworks applied to champions and items." },
+  home_info_close: { tr:"Kapat", en:"Close" },
+  bug_fab_label:   { tr:"Hata Bildir", en:"Report a Bug" },
+  bug_modal_title: { tr:"🐞 Hata / Öneri Bildir", en:"🐞 Report a Bug / Suggestion" },
+  bug_modal_desc:  { tr:"Uygulamada gördüğün hatayı veya önerini yaz, gönder butonuna bastığında e-posta uygulaman üzerinden doğrudan bana ulaşır.",
+                      en:"Describe the bug or suggestion you noticed. Tapping Send will open your email app and send it straight to me." },
+  bug_modal_placeholder: { tr:"Örn: Ahri'nin CT listesinde Ryze görünmüyor...", en:"E.g: Ryze is missing from Ahri's counters list..." },
+  bug_modal_send:  { tr:"Gönder", en:"Send" },
+  bug_modal_cancel:{ tr:"Vazgeç", en:"Cancel" },
+  bug_modal_empty: { tr:"Lütfen önce bir açıklama yaz.", en:"Please write a description first." },
   current:                { tr:"Güncel",                      en:"Current" },
   loading:                { tr:"Yükleniyor...",               en:"Loading..." },
   home_history_title:    { tr:"GEÇMİŞ MAÇLAR",              en:"MATCH HISTORY" },
@@ -1319,7 +1435,7 @@ const META_POWER = {
 let LIVE_TIER_LIST_FULL = null;
 async function loadLiveTierList(){
   try {
-    const res = await fetch("tier-list.json?_=" + Date.now());
+    const res = await fetch("tier-list.json?_=" + Date.now(), {cache:"no-store"});
     if(res.ok) LIVE_TIER_LIST_FULL = await res.json();
   } catch(e){ /* offline veya dosya yok — embedded TIER_LIST_FULL kullanılır */ }
   render();
@@ -3239,7 +3355,7 @@ function saveCustomBuilds(){
 let LIVE_BUILD_DB = null;
 async function loadLiveBuilds(){
   try {
-    const res = await fetch("builds.json?_=" + Date.now());
+    const res = await fetch("builds.json?_=" + Date.now(), {cache:"no-store"});
     if(res.ok) LIVE_BUILD_DB = await res.json();
   } catch(e){}
   render();
@@ -3278,7 +3394,7 @@ function getCTBy(id){
 let LIVE_CT_DATA = null;
 async function loadLiveCT(){
   try {
-    const res = await fetch("ct-data.json?_=" + Date.now());
+    const res = await fetch("ct-data.json?_=" + Date.now(), {cache:"no-store"});
     if(res.ok) LIVE_CT_DATA = await res.json();
   } catch(e){}
   render();
@@ -5127,7 +5243,7 @@ poppy_sup: {
 let LIVE_CHAMP_PROFILES = null;
 async function loadLiveProfiles(){
   try {
-    const res = await fetch("profiles.json?_=" + Date.now());
+    const res = await fetch("profiles.json?_=" + Date.now(), {cache:"no-store"});
     if(res.ok) LIVE_CHAMP_PROFILES = await res.json();
   } catch(e){}
   render();
@@ -7220,7 +7336,17 @@ async function saveProfileDraft(){
   CUSTOM_CHAMP_PROFILES[profileChampId] = profileDraft;
   saveCustomProfiles();
 
-  const merged = Object.assign({}, baseChampProfiles());
+  // Yazmadan hemen önce GitHub'daki GERÇEK en güncel hâli çek — böylece bu
+  // cihazın önbelleğindeki eski veri, aradan geçen sürede başka bir kayıtla
+  // eklenmiş/değişmiş şampiyonların üzerine yanlışlıkla yazılmaz.
+  let freshBase = baseChampProfiles();
+  try {
+    if(GH_CONFIG.token && GH_CONFIG.owner && GH_CONFIG.repo){
+      const remote = await githubGetFile("profiles.json");
+      if(remote.exists) freshBase = JSON.parse(remote.content);
+    }
+  } catch(e){}
+  const merged = Object.assign({}, freshBase);
   merged[profileChampId] = profileDraft;
   const ok = await syncToGitHub("profiles.json", merged, `Profil güncellendi: ${profileChampId}`);
   if(ok){
@@ -7429,6 +7555,7 @@ function render() {
             background:linear-gradient(135deg,#0d1a2e,#0a0a18 75%);
             border:1px solid #3a8fff3a;color:#3a8fff;
             display:flex;align-items:center;gap:15px;text-align:left;">
+            ${homeInfoBadge('home_draft_title','home_info_draft','#3a8fff')}
             <div class="wr-hex-badge">🗡️</div>
             <span style="flex:1">
               <span style="display:block;font-size:15px;color:#f0f0fa;letter-spacing:.3px">${t('home_draft_title')}</span>
@@ -7443,6 +7570,7 @@ function render() {
             background:linear-gradient(135deg,#1a0d2e,#0a0a18 75%);
             border:1px solid #a020f03a;color:#c060ff;
             display:flex;align-items:center;gap:15px;text-align:left;">
+            ${homeInfoBadge('home_champions_title','home_info_champions','#c060ff')}
             <div class="wr-hex-badge">🏆</div>
             <span style="flex:1">
               <span style="display:block;font-size:15px;color:#f0f0fa;letter-spacing:.3px">${t('home_champions_title')}</span>
@@ -7457,6 +7585,7 @@ function render() {
             background:linear-gradient(135deg,#2e1a1a,#0a0a18 75%);
             border:1px solid #ff4d6d3a;color:#ff4d6d;
             display:flex;align-items:center;gap:15px;text-align:left;">
+            ${homeInfoBadge('home_tierlist_title','home_info_tierlist','#ff4d6d')}
             <div class="wr-hex-badge">📊</div>
             <span style="flex:1">
               <span style="display:block;font-size:15px;color:#f0f0fa;letter-spacing:.3px">Tier List</span>
@@ -7471,6 +7600,7 @@ function render() {
             background:linear-gradient(135deg,#1a1a0d,#0a0a18 75%);
             border:1px solid #ffcc023a;color:#ffcc02;
             display:flex;align-items:center;gap:15px;text-align:left;">
+            ${homeInfoBadge('home_patch_title','home_info_patch','#ffcc02')}
             <div class="wr-hex-badge">📋</div>
             <span style="flex:1">
               <span style="display:block;font-size:15px;color:#f0f0fa;letter-spacing:.3px">${t('home_patch_title')}</span>
@@ -9537,6 +9667,24 @@ loadLiveTierList(); // arka planda tier-list.json'ı çeker, gelince otomatik re
 loadLiveBuilds();    // builds.json
 loadLiveProfiles();  // profiles.json
 loadLiveCT();        // ct-data.json
+
+// ─── OTOMATİK CANLI VERİ YENİLEME ───────────────────────────────
+// Uygulama arka plandan öne her geldiğinde ve her 45 saniyede bir arka planda,
+// tüm canlı JSON'ları yeniden çeker. Böylece bir cihazda kaydedilen değişiklik,
+// uygulamayı zaten açmış diğer cihazlarda da kısa sürede kendiliğinden görünür.
+function refreshAllLiveData(){
+  loadLiveTierList();
+  loadLiveBuilds();
+  loadLiveProfiles();
+  loadLiveCT();
+}
+document.addEventListener('visibilitychange', () => {
+  if(document.visibilityState === 'visible') refreshAllLiveData();
+});
+window.addEventListener('pageshow', (e) => {
+  if(e.persisted) refreshAllLiveData(); // bfcache'den geri dönüldüyse de yenile
+});
+setInterval(refreshAllLiveData, 45000);
 </script>
 </body>
 </html>
