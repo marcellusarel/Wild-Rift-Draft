@@ -170,12 +170,8 @@
     "S": [
       "yunara",
       "varus",
-      "missfortune",
       "zeri",
-      "xayah",
       "jhin",
-      "kogmaw",
-      "vayne",
       "smolder",
       "aurelionsol_adc",
       "ziggs_adc",
@@ -190,7 +186,11 @@
       "kaisa",
       "draven",
       "ashe",
-      "mel_adc"
+      "mel_adc",
+      "kogmaw",
+      "vayne",
+      "xayah",
+      "missfortune"
     ],
     "B": [
       "sivir",
