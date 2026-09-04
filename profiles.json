@@ -1747,7 +1747,7 @@
     "mobilityTool": "Dash",
     "toolCondition": "Koşullu",
     "toolFrequency": "Sınırlı",
-    "mobilityTag": "Patlamalı Hareketlilik",
+    "mobilityTag": "Yanıltıcı Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback"
     ],
@@ -1762,14 +1762,14 @@
       "Backline Dalışı"
     ],
     "durabilityProfile": [
-      "Kalkan"
+      "Kırılgan"
     ],
     "damageProfile": [
       "Burst"
     ],
-    "powerCurve": "Orta Oyun",
+    "powerCurve": "Geç Oyun",
     "scalingType": "Snowball Bağımlı",
-    "objectiveControl": "Orta",
+    "objectiveControl": "Hızlı ",
     "globalTeleport": "Yok",
     "duelist": "Var"
   },
