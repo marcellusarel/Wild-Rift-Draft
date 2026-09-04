@@ -2069,30 +2069,29 @@
     "hasForms": "Yok",
     "formAName": "",
     "formBName": "",
-    "moveSpeed": "Ortalama",
+    "moveSpeed": "Yavaş",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Yok",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolFrequency": "Tek Seferlik",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Soft CC/Slow"
     ],
-    "hasCleanseSkill": "Yok",
-    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "hasCleanseSkill": "Var",
+    "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Kaynaksız",
     "hasReset": "Yok",
-    "ultDependency": "Düşük Bağımlı",
+    "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Frontline"
+      "Frontline",
+      "Poke"
     ],
     "durabilityProfile": [
-      "Doğal Tank",
-      "Sustain"
+      "Doğal Tank"
     ],
     "damageProfile": [
-      "Tank Eritici",
-      "Sürdürülebilir DPS"
+      "Tank Eritici"
     ],
     "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
