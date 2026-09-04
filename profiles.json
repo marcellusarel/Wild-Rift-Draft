@@ -3853,15 +3853,14 @@
     "hasCleanseSkill": "Var",
     "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
-    "hasReset": "Var",
+    "hasReset": "Yok",
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Split Push",
-      "Pick/Execute"
+      "Pick/Execute",
+      "Backline Dalışı"
     ],
-    "durabilityProfile": [
-      "Kırılgan"
-    ],
+    "durabilityProfile": [],
     "damageProfile": [
       "Tank Eritici",
       "Burst"
