@@ -1996,25 +1996,29 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Var",
-    "mobilityTool": "Hook/Grapple",
+    "passiveSpeedBoost": "Yok",
+    "mobilityTool": "Dash",
     "toolCondition": "Koşullu",
     "toolFrequency": "Sınırlı",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
-      "Root/Snare"
+      "Root/Snare",
+      "Stun/Freeze/Sleep"
     ],
     "hasCleanseSkill": "Yok",
-    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Pick/Execute",
-      "Backline Dalışı"
+      "Backline Dalışı",
+      "Split Push",
+      "Engage",
+      "Frontline"
     ],
     "durabilityProfile": [
-      "Kalkan"
+      "Doğal Tank"
     ],
     "damageProfile": [
       "Tank Eritici",
