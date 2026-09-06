@@ -3111,25 +3111,25 @@
     "hasForms": "Yok",
     "formAName": "",
     "formBName": "",
-    "moveSpeed": "Ortalama",
+    "moveSpeed": "Yavaş",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
     "toolFrequency": "Sınırlı",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
-      "Silence/Ground"
+      "Soft CC/Slow",
+      "Stun/Freeze/Sleep"
     ],
     "hasCleanseSkill": "Yok",
-    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
-    "resourceType": "Mana",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Enerji",
     "hasReset": "Yok",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
       "Peel",
-      "Engage",
       "Frontline",
-      "Zone Control"
+      "Disengage"
     ],
     "durabilityProfile": [
       "Doğal Tank",
