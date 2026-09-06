@@ -7433,8 +7433,9 @@ function renderBuilderPickerList(){
     .sort((a,b)=>(an(a)).localeCompare(an(b),"tr"));
   grid.innerHTML = list.map(k => {
     const nm = an(k);
+    const storeName = ASSET_NAME[k] || k;
     const img = cat==="rune"?runeImg(k,44):cat==="spell"?spellImg(k,44):itemImg(k,44);
-    return `<div onclick="builderPickAsset('${nm.replace(/'/g,"\\'")}')" style="display:flex;
+    return `<div onclick="builderPickAsset('${storeName.replace(/'/g,"\\'")}')" style="display:flex;
       flex-direction:column;align-items:center;gap:4px;cursor:pointer">
       <div style="width:44px;height:44px;border-radius:${cat==='rune'?'50%':'8px'};overflow:hidden;
         background:#101022;border:1px solid #252540;display:flex;align-items:center;justify-content:center">
@@ -8351,8 +8352,9 @@ function render() {
         .sort((a,b)=>(an(a)).localeCompare(an(b),"tr"));
       const itemsHtml = list.map(k => {
         const nm = an(k);
+        const storeName = ASSET_NAME[k] || k;
         const img = cat==="rune"?runeImg(k,44):cat==="spell"?spellImg(k,44):itemImg(k,44);
-        return `<div onclick="builderPickAsset('${nm.replace(/'/g,"\\'")}')" style="display:flex;
+        return `<div onclick="builderPickAsset('${storeName.replace(/'/g,"\\'")}')" style="display:flex;
           flex-direction:column;align-items:center;gap:4px;cursor:pointer">
           <div style="width:44px;height:44px;border-radius:${cat==='rune'?'50%':'8px'};overflow:hidden;
             background:#101022;border:1px solid #252540;display:flex;align-items:center;justify-content:center">
