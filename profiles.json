@@ -5654,7 +5654,7 @@
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Leap",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
+    "toolFrequency": "Tek Seferlik",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Root/Snare"
@@ -5666,8 +5666,7 @@
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Zone Control",
-      "Pick/Execute",
-      "Backline Dalışı"
+      "Disengage"
     ],
     "durabilityProfile": [
       "Kırılgan"
@@ -5680,7 +5679,7 @@
     "scalingType": "Tutarlı",
     "objectiveControl": "Düşük-orta",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "kogmaw": {
     "hasForms": "Yok",
