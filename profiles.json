@@ -6509,7 +6509,7 @@
     "formAName": "İnsan Formu",
     "formBName": "At Formu (Zırh Aracı)",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Dash",
     "toolCondition": "Koşullu",
     "toolFrequency": "Sınırlı",
@@ -6517,29 +6517,30 @@
     "ccTypes": [
       "Stun/Freeze/Sleep",
       "Knockup/Knockback",
-      "Root/Snare"
+      "Root/Snare",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Engage",
       "Frontline",
-      "Pick/Execute"
+      "Disengage",
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
-      "Doğal Tank"
+      "Doğal Tank",
+      "Kalkan"
     ],
-    "damageProfile": [
-      "Burst"
-    ],
-    "powerCurve": "Erken Oyun",
+    "damageProfile": [],
+    "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "senna": {
     "hasForms": "Yok",
