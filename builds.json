@@ -1150,10 +1150,10 @@
   "morgana": {
     "starter": "Black Mist Scythe",
     "items": [
-      "Rylai's Crystal Scepter",
+      "Blackfire Torch",
       "Liandry's Torment",
-      "Rabadon's Deathcap",
-      "Stasis Enchant"
+      "Stasis Enchant",
+      "Rabadon's Deathcap"
     ],
     "boots": "Boots of Mana",
     "enchant": "Spellslinger's Shoes",
