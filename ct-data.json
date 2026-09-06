@@ -1078,7 +1078,8 @@
       "corki",
       "teemo",
       "kayle",
-      "swain"
+      "swain",
+      "swain_mid"
     ]
   },
   "corki_mid": {
@@ -1534,7 +1535,8 @@
       "orianna",
       "akshan_mid",
       "fizz",
-      "zoe"
+      "zoe",
+      "brand_mid"
     ],
     "ctBy": [
       "galio",
