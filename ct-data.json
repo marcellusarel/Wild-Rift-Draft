@@ -1940,15 +1940,15 @@
     "ct": [
       "kindred",
       "lillia",
-      "hecarim"
+      "hecarim",
+      "ornn"
     ],
     "ctBy": [
       "drmundo_jg",
       "urgot_jg",
       "olaf_jg",
       "fiddlesticks",
-      "graves",
-      "sett"
+      "graves"
     ]
   },
   "amumu": {
@@ -2506,7 +2506,8 @@
       "gragas_baron",
       "morgana_jg",
       "nautilus_baron",
-      "nautilus_jg"
+      "nautilus_jg",
+      "ornn"
     ]
   },
   "pantheon_jg": {
@@ -3371,15 +3372,16 @@
       "gwen",
       "olaf",
       "darius",
-      "shen"
+      "shen",
+      "olaf_jg"
     ],
     "ctBy": [
-      "diana",
       "malphite",
       "nautilus",
       "rumble",
       "gnar",
-      "jayce"
+      "jayce",
+      "aatrox_jg"
     ]
   },
   "poppy_baron": {
