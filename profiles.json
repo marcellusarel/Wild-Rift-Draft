@@ -6905,7 +6905,8 @@
       "Engage"
     ],
     "durabilityProfile": [
-      "Kırılgan"
+      "Kırılgan",
+      "Kalkan"
     ],
     "damageProfile": [
       "Burst"
