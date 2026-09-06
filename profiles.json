@@ -5479,8 +5479,8 @@
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Var",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Soft CC/Slow"
@@ -5488,12 +5488,11 @@
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Var",
-    "ultDependency": "Aşırı Bağımlı",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Wave Clear",
-      "Zone Control",
-      "Pick/Execute"
+      "Zone Control"
     ],
     "durabilityProfile": [
       "Kırılgan"
