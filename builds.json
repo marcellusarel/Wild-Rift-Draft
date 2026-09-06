@@ -2018,10 +2018,10 @@
   "rell": {
     "starter": "Bulwark of the Mountain",
     "items": [
-      "Warmog's Armor",
       "Zeke's Convergence",
+      "Amaranth's Twinguard",
       "Dawnshroud",
-      "Amaranth's Twinguard"
+      "Thornmail"
     ],
     "boots": "Mercury's Treads",
     "enchant": "Chainlaced Crushers",
