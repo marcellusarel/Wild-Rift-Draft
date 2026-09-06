@@ -4526,27 +4526,30 @@
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Dash",
-    "toolCondition": "Koşulsuz",
+    "toolCondition": "Koşullu",
     "toolFrequency": "Sınırlı",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback",
-      "Stun/Freeze/Sleep"
+      "Stun/Freeze/Sleep",
+      "Root/Snare",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
-    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Yok",
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Peel",
       "Engage",
       "Disengage",
       "Zone Control",
-      "Split Push"
+      "Split Push",
+      "Frontline"
     ],
     "durabilityProfile": [
-      "Doğal Tank"
+      "Doğal Tank",
+      "Kalkan"
     ],
     "damageProfile": [
       "Anti-Dive"
