@@ -6839,7 +6839,8 @@
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Stun/Freeze/Sleep",
-      "Knockup/Knockback"
+      "Knockup/Knockback",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
@@ -6849,7 +6850,8 @@
     "teamfightRole": [
       "Pick/Execute",
       "Engage",
-      "Backline Dalışı"
+      "Backline Dalışı",
+      "Peel"
     ],
     "durabilityProfile": [
       "Kırılgan"
@@ -6861,7 +6863,7 @@
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Düşük",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "rakan": {
     "hasForms": "Yok",
