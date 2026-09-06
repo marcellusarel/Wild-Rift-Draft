@@ -6945,26 +6945,26 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
-    "mobilityTag": "Gerçek Hantal",
+    "toolCondition": "",
+    "toolFrequency": "",
+    "mobilityTag": "Yanıltıcı Hareketlilik",
     "ccTypes": [
       "Root/Snare",
-      "Silence/Ground"
+      "Silence/Ground",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Yok",
+    "hasReset": "Var",
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Peel",
-      "Zone Control"
+      "Poke"
     ],
     "durabilityProfile": [
-      "Sustain",
       "Kırılgan"
     ],
     "damageProfile": [],
