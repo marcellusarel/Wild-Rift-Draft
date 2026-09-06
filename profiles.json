@@ -5517,23 +5517,21 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
-      "Stun/Freeze/Sleep",
       "Knockup/Knockback"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
-      "Backline Dalışı"
+      "Zone Control"
     ],
     "durabilityProfile": [
       "Kırılgan"
@@ -5546,7 +5544,7 @@
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Düşük-orta",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "tristana": {
     "hasForms": "Yok",
