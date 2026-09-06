@@ -7197,14 +7197,15 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Hook/Grapple",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Tek Seferlik",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Knockup/Knockback",
-      "Stun/Freeze/Sleep"
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC'ye Dirençli",
@@ -7214,21 +7215,21 @@
     "teamfightRole": [
       "Engage",
       "Frontline",
-      "Pick/Execute"
+      "Disengage",
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
       "Doğal Tank",
-      "Sustain"
+      "Kalkan"
     ],
     "damageProfile": [
-      "Tank Eritici",
-      "Burst"
+      "Anti-Dive"
     ],
     "powerCurve": "Erken Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Düşük",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "gragas_sup": {
     "hasForms": "Yok",
