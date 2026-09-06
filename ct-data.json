@@ -465,7 +465,8 @@
       "blitzcrank",
       "braum",
       "leona",
-      "maokai"
+      "maokai",
+      "rell"
     ]
   },
   "maokai": {
@@ -491,7 +492,9 @@
       "janna",
       "nami",
       "alistar",
-      "braum"
+      "braum",
+      "galio",
+      "gragas_sup"
     ],
     "ctBy": [
       "nautilus",
@@ -541,7 +544,8 @@
     "ctBy": [
       "rakan",
       "alistar",
-      "leona"
+      "leona",
+      "rell"
     ]
   },
   "ornn_sup": {
