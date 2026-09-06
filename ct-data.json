@@ -431,8 +431,7 @@
       "sona",
       "seraphine",
       "nami",
-      "morgana",
-      "rell"
+      "morgana"
     ],
     "ctBy": [
       "braum",
@@ -501,9 +500,7 @@
       "nautilus",
       "lux",
       "rakan",
-      "zilean",
-      "sett_sup",
-      "shen_sup"
+      "zilean"
     ]
   },
   "sett_sup": {
@@ -2520,7 +2517,9 @@
       "morgana_jg",
       "nautilus_baron",
       "nautilus_jg",
-      "ornn"
+      "ornn",
+      "poppy_baron",
+      "shen"
     ]
   },
   "pantheon_jg": {
@@ -3552,7 +3551,8 @@
       "camille",
       "olaf",
       "renekton",
-      "gnar"
+      "gnar",
+      "olaf_jg"
     ],
     "ctBy": [
       "nasus",
@@ -3561,7 +3561,8 @@
       "jax",
       "riven",
       "irelia",
-      "ornn"
+      "ornn",
+      "sion"
     ]
   },
   "singed": {
@@ -3593,7 +3594,8 @@
       "riven",
       "camille",
       "gwen",
-      "renekton"
+      "renekton",
+      "shen"
     ],
     "ctBy": [
       "malphite",
