@@ -2518,8 +2518,7 @@
       "nautilus_baron",
       "nautilus_jg",
       "ornn",
-      "poppy_baron",
-      "shen"
+      "shen_jg"
     ]
   },
   "pantheon_jg": {
@@ -2626,7 +2625,8 @@
       "lee_sin",
       "tryndamere",
       "olaf",
-      "fiora"
+      "fiora",
+      "olaf_jg"
     ],
     "ctBy": [
       "master_yi",
@@ -3551,8 +3551,7 @@
       "camille",
       "olaf",
       "renekton",
-      "gnar",
-      "olaf_jg"
+      "gnar"
     ],
     "ctBy": [
       "nasus",
@@ -3561,8 +3560,7 @@
       "jax",
       "riven",
       "irelia",
-      "ornn",
-      "sion"
+      "ornn"
     ]
   },
   "singed": {
@@ -3594,8 +3592,7 @@
       "riven",
       "camille",
       "gwen",
-      "renekton",
-      "shen"
+      "renekton"
     ],
     "ctBy": [
       "malphite",
