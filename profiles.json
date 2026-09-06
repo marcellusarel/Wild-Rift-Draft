@@ -6549,7 +6549,7 @@
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Stealth",
-    "toolCondition": "Koşulsuz",
+    "toolCondition": "Koşullu",
     "toolFrequency": "Sınırlı",
     "mobilityTag": "Yanıltıcı Hareketlilik",
     "ccTypes": [
@@ -6560,11 +6560,11 @@
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Peel",
-      "Pick/Execute",
-      "Zone Control"
+      "Zone Control",
+      "Poke"
     ],
     "durabilityProfile": [
       "Kırılgan"
