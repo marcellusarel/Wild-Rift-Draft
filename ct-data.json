@@ -1023,7 +1023,8 @@
       "kayle",
       "jayce",
       "ekko",
-      "ahri"
+      "ahri",
+      "zyra_mid"
     ]
   },
   "annie": {
@@ -1888,12 +1889,13 @@
       "zed",
       "yasuo",
       "akali",
-      "diana"
+      "diana",
+      "zed_baron",
+      "akali_mid"
     ],
     "ctBy": [
       "annie",
       "twisted_fate",
-      "corki",
       "teemo",
       "kayle"
     ]
@@ -3797,7 +3799,8 @@
       "vayne",
       "jayce",
       "yasuo",
-      "lux_mid"
+      "lux_mid",
+      "zyra_mid"
     ]
   }
 }
