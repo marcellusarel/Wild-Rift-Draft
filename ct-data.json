@@ -1211,13 +1211,13 @@
       "zed",
       "fizz",
       "irelia",
-      "syndra"
+      "syndra",
+      "zed_mid"
     ],
     "ctBy": [
       "annie",
       "lux",
       "akali",
-      "corki",
       "ahri",
       "veigar"
     ]
@@ -1805,7 +1805,8 @@
       "kassadin",
       "katarina",
       "norra",
-      "taliyah"
+      "taliyah",
+      "karma_mid"
     ]
   },
   "ziggs": {
