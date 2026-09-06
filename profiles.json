@@ -5866,7 +5866,7 @@
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Dash",
     "toolCondition": "Koşullu",
-    "toolFrequency": "Sınırlı",
+    "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Gerçek Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback"
@@ -5874,12 +5874,12 @@
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Yok",
+    "hasReset": "Var",
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Disengage",
-      "Peel",
-      "Zone Control"
+      "Zone Control",
+      "Pick/Execute"
     ],
     "durabilityProfile": [
       "Kırılgan"
