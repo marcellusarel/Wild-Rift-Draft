@@ -1062,7 +1062,8 @@
       "yasuo",
       "akali",
       "diana",
-      "talon"
+      "talon",
+      "lux_mid"
     ],
     "ctBy": [
       "annie",
@@ -1344,13 +1345,15 @@
       "irelia",
       "katarina",
       "talon",
-      "kassadin"
+      "kassadin",
+      "zed_baron"
     ],
     "ctBy": [
       "twisted_fate",
       "kennen_mid",
       "brand",
-      "vex"
+      "vex",
+      "brand_mid"
     ]
   },
   "mel": {
@@ -3765,7 +3768,8 @@
       "teemo",
       "vayne",
       "jayce",
-      "yasuo"
+      "yasuo",
+      "lux_mid"
     ]
   }
 }
