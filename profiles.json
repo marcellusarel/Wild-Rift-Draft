@@ -7231,18 +7231,17 @@
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
+    "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback",
-      "Stun/Freeze/Sleep",
-      "Soft CC/Slow"
+      "Stun/Freeze/Sleep"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Engage",
       "Disengage",
@@ -7250,17 +7249,14 @@
       "Peel"
     ],
     "durabilityProfile": [
-      "Doğal Tank",
-      "Kalkan"
+      "Doğal Tank"
     ],
-    "damageProfile": [
-      "Burst"
-    ],
+    "damageProfile": [],
     "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "poppy_sup": {
     "hasForms": "Yok",
