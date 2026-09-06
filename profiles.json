@@ -5694,8 +5694,8 @@
     "moveSpeed": "Yavaş",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Soft CC/Slow"
@@ -5707,7 +5707,6 @@
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Wave Clear",
-      "Poke",
       "Zone Control"
     ],
     "durabilityProfile": [
