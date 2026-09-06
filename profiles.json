@@ -2669,33 +2669,30 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Dash",
-    "toolCondition": "Koşulsuz",
+    "toolCondition": "Koşullu",
     "toolFrequency": "Sınırlı",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Root/Snare",
-      "Knockup/Knockback"
+      "Knockup/Knockback",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
-    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
-    "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "hasReset": "Var",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Engage",
-      "Frontline",
-      "Peel"
+      "Frontline"
     ],
     "durabilityProfile": [
-      "Doğal Tank",
-      "Sustain"
+      "Doğal Tank"
     ],
-    "damageProfile": [
-      "Anti-Dive"
-    ],
-    "powerCurve": "Orta Oyun",
+    "damageProfile": [],
+    "powerCurve": "Erken Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta-yüksek, R fideleriyle geniş alandan objektif çukuruna erişebilir",
     "globalTeleport": "Yok",
