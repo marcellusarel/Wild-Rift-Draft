@@ -2831,7 +2831,7 @@
     "starter": "Gluttonous Greaves",
     "items": [
       "Magnetic Blaster",
-      "Mortal Reminder",
+      "Lord Dominik's Regards",
       "Galeforce",
       "Infinity Edge"
     ],
@@ -3530,19 +3530,19 @@
   "ziggs_adc": {
     "starter": "Boots of Mana",
     "items": [
+      "Blackfire Torch",
       "Infinity Orb",
       "Rabadon's Deathcap",
-      "Stasis Enchant",
-      "Void Staff"
+      "Banshee's Veil"
     ],
     "boots": "Spellslinger's Shoes",
-    "enchant": "Luden's Echo",
+    "enchant": "Liandry's Torment",
     "runes": [
       "Arcane Comet",
       "Manaflow Band",
       "Absolute Focus",
       "Scorch",
-      "Bone Plating"
+      "Coup de Grace"
     ],
     "spells": [
       "Flash",
