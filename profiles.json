@@ -4797,15 +4797,17 @@
     "moveSpeed": "Hızlı",
     "passiveSpeedBoost": "Var",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "toolCondition": "",
+    "toolFrequency": "",
+    "mobilityTag": "Yanıltıcı Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback",
-      "Soft CC/Slow"
+      "Soft CC/Slow",
+      "Silence/Ground",
+      "Root/Snare"
     ],
     "hasCleanseSkill": "Yok",
-    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Yok",
     "ultDependency": "Düşük Bağımlı",
@@ -4813,13 +4815,12 @@
       "Disengage",
       "Split Push",
       "Wave Clear",
-      "Zone Control",
       "Frontline",
-      "Engage"
+      "Engage",
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
-      "Doğal Tank",
-      "Sustain"
+      "Doğal Tank"
     ],
     "damageProfile": [
       "Sürdürülebilir DPS"
