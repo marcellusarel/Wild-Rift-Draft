@@ -5829,31 +5829,28 @@
     "mobilityTool": "Dash",
     "toolCondition": "Koşullu",
     "toolFrequency": "Spamlanabilir",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback"
     ],
     "hasCleanseSkill": "Yok",
-    "ccSensitivity": "CC'ye Dirençli",
+    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
-    "teamfightRole": [
-      "Backline Dalışı",
-      "Pick/Execute"
-    ],
+    "hasReset": "Var",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [],
     "durabilityProfile": [
-      "Sustain"
+      "Kırılgan"
     ],
     "damageProfile": [
       "Burst",
       "Sürdürülebilir DPS"
     ],
-    "powerCurve": "Orta Oyun",
+    "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "kalista": {
     "hasForms": "Yok",
