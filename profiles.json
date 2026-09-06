@@ -7057,34 +7057,34 @@
     "moveSpeed": "Yavaş",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Root/Snare",
-      "Knockup/Knockback"
+      "Knockup/Knockback",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Yok",
+    "hasReset": "Var",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Zone Control",
       "Frontline",
-      "Engage"
+      "Wave Clear"
     ],
     "durabilityProfile": [
-      "Sustain"
+      "Kırılgan"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS"
+      "Burst"
     ],
     "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "yuumi": {
     "hasForms": "Yok",
