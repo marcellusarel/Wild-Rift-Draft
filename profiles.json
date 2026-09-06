@@ -5317,17 +5317,17 @@
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Yok",
+    "hasReset": "Var",
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Poke",
-      "Pick/Execute"
+      "Zone Control"
     ],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS"
+      "Burst"
     ],
     "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
