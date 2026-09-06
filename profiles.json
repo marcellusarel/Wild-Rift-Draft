@@ -397,30 +397,31 @@
     "formBName": "",
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Dash",
+    "mobilityTool": "Yarı-Global",
     "toolCondition": "Koşullu",
     "toolFrequency": "Sınırlı",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
-      "Silence/Ground",
-      "Knockup/Knockback"
+      "Knockup/Knockback",
+      "Stun/Freeze/Sleep"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Engage",
       "Frontline",
-      "Poke"
+      "Poke",
+      "Disengage"
     ],
     "durabilityProfile": [
       "Doğal Tank",
       "Kalkan"
     ],
     "damageProfile": [
-      "Anti-Dive"
+      "Burst"
     ],
     "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
