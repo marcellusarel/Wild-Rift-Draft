@@ -6217,10 +6217,11 @@
     "passiveSpeedBoost": "Var",
     "mobilityTool": "Leap",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolFrequency": "Sınırlı",
     "mobilityTag": "Gerçek Hareketlilik",
     "ccTypes": [
-      "Stun/Freeze/Sleep"
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
@@ -6230,7 +6231,8 @@
     "teamfightRole": [
       "Disengage",
       "Peel",
-      "Zone Control"
+      "Zone Control",
+      "Engage"
     ],
     "durabilityProfile": [
       "Kırılgan"
