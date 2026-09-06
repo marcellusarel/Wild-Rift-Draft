@@ -5447,7 +5447,7 @@
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Dash",
-    "toolCondition": "Koşulsuz",
+    "toolCondition": "Koşullu",
     "toolFrequency": "Sınırlı",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
@@ -5461,7 +5461,7 @@
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Zone Control",
-      "Pick/Execute"
+      "Poke"
     ],
     "durabilityProfile": [
       "Kırılgan"
@@ -5474,7 +5474,7 @@
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta, R ile uzun menzilden katkı",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "missfortune": {
     "hasForms": "Yok",
