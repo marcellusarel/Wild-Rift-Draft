@@ -1990,10 +1990,10 @@
   "rakan": {
     "starter": "Bulwark of the Mountain",
     "items": [
-      "Redemption",
       "Zeke's Convergence",
+      "Amaranth's Twinguard",
       "Oceanid's Trident",
-      "Amaranth's Twinguard"
+      "Banshee's Veil"
     ],
     "boots": "Ionian Boots of Lucidity",
     "enchant": "Crimson Lucidity",
