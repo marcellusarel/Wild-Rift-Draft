@@ -7217,7 +7217,8 @@
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback",
-      "Stun/Freeze/Sleep"
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC'ye Dirençli",
@@ -7227,13 +7228,14 @@
     "teamfightRole": [
       "Engage",
       "Disengage",
-      "Frontline",
-      "Peel"
+      "Frontline"
     ],
     "durabilityProfile": [
       "Doğal Tank"
     ],
-    "damageProfile": [],
+    "damageProfile": [
+      "Anti-Dive"
+    ],
     "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta",
