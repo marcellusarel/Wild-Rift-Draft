@@ -6250,11 +6250,11 @@
     "hasForms": "Yok",
     "formAName": "",
     "formBName": "",
-    "moveSpeed": "Ortalama",
+    "moveSpeed": "Yavaş",
     "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "mobilityTool": "Dash",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Sınırlı",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Stun/Freeze/Sleep",
@@ -6265,12 +6265,12 @@
     "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Engage",
       "Peel",
       "Frontline",
-      "Disengage"
+      "Disengage",
+      "Zone Control"
     ],
     "durabilityProfile": [
       "Doğal Tank",
