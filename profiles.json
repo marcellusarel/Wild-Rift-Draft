@@ -5410,8 +5410,8 @@
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Var",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Root/Snare",
@@ -5420,22 +5420,20 @@
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "hasReset": "Var",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Wave Clear",
-      "Pick/Execute",
       "Zone Control"
     ],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS",
-      "Burst"
+      "Sürdürülebilir DPS"
     ],
     "powerCurve": "Geç Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Orta-yüksek, Fishbones modu objektifte güçlü",
     "globalTeleport": "Yok",
     "duelist": "Yok"
