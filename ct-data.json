@@ -2487,7 +2487,8 @@
       "amumu",
       "evelynn",
       "nunu",
-      "maokai"
+      "maokai",
+      "galio_baron"
     ]
   },
   "pantheon_jg": {
@@ -3001,10 +3002,10 @@
       "olaf",
       "sett",
       "yasuo",
-      "fiora"
+      "fiora",
+      "olaf_jg"
     ],
     "ctBy": [
-      "diana",
       "teemo",
       "kennen"
     ]
