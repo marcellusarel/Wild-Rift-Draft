@@ -1057,34 +1057,33 @@
     "hasForms": "Yok",
     "formAName": "",
     "formBName": "",
-    "moveSpeed": "Ortalama",
+    "moveSpeed": "Yavaş",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Root/Snare",
-      "Soft CC/Slow"
+      "Soft CC/Slow",
+      "Knockup/Knockback"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Yok",
+    "hasReset": "Var",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Zone Control",
       "Wave Clear",
       "Frontline"
     ],
     "durabilityProfile": [
-      "Sustain"
+      "Kırılgan"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS",
-      "Anti-Heal Uygulayıcı"
+      "Burst"
     ],
-    "powerCurve": "Orta Oyun",
+    "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Yüksek, R alanı canavar/objektif çevresinde takımı besler",
     "globalTeleport": "Yok",
