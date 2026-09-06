@@ -7267,7 +7267,9 @@
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback",
-      "Stun/Freeze/Sleep"
+      "Soft CC/Slow",
+      "Stun/Freeze/Sleep",
+      "Root/Snare"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC'ye Dirençli",
@@ -7275,19 +7277,20 @@
     "hasReset": "Yok",
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Peel",
       "Engage",
       "Frontline",
-      "Disengage"
+      "Disengage",
+      "Zone Control"
     ],
     "durabilityProfile": [
-      "Doğal Tank"
+      "Doğal Tank",
+      "Kalkan"
     ],
     "damageProfile": [],
-    "powerCurve": "Erken Oyun",
+    "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Düşük",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   }
 }
