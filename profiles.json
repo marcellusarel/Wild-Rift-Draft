@@ -6431,26 +6431,27 @@
     "hasForms": "Yok",
     "formAName": "",
     "formBName": "",
-    "moveSpeed": "Yavaş",
+    "moveSpeed": "Çok Yavaş",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Hook/Grapple",
     "toolCondition": "Koşullu",
-    "toolFrequency": "Sınırlı",
+    "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Root/Snare",
       "Knockup/Knockback",
-      "Stun/Freeze/Sleep"
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
-    "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "hasReset": "Var",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Engage",
       "Frontline",
-      "Pick/Execute"
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
       "Doğal Tank",
@@ -6461,7 +6462,7 @@
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "ornn_sup": {
     "hasForms": "Yok",
