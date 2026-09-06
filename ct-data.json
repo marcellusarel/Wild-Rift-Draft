@@ -431,7 +431,8 @@
       "sona",
       "seraphine",
       "nami",
-      "morgana"
+      "morgana",
+      "rell"
     ],
     "ctBy": [
       "braum",
@@ -500,7 +501,9 @@
       "nautilus",
       "lux",
       "rakan",
-      "zilean"
+      "zilean",
+      "sett_sup",
+      "shen_sup"
     ]
   },
   "sett_sup": {
