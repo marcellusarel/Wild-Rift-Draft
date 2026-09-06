@@ -5550,16 +5550,15 @@
     "toolFrequency": "Sınırlı",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
-      "Knockup/Knockback"
+      "Knockup/Knockback",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Backline Dalışı",
-      "Pick/Execute",
       "Wave Clear",
       "Disengage"
     ],
@@ -5570,11 +5569,11 @@
       "Burst",
       "Sürdürülebilir DPS"
     ],
-    "powerCurve": "Erken Oyun",
+    "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Düşük-orta",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "ashe": {
     "hasForms": "Yok",
