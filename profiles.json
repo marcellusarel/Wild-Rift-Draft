@@ -5206,27 +5206,27 @@
     "toolFrequency": "Sınırlı",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
-      "Soft CC/Slow"
+      "Knockup/Knockback"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Poke",
       "Wave Clear",
-      "Pick/Execute",
-      "Zone Control"
+      "Pick/Execute"
     ],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
+      "Sürdürülebilir DPS",
       "Burst"
     ],
     "powerCurve": "Geç Oyun",
-    "scalingType": "Tutarlı",
+    "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Düşük, stack biriktirene kadar objektifte zayıf",
     "globalTeleport": "Yok",
     "duelist": "Yok"
