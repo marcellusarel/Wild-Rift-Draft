@@ -1024,7 +1024,8 @@
       "jayce",
       "ekko",
       "ahri",
-      "zyra_mid"
+      "zyra_mid",
+      "corki_mid"
     ]
   },
   "annie": {
@@ -1095,7 +1096,9 @@
       "zed",
       "akshan_mid",
       "katarina",
-      "orianna"
+      "orianna",
+      "akali_mid",
+      "zed_mid"
     ],
     "ctBy": [
       "lux",
@@ -1828,7 +1831,8 @@
       "morgana_jg",
       "morgana_mid",
       "seraphine_mid",
-      "zyra_mid"
+      "zyra_mid",
+      "corki_mid"
     ]
   },
   "ziggs": {
