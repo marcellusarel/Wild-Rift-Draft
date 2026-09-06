@@ -2718,9 +2718,9 @@
   "lucian": {
     "starter": "Gluttonous Greaves",
     "items": [
-      "Mortal Reminder",
-      "Infinity Edge",
       "Magnetic Blaster",
+      "Infinity Edge",
+      "Lord Dominik's Regards",
       "Guardian Angel"
     ],
     "boots": "Immortal Path",
