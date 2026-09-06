@@ -17,7 +17,8 @@
       "blitzcrank",
       "braum",
       "zyra",
-      "senna"
+      "senna",
+      "lux"
     ]
   },
   "nautilus": {
@@ -137,7 +138,8 @@
       "alistar",
       "braum",
       "zyra",
-      "nami"
+      "nami",
+      "lux"
     ],
     "ctBy": [
       "soraka",
@@ -163,7 +165,8 @@
       "seraphine",
       "janna",
       "lulu",
-      "milio"
+      "milio",
+      "lux"
     ]
   },
   "soraka": {
@@ -192,7 +195,8 @@
       "brand",
       "lulu",
       "karma",
-      "senna"
+      "senna",
+      "lux"
     ],
     "ctBy": [
       "alistar",
@@ -265,7 +269,8 @@
       "thresh",
       "pantheon",
       "bard",
-      "pyke"
+      "pyke",
+      "lux"
     ],
     "ctBy": [
       "karma",
@@ -278,18 +283,21 @@
   "lux": {
     "ct": [
       "zed",
-      "fizz",
-      "yasuo",
-      "irelia",
-      "katarina",
-      "talon",
-      "kassadin"
+      "pyke",
+      "nami",
+      "karma",
+      "rakan",
+      "blitzcrank",
+      "leona",
+      "lulu"
     ],
     "ctBy": [
-      "twisted_fate",
-      "kennen_mid",
       "brand",
-      "vex"
+      "janna",
+      "sona",
+      "soraka",
+      "thresh",
+      "swain"
     ]
   },
   "karma": {
@@ -1117,7 +1125,6 @@
     "ctBy": [
       "yasuo",
       "ahri",
-      "lux",
       "twisted_fate",
       "corki",
       "velkoz"
@@ -1245,7 +1252,6 @@
       "ryze",
       "kennen_mid",
       "lissandra",
-      "lux",
       "norra",
       "taliyah"
     ]
@@ -1266,7 +1272,6 @@
       "vladimir"
     ],
     "ctBy": [
-      "lux",
       "veigar",
       "brand",
       "seraphine",
@@ -1584,7 +1589,6 @@
       "veigar",
       "ahri",
       "twisted_fate",
-      "lux",
       "seraphine",
       "ekko",
       "brand"
@@ -1676,7 +1680,6 @@
       "veigar",
       "annie",
       "galio",
-      "lux",
       "morgana"
     ],
     "ctBy": [
@@ -1739,7 +1742,6 @@
     "ctBy": [
       "ahri",
       "twisted_fate",
-      "lux",
       "brand",
       "ziggs",
       "katarina",
@@ -3227,8 +3229,7 @@
       "orianna",
       "ziggs",
       "seraphine_mid",
-      "irelia_mid",
-      "lux"
+      "irelia_mid"
     ],
     "ctBy": [
       "kayle_mid",
