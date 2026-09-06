@@ -2488,7 +2488,8 @@
       "evelynn",
       "nunu",
       "maokai",
-      "galio_baron"
+      "galio_baron",
+      "gragas_baron"
     ]
   },
   "pantheon_jg": {
@@ -3049,9 +3050,9 @@
   "gragas_baron": {
     "ct": [
       "fiora",
-      "diana",
       "olaf",
-      "shen"
+      "shen",
+      "olaf_jg"
     ],
     "ctBy": [
       "camille",
