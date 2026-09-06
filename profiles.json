@@ -6392,17 +6392,18 @@
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
-      "Soft CC/Slow"
+      "Soft CC/Slow",
+      "Knockup/Knockback"
     ],
     "hasCleanseSkill": "Var",
     "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Peel",
       "Disengage",
