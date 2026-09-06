@@ -1391,9 +1391,9 @@
       "katarina",
       "irelia",
       "akshan_mid",
-      "lucian",
       "ahri",
-      "kassadin"
+      "kassadin",
+      "zed_mid"
     ],
     "ctBy": [
       "lux",
@@ -1813,7 +1813,8 @@
       "norra",
       "taliyah",
       "karma_mid",
-      "morgana_jg"
+      "morgana_jg",
+      "morgana_mid"
     ]
   },
   "ziggs": {
