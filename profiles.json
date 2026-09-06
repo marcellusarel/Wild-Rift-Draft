@@ -6324,38 +6324,35 @@
     "hasForms": "Yok",
     "formAName": "",
     "formBName": "",
-    "moveSpeed": "Ortalama",
+    "moveSpeed": "Yavaş",
     "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Dash",
+    "mobilityTool": "Hook/Grapple",
     "toolCondition": "Koşullu",
     "toolFrequency": "Sınırlı",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Stun/Freeze/Sleep",
-      "Root/Snare"
+      "Root/Snare",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Engage",
-      "Frontline",
-      "Pick/Execute"
+      "Frontline"
     ],
     "durabilityProfile": [
-      "Doğal Tank",
-      "Kalkan"
+      "Doğal Tank"
     ],
-    "damageProfile": [
-      "Burst"
-    ],
+    "damageProfile": [],
     "powerCurve": "Erken Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Düşük",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "lulu": {
     "hasForms": "Yok",
