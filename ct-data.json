@@ -30,7 +30,8 @@
       "morgana",
       "braum",
       "leona",
-      "alistar"
+      "alistar",
+      "zyra"
     ],
     "ctBy": [
       "seraphine",
@@ -156,7 +157,8 @@
       "braum",
       "morgana",
       "leona",
-      "rakan"
+      "rakan",
+      "zyra"
     ],
     "ctBy": [
       "sona",
@@ -334,7 +336,9 @@
       "braum",
       "morgana",
       "senna",
-      "swain"
+      "swain",
+      "blitzcrank",
+      "nautilus"
     ]
   },
   "pyke": {
