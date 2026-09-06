@@ -983,8 +983,8 @@
       "fizz",
       "zed",
       "galio",
-      "lucian",
-      "yone"
+      "yone",
+      "zed_mid"
     ],
     "ctBy": [
       "annie",
@@ -1827,7 +1827,8 @@
       "karma_mid",
       "morgana_jg",
       "morgana_mid",
-      "seraphine_mid"
+      "seraphine_mid",
+      "zyra_mid"
     ]
   },
   "ziggs": {
