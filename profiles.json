@@ -4490,7 +4490,7 @@
     "hasForms": "Yok",
     "formAName": "",
     "formBName": "",
-    "moveSpeed": "Ortalama",
+    "moveSpeed": "Yavaş",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
@@ -4498,24 +4498,21 @@
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback",
-      "Stun/Freeze/Sleep"
+      "Soft CC/Slow"
     ],
-    "hasCleanseSkill": "Yok",
-    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "hasCleanseSkill": "Var",
+    "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Engage",
-      "Frontline",
-      "Peel"
+      "Frontline"
     ],
     "durabilityProfile": [
       "Doğal Tank"
     ],
-    "damageProfile": [
-      "Anti-Dive"
-    ],
+    "damageProfile": [],
     "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Yüksek, eşya yükseltmeleri ve R ile takım gücünü hızlandırır",
