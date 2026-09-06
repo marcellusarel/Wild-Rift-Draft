@@ -5349,10 +5349,10 @@
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Var",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
-      "Disengage"
+      "Disengage",
+      "Zone Control"
     ],
     "durabilityProfile": [
       "Kırılgan"
@@ -5365,7 +5365,7 @@
     "scalingType": "Tutarlı",
     "objectiveControl": "Düşük, split push ile dolaylı baskı",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "lucian": {
     "hasForms": "Yok",
