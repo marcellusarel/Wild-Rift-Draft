@@ -2705,29 +2705,34 @@
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
-      "Root/Snare"
+      "Root/Snare",
+      "Stun/Freeze/Sleep"
     ],
     "hasCleanseSkill": "Var",
     "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Zone Control",
       "Peel",
-      "Poke"
+      "Poke",
+      "Disengage",
+      "Wave Clear"
     ],
     "durabilityProfile": [
-      "Kalkan"
+      "Kalkan",
+      "Kırılgan"
     ],
     "damageProfile": [
+      "Tank Eritici",
       "Sürdürülebilir DPS"
     ],
-    "powerCurve": "Orta Oyun",
+    "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta, R alanı takım savaşını objektif çukurunda dondurabilir",
     "globalTeleport": "Yok",
