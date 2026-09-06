@@ -4412,26 +4412,27 @@
     "hasForms": "Yok",
     "formAName": "",
     "formBName": "",
-    "moveSpeed": "Yavaş",
+    "moveSpeed": "Çok Yavaş",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Hook/Grapple",
     "toolCondition": "Koşullu",
-    "toolFrequency": "Sınırlı",
+    "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Root/Snare",
       "Knockup/Knockback",
-      "Soft CC/Slow"
+      "Soft CC/Slow",
+      "Stun/Freeze/Sleep"
     ],
     "hasCleanseSkill": "Yok",
-    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
-    "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "hasReset": "Var",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Engage",
       "Frontline",
-      "Pick/Execute"
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
       "Doğal Tank",
@@ -4440,7 +4441,7 @@
     "damageProfile": [
       "Anti-Dive"
     ],
-    "powerCurve": "Orta Oyun",
+    "powerCurve": "Erken Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta",
     "globalTeleport": "Yok",
