@@ -2914,10 +2914,10 @@
   "draven": {
     "starter": "Gluttonous Greaves",
     "items": [
-      "The Collector",
-      "Infinity Edge",
       "Essence Reaver",
-      "Lord Dominik's Regards"
+      "Infinity Edge",
+      "Lord Dominik's Regards",
+      "Guardian Angel"
     ],
     "boots": "Immortal Path",
     "enchant": "Bloodthirster",
