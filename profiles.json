@@ -297,7 +297,7 @@
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
     "toolFrequency": "Sınırlı",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
