@@ -118,13 +118,14 @@
     "mobilityTag": "Gerçek Hareketlilik",
     "ccTypes": [
       "Stun/Freeze/Sleep",
-      "Knockup/Knockback"
+      "Knockup/Knockback",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "hasReset": "Var",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Zone Control",
       "Wave Clear",
@@ -136,12 +137,12 @@
     ],
     "damageProfile": [
       "Sürdürülebilir DPS",
-      "Burst"
+      "Tank Eritici"
     ],
-    "powerCurve": "Orta Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Orta-yüksek, R ile yıldızını objektif çukuruna sürükleyerek katkı sağlar",
-    "globalTeleport": "Var",
+    "globalTeleport": "Yok",
     "duelist": "Yok"
   },
   "akali_mid": {
