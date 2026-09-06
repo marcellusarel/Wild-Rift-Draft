@@ -6064,10 +6064,10 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Knockup/Knockback",
@@ -6077,19 +6077,17 @@
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Peel",
       "Poke",
       "Zone Control",
-      "Pick/Execute"
+      "Wave Clear"
     ],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
-      "Burst",
-      "Sürdürülebilir DPS"
+      "Burst"
     ],
     "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
