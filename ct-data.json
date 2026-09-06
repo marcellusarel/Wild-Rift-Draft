@@ -2426,7 +2426,8 @@
       "olaf",
       "khazix",
       "amumu",
-      "fiora"
+      "fiora",
+      "olaf_jg"
     ],
     "ctBy": [
       "graves",
@@ -2504,7 +2505,9 @@
       "maokai",
       "galio_baron",
       "gragas_baron",
-      "morgana_jg"
+      "morgana_jg",
+      "nautilus_baron",
+      "nautilus_jg"
     ]
   },
   "pantheon_jg": {
