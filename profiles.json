@@ -7002,8 +7002,8 @@
     "moveSpeed": "Yavaş",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Root/Snare",
@@ -7013,22 +7013,22 @@
     "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Peel",
       "Zone Control",
-      "Engage",
-      "Pick/Execute"
+      "Disengage",
+      "Poke",
+      "Wave Clear"
     ],
     "durabilityProfile": [
       "Kırılgan",
       "Kalkan"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS",
-      "Burst"
+      "Tank Eritici"
     ],
-    "powerCurve": "Orta Oyun",
+    "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Düşük",
     "globalTeleport": "Yok",
