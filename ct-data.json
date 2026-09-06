@@ -1459,7 +1459,8 @@
       "ziggs",
       "teemo",
       "orianna",
-      "ahri"
+      "ahri",
+      "morgana_jg"
     ],
     "ctBy": [
       "katarina",
@@ -1811,7 +1812,8 @@
       "katarina",
       "norra",
       "taliyah",
-      "karma_mid"
+      "karma_mid",
+      "morgana_jg"
     ]
   },
   "ziggs": {
@@ -2402,13 +2404,16 @@
       "olaf",
       "rengar",
       "lee_sin",
-      "jarvaniv"
+      "jarvaniv",
+      "zed_mid",
+      "olaf_jg"
     ],
     "ctBy": [
       "vi",
       "pantheon",
       "amumu",
-      "nunu"
+      "nunu",
+      "pantheon_mid"
     ]
   },
   "nautilus_jg": {
@@ -2497,7 +2502,8 @@
       "nunu",
       "maokai",
       "galio_baron",
-      "gragas_baron"
+      "gragas_baron",
+      "morgana_jg"
     ]
   },
   "pantheon_jg": {
