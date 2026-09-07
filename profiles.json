@@ -503,9 +503,9 @@
     "formAName": "Çekiç Formu (Mercury Hammer)",
     "formBName": "Top Formu (Mercury Cannon)",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Dash",
-    "toolCondition": "Koşulsuz",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Hook/Grapple",
+    "toolCondition": "Koşullu",
     "toolFrequency": "Sınırlı",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
@@ -520,21 +520,19 @@
     "teamfightRole": [
       "Poke",
       "Zone Control",
-      "Wave Clear",
-      "Pick/Execute"
+      "Wave Clear"
     ],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
-      "Burst",
-      "Sürdürülebilir DPS"
+      "Burst"
     ],
-    "powerCurve": "Erken Oyun",
+    "powerCurve": "Orta Oyun",
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Orta, top formuyla uzak mesafeden katkı",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "karma_mid": {
     "hasForms": "Yok",
