@@ -1260,7 +1260,8 @@
       "fizz",
       "irelia_mid",
       "syndra",
-      "teemo_mid"
+      "teemo_mid",
+      "teemo"
     ]
   },
   "annie": {
@@ -2836,7 +2837,8 @@
       "fizz_jg",
       "irelia",
       "irelia_jg",
-      "pantheon_jg"
+      "pantheon_jg",
+      "teemo"
     ]
   },
   "pantheon_jg": {
@@ -3941,7 +3943,9 @@
       "olaf",
       "kennen",
       "jayce",
-      "fiora"
+      "fiora",
+      "akali_mid",
+      "olaf_jg"
     ],
     "ctBy": [
       "tryndamere",
