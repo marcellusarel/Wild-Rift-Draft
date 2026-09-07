@@ -1262,7 +1262,8 @@
       "irelia_mid",
       "syndra",
       "teemo_mid",
-      "teemo"
+      "teemo",
+      "viktor"
     ]
   },
   "annie": {
@@ -2003,7 +2004,9 @@
       "zed",
       "akali",
       "fizz",
-      "yone"
+      "yone",
+      "zed_mid",
+      "akali_mid"
     ],
     "ctBy": [
       "lissandra",
