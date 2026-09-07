@@ -1619,7 +1619,7 @@
     "mobilityTool": "Blink",
     "toolCondition": "Koşulsuz",
     "toolFrequency": "Sınırlı",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Stun/Freeze/Sleep",
       "Soft CC/Slow"
@@ -1630,7 +1630,6 @@
     "hasReset": "Yok",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
       "Poke",
       "Zone Control"
     ],
@@ -1644,7 +1643,7 @@
     "scalingType": "Tutarlı",
     "objectiveControl": "Düşük-orta",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "zyra_mid": {
     "hasForms": "Yok",
