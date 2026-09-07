@@ -4139,8 +4139,8 @@
     "formBName": "Top Formu (Mercury Cannon)",
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Dash",
-    "toolCondition": "Koşulsuz",
+    "mobilityTool": "Hook/Grapple",
+    "toolCondition": "Koşullu",
     "toolFrequency": "Sınırlı",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
@@ -4156,16 +4156,15 @@
       "Poke",
       "Zone Control",
       "Split Push",
-      "Pick/Execute"
+      "Wave Clear"
     ],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
-      "Burst",
-      "Sürdürülebilir DPS"
+      "Burst"
     ],
-    "powerCurve": "Erken Oyun",
+    "powerCurve": "Orta Oyun",
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Orta, top formuyla uzak mesafeden katkı",
     "globalTeleport": "Yok",
