@@ -508,80 +508,80 @@ addI18n({
 const DB = {
   // ── SUPPORT ──────────────────────────────────────────────────
   rakan:      {name:"Rakan",       lanes:["Support"],dmg:"AP",   cls:"Engage",
-    ct:["galio","rell","nautilus","gragas","alistar","janna","morgana","thresh"],
-    ctBy:["nami","sona","soraka","blitzcrank","braum","zyra"],
+    ct:["galio","rell","nautilus","gragas","alistar","janna","morgana","thresh","milio","gragas_sup","poppy_sup"],
+    ctBy:["nami","sona","soraka","blitzcrank","braum","zyra","pyke"],
     sy:["kaisa","jinx","smolder","missfortune","lucian"]},
   nautilus:   {name:"Nautilus",    lanes:["Support"],dmg:"AP",   cls:"Tank",
-    ct:["bard","janna","morgana","braum","leona","alistar"],
-    ctBy:["seraphine","sona","lux","rakan","yuumi","senna"],
+    ct:["bard","janna","morgana","braum","leona","alistar","zilean","rell","sett_sup","ornn_sup"],
+    ctBy:["seraphine","sona","lux","rakan","yuumi","senna","singed_sup"],
     sy:["kaisa","jhin","missfortune","brand","orianna"]},
   leona:      {name:"Leona",       lanes:["Support"],dmg:"AP",   cls:"Engage",
-    ct:["galio","alistar","morgana","janna","thresh"],
-    ctBy:["blitzcrank","lux","soraka","senna","yuumi","zyra","maokai"],
+    ct:["galio","alistar","morgana","janna","thresh","braum","swain","shen_sup","sett_sup","gragas_sup","ornn_sup","poppy_sup"],
+    ctBy:["blitzcrank","lux","soraka","senna","yuumi","zyra","maokai","nautilus","lulu","nami","seraphine","sona"],
     sy:["draven","lucian","jhin","missfortune","kaisa"]},
   lulu:       {name:"Lulu",        lanes:["Support"],dmg:"AP",   cls:"Enchanter",
-    ct:["blitzcrank","sona","nami","leona","brand","senna","bard"],
-    ctBy:["lux","annie","alistar","janna"],
+    ct:["blitzcrank","sona","nami","leona","brand","senna","bard","karma"],
+    ctBy:["lux","annie","alistar","janna","braum","thresh","singed_sup","galio","gragas_sup"],
     sy:["smolder","vayne","kaisa","jinx","tristana"]},
   milio:      {name:"Milio",       lanes:["Support"],dmg:"AP",   cls:"Enchanter",
     ct:["blitzcrank","senna","zyra","lux","sona","bard"],
     ctBy:["braum","rakan","alistar","pantheon"],
     sy:["smolder","vayne","jinx","ezreal","kaisa"]},
   braum:      {name:"Braum",       lanes:["Support"],dmg:"AP",   cls:"Tank",
-    ct:["lulu","sona","morgana","soraka"],
-    ctBy:["blitzcrank","thresh","leona","nautilus","seraphine","rell","pyke","brand","maokai"],
+    ct:["lulu","sona","morgana","soraka","rakan","milio","janna","karma","zyra","zilean","yuumi","swain","shen_sup","galio"],
+    ctBy:["blitzcrank","thresh","leona","nautilus","seraphine","rell","pyke","brand","maokai","nami","ornn_sup"],
     sy:["lucian","jinx","jhin","draven","smolder"]},
   nami:       {name:"Nami",        lanes:["Support"],dmg:"AP",   cls:"Enchanter",
-    ct:["pyke","blitzcrank","braum","alistar","leona"],
-    ctBy:["janna","lux","lulu","soraka","thresh","zyra","bard","galio","karma"],
+    ct:["pyke","blitzcrank","braum","alistar","leona","rakan"],
+    ctBy:["janna","lux","lulu","soraka","thresh","zyra","bard","galio","karma","morgana","seraphine","shen_sup","maokai","rell"],
     sy:["lucian","jhin","kaisa","smolder","ezreal"]},
   thresh:     {name:"Thresh",      lanes:["Support"],dmg:"AP",   cls:"Tank",
-    ct:["morgana","lulu","alistar","braum","zyra","nami"],
-    ctBy:["soraka","blitzcrank","sona","yuumi"],
+    ct:["morgana","lulu","alistar","braum","zyra","nami","swain","ornn_sup"],
+    ctBy:["soraka","blitzcrank","sona","yuumi","rakan","leona","karma","bard"],
     sy:["draven","jhin","missfortune","caitlyn","kaisa"]},
   blitzcrank: {name:"Blitzcrank",  lanes:["Support"],dmg:"AP",   cls:"Tank",
-    ct:["alistar","braum","morgana","leona","rakan"],
-    ctBy:["sona","nami","soraka","senna","zyra","seraphine","janna","lulu","milio"],
+    ct:["alistar","braum","morgana","leona","rakan","thresh","zilean","shen_sup","galio","maokai","ornn_sup"],
+    ctBy:["sona","nami","soraka","senna","zyra","seraphine","janna","lulu","milio","karma","bard","yuumi"],
     sy:["draven","caitlyn","jhin","missfortune","jinx"]},
   soraka:     {name:"Soraka",      lanes:["Support"],dmg:"AP",   cls:"Enchanter",
-    ct:["blitzcrank","leona","thresh","lux","nami","bard"],
-    ctBy:["braum","alistar","janna","brand","pyke","morgana"],
+    ct:["blitzcrank","leona","thresh","lux","nami","bard","rakan","seraphine","sona","yuumi"],
+    ctBy:["braum","alistar","janna","brand","pyke","morgana","poppy_sup"],
     sy:["vayne","jinx","smolder","ezreal","kaisa"]},
   janna:      {name:"Janna",       lanes:["Support"],dmg:"AP",   cls:"Enchanter",
-    ct:["sona","nami","blitzcrank","brand","lulu","karma","senna"],
-    ctBy:["alistar","braum","leona","rakan","gragas","nautilus","rell"],
+    ct:["sona","nami","blitzcrank","brand","lulu","karma","senna","soraka","seraphine"],
+    ctBy:["alistar","braum","leona","rakan","gragas","nautilus","rell","galio","sett_sup","gragas_sup","poppy_sup"],
     sy:["vayne","jinx","ezreal","smolder","kaisa"]},
   morgana:    {name:"Morgana",     lanes:["Support"],dmg:"AP",   cls:"Mage",
-    ct:["nami","yuumi","soraka","sona","karma","zyra"],
-    ctBy:["thresh","blitzcrank","lux","braum","nautilus","leona"],
+    ct:["nami","yuumi","soraka","sona","karma","zyra","seraphine"],
+    ctBy:["thresh","blitzcrank","lux","braum","nautilus","leona","rakan","alistar","pyke","bard","shen_sup","singed_sup","galio","maokai","sett_sup","gragas_sup","ornn_sup","poppy_sup"],
     sy:["caitlyn","jhin","lucian","draven","kaisa"]},
   alistar:    {name:"Alistar",     lanes:["Support"],dmg:"AP",   cls:"Tank",
-    ct:["ashe","zyra","lulu","sona","morgana","janna","gragas"],
-    ctBy:["blitzcrank","rakan","thresh","pantheon","leona","yuumi","rell"],
+    ct:["ashe","zyra","lulu","sona","morgana","janna","gragas","milio","soraka","bard","swain","gragas_sup","poppy_sup"],
+    ctBy:["blitzcrank","rakan","thresh","pantheon","leona","yuumi","rell","nautilus","nami","karma","galio"],
     sy:["kaisa","draven","jinx","jhin","lucian"]},
   seraphine:  {name:"Seraphine",   lanes:["Support"],dmg:"AP",   cls:"Enchanter",
-    ct:["blitzcrank","nami","leona","braum","pyke"],
-    ctBy:["lux","soraka","janna","morgana","galio"],
+    ct:["blitzcrank","nami","leona","braum","pyke","nautilus","singed_sup"],
+    ctBy:["lux","soraka","janna","morgana","galio","shen_sup","maokai"],
     sy:["kaisa","jinx","smolder","jhin","lucian"]},
   sona:       {name:"Sona",        lanes:["Support"],dmg:"AP",   cls:"Enchanter",
-    ct:["blitzcrank","leona","thresh","pantheon","bard","pyke"],
-    ctBy:["karma","janna","soraka","lulu","milio"],
+    ct:["blitzcrank","leona","thresh","pantheon","bard","pyke","rakan","nautilus","singed_sup"],
+    ctBy:["karma","janna","soraka","lulu","milio","braum","morgana","alistar","shen_sup","maokai"],
     sy:["vayne","jinx","smolder","kaisa","ezreal"]},
   lux:        {name:"Lux",         lanes:["Support","Mid"],dmg:"AP",cls:"Mage",
-    ct:["zed","fizz","yasuo","irelia","katarina","talon","kassadin"],
-    ctBy:["twisted_fate","kennen_mid","brand","vex"],
+    ct:["zed","fizz","yasuo","irelia","katarina","talon","kassadin","nautilus","leona","lulu","nami","morgana","seraphine","karma","pyke","rell"],
+    ctBy:["twisted_fate","kennen_mid","brand","vex","milio","soraka","swain"],
     sy:["nautilus","thresh","blitzcrank","caitlyn","jhin"]},
   karma:      {name:"Karma",       lanes:["Support"],dmg:"AP",   cls:"Enchanter",
-    ct:["pyke","nami","bard","alistar","blitzcrank","thresh"],
-    ctBy:["janna","braum","lulu","morgana","zyra","galio","lux"],
+    ct:["pyke","nami","bard","alistar","blitzcrank","thresh","sona"],
+    ctBy:["janna","braum","lulu","morgana","zyra","galio","lux","swain","poppy_sup"],
     sy:["jinx","kaisa","ezreal","smolder","lucian"]},
   zyra:       {name:"Zyra",        lanes:["Support"],dmg:"AP",   cls:"Mage",
     ct:["karma","rakan","leona","pyke","nami","blitzcrank"],
-    ctBy:["alistar","thresh","braum","morgana","senna","swain"],
+    ctBy:["alistar","thresh","braum","morgana","senna","swain","milio","rell"],
     sy:["caitlyn","jhin","lucian","draven","kaisa"]},
   pyke:       {name:"Pyke",        lanes:["Support"],dmg:"AD",   cls:"Assassin",
-    ct:["braum","maokai","soraka","morgana","rakan"],
-    ctBy:["lux","sona","brand","senna","seraphine","zyra","zilean","karma","nami"],
+    ct:["braum","maokai","soraka","morgana","rakan","poppy_sup"],
+    ctBy:["lux","sona","brand","senna","seraphine","zyra","zilean","karma","nami","bard"],
     sy:["draven","caitlyn","jhin","missfortune","jinx"]},
   bard:       {name:"Bard",        lanes:["Support"],dmg:"AP",   cls:"Enchanter",
     ct:["nami","senna","zilean","thresh","blitzcrank","morgana","pyke"],
@@ -596,7 +596,7 @@ const DB = {
     ctBy:["braum","brand","soraka","morgana"],
     sy:["vayne","jinx","kaisa","smolder","ezreal"]},
   swain:      {name:"Swain",       lanes:["Support"],dmg:"AP",   cls:"Mage",
-    ct:["lux","karma","zyra"],
+    ct:["lux","karma","zyra","bard"],
     ctBy:["thresh","leona","galio","alistar","braum"],
     sy:["jinx","kaisa","smolder","jhin","lucian"]},
   shen_sup:   {name:"Shen",        lanes:["Support"],dmg:"AP",   cls:"Tank",
@@ -608,7 +608,7 @@ const DB = {
     ctBy:["seraphine","sona"],
     sy:["jinx","vayne","kaisa","smolder","ezreal"]},
   galio:      {name:"Galio",       lanes:["Support"],dmg:"AP",   cls:"Tank",
-    ct:["senna","nami","karma","morgana","janna","alistar","lulu"],
+    ct:["senna","nami","karma","morgana","janna","alistar","lulu","seraphine","bard","swain"],
     ctBy:["rakan","blitzcrank","braum","leona","maokai"],
     sy:["jinx","kaisa","smolder","lucian","caitlyn"]},
   maokai:     {name:"Maokai",      lanes:["Support"],dmg:"AP",   cls:"Tank",
@@ -624,8 +624,8 @@ const DB = {
     ctBy:["nautilus","leona"],
     sy:["jinx","kaisa","smolder","lucian","draven"]},
   senna:      {name:"Senna",       lanes:["Support"],dmg:"AD",   cls:"Marksman",
-    ct:["draven","caitlyn","tristana","ezreal"],
-    ctBy:["vayne","jinx","jhin"],
+    ct:["draven","caitlyn","tristana","ezreal","nautilus","leona","blitzcrank","zyra","pyke"],
+    ctBy:["vayne","jinx","jhin","lulu","milio","janna","bard","galio","sett_sup"],
     sy:["vayne","jinx","smolder","kaisa","ezreal"]},
   gragas_sup: {name:"Gragas",      lanes:["Support"],dmg:"AP",   cls:"Tank",
     ct:["morgana","janna","lulu"],
@@ -642,91 +642,91 @@ const DB = {
 
   // ── ADC ──────────────────────────────────────────────────────
   smolder:    {name:"Smolder",     lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
-    ct:["caitlyn","tristana","draven","lucian"],
+    ct:["caitlyn","tristana","draven","lucian","vayne","kogmaw","aurelionsol_adc","mel_adc","ziggs_adc"],
     ctBy:["corki","ezreal","varus","sivir","missfortune","nilah"],
     sy:["lulu","milio","rakan","nami","soraka"]},
   kaisa:      {name:"Kai'Sa",      lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
-    ct:["draven","missfortune","xayah","caitlyn","kogmaw"],
+    ct:["draven","missfortune","xayah","caitlyn","kogmaw","vayne","twitch"],
     ctBy:["jinx","varus","ezreal"],
     sy:["nautilus","rakan","amumu","leona","nami"]},
   jhin:       {name:"Jhin",        lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
-    ct:["ashe","draven","lucian","tristana"],
-    ctBy:["jinx","varus","missfortune"],
+    ct:["ashe","draven","lucian","tristana","senna","ezreal","vayne","kogmaw","twitch","kalista","corki"],
+    ctBy:["jinx","varus","missfortune","caitlyn","xayah","nilah","zeri"],
     sy:["nautilus","leona","blitzcrank","thresh","morgana"]},
   ezreal:     {name:"Ezreal",      lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
-    ct:["samira","draven","kaisa","missfortune","ashe","vayne"],
-    ctBy:["varus","jhin","caitlyn"],
+    ct:["samira","draven","kaisa","missfortune","ashe","vayne","smolder","jinx","tristana","xayah","sivir","kalista","zeri"],
+    ctBy:["varus","jhin","caitlyn","senna","lucian","aurelionsol_adc","orianna_adc","ziggs_adc"],
     sy:["lulu","milio","janna","soraka","nami"]},
   vayne:      {name:"Vayne",       lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
-    ct:["draven","ashe","caitlyn","lucian"],
-    ctBy:["ezreal","kaisa","jhin","sivir","xayah","varus","smolder","kogmaw"],
+    ct:["draven","ashe","caitlyn","lucian","senna","jinx","samira","twitch","zeri"],
+    ctBy:["ezreal","kaisa","jhin","sivir","xayah","varus","smolder","kogmaw","ornn_sup","tristana","aurelionsol_adc","mel_adc","orianna_adc","ziggs_adc"],
     sy:["lulu","milio","braum","janna","soraka"]},
   lucian:     {name:"Lucian",      lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
     ct:["caitlyn","kogmaw","ashe","draven","ezreal"],
-    ctBy:["vayne","jinx","tristana","jhin","smolder","zeri"],
+    ctBy:["vayne","jinx","tristana","jhin","smolder","zeri","xayah","kalista","aurelionsol_adc","mel_adc","orianna_adc","ziggs_adc"],
     sy:["nami","braum","morgana","thresh","blitzcrank"]},
   jinx:       {name:"Jinx",        lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
-    ct:["jhin","missfortune","draven","tristana","caitlyn","lucian","kogmaw"],
+    ct:["jhin","missfortune","draven","tristana","caitlyn","lucian","kogmaw","senna","kaisa","varus","xayah","twitch","nilah","corki","aurelionsol_adc","mel_adc","orianna_adc","ziggs_adc"],
     ctBy:["vayne","ashe","ezreal"],
     sy:["lulu","rakan","nautilus","soraka","nami"]},
   caitlyn:    {name:"Caitlyn",     lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
     ct:["sivir","jhin","ezreal","missfortune"],
-    ctBy:["vayne","kaisa","tristana","draven","twitch","smolder","samira","zeri","ashe","corki","kalista","kogmaw","lucian","nilah","yunara"],
+    ctBy:["vayne","kaisa","tristana","draven","twitch","smolder","samira","zeri","ashe","corki","kalista","kogmaw","lucian","nilah","yunara","senna","jinx","xayah"],
     sy:["morgana","lux","blitzcrank","thresh","nautilus"]},
   missfortune:{name:"Miss Fortune",lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
     ct:["smolder","jhin","draven","ashe"],
-    ctBy:["jinx","ezreal","varus","samira","corki"],
+    ctBy:["jinx","ezreal","varus","samira","corki","kaisa","caitlyn","kogmaw"],
     sy:["amumu","leona","nautilus","blitzcrank","rakan"]},
   draven:     {name:"Draven",      lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
     ct:["caitlyn","ziggs","varus","samira","kogmaw"],
-    ctBy:["ashe","ezreal","vayne","jinx","sivir","tristana","smolder","jhin","kaisa"],
+    ctBy:["ashe","ezreal","vayne","jinx","sivir","tristana","smolder","jhin","kaisa","senna","lucian","missfortune","xayah","twitch","kalista","zeri","corki"],
     sy:["leona","thresh","blitzcrank","nami","alistar"]},
   tristana:   {name:"Tristana",    lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
-    ct:["draven","vayne","caitlyn","lucian","kogmaw"],
-    ctBy:["jinx","ashe","ezreal","jhin","xayah"],
+    ct:["draven","vayne","caitlyn","lucian","kogmaw","nilah"],
+    ctBy:["jinx","ashe","ezreal","jhin","xayah","senna","smolder","varus","samira","twitch","zeri","aurelionsol_adc","mel_adc","orianna_adc","ziggs_adc"],
     sy:["lulu","milio","braum","janna","soraka"]},
   ashe:       {name:"Ashe",        lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
-    ct:["caitlyn","varus","draven"],
-    ctBy:["kalista","vayne","missfortune","corki","ezreal","twitch","jhin","kogmaw","lucian"],
+    ct:["caitlyn","varus","draven","jinx","tristana","xayah","sivir","samira","aurelionsol_adc","mel_adc","orianna_adc","ziggs_adc"],
+    ctBy:["kalista","vayne","missfortune","corki","ezreal","twitch","jhin","kogmaw","lucian","alistar","sett_sup","nilah"],
     sy:["lulu","milio","braum","thresh","nautilus"]},
   varus:      {name:"Varus",       lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
-    ct:["smolder","missfortune","vayne","jhin","ezreal","tristana"],
-    ctBy:["jinx","ashe"],
+    ct:["smolder","missfortune","vayne","jhin","ezreal","tristana","kaisa","sivir"],
+    ctBy:["jinx","ashe","draven","xayah","samira"],
     sy:["nautilus","leona","blitzcrank","thresh","morgana"]},
   xayah:      {name:"Xayah",       lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
-    ct:["draven","jhin","caitlyn","lucian","varus","vayne","kogmaw","yunara"],
+    ct:["draven","jhin","caitlyn","lucian","varus","vayne","kogmaw","yunara","tristana","sivir"],
     ctBy:["ashe","ezreal","jinx","kaisa","nilah"],
     sy:["rakan","nautilus","leona","thresh","blitzcrank"]},
   kogmaw:     {name:"Kog'Maw",     lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
     ct:["ashe","vayne","caitlyn","missfortune"],
-    ctBy:["kaisa","zeri","xayah","tristana","smolder","samira","corki","draven","jhin","kalista","lucian","yunara"],
+    ctBy:["kaisa","zeri","xayah","tristana","smolder","samira","corki","draven","jhin","kalista","lucian","yunara","jinx","sivir"],
     sy:["lulu","milio","braum","janna","soraka"]},
   sivir:      {name:"Sivir",       lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
     ct:["vayne","draven","twitch","samira","smolder","kogmaw","yunara"],
     ctBy:["ezreal","xayah","varus","ashe","caitlyn"],
     sy:["lulu","milio","braum","thresh","nautilus"]},
   samira:     {name:"Samira",      lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
-    ct:["caitlyn","varus","tristana","kogmaw","missfortune"],
-    ctBy:["vayne","ezreal","ashe","twitch","draven"],
+    ct:["caitlyn","varus","tristana","kogmaw","missfortune","nilah"],
+    ctBy:["vayne","ezreal","ashe","twitch","draven","sivir","kalista"],
     sy:["nautilus","leona","blitzcrank","thresh","alistar"]},
   twitch:     {name:"Twitch",      lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
-    ct:["ashe","samira","tristana","caitlyn","draven"],
+    ct:["ashe","samira","tristana","caitlyn","draven","nilah"],
     ctBy:["kaisa","vayne","jhin","jinx","sivir"],
     sy:["lulu","milio","braum","janna","soraka"]},
   nilah:      {name:"Nilah",       lanes:["ADC"],    dmg:"AD",    cls:"Fighter",
     ct:["smolder","xayah","caitlyn","ashe","jhin"],
-    ctBy:["samira","twitch","jinx","tristana","yunara"],
+    ctBy:["samira","twitch","jinx","tristana","yunara","kalista"],
     sy:["nautilus","leona","blitzcrank","thresh","nami"]},
   kalista:    {name:"Kalista",     lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
     ct:["ashe","kogmaw","caitlyn","draven","samira","nilah","lucian","yunara"],
     ctBy:["ezreal","zeri","jhin"],
     sy:["nautilus","leona","blitzcrank","thresh","alistar"]},
   zeri:       {name:"Zeri",        lanes:["ADC"],    dmg:"AD",    cls:"Marksman",
-    ct:["lucian","caitlyn","kogmaw","tristana","jhin","draven"],
+    ct:["lucian","caitlyn","kogmaw","tristana","jhin","draven","kalista"],
     ctBy:["ezreal","vayne","orianna"],
     sy:["lulu","milio","braum","janna","soraka"]},
   corki:      {name:"Corki",       lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
-    ct:["kogmaw","missfortune","draven","caitlyn"],
+    ct:["kogmaw","missfortune","draven","caitlyn","smolder","ashe"],
     ctBy:["ziggs","jinx","jhin"],
     sy:["nautilus","leona","blitzcrank","thresh","morgana"]},
   yunara:     {name:"Yunara",       lanes:["ADC"],    dmg:"Hybrid",cls:"Marksman",
@@ -776,7 +776,7 @@ const DB = {
     ctBy:["yasuo","ahri","lux","twisted_fate","corki","velkoz"],
     sy:["rakan","leona","vi","amumu","nautilus"]},
   galio_mid:  {name:"Galio",       lanes:["Mid"],    dmg:"AP",    cls:"Tank",
-    ct:["morgana_mid","ahri","swain_mid","akshan_mid","pantheon_mid","lucian_mid","yasuo","zed_mid"],
+    ct:["morgana_mid","ahri","swain_mid","akshan_mid","pantheon_mid","yasuo","zed_mid"],
     ctBy:["irelia_mid","katarina","fizz","twisted_fate","diana","aurelionsol","vex","jayce_mid","lissandra"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   heimerdinger:{name:"Heimerdinger",lanes:["Mid"],   dmg:"AP",    cls:"Mage",
@@ -810,10 +810,6 @@ const DB = {
   lissandra:  {name:"Lissandra",   lanes:["Mid"],    dmg:"AP",    cls:"Mage",
     ct:["morgana","kassadin","galio","lux","ziggs","akshan_mid","orianna"],
     ctBy:["katarina","akali","fizz","zed","vex","annie","ekko"],
-    sy:["amumu","vi","nautilus","leona","jarvaniv"]},
-  lucian_mid: {name:"Lucian",      lanes:["Mid"],    dmg:"AD",    cls:"Marksman",
-    ct:["akali","fizz","yasuo","pantheon"],
-    ctBy:["katarina","galio","lux","veigar","ahri","seraphine","kayle","kassadin"],
     sy:["amumu","vi","nautilus","leona","jarvaniv"]},
   lux_mid:    {name:"Lux",         lanes:["Mid"],    dmg:"AP",    cls:"Mage",
     ct:["zed","fizz","yasuo","irelia","katarina","talon","kassadin"],
@@ -2478,15 +2474,6 @@ const BUILD_DB = {
     skillOrder: ["1","2","3"],
     tier: "A"
   },
-  lucian_mid: {
-    starter: "Gluttonous Greaves",
-    items: ["Magnetic Blaster","Lord Dominik's Regards","Infinity Edge","Bloodthirster"],
-    boots: "Immortal Path", enchant: "Essence Reaver",
-    runes: ["Empowerment","Brutal","Cut Down","Legend- Bloodline","Sudden Impact"],
-    spells: ["Flash","Barrier"],
-    skillOrder: ["1","2","3"],
-    tier: "A"
-  },
   mel_adc: {
     starter: "Boots of Mana",
     items: ["Infinity Orb","Rabadon's Deathcap","Cosmic Drive","Void Staff"],
@@ -3439,7 +3426,17 @@ async function githubGetFile(path){
   const data = await res.json();
   return { exists:true, sha:data.sha, content: _b64ToUtf8(data.content.replace(/\n/g,"")) };
 }
-async function githubPutFile(path, contentStr, message){
+function _ghSleep(ms){ return new Promise(resolve => setTimeout(resolve, ms)); }
+// path -> Promise zinciri: aynı dosyaya art arda yapılan kayıtları sıraya koyar,
+// böylece iki kayıt aynı anda GET yapıp birbirinin sha'sını bayatlatamaz (409'un asıl kaynağı).
+const _ghFileQueues = {};
+function _ghEnqueue(path, taskFn){
+  const prev = _ghFileQueues[path] || Promise.resolve();
+  const next = prev.then(taskFn, taskFn); // önceki başarısız olsa bile sıradakini çalıştır
+  _ghFileQueues[path] = next.catch(()=>{}); // kuyruğun kendisi asla reddedilmesin
+  return next;
+}
+async function _githubPutFileOnce(path, contentStr, message){
   const { owner, repo, branch, token } = GH_CONFIG;
   if(!owner || !repo || !token) throw new Error("GitHub ayarları eksik (Ayarlar ekranından gir)");
   const existing = await githubGetFile(path);
@@ -3459,8 +3456,34 @@ async function githubPutFile(path, contentStr, message){
     },
     body: JSON.stringify(body)
   });
-  if(!res.ok) throw new Error(`GitHub yazma hatası (${res.status}): ${(await res.text()).slice(0,300)}`);
+  if(!res.ok){
+    const errText = (await res.text()).slice(0,300);
+    const err = new Error(`GitHub yazma hatası (${res.status}): ${errText}`);
+    err.status = res.status;
+    throw err;
+  }
   return await res.json();
+}
+// Aynı dosyaya kısa aralıklarla yapılan kayıtlar (sha çakışması / 409) otomatik olarak
+// güncel sha ile yeniden denenir. Kullanıcı hiçbir şey yapmadan, birkaç saniye içinde
+// arka planda kendi kendine düzelir.
+async function githubPutFile(path, contentStr, message){
+  return _ghEnqueue(path, async () => {
+    const maxAttempts = 6;
+    let lastErr = null;
+    for(let attempt = 1; attempt <= maxAttempts; attempt++){
+      try {
+        return await _githubPutFileOnce(path, contentStr, message);
+      } catch(e){
+        lastErr = e;
+        const isConflict = e.status === 409 || /409/.test(e.message||"");
+        if(!isConflict || attempt === maxAttempts) throw e;
+        // sha çakışması: kısa bir bekleme sonrası güncel sha ile tekrar dene
+        await _ghSleep(900 * attempt);
+      }
+    }
+    throw lastErr;
+  });
 }
 async function testGHConnection(){
   // NOT: saveGHConfigFromForm() içeride render() çağırıyor ve bu, #app'in tüm
@@ -3763,14 +3786,6 @@ lissandra: {
   resourceType: "Mana", hasReset: "Yok", ultDependency: "Aşırı Bağımlı",
   teamfightRole: ["Engage","Pick/Execute","Zone Control"], durabilityProfile: ["Kırılgan"], damageProfile: ["Burst"],
   powerCurve: "Orta Oyun", scalingType: "Tutarlı", objectiveControl: "Orta, R ile rakip takımı objektif çukurunda dondurabilir", globalTeleport: "Yok", duelist: "Var"
-},
-lucian_mid: {
-  hasForms: "Yok", formAName: "", formBName: "",
-  moveSpeed: "Ortalama", passiveSpeedBoost: "Yok", mobilityTool: "Dash", toolCondition: "Koşulsuz", toolFrequency: "Sınırlı", mobilityTag: "Gerçek Hareketlilik",
-  ccTypes: [], hasCleanseSkill: "Yok", ccSensitivity: "CC Yerse Sıkıntı Yaşar",
-  resourceType: "Mana", hasReset: "Var", ultDependency: "Aşırı Bağımlı",
-  teamfightRole: ["Pick/Execute","Backline Dalışı"], durabilityProfile: ["Kırılgan"], damageProfile: ["Burst"],
-  powerCurve: "Erken Oyun", scalingType: "Tutarlı", objectiveControl: "Düşük", globalTeleport: "Yok", duelist: "Var"
 },
 mel: {
   hasForms: "Yok", formAName: "", formBName: "",
@@ -6201,7 +6216,7 @@ const CHAMP_ID = {
   swain_mid:50, syndra:134, taliyah:163, talon:91, teemo_mid:17,
   twisted_fate:4, veigar:45, velkoz:161, vex:711, viktor:112,
   vladimir:8, yasuo:157, yone:777, zed_mid:238, ziggs:115, ziggs_adc:115, zoe:142,
-  akshan_mid:166, pantheon_mid:80, lucian_mid:236, lux_mid:99, zyra_mid:143,
+  akshan_mid:166, pantheon_mid:80, lux_mid:99, zyra_mid:143,
   // JUNGLE
   nidalee:76, taliyah_jg:163, viego:234, lee_sin:64, shyvana:102,
   vi:254, xin_zhao:5, hecarim:120, evelynn:28, aatrox_jg:266,
@@ -7422,6 +7437,71 @@ function deleteBuilderBuild(){
   saveCustomBuilds();
   closeBuilder();
 }
+// ─── TEK TUŞLA HEPSİNİ KAYDET (Build + Profil + CT) ────────────
+// Şampiyon detay ekranındaki "Tümünü Kaydet" butonu bunu çağırır.
+// Editör ekranlarına tek tek girip her birinde ayrı "Kaydet"e basmaya gerek kalmadan,
+// o şampiyon (ve varsa CT için bağlantılı diğer şampiyonlar) için cihazda bekleyen
+// tüm değişiklikleri GitHub'a tek seferde gönderir.
+async function saveAllPendingForChamp(id){
+  if(!id) return;
+  const hasBuild   = !!CUSTOM_BUILDS[id];
+  const hasProfile = !!CUSTOM_CHAMP_PROFILES[id];
+  const hasAnyCT = !!CUSTOM_CT[id];
+
+  if(!hasBuild && !hasProfile && !hasAnyCT){
+    showBuilderToast("✅ " + (t('toast_nothing_pending') || "Kaydedilecek bekleyen değişiklik yok"));
+    return;
+  }
+  showBuilderToast("⏳ " + (t('toast_saving_all') || "Kaydediliyor..."));
+
+  let okCount = 0, failCount = 0;
+
+  if(hasBuild){
+    const merged = Object.assign({}, baseBuildDB());
+    merged[id] = CUSTOM_BUILDS[id];
+    const ok = await syncToGitHub("builds.json", merged, `Build güncellendi: ${id}`);
+    if(ok){ LIVE_BUILD_DB = merged; delete CUSTOM_BUILDS[id]; saveCustomBuilds(); okCount++; }
+    else failCount++;
+  }
+
+  if(hasProfile){
+    let freshBase = baseChampProfiles();
+    try {
+      if(GH_CONFIG.token && GH_CONFIG.owner && GH_CONFIG.repo){
+        const remote = await githubGetFile("profiles.json");
+        if(remote.exists) freshBase = JSON.parse(remote.content);
+      }
+    } catch(e){}
+    const merged = Object.assign({}, freshBase);
+    merged[id] = CUSTOM_CHAMP_PROFILES[id];
+    const ok = await syncToGitHub("profiles.json", merged, `Profil güncellendi: ${id}`);
+    if(ok){ LIVE_CHAMP_PROFILES = merged; delete CUSTOM_CHAMP_PROFILES[id]; saveCustomProfiles(); okCount++; }
+    else failCount++;
+  }
+
+  if(hasAnyCT){
+    // CT karşılıklı bağlantılı olduğu için (bu şampiyonu düzenlerken başka şampiyonların
+    // listesi de otomatik güncellenmiş olabilir), cihazda CT için bekleyen NE VARSA hepsini
+    // aynı anda gönderiyoruz — böylece hiçbir bağlantılı kayıt geride kalmıyor.
+    const merged = Object.assign({}, baseCTData());
+    const pendingIds = Object.keys(CUSTOM_CT);
+    pendingIds.forEach(cid => { merged[cid] = CUSTOM_CT[cid]; });
+    const ok = await syncToGitHub("ct-data.json", merged, `CT güncellendi: ${id}`);
+    if(ok){
+      LIVE_CT_DATA = merged;
+      pendingIds.forEach(cid => delete CUSTOM_CT[cid]);
+      saveCustomCT();
+      okCount++;
+    } else failCount++;
+  }
+
+  if(failCount === 0){
+    showBuilderToast(`✅ Tümü kaydedildi (${okCount})`);
+  } else {
+    showBuilderToast(`⚠️ ${okCount} başarılı, ${failCount} başarısız — tekrar deneyin`);
+  }
+  render();
+}
 // Klavye kapanmasın diye picker listesini ayrı güncelleyen fonksiyon
 function renderBuilderPickerList(){
   const grid = document.getElementById("builderPickerGrid");
@@ -8242,6 +8322,9 @@ function render() {
                 ${BUILDER_ENABLED ? `<button onclick="openCTEditor('${champDetailId}')" style="padding:4px 10px;
                   border-radius:7px;border:1px solid #ff606055;background:#ff606018;color:#ff6060;
                   font-size:9px;font-weight:700;flex-shrink:0">🎯 CT${CUSTOM_CT[champDetailId] ? ' ✓' : ''}</button>` : ""}
+                ${BUILDER_ENABLED && (CUSTOM_BUILDS[champDetailId] || CUSTOM_CHAMP_PROFILES[champDetailId] || CUSTOM_CT[champDetailId]) ? `<button onclick="saveAllPendingForChamp('${champDetailId}')" style="padding:4px 10px;
+                  border-radius:7px;border:1px solid #00ff8855;background:#00ff8822;color:#00ff88;
+                  font-size:9px;font-weight:800;flex-shrink:0">💾 Tümünü Kaydet</button>` : ""}
               </div>
 
               <!-- RÜNLER -->
