@@ -1709,35 +1709,31 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Dash",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Stealth",
     "toolCondition": "Koşulsuz",
     "toolFrequency": "Sınırlı",
-    "mobilityTag": "Gerçek Hareketlilik",
-    "ccTypes": [
-      "Stun/Freeze/Sleep"
-    ],
+    "mobilityTag": "Patlamalı Hareketlilik",
+    "ccTypes": [],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Var",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
-      "Backline Dalışı"
+      "Pick/Execute"
     ],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS",
       "Burst"
     ],
-    "powerCurve": "Orta Oyun",
+    "powerCurve": "Erken Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Düşük-orta, R ile uzaktan objektif kavgasına katkı",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "diana": {
     "hasForms": "Yok",
