@@ -5722,11 +5722,11 @@
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Var",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [],
-    "hasCleanseSkill": "Yok",
+    "hasCleanseSkill": "Var",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
@@ -5741,7 +5741,7 @@
     "damageProfile": [
       "Sürdürülebilir DPS"
     ],
-    "powerCurve": "Orta Oyun",
+    "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Yüksek, R ile takım objektif hızını doğrudan artırır",
     "globalTeleport": "Yok",
