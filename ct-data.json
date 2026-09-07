@@ -2846,7 +2846,8 @@
       "irelia",
       "irelia_jg",
       "pantheon_jg",
-      "teemo"
+      "teemo",
+      "yasuo_baron"
     ]
   },
   "pantheon_jg": {
@@ -4076,7 +4077,8 @@
       "riven",
       "olaf",
       "tryndamere",
-      "jax"
+      "jax",
+      "olaf_jg"
     ],
     "ctBy": [
       "teemo",
