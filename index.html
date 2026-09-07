@@ -3518,6 +3518,79 @@ async function syncToGitHub(path, mergedData, commitMessage){
     return false;
   }
 }
+// ─── GÜVENLİ (STALE-BASE KORUMALI) YAZMA ───────────────────────
+// Sorun: eskiden "taban veri" (freshBase) SADECE bir kez, denemeler/retry'lar
+// başlamadan ÖNCE çekiliyordu. GitHub'ın okuma tarafında birkaç saniyelik bir
+// gecikme (propagation lag) olursa, o taban veri GERÇEKTE en güncel olmayabilir.
+// Böyle bir durumda retry mekanizması "sha çakışmasını" düzeltip yazmayı BAŞARILI
+// kılsa bile, İÇERİK hâlâ o bayat tabana dayandığı için, o sırada başka bir
+// şampiyona ait az önce kaydedilmiş bir değişiklik sessizce SİLİNMİŞ olabiliyordu.
+// Çözüm: her deneme (ilk deneme dahil) dosyayı YENİDEN okur, mergeFn'i o anki
+// GERÇEK içerik üzerine uygular, öyle yazar. Böylece hiçbir deneme bayat veri
+// üzerine yazmaz.
+async function githubMergeAndPut(path, mergeFn, message, fallbackBase){
+  const { owner, repo, branch, token } = GH_CONFIG;
+  if(!owner || !repo || !token) throw new Error("GitHub ayarları eksik (Ayarlar ekranından gir)");
+  return _ghEnqueue(path, async () => {
+    const maxAttempts = 6;
+    let lastErr = null;
+    for(let attempt = 1; attempt <= maxAttempts; attempt++){
+      try {
+        const existing = await githubGetFile(path);
+        let baseObj = fallbackBase || {};
+        if(existing.exists){
+          try { baseObj = JSON.parse(existing.content); } catch(e){ /* bozuksa fallback kullanılır */ }
+        }
+        const newObj = mergeFn(baseObj);
+        const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+        const body = {
+          message: message || `Update ${path}`,
+          content: _utf8ToB64(JSON.stringify(newObj, null, 2)),
+          branch,
+        };
+        if(existing.exists) body.sha = existing.sha;
+        const res = await fetch(url, {
+          method: "PUT",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Accept": "application/vnd.github+json",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(body)
+        });
+        if(!res.ok){
+          const errText = (await res.text()).slice(0,300);
+          const err = new Error(`GitHub yazma hatası (${res.status}): ${errText}`);
+          err.status = res.status;
+          throw err;
+        }
+        await res.json();
+        return newObj;
+      } catch(e){
+        lastErr = e;
+        const isConflict = e.status === 409 || /409/.test(e.message||"");
+        if(!isConflict || attempt === maxAttempts) throw e;
+        await _ghSleep(900 * attempt);
+      }
+    }
+    throw lastErr;
+  });
+}
+// editörlerdeki "Kaydet" fonksiyonlarının kullanması gereken güvenli yol:
+// mergeFn(o anki GERÇEK GitHub içeriği) => yeni içerik. Dönüş: {ok, data}
+// data = GitHub'a başarıyla yazılan NİHAİ (güncel) içerik — LIVE_* değişkenine bu atanmalı.
+async function syncMergeToGitHub(path, mergeFn, commitMessage, fallbackBase){
+  if(!(GH_CONFIG.token && GH_CONFIG.owner && GH_CONFIG.repo)) return { ok:false, data:null };
+  showBuilderToast(t('toast_gh_syncing'));
+  try {
+    const finalData = await githubMergeAndPut(path, mergeFn, commitMessage, fallbackBase);
+    showBuilderToast("✓ " + t('toast_gh_sync_ok'));
+    return { ok:true, data: finalData };
+  } catch(e){
+    showBuilderToast("⚠ " + t('toast_gh_sync_fail') + e.message);
+    return { ok:false, data:null };
+  }
+}
 // Tier list'i canlı (fetch edilmiş) haliyle döndürür — yoksa uygulama içine gömülü olana düşer
 function baseTierListFull(){
   return LIVE_TIER_LIST_FULL || TIER_LIST_FULL;
@@ -7201,11 +7274,17 @@ async function saveCTDraft(){
   CUSTOM_CT[A] = { ct:[...after.ct], ctBy:[...after.ctBy] };
   saveCustomCT();
 
-  const merged = Object.assign({}, baseCTData());
-  touched.forEach(id => { merged[id] = { ct:[...getCT(id)], ctBy:[...getCTBy(id)] }; });
-  const ok = await syncToGitHub("ct-data.json", merged, `CT güncellendi: ${A} (+${touched.size-1} bağlantılı)`);
+  const touchedSnapshot = {};
+  touched.forEach(id => { touchedSnapshot[id] = { ct:[...getCT(id)], ctBy:[...getCTBy(id)] }; });
+
+  const { ok, data } = await syncMergeToGitHub(
+    "ct-data.json",
+    (base) => { const merged = Object.assign({}, base); Object.keys(touchedSnapshot).forEach(id => { merged[id] = touchedSnapshot[id]; }); return merged; },
+    `CT güncellendi: ${A} (+${touched.size-1} bağlantılı)`,
+    baseCTData()
+  );
   if(ok){
-    LIVE_CT_DATA = merged;
+    LIVE_CT_DATA = data;
     touched.forEach(id => delete CUSTOM_CT[id]); // GitHub'daki taban artık güncel
     saveCustomCT();
   }
@@ -7279,12 +7358,16 @@ async function saveTierDraft(){
   CUSTOM_TIER_LIST[tierEditorRole] = out;
   saveCustomTierListStore();
 
-  const merged = Object.assign({}, baseTierListFull());
-  merged[tierEditorRole] = out;
-  const ok = await syncToGitHub("tier-list.json", merged, `Tier list güncellendi: ${tierEditorRole}`);
+  const role = tierEditorRole;
+  const { ok, data } = await syncMergeToGitHub(
+    "tier-list.json",
+    (base) => { const merged = Object.assign({}, base); merged[role] = out; return merged; },
+    `Tier list güncellendi: ${role}`,
+    baseTierListFull()
+  );
   if(ok){
-    LIVE_TIER_LIST_FULL = merged;              // yerelde de anında güncel göster
-    delete CUSTOM_TIER_LIST[tierEditorRole];   // artık GitHub'daki taban veri güncel, yerel override'a gerek yok
+    LIVE_TIER_LIST_FULL = data;              // yerelde de anında güncel göster
+    delete CUSTOM_TIER_LIST[role];   // artık GitHub'daki taban veri güncel, yerel override'a gerek yok
     saveCustomTierListStore();
   }
   closeTierEditor();
@@ -7342,22 +7425,17 @@ async function saveProfileDraft(){
   CUSTOM_CHAMP_PROFILES[profileChampId] = profileDraft;
   saveCustomProfiles();
 
-  // Yazmadan hemen önce GitHub'daki GERÇEK en güncel hâli çek — böylece bu
-  // cihazın önbelleğindeki eski veri, aradan geçen sürede başka bir kayıtla
-  // eklenmiş/değişmiş şampiyonların üzerine yanlışlıkla yazılmaz.
-  let freshBase = baseChampProfiles();
-  try {
-    if(GH_CONFIG.token && GH_CONFIG.owner && GH_CONFIG.repo){
-      const remote = await githubGetFile("profiles.json");
-      if(remote.exists) freshBase = JSON.parse(remote.content);
-    }
-  } catch(e){}
-  const merged = Object.assign({}, freshBase);
-  merged[profileChampId] = profileDraft;
-  const ok = await syncToGitHub("profiles.json", merged, `Profil güncellendi: ${profileChampId}`);
+  const id = profileChampId;
+  const draft = profileDraft;
+  const { ok, data } = await syncMergeToGitHub(
+    "profiles.json",
+    (base) => { const merged = Object.assign({}, base); merged[id] = draft; return merged; },
+    `Profil güncellendi: ${id}`,
+    baseChampProfiles()
+  );
   if(ok){
-    LIVE_CHAMP_PROFILES = merged;
-    delete CUSTOM_CHAMP_PROFILES[profileChampId];
+    LIVE_CHAMP_PROFILES = data;
+    delete CUSTOM_CHAMP_PROFILES[id];
     saveCustomProfiles();
   } else if(!GH_CONFIG.token){
     showBuilderToast("💾 " + t('toast_profile_saved'));
@@ -7420,12 +7498,16 @@ async function saveBuilderDraft(){
   CUSTOM_BUILDS[builderChampId] = entry;
   saveCustomBuilds();
 
-  const merged = Object.assign({}, baseBuildDB());
-  merged[builderChampId] = entry;
-  const ok = await syncToGitHub("builds.json", merged, `Build güncellendi: ${builderChampId}`);
+  const id = builderChampId;
+  const { ok, data } = await syncMergeToGitHub(
+    "builds.json",
+    (base) => { const merged = Object.assign({}, base); merged[id] = entry; return merged; },
+    `Build güncellendi: ${id}`,
+    baseBuildDB()
+  );
   if(ok){
-    LIVE_BUILD_DB = merged;
-    delete CUSTOM_BUILDS[builderChampId];
+    LIVE_BUILD_DB = data;
+    delete CUSTOM_BUILDS[id];
     saveCustomBuilds();
   }
   closeBuilder();
@@ -7457,25 +7539,26 @@ async function saveAllPendingForChamp(id){
   let okCount = 0, failCount = 0;
 
   if(hasBuild){
-    const merged = Object.assign({}, baseBuildDB());
-    merged[id] = CUSTOM_BUILDS[id];
-    const ok = await syncToGitHub("builds.json", merged, `Build güncellendi: ${id}`);
-    if(ok){ LIVE_BUILD_DB = merged; delete CUSTOM_BUILDS[id]; saveCustomBuilds(); okCount++; }
+    const buildEntry = CUSTOM_BUILDS[id];
+    const { ok, data } = await syncMergeToGitHub(
+      "builds.json",
+      (base) => { const merged = Object.assign({}, base); merged[id] = buildEntry; return merged; },
+      `Build güncellendi: ${id}`,
+      baseBuildDB()
+    );
+    if(ok){ LIVE_BUILD_DB = data; delete CUSTOM_BUILDS[id]; saveCustomBuilds(); okCount++; }
     else failCount++;
   }
 
   if(hasProfile){
-    let freshBase = baseChampProfiles();
-    try {
-      if(GH_CONFIG.token && GH_CONFIG.owner && GH_CONFIG.repo){
-        const remote = await githubGetFile("profiles.json");
-        if(remote.exists) freshBase = JSON.parse(remote.content);
-      }
-    } catch(e){}
-    const merged = Object.assign({}, freshBase);
-    merged[id] = CUSTOM_CHAMP_PROFILES[id];
-    const ok = await syncToGitHub("profiles.json", merged, `Profil güncellendi: ${id}`);
-    if(ok){ LIVE_CHAMP_PROFILES = merged; delete CUSTOM_CHAMP_PROFILES[id]; saveCustomProfiles(); okCount++; }
+    const profileEntry = CUSTOM_CHAMP_PROFILES[id];
+    const { ok, data } = await syncMergeToGitHub(
+      "profiles.json",
+      (base) => { const merged = Object.assign({}, base); merged[id] = profileEntry; return merged; },
+      `Profil güncellendi: ${id}`,
+      baseChampProfiles()
+    );
+    if(ok){ LIVE_CHAMP_PROFILES = data; delete CUSTOM_CHAMP_PROFILES[id]; saveCustomProfiles(); okCount++; }
     else failCount++;
   }
 
@@ -7483,12 +7566,17 @@ async function saveAllPendingForChamp(id){
     // CT karşılıklı bağlantılı olduğu için (bu şampiyonu düzenlerken başka şampiyonların
     // listesi de otomatik güncellenmiş olabilir), cihazda CT için bekleyen NE VARSA hepsini
     // aynı anda gönderiyoruz — böylece hiçbir bağlantılı kayıt geride kalmıyor.
-    const merged = Object.assign({}, baseCTData());
     const pendingIds = Object.keys(CUSTOM_CT);
-    pendingIds.forEach(cid => { merged[cid] = CUSTOM_CT[cid]; });
-    const ok = await syncToGitHub("ct-data.json", merged, `CT güncellendi: ${id}`);
+    const pendingSnapshot = {};
+    pendingIds.forEach(cid => { pendingSnapshot[cid] = CUSTOM_CT[cid]; });
+    const { ok, data } = await syncMergeToGitHub(
+      "ct-data.json",
+      (base) => { const merged = Object.assign({}, base); pendingIds.forEach(cid => { merged[cid] = pendingSnapshot[cid]; }); return merged; },
+      `CT güncellendi: ${id}`,
+      baseCTData()
+    );
     if(ok){
-      LIVE_CT_DATA = merged;
+      LIVE_CT_DATA = data;
       pendingIds.forEach(cid => delete CUSTOM_CT[cid]);
       saveCustomCT();
       okCount++;
