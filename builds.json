@@ -870,7 +870,7 @@
   "irelia_mid": {
     "starter": "Gluttonous Greaves",
     "items": [
-      "Kraken Slayer",
+      "Blade of the Ruined King",
       "Death's Dance",
       "Amaranth's Twinguard",
       "Guardian Angel"
@@ -879,10 +879,10 @@
     "enchant": "Trinity Force",
     "runes": [
       "Conqueror",
-      "Unshakeable",
-      "Second Wind",
-      "Perseverance",
-      "Last Stand"
+      "Brutal",
+      "Cut Down",
+      "Legend- Bloodline",
+      "Sudden Impact"
     ],
     "spells": [
       "Flash",
