@@ -3056,7 +3056,7 @@
     "items": [
       "Infinity Orb",
       "Rabadon's Deathcap",
-      "Stasis Enchant",
+      "Cosmic Drive",
       "Void Staff"
     ],
     "boots": "Spellslinger's Shoes",
@@ -3502,19 +3502,19 @@
   "ziggs": {
     "starter": "Boots of Mana",
     "items": [
-      "Blackfire Torch",
       "Infinity Orb",
       "Rabadon's Deathcap",
-      "Banshee's Veil"
+      "Stasis Enchant",
+      "Void Staff"
     ],
     "boots": "Spellslinger's Shoes",
-    "enchant": "Liandry's Torment",
+    "enchant": "Luden's Echo",
     "runes": [
       "Arcane Comet",
       "Manaflow Band",
       "Absolute Focus",
       "Scorch",
-      "Coup de Grace"
+      "Bone Plating"
     ],
     "spells": [
       "Flash",
