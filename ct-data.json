@@ -1452,10 +1452,10 @@
       "syndra",
       "galio",
       "irelia",
-      "lucian",
       "zed",
       "fizz",
-      "yasuo"
+      "yasuo",
+      "zed_mid"
     ],
     "ctBy": [
       "katarina",
@@ -2082,7 +2082,8 @@
       "corki_mid",
       "orianna",
       "akshan_mid",
-      "brand_mid"
+      "brand_mid",
+      "jayce_mid"
     ]
   },
   "ziggs": {
