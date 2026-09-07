@@ -1261,7 +1261,8 @@
       "viktor",
       "yasuo",
       "irelia_mid",
-      "yone"
+      "yone",
+      "zed_mid"
     ]
   },
   "annie": {
@@ -1664,8 +1665,7 @@
       "irelia",
       "akshan_mid",
       "ahri",
-      "kassadin",
-      "zed_mid"
+      "kassadin"
     ],
     "ctBy": [
       "lux",
@@ -2094,14 +2094,14 @@
       "akali",
       "pantheon",
       "ekko",
-      "irelia"
+      "irelia",
+      "akali_mid"
     ],
     "ctBy": [
       "ziggs",
       "lux",
       "twisted_fate",
       "brand",
-      "morgana",
       "veigar",
       "galio",
       "ryze",
@@ -2116,7 +2116,6 @@
       "taliyah",
       "karma_mid",
       "morgana_jg",
-      "morgana_mid",
       "seraphine_mid",
       "zyra_mid",
       "corki_mid",
