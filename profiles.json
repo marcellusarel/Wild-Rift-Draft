@@ -2104,7 +2104,7 @@
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
     "toolFrequency": "Spamlanabilir",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Stun/Freeze/Sleep",
       "Soft CC/Slow"
@@ -2112,14 +2112,14 @@
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Var",
-    "ultDependency": "Aşırı Bağımlı",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
       "Backline Dalışı"
     ],
     "durabilityProfile": [
-      "Sustain"
+      "Kalkan",
+      "Kırılgan"
     ],
     "damageProfile": [
       "Burst"
@@ -2128,7 +2128,7 @@
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Düşük-orta",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "evelynn": {
     "hasForms": "Yok",
