@@ -1120,8 +1120,8 @@
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Stun/Freeze/Sleep"
@@ -1147,7 +1147,7 @@
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta-yüksek, R ile tekli hedefi anında bitirebilir",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "taliyah": {
     "hasForms": "Yok",
