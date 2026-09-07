@@ -1260,7 +1260,8 @@
       "teemo_mid",
       "viktor",
       "yasuo",
-      "irelia_mid"
+      "irelia_mid",
+      "yone"
     ]
   },
   "annie": {
@@ -2066,7 +2067,9 @@
       "pantheon",
       "akali",
       "vex",
-      "syndra"
+      "syndra",
+      "akali_mid",
+      "zed_mid"
     ],
     "ctBy": [
       "aurelionsol",
