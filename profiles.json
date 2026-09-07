@@ -3647,16 +3647,15 @@
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
+    "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Enerji",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
       "Backline Dalışı"
     ],
     "durabilityProfile": [
@@ -3669,7 +3668,7 @@
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Düşük",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "ambessa": {
     "hasForms": "Yok",
