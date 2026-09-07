@@ -3192,19 +3192,20 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Dash",
     "toolCondition": "Koşullu",
     "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Gerçek Hareketlilik",
-    "ccTypes": [],
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
-    "resourceType": "Enerji",
-    "hasReset": "Yok",
+    "resourceType": "Mana",
+    "hasReset": "Var",
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
       "Backline Dalışı"
     ],
     "durabilityProfile": [
@@ -3213,11 +3214,11 @@
     "damageProfile": [
       "Burst"
     ],
-    "powerCurve": "Erken Oyun",
+    "powerCurve": "Orta Oyun",
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Düşük, duvar aşarak objektif çukuruna sürpriz giriş yapar",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "taliyah_jg": {
     "hasForms": "Yok",
