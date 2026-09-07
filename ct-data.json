@@ -660,8 +660,7 @@
       "janna",
       "lulu",
       "senna",
-      "poppy_jg",
-      "diana_jg"
+      "poppy_jg"
     ],
     "ctBy": [
       "rakan",
@@ -1714,7 +1713,8 @@
       "talon",
       "akali_mid",
       "akshan_mid",
-      "diana"
+      "diana",
+      "diana_jg"
     ]
   },
   "ryze": {
@@ -2309,7 +2309,9 @@
       "xin_zhao",
       "olaf",
       "vi",
-      "pantheon"
+      "pantheon",
+      "olaf_jg",
+      "pantheon_mid"
     ],
     "ctBy": [
       "gragas",
@@ -2776,7 +2778,8 @@
       "ornn",
       "poppy_baron",
       "shen",
-      "shen_jg"
+      "shen_jg",
+      "diana_jg"
     ]
   },
   "pantheon_jg": {
