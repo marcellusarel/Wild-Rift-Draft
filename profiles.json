@@ -590,7 +590,6 @@
     "hasReset": "Var",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
       "Backline Dalışı"
     ],
     "durabilityProfile": [
@@ -603,7 +602,7 @@
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Düşük-orta, R ile objektif savaşına anında katılabilir",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "katarina": {
     "hasForms": "Yok",
