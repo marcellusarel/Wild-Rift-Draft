@@ -625,7 +625,8 @@
     "ct": [
       "senna",
       "janna",
-      "morgana"
+      "morgana",
+      "rell"
     ],
     "ctBy": [
       "nautilus",
@@ -879,10 +880,7 @@
       "kalista",
       "kogmaw",
       "lucian",
-      "nilah",
-      "yunara",
-      "jinx",
-      "xayah"
+      "nilah"
     ]
   },
   "missfortune": {
@@ -1157,9 +1155,7 @@
       "kogmaw",
       "missfortune",
       "draven",
-      "caitlyn",
-      "smolder",
-      "ashe"
+      "caitlyn"
     ],
     "ctBy": [
       "ziggs",
@@ -1169,7 +1165,6 @@
   },
   "yunara": {
     "ct": [
-      "caitlyn",
       "kogmaw",
       "nilah"
     ],
@@ -2123,8 +2118,8 @@
       "yasuo",
       "akali",
       "diana",
-      "zed_baron",
-      "akali_mid"
+      "akali_mid",
+      "zed_mid"
     ],
     "ctBy": [
       "annie",
@@ -2414,7 +2409,8 @@
       "drmundo",
       "gragas",
       "nunu",
-      "volibear"
+      "volibear",
+      "nautilus_jg"
     ]
   },
   "hecarim": {
@@ -2653,8 +2649,8 @@
       "rengar",
       "lee_sin",
       "jarvaniv",
-      "zed_mid",
-      "olaf_jg"
+      "olaf_jg",
+      "zed_mid"
     ],
     "ctBy": [
       "vi",
@@ -2674,7 +2670,8 @@
       "khazix",
       "amumu",
       "fiora",
-      "olaf_jg"
+      "olaf_jg",
+      "gwen_jg"
     ],
     "ctBy": [
       "graves",
@@ -2756,6 +2753,8 @@
       "nautilus_baron",
       "nautilus_jg",
       "ornn",
+      "poppy_baron",
+      "shen",
       "shen_jg"
     ]
   },
@@ -2786,7 +2785,8 @@
       "warwick",
       "master_yi",
       "nocturne",
-      "ambessa"
+      "ambessa",
+      "olaf_baron"
     ],
     "ctBy": [
       "lee_sin",
@@ -3588,7 +3588,8 @@
       "vayne",
       "darius",
       "aatrox",
-      "singed"
+      "singed",
+      "olaf_jg"
     ],
     "ctBy": [
       "sion"
@@ -3614,7 +3615,8 @@
       "shen",
       "urgot",
       "ornn",
-      "wukong"
+      "wukong",
+      "poppy_jg"
     ]
   },
   "ornn": {
@@ -3646,15 +3648,15 @@
       "rumble",
       "gnar",
       "aatrox",
-      "fiora"
+      "fiora",
+      "olaf_jg"
     ],
     "ctBy": [
       "jax",
       "riven",
       "urgot",
       "irelia",
-      "camille",
-      "fiora"
+      "camille"
     ]
   },
   "renekton": {
