@@ -1742,7 +1742,6 @@
       "talon",
       "akali_mid",
       "akshan_mid",
-      "diana",
       "diana_jg",
       "ekko",
       "kassadin",
@@ -2319,8 +2318,7 @@
       "akali",
       "fizz",
       "pantheon",
-      "akali_mid",
-      "pantheon_mid"
+      "akali_mid"
     ],
     "ctBy": [
       "zed",
