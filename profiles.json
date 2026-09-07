@@ -4649,35 +4649,35 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Blink",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Yarı-Global",
     "toolCondition": "Koşullu",
-    "toolFrequency": "Sınırlı",
-    "mobilityTag": "Patlamalı Hareketlilik",
+    "toolFrequency": "Tek Seferlik",
+    "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
-      "Root/Snare"
+      "Root/Snare",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "hasReset": "Var",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Zone Control",
-      "Pick/Execute",
-      "Wave Clear"
+      "Wave Clear",
+      "Split Push"
     ],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS",
       "Burst"
     ],
     "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Yüksek, R ile takımı objektif bölgesine anında taşır",
-    "globalTeleport": "Var",
+    "globalTeleport": "Yok",
     "duelist": "Yok"
   },
   "sett": {
