@@ -4081,7 +4081,7 @@
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Var",
-    "ultDependency": "Düşük Bağımlı",
+    "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
       "Backline Dalışı",
       "Frontline",
@@ -4089,7 +4089,6 @@
       "Split Push"
     ],
     "durabilityProfile": [
-      "Kalkan",
       "Kırılgan"
     ],
     "damageProfile": [
