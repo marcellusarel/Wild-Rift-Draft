@@ -2356,25 +2356,22 @@
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Var",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
       "Backline Dalışı",
-      "Frontline"
+      "Frontline",
+      "Wave Clear",
+      "Split Push"
     ],
-    "durabilityProfile": [
-      "Kalkan",
-      "Kırılgan"
-    ],
+    "durabilityProfile": [],
     "damageProfile": [
-      "Sürdürülebilir DPS",
-      "Burst"
+      "Sürdürülebilir DPS"
     ],
     "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "jarvaniv": {
     "hasForms": "Yok",
