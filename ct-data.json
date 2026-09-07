@@ -695,7 +695,8 @@
       "alistar",
       "leona",
       "pyke",
-      "pantheon"
+      "pantheon",
+      "irelia"
     ]
   },
   "smolder": {
@@ -2779,7 +2780,8 @@
       "camille",
       "graves",
       "aatrox_jg",
-      "akali_baron"
+      "akali_baron",
+      "irelia"
     ],
     "ctBy": [
       "vi",
@@ -3410,7 +3412,9 @@
       "renekton",
       "tryndamere",
       "akali",
-      "chogath"
+      "poppy_sup",
+      "akali_mid",
+      "wukong_jg"
     ],
     "ctBy": [
       "ambessa",
@@ -3422,9 +3426,10 @@
       "kennen",
       "aatrox",
       "teemo",
-      "graves",
       "nasus",
-      "gnar"
+      "gnar",
+      "olaf_jg",
+      "chogath"
     ]
   },
   "jax": {
