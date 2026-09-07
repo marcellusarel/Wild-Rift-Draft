@@ -5995,29 +5995,31 @@
     "mobilityTag": "Gerçek Hareketlilik",
     "ccTypes": [
       "Stun/Freeze/Sleep",
-      "Knockup/Knockback"
+      "Knockup/Knockback",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "hasReset": "Var",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Zone Control",
       "Wave Clear",
-      "Pick/Execute"
+      "Pick/Execute",
+      "Split Push"
     ],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
       "Sürdürülebilir DPS",
-      "Burst"
+      "Tank Eritici"
     ],
-    "powerCurve": "Orta Oyun",
+    "powerCurve": "Geç Oyun",
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Düşük-orta, split push ile dolaylı baskı",
-    "globalTeleport": "Var",
+    "globalTeleport": "Yok",
     "duelist": "Yok"
   },
   "mel_adc": {
