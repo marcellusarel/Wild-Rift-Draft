@@ -10,7 +10,8 @@
       "morgana",
       "thresh",
       "poppy_sup",
-      "gragas_sup"
+      "gragas_sup",
+      "milio"
     ],
     "ctBy": [
       "nami",
@@ -20,7 +21,8 @@
       "braum",
       "zyra",
       "senna",
-      "lux"
+      "lux",
+      "pyke"
     ]
   },
   "nautilus": {
@@ -31,7 +33,11 @@
       "braum",
       "leona",
       "alistar",
-      "zyra"
+      "zyra",
+      "zilean",
+      "rell",
+      "sett_sup",
+      "ornn_sup"
     ],
     "ctBy": [
       "seraphine",
@@ -39,7 +45,8 @@
       "lux",
       "rakan",
       "yuumi",
-      "senna"
+      "senna",
+      "singed_sup"
     ]
   },
   "leona": {
@@ -49,7 +56,13 @@
       "morgana",
       "janna",
       "thresh",
-      "gragas_sup"
+      "gragas_sup",
+      "braum",
+      "swain",
+      "shen_sup",
+      "sett_sup",
+      "ornn_sup",
+      "poppy_sup"
     ],
     "ctBy": [
       "blitzcrank",
@@ -58,7 +71,12 @@
       "senna",
       "yuumi",
       "zyra",
-      "maokai"
+      "maokai",
+      "nautilus",
+      "lulu",
+      "nami",
+      "seraphine",
+      "sona"
     ]
   },
   "lulu": {
@@ -69,12 +87,18 @@
       "leona",
       "brand",
       "senna",
-      "bard"
+      "bard",
+      "karma"
     ],
     "ctBy": [
       "lux",
       "alistar",
-      "janna"
+      "janna",
+      "braum",
+      "thresh",
+      "singed_sup",
+      "galio",
+      "gragas_sup"
     ]
   },
   "milio": {
@@ -100,7 +124,17 @@
       "sona",
       "morgana",
       "soraka",
-      "senna"
+      "senna",
+      "rakan",
+      "milio",
+      "janna",
+      "karma",
+      "zyra",
+      "zilean",
+      "yuumi",
+      "swain",
+      "shen_sup",
+      "galio"
     ],
     "ctBy": [
       "blitzcrank",
@@ -111,7 +145,9 @@
       "rell",
       "pyke",
       "brand",
-      "maokai"
+      "maokai",
+      "nami",
+      "ornn_sup"
     ]
   },
   "nami": {
@@ -120,7 +156,8 @@
       "blitzcrank",
       "braum",
       "alistar",
-      "leona"
+      "leona",
+      "rakan"
     ],
     "ctBy": [
       "janna",
@@ -131,7 +168,12 @@
       "zyra",
       "bard",
       "galio",
-      "karma"
+      "karma",
+      "morgana",
+      "seraphine",
+      "shen_sup",
+      "maokai",
+      "rell"
     ]
   },
   "thresh": {
@@ -141,14 +183,20 @@
       "alistar",
       "braum",
       "zyra",
-      "nami"
+      "nami",
+      "swain",
+      "ornn_sup"
     ],
     "ctBy": [
       "soraka",
       "blitzcrank",
       "sona",
       "yuumi",
-      "senna"
+      "senna",
+      "rakan",
+      "leona",
+      "karma",
+      "bard"
     ]
   },
   "blitzcrank": {
@@ -158,7 +206,13 @@
       "morgana",
       "leona",
       "rakan",
-      "zyra"
+      "zyra",
+      "thresh",
+      "zilean",
+      "shen_sup",
+      "galio",
+      "maokai",
+      "ornn_sup"
     ],
     "ctBy": [
       "sona",
@@ -169,7 +223,10 @@
       "janna",
       "lulu",
       "milio",
-      "lux"
+      "lux",
+      "karma",
+      "bard",
+      "yuumi"
     ]
   },
   "soraka": {
@@ -179,7 +236,11 @@
       "thresh",
       "lux",
       "nami",
-      "bard"
+      "bard",
+      "rakan",
+      "seraphine",
+      "sona",
+      "yuumi"
     ],
     "ctBy": [
       "braum",
@@ -187,7 +248,8 @@
       "janna",
       "brand",
       "pyke",
-      "morgana"
+      "morgana",
+      "poppy_sup"
     ]
   },
   "janna": {
@@ -199,7 +261,9 @@
       "lulu",
       "karma",
       "senna",
-      "lux"
+      "lux",
+      "soraka",
+      "seraphine"
     ],
     "ctBy": [
       "alistar",
@@ -208,7 +272,11 @@
       "rakan",
       "gragas",
       "nautilus",
-      "rell"
+      "rell",
+      "galio",
+      "sett_sup",
+      "gragas_sup",
+      "poppy_sup"
     ]
   },
   "morgana": {
@@ -218,7 +286,8 @@
       "soraka",
       "sona",
       "karma",
-      "zyra"
+      "zyra",
+      "seraphine"
     ],
     "ctBy": [
       "thresh",
@@ -226,7 +295,19 @@
       "lux",
       "braum",
       "nautilus",
-      "leona"
+      "leona",
+      "rakan",
+      "alistar",
+      "pyke",
+      "bard",
+      "shen_sup",
+      "singed_sup",
+      "galio",
+      "maokai",
+      "sett_sup",
+      "gragas_sup",
+      "ornn_sup",
+      "poppy_sup"
     ]
   },
   "alistar": {
@@ -237,7 +318,12 @@
       "morgana",
       "janna",
       "gragas",
-      "gragas_sup"
+      "gragas_sup",
+      "milio",
+      "soraka",
+      "bard",
+      "swain",
+      "poppy_sup"
     ],
     "ctBy": [
       "blitzcrank",
@@ -246,7 +332,11 @@
       "pantheon",
       "leona",
       "yuumi",
-      "rell"
+      "rell",
+      "nautilus",
+      "nami",
+      "karma",
+      "galio"
     ]
   },
   "seraphine": {
@@ -255,14 +345,18 @@
       "nami",
       "leona",
       "braum",
-      "pyke"
+      "pyke",
+      "nautilus",
+      "singed_sup"
     ],
     "ctBy": [
       "lux",
       "soraka",
       "janna",
       "morgana",
-      "galio"
+      "galio",
+      "shen_sup",
+      "maokai"
     ]
   },
   "sona": {
@@ -273,14 +367,22 @@
       "pantheon",
       "bard",
       "pyke",
-      "lux"
+      "lux",
+      "rakan",
+      "nautilus",
+      "singed_sup"
     ],
     "ctBy": [
       "karma",
       "janna",
       "soraka",
       "lulu",
-      "milio"
+      "milio",
+      "braum",
+      "morgana",
+      "alistar",
+      "shen_sup",
+      "maokai"
     ]
   },
   "lux": {
@@ -292,14 +394,19 @@
       "rakan",
       "blitzcrank",
       "leona",
-      "lulu"
+      "lulu",
+      "nautilus",
+      "morgana",
+      "seraphine",
+      "rell"
     ],
     "ctBy": [
       "brand",
       "janna",
       "sona",
       "soraka",
-      "swain"
+      "swain",
+      "milio"
     ]
   },
   "karma": {
@@ -309,7 +416,8 @@
       "bard",
       "alistar",
       "blitzcrank",
-      "thresh"
+      "thresh",
+      "sona"
     ],
     "ctBy": [
       "janna",
@@ -319,7 +427,9 @@
       "zyra",
       "galio",
       "lux",
-      "milio"
+      "milio",
+      "swain",
+      "poppy_sup"
     ]
   },
   "zyra": {
@@ -338,7 +448,9 @@
       "senna",
       "swain",
       "blitzcrank",
-      "nautilus"
+      "nautilus",
+      "milio",
+      "rell"
     ]
   },
   "pyke": {
@@ -418,7 +530,8 @@
     "ct": [
       "lux",
       "karma",
-      "zyra"
+      "zyra",
+      "bard"
     ],
     "ctBy": [
       "thresh",
@@ -460,7 +573,10 @@
       "morgana",
       "janna",
       "alistar",
-      "lulu"
+      "lulu",
+      "seraphine",
+      "bard",
+      "swain"
     ],
     "ctBy": [
       "rakan",
@@ -523,7 +639,8 @@
       "thresh",
       "nautilus",
       "pyke",
-      "rakan"
+      "rakan",
+      "zyra"
     ],
     "ctBy": [
       "galio",
@@ -531,7 +648,9 @@
       "lulu",
       "gragas_sup",
       "braum",
-      "bard"
+      "bard",
+      "milio",
+      "sett_sup"
     ]
   },
   "gragas_sup": {
@@ -581,7 +700,12 @@
       "caitlyn",
       "tristana",
       "draven",
-      "lucian"
+      "lucian",
+      "vayne",
+      "kogmaw",
+      "aurelionsol_adc",
+      "mel_adc",
+      "ziggs_adc"
     ],
     "ctBy": [
       "corki",
@@ -598,7 +722,9 @@
       "missfortune",
       "xayah",
       "caitlyn",
-      "kogmaw"
+      "kogmaw",
+      "vayne",
+      "twitch"
     ],
     "ctBy": [
       "jinx",
@@ -611,12 +737,22 @@
       "ashe",
       "draven",
       "lucian",
-      "tristana"
+      "tristana",
+      "ezreal",
+      "vayne",
+      "kogmaw",
+      "twitch",
+      "kalista",
+      "corki"
     ],
     "ctBy": [
       "jinx",
       "varus",
-      "missfortune"
+      "missfortune",
+      "caitlyn",
+      "xayah",
+      "nilah",
+      "zeri"
     ]
   },
   "ezreal": {
@@ -626,12 +762,23 @@
       "kaisa",
       "missfortune",
       "ashe",
-      "vayne"
+      "vayne",
+      "smolder",
+      "jinx",
+      "tristana",
+      "xayah",
+      "sivir",
+      "kalista",
+      "zeri"
     ],
     "ctBy": [
       "varus",
       "jhin",
-      "caitlyn"
+      "caitlyn",
+      "lucian",
+      "aurelionsol_adc",
+      "orianna_adc",
+      "ziggs_adc"
     ]
   },
   "vayne": {
@@ -639,7 +786,11 @@
       "draven",
       "ashe",
       "caitlyn",
-      "lucian"
+      "lucian",
+      "jinx",
+      "samira",
+      "twitch",
+      "zeri"
     ],
     "ctBy": [
       "ezreal",
@@ -649,7 +800,12 @@
       "xayah",
       "varus",
       "smolder",
-      "kogmaw"
+      "kogmaw",
+      "tristana",
+      "aurelionsol_adc",
+      "mel_adc",
+      "orianna_adc",
+      "ziggs_adc"
     ]
   },
   "lucian": {
@@ -666,7 +822,13 @@
       "tristana",
       "jhin",
       "smolder",
-      "zeri"
+      "zeri",
+      "xayah",
+      "kalista",
+      "aurelionsol_adc",
+      "mel_adc",
+      "orianna_adc",
+      "ziggs_adc"
     ]
   },
   "jinx": {
@@ -677,7 +839,17 @@
       "tristana",
       "caitlyn",
       "lucian",
-      "kogmaw"
+      "kogmaw",
+      "kaisa",
+      "varus",
+      "xayah",
+      "twitch",
+      "nilah",
+      "corki",
+      "aurelionsol_adc",
+      "mel_adc",
+      "orianna_adc",
+      "ziggs_adc"
     ],
     "ctBy": [
       "vayne",
@@ -708,7 +880,9 @@
       "kogmaw",
       "lucian",
       "nilah",
-      "yunara"
+      "yunara",
+      "jinx",
+      "xayah"
     ]
   },
   "missfortune": {
@@ -724,7 +898,9 @@
       "varus",
       "samira",
       "corki",
-      "caitlyn"
+      "caitlyn",
+      "kaisa",
+      "kogmaw"
     ]
   },
   "draven": {
@@ -744,7 +920,14 @@
       "tristana",
       "smolder",
       "jhin",
-      "kaisa"
+      "kaisa",
+      "lucian",
+      "missfortune",
+      "xayah",
+      "twitch",
+      "kalista",
+      "zeri",
+      "corki"
     ]
   },
   "tristana": {
@@ -753,21 +936,40 @@
       "vayne",
       "caitlyn",
       "lucian",
-      "kogmaw"
+      "kogmaw",
+      "nilah"
     ],
     "ctBy": [
       "jinx",
       "ashe",
       "ezreal",
       "jhin",
-      "xayah"
+      "xayah",
+      "smolder",
+      "varus",
+      "samira",
+      "twitch",
+      "zeri",
+      "aurelionsol_adc",
+      "mel_adc",
+      "orianna_adc",
+      "ziggs_adc"
     ]
   },
   "ashe": {
     "ct": [
       "caitlyn",
       "varus",
-      "draven"
+      "draven",
+      "jinx",
+      "tristana",
+      "xayah",
+      "sivir",
+      "samira",
+      "aurelionsol_adc",
+      "mel_adc",
+      "orianna_adc",
+      "ziggs_adc"
     ],
     "ctBy": [
       "kalista",
@@ -778,7 +980,8 @@
       "twitch",
       "jhin",
       "kogmaw",
-      "lucian"
+      "lucian",
+      "nilah"
     ]
   },
   "varus": {
@@ -788,11 +991,16 @@
       "vayne",
       "jhin",
       "ezreal",
-      "tristana"
+      "tristana",
+      "kaisa",
+      "sivir"
     ],
     "ctBy": [
       "jinx",
-      "ashe"
+      "ashe",
+      "draven",
+      "xayah",
+      "samira"
     ]
   },
   "xayah": {
@@ -804,7 +1012,9 @@
       "varus",
       "vayne",
       "kogmaw",
-      "yunara"
+      "yunara",
+      "tristana",
+      "sivir"
     ],
     "ctBy": [
       "ashe",
@@ -833,7 +1043,9 @@
       "jhin",
       "kalista",
       "lucian",
-      "yunara"
+      "yunara",
+      "jinx",
+      "sivir"
     ]
   },
   "sivir": {
@@ -860,14 +1072,17 @@
       "varus",
       "tristana",
       "kogmaw",
-      "missfortune"
+      "missfortune",
+      "nilah"
     ],
     "ctBy": [
       "vayne",
       "ezreal",
       "ashe",
       "twitch",
-      "draven"
+      "draven",
+      "sivir",
+      "kalista"
     ]
   },
   "twitch": {
@@ -876,7 +1091,8 @@
       "samira",
       "tristana",
       "caitlyn",
-      "draven"
+      "draven",
+      "nilah"
     ],
     "ctBy": [
       "kaisa",
@@ -899,7 +1115,8 @@
       "twitch",
       "jinx",
       "tristana",
-      "yunara"
+      "yunara",
+      "kalista"
     ]
   },
   "kalista": {
@@ -926,7 +1143,8 @@
       "kogmaw",
       "tristana",
       "jhin",
-      "draven"
+      "draven",
+      "kalista"
     ],
     "ctBy": [
       "ezreal",
@@ -939,7 +1157,9 @@
       "kogmaw",
       "missfortune",
       "draven",
-      "caitlyn"
+      "caitlyn",
+      "smolder",
+      "ashe"
     ],
     "ctBy": [
       "ziggs",
