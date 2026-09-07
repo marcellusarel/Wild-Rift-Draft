@@ -680,10 +680,11 @@
     "mobilityTool": "Blink",
     "toolCondition": "Koşulsuz",
     "toolFrequency": "Sınırlı",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Stun/Freeze/Sleep",
-      "Root/Snare"
+      "Root/Snare",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
@@ -691,9 +692,8 @@
     "hasReset": "Yok",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Engage",
-      "Pick/Execute",
-      "Zone Control"
+      "Zone Control",
+      "Disengage"
     ],
     "durabilityProfile": [
       "Kırılgan"
@@ -705,7 +705,7 @@
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta, R ile rakip takımı objektif çukurunda dondurabilir",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "lucian_mid": {
     "hasForms": "Yok",
