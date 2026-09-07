@@ -3515,23 +3515,25 @@
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
-    "resourceType": "Mana",
+    "resourceType": "Kaynaksız",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Backline Dalışı",
       "Pick/Execute",
-      "Frontline"
+      "Engage",
+      "Split Push"
     ],
     "durabilityProfile": [
-      "Kalkan"
+      "Kalkan",
+      "Kırılgan"
     ],
     "damageProfile": [
       "Burst",
       "Sürdürülebilir DPS"
     ],
     "powerCurve": "Orta Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Düşük-orta",
     "globalTeleport": "Yok",
     "duelist": "Var"
