@@ -1247,7 +1247,8 @@
       "ahri",
       "zyra_mid",
       "corki_mid",
-      "brand_mid"
+      "brand_mid",
+      "diana"
     ]
   },
   "annie": {
@@ -1290,7 +1291,6 @@
   "brand_mid": {
     "ct": [
       "syndra",
-      "lux",
       "fizz",
       "irelia",
       "zed",
@@ -1298,6 +1298,7 @@
       "akali",
       "diana",
       "talon",
+      "lux_mid",
       "zed_mid",
       "akali_mid"
     ],
@@ -1307,7 +1308,7 @@
       "corki",
       "teemo",
       "kayle",
-      "swain"
+      "swain_mid"
     ]
   },
   "corki_mid": {
@@ -1590,7 +1591,8 @@
       "twisted_fate",
       "kennen_mid",
       "brand",
-      "vex"
+      "vex",
+      "brand_mid"
     ]
   },
   "mel": {
@@ -1710,7 +1712,8 @@
       "galio",
       "talon",
       "akali_mid",
-      "akshan_mid"
+      "akshan_mid",
+      "diana"
     ]
   },
   "ryze": {
@@ -1768,7 +1771,8 @@
       "orianna",
       "akshan_mid",
       "fizz",
-      "zoe"
+      "zoe",
+      "brand_mid"
     ],
     "ctBy": [
       "galio",
@@ -2279,7 +2283,9 @@
       "ziggs",
       "akali",
       "fizz",
-      "pantheon"
+      "pantheon",
+      "akali_mid",
+      "pantheon_mid"
     ],
     "ctBy": [
       "zed",
@@ -2289,7 +2295,9 @@
       "seraphine",
       "aurelionsol",
       "twisted_fate",
-      "orianna"
+      "orianna",
+      "zed_mid",
+      "brand_mid"
     ]
   },
   "diana_jg": {
