@@ -665,15 +665,13 @@
       "janna",
       "lulu",
       "senna",
-      "poppy_jg",
-      "ekko_jg"
+      "poppy_jg"
     ],
     "ctBy": [
       "rakan",
       "alistar",
       "leona",
-      "rell",
-      "kennen"
+      "rell"
     ]
   },
   "ornn_sup": {
@@ -2005,8 +2003,8 @@
       "akali",
       "fizz",
       "yone",
-      "zed_mid",
-      "akali_mid"
+      "akali_mid",
+      "zed_mid"
     ],
     "ctBy": [
       "lissandra",
@@ -2406,8 +2404,7 @@
     "ctBy": [
       "rammus",
       "gragas",
-      "jarvaniv",
-      "gragas_sup"
+      "jarvaniv"
     ]
   },
   "evelynn": {
@@ -3572,8 +3569,7 @@
       "malphite",
       "irelia",
       "gragas",
-      "camille",
-      "gragas_sup"
+      "camille"
     ],
     "ctBy": [
       "jax",
