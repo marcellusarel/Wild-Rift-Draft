@@ -2214,7 +2214,8 @@
       "kindred",
       "lillia",
       "hecarim",
-      "ornn"
+      "ornn",
+      "irelia"
     ],
     "ctBy": [
       "drmundo_jg",
@@ -3126,7 +3127,6 @@
   "aatrox": {
     "ct": [
       "ambessa",
-      "irelia",
       "fiora",
       "jax",
       "tryndamere",
@@ -3412,9 +3412,7 @@
       "renekton",
       "tryndamere",
       "akali",
-      "poppy_sup",
-      "akali_mid",
-      "wukong_jg"
+      "chogath"
     ],
     "ctBy": [
       "ambessa",
@@ -3424,10 +3422,10 @@
       "drmundo",
       "garen",
       "kennen",
-      "aatrox",
       "teemo",
       "nasus",
       "gnar",
+      "aatrox_jg",
       "olaf_jg",
       "chogath"
     ]
