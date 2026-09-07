@@ -1474,7 +1474,7 @@
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Dash",
-    "toolCondition": "Koşulsuz",
+    "toolCondition": "Koşullu",
     "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Gerçek Hareketlilik",
     "ccTypes": [
@@ -1483,19 +1483,17 @@
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Kaynaksız",
-    "hasReset": "Var",
-    "ultDependency": "Aşırı Bağımlı",
+    "hasReset": "Yok",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Backline Dalışı",
-      "Pick/Execute",
       "Disengage",
-      "Split Push"
+      "Frontline"
     ],
     "durabilityProfile": [
-      "Kalkan"
+      "Kalkan",
+      "Kırılgan"
     ],
     "damageProfile": [
-      "Burst",
       "Sürdürülebilir DPS"
     ],
     "powerCurve": "Orta Oyun",
