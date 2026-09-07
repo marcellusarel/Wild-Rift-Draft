@@ -399,7 +399,8 @@
       "morgana",
       "seraphine",
       "rell",
-      "fizz"
+      "fizz",
+      "kassadin"
     ],
     "ctBy": [
       "brand",
@@ -1491,7 +1492,8 @@
       "akshan_mid",
       "jayce",
       "talon",
-      "lucian"
+      "zed_mid",
+      "pantheon_mid"
     ],
     "ctBy": [
       "katarina",
@@ -1507,7 +1509,8 @@
       "kennen_mid",
       "lissandra",
       "norra",
-      "taliyah"
+      "taliyah",
+      "lux"
     ]
   },
   "katarina": {
@@ -1730,7 +1733,8 @@
       "akshan_mid",
       "diana",
       "diana_jg",
-      "ekko"
+      "ekko",
+      "kassadin"
     ]
   },
   "ryze": {
