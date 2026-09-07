@@ -671,7 +671,8 @@
       "rakan",
       "alistar",
       "leona",
-      "rell"
+      "rell",
+      "zed_baron"
     ]
   },
   "ornn_sup": {
@@ -4124,10 +4125,10 @@
       "irelia",
       "pantheon",
       "garen",
-      "diana",
       "malphite",
       "gragas",
-      "renekton"
+      "renekton",
+      "gragas_sup"
     ],
     "ctBy": [
       "kennen",
