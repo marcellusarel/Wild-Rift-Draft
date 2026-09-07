@@ -1259,7 +1259,8 @@
       "diana",
       "fizz",
       "irelia_mid",
-      "syndra"
+      "syndra",
+      "teemo_mid"
     ]
   },
   "annie": {
@@ -1896,7 +1897,8 @@
       "yasuo",
       "annie",
       "brand",
-      "akali"
+      "akali",
+      "akali_mid"
     ],
     "ctBy": [
       "twisted_fate",
