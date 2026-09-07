@@ -1257,7 +1257,8 @@
       "brand_mid",
       "diana",
       "fizz",
-      "irelia_mid"
+      "irelia_mid",
+      "syndra"
     ]
   },
   "annie": {
@@ -1823,7 +1824,9 @@
       "irelia",
       "zed",
       "akali",
-      "kassadin"
+      "kassadin",
+      "akali_mid",
+      "zed_mid"
     ],
     "ctBy": [
       "annie",
@@ -1840,7 +1843,8 @@
       "brand",
       "heimerdinger",
       "jayce",
-      "mel"
+      "mel",
+      "brand_mid"
     ]
   },
   "taliyah": {
@@ -2099,7 +2103,8 @@
       "orianna",
       "akshan_mid",
       "brand_mid",
-      "jayce_mid"
+      "jayce_mid",
+      "syndra"
     ]
   },
   "ziggs": {
