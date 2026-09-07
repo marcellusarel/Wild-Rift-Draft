@@ -1246,7 +1246,6 @@
       "kennen"
     ],
     "ctBy": [
-      "irelia",
       "lux",
       "kayle",
       "jayce",
@@ -1257,12 +1256,11 @@
       "brand_mid",
       "diana",
       "fizz",
-      "irelia_mid",
       "syndra",
       "teemo_mid",
-      "teemo",
       "viktor",
-      "yasuo"
+      "galio_mid",
+      "irelia_mid"
     ]
   },
   "annie": {
@@ -1401,7 +1399,8 @@
       "akshan_mid",
       "pantheon_mid",
       "yasuo",
-      "zed_mid"
+      "zed_mid",
+      "akali_mid"
     ],
     "ctBy": [
       "irelia_mid",
@@ -3459,7 +3458,6 @@
       "renekton",
       "tryndamere",
       "akali",
-      "akali_mid",
       "wukong_jg",
       "poppy_sup"
     ],
@@ -3952,7 +3950,6 @@
       "kennen",
       "jayce",
       "fiora",
-      "akali_mid",
       "olaf_jg"
     ],
     "ctBy": [
