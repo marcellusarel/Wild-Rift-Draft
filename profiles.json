@@ -2716,7 +2716,7 @@
     "hasCleanseSkill": "Var",
     "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
-    "hasReset": "Yok",
+    "hasReset": "Var",
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Zone Control",
