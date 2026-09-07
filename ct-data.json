@@ -1290,6 +1290,7 @@
   "brand_mid": {
     "ct": [
       "syndra",
+      "lux",
       "fizz",
       "irelia",
       "zed",
@@ -1297,7 +1298,6 @@
       "akali",
       "diana",
       "talon",
-      "lux_mid",
       "zed_mid",
       "akali_mid"
     ],
@@ -1307,7 +1307,7 @@
       "corki",
       "teemo",
       "kayle",
-      "swain_mid"
+      "swain"
     ]
   },
   "corki_mid": {
@@ -1590,8 +1590,7 @@
       "twisted_fate",
       "kennen_mid",
       "brand",
-      "vex",
-      "brand_mid"
+      "vex"
     ]
   },
   "mel": {
@@ -1769,8 +1768,7 @@
       "orianna",
       "akshan_mid",
       "fizz",
-      "zoe",
-      "brand_mid"
+      "zoe"
     ],
     "ctBy": [
       "galio",
