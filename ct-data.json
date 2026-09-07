@@ -1293,8 +1293,7 @@
       "syndra",
       "orianna",
       "viktor",
-      "lux",
-      "zed_baron"
+      "lux"
     ],
     "ctBy": [
       "veigar",
@@ -1618,8 +1617,7 @@
       "irelia",
       "katarina",
       "talon",
-      "kassadin",
-      "zed_baron"
+      "kassadin"
     ],
     "ctBy": [
       "twisted_fate",
@@ -4135,10 +4133,7 @@
       "teemo",
       "vayne",
       "jayce",
-      "yasuo",
-      "lux_mid",
-      "zyra_mid",
-      "aurora"
+      "yasuo"
     ]
   }
 }
