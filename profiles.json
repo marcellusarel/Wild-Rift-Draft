@@ -6456,7 +6456,7 @@
     "hasForms": "Yok",
     "formAName": "",
     "formBName": "",
-    "moveSpeed": "Yavaş",
+    "moveSpeed": "Çok Yavaş",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
@@ -6466,7 +6466,7 @@
       "Knockup/Knockback",
       "Soft CC/Slow"
     ],
-    "hasCleanseSkill": "Var",
+    "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Yok",
