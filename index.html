@@ -3357,6 +3357,44 @@ function loadCustomCT(){
 function saveCustomCT(){
   try { localStorage.setItem("wrCustomCT", JSON.stringify(CUSTOM_CT)); } catch(e){}
 }
+// ─── SON DÜZENLEME DURUMU (Build / Profil / CT) ────────────────
+// Şampiyon detay ekranında "bunu yakın zamanda değiştirdim mi, GitHub'a gitti mi,
+// yoksa hata mı aldı" göstermek için kullanılır. Kalıcı olarak localStorage'a yazılır.
+let EDIT_STATUS = {}; // { champId: { build:{status,time}, profile:{...}, ct:{...} } }
+function loadEditStatus(){
+  try {
+    const raw = localStorage.getItem("wrEditStatus");
+    if(raw) EDIT_STATUS = JSON.parse(raw) || {};
+  } catch(e){ EDIT_STATUS = {}; }
+}
+function saveEditStatusStore(){
+  try { localStorage.setItem("wrEditStatus", JSON.stringify(EDIT_STATUS)); } catch(e){}
+}
+function markEditStatus(champId, kind, status){
+  // kind: 'build' | 'profile' | 'ct'   status: 'ok' | 'error'
+  if(!champId) return;
+  if(!EDIT_STATUS[champId]) EDIT_STATUS[champId] = {};
+  EDIT_STATUS[champId][kind] = { status, time: Date.now() };
+  saveEditStatusStore();
+}
+// Şampiyon detay ekranındaki Build/Profil/CT butonlarının yanına konacak rozet.
+// Öncelik: cihazda bekleyen (henüz GitHub'a gitmemiş) değişiklik varsa → kırmızı uyarı.
+// Yoksa, yakın zamanda başarıyla kaydedildiyse → yeşil "Güncel" işareti.
+// Hiç dokunulmadıysa → hiçbir şey gösterilmez.
+function editStatusBadge(champId, kind){
+  const pendingMap = { build: CUSTOM_BUILDS, profile: CUSTOM_CHAMP_PROFILES, ct: CUSTOM_CT };
+  if(pendingMap[kind][champId]){
+    return ' <span style="color:#ff5050;font-weight:800">⚠ Kaydedilmedi</span>';
+  }
+  const st = EDIT_STATUS[champId] && EDIT_STATUS[champId][kind];
+  if(st && st.status === 'ok'){
+    const mins = Math.round((Date.now() - st.time) / 60000);
+    const when = mins < 1 ? 'az önce' : mins < 60 ? `${mins} dk önce` : `${Math.round(mins/60)} sa önce`;
+    return ` <span style="color:#00ff88;font-weight:800">✓ Güncel</span><span style="color:#888;font-size:8px"> (${when})</span>`;
+  }
+  return '';
+}
+
 function getCT(id){
   const ov = CUSTOM_CT[id];
   if(ov && Array.isArray(ov.ct)) return ov.ct;
@@ -7288,6 +7326,7 @@ async function saveCTDraft(){
     touched.forEach(id => delete CUSTOM_CT[id]); // GitHub'daki taban artık güncel
     saveCustomCT();
   }
+  touched.forEach(id => markEditStatus(id, 'ct', ok ? 'ok' : 'error'));
   closeCTEditor();
 }
 function resetCTDraft(){
@@ -7440,6 +7479,7 @@ async function saveProfileDraft(){
   } else if(!GH_CONFIG.token){
     showBuilderToast("💾 " + t('toast_profile_saved'));
   }
+  markEditStatus(id, 'profile', ok ? 'ok' : 'error');
   closeProfileEditor();
 }
 function deleteProfileDraft(){
@@ -7510,6 +7550,7 @@ async function saveBuilderDraft(){
     delete CUSTOM_BUILDS[id];
     saveCustomBuilds();
   }
+  markEditStatus(id, 'build', ok ? 'ok' : 'error');
   closeBuilder();
 }
 function deleteBuilderBuild(){
@@ -7548,6 +7589,7 @@ async function saveAllPendingForChamp(id){
     );
     if(ok){ LIVE_BUILD_DB = data; delete CUSTOM_BUILDS[id]; saveCustomBuilds(); okCount++; }
     else failCount++;
+    markEditStatus(id, 'build', ok ? 'ok' : 'error');
   }
 
   if(hasProfile){
@@ -7560,6 +7602,7 @@ async function saveAllPendingForChamp(id){
     );
     if(ok){ LIVE_CHAMP_PROFILES = data; delete CUSTOM_CHAMP_PROFILES[id]; saveCustomProfiles(); okCount++; }
     else failCount++;
+    markEditStatus(id, 'profile', ok ? 'ok' : 'error');
   }
 
   if(hasAnyCT){
@@ -7581,6 +7624,7 @@ async function saveAllPendingForChamp(id){
       saveCustomCT();
       okCount++;
     } else failCount++;
+    pendingIds.forEach(cid => markEditStatus(cid, 'ct', ok ? 'ok' : 'error'));
   }
 
   if(failCount === 0){
@@ -8397,9 +8441,9 @@ function render() {
 
             return `<div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #ffcc0233;
               border-radius:12px;padding:14px">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
                 <div style="font-size:10px;font-weight:800;color:#ffcc02;flex:1">
-                  ⚔️ ${t('cd_suggested_build')}${CUSTOM_BUILDS[champDetailId] ? ' <span style="color:#00ff88">· '+t('cd_custom')+'</span>' : ''}
+                  ⚔️ ${t('cd_suggested_build')}${CUSTOM_BUILDS[champDetailId] ? ' <span style="color:#ff5050">· ⚠</span>' : ''}
                 </div>
                 ${BUILDER_ENABLED ? `<button onclick="openBuilder('${champDetailId}')" style="padding:4px 10px;
                   border-radius:7px;border:1px solid #ffcc0255;background:#ffcc0218;color:#ffcc02;
@@ -8414,6 +8458,12 @@ function render() {
                   border-radius:7px;border:1px solid #00ff8855;background:#00ff8822;color:#00ff88;
                   font-size:9px;font-weight:800;flex-shrink:0">💾 Tümünü Kaydet</button>` : ""}
               </div>
+              ${BUILDER_ENABLED ? `<div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:6px;
+                  padding:6px 8px;background:#00000030;border-radius:8px;font-size:9px">
+                  <span style="color:#ffcc02;font-weight:700">Build:</span>${editStatusBadge(champDetailId,'build') || ' <span style="color:#555">— değişmedi</span>'}
+                  <span style="color:#c060ff;font-weight:700">Profil:</span>${editStatusBadge(champDetailId,'profile') || ' <span style="color:#555">— değişmedi</span>'}
+                  <span style="color:#ff6060;font-weight:700">CT:</span>${editStatusBadge(champDetailId,'ct') || ' <span style="color:#555">— değişmedi</span>'}
+                </div>` : ""}
 
               <!-- RÜNLER -->
               <div style="margin-bottom:16px">
@@ -9845,6 +9895,7 @@ loadCustomBuilds();
 loadCustomProfiles();
 loadCustomCT();
 loadCustomTierList();
+loadEditStatus();
 updateBuilderFab();
 updateProfileFab();
 updateTierFab();
