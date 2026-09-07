@@ -1225,11 +1225,11 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Yok",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
-    "mobilityTag": "Gerçek Hantal",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Silence/Ground",
       "Soft CC/Slow"
@@ -1241,19 +1241,20 @@
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Zone Control",
+      "Backline Dalışı",
       "Wave Clear"
     ],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS"
+      "Burst"
     ],
     "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta, mantar tuzaklarıyla objektif çukurunu gizlice kilitleyebilir",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "twisted_fate": {
     "hasForms": "Yok",
