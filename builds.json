@@ -4706,19 +4706,19 @@
   "yone_jg": {
     "starter": "Gluttonous Greaves",
     "items": [
-      "Infinity Edge",
+      "Essence Reaver",
       "Death's Dance",
-      "Amaranth's Twinguard",
+      "Lord Dominik's Regards",
       "Guardian Angel"
     ],
     "boots": "Immortal Path",
     "enchant": "Blade of the Ruined King",
     "runes": [
-      "Conqueror",
-      "Battle Zeal",
-      "Cut Down",
-      "Legend- Alacrity",
-      "Sudden Impact"
+      "Grasp of the Undying",
+      "Unshakeable",
+      "Second Wind",
+      "Perseverance",
+      "Legend- Alacrity"
     ],
     "spells": [
       "Flash",
