@@ -216,7 +216,7 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
     "toolFrequency": "Sınırlı",
@@ -227,11 +227,10 @@
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "hasReset": "Var",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Poke",
-      "Pick/Execute",
       "Backline Dalışı",
       "Split Push",
       "Wave Clear"
@@ -240,14 +239,13 @@
       "Kırılgan"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS",
       "Burst"
     ],
     "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Düşük-orta, veri sınırlı",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "brand_mid": {
     "hasForms": "Yok",
