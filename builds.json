@@ -478,9 +478,9 @@
   "ekko": {
     "starter": "Boots of Mana",
     "items": [
-      "Stormsurge",
-      "Rabadon's Deathcap",
       "Infinity Orb",
+      "Rabadon's Deathcap",
+      "Stasis Enchant",
       "Void Staff"
     ],
     "boots": "Spellslinger's Shoes",
