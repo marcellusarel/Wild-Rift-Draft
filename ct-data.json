@@ -410,7 +410,8 @@
       "sona",
       "soraka",
       "swain",
-      "milio"
+      "milio",
+      "vex"
     ]
   },
   "karma": {
@@ -1978,7 +1979,8 @@
       "veigar",
       "annie",
       "galio",
-      "morgana"
+      "morgana",
+      "lux"
     ],
     "ctBy": [
       "yone",
@@ -1990,7 +1992,8 @@
       "akshan_mid",
       "aurora",
       "diana",
-      "fizz"
+      "fizz",
+      "zed_mid"
     ]
   },
   "viktor": {
