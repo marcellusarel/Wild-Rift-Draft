@@ -1711,7 +1711,8 @@
       "teemo",
       "orianna",
       "ahri",
-      "morgana_jg"
+      "morgana_jg",
+      "fizz_jg"
     ],
     "ctBy": [
       "katarina",
@@ -2405,12 +2406,14 @@
       "lee_sin",
       "olaf",
       "jarvaniv",
-      "xin_zhao"
+      "xin_zhao",
+      "olaf_jg"
     ],
     "ctBy": [
       "pantheon",
       "shyvana",
-      "irelia"
+      "irelia",
+      "pantheon_mid"
     ]
   },
   "graves": {
@@ -2793,7 +2796,8 @@
       "shen",
       "shen_jg",
       "diana_jg",
-      "ekko_jg"
+      "ekko_jg",
+      "fizz_jg"
     ]
   },
   "pantheon_jg": {
