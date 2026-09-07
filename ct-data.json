@@ -670,7 +670,8 @@
       "rakan",
       "alistar",
       "leona",
-      "rell"
+      "rell",
+      "kennen"
     ]
   },
   "ornn_sup": {
@@ -1241,7 +1242,8 @@
       "galio",
       "pantheon",
       "annie",
-      "pantheon_mid"
+      "pantheon_mid",
+      "kennen"
     ],
     "ctBy": [
       "irelia",
@@ -3540,7 +3542,8 @@
       "malphite",
       "irelia",
       "gragas",
-      "camille"
+      "camille",
+      "gragas_sup"
     ],
     "ctBy": [
       "jax",
@@ -3550,7 +3553,7 @@
       "kayle",
       "renekton",
       "riven",
-      "chogath"
+      "akali_mid"
     ]
   },
   "kennen_mid": {
