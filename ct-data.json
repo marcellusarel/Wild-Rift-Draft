@@ -3841,7 +3841,8 @@
       "teemo",
       "fiora",
       "garen",
-      "jax"
+      "jax",
+      "vladimir_baron"
     ]
   },
   "ryze_baron": {
@@ -4018,12 +4019,11 @@
       "fiora",
       "tryndamere",
       "irelia",
-      "drmundo",
-      "nasus"
+      "nasus",
+      "rumble"
     ],
     "ctBy": [
       "darius",
-      "jayce",
       "kennen",
       "malphite",
       "pantheon"
