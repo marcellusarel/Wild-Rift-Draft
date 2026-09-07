@@ -617,13 +617,11 @@
     "ccTypes": [],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
-    "resourceType": "Mana",
+    "resourceType": "Kaynaksız",
     "hasReset": "Var",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
-      "Backline Dalışı",
-      "Wave Clear"
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
       "Kırılgan"
@@ -635,7 +633,7 @@
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Düşük, R ile takım savaşını hızlı bitirip objektife geçebilir",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "kayle_mid": {
     "hasForms": "Yok",
