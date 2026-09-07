@@ -1246,7 +1246,8 @@
       "ekko",
       "ahri",
       "zyra_mid",
-      "corki_mid"
+      "corki_mid",
+      "brand_mid"
     ]
   },
   "annie": {
@@ -1289,7 +1290,6 @@
   "brand_mid": {
     "ct": [
       "syndra",
-      "lux",
       "fizz",
       "irelia",
       "zed",
@@ -1297,7 +1297,9 @@
       "akali",
       "diana",
       "talon",
-      "lux_mid"
+      "lux_mid",
+      "zed_mid",
+      "akali_mid"
     ],
     "ctBy": [
       "annie",
@@ -1305,7 +1307,6 @@
       "corki",
       "teemo",
       "kayle",
-      "swain",
       "swain_mid"
     ]
   },
@@ -2061,7 +2062,8 @@
       "zyra_mid",
       "corki_mid",
       "orianna",
-      "akshan_mid"
+      "akshan_mid",
+      "brand_mid"
     ]
   },
   "ziggs": {
