@@ -4081,19 +4081,19 @@
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Var",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
       "Backline Dalışı",
-      "Frontline"
+      "Frontline",
+      "Wave Clear",
+      "Split Push"
     ],
     "durabilityProfile": [
       "Kalkan",
       "Kırılgan"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS",
-      "Burst"
+      "Sürdürülebilir DPS"
     ],
     "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
