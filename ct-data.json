@@ -401,7 +401,8 @@
       "rell",
       "fizz",
       "kassadin",
-      "katarina"
+      "katarina",
+      "talon"
     ],
     "ctBy": [
       "brand",
@@ -1869,7 +1870,8 @@
       "pantheon",
       "akshan_mid",
       "diana",
-      "orianna"
+      "orianna",
+      "pantheon_mid"
     ],
     "ctBy": [
       "kassadin",
@@ -1878,7 +1880,9 @@
       "twisted_fate",
       "seraphine",
       "ekko",
-      "brand"
+      "brand",
+      "lux",
+      "brand_mid"
     ]
   },
   "teemo_mid": {
