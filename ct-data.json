@@ -1261,7 +1261,8 @@
       "syndra",
       "teemo_mid",
       "teemo",
-      "viktor"
+      "viktor",
+      "yasuo"
     ]
   },
   "annie": {
@@ -2039,7 +2040,8 @@
       "vex",
       "akali",
       "fizz",
-      "pantheon"
+      "pantheon",
+      "akali_mid"
     ],
     "ctBy": [
       "ahri",
