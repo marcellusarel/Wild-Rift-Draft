@@ -1764,11 +1764,11 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Dash",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "",
+    "toolCondition": "",
+    "toolFrequency": "",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Stun/Freeze/Sleep"
     ],
@@ -1779,14 +1779,13 @@
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
       "Engage",
-      "Zone Control"
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
-      "Burst",
-      "Sürdürülebilir DPS"
+      "Burst"
     ],
     "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
