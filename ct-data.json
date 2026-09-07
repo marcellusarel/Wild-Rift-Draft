@@ -660,7 +660,8 @@
       "janna",
       "lulu",
       "senna",
-      "poppy_jg"
+      "poppy_jg",
+      "ekko_jg"
     ],
     "ctBy": [
       "rakan",
@@ -2349,12 +2350,14 @@
       "xin_zhao",
       "khazix",
       "jax",
-      "lee_sin"
+      "lee_sin",
+      "olaf_jg"
     ],
     "ctBy": [
       "rammus",
       "gragas",
-      "jarvaniv"
+      "jarvaniv",
+      "gragas_sup"
     ]
   },
   "evelynn": {
@@ -2785,7 +2788,8 @@
       "poppy_baron",
       "shen",
       "shen_jg",
-      "diana_jg"
+      "diana_jg",
+      "ekko_jg"
     ]
   },
   "pantheon_jg": {
