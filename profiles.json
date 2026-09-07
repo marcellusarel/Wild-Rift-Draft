@@ -1197,14 +1197,15 @@
     "toolCondition": "Koşullu",
     "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Gerçek Hareketlilik",
-    "ccTypes": [],
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
-    "resourceType": "Enerji",
+    "resourceType": "Mana",
     "hasReset": "Yok",
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
       "Backline Dalışı"
     ],
     "durabilityProfile": [
@@ -1213,11 +1214,11 @@
     "damageProfile": [
       "Burst"
     ],
-    "powerCurve": "Erken Oyun",
+    "powerCurve": "Orta Oyun",
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Düşük",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "teemo_mid": {
     "hasForms": "Yok",
