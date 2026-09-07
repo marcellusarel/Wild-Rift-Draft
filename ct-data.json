@@ -400,7 +400,8 @@
       "seraphine",
       "rell",
       "fizz",
-      "kassadin"
+      "kassadin",
+      "katarina"
     ],
     "ctBy": [
       "brand",
@@ -1307,7 +1308,8 @@
       "lux_mid",
       "zed_mid",
       "akali_mid",
-      "ekko"
+      "ekko",
+      "katarina"
     ],
     "ctBy": [
       "annie",
@@ -1526,14 +1528,17 @@
       "annie",
       "jayce",
       "kassadin",
-      "vladimir"
+      "vladimir",
+      "zed_mid"
     ],
     "ctBy": [
       "veigar",
       "brand",
       "seraphine",
       "ahri",
-      "corki"
+      "corki",
+      "lux",
+      "brand_mid"
     ]
   },
   "kayle_mid": {
