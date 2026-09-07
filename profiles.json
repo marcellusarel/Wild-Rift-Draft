@@ -2905,36 +2905,34 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Leap",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Hook/Grapple",
     "toolCondition": "Koşullu",
     "toolFrequency": "Sınırlı",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Stun/Freeze/Sleep",
-      "Knockup/Knockback"
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Engage",
-      "Pick/Execute",
-      "Peel"
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
-      "Kalkan"
+      "Kırılgan"
     ],
     "damageProfile": [
       "Burst"
     ],
-    "powerCurve": "Erken Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Yüksek, R ile global olarak objektif savaşına anında iniş yapabilir",
     "globalTeleport": "Var",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "poppy_jg": {
     "hasForms": "Yok",
