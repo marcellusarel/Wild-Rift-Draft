@@ -1738,7 +1738,7 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Var",
+    "passiveSpeedBoost": "Yok",
     "mobilityTool": "Dash",
     "toolCondition": "Koşullu",
     "toolFrequency": "Sınırlı",
@@ -1763,7 +1763,7 @@
       "Burst"
     ],
     "powerCurve": "Geç Oyun",
-    "scalingType": "Tutarlı",
+    "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Hızlı ",
     "globalTeleport": "Yok",
     "duelist": "Yok"
