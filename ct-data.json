@@ -1251,7 +1251,8 @@
       "corki_mid",
       "brand_mid",
       "diana",
-      "fizz"
+      "fizz",
+      "irelia_mid"
     ]
   },
   "annie": {
@@ -1425,7 +1426,8 @@
       "akali",
       "fizz",
       "yasuo",
-      "vex"
+      "vex",
+      "akali_mid"
     ],
     "ctBy": [
       "jayce",
