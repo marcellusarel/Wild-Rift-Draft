@@ -76,7 +76,7 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Var",
+    "passiveSpeedBoost": "Yok",
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
     "toolFrequency": "Sınırlı",
@@ -91,6 +91,7 @@
     "hasReset": "Var",
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
+      "Pick/Execute",
       "Backline Dalışı"
     ],
     "durabilityProfile": [
