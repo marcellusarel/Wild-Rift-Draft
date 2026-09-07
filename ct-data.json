@@ -1707,7 +1707,8 @@
       "yasuo",
       "galio",
       "talon",
-      "akali_mid"
+      "akali_mid",
+      "akshan_mid"
     ]
   },
   "ryze": {
@@ -2057,7 +2058,8 @@
       "seraphine_mid",
       "zyra_mid",
       "corki_mid",
-      "orianna"
+      "orianna",
+      "akshan_mid"
     ]
   },
   "ziggs": {
@@ -2138,7 +2140,9 @@
       "irelia",
       "yasuo",
       "pantheon",
-      "veigar"
+      "veigar",
+      "zed_mid",
+      "pantheon_mid"
     ],
     "ctBy": [
       "ahri",
@@ -2147,7 +2151,8 @@
       "corki",
       "galio",
       "singed",
-      "vladimir"
+      "vladimir",
+      "akali_mid"
     ]
   },
   "singed_mid": {
@@ -2741,8 +2746,7 @@
       "jarvaniv",
       "camille",
       "graves",
-      "aatrox_jg",
-      "akali_baron"
+      "aatrox_jg"
     ],
     "ctBy": [
       "vi",
@@ -3120,8 +3124,7 @@
       "malphite",
       "darius",
       "vayne",
-      "camille",
-      "olaf_jg"
+      "camille"
     ]
   },
   "ambessa": {
