@@ -2036,7 +2036,8 @@
     "toolFrequency": "Sınırlı",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
-      "Knockup/Knockback"
+      "Knockup/Knockback",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
@@ -2045,11 +2046,11 @@
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
       "Engage",
-      "Pick/Execute",
       "Backline Dalışı"
     ],
     "durabilityProfile": [
-      "Kalkan"
+      "Kalkan",
+      "Kırılgan"
     ],
     "damageProfile": [
       "Burst"
@@ -2058,7 +2059,7 @@
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Orta",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "drmundo_jg": {
     "hasForms": "Yok",
