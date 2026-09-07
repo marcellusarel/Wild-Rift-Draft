@@ -4594,15 +4594,15 @@
   "yasuo_baron": {
     "starter": "Berserker's Greaves",
     "items": [
-      "Death's Dance",
-      "Mortal Reminder",
+      "Essence Reaver",
+      "Lord Dominik's Regards",
       "Infinity Edge",
       "Guardian Angel"
     ],
     "boots": "Gunmetal Greaves",
     "enchant": "Blade of the Ruined King",
     "runes": [
-      "Conqueror",
+      "Grasp of the Undying",
       "Courage of the Colossus",
       "Bone Plating",
       "Overgrowth",
