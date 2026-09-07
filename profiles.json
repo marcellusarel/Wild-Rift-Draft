@@ -1154,33 +1154,32 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Dash",
-    "toolCondition": "Koşullu",
-    "toolFrequency": "Sınırlı",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Yarı-Global",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Tek Seferlik",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback",
-      "Root/Snare"
+      "Soft CC/Slow",
+      "Stun/Freeze/Sleep"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Engage",
       "Zone Control",
       "Poke",
       "Wave Clear",
-      "Disengage"
+      "Split Push"
     ],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
-      "Burst",
-      "Sürdürülebilir DPS"
+      "Burst"
     ],
     "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
