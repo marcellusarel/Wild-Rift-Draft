@@ -2821,7 +2821,8 @@
       "ekko_jg",
       "fizz_jg",
       "irelia",
-      "irelia_jg"
+      "irelia_jg",
+      "pantheon_jg"
     ]
   },
   "pantheon_jg": {
@@ -2834,7 +2835,8 @@
       "jarvaniv",
       "drmundo",
       "vi",
-      "graves"
+      "graves",
+      "olaf_jg"
     ],
     "ctBy": [
       "master_yi",
