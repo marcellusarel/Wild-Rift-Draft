@@ -398,7 +398,8 @@
       "nautilus",
       "morgana",
       "seraphine",
-      "rell"
+      "rell",
+      "fizz"
     ],
     "ctBy": [
       "brand",
@@ -1249,7 +1250,8 @@
       "zyra_mid",
       "corki_mid",
       "brand_mid",
-      "diana"
+      "diana",
+      "fizz"
     ]
   },
   "annie": {
@@ -1366,14 +1368,16 @@
       "akali",
       "galio",
       "morgana",
-      "vladimir"
+      "vladimir",
+      "akali_mid"
     ],
     "ctBy": [
       "yasuo",
       "ahri",
       "twisted_fate",
       "corki",
-      "velkoz"
+      "velkoz",
+      "lux"
     ]
   },
   "galio_mid": {
