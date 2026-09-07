@@ -1548,10 +1548,11 @@
       "ryze",
       "pantheon",
       "irelia",
-      "lucian",
       "katarina",
       "akshan_mid",
-      "jayce"
+      "jayce",
+      "pantheon_mid",
+      "orianna"
     ],
     "ctBy": [
       "aurelionsol",
@@ -1701,7 +1702,8 @@
       "ryze",
       "vladimir",
       "swain",
-      "ahri"
+      "ahri",
+      "kayle_mid"
     ]
   },
   "orianna_adc": {
@@ -1739,7 +1741,8 @@
       "diana",
       "diana_jg",
       "ekko",
-      "kassadin"
+      "kassadin",
+      "kayle_mid"
     ]
   },
   "ryze": {
