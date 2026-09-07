@@ -1262,20 +1262,20 @@
     "formBName": "",
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Yok",
+    "mobilityTool": "Yarı-Global",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
-    "mobilityTag": "Gerçek Hantal",
+    "toolFrequency": "Tek Seferlik",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
-      "Stun/Freeze/Sleep"
+      "Stun/Freeze/Sleep",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
       "Wave Clear",
       "Zone Control",
       "Split Push"
@@ -1284,7 +1284,6 @@
       "Kırılgan"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS",
       "Burst"
     ],
     "powerCurve": "Orta Oyun",
