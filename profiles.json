@@ -3378,7 +3378,7 @@
     "passiveSpeedBoost": "Var",
     "mobilityTool": "Leap",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
+    "toolFrequency": "Tek Seferlik",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Stun/Freeze/Sleep",
@@ -3388,22 +3388,20 @@
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Engage",
-      "Frontline",
-      "Pick/Execute"
+      "Frontline"
     ],
     "durabilityProfile": [
       "Doğal Tank",
       "Sustain"
     ],
     "damageProfile": [
-      "Tank Eritici",
-      "Burst"
+      "Tank Eritici"
     ],
     "powerCurve": "Orta Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Orta",
     "globalTeleport": "Yok",
     "duelist": "Var"
