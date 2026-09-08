@@ -2497,7 +2497,8 @@
       "nautilus_jg",
       "drmundo_jg",
       "amumu",
-      "skarner"
+      "skarner",
+      "volibear_jg"
     ]
   },
   "hecarim": {
@@ -2868,7 +2869,8 @@
       "rengar",
       "riven_jg",
       "skarner",
-      "urgot_jg"
+      "urgot_jg",
+      "volibear_jg"
     ]
   },
   "pantheon_jg": {
@@ -3134,7 +3136,9 @@
       "evelynn",
       "kindred",
       "fiora",
-      "olaf"
+      "olaf",
+      "olaf_jg",
+      "gwen_jg"
     ],
     "ctBy": [
       "diana_jg",
