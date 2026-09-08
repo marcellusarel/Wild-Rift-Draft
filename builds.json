@@ -926,18 +926,18 @@
   "jax_jg": {
     "starter": "Plated Steelcaps",
     "items": [
-      "Sundered Sky",
+      "Dusk and Dawn",
       "Riftmaker",
-      "Oceanid's Trident",
-      "Amaranth's Twinguard"
+      "Stasis Enchant",
+      "Guardian Angel"
     ],
     "boots": "Armored Advance",
     "enchant": "Trinity Force",
     "runes": [
       "Conqueror",
-      "Triumph",
-      "Last Stand",
-      "Legend- Alacrity",
+      "Unshakeable",
+      "Bone Plating",
+      "Perseverance",
       "Sudden Impact"
     ],
     "spells": [
