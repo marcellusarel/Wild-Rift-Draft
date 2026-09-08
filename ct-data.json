@@ -1735,9 +1735,7 @@
       "orianna",
       "ahri",
       "morgana_jg",
-      "fizz_jg",
-      "jarvaniv",
-      "nidalee"
+      "fizz_jg"
     ],
     "ctBy": [
       "katarina",
@@ -1753,12 +1751,8 @@
       "ekko",
       "kassadin",
       "kayle_mid",
-      "zed_jg",
-      "camille_jg",
-      "fiddlesticks",
-      "graves",
-      "khazix",
-      "kindred"
+      "kindred",
+      "zed_baron"
     ]
   },
   "ryze": {
@@ -2336,8 +2330,7 @@
       "lee_sin",
       "viego",
       "nidalee",
-      "pantheon",
-      "pantheon_mid"
+      "pantheon"
     ],
     "ctBy": [
       "master_yi",
@@ -2451,7 +2444,6 @@
       "pantheon",
       "diana_jg",
       "aatrox_jg",
-      "pantheon_mid",
       "lee_sin",
       "olaf_jg"
     ],
@@ -2484,8 +2476,7 @@
       "evelynn",
       "pantheon",
       "rammus",
-      "aatrox_jg",
-      "pantheon_mid"
+      "aatrox_jg"
     ],
     "ctBy": [
       "olaf",
@@ -2575,7 +2566,6 @@
       "nunu",
       "pantheon",
       "olaf_jg",
-      "pantheon_mid",
       "riven_jg",
       "shyvana",
       "xin_zhao",
@@ -2627,8 +2617,7 @@
       "xin_zhao",
       "olaf",
       "camille",
-      "lee_sin",
-      "pantheon_mid"
+      "lee_sin"
     ],
     "ctBy": [
       "amumu",
@@ -2807,8 +2796,7 @@
     "ctBy": [
       "amumu",
       "rammus",
-      "pantheon",
-      "pantheon_mid"
+      "pantheon"
     ]
   },
   "nocturne": {
@@ -3201,8 +3189,7 @@
       "pantheon",
       "rammus",
       "master_yi",
-      "kindred",
-      "pantheon_mid"
+      "kindred"
     ],
     "ctBy": [
       "morgana",
@@ -4160,7 +4147,8 @@
       "garen",
       "malphite",
       "gragas",
-      "renekton"
+      "renekton",
+      "pantheon_mid"
     ],
     "ctBy": [
       "kennen",
