@@ -385,7 +385,6 @@
   },
   "lux": {
     "ct": [
-      "zed_mid",
       "pyke",
       "nami",
       "karma",
@@ -397,28 +396,14 @@
       "morgana",
       "seraphine",
       "rell",
-      "ahri",
-      "aurelionsol",
-      "akali_mid",
-      "corki_mid",
-      "ekko",
-      "jayce_mid",
-      "karma_mid",
-      "kayle_mid",
-      "lucian_mid",
-      "morgana_mid",
-      "diana"
+      "lucian_mid"
     ],
     "ctBy": [
-      "brand_mid",
       "janna",
       "sona",
       "soraka",
       "swain",
-      "milio",
-      "annie",
-      "aurora",
-      "lissandra"
+      "milio"
     ]
   },
   "karma": {
@@ -1249,7 +1234,6 @@
     ],
     "ctBy": [
       "twisted_fate",
-      "lux",
       "ziggs",
       "zed_mid",
       "galio",
@@ -1279,7 +1263,6 @@
     ],
     "ctBy": [
       "annie",
-      "lux",
       "orianna",
       "mel"
     ]
@@ -1311,7 +1294,6 @@
       "kennen_mid"
     ],
     "ctBy": [
-      "lux",
       "ekko",
       "ahri",
       "zyra_mid",
@@ -1336,7 +1318,6 @@
       "lissandra",
       "viktor",
       "fizz",
-      "lux",
       "aurelionsol",
       "brand_mid",
       "irelia_mid",
@@ -1368,7 +1349,6 @@
       "syndra",
       "orianna",
       "viktor",
-      "lux",
       "irelia_mid"
     ],
     "ctBy": [
@@ -1390,8 +1370,7 @@
       "lux_mid",
       "ekko",
       "katarina",
-      "veigar",
-      "lux"
+      "veigar"
     ],
     "ctBy": [
       "annie",
@@ -1413,7 +1392,6 @@
       "orianna"
     ],
     "ctBy": [
-      "lux",
       "galio",
       "diana"
     ]
@@ -1440,7 +1418,6 @@
       "brand_mid",
       "veigar",
       "ziggs",
-      "lux",
       "zed_mid",
       "syndra",
       "taliyah"
@@ -1567,7 +1544,6 @@
     ],
     "ctBy": [
       "katarina",
-      "lux",
       "aurelionsol",
       "veigar",
       "kassadin",
@@ -1583,7 +1559,6 @@
     ],
     "ctBy": [
       "annie",
-      "lux",
       "akali_mid",
       "ahri",
       "veigar"
@@ -1663,7 +1638,6 @@
     ],
     "ctBy": [
       "aurelionsol",
-      "lux",
       "veigar"
     ]
   },
@@ -1671,7 +1645,6 @@
     "ct": [
       "kassadin",
       "galio",
-      "lux",
       "ziggs",
       "akshan_mid",
       "orianna",
@@ -1762,7 +1735,6 @@
       "kassadin"
     ],
     "ctBy": [
-      "lux",
       "twisted_fate",
       "galio",
       "veigar",
@@ -2262,7 +2234,6 @@
     ],
     "ctBy": [
       "ziggs",
-      "lux",
       "twisted_fate",
       "brand_mid",
       "veigar",
@@ -2563,7 +2534,6 @@
     "ctBy": [
       "zed_mid",
       "katarina",
-      "lux",
       "brand_mid",
       "seraphine",
       "aurelionsol",
