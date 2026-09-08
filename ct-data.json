@@ -284,17 +284,7 @@
       "sona",
       "karma",
       "zyra",
-      "seraphine",
-      "ahri",
-      "corki_mid",
-      "kayle_mid",
-      "orianna",
-      "seraphine_mid",
-      "ziggs",
-      "master_yi",
-      "nocturne",
-      "rengar",
-      "zed_jg"
+      "seraphine"
     ],
     "ctBy": [
       "thresh",
@@ -306,7 +296,6 @@
       "rakan",
       "alistar",
       "pyke",
-      "bard",
       "shen_sup",
       "singed_sup",
       "galio",
@@ -314,15 +303,7 @@
       "sett_sup",
       "gragas_sup",
       "ornn_sup",
-      "poppy_sup",
-      "annie",
-      "fizz",
-      "lissandra",
-      "twisted_fate",
-      "vex",
-      "zoe",
-      "nautilus_jg",
-      "nunu"
+      "poppy_sup"
     ]
   },
   "alistar": {
@@ -516,7 +497,6 @@
       "zilean",
       "thresh",
       "blitzcrank",
-      "morgana",
       "pyke"
     ],
     "ctBy": [
@@ -1296,7 +1276,6 @@
       "ziggs",
       "zed_mid",
       "galio",
-      "morgana",
       "corki_mid",
       "galio_mid",
       "morgana_mid",
@@ -1387,7 +1366,6 @@
       "lissandra",
       "viktor",
       "fizz",
-      "morgana",
       "lux",
       "irelia",
       "aurelionsol",
@@ -1475,7 +1453,6 @@
       "lux",
       "galio",
       "kayle",
-      "morgana",
       "diana"
     ]
   },
@@ -1514,7 +1491,6 @@
       "vex",
       "akali_mid",
       "galio",
-      "morgana",
       "vladimir",
       "galio_mid"
     ],
@@ -1738,13 +1714,11 @@
     "ctBy": [
       "aurelionsol",
       "lux",
-      "veigar",
-      "morgana"
+      "veigar"
     ]
   },
   "lissandra": {
     "ct": [
-      "morgana",
       "kassadin",
       "galio",
       "lux",
@@ -1885,7 +1859,6 @@
     "ctBy": [
       "annie",
       "veigar",
-      "morgana",
       "twisted_fate",
       "corki",
       "ryze",
@@ -1991,7 +1964,6 @@
     "ctBy": [
       "annie",
       "veigar",
-      "morgana",
       "orianna",
       "kennen_mid"
     ]
@@ -2129,7 +2101,6 @@
   "twisted_fate": {
     "ct": [
       "syndra",
-      "morgana",
       "ahri",
       "yasuo",
       "fizz",
@@ -2217,7 +2188,6 @@
       "veigar",
       "annie",
       "galio",
-      "morgana",
       "galio_mid",
       "lux_mid",
       "morgana_mid",
@@ -2422,7 +2392,6 @@
       "diana",
       "orianna",
       "lux",
-      "morgana",
       "veigar",
       "kennen_mid",
       "vladimir",
@@ -2449,7 +2418,6 @@
   },
   "zoe": {
     "ct": [
-      "morgana",
       "fizz",
       "irelia",
       "zed_mid",
@@ -3163,7 +3131,6 @@
       "khazix",
       "lillia",
       "maokai",
-      "morgana",
       "fizz_jg",
       "gwen_jg",
       "maokai_jg",
@@ -3218,7 +3185,6 @@
       "master_yi",
       "xin_zhao",
       "shyvana",
-      "morgana",
       "olaf_jg",
       "khazix",
       "amumu",
@@ -3261,7 +3227,6 @@
       "gragas_jg",
       "gwen",
       "lee_sin",
-      "morgana",
       "hecarim",
       "olaf_jg",
       "gwen_jg",
@@ -3273,7 +3238,6 @@
     "ct": [
       "lillia",
       "evelynn",
-      "morgana",
       "lee_sin",
       "xin_zhao",
       "vi",
@@ -3451,7 +3415,6 @@
       "evelynn",
       "gragas_jg",
       "jarvaniv",
-      "morgana",
       "talon",
       "nidalee",
       "hecarim",
@@ -3734,7 +3697,6 @@
       "kindred"
     ],
     "ctBy": [
-      "morgana",
       "kayn",
       "gragas_jg",
       "evelynn",
