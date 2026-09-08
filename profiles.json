@@ -2769,21 +2769,20 @@
     "formBName": "",
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Var",
-    "mobilityTool": "Dash",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "mobilityTool": "Yarı-Global",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Tek Seferlik",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Silence/Ground",
       "Soft CC/Slow"
     ],
-    "hasCleanseSkill": "Yok",
-    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "hasCleanseSkill": "Var",
+    "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Yok",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
       "Backline Dalışı"
     ],
     "durabilityProfile": [
@@ -2793,10 +2792,10 @@
       "Burst"
     ],
     "powerCurve": "Orta Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Yüksek, R ile global olarak herhangi bir objektif savaşına dalabilir",
-    "globalTeleport": "Var",
-    "duelist": "Var"
+    "globalTeleport": "Yok",
+    "duelist": "Yok"
   },
   "nunu": {
     "hasForms": "Yok",
