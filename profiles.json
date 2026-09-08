@@ -1860,18 +1860,18 @@
     "formBName": "",
     "moveSpeed": "Yavaş",
     "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Dash",
+    "mobilityTool": "Hook/Grapple",
     "toolCondition": "Koşullu",
     "toolFrequency": "Sınırlı",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Stun/Freeze/Sleep",
-      "Root/Snare"
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Yok",
+    "hasReset": "Var",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
       "Engage",
@@ -1880,10 +1880,8 @@
     "durabilityProfile": [
       "Doğal Tank"
     ],
-    "damageProfile": [
-      "Anti-Dive"
-    ],
-    "powerCurve": "Erken Oyun",
+    "damageProfile": [],
+    "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Yüksek, R ile büyük savaşları tek başına başlatabilir",
     "globalTeleport": "Yok",
