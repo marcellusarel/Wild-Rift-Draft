@@ -3801,26 +3801,30 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
     "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Gerçek Hareketlilik",
-    "ccTypes": [],
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
     "hasCleanseSkill": "Var",
     "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
-    "hasReset": "Yok",
+    "hasReset": "Var",
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Split Push",
-      "Pick/Execute",
       "Backline Dalışı"
     ],
-    "durabilityProfile": [],
+    "durabilityProfile": [
+      "Kırılgan"
+    ],
     "damageProfile": [
       "Tank Eritici",
-      "Burst"
+      "Burst",
+      "Sürdürülebilir DPS"
     ],
     "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
