@@ -36,8 +36,7 @@
       "zilean",
       "rell",
       "sett_sup",
-      "ornn_sup",
-      "ornn"
+      "ornn_sup"
     ],
     "ctBy": [
       "seraphine",
@@ -3818,6 +3817,10 @@
       "akali_baron",
       "riven",
       "tryndamere",
+      "lillia",
+      "master_yi",
+      "nocturne",
+      "yone_jg",
       "ambessa",
       "yasuo_baron",
       "yone_baron"
@@ -3830,6 +3833,7 @@
       "malphite",
       "ornn",
       "volibear",
+      "rammus",
       "garen",
       "ksante",
       "nasus",
@@ -4210,7 +4214,6 @@
     ],
     "ctBy": [
       "malphite",
-      "nautilus",
       "rumble",
       "jayce"
     ]
