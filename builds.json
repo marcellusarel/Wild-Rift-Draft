@@ -56,15 +56,15 @@
     "tier": "A"
   },
   "lee_sin": {
-    "starter": "Guardian Angel",
+    "starter": "Gluttonous Greaves",
     "items": [
-      "Eclipse",
-      "Black Cleaver",
-      "Sundered Sky",
-      "Death's Dance"
+      "Trinity Force",
+      "Serylda's Grudge",
+      "Spear of Shojin",
+      "Guardian Angel"
     ],
-    "boots": "Gluttonous Greaves",
-    "enchant": "Immortal Path",
+    "boots": "Immortal Path",
+    "enchant": "Serpent's Fang",
     "runes": [
       "Conqueror",
       "Unshakeable",
