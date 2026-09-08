@@ -3909,34 +3909,34 @@
     "formAName": "Mini Gnar",
     "formBName": "Mega Gnar",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Leap",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "toolFrequency": "Sınırlı",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
-      "Knockup/Knockback",
-      "Soft CC/Slow"
+      "Soft CC/Slow",
+      "Stun/Freeze/Sleep",
+      "Knockup/Knockback"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Kaynaksız",
-    "hasReset": "Yok",
+    "hasReset": "Var",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
       "Engage",
       "Frontline",
-      "Poke",
       "Split Push",
-      "Disengage"
+      "Disengage",
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
-      "Kırılgan",
-      "Doğal Tank"
+      "Kırılgan"
     ],
     "damageProfile": [
-      "Burst",
-      "Tank Eritici"
+      "Tank Eritici",
+      "Anti-Dive"
     ],
     "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
