@@ -2389,7 +2389,6 @@
     ],
     "ctBy": [
       "graves",
-      "wukong",
       "rammus",
       "warwick",
       "viego",
@@ -2431,7 +2430,7 @@
     ],
     "ctBy": [
       "jax",
-      "wukong",
+      "volibear",
       "drmundo_jg"
     ]
   },
@@ -2681,7 +2680,6 @@
       "khazix",
       "lee_sin",
       "olaf_jg",
-      "wukong",
       "graves",
       "riven_jg",
       "tryndamere_jg",
@@ -2711,7 +2709,6 @@
     ],
     "ctBy": [
       "olaf_jg",
-      "wukong",
       "nunu",
       "pantheon_jg",
       "shyvana",
@@ -2737,7 +2734,6 @@
       "maokai_jg"
     ],
     "ctBy": [
-      "wukong",
       "master_yi",
       "xin_zhao"
     ]
@@ -2868,6 +2864,7 @@
       "yone_jg"
     ],
     "ctBy": [
+      "volibear",
       "rammus",
       "amumu",
       "nunu",
@@ -2877,7 +2874,6 @@
       "gragas_jg",
       "kindred",
       "lee_sin",
-      "wukong",
       "aatrox_jg",
       "drmundo_jg",
       "ekko_jg",
@@ -2893,7 +2889,6 @@
       "rammus",
       "viego",
       "lee_sin",
-      "wukong",
       "gragas_jg",
       "warwick",
       "camille_jg",
@@ -3087,7 +3082,6 @@
     "ct": [
       "rammus",
       "amumu",
-      "wukong",
       "olaf_jg",
       "jarvaniv",
       "vi",
@@ -3282,7 +3276,6 @@
   "taliyah_jg": {
     "ct": [
       "rengar",
-      "wukong",
       "zed_jg",
       "hecarim",
       "rammus"
@@ -3537,7 +3530,7 @@
       "poppy_baron",
       "chogath",
       "yasuo_baron",
-      "volibear"
+      "wukong"
     ]
   },
   "camille": {
@@ -4582,12 +4575,8 @@
       "renekton",
       "shen",
       "gragas_baron",
-      "amumu",
-      "ambessa_jg",
-      "jarvaniv",
-      "jax_jg",
-      "lillia",
-      "yasuo_baron"
+      "yasuo_baron",
+      "ambessa"
     ],
     "ctBy": [
       "fiora",
@@ -4599,10 +4588,6 @@
       "urgot",
       "teemo",
       "nasus",
-      "irelia_jg",
-      "master_yi",
-      "pantheon_jg",
-      "taliyah_jg",
       "riven",
       "yone_baron",
       "irelia"
