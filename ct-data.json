@@ -3448,7 +3448,8 @@
       "gragas",
       "tryndamere",
       "yasuo_baron",
-      "riven"
+      "riven",
+      "malphite"
     ]
   },
   "gnar": {
@@ -3674,7 +3675,9 @@
       "gragas",
       "nasus",
       "renekton",
-      "jax"
+      "jax",
+      "olaf_baron",
+      "garen"
     ],
     "ctBy": [
       "camille",
@@ -3683,13 +3686,13 @@
       "fiora",
       "graves",
       "wukong",
-      "yasuo",
       "pantheon",
-      "yone",
       "gnar",
       "irelia",
       "jayce",
-      "chogath"
+      "chogath",
+      "yasuo_baron",
+      "yone_baron"
     ]
   },
   "mordekaiser": {
