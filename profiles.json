@@ -2142,12 +2142,13 @@
     "formBName": "",
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Stealth",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
-    "mobilityTag": "Yanıltıcı Hareketlilik",
+    "mobilityTool": "Blink",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Tek Seferlik",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
-      "Stun/Freeze/Sleep"
+      "Silence/Ground",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
@@ -2156,18 +2157,16 @@
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
       "Engage",
-      "Pick/Execute",
-      "Zone Control"
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
-      "Burst",
-      "Sürdürülebilir DPS"
+      "Burst"
     ],
-    "powerCurve": "Orta Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "powerCurve": "Geç Oyun",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Yüksek, R ile korkuluk baskını objektif çukurunda sürpriz avantaj sağlar",
     "globalTeleport": "Yok",
     "duelist": "Yok"
