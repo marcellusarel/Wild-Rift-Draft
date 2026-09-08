@@ -1396,10 +1396,7 @@
       "irelia_mid",
       "kassadin",
       "singed_mid",
-      "amumu",
-      "lillia",
-      "talon_jg",
-      "yone_jg"
+      "yone"
     ],
     "ctBy": [
       "twisted_fate",
@@ -2171,7 +2168,8 @@
       "velkoz",
       "zoe",
       "mel",
-      "heimerdinger"
+      "heimerdinger",
+      "ekko"
     ]
   },
   "zed_mid": {
@@ -2405,7 +2403,6 @@
       "viego",
       "tryndamere",
       "pantheon_jg",
-      "ekko",
       "gragas_jg",
       "jarvaniv",
       "ekko_jg",
@@ -2894,7 +2891,6 @@
       "nunu",
       "shyvana",
       "olaf_jg",
-      "ekko",
       "fiora",
       "gragas_jg",
       "gwen",
@@ -3311,7 +3307,6 @@
       "skarner"
     ],
     "ctBy": [
-      "ekko",
       "fiddlesticks",
       "khazix"
     ]
@@ -3481,7 +3476,6 @@
     ],
     "ctBy": [
       "gwen",
-      "ekko",
       "amumu",
       "lillia"
     ]
