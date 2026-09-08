@@ -2859,7 +2859,7 @@
       "camille",
       "graves",
       "aatrox_jg",
-      "gwen",
+      "gwen_jg",
       "nocturne"
     ],
     "ctBy": [
@@ -2872,8 +2872,9 @@
       "gragas_baron",
       "morgana_jg",
       "nautilus_baron",
+      "ornn",
       "poppy_baron",
-      "shen",
+      "shen_jg",
       "diana_jg",
       "ekko_jg",
       "fizz_jg",
@@ -3488,8 +3489,7 @@
       "ornn",
       "volibear",
       "nautilus",
-      "poppy_sup",
-      "olaf_jg"
+      "poppy_sup"
     ]
   },
   "irelia": {
