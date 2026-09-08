@@ -2979,13 +2979,14 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Leap",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
+    "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Gerçek Hareketlilik",
     "ccTypes": [
-      "Knockup/Knockback"
+      "Silence/Ground",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
@@ -2993,11 +2994,11 @@
     "hasReset": "Var",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
       "Backline Dalışı"
     ],
     "durabilityProfile": [
-      "Kırılgan"
+      "Kırılgan",
+      "Sustain"
     ],
     "damageProfile": [
       "Burst"
@@ -3006,7 +3007,7 @@
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Düşük, R gizliliğiyle rakibi çalma girişiminde sürpriz avantaj sağlar",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "riven_jg": {
     "hasForms": "Yok",
