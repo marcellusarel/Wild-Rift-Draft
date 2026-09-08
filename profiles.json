@@ -4759,24 +4759,24 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Dash",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Yarı-Global",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
+    "toolFrequency": "Tek Seferlik",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback",
-      "Soft CC/Slow"
+      "Soft CC/Slow",
+      "Stun/Freeze/Sleep"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Engage",
       "Frontline",
-      "Pick/Execute",
       "Split Push",
       "Wave Clear"
     ],
@@ -4784,11 +4784,8 @@
       "Doğal Tank",
       "Kalkan"
     ],
-    "damageProfile": [
-      "Tank Eritici",
-      "Burst"
-    ],
-    "powerCurve": "Orta Oyun",
+    "damageProfile": [],
+    "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta-yüksek, R ile takımı objektif savaşına hızlıca sokar",
     "globalTeleport": "Yok",
