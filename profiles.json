@@ -2520,7 +2520,7 @@
     "mobilityTool": "Dash",
     "toolCondition": "Koşullu",
     "toolFrequency": "Spamlanabilir",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback",
       "Soft CC/Slow"
@@ -2528,12 +2528,11 @@
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Enerji",
-    "hasReset": "Yok",
+    "hasReset": "Var",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
       "Engage",
-      "Pick/Execute",
-      "Peel"
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
       "Kırılgan"
@@ -2541,11 +2540,11 @@
     "damageProfile": [
       "Burst"
     ],
-    "powerCurve": "Erken Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Orta-yüksek, R ile rakibi objektif çukurundan uzağa fırlatabilir",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "lillia": {
     "hasForms": "Yok",
