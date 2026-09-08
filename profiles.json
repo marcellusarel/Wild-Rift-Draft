@@ -3336,10 +3336,10 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Dash",
-    "toolCondition": "Koşullu",
-    "toolFrequency": "Sınırlı",
+    "toolCondition": "Koşulsuz",
+    "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback"
@@ -3351,21 +3351,21 @@
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
       "Engage",
-      "Pick/Execute",
-      "Frontline"
+      "Frontline",
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
-      "Doğal Tank"
+      "Doğal Tank",
+      "Kalkan"
     ],
     "damageProfile": [
-      "Burst",
       "Tank Eritici"
     ],
     "powerCurve": "Orta Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Orta-yüksek, R ile rakibi objektif çukurundan direkt hedefe fırlatabilir",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "volibear_jg": {
     "hasForms": "Yok",
