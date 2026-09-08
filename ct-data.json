@@ -660,17 +660,13 @@
       "morgana",
       "janna",
       "lulu",
-      "senna",
-      "poppy_jg",
-      "nocturne"
+      "senna"
     ],
     "ctBy": [
       "rakan",
       "alistar",
       "leona",
-      "rell",
-      "kindred",
-      "lee_sin"
+      "rell"
     ]
   },
   "ornn_sup": {
@@ -2627,7 +2623,6 @@
       "xin_zhao",
       "gragas",
       "lee_sin",
-      "gragas_sup",
       "pantheon_mid"
     ],
     "ctBy": [
@@ -2653,8 +2648,7 @@
       "nocturne",
       "xin_zhao",
       "vi",
-      "gragas",
-      "gragas_sup"
+      "gragas"
     ],
     "ctBy": [
       "amumu",
@@ -2810,8 +2804,7 @@
       "lee_sin",
       "morgana",
       "hecarim",
-      "olaf_jg",
-      "gragas_sup"
+      "olaf_jg"
     ]
   },
   "nunu": {
@@ -2899,8 +2892,7 @@
     "ctBy": [
       "lee_sin",
       "talon",
-      "gragas",
-      "gragas_sup"
+      "gragas"
     ]
   },
   "rammus": {
