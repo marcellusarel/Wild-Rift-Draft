@@ -3125,13 +3125,14 @@
     "formBName": "",
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Var",
-    "mobilityTool": "Dash",
+    "mobilityTool": "Yarı-Global",
     "toolCondition": "Koşulsuz",
     "toolFrequency": "Sınırlı",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
-      "Suppression",
-      "Root/Snare"
+      "Stun/Freeze/Sleep",
+      "Silence/Ground",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
@@ -3140,20 +3141,19 @@
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
       "Engage",
-      "Pick/Execute",
-      "Frontline"
+      "Frontline",
+      "Poke"
     ],
     "durabilityProfile": [
-      "Doğal Tank"
+      "Doğal Tank",
+      "Kalkan"
     ],
-    "damageProfile": [
-      "Tank Eritici"
-    ],
+    "damageProfile": [],
     "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Yüksek, R ile rakibi objektiften uzağa sürükleyebilir",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "talon_jg": {
     "hasForms": "Yok",
