@@ -2586,11 +2586,11 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Dash",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Hook/Grapple",
+    "toolCondition": "Koşullu",
+    "toolFrequency": "Spamlanabilir",
+    "mobilityTag": "Yanıltıcı Hareketlilik",
     "ccTypes": [],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
@@ -2598,20 +2598,20 @@
     "hasReset": "Var",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Backline Dalışı",
-      "Pick/Execute"
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS"
+      "Sürdürülebilir DPS",
+      "Tank Eritici"
     ],
     "powerCurve": "Geç Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Düşük",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "maokai_jg": {
     "hasForms": "Yok",
