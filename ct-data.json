@@ -571,7 +571,6 @@
       "morgana_mid",
       "smolder_mid",
       "velkoz",
-      "zed_mid",
       "akshan_mid",
       "tryndamere",
       "yasuo_baron"
@@ -2192,7 +2191,6 @@
       "twisted_fate",
       "brand_mid",
       "veigar",
-      "galio",
       "ryze",
       "yone",
       "viktor",
@@ -2204,7 +2202,6 @@
       "norra",
       "taliyah",
       "karma_mid",
-      "morgana_jg",
       "seraphine_mid",
       "zyra_mid",
       "corki_mid",
@@ -2212,7 +2209,6 @@
       "akshan_mid",
       "jayce_mid",
       "syndra",
-      "taliyah_jg",
       "velkoz",
       "zoe",
       "galio_mid",
@@ -2989,7 +2985,6 @@
       "rengar",
       "lee_sin",
       "jarvaniv",
-      "zed_mid",
       "shyvana"
     ],
     "ctBy": [
@@ -3334,8 +3329,7 @@
       "wukong",
       "zed_jg",
       "hecarim",
-      "rammus",
-      "zed_mid"
+      "rammus"
     ],
     "ctBy": [
       "amumu"
