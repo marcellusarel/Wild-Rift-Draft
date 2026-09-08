@@ -1744,7 +1744,8 @@
       "ekko",
       "kassadin",
       "kayle_mid",
-      "zed_jg"
+      "zed_jg",
+      "camille_jg"
     ]
   },
   "ryze": {
@@ -2318,13 +2319,16 @@
       "lee_sin",
       "viego",
       "nidalee",
-      "pantheon"
+      "pantheon",
+      "pantheon_mid"
     ],
     "ctBy": [
       "master_yi",
       "evelynn",
       "amumu",
-      "khazix"
+      "khazix",
+      "lillia",
+      "hecarim"
     ]
   },
   "diana": {
@@ -2495,7 +2499,8 @@
       "khazix",
       "rengar",
       "gragas",
-      "xin_zhao"
+      "xin_zhao",
+      "camille_jg"
     ],
     "ctBy": [
       "jarvaniv",
@@ -2650,7 +2655,8 @@
       "jarvaniv",
       "xin_zhao",
       "irelia",
-      "diana_jg"
+      "diana_jg",
+      "camille_jg"
     ],
     "ctBy": [
       "volibear",
