@@ -2260,7 +2260,6 @@
       "annie",
       "singed_mid",
       "akali_baron",
-      "ambessa",
       "camille",
       "drmundo",
       "jax",
@@ -3761,14 +3760,12 @@
       "renekton",
       "irelia",
       "riven",
-      "malphite",
-      "taliyah_jg"
+      "malphite"
     ],
     "ctBy": [
       "aatrox",
       "akali_baron",
       "sion",
-      "yasuo",
       "gwen",
       "drmundo",
       "nasus",
@@ -3777,8 +3774,8 @@
       "singed",
       "rumble",
       "poppy_baron",
-      "poppy_jg",
-      "chogath"
+      "chogath",
+      "yasuo_baron"
     ]
   },
   "camille": {
@@ -4957,7 +4954,8 @@
       "jax",
       "volibear",
       "garen",
-      "nasus"
+      "nasus",
+      "ambessa"
     ],
     "ctBy": [
       "teemo",
