@@ -1735,7 +1735,8 @@
       "ahri",
       "morgana_jg",
       "fizz_jg",
-      "jarvaniv"
+      "jarvaniv",
+      "nidalee"
     ],
     "ctBy": [
       "katarina",
@@ -2809,7 +2810,8 @@
     "ctBy": [
       "amumu",
       "rammus",
-      "pantheon"
+      "pantheon",
+      "pantheon_mid"
     ]
   },
   "nocturne": {
