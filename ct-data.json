@@ -1944,11 +1944,7 @@
       "akshan_mid",
       "diana",
       "orianna",
-      "irelia_mid",
-      "kindred",
-      "lee_sin",
-      "poppy_jg",
-      "rengar"
+      "irelia_mid"
     ],
     "ctBy": [
       "kassadin",
@@ -1957,9 +1953,7 @@
       "twisted_fate",
       "ekko",
       "brand_mid",
-      "hecarim",
-      "lux_mid",
-      "nocturne"
+      "lux_mid"
     ]
   },
   "teemo_mid": {
@@ -2705,7 +2699,6 @@
       "lee_sin",
       "riven_jg",
       "nocturne",
-      "talon",
       "warwick",
       "vi"
     ],
@@ -2858,7 +2851,6 @@
       "graves",
       "warwick",
       "vi",
-      "talon",
       "rengar",
       "olaf_jg",
       "diana_jg",
@@ -2891,7 +2883,6 @@
       "evelynn",
       "khazix",
       "rengar",
-      "talon",
       "riven",
       "fiddlesticks",
       "hecarim",
@@ -3062,8 +3053,7 @@
   "nocturne": {
     "ct": [
       "rammus",
-      "kindred",
-      "talon"
+      "kindred"
     ],
     "ctBy": [
       "rengar",
@@ -3195,7 +3185,6 @@
     ],
     "ctBy": [
       "lee_sin",
-      "talon",
       "gragas_jg",
       "riven_jg",
       "ambessa_jg"
@@ -3259,7 +3248,6 @@
       "evelynn",
       "gragas_jg",
       "jarvaniv",
-      "talon",
       "nidalee",
       "hecarim",
       "kayn",
