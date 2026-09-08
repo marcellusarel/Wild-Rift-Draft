@@ -2276,34 +2276,34 @@
     "passiveSpeedBoost": "Var",
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolFrequency": "Sınırlı",
     "mobilityTag": "Gerçek Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback",
-      "Soft CC/Slow"
+      "Soft CC/Slow",
+      "Silence/Ground"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
-    "resourceType": "Kaynaksız",
-    "hasReset": "Yok",
+    "resourceType": "Mana",
+    "hasReset": "Var",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
       "Engage",
-      "Frontline",
       "Backline Dalışı"
     ],
     "durabilityProfile": [
-      "Sustain"
+      "Kırılgan"
     ],
     "damageProfile": [
       "Burst",
       "Sürdürülebilir DPS"
     ],
     "powerCurve": "Orta Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Yüksek, R ile takımı objektif savaşına hızlıca toplar",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "irelia_jg": {
     "hasForms": "Yok",
