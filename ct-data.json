@@ -690,19 +690,14 @@
       "morgana",
       "soraka",
       "karma",
-      "janna",
-      "ambessa",
-      "gwen"
+      "janna"
     ],
     "ctBy": [
       "rakan",
       "alistar",
       "leona",
       "pyke",
-      "pantheon",
-      "ambessa_jg",
-      "jax_jg",
-      "jax"
+      "pantheon"
     ]
   },
   "smolder": {
@@ -2315,8 +2310,7 @@
       "poppy",
       "pantheon",
       "tryndamere",
-      "warwick",
-      "poppy_sup"
+      "warwick"
     ],
     "ctBy": [
       "jax",
@@ -2578,8 +2572,7 @@
       "pantheon",
       "olaf",
       "fiora",
-      "riven",
-      "poppy_sup"
+      "riven"
     ],
     "ctBy": [
       "wukong",
@@ -3262,8 +3255,7 @@
       "garen",
       "singed",
       "rumble",
-      "poppy",
-      "poppy_sup"
+      "poppy"
     ]
   },
   "camille": {
@@ -3475,8 +3467,7 @@
       "malphite",
       "ornn",
       "volibear",
-      "nautilus",
-      "poppy_sup"
+      "nautilus"
     ]
   },
   "irelia": {
@@ -3518,8 +3509,7 @@
       "gragas",
       "riven",
       "shen",
-      "sett",
-      "poppy_sup"
+      "sett"
     ],
     "ctBy": [
       "yasuo",
