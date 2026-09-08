@@ -1730,7 +1730,8 @@
       "orianna",
       "ahri",
       "morgana_jg",
-      "fizz_jg"
+      "fizz_jg",
+      "jarvaniv"
     ],
     "ctBy": [
       "katarina",
@@ -2561,14 +2562,18 @@
       "rammus",
       "gragas",
       "rengar",
-      "master_yi",
       "amumu"
     ],
     "ctBy": [
       "olaf",
       "wukong",
       "nunu",
-      "pantheon"
+      "pantheon",
+      "olaf_jg",
+      "pantheon_mid",
+      "riven_jg",
+      "shyvana",
+      "xin_zhao"
     ]
   },
   "jax_jg": {
@@ -2722,7 +2727,6 @@
       "diana_jg",
       "gwen",
       "hecarim",
-      "jarvaniv",
       "khazix",
       "lillia",
       "maokai",
@@ -2972,7 +2976,8 @@
       "gragas",
       "olaf",
       "rengar",
-      "graves"
+      "graves",
+      "jarvaniv"
     ],
     "ctBy": [
       "irelia",
@@ -3161,7 +3166,8 @@
       "jax",
       "olaf",
       "shyvana",
-      "master_yi"
+      "master_yi",
+      "jarvaniv"
     ],
     "ctBy": [
       "amumu",
