@@ -3734,7 +3734,8 @@
       "ornn",
       "wukong",
       "poppy_baron",
-      "yasuo_baron"
+      "yasuo_baron",
+      "riven"
     ]
   },
   "ornn": {
@@ -3824,19 +3825,19 @@
       "fiora",
       "gragas",
       "sett",
-      "graves"
+      "poppy_baron",
+      "olaf_baron"
     ],
     "ctBy": [
       "irelia",
-      "yasuo",
-      "rengar",
       "drmundo",
       "singed",
       "nasus",
       "garen",
       "kayle",
       "jayce",
-      "gwen"
+      "gwen",
+      "yasuo_baron"
     ]
   },
   "rumble": {
