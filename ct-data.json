@@ -2752,7 +2752,8 @@
       "pantheon",
       "amumu",
       "nunu",
-      "pantheon_mid"
+      "pantheon_mid",
+      "rammus"
     ]
   },
   "nautilus_jg": {
@@ -2855,7 +2856,8 @@
       "pantheon_jg",
       "drmundo",
       "fiddlesticks",
-      "kayn"
+      "kayn",
+      "rammus"
     ]
   },
   "pantheon_jg": {
@@ -2901,13 +2903,15 @@
       "amumu",
       "nunu",
       "lillia",
-      "shyvana"
+      "shyvana",
+      "morgana_jg",
+      "olaf_jg",
+      "gwen"
     ],
     "ctBy": [
       "master_yi",
       "graves",
       "jarvaniv",
-      "tryndamere",
       "xin_zhao",
       "viego",
       "rengar",
@@ -2916,8 +2920,9 @@
       "khazix",
       "kindred",
       "lee_sin",
-      "wukong",
-      "nocturne"
+      "nocturne",
+      "tryndamere_jg",
+      "wukong_jg"
     ]
   },
   "rengar": {
@@ -3458,7 +3463,8 @@
       "malphite",
       "ornn",
       "volibear",
-      "nautilus"
+      "nautilus",
+      "rammus"
     ]
   },
   "irelia": {
