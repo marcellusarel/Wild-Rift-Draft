@@ -2311,7 +2311,8 @@
     "ctBy": [
       "jax",
       "volibear",
-      "wukong"
+      "wukong",
+      "drmundo_jg"
     ]
   },
   "camille_jg": {
@@ -2379,12 +2380,15 @@
       "irelia",
       "fiora",
       "camille",
-      "aatrox_jg"
+      "aatrox_jg",
+      "gwen_jg",
+      "lillia",
+      "olaf_jg",
+      "ambessa_jg"
     ],
     "ctBy": [
       "vi",
       "evelynn",
-      "master_yi",
       "pantheon"
     ]
   },
@@ -2488,7 +2492,8 @@
       "gragas",
       "nunu",
       "volibear",
-      "nautilus_jg"
+      "nautilus_jg",
+      "drmundo_jg"
     ]
   },
   "hecarim": {
@@ -2672,7 +2677,8 @@
       "kindred",
       "lee_sin",
       "wukong",
-      "aatrox_jg"
+      "aatrox_jg",
+      "drmundo_jg"
     ]
   },
   "master_yi": {
@@ -2847,7 +2853,8 @@
       "irelia_jg",
       "pantheon_jg",
       "teemo",
-      "yasuo_baron"
+      "yasuo_baron",
+      "drmundo_jg"
     ]
   },
   "pantheon_jg": {
