@@ -1276,7 +1276,8 @@
       "akali",
       "corki",
       "akali_mid",
-      "katarina"
+      "katarina",
+      "sion"
     ]
   },
   "aurora": {
@@ -3790,7 +3791,8 @@
       "riven",
       "volibear",
       "ksante",
-      "mordekaiser"
+      "mordekaiser",
+      "sion"
     ]
   },
   "ornn": {
@@ -4007,7 +4009,11 @@
       "riven",
       "camille",
       "gwen",
-      "renekton"
+      "renekton",
+      "rumble",
+      "annie",
+      "olaf_baron",
+      "gnar"
     ],
     "ctBy": [
       "malphite",
