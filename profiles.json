@@ -1895,32 +1895,33 @@
     "passiveSpeedBoost": "Var",
     "mobilityTool": "Dash",
     "toolCondition": "Koşullu",
-    "toolFrequency": "Sınırlı",
+    "toolFrequency": "Tek Seferlik",
     "mobilityTag": "Gerçek Hareketlilik",
     "ccTypes": [
       "Suppression"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
-    "resourceType": "Kaynaksız",
+    "resourceType": "Mana",
     "hasReset": "Yok",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
-      "Frontline"
+      "Engage",
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
-      "Sustain"
+      "Sustain",
+      "Kırılgan"
     ],
     "damageProfile": [
       "Sürdürülebilir DPS",
       "Tank Eritici"
     ],
-    "powerCurve": "Erken Oyun",
+    "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta, düşük canlı hedeflere karşı hızlı bitirme sağlar",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "ambessa_jg": {
     "hasForms": "Yok",
