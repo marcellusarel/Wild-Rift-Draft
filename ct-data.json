@@ -3281,7 +3281,6 @@
     "ctBy": [
       "aatrox",
       "akali",
-      "darius",
       "sion",
       "yasuo",
       "gwen",
@@ -3302,7 +3301,6 @@
       "jayce",
       "jax",
       "renekton",
-      "darius",
       "riven",
       "akali"
     ],
@@ -3348,17 +3346,17 @@
       "wukong",
       "gragas",
       "jayce",
-      "ambessa",
-      "chogath"
+      "gragas_baron"
     ],
     "ctBy": [
       "nasus",
-      "camille",
-      "yasuo",
       "irelia",
       "tryndamere",
       "ornn",
-      "riven"
+      "riven",
+      "yasuo_baron",
+      "sion",
+      "sett"
     ]
   },
   "drmundo": {
@@ -3927,7 +3925,8 @@
       "vayne",
       "drmundo",
       "olaf",
-      "chogath"
+      "chogath",
+      "darius"
     ],
     "ctBy": [
       "irelia",
