@@ -1883,7 +1883,8 @@
       "seraphine",
       "ekko",
       "brand",
-      "brand_mid"
+      "brand_mid",
+      "hecarim"
     ]
   },
   "teemo_mid": {
@@ -2301,7 +2302,8 @@
       "irelia",
       "viego",
       "vi",
-      "wukong"
+      "wukong",
+      "hecarim"
     ]
   },
   "ambessa_jg": {
@@ -2510,22 +2512,27 @@
   "hecarim": {
     "ct": [
       "master_yi",
-      "kindred",
       "graves",
       "khazix",
       "rengar",
       "gragas",
       "xin_zhao",
-      "camille_jg"
+      "camille_jg",
+      "lee_sin",
+      "riven_jg",
+      "nocturne",
+      "talon",
+      "warwick",
+      "vi"
     ],
     "ctBy": [
       "jarvaniv",
-      "vi",
       "amumu",
       "kayn",
       "fiora",
       "taliyah",
-      "aatrox_jg"
+      "aatrox_jg",
+      "viego"
     ]
   },
   "irelia_jg": {
@@ -2636,7 +2643,6 @@
       "rengar",
       "olaf",
       "diana_jg",
-      "hecarim",
       "khazix",
       "maokai",
       "aatrox_jg"
@@ -2661,7 +2667,8 @@
       "rengar",
       "talon",
       "riven",
-      "fiddlesticks"
+      "fiddlesticks",
+      "hecarim"
     ]
   },
   "lillia": {
@@ -2809,7 +2816,8 @@
       "gragas",
       "gwen",
       "lee_sin",
-      "morgana"
+      "morgana",
+      "hecarim"
     ]
   },
   "nunu": {
@@ -2970,7 +2978,8 @@
       "irelia",
       "amumu",
       "jarvaniv",
-      "fiora"
+      "fiora",
+      "hecarim"
     ]
   },
   "shen_jg": {
@@ -3082,7 +3091,8 @@
       "rammus",
       "warwick",
       "xin_zhao",
-      "amumu"
+      "amumu",
+      "hecarim"
     ],
     "ctBy": [
       "rengar",
@@ -3105,7 +3115,8 @@
       "khazix",
       "evelynn",
       "pantheon",
-      "lillia"
+      "lillia",
+      "hecarim"
     ]
   },
   "volibear_jg": {
