@@ -3235,7 +3235,7 @@
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
     "toolFrequency": "Spamlanabilir",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Soft CC/Slow"
     ],
@@ -3245,15 +3245,15 @@
     "hasReset": "Var",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Backline Dalışı"
+      "Backline Dalışı",
+      "Split Push"
     ],
     "durabilityProfile": [
       "Sustain",
       "Kırılgan"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS",
-      "Burst"
+      "Sürdürülebilir DPS"
     ],
     "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
