@@ -2583,7 +2583,8 @@
       "tryndamere",
       "camille",
       "master_yi",
-      "irelia"
+      "irelia",
+      "xin_zhao"
     ]
   },
   "kayn": {
@@ -2874,7 +2875,8 @@
       "skarner",
       "urgot_jg",
       "volibear_jg",
-      "warwick"
+      "warwick",
+      "xin_zhao"
     ]
   },
   "pantheon_jg": {
@@ -3177,11 +3179,12 @@
   "xin_zhao": {
     "ct": [
       "rammus",
-      "jax",
       "olaf",
       "shyvana",
       "master_yi",
-      "jarvaniv"
+      "jarvaniv",
+      "olaf_jg",
+      "jax_jg"
     ],
     "ctBy": [
       "amumu",
@@ -3190,7 +3193,7 @@
       "graves",
       "khazix",
       "kindred",
-      "nautilus"
+      "nautilus_jg"
     ]
   },
   "yone_jg": {
