@@ -407,7 +407,6 @@
       "karma_mid",
       "kayle_mid",
       "lucian_mid",
-      "mel",
       "morgana_mid",
       "ziggs",
       "diana"
@@ -1300,7 +1299,6 @@
       "ezreal"
     ],
     "ctBy": [
-      "mel",
       "orianna",
       "smolder",
       "jinx",
@@ -1741,7 +1739,8 @@
       "irelia",
       "katarina",
       "talon",
-      "kassadin"
+      "kassadin",
+      "mel"
     ],
     "ctBy": [
       "twisted_fate",
@@ -1752,20 +1751,18 @@
   },
   "mel": {
     "ct": [
-      "irelia",
       "yone",
       "fizz",
       "syndra",
       "diana",
       "viktor",
       "aurelionsol",
-      "aurelionsol_adc",
       "irelia_mid"
     ],
     "ctBy": [
       "ahri",
-      "lux",
-      "ryze"
+      "ryze",
+      "lux_mid"
     ]
   },
   "mel_adc": {
@@ -4088,7 +4085,6 @@
       "katarina",
       "kayle_mid",
       "lux_mid",
-      "mel",
       "morgana_mid",
       "norra",
       "orianna",
