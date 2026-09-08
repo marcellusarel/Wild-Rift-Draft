@@ -954,16 +954,16 @@
   "jax": {
     "starter": "Mercury's Treads",
     "items": [
+      "Dusk and Dawn",
       "Riftmaker",
-      "Void Staff",
-      "Amaranth's Twinguard",
+      "Stasis Enchant",
       "Guardian Angel"
     ],
     "boots": "Chainlaced Crushers",
-    "enchant": "Trinity Force",
+    "enchant": "Blade of the Ruined King",
     "runes": [
       "Grasp of the Undying",
-      "Unshakeable",
+      "Demolish",
       "Second Wind",
       "Overgrowth",
       "Sudden Impact"
