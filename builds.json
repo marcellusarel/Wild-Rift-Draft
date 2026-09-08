@@ -4482,13 +4482,13 @@
   "volibear": {
     "starter": "Plated Steelcaps",
     "items": [
-      "Hollow Radiance",
-      "Thornmail",
+      "Dusk and Dawn",
       "Unending Despair",
+      "Thornmail",
       "Amaranth's Twinguard"
     ],
     "boots": "Armored Advance",
-    "enchant": "Dusk and Dawn",
+    "enchant": "Heartsteel",
     "runes": [
       "Conqueror",
       "Demolish",
