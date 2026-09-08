@@ -3506,7 +3506,8 @@
       "volibear",
       "nautilus",
       "rammus",
-      "garen"
+      "garen",
+      "ksante"
     ]
   },
   "irelia": {
@@ -3592,12 +3593,16 @@
       "vayne",
       "garen",
       "volibear",
-      "gnar"
+      "gnar",
+      "gwen",
+      "olaf_baron"
     ],
     "ctBy": [
       "irelia",
       "sion",
-      "ornn"
+      "ornn",
+      "nasus",
+      "shen"
     ]
   },
   "kayle": {
@@ -3723,7 +3728,8 @@
       "olaf",
       "sett",
       "fiora",
-      "irelia"
+      "irelia",
+      "ksante"
     ],
     "ctBy": [
       "kayle",
@@ -3775,7 +3781,8 @@
       "poppy_baron",
       "yasuo_baron",
       "riven",
-      "volibear"
+      "volibear",
+      "ksante"
     ]
   },
   "ornn": {
@@ -3952,7 +3959,8 @@
       "camille",
       "olaf",
       "renekton",
-      "gnar"
+      "gnar",
+      "ksante"
     ],
     "ctBy": [
       "nasus",
