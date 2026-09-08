@@ -2494,7 +2494,8 @@
       "volibear",
       "nautilus_jg",
       "drmundo_jg",
-      "amumu"
+      "amumu",
+      "skarner"
     ]
   },
   "hecarim": {
@@ -2727,7 +2728,8 @@
       "olaf_jg",
       "kayn",
       "xin_zhao",
-      "jarvaniv"
+      "jarvaniv",
+      "skarner"
     ],
     "ctBy": [
       "pantheon_jg",
@@ -2818,7 +2820,8 @@
       "xin_zhao",
       "vi",
       "olaf",
-      "master_yi"
+      "master_yi",
+      "skarner"
     ],
     "ctBy": [
       "rammus",
@@ -2860,7 +2863,8 @@
       "kayn",
       "rammus",
       "rengar",
-      "riven_jg"
+      "riven_jg",
+      "skarner"
     ]
   },
   "pantheon_jg": {
@@ -3007,11 +3011,15 @@
       "olaf",
       "master_yi",
       "kindred",
-      "evelynn"
+      "evelynn",
+      "olaf_jg",
+      "gwen_jg"
     ],
     "ctBy": [
-      "talon",
-      "graves"
+      "graves",
+      "talon_jg",
+      "nunu",
+      "maokai_jg"
     ]
   },
   "talon_jg": {
@@ -3022,7 +3030,8 @@
       "gragas",
       "volibear",
       "evelynn",
-      "jarvaniv"
+      "jarvaniv",
+      "skarner"
     ],
     "ctBy": [
       "ekko",
