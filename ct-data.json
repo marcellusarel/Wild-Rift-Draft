@@ -1217,20 +1217,7 @@
       "caitlyn",
       "smolder",
       "ashe",
-      "annie",
-      "brand_mid",
-      "fizz",
-      "jayce_mid",
-      "katarina",
-      "orianna",
-      "pantheon_mid",
-      "ryze",
-      "teemo_mid",
-      "twisted_fate",
-      "veigar",
-      "yone",
-      "zoe",
-      "akshan_mid"
+      "orianna_adc"
     ],
     "ctBy": [
       "ziggs",
@@ -1384,7 +1371,6 @@
       "yasuo",
       "ahri",
       "akali_mid",
-      "corki",
       "katarina",
       "sion",
       "corki_mid",
@@ -1429,7 +1415,6 @@
     "ctBy": [
       "annie",
       "twisted_fate",
-      "corki",
       "teemo",
       "kayle",
       "swain_mid",
@@ -1497,7 +1482,6 @@
       "yasuo",
       "ahri",
       "twisted_fate",
-      "corki",
       "velkoz",
       "aurelionsol",
       "annie",
@@ -1610,7 +1594,6 @@
       "katarina",
       "lux",
       "aurelionsol",
-      "corki",
       "veigar",
       "kassadin",
       "singed_mid"
@@ -1688,7 +1671,6 @@
       "brand_mid",
       "seraphine",
       "ahri",
-      "corki",
       "corki_mid",
       "kayle_mid",
       "lux_mid",
@@ -1859,7 +1841,6 @@
       "annie",
       "veigar",
       "twisted_fate",
-      "corki",
       "ryze",
       "vladimir",
       "swain",
@@ -1887,7 +1868,8 @@
     ],
     "ctBy": [
       "jinx",
-      "ashe"
+      "ashe",
+      "corki"
     ]
   },
   "pantheon_mid": {
@@ -1902,7 +1884,6 @@
     ],
     "ctBy": [
       "katarina",
-      "corki",
       "zed_mid",
       "twisted_fate",
       "yasuo",
@@ -1946,7 +1927,6 @@
       "ahri",
       "kennen_mid",
       "annie",
-      "corki",
       "teemo",
       "kayle_mid",
       "teemo_mid"
@@ -2093,7 +2073,6 @@
     "ctBy": [
       "twisted_fate",
       "kayle",
-      "corki",
       "katarina"
     ]
   },
@@ -2126,7 +2105,6 @@
     "ctBy": [
       "ziggs",
       "annie",
-      "corki",
       "akali_mid",
       "singed_mid"
     ]
@@ -2158,7 +2136,6 @@
       "akali_mid",
       "annie",
       "brand_mid",
-      "corki",
       "akshan_mid",
       "vex"
     ]
@@ -2316,7 +2293,6 @@
     ],
     "ctBy": [
       "aurelionsol",
-      "corki",
       "ziggs",
       "seraphine",
       "veigar",
@@ -2425,7 +2401,6 @@
       "morgana_mid"
     ],
     "ctBy": [
-      "corki",
       "twisted_fate",
       "vex",
       "annie",
@@ -2466,7 +2441,6 @@
       "ahri",
       "orianna",
       "akali_mid",
-      "corki",
       "galio",
       "singed",
       "vladimir",
