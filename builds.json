@@ -5350,9 +5350,9 @@
   "rengar": {
     "starter": "Gluttonous Greaves",
     "items": [
-      "Infinity Edge",
-      "Mortal Reminder",
       "Duskblade of Draktharr",
+      "Lord Dominik's Regards",
+      "Infinity Edge",
       "Guardian Angel"
     ],
     "boots": "Immortal Path",
