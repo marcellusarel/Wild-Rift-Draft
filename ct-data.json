@@ -569,7 +569,6 @@
       "smolder_mid",
       "velkoz",
       "akshan_mid",
-      "tryndamere",
       "yasuo_baron"
     ],
     "ctBy": [
@@ -2429,10 +2428,10 @@
       "rammus",
       "poppy_jg",
       "pantheon_jg",
-      "tryndamere",
       "warwick"
     ],
     "ctBy": [
+      "jax",
       "volibear",
       "wukong",
       "drmundo_jg"
@@ -2742,7 +2741,6 @@
     ],
     "ctBy": [
       "wukong",
-      "tryndamere",
       "master_yi",
       "xin_zhao"
     ]
@@ -2987,7 +2985,7 @@
     ],
     "ctBy": [
       "graves",
-      "tryndamere"
+      "jax"
     ]
   },
   "nidalee": {
@@ -3093,7 +3091,6 @@
   },
   "pantheon_jg": {
     "ct": [
-      "tryndamere",
       "rammus",
       "amumu",
       "wukong",
@@ -3228,14 +3225,14 @@
   "shen_jg": {
     "ct": [
       "lee_sin",
-      "tryndamere",
       "olaf_jg",
       "fiora",
       "urgot_jg"
     ],
     "ctBy": [
       "master_yi",
-      "jarvaniv"
+      "jarvaniv",
+      "jax"
     ]
   },
   "shyvana": {
@@ -3723,7 +3720,8 @@
       "olaf_baron",
       "sett",
       "yasuo",
-      "fiora"
+      "fiora",
+      "tryndamere"
     ],
     "ctBy": [
       "teemo",
@@ -4504,27 +4502,22 @@
       "teemo",
       "nasus",
       "amumu",
-      "jax_jg",
       "master_yi",
-      "nautilus_jg",
       "garen"
     ],
     "ctBy": [
       "kayle",
-      "galio",
       "irelia",
       "olaf_baron",
       "riven",
       "jayce",
       "gwen",
-      "ambessa_jg",
-      "pantheon_jg",
-      "shen_jg",
       "aatrox",
       "rumble",
       "urgot",
       "vladimir_baron",
-      "yasuo_baron"
+      "yasuo_baron",
+      "galio_baron"
     ]
   },
   "urgot": {
