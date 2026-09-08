@@ -661,7 +661,8 @@
       "janna",
       "lulu",
       "senna",
-      "poppy_jg"
+      "poppy_jg",
+      "nocturne"
     ],
     "ctBy": [
       "rakan",
@@ -2831,7 +2832,9 @@
       "gwen",
       "lee_sin",
       "morgana",
-      "hecarim"
+      "hecarim",
+      "olaf_jg",
+      "gragas_sup"
     ]
   },
   "nunu": {
@@ -2864,7 +2867,8 @@
       "irelia",
       "kayle",
       "gwen_jg",
-      "gwen"
+      "gwen",
+      "nocturne"
     ],
     "ctBy": [
       "vi",
