@@ -37,7 +37,6 @@
       "rell",
       "sett_sup",
       "ornn_sup",
-      "gwen",
       "ornn"
     ],
     "ctBy": [
@@ -2886,7 +2885,6 @@
       "olaf_jg",
       "fiora",
       "gragas_jg",
-      "gwen",
       "kindred",
       "lee_sin",
       "wukong",
@@ -2928,7 +2926,6 @@
       "shyvana",
       "rengar",
       "diana_jg",
-      "gwen",
       "hecarim",
       "khazix",
       "lillia",
@@ -3024,7 +3021,6 @@
       "nidalee",
       "amumu",
       "gragas_jg",
-      "gwen",
       "lee_sin",
       "hecarim",
       "olaf_jg",
@@ -3160,7 +3156,6 @@
       "lillia",
       "shyvana",
       "morgana_jg",
-      "gwen",
       "diana_jg",
       "ekko_jg",
       "evelynn",
@@ -3468,7 +3463,6 @@
       "evelynn"
     ],
     "ctBy": [
-      "gwen",
       "amumu",
       "lillia"
     ]
@@ -3828,10 +3822,6 @@
       "akali_baron",
       "riven",
       "tryndamere",
-      "lillia",
-      "master_yi",
-      "nocturne",
-      "yone_jg",
       "ambessa",
       "yasuo_baron",
       "yone_baron"
@@ -3844,8 +3834,6 @@
       "malphite",
       "ornn",
       "volibear",
-      "nautilus",
-      "rammus",
       "garen",
       "ksante",
       "nasus",
