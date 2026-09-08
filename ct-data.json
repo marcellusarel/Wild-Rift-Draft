@@ -806,7 +806,8 @@
       "aurelionsol_adc",
       "mel_adc",
       "orianna_adc",
-      "ziggs_adc"
+      "ziggs_adc",
+      "garen"
     ]
   },
   "lucian": {
@@ -3435,15 +3436,19 @@
       "camille",
       "fiora",
       "ambessa",
-      "irelia"
+      "irelia",
+      "gwen",
+      "rumble",
+      "vayne"
     ],
     "ctBy": [
       "nasus",
       "jax",
-      "yasuo",
       "renekton",
       "gragas",
-      "tryndamere"
+      "tryndamere",
+      "yasuo_baron",
+      "riven"
     ]
   },
   "gnar": {
@@ -3501,7 +3506,8 @@
       "ornn",
       "volibear",
       "nautilus",
-      "rammus"
+      "rammus",
+      "garen"
     ]
   },
   "irelia": {
@@ -3862,7 +3868,8 @@
       "gragas",
       "sett",
       "poppy_baron",
-      "olaf_baron"
+      "olaf_baron",
+      "garen"
     ],
     "ctBy": [
       "irelia",
@@ -4139,7 +4146,8 @@
       "tryndamere",
       "jax",
       "olaf_baron",
-      "volibear"
+      "volibear",
+      "garen"
     ],
     "ctBy": [
       "teemo",
