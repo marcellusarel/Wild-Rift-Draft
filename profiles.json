@@ -2213,7 +2213,7 @@
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
+    "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Gerçek Hareketlilik",
     "ccTypes": [
       "Soft CC/Slow"
@@ -2221,23 +2221,20 @@
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Yok",
+    "hasReset": "Var",
     "ultDependency": "Düşük Bağımlı",
-    "teamfightRole": [
-      "Pick/Execute"
-    ],
+    "teamfightRole": [],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
-      "Burst",
-      "Sürdürülebilir DPS"
+      "Burst"
     ],
-    "powerCurve": "Orta Oyun",
+    "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta-yüksek, duman bombasıyla objektif çukurunda görüş avantajı sağlar",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "gwen_jg": {
     "hasForms": "Yok",
