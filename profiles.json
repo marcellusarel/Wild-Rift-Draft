@@ -4545,13 +4545,13 @@
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Kaynaksız",
-    "hasReset": "Yok",
+    "hasReset": "Var",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Frontline",
-      "Pick/Execute",
       "Backline Dalışı",
-      "Split Push"
+      "Split Push",
+      "Engage",
+      "Wave Clear"
     ],
     "durabilityProfile": [
       "Kalkan",
