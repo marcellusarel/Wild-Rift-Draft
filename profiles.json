@@ -4312,8 +4312,8 @@
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Soft CC/Slow"
@@ -4324,18 +4324,17 @@
     "hasReset": "Yok",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Split Push",
-      "Frontline"
+      "Frontline",
+      "Split Push"
     ],
     "durabilityProfile": [
       "Doğal Tank"
     ],
     "damageProfile": [
-      "Tank Eritici",
       "Sürdürülebilir DPS"
     ],
     "powerCurve": "Geç Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Orta, split push ile dolaylı baskı",
     "globalTeleport": "Yok",
     "duelist": "Var"
