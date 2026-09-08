@@ -2797,7 +2797,6 @@
   "nocturne": {
     "ct": [
       "rammus",
-      "viego",
       "kindred",
       "talon"
     ],
@@ -3107,8 +3106,7 @@
     "ctBy": [
       "rengar",
       "master_yi",
-      "graves",
-      "nocturne"
+      "graves"
     ]
   },
   "vi": {
