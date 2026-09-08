@@ -3370,7 +3370,6 @@
       "irelia",
       "camille",
       "vayne",
-      "renekton",
       "rumble",
       "olaf_jg",
       "ambessa_jg"
@@ -3399,7 +3398,6 @@
       "jax",
       "riven",
       "camille",
-      "renekton",
       "nasus",
       "irelia",
       "olaf",
@@ -3845,16 +3843,12 @@
       "kennen",
       "olaf",
       "gragas",
-      "fiora",
       "darius",
       "jayce",
-      "graves",
-      "chogath",
       "volibear"
     ],
     "ctBy": [
       "ambessa",
-      "yasuo",
       "camille",
       "riven",
       "akali",
@@ -3862,7 +3856,6 @@
       "nasus",
       "singed",
       "malphite",
-      "drmundo",
       "tryndamere",
       "ryze",
       "sett",
@@ -3871,7 +3864,10 @@
       "rumble",
       "pantheon",
       "yone",
-      "wukong"
+      "wukong",
+      "chogath",
+      "gwen",
+      "yasuo_baron"
     ]
   },
   "riven": {
