@@ -697,7 +697,8 @@
       "leona",
       "pyke",
       "pantheon",
-      "ambessa_jg"
+      "ambessa_jg",
+      "jax_jg"
     ]
   },
   "smolder": {
@@ -2583,7 +2584,9 @@
       "pantheon",
       "olaf",
       "fiora",
-      "riven"
+      "riven",
+      "olaf_jg",
+      "poppy_sup"
     ],
     "ctBy": [
       "wukong",
@@ -2882,7 +2885,8 @@
       "teemo",
       "yasuo_baron",
       "drmundo",
-      "fiddlesticks"
+      "fiddlesticks",
+      "jax_jg"
     ]
   },
   "pantheon_jg": {
