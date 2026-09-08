@@ -3454,11 +3454,10 @@
   "gnar": {
     "ct": [
       "irelia",
-      "yasuo",
       "malphite",
       "gwen",
-      "ornn",
-      "chogath"
+      "chogath",
+      "yasuo_baron"
     ],
     "ctBy": [
       "sion",
@@ -3468,7 +3467,7 @@
       "shen",
       "renekton",
       "kennen",
-      "maokai"
+      "ksante"
     ]
   },
   "gragas_baron": {
@@ -3592,7 +3591,8 @@
       "fiora",
       "vayne",
       "garen",
-      "volibear"
+      "volibear",
+      "gnar"
     ],
     "ctBy": [
       "irelia",
@@ -3792,7 +3792,6 @@
       "malphite",
       "nautilus",
       "rumble",
-      "gnar",
       "jayce"
     ]
   },
@@ -4158,7 +4157,8 @@
       "kennen",
       "galio",
       "gwen",
-      "ryze"
+      "ryze",
+      "gnar"
     ]
   },
   "yone_baron": {
