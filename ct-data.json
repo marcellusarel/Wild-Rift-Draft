@@ -576,7 +576,6 @@
       "corki_mid",
       "lucian_mid",
       "morgana_mid",
-      "pantheon_mid",
       "smolder_mid",
       "swain_mid",
       "velkoz",
@@ -1462,7 +1461,8 @@
       "zyra_mid",
       "diana",
       "irelia_jg",
-      "zed_jg"
+      "zed_jg",
+      "pantheon_mid"
     ]
   },
   "galio_mid": {
@@ -1741,7 +1741,8 @@
       "vex",
       "zoe",
       "lissandra",
-      "galio_mid"
+      "galio_mid",
+      "pantheon_mid"
     ]
   },
   "norra": {
@@ -1806,28 +1807,24 @@
   "pantheon_mid": {
     "ct": [
       "ziggs",
-      "teemo",
       "orianna",
       "ahri",
-      "morgana_jg",
-      "fizz_jg",
-      "swain_mid"
+      "swain_mid",
+      "fizz",
+      "morgana_mid",
+      "teemo_mid"
     ],
     "ctBy": [
       "katarina",
       "zed_mid",
       "twisted_fate",
       "yasuo",
-      "galio",
       "talon",
       "akali_mid",
       "akshan_mid",
-      "diana_jg",
       "ekko",
       "kassadin",
       "kayle_mid",
-      "kindred",
-      "zed_baron",
       "corki_mid",
       "galio_mid",
       "ryze",
@@ -1997,7 +1994,8 @@
     ],
     "ctBy": [
       "twisted_fate",
-      "katarina"
+      "katarina",
+      "pantheon_mid"
     ]
   },
   "twisted_fate": {
@@ -2555,7 +2553,6 @@
       "olaf_jg",
       "vi",
       "pantheon_jg",
-      "pantheon_mid",
       "irelia_jg",
       "volibear_jg"
     ],
@@ -2663,8 +2660,7 @@
     ],
     "ctBy": [
       "pantheon_jg",
-      "shyvana",
-      "pantheon_mid"
+      "shyvana"
     ]
   },
   "graves": {
@@ -2875,8 +2871,7 @@
       "lillia",
       "xin_zhao",
       "gragas_jg",
-      "lee_sin",
-      "pantheon_mid"
+      "lee_sin"
     ],
     "ctBy": [
       "volibear",
@@ -3050,7 +3045,6 @@
       "pantheon_jg",
       "amumu",
       "nunu",
-      "pantheon_mid",
       "rammus",
       "warwick"
     ]
@@ -4625,7 +4619,6 @@
       "poppy_baron",
       "yone",
       "jax",
-      "pantheon_mid",
       "singed",
       "yone_baron"
     ]
@@ -4829,8 +4822,7 @@
       "garen",
       "malphite",
       "gragas_baron",
-      "renekton",
-      "pantheon_mid"
+      "renekton"
     ],
     "ctBy": [
       "kennen",
