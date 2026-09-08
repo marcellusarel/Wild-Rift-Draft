@@ -2488,20 +2488,17 @@
     "passiveSpeedBoost": "Var",
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
+    "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Gerçek Hareketlilik",
     "ccTypes": [
       "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
-    "resourceType": "Kaynaksız",
-    "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
-    "teamfightRole": [
-      "Backline Dalışı",
-      "Zone Control"
-    ],
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [],
     "durabilityProfile": [
       "Kırılgan"
     ],
@@ -2512,7 +2509,7 @@
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Yüksek, R ölümsüzlük alanıyla Baron/Ejder çalmayı doğrudan hedefler",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "lee_sin": {
     "hasForms": "Yok",
