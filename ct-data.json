@@ -2288,16 +2288,17 @@
       "amumu",
       "olaf",
       "kindred",
-      "morgana"
+      "morgana",
+      "olaf_jg"
     ],
     "ctBy": [
       "master_yi",
-      "tryndamere",
-      "irelia",
       "viego",
       "vi",
-      "wukong",
-      "hecarim"
+      "hecarim",
+      "tryndamere_jg",
+      "irelia_jg",
+      "wukong_jg"
     ]
   },
   "ambessa_jg": {
@@ -2539,7 +2540,8 @@
       "graves",
       "fizz",
       "riven_jg",
-      "tryndamere_jg"
+      "tryndamere_jg",
+      "warwick"
     ],
     "ctBy": [
       "drmundo",
@@ -2870,7 +2872,8 @@
       "riven_jg",
       "skarner",
       "urgot_jg",
-      "volibear_jg"
+      "volibear_jg",
+      "warwick"
     ]
   },
   "pantheon_jg": {
@@ -3069,7 +3072,8 @@
       "rammus",
       "master_yi",
       "amumu",
-      "camille_jg"
+      "camille_jg",
+      "warwick"
     ],
     "ctBy": [
       "pantheon",
