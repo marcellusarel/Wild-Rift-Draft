@@ -1929,7 +1929,7 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
     "toolFrequency": "Spamlanabilir",
@@ -1938,25 +1938,24 @@
       "Knockup/Knockback",
       "Soft CC/Slow"
     ],
-    "hasCleanseSkill": "Yok",
-    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
-    "resourceType": "Mana",
-    "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "hasCleanseSkill": "Var",
+    "ccSensitivity": "CC'ye Dirençli",
+    "resourceType": "Enerji",
+    "hasReset": "Var",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Engage",
-      "Frontline",
-      "Pick/Execute"
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
-      "Kırılgan"
+      "Kırılgan",
+      "Kalkan"
     ],
     "damageProfile": [
-      "Burst",
-      "Tank Eritici"
+      "Burst"
     ],
     "powerCurve": "Orta Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Orta",
     "globalTeleport": "Yok",
     "duelist": "Var"
