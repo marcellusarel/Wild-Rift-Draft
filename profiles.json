@@ -4498,7 +4498,7 @@
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
     "toolFrequency": "Spamlanabilir",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Stun/Freeze/Sleep"
     ],
@@ -4508,10 +4508,9 @@
     "hasReset": "Yok",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Frontline",
-      "Pick/Execute",
       "Backline Dalışı",
-      "Split Push"
+      "Split Push",
+      "Wave Clear"
     ],
     "durabilityProfile": [
       "Doğal Tank",
@@ -4522,7 +4521,7 @@
       "Tank Eritici"
     ],
     "powerCurve": "Erken Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Orta",
     "globalTeleport": "Yok",
     "duelist": "Var"
