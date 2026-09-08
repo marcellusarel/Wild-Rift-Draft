@@ -4239,8 +4239,8 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Dash",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "Leap",
     "toolCondition": "Koşulsuz",
     "toolFrequency": "Tek Seferlik",
     "mobilityTag": "Gerçek Hantal",
@@ -4255,17 +4255,14 @@
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
       "Engage",
-      "Frontline",
-      "Split Push"
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
       "Doğal Tank",
       "Kalkan"
     ],
-    "damageProfile": [
-      "Anti-Dive"
-    ],
-    "powerCurve": "Orta Oyun",
+    "damageProfile": [],
+    "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Yüksek, R ile büyük savaşları başlatıp objektif kontrolünü kolaylaştırır",
     "globalTeleport": "Yok",
