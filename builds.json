@@ -4146,13 +4146,13 @@
   "riven": {
     "starter": "Gluttonous Greaves",
     "items": [
-      "Eclipse",
+      "Sundered Sky",
       "Serylda's Grudge",
       "Death's Dance",
       "Guardian Angel"
     ],
     "boots": "Immortal Path",
-    "enchant": "Trinity Force",
+    "enchant": "Eclipse",
     "runes": [
       "Conqueror",
       "Battle Zeal",
