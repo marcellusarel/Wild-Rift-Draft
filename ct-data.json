@@ -1746,7 +1746,8 @@
       "kayle_mid",
       "zed_jg",
       "camille_jg",
-      "fiddlesticks"
+      "fiddlesticks",
+      "graves"
     ]
   },
   "ryze": {
@@ -2470,7 +2471,8 @@
       "evelynn",
       "pantheon",
       "rammus",
-      "aatrox_jg"
+      "aatrox_jg",
+      "pantheon_mid"
     ],
     "ctBy": [
       "olaf",
@@ -2478,7 +2480,8 @@
       "jarvaniv",
       "vi",
       "jax",
-      "hecarim"
+      "hecarim",
+      "olaf_jg"
     ]
   },
   "gwen_jg": {
