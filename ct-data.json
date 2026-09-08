@@ -519,9 +519,7 @@
       "lux",
       "karma",
       "zyra",
-      "bard",
-      "syndra",
-      "velkoz"
+      "bard"
     ],
     "ctBy": [
       "thresh",
@@ -1914,7 +1912,6 @@
       "ahri",
       "yone",
       "teemo",
-      "swain",
       "orianna",
       "brand_mid",
       "heimerdinger",
@@ -2062,8 +2059,7 @@
     "ctBy": [
       "aurelionsol",
       "lissandra",
-      "galio",
-      "swain"
+      "galio"
     ]
   },
   "vex": {
