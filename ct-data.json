@@ -1752,7 +1752,8 @@
       "zed_jg",
       "camille_jg",
       "fiddlesticks",
-      "graves"
+      "graves",
+      "khazix"
     ]
   },
   "ryze": {
@@ -2625,14 +2626,14 @@
       "xin_zhao",
       "olaf",
       "camille",
-      "lee_sin"
+      "lee_sin",
+      "pantheon_mid"
     ],
     "ctBy": [
       "amumu",
       "evelynn",
       "jarvaniv",
-      "shyvana",
-      "nilah"
+      "shyvana"
     ]
   },
   "kindred": {
