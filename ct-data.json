@@ -698,7 +698,8 @@
       "pyke",
       "pantheon",
       "ambessa_jg",
-      "jax_jg"
+      "jax_jg",
+      "jax"
     ]
   },
   "smolder": {
@@ -3539,7 +3540,8 @@
       "gragas",
       "riven",
       "shen",
-      "sett"
+      "sett",
+      "poppy_sup"
     ],
     "ctBy": [
       "yasuo",
