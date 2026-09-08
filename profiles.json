@@ -2109,11 +2109,11 @@
     "passiveSpeedBoost": "Var",
     "mobilityTool": "Stealth",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
+    "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Yanıltıcı Hareketlilik",
     "ccTypes": [
-      "Stun/Freeze/Sleep",
-      "Soft CC/Slow"
+      "Soft CC/Slow",
+      "Silence/Ground"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
@@ -2131,10 +2131,10 @@
       "Burst"
     ],
     "powerCurve": "Geç Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Düşük, gizlilikle rakip gank/counter'ını zorlaştırır",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "fiddlesticks": {
     "hasForms": "Yok",
