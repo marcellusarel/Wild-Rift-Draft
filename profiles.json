@@ -3274,30 +3274,27 @@
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback",
-      "Soft CC/Slow"
+      "Soft CC/Slow",
+      "Silence/Ground"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Pick/Execute",
-      "Zone Control",
       "Frontline"
     ],
     "durabilityProfile": [
       "Doğal Tank"
     ],
-    "damageProfile": [
-      "Sürdürülebilir DPS",
-      "Tank Eritici"
-    ],
+    "damageProfile": [],
     "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "viego": {
     "hasForms": "Yok",
