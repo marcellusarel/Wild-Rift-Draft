@@ -2738,7 +2738,7 @@
     "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Gerçek Hareketlilik",
     "ccTypes": [
-      "Root/Snare"
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
@@ -2747,8 +2747,9 @@
     "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Poke",
-      "Pick/Execute",
-      "Backline Dalışı"
+      "Backline Dalışı",
+      "Peel",
+      "Zone Control"
     ],
     "durabilityProfile": [
       "Kırılgan"
@@ -2760,7 +2761,7 @@
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Yüksek, mızrak pokeyle uzaktan objektif hasarı hızlandırır",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "nocturne": {
     "hasForms": "Yok",
