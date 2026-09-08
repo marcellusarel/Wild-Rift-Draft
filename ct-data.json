@@ -408,7 +408,6 @@
       "kayle_mid",
       "lucian_mid",
       "morgana_mid",
-      "ziggs",
       "diana"
     ],
     "ctBy": [
@@ -959,7 +958,6 @@
   "draven": {
     "ct": [
       "caitlyn",
-      "ziggs",
       "varus",
       "samira",
       "kogmaw"
@@ -1568,7 +1566,8 @@
       "heimerdinger",
       "mel",
       "aatrox",
-      "kennen_mid"
+      "kennen_mid",
+      "ziggs"
     ]
   },
   "jayce_mid": {
@@ -1737,7 +1736,8 @@
       "katarina",
       "talon",
       "kassadin",
-      "mel"
+      "mel",
+      "ziggs"
     ],
     "ctBy": [
       "twisted_fate",
@@ -2336,28 +2336,27 @@
   "ziggs": {
     "ct": [
       "zed_mid",
-      "irelia",
       "yasuo",
       "fizz",
       "ahri",
       "yone",
       "corki",
       "ekko",
-      "twisted_fate"
+      "twisted_fate",
+      "irelia_mid"
     ],
     "ctBy": [
       "diana",
       "orianna",
-      "lux",
       "veigar",
       "kennen_mid",
       "vladimir",
       "ryze",
-      "draven",
       "heimerdinger",
       "lissandra",
       "pantheon_mid",
-      "teemo_mid"
+      "teemo_mid",
+      "lux_mid"
     ]
   },
   "ziggs_adc": {
@@ -4080,6 +4079,7 @@
       "lux_mid",
       "morgana_mid",
       "norra",
+      "orianna",
       "ryze",
       "seraphine_mid",
       "syndra",
@@ -4090,7 +4090,6 @@
       "yasuo",
       "yone",
       "zed_mid",
-      "ziggs",
       "zoe",
       "zyra_mid",
       "akshan_mid",
