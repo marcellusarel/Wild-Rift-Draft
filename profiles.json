@@ -2801,31 +2801,30 @@
     "hasForms": "Yok",
     "formAName": "",
     "formBName": "",
-    "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Dash",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
-    "mobilityTag": "Patlamalı Hareketlilik",
+    "moveSpeed": "Hızlı",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "",
+    "toolCondition": "",
+    "toolFrequency": "",
+    "mobilityTag": "Yanıltıcı Hareketlilik",
     "ccTypes": [
       "Knockup/Knockback",
-      "Root/Snare"
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Engage",
       "Frontline"
     ],
     "durabilityProfile": [
-      "Doğal Tank"
+      "Doğal Tank",
+      "Sustain"
     ],
-    "damageProfile": [
-      "Burst"
-    ],
+    "damageProfile": [],
     "powerCurve": "Erken Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Çok yüksek, R ile canavar/objektif avlama ve çalma hızı doğrudan artar",
