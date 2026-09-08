@@ -2533,7 +2533,8 @@
       "olaf",
       "wukong",
       "graves",
-      "fizz"
+      "fizz",
+      "riven_jg"
     ],
     "ctBy": [
       "drmundo",
@@ -2556,7 +2557,6 @@
       "nunu",
       "pantheon",
       "olaf_jg",
-      "riven_jg",
       "shyvana",
       "xin_zhao",
       "viego"
@@ -2858,7 +2858,8 @@
       "fiddlesticks",
       "kayn",
       "rammus",
-      "rengar"
+      "rengar",
+      "riven_jg"
     ]
   },
   "pantheon_jg": {
@@ -2894,7 +2895,8 @@
     "ctBy": [
       "lee_sin",
       "talon",
-      "gragas"
+      "gragas",
+      "riven_jg"
     ]
   },
   "rammus": {
@@ -2957,14 +2959,15 @@
       "olaf",
       "rengar",
       "graves",
-      "jarvaniv"
+      "olaf_jg",
+      "poppy_jg"
     ],
     "ctBy": [
-      "irelia",
       "amumu",
-      "jarvaniv",
       "fiora",
-      "hecarim"
+      "hecarim",
+      "irelia_jg",
+      "jarvaniv"
     ]
   },
   "shen_jg": {
