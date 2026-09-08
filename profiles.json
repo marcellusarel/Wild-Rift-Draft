@@ -2416,26 +2416,26 @@
     "formAName": "Karasilah (Rhaast)",
     "formBName": "Gölge Suikastçısı",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Dash",
     "toolCondition": "Koşulsuz",
     "toolFrequency": "Sınırlı",
-    "mobilityTag": "Patlamalı Hareketlilik",
+    "mobilityTag": "Gerçek Hareketlilik",
     "ccTypes": [
-      "Soft CC/Slow"
+      "Soft CC/Slow",
+      "Knockup/Knockback"
     ],
     "hasCleanseSkill": "Yok",
-    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Yok",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
       "Backline Dalışı"
     ],
     "durabilityProfile": [
       "Kırılgan",
-      "Doğal Tank"
+      "Sustain"
     ],
     "damageProfile": [
       "Burst",
@@ -2445,7 +2445,7 @@
     "scalingType": "Snowball Bağımlı",
     "objectiveControl": "Düşük-orta, duvar geçişiyle objektif çukuruna sürpriz giriş yapar",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "khazix": {
     "hasForms": "Yok",
