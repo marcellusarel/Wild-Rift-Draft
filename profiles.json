@@ -2247,24 +2247,20 @@
     "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
-      "Root/Snare",
       "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
-    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Var",
-    "ultDependency": "Aşırı Bağımlı",
-    "teamfightRole": [
-      "Pick/Execute"
-    ],
+    "ultDependency": "Düşük Bağımlı",
+    "teamfightRole": [],
     "durabilityProfile": [
-      "Kalkan",
       "Kırılgan"
     ],
     "damageProfile": [
       "Tank Eritici",
-      "Sürdürülebilir DPS"
+      "Burst"
     ],
     "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
