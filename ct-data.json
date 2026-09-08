@@ -2745,7 +2745,8 @@
       "lee_sin",
       "jarvaniv",
       "olaf_jg",
-      "zed_mid"
+      "zed_mid",
+      "shyvana"
     ],
     "ctBy": [
       "vi",
@@ -2989,14 +2990,15 @@
       "jarvaniv",
       "master_yi",
       "olaf",
-      "lee_sin"
+      "lee_sin",
+      "olaf_jg"
     ],
     "ctBy": [
       "amumu",
-      "morgana",
       "xin_zhao",
       "rammus",
-      "nautilus"
+      "nautilus_jg",
+      "morgana_jg"
     ]
   },
   "skarner": {
