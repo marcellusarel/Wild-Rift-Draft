@@ -2513,7 +2513,6 @@
       "volibear",
       "nautilus_jg",
       "drmundo_jg",
-      "olaf_jg",
       "amumu"
     ]
   },
@@ -2553,8 +2552,7 @@
       "olaf",
       "wukong",
       "graves",
-      "fizz",
-      "olaf_jg"
+      "fizz"
     ],
     "ctBy": [
       "drmundo",
@@ -2591,7 +2589,6 @@
       "olaf",
       "fiora",
       "riven",
-      "olaf_jg",
       "poppy_sup"
     ],
     "ctBy": [
@@ -2792,7 +2789,6 @@
       "khazix",
       "amumu",
       "fiora",
-      "olaf_jg",
       "gwen_jg"
     ],
     "ctBy": [
@@ -2863,10 +2859,6 @@
       "camille",
       "graves",
       "aatrox_jg",
-      "akali_baron",
-      "irelia",
-      "kayle",
-      "gwen_jg",
       "gwen",
       "nocturne"
     ],
@@ -2877,26 +2869,17 @@
       "evelynn",
       "nunu",
       "maokai",
-      "galio_baron",
       "gragas_baron",
       "morgana_jg",
       "nautilus_baron",
-      "nautilus_jg",
-      "ornn",
       "poppy_baron",
       "shen",
-      "shen_jg",
       "diana_jg",
       "ekko_jg",
       "fizz_jg",
-      "irelia",
-      "irelia_jg",
       "pantheon_jg",
-      "teemo",
-      "yasuo_baron",
       "drmundo",
       "fiddlesticks",
-      "jax_jg",
       "kayn"
     ]
   },
@@ -3008,8 +2991,7 @@
       "lee_sin",
       "tryndamere",
       "olaf",
-      "fiora",
-      "olaf_jg"
+      "fiora"
     ],
     "ctBy": [
       "master_yi",
@@ -3268,8 +3250,7 @@
       "malphite",
       "darius",
       "vayne",
-      "camille",
-      "olaf_jg"
+      "camille"
     ]
   },
   "ambessa": {
@@ -3429,8 +3410,7 @@
       "olaf",
       "sett",
       "yasuo",
-      "fiora",
-      "olaf_jg"
+      "fiora"
     ],
     "ctBy": [
       "teemo",
@@ -3537,7 +3517,6 @@
       "teemo",
       "nasus",
       "gnar",
-      "olaf_jg",
       "chogath"
     ]
   },
@@ -3621,8 +3600,7 @@
       "singed",
       "olaf",
       "volibear",
-      "chogath",
-      "olaf_jg"
+      "chogath"
     ]
   },
   "kennen": {
@@ -3787,8 +3765,7 @@
       "gwen",
       "olaf",
       "darius",
-      "shen",
-      "olaf_jg"
+      "shen"
     ],
     "ctBy": [
       "malphite",
@@ -4013,8 +3990,7 @@
       "olaf",
       "kennen",
       "jayce",
-      "fiora",
-      "olaf_jg"
+      "fiora"
     ],
     "ctBy": [
       "tryndamere",
@@ -4140,8 +4116,7 @@
       "riven",
       "olaf",
       "tryndamere",
-      "jax",
-      "olaf_jg"
+      "jax"
     ],
     "ctBy": [
       "teemo",
