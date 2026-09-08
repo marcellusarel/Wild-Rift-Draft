@@ -3253,7 +3253,8 @@
       "Kırılgan"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS"
+      "Sürdürülebilir DPS",
+      "Anti-Dive"
     ],
     "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
