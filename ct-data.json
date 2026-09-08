@@ -3578,7 +3578,8 @@
     "ct": [
       "fiora",
       "vayne",
-      "garen"
+      "garen",
+      "volibear"
     ],
     "ctBy": [
       "irelia",
@@ -3692,7 +3693,8 @@
       "riven",
       "renekton",
       "poppy",
-      "wukong"
+      "wukong",
+      "volibear"
     ]
   },
   "nasus": {
@@ -3759,7 +3761,8 @@
       "wukong",
       "poppy_baron",
       "yasuo_baron",
-      "riven"
+      "riven",
+      "volibear"
     ]
   },
   "ornn": {
@@ -3769,7 +3772,8 @@
       "gwen",
       "olaf",
       "darius",
-      "shen"
+      "shen",
+      "volibear"
     ],
     "ctBy": [
       "malphite",
@@ -3815,7 +3819,8 @@
       "darius",
       "jayce",
       "graves",
-      "chogath"
+      "chogath",
+      "volibear"
     ],
     "ctBy": [
       "ambessa",
@@ -4078,13 +4083,17 @@
       "irelia",
       "akali",
       "gwen",
-      "camille"
+      "camille",
+      "olaf_baron",
+      "mordekaiser"
     ],
     "ctBy": [
       "nasus",
-      "yasuo",
       "singed",
-      "diana"
+      "yasuo_baron",
+      "renekton",
+      "ksante",
+      "ornn"
     ]
   },
   "wukong": {
@@ -4122,7 +4131,8 @@
       "olaf",
       "tryndamere",
       "jax",
-      "olaf_baron"
+      "olaf_baron",
+      "volibear"
     ],
     "ctBy": [
       "teemo",
