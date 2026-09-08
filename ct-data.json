@@ -2124,13 +2124,7 @@
       "pantheon_mid",
       "annie",
       "singed_mid",
-      "akali_baron",
-      "camille",
-      "drmundo",
-      "jax",
-      "sett",
-      "singed",
-      "zed_baron"
+      "zed_mid"
     ],
     "ctBy": [
       "ahri",
@@ -2141,7 +2135,6 @@
       "ryze",
       "syndra",
       "orianna",
-      "zed_mid",
       "akshan_mid",
       "aurelionsol",
       "kassadin",
@@ -2160,10 +2153,7 @@
       "velkoz",
       "zoe",
       "zyra_mid",
-      "galio_baron",
-      "gwen",
-      "ryze_baron",
-      "yone_baron"
+      "galio_baron"
     ]
   },
   "yone": {
@@ -2190,7 +2180,6 @@
   "zed_mid": {
     "ct": [
       "lissandra",
-      "yasuo",
       "vex",
       "fizz",
       "diana",
@@ -2229,7 +2218,8 @@
       "zoe",
       "galio_mid",
       "lux_mid",
-      "morgana_mid"
+      "morgana_mid",
+      "yasuo"
     ]
   },
   "ziggs": {
@@ -3568,7 +3558,6 @@
     ],
     "ctBy": [
       "irelia",
-      "yasuo",
       "olaf_baron",
       "malphite",
       "darius",
@@ -3620,7 +3609,6 @@
       "poppy_baron"
     ],
     "ctBy": [
-      "yasuo",
       "garen",
       "drmundo",
       "wukong",
@@ -3720,7 +3708,6 @@
       "gnar"
     ],
     "ctBy": [
-      "yasuo",
       "akali_baron",
       "jayce",
       "nautilus",
@@ -3876,7 +3863,6 @@
       "fiora",
       "jax",
       "renekton",
-      "yasuo",
       "akali_baron",
       "riven",
       "tryndamere",
@@ -3967,7 +3953,6 @@
       "urgot"
     ],
     "ctBy": [
-      "yasuo",
       "tryndamere",
       "camille",
       "irelia",
@@ -4420,7 +4405,6 @@
       "darius",
       "jayce",
       "irelia",
-      "yasuo",
       "renekton"
     ],
     "ctBy": [
@@ -4443,7 +4427,6 @@
     ],
     "ctBy": [
       "irelia",
-      "yasuo",
       "kayle",
       "nasus",
       "shen",
@@ -4503,7 +4486,6 @@
     "ctBy": [
       "jax",
       "malphite",
-      "yasuo",
       "tryndamere",
       "garen",
       "nautilus_baron"
@@ -4746,7 +4728,6 @@
       "fiora",
       "jax",
       "renekton",
-      "yasuo",
       "akali_baron",
       "riven",
       "wukong",
@@ -4774,8 +4755,7 @@
       "kennen",
       "teemo",
       "vayne",
-      "jayce",
-      "yasuo"
+      "jayce"
     ]
   }
 }
