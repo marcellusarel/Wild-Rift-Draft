@@ -2266,7 +2266,8 @@
       "nidalee",
       "olaf",
       "lee_sin",
-      "master_yi"
+      "master_yi",
+      "olaf_jg"
     ],
     "ctBy": [
       "graves",
@@ -2274,7 +2275,6 @@
       "rammus",
       "warwick",
       "viego",
-      "vi",
       "tryndamere",
       "pantheon",
       "ekko",
@@ -3066,7 +3066,6 @@
   "vi": {
     "ct": [
       "kindred",
-      "amumu",
       "warwick",
       "xin_zhao",
       "olaf",
