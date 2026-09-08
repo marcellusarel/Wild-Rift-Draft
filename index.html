@@ -1323,6 +1323,14 @@ const DB = {
 };
 
 const ALL = Object.entries(DB).map(([id,c])=>({id,...c}));
+// Aynı isimde (flex) birden fazla kaydı olan şampiyonları tespit etmek için sayaç.
+// CT/CTBy seçim panelinde, örn. "Poppy" (Jungle) ile "Poppy" (Support) birbirine
+// karışmasın diye bu şampiyonların yanında rol etiketi gösterilir.
+const NAME_COUNTS = ALL.reduce((m,c)=>{ m[c.name]=(m[c.name]||0)+1; return m; }, {});
+function flexRoleLabel(c){
+  if(!c || NAME_COUNTS[c.name] <= 1) return "";
+  return (c.lanes && c.lanes[0]) || "";
+}
 const LANES = ["Tümü","Baron","Jungle","Mid","ADC","Support"];
 // Koridor adının görünen (dile göre) metnini döndürür — dahili karşılaştırma
 // değerleri (Baron/Jungle/Mid/ADC/Support) HİÇBİR ZAMAN değişmez, sadece
@@ -7259,6 +7267,7 @@ function renderCTPickerList(){
   grid.innerHTML = list.map(c => {
     const on = selected.has(c.id);
     const lc = LANE_COLOR[c.lanes?.[0]]||"#888";
+    const roleLbl = flexRoleLabel(c);
     return `<div onclick="ctToggleChamp('${c.id}')" style="display:flex;flex-direction:column;
       align-items:center;gap:4px;cursor:pointer;position:relative">
       <div style="width:44px;height:44px;border-radius:10px;overflow:hidden;
@@ -7268,6 +7277,8 @@ function renderCTPickerList(){
       ${on?'<div style="position:absolute;top:-2px;right:2px;width:16px;height:16px;border-radius:50%;background:#00ff88;color:#07070f;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center">✓</div>':""}
       <div style="font-size:7px;color:#999;text-align:center;max-width:52px;white-space:nowrap;
         overflow:hidden;text-overflow:ellipsis">${c.name}</div>
+      ${roleLbl ? `<div style="font-size:6.5px;font-weight:800;color:${lc};text-align:center;max-width:52px;
+        white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${roleLbl}</div>` : ""}
     </div>`;
   }).join("") || `<div style="grid-column:1/-1;text-align:center;color:#444;font-size:11px;padding:20px">${t('not_found')}</div>`;
 }
@@ -8755,10 +8766,11 @@ function render() {
         ${ids.map(id => {
           const dc = DB[id];
           if(!dc) return "";
+          const roleLbl = flexRoleLabel({name:dc.name, lanes:dc.lanes});
           return `<div style="display:flex;align-items:center;gap:5px;padding:4px 6px 4px 4px;
             border-radius:20px;background:#0d0d1e;border:1px solid ${color}44">
             <div style="width:26px;height:26px;border-radius:50%;overflow:hidden">${champImg(id,26)}</div>
-            <span style="font-size:10px;color:#e0e0f0">${dc.name}</span>
+            <span style="font-size:10px;color:#e0e0f0">${dc.name}${roleLbl ? ` <span style="color:#888;font-weight:700;font-size:8px">(${roleLbl})</span>` : ""}</span>
             <button onclick="ctRemoveChamp('${listKey}','${id}')" style="width:16px;height:16px;
               border-radius:50%;border:none;background:#ff444425;color:#ff6060;font-size:10px;
               line-height:1;cursor:pointer">✕</button>
@@ -8782,6 +8794,7 @@ function render() {
       const initHtml = initList.map(x => {
         const on = selected.has(x.id);
         const xlc = LANE_COLOR[x.lanes?.[0]]||"#888";
+        const roleLbl = flexRoleLabel(x);
         return `<div onclick="ctToggleChamp('${x.id}')" style="display:flex;flex-direction:column;
           align-items:center;gap:4px;cursor:pointer;position:relative">
           <div style="width:44px;height:44px;border-radius:10px;overflow:hidden;
@@ -8791,6 +8804,8 @@ function render() {
           ${on?'<div style="position:absolute;top:-2px;right:2px;width:16px;height:16px;border-radius:50%;background:#00ff88;color:#07070f;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center">✓</div>':""}
           <div style="font-size:7px;color:#999;text-align:center;max-width:52px;white-space:nowrap;
             overflow:hidden;text-overflow:ellipsis">${x.name}</div>
+          ${roleLbl ? `<div style="font-size:6.5px;font-weight:800;color:${xlc};text-align:center;max-width:52px;
+            white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${roleLbl}</div>` : ""}
         </div>`;
       }).join("");
       pickerHtml = `<div style="position:fixed;inset:0;background:#000000cc;z-index:100;display:flex;
