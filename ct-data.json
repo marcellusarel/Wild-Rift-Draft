@@ -3081,16 +3081,16 @@
   "urgot_jg": {
     "ct": [
       "olaf",
-      "fiora",
       "aatrox_jg",
       "olaf_jg",
       "wukong_jg",
-      "camille_jg"
+      "camille_jg",
+      "fiora"
     ],
     "ctBy": [
-      "riven_jg",
+      "shen_jg",
       "jax_jg",
-      "shen_jg"
+      "riven_jg"
     ]
   },
   "viego": {
