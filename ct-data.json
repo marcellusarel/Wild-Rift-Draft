@@ -2435,7 +2435,6 @@
       "warwick"
     ],
     "ctBy": [
-      "jax",
       "volibear",
       "wukong",
       "drmundo_jg"
@@ -2532,7 +2531,6 @@
       "olaf_jg",
       "xin_zhao",
       "khazix",
-      "jax",
       "lee_sin"
     ],
     "ctBy": [
@@ -2903,7 +2901,6 @@
       "rammus",
       "viego",
       "lee_sin",
-      "jax",
       "wukong",
       "gragas_jg",
       "warwick",
@@ -2926,6 +2923,7 @@
       "shyvana",
       "rengar",
       "diana_jg",
+      "gwen",
       "hecarim",
       "khazix",
       "lillia",
@@ -2990,7 +2988,6 @@
     ],
     "ctBy": [
       "graves",
-      "jax",
       "tryndamere"
     ]
   },
@@ -3243,8 +3240,7 @@
     ],
     "ctBy": [
       "master_yi",
-      "jarvaniv",
-      "jax"
+      "jarvaniv"
     ]
   },
   "shyvana": {
@@ -3893,10 +3889,7 @@
       "riven",
       "shen",
       "sett",
-      "ambessa_jg",
       "graves",
-      "nautilus_jg",
-      "shen_jg",
       "chogath",
       "kennen",
       "singed",
@@ -3913,8 +3906,6 @@
       "ornn",
       "volibear",
       "chogath",
-      "ekko_jg",
-      "master_yi",
       "aatrox",
       "akali_baron",
       "olaf_baron",
