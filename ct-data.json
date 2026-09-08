@@ -2599,19 +2599,20 @@
   },
   "kayn": {
     "ct": [
-      "morgana",
       "master_yi",
       "rengar",
       "khazix",
       "olaf",
       "kindred",
-      "rammus"
+      "rammus",
+      "olaf_jg"
     ],
     "ctBy": [
       "amumu",
       "evelynn",
       "jarvaniv",
-      "nunu"
+      "nunu",
+      "viego"
     ]
   },
   "khazix": {
@@ -2887,7 +2888,8 @@
       "yasuo_baron",
       "drmundo",
       "fiddlesticks",
-      "jax_jg"
+      "jax_jg",
+      "kayn"
     ]
   },
   "pantheon_jg": {
@@ -3104,7 +3106,8 @@
       "xin_zhao",
       "amumu",
       "hecarim",
-      "jarvaniv"
+      "jarvaniv",
+      "kayn"
     ],
     "ctBy": [
       "rengar",
