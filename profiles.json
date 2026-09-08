@@ -2550,32 +2550,32 @@
     "hasForms": "Yok",
     "formAName": "",
     "formBName": "",
-    "moveSpeed": "Ortalama",
+    "moveSpeed": "Hızlı",
     "passiveSpeedBoost": "Var",
-    "mobilityTool": "Dash",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "mobilityTool": "",
+    "toolCondition": "",
+    "toolFrequency": "",
+    "mobilityTag": "Yanıltıcı Hareketlilik",
     "ccTypes": [
-      "Soft CC/Slow"
+      "Soft CC/Slow",
+      "Stun/Freeze/Sleep"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
-      "Poke",
       "Zone Control"
     ],
     "durabilityProfile": [
       "Kırılgan"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS",
-      "Burst"
+      "Burst",
+      "Tank Eritici"
     ],
-    "powerCurve": "Orta Oyun",
+    "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Yüksek, R uyku alanı Baron/Ejder etrafında güçlü kilit sağlar",
     "globalTeleport": "Yok",
