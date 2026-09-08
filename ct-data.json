@@ -2270,7 +2270,8 @@
       "olaf",
       "lee_sin",
       "master_yi",
-      "olaf_jg"
+      "olaf_jg",
+      "gwen_jg"
     ],
     "ctBy": [
       "graves",
@@ -2490,8 +2491,7 @@
       "master_yi",
       "nocturne",
       "fiora",
-      "riven",
-      "vi"
+      "riven"
     ],
     "ctBy": [
       "shen",
@@ -2500,7 +2500,9 @@
       "nunu",
       "volibear",
       "nautilus_jg",
-      "drmundo_jg"
+      "drmundo_jg",
+      "olaf_jg",
+      "amumu"
     ]
   },
   "hecarim": {
@@ -2836,7 +2838,8 @@
       "aatrox_jg",
       "akali_baron",
       "irelia",
-      "kayle"
+      "kayle",
+      "gwen_jg"
     ],
     "ctBy": [
       "vi",
