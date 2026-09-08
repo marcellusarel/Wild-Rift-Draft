@@ -4272,14 +4272,15 @@
     "hasForms": "Yok",
     "formAName": "",
     "formBName": "",
-    "moveSpeed": "Ortalama",
+    "moveSpeed": "Yavaş",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
-      "Soft CC/Slow"
+      "Soft CC/Slow",
+      "Knockup/Knockback"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
@@ -4287,9 +4288,8 @@
     "hasReset": "Var",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
       "Frontline",
-      "Split Push"
+      "Disengage"
     ],
     "durabilityProfile": [
       "Doğal Tank",
@@ -4297,7 +4297,7 @@
     ],
     "damageProfile": [
       "Tank Eritici",
-      "Sürdürülebilir DPS"
+      "Anti-Dive"
     ],
     "powerCurve": "Orta Oyun",
     "scalingType": "Tutarlı",
