@@ -2288,8 +2288,8 @@
       "amumu",
       "olaf",
       "kindred",
-      "morgana",
-      "olaf_jg"
+      "olaf_jg",
+      "morgana_jg"
     ],
     "ctBy": [
       "master_yi",
@@ -2763,7 +2763,8 @@
       "amumu",
       "nunu",
       "pantheon_mid",
-      "rammus"
+      "rammus",
+      "warwick"
     ]
   },
   "nautilus_jg": {
