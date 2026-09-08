@@ -2946,19 +2946,20 @@
     "formBName": "",
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Var",
-    "mobilityTool": "Dash",
+    "mobilityTool": "Leap",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
+    "toolFrequency": "Tek Seferlik",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
-      "Knockup/Knockback",
-      "Soft CC/Slow"
+      "Soft CC/Slow",
+      "Silence/Ground",
+      "Stun/Freeze/Sleep"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Engage",
       "Frontline"
@@ -2966,10 +2967,8 @@
     "durabilityProfile": [
       "Doğal Tank"
     ],
-    "damageProfile": [
-      "Anti-Dive"
-    ],
-    "powerCurve": "Orta Oyun",
+    "damageProfile": [],
+    "powerCurve": "Erken Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta-yüksek, R ile savaşı objektif çukurunda hızlı başlatır",
     "globalTeleport": "Yok",
