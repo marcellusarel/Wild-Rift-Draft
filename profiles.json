@@ -2835,34 +2835,33 @@
     "hasForms": "Yok",
     "formAName": "",
     "formBName": "",
-    "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
-    "mobilityTool": "Leap",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
-    "mobilityTag": "Gerçek Hareketlilik",
+    "moveSpeed": "Yavaş",
+    "passiveSpeedBoost": "Var",
+    "mobilityTool": "",
+    "toolCondition": "",
+    "toolFrequency": "",
+    "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Var",
     "ccSensitivity": "CC'ye Dirençli",
-    "resourceType": "Kaynaksız",
-    "hasReset": "Yok",
-    "ultDependency": "Düşük Bağımlı",
+    "resourceType": "Mana",
+    "hasReset": "Var",
+    "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
       "Frontline",
-      "Pick/Execute",
       "Backline Dalışı"
     ],
     "durabilityProfile": [
-      "Sustain"
+      "Sustain",
+      "Doğal Tank"
     ],
     "damageProfile": [
-      "Sürdürülebilir DPS",
-      "Tank Eritici"
+      "Sürdürülebilir DPS"
     ],
     "powerCurve": "Erken Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Orta",
     "globalTeleport": "Yok",
     "duelist": "Var"
