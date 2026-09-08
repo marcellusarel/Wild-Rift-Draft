@@ -2347,34 +2347,35 @@
     "moveSpeed": "Ortalama",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Dash",
-    "toolCondition": "Koşulsuz",
+    "toolCondition": "Koşullu",
     "toolFrequency": "Sınırlı",
     "mobilityTag": "Patlamalı Hareketlilik",
     "ccTypes": [
-      "Knockup/Knockback"
+      "Knockup/Knockback",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
-    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Mana",
     "hasReset": "Yok",
-    "ultDependency": "Aşırı Bağımlı",
+    "ultDependency": "Düşük Bağımlı",
     "teamfightRole": [
       "Engage",
       "Frontline",
-      "Pick/Execute"
+      "Backline Dalışı"
     ],
     "durabilityProfile": [
-      "Doğal Tank"
+      "Doğal Tank",
+      "Kalkan"
     ],
     "damageProfile": [
-      "Burst",
-      "Anti-Dive"
+      "Sürdürülebilir DPS"
     ],
-    "powerCurve": "Erken Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "powerCurve": "Orta Oyun",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Yüksek, R duvarıyla rakibi objektif çukurunda hapsedebilir",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "jax_jg": {
     "hasForms": "Yok",
