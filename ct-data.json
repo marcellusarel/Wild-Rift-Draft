@@ -611,7 +611,6 @@
       "leona",
       "maokai",
       "rell",
-      "aurelionsol",
       "akali_mid",
       "fizz",
       "irelia_mid",
@@ -1275,7 +1274,6 @@
       "yasuo",
       "fizz",
       "zed_mid",
-      "galio",
       "yone",
       "galio_mid",
       "heimerdinger",
@@ -1291,9 +1289,7 @@
       "annie",
       "lux",
       "orianna",
-      "mel",
-      "mel_adc",
-      "orianna_adc"
+      "mel"
     ]
   },
   "aurelionsol_adc": {
@@ -1774,7 +1770,6 @@
   },
   "mel_adc": {
     "ct": [
-      "aurelionsol",
       "vayne",
       "lucian",
       "tristana"
@@ -1860,7 +1855,6 @@
   },
   "orianna_adc": {
     "ct": [
-      "aurelionsol",
       "vayne",
       "lucian",
       "tristana",
@@ -1868,8 +1862,7 @@
     ],
     "ctBy": [
       "jinx",
-      "ashe",
-      "corki"
+      "ashe"
     ]
   },
   "pantheon_mid": {
