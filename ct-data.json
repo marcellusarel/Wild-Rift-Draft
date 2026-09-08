@@ -667,7 +667,8 @@
       "rakan",
       "alistar",
       "leona",
-      "rell"
+      "rell",
+      "kindred"
     ]
   },
   "ornn_sup": {
@@ -1753,7 +1754,8 @@
       "camille_jg",
       "fiddlesticks",
       "graves",
-      "khazix"
+      "khazix",
+      "kindred"
     ]
   },
   "ryze": {
@@ -2643,7 +2645,9 @@
       "lillia",
       "xin_zhao",
       "gragas",
-      "lee_sin"
+      "lee_sin",
+      "pantheon_mid",
+      "gragas_sup"
     ],
     "ctBy": [
       "volibear",
@@ -2657,8 +2661,8 @@
       "olaf",
       "diana_jg",
       "khazix",
-      "maokai",
-      "aatrox_jg"
+      "aatrox_jg",
+      "olaf_jg"
     ]
   },
   "lee_sin": {
