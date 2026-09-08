@@ -1448,7 +1448,8 @@
       "aurora",
       "ekko",
       "heimerdinger",
-      "mel"
+      "mel",
+      "aatrox"
     ]
   },
   "jayce_mid": {
@@ -3169,7 +3170,8 @@
       "fiora",
       "jax",
       "tryndamere",
-      "pantheon"
+      "pantheon",
+      "irelia_mid"
     ],
     "ctBy": [
       "sion",
@@ -3178,10 +3180,10 @@
       "kayle",
       "nasus",
       "urgot",
-      "ornn",
       "sett",
       "ryze",
-      "akali"
+      "akali",
+      "chogath"
     ]
   },
   "akali_baron": {
@@ -3266,7 +3268,8 @@
       "gnar",
       "irelia",
       "sett",
-      "renekton"
+      "renekton",
+      "aatrox"
     ],
     "ctBy": [
       "kennen",
