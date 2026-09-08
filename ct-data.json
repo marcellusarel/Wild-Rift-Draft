@@ -402,7 +402,6 @@
       "akali_mid",
       "corki_mid",
       "ekko",
-      "irelia_mid",
       "jayce_mid",
       "karma_mid",
       "kayle_mid",
@@ -610,7 +609,6 @@
       "rell",
       "akali_mid",
       "fizz",
-      "irelia_mid",
       "jayce_mid",
       "katarina",
       "lissandra",
@@ -1542,7 +1540,6 @@
   "irelia_mid": {
     "ct": [
       "vladimir",
-      "galio",
       "akali_mid",
       "fizz",
       "yasuo",
@@ -1551,10 +1548,8 @@
       "singed_mid"
     ],
     "ctBy": [
-      "jayce",
       "annie",
       "diana",
-      "lux",
       "orianna",
       "ahri",
       "talon",
@@ -1565,9 +1560,10 @@
       "ekko",
       "heimerdinger",
       "mel",
-      "aatrox",
       "kennen_mid",
-      "ziggs"
+      "ziggs",
+      "lux_mid",
+      "jayce_mid"
     ]
   },
   "jayce_mid": {
@@ -1578,7 +1574,8 @@
       "zed_mid",
       "fizz",
       "yasuo",
-      "galio_mid"
+      "galio_mid",
+      "irelia_mid"
     ],
     "ctBy": [
       "katarina",
@@ -1737,7 +1734,8 @@
       "talon",
       "kassadin",
       "mel",
-      "ziggs"
+      "ziggs",
+      "irelia_mid"
     ],
     "ctBy": [
       "twisted_fate",
@@ -3660,8 +3658,7 @@
       "ambessa",
       "fiora",
       "jax",
-      "tryndamere",
-      "irelia_mid"
+      "tryndamere"
     ],
     "ctBy": [
       "sion",
@@ -4158,7 +4155,6 @@
       "nasus",
       "ornn",
       "akali_mid",
-      "irelia_mid",
       "syndra",
       "vladimir",
       "drmundo",
