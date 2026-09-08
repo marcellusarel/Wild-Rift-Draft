@@ -1366,7 +1366,6 @@
     "ctBy": [
       "annie",
       "twisted_fate",
-      "teemo",
       "swain_mid",
       "teemo_mid"
     ]
@@ -1909,7 +1908,6 @@
       "ryze",
       "ahri",
       "yone",
-      "teemo",
       "orianna",
       "brand_mid",
       "heimerdinger",
@@ -2166,7 +2164,6 @@
       "galio_baron",
       "gwen",
       "ryze_baron",
-      "teemo",
       "yone_baron"
     ]
   },
@@ -2178,8 +2175,7 @@
       "akali_mid",
       "vex",
       "syndra",
-      "renekton",
-      "teemo"
+      "renekton"
     ],
     "ctBy": [
       "aurelionsol",
@@ -2306,8 +2302,7 @@
     ],
     "ctBy": [
       "annie",
-      "twisted_fate",
-      "teemo"
+      "twisted_fate"
     ]
   },
   "akshan_mid": {
@@ -4551,15 +4546,11 @@
     "ct": [
       "rumble",
       "akali_baron",
-      "yasuo",
       "wukong",
       "olaf_baron",
       "kennen",
       "jayce",
       "fiora",
-      "brand_mid",
-      "syndra",
-      "zyra_mid",
       "galio_baron",
       "irelia",
       "ryze_baron",
@@ -4576,7 +4567,6 @@
       "darius",
       "volibear",
       "poppy_baron",
-      "yone",
       "jax",
       "singed",
       "yone_baron"
