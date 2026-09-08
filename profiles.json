@@ -2039,10 +2039,10 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Yavaş",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Tek Seferlik",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Soft CC/Slow"
@@ -2053,20 +2053,18 @@
     "hasReset": "Yok",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Frontline",
-      "Poke"
+      "Frontline"
     ],
     "durabilityProfile": [
-      "Doğal Tank"
+      "Doğal Tank",
+      "Sustain"
     ],
-    "damageProfile": [
-      "Tank Eritici"
-    ],
+    "damageProfile": [],
     "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta, yüksek can havuzuyla uzun objektif kavgalarında dayanıklı",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "ekko_jg": {
     "hasForms": "Yok",
