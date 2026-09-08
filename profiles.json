@@ -3699,12 +3699,13 @@
     "moveSpeed": "Çok Yavaş",
     "passiveSpeedBoost": "Yok",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Knockup/Knockback",
-      "Suppression"
+      "Silence/Ground",
+      "Soft CC/Slow"
     ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC'ye Dirençli",
@@ -3712,8 +3713,7 @@
     "hasReset": "Yok",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Frontline",
-      "Pick/Execute"
+      "Frontline"
     ],
     "durabilityProfile": [
       "Doğal Tank"
