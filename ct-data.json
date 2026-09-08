@@ -37,7 +37,8 @@
       "zilean",
       "rell",
       "sett_sup",
-      "ornn_sup"
+      "ornn_sup",
+      "gwen"
     ],
     "ctBy": [
       "seraphine",
@@ -687,7 +688,8 @@
       "soraka",
       "karma",
       "janna",
-      "ambessa"
+      "ambessa",
+      "gwen"
     ],
     "ctBy": [
       "rakan",
@@ -2839,7 +2841,8 @@
       "akali_baron",
       "irelia",
       "kayle",
-      "gwen_jg"
+      "gwen_jg",
+      "gwen"
     ],
     "ctBy": [
       "vi",
@@ -3293,7 +3296,8 @@
       "irelia",
       "sett",
       "renekton",
-      "aatrox"
+      "aatrox",
+      "gwen"
     ],
     "ctBy": [
       "kennen",
@@ -3466,7 +3470,11 @@
       "gragas",
       "malphite",
       "ornn",
-      "volibear"
+      "volibear",
+      "nautilus",
+      "olaf_jg",
+      "chogath",
+      "poppy_sup"
     ]
   },
   "irelia": {
