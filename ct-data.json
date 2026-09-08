@@ -1339,7 +1339,6 @@
       "viktor",
       "fizz",
       "lux",
-      "irelia",
       "aurelionsol",
       "brand_mid",
       "irelia_mid",
@@ -1368,7 +1367,6 @@
     "ct": [
       "vex",
       "zed_mid",
-      "irelia",
       "syndra",
       "orianna",
       "viktor",
@@ -1386,7 +1384,6 @@
     "ct": [
       "syndra",
       "fizz",
-      "irelia",
       "zed_mid",
       "yasuo",
       "akali_mid",
@@ -1412,7 +1409,6 @@
       "akali_mid",
       "annie",
       "pantheon_mid",
-      "irelia",
       "ahri",
       "zed_mid",
       "akshan_mid",
@@ -1433,7 +1429,6 @@
       "yasuo",
       "pantheon_mid",
       "akali_mid",
-      "irelia",
       "diana",
       "talon",
       "irelia_mid",
@@ -1525,7 +1520,6 @@
     "ct": [
       "syndra",
       "zed_mid",
-      "irelia",
       "yasuo",
       "yone",
       "ziggs",
@@ -1570,7 +1564,6 @@
     "ct": [
       "syndra",
       "galio",
-      "irelia",
       "zed_mid",
       "fizz",
       "yasuo",
@@ -1591,7 +1584,6 @@
       "yasuo",
       "zed_mid",
       "fizz",
-      "irelia",
       "syndra"
     ],
     "ctBy": [
@@ -1642,7 +1634,6 @@
       "diana",
       "pantheon_mid",
       "galio",
-      "irelia",
       "yasuo",
       "annie",
       "jayce",
@@ -1672,7 +1663,6 @@
       "viktor",
       "ryze",
       "pantheon_mid",
-      "irelia",
       "katarina",
       "akshan_mid",
       "jayce",
@@ -1729,7 +1719,6 @@
       "zed_mid",
       "fizz",
       "yasuo",
-      "irelia",
       "katarina",
       "talon",
       "kassadin",
@@ -1777,7 +1766,6 @@
       "jayce",
       "zed_mid",
       "katarina",
-      "irelia",
       "akshan_mid",
       "ahri",
       "kassadin"
@@ -1796,7 +1784,6 @@
   "norra": {
     "ct": [
       "zed_mid",
-      "irelia",
       "yasuo",
       "fizz",
       "kassadin"
@@ -1889,7 +1876,6 @@
     "ct": [
       "syndra",
       "orianna",
-      "irelia",
       "zed_mid",
       "yasuo",
       "pantheon_mid",
@@ -1918,7 +1904,6 @@
       "zed_mid",
       "fizz",
       "yasuo",
-      "irelia",
       "akali_mid"
     ],
     "ctBy": [
@@ -1963,7 +1948,6 @@
       "fizz",
       "ekko",
       "yasuo",
-      "irelia",
       "zed_mid",
       "akali_mid",
       "kassadin",
@@ -2013,7 +1997,6 @@
   },
   "talon": {
     "ct": [
-      "irelia",
       "pantheon_mid",
       "akshan_mid",
       "diana",
@@ -2064,7 +2047,6 @@
       "yasuo",
       "fizz",
       "zed_mid",
-      "irelia",
       "galio",
       "vladimir",
       "talon",
@@ -2128,7 +2110,6 @@
       "zed_mid",
       "yasuo",
       "yone",
-      "irelia",
       "kassadin"
     ],
     "ctBy": [
@@ -2168,7 +2149,6 @@
   },
   "viktor": {
     "ct": [
-      "irelia",
       "kassadin",
       "zed_mid",
       "akali_mid",
@@ -2199,7 +2179,6 @@
       "drmundo"
     ],
     "ctBy": [
-      "irelia",
       "fizz",
       "katarina",
       "twisted_fate",
@@ -2210,7 +2189,6 @@
   },
   "yasuo": {
     "ct": [
-      "irelia",
       "vex",
       "akali_mid",
       "fizz",
@@ -2262,7 +2240,6 @@
   },
   "yone": {
     "ct": [
-      "irelia",
       "ahri",
       "zed_mid",
       "pantheon_mid",
@@ -2294,8 +2271,7 @@
       "ahri",
       "akali_mid",
       "pantheon_mid",
-      "ekko",
-      "irelia"
+      "ekko"
     ],
     "ctBy": [
       "ziggs",
@@ -2373,7 +2349,6 @@
   "zoe": {
     "ct": [
       "fizz",
-      "irelia",
       "zed_mid",
       "yasuo",
       "yone",
@@ -2394,7 +2369,6 @@
   "zyra_mid": {
     "ct": [
       "fizz",
-      "irelia",
       "zed_mid",
       "yasuo",
       "akali_mid",
@@ -2411,7 +2385,6 @@
     "ct": [
       "vex",
       "zed_mid",
-      "irelia",
       "yasuo",
       "pantheon_mid",
       "veigar",
@@ -2592,7 +2565,6 @@
     "ct": [
       "vex",
       "galio",
-      "irelia",
       "ziggs",
       "akali_mid",
       "fizz",
@@ -2643,7 +2615,6 @@
   },
   "drmundo_jg": {
     "ct": [
-      "irelia",
       "fiora",
       "camille",
       "aatrox_jg",
@@ -2889,7 +2860,6 @@
       "tryndamere",
       "camille",
       "master_yi",
-      "irelia",
       "xin_zhao"
     ]
   },
@@ -3019,7 +2989,6 @@
       "master_yi",
       "jarvaniv",
       "xin_zhao",
-      "irelia",
       "diana_jg",
       "camille_jg",
       "yone_jg"
@@ -3587,7 +3556,6 @@
       "master_yi",
       "vi",
       "pantheon_jg",
-      "irelia",
       "urgot_jg"
     ]
   },
@@ -4044,12 +4012,10 @@
       "renekton",
       "tryndamere",
       "akali_baron",
-      "wukong_jg",
       "vex",
-      "vladimir",
-      "jax_jg",
       "ksante",
-      "shen"
+      "shen",
+      "wukong"
     ],
     "ctBy": [
       "ambessa",
@@ -4063,35 +4029,6 @@
       "nasus",
       "gnar",
       "chogath",
-      "annie",
-      "aurora",
-      "brand_mid",
-      "corki_mid",
-      "ekko",
-      "heimerdinger",
-      "jayce_mid",
-      "karma_mid",
-      "katarina",
-      "kayle_mid",
-      "lux_mid",
-      "morgana_mid",
-      "norra",
-      "ryze",
-      "seraphine_mid",
-      "syndra",
-      "talon",
-      "twisted_fate",
-      "velkoz",
-      "viktor",
-      "yasuo",
-      "yone",
-      "zed_mid",
-      "zoe",
-      "zyra_mid",
-      "akshan_mid",
-      "diana",
-      "drmundo_jg",
-      "lillia",
       "galio_baron",
       "nautilus_baron",
       "rumble",
@@ -4883,7 +4820,8 @@
       "pantheon_jg",
       "taliyah_jg",
       "riven",
-      "yone_baron"
+      "yone_baron",
+      "irelia"
     ]
   },
   "yasuo_baron": {
