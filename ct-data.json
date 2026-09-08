@@ -2612,7 +2612,6 @@
       "jax",
       "volibear",
       "wukong",
-      "drmundo",
       "drmundo_jg"
     ]
   },
@@ -3343,8 +3342,7 @@
       "lillia",
       "warwick",
       "master_yi",
-      "nocturne",
-      "ambessa"
+      "nocturne"
     ],
     "ctBy": [
       "lee_sin",
@@ -3520,8 +3518,7 @@
       "zed_mid"
     ],
     "ctBy": [
-      "amumu",
-      "ambessa"
+      "amumu"
     ]
   },
   "tryndamere_jg": {
@@ -3887,7 +3884,6 @@
       "vayne",
       "rumble",
       "olaf_jg",
-      "ambessa_jg",
       "gwen_jg",
       "irelia_jg",
       "aatrox",
