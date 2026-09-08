@@ -598,8 +598,7 @@
       "seraphine",
       "nami",
       "morgana",
-      "master_yi",
-      "olaf_jg"
+      "master_yi"
     ],
     "ctBy": [
       "blitzcrank",
@@ -2455,7 +2454,8 @@
       "lillia",
       "hecarim",
       "tryndamere_jg",
-      "urgot_jg"
+      "urgot_jg",
+      "olaf_jg"
     ]
   },
   "diana": {
@@ -3053,11 +3053,11 @@
       "lillia",
       "master_yi",
       "jarvaniv",
-      "camille",
       "graves",
       "aatrox_jg",
       "gwen_jg",
-      "nocturne"
+      "nocturne",
+      "camille_jg"
     ],
     "ctBy": [
       "vi",
@@ -3065,11 +3065,7 @@
       "amumu",
       "evelynn",
       "nunu",
-      "maokai",
-      "gragas_baron",
       "morgana_jg",
-      "nautilus_baron",
-      "ornn",
       "shen_jg",
       "diana_jg",
       "ekko_jg",
@@ -3791,7 +3787,6 @@
       "fiora",
       "olaf_baron",
       "shen",
-      "olaf_jg",
       "garen",
       "gwen",
       "yasuo_baron"
@@ -4156,8 +4151,7 @@
       "vayne",
       "darius",
       "aatrox",
-      "singed",
-      "olaf_jg"
+      "singed"
     ],
     "ctBy": [
       "sion"
@@ -4208,12 +4202,12 @@
       "darius",
       "shen",
       "volibear",
-      "olaf_jg",
       "jax",
       "ksante"
     ],
     "ctBy": [
       "malphite",
+      "nautilus",
       "rumble",
       "jayce"
     ]
