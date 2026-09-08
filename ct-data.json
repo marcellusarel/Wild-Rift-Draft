@@ -1845,16 +1845,12 @@
       "aurora",
       "mel",
       "norra",
-      "taliyah",
-      "aatrox",
-      "renekton",
-      "yasuo_baron"
+      "taliyah"
     ],
     "ctBy": [
       "ahri",
       "kennen_mid",
       "annie",
-      "teemo",
       "kayle_mid",
       "teemo_mid"
     ]
@@ -3584,7 +3580,6 @@
       "nasus",
       "urgot",
       "sett",
-      "ryze",
       "akali_baron",
       "chogath",
       "mordekaiser",
@@ -4375,7 +4370,6 @@
       "singed",
       "malphite",
       "tryndamere",
-      "ryze",
       "sett",
       "shen",
       "sion",
@@ -4585,7 +4579,6 @@
   },
   "teemo": {
     "ct": [
-      "ryze",
       "rumble",
       "akali_baron",
       "yasuo",
@@ -4784,7 +4777,6 @@
       "kennen",
       "galio",
       "gwen",
-      "ryze",
       "gnar"
     ]
   },
