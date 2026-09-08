@@ -2886,8 +2886,7 @@
       "warwick",
       "master_yi",
       "nocturne",
-      "ambessa",
-      "olaf_baron"
+      "ambessa"
     ],
     "ctBy": [
       "lee_sin",
@@ -3705,26 +3704,25 @@
   },
   "olaf_baron": {
     "ct": [
-      "fiora",
       "tryndamere",
       "irelia",
       "jax",
       "kennen",
       "akali",
-      "graves",
-      "vayne",
-      "camille"
+      "camille",
+      "fiora",
+      "vayne"
     ],
     "ctBy": [
       "nasus",
-      "yasuo",
       "malphite",
       "teemo",
       "shen",
       "urgot",
       "ornn",
       "wukong",
-      "poppy_jg"
+      "poppy_baron",
+      "yasuo_baron"
     ]
   },
   "ornn": {
@@ -3755,7 +3753,8 @@
       "gnar",
       "aatrox",
       "fiora",
-      "olaf_jg"
+      "olaf_jg",
+      "olaf_baron"
     ],
     "ctBy": [
       "jax",
@@ -4085,7 +4084,8 @@
       "riven",
       "olaf",
       "tryndamere",
-      "jax"
+      "jax",
+      "olaf_baron"
     ],
     "ctBy": [
       "teemo",
