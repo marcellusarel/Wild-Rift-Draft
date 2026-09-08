@@ -2435,7 +2435,6 @@
     "ctBy": [
       "volibear",
       "amumu",
-      "master_yi",
       "graves",
       "rammus",
       "nunu",
@@ -2723,7 +2722,6 @@
     "ct": [
       "rammus",
       "viego",
-      "evelynn",
       "lee_sin",
       "jax",
       "wukong"
@@ -2744,9 +2742,7 @@
       "khazix",
       "lillia",
       "maokai",
-      "morgana",
-      "nidalee",
-      "nocturne"
+      "morgana"
     ]
   },
   "maokai_jg": {
@@ -2805,7 +2801,6 @@
   },
   "nidalee": {
     "ct": [
-      "master_yi",
       "rengar",
       "lee_sin",
       "khazix",
@@ -2820,7 +2815,6 @@
   "nocturne": {
     "ct": [
       "rammus",
-      "master_yi",
       "viego",
       "kindred",
       "talon"
