@@ -542,7 +542,6 @@
       "karma",
       "zyra",
       "bard",
-      "orianna",
       "syndra",
       "velkoz"
     ],
@@ -616,7 +615,6 @@
       "jayce_mid",
       "katarina",
       "lissandra",
-      "orianna",
       "twisted_fate",
       "vex",
       "diana",
@@ -1203,8 +1201,7 @@
     ],
     "ctBy": [
       "ezreal",
-      "vayne",
-      "orianna"
+      "vayne"
     ]
   },
   "corki": {
@@ -1299,7 +1296,6 @@
       "ezreal"
     ],
     "ctBy": [
-      "orianna",
       "smolder",
       "jinx",
       "ashe"
@@ -1525,7 +1521,8 @@
       "aurelionsol",
       "vex",
       "jayce_mid",
-      "lissandra"
+      "lissandra",
+      "orianna"
     ]
   },
   "heimerdinger": {
@@ -1814,20 +1811,17 @@
   "orianna": {
     "ct": [
       "yasuo",
-      "irelia",
       "syndra",
       "zed_mid",
       "fizz",
-      "galio",
       "zoe",
       "diana",
-      "zeri",
       "aurelionsol",
-      "aurelionsol_adc",
       "irelia_mid",
       "seraphine_mid",
       "ziggs",
-      "akshan_mid"
+      "akshan_mid",
+      "galio_mid"
     ],
     "ctBy": [
       "annie",
@@ -1835,7 +1829,6 @@
       "twisted_fate",
       "ryze",
       "vladimir",
-      "swain",
       "ahri",
       "kayle_mid",
       "aurora",
@@ -4087,7 +4080,6 @@
       "lux_mid",
       "morgana_mid",
       "norra",
-      "orianna",
       "ryze",
       "seraphine_mid",
       "syndra",
