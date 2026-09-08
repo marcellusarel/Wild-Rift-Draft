@@ -2328,7 +2328,8 @@
       "amumu",
       "khazix",
       "lillia",
-      "hecarim"
+      "hecarim",
+      "tryndamere_jg"
     ]
   },
   "diana": {
@@ -2535,7 +2536,8 @@
       "wukong",
       "graves",
       "fizz",
-      "riven_jg"
+      "riven_jg",
+      "tryndamere_jg"
     ],
     "ctBy": [
       "drmundo",
@@ -2965,7 +2967,8 @@
       "rengar",
       "graves",
       "olaf_jg",
-      "poppy_jg"
+      "poppy_jg",
+      "tryndamere_jg"
     ],
     "ctBy": [
       "amumu",
@@ -3058,16 +3061,16 @@
       "lee_sin",
       "fiora",
       "rammus",
-      "camille",
       "master_yi",
-      "amumu"
+      "amumu",
+      "camille_jg"
     ],
     "ctBy": [
       "pantheon",
-      "irelia",
       "graves",
-      "wukong",
-      "riven"
+      "irelia_jg",
+      "riven_jg",
+      "wukong_jg"
     ]
   },
   "urgot_jg": {
@@ -3145,7 +3148,8 @@
       "khazix",
       "olaf",
       "riven",
-      "camille"
+      "camille",
+      "tryndamere_jg"
     ],
     "ctBy": [
       "graves",
