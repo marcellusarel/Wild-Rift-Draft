@@ -2573,7 +2573,8 @@
       "pantheon_mid",
       "riven_jg",
       "shyvana",
-      "xin_zhao"
+      "xin_zhao",
+      "viego"
     ]
   },
   "jax_jg": {
@@ -3097,7 +3098,8 @@
       "warwick",
       "xin_zhao",
       "amumu",
-      "hecarim"
+      "hecarim",
+      "jarvaniv"
     ],
     "ctBy": [
       "rengar",
