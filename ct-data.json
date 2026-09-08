@@ -668,7 +668,8 @@
       "alistar",
       "leona",
       "rell",
-      "kindred"
+      "kindred",
+      "lee_sin"
     ]
   },
   "ornn_sup": {
@@ -2671,9 +2672,9 @@
       "lillia",
       "nocturne",
       "xin_zhao",
-      "jax",
       "vi",
-      "gragas"
+      "gragas",
+      "gragas_sup"
     ],
     "ctBy": [
       "amumu",
