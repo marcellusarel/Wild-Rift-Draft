@@ -1312,7 +1312,6 @@
     ],
     "ctBy": [
       "lux",
-      "jayce",
       "ekko",
       "ahri",
       "zyra_mid",
@@ -2017,7 +2016,6 @@
       "ryze",
       "orianna",
       "fizz",
-      "jayce",
       "ziggs",
       "yasuo",
       "annie",
@@ -3659,6 +3657,7 @@
       "teemo",
       "volibear",
       "yone_baron",
+      "jayce",
       "kayle"
     ]
   },
