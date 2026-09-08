@@ -2312,7 +2312,7 @@
       "jax",
       "volibear",
       "wukong",
-      "drmundo_jg"
+      "drmundo"
     ]
   },
   "camille_jg": {
@@ -2854,7 +2854,7 @@
       "pantheon_jg",
       "teemo",
       "yasuo_baron",
-      "drmundo_jg"
+      "drmundo"
     ]
   },
   "pantheon_jg": {
@@ -3322,7 +3322,10 @@
       "irelia",
       "camille",
       "vayne",
-      "renekton"
+      "renekton",
+      "rumble",
+      "olaf_jg",
+      "ambessa_jg"
     ],
     "ctBy": [
       "yasuo",
