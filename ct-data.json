@@ -2431,7 +2431,6 @@
     ],
     "ctBy": [
       "jax",
-      "volibear",
       "wukong",
       "drmundo_jg"
     ]
@@ -2554,7 +2553,6 @@
       "zed_jg"
     ],
     "ctBy": [
-      "volibear",
       "amumu",
       "graves",
       "rammus",
@@ -2802,7 +2800,6 @@
       "lee_sin"
     ],
     "ctBy": [
-      "volibear",
       "amumu",
       "kayn",
       "graves",
@@ -2871,7 +2868,6 @@
       "yone_jg"
     ],
     "ctBy": [
-      "volibear",
       "rammus",
       "amumu",
       "nunu",
@@ -3121,7 +3117,6 @@
   },
   "poppy_jg": {
     "ct": [
-      "volibear",
       "lillia",
       "warwick",
       "master_yi",
@@ -3275,7 +3270,6 @@
       "kindred",
       "lee_sin",
       "gragas_jg",
-      "volibear",
       "evelynn",
       "jarvaniv",
       "skarner"
@@ -3542,7 +3536,8 @@
       "rumble",
       "poppy_baron",
       "chogath",
-      "yasuo_baron"
+      "yasuo_baron",
+      "volibear"
     ]
   },
   "camille": {
@@ -3984,7 +3979,6 @@
       "fiora",
       "singed",
       "olaf_baron",
-      "volibear",
       "chogath"
     ]
   },
@@ -4218,7 +4212,8 @@
       "gnar",
       "aatrox",
       "fiora",
-      "olaf_baron"
+      "olaf_baron",
+      "volibear"
     ],
     "ctBy": [
       "jax",
@@ -4564,12 +4559,8 @@
       "gwen",
       "camille",
       "olaf_baron",
-      "ambessa_jg",
-      "evelynn",
-      "kindred",
-      "lillia",
-      "kayle",
-      "mordekaiser"
+      "mordekaiser",
+      "ambessa"
     ],
     "ctBy": [
       "nasus",
@@ -4578,8 +4569,7 @@
       "renekton",
       "ornn",
       "ksante",
-      "poppy_jg",
-      "talon_jg"
+      "poppy_baron"
     ]
   },
   "wukong": {
