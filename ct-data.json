@@ -693,7 +693,8 @@
       "alistar",
       "leona",
       "pyke",
-      "pantheon"
+      "pantheon",
+      "ambessa_jg"
     ]
   },
   "smolder": {
@@ -2302,7 +2303,8 @@
       "poppy",
       "pantheon",
       "tryndamere",
-      "warwick"
+      "warwick",
+      "poppy_sup"
     ],
     "ctBy": [
       "jax",
