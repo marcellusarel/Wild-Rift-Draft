@@ -2452,19 +2452,20 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Leap",
     "toolCondition": "Koşulsuz",
-    "toolFrequency": "Sınırlı",
+    "toolFrequency": "Spamlanabilir",
     "mobilityTag": "Gerçek Hareketlilik",
-    "ccTypes": [],
+    "ccTypes": [
+      "Soft CC/Slow"
+    ],
     "hasCleanseSkill": "Yok",
     "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
     "resourceType": "Mana",
-    "hasReset": "Yok",
+    "hasReset": "Var",
     "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
-      "Pick/Execute",
       "Backline Dalışı"
     ],
     "durabilityProfile": [
@@ -2474,10 +2475,10 @@
       "Burst"
     ],
     "powerCurve": "Orta Oyun",
-    "scalingType": "Snowball Bağımlı",
+    "scalingType": "Tutarlı",
     "objectiveControl": "Düşük",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "kindred": {
     "hasForms": "Yok",
