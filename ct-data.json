@@ -686,7 +686,8 @@
       "morgana",
       "soraka",
       "karma",
-      "janna"
+      "janna",
+      "ambessa"
     ],
     "ctBy": [
       "rakan",
@@ -3211,12 +3212,10 @@
   "ambessa": {
     "ct": [
       "renekton",
-      "warwick",
       "irelia",
       "pantheon",
       "riven",
-      "malphite",
-      "chogath"
+      "malphite"
     ],
     "ctBy": [
       "aatrox",
@@ -3231,7 +3230,8 @@
       "garen",
       "singed",
       "rumble",
-      "poppy"
+      "poppy",
+      "poppy_sup"
     ]
   },
   "camille": {
