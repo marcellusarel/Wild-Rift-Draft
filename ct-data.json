@@ -38,7 +38,6 @@
       "sett_sup",
       "ornn_sup",
       "gwen",
-      "drmundo",
       "ornn"
     ],
     "ctBy": [
@@ -3073,6 +3072,7 @@
       "lillia",
       "master_yi",
       "jarvaniv",
+      "camille",
       "graves",
       "aatrox_jg",
       "gwen_jg",
@@ -3094,7 +3094,6 @@
       "ekko_jg",
       "fizz_jg",
       "pantheon_jg",
-      "drmundo",
       "fiddlesticks",
       "kayn",
       "rammus",
@@ -3679,17 +3678,16 @@
       "camille",
       "vayne",
       "rumble",
-      "olaf_jg",
       "gwen_jg",
       "irelia_jg",
       "aatrox",
       "ambessa",
-      "gnar"
+      "gnar",
+      "olaf_baron"
     ],
     "ctBy": [
       "akali_baron",
       "jayce",
-      "nautilus",
       "nautilus_baron",
       "sett"
     ]
@@ -4229,7 +4227,8 @@
       "nautilus_baron",
       "renekton",
       "rumble",
-      "sett"
+      "sett",
+      "drmundo"
     ]
   },
   "ornn": {
