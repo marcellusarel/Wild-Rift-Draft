@@ -114,9 +114,9 @@
   "lillia": {
     "starter": "Boots of Mana",
     "items": [
-      "Stormsurge",
-      "Rabadon's Deathcap",
       "Riftmaker",
+      "Rabadon's Deathcap",
+      "Stormsurge",
       "Stasis Enchant"
     ],
     "boots": "Spellslinger's Shoes",
