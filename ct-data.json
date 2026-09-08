@@ -2521,7 +2521,6 @@
   "drmundo_jg": {
     "ct": [
       "fiora",
-      "camille",
       "aatrox_jg",
       "gwen_jg",
       "lillia",
@@ -2556,7 +2555,6 @@
       "rengar",
       "lee_sin",
       "gragas_jg",
-      "camille",
       "vi",
       "camille_jg",
       "diana_jg",
@@ -2760,7 +2758,6 @@
     "ctBy": [
       "wukong",
       "tryndamere",
-      "camille",
       "master_yi",
       "xin_zhao"
     ]
@@ -2794,7 +2791,6 @@
       "pantheon_jg",
       "xin_zhao",
       "olaf_jg",
-      "camille",
       "lee_sin",
       "camille_jg",
       "maokai_jg",
@@ -3077,7 +3073,6 @@
       "lillia",
       "master_yi",
       "jarvaniv",
-      "camille",
       "graves",
       "aatrox_jg",
       "gwen_jg",
@@ -3215,7 +3210,6 @@
       "rammus",
       "xin_zhao",
       "lee_sin",
-      "camille",
       "kindred",
       "master_yi",
       "nocturne",
@@ -3438,7 +3432,6 @@
       "khazix",
       "olaf_jg",
       "riven",
-      "camille",
       "tryndamere_jg"
     ],
     "ctBy": [
@@ -3597,7 +3590,6 @@
       "renekton",
       "riven",
       "akali_baron",
-      "jax_jg",
       "gragas_baron",
       "poppy_baron"
     ],
@@ -3611,12 +3603,6 @@
       "ornn",
       "singed",
       "nasus",
-      "olaf_jg",
-      "drmundo_jg",
-      "evelynn",
-      "khazix",
-      "rengar",
-      "wukong_jg",
       "kayle",
       "nautilus_baron",
       "rumble",
