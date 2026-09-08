@@ -3780,19 +3780,19 @@
     "formAName": "",
     "formBName": "",
     "moveSpeed": "Ortalama",
-    "passiveSpeedBoost": "Yok",
+    "passiveSpeedBoost": "Var",
     "mobilityTool": "Yok",
-    "toolCondition": "Koşulsuz",
-    "toolFrequency": "Spamlanabilir",
+    "toolCondition": "",
+    "toolFrequency": "",
     "mobilityTag": "Gerçek Hantal",
     "ccTypes": [
       "Soft CC/Slow"
     ],
-    "hasCleanseSkill": "Yok",
-    "ccSensitivity": "CC Yerse Sıkıntı Yaşar",
+    "hasCleanseSkill": "Var",
+    "ccSensitivity": "CC'ye Dirençli",
     "resourceType": "Kaynaksız",
     "hasReset": "Yok",
-    "ultDependency": "Düşük Bağımlı",
+    "ultDependency": "Aşırı Bağımlı",
     "teamfightRole": [
       "Frontline",
       "Split Push"
@@ -3801,15 +3801,12 @@
       "Doğal Tank",
       "Sustain"
     ],
-    "damageProfile": [
-      "Tank Eritici",
-      "Sürdürülebilir DPS"
-    ],
+    "damageProfile": [],
     "powerCurve": "Geç Oyun",
     "scalingType": "Tutarlı",
     "objectiveControl": "Orta, yüksek can havuzuyla uzun objektif kavgalarında dayanıklı",
     "globalTeleport": "Yok",
-    "duelist": "Var"
+    "duelist": "Yok"
   },
   "fiora": {
     "hasForms": "Yok",
