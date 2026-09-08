@@ -564,11 +564,11 @@
     "items": [
       "Blackfire Torch",
       "Rabadon's Deathcap",
-      "Stasis Enchant",
-      "Banshee's Veil"
+      "Infinity Orb",
+      "Stasis Enchant"
     ],
     "boots": "Spellslinger's Shoes",
-    "enchant": "Infinity Orb",
+    "enchant": "Malignance",
     "runes": [
       "First Strike",
       "Axiom Arcanist",
