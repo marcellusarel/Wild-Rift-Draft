@@ -5805,134 +5805,68 @@ let builderPickSearch  = "";
 
 // ─── YAMA VERİSİ ─────────────────────────────────────────────
 let patchData = {
-  version: "7.2d",
-  date: "26 Ağustos 2026",
+  version: "7.2e",
+  date: "9 Eylül 2026",
   newChamps: [],
-  buffs:   ["syndra","yuumi","vladimir","veigar","mordekaiser","fiora","renekton","caitlyn"],
-  nerfs:   ["pantheon","twistedfate","gwen","yone","thresh"],
+  buffs:   ["janna","nautilus","malphite"],
+  nerfs:   ["vi","swain"],
   changes: [],
   details: {
-    syndra:      "Büyücü item değişikliklerinden sonra yetenek gücü oranları görece düşük kaldığı için erken oyun hasar baskısı arttırıldı, üçüncü yeteneğinin bekleme süresi de düşürüldü",
-    yuumi:       "Hem kendini hem takım arkadaşlarını güvende tutmakta zorlandığı için destek araçları güçlendirildi, ikinci yeteneğinin bekleme süresi de azaltıldı",
-    vladimir:    "Güç kazanmak için item'lara fazla bağımlı kaldığı için nitelik dönüşüm oranları ve yetenek hasarı arttırıldı",
-    veigar:      "Koridor aşamasını güvenli atlatması ve yük biriktirmesi zorlaştığı için birinci yeteneğinin menzili arttırıldı",
-    mordekaiser: "Item revizyonuyla büyü nüfuzu kaybettikten sonra geride kaldığı için taban büyü nüfuzu arttırıldı, üçüncü yeteneğinin bekleme süresi de düşürüldü",
-    fiora:       "Çizme değişikliklerinden sonra normal saldırıya dayalı dövüşçüler zorlandığı için önceki zayıflatmalarının bir kısmı geri alındı",
-    renekton:    "Çizme değişikliklerinden sonra güç kaybettiği için yetenek hasarı arttırıldı",
-    caitlyn:     "İleri safha hasarı ve tuzak kontrolü yetersiz kaldığı için pasif hasarı ve tuzak yenilenme süresi iyileştirildi",
-    pantheon:    "Erken oyunda, özellikle destansı canavarlara karşı infaz gücü fazla güvenilir kaldığı için birinci yeteneğinin kritik vuruş can eşiği düşürüldü",
-    twistedfate: "Üçüncü yeteneği yetenek gücüne göre fazla ölçeklendiği ve bazı dizilimlerde aşırı hasara yol açtığı için oranı düşürüldü",
-    gwen:        "Çizme değişikliklerinden en çok kârlı çıkanlardan biri olduğu için koridor ve orman hasarı hafifletildi",
-    yone:        "Baron koridorunda fazla güvenli güçlendiği için taban zırhı düşürüldü",
-    thresh:      "İlk yeteneğini isabet ettirdikten sonra fazla sık kanca atabildiği için isabet halinde sağladığı bekleme süresi iadesi azaltıldı",
+    vi:        "Ormanda uzun süredir baskın kaldığı için hem takip hasarı düşürüldü hem de büyük yeteneğinin bekleme süresi arttırılarak rakiplere ve diğer ormancılara nefes alacak alan tanındı",
+    janna:     "Hem koridorda hem de takım arkadaşlarını korurken yeterli kalkan sağlayamadığı için kalkan gücü arttırıldı",
+    swain:     "Büyük yeteneği yetenek gücüyle fazla iyi ölçeklendiği ve tam yetenek gücü dizilimlerinde takım savaşlarında yüksek sürdürülebilir hasarla birlikte ciddi iyileşme sağladığı için yetenek gücü oranı bir miktar düşürüldü",
+    nautilus:  "Son zayıflatmalardan sonra dayanıklılığını kaybedip düşman takımına dalma ve savaş başlatma gücünden yoksun kaldığı için ikinci yeteneğinin taban kalkanı ve azami can oranı arttırıldı",
+    malphite:  "Baron koridorunda etki yaratmakta zorlandığı için oyunun her aşamasında daha tutarlı performans göstermesine yardımcı olacak küçük güçlendirmeler yapıldı",
   },
   // Şampiyon detay sayfasında gösterilen, yetenek bazlı ayrıntılı yama notları
   detailsFull: {
-    syndra: [
-      { skill: "Karanlık Küre", changes: [
-        "Taban Hasar: 70/115/160/205 → 80/130/180/230"
+    vi: [
+      { skill: "Kasa Kırıcı", changes: [
+        "Asgari Hasarın İlave Saldırı Gücü Oranı: %80 İlave Saldırı Gücü → %60 İlave Saldırı Gücü",
+        "Azami Hasarın İlave Saldırı Gücü Oranı: %160 İlave Saldırı Gücü → %120 İlave Saldırı Gücü"
       ]},
-      { skill: "İrade Gücü", changes: [
-        "Hasarının Yetenek Gücü Oranı: %45 → %60"
-      ]},
-      { skill: "Zayıflara Acıma", changes: [
-        "Bekleme Süresi: 17s → 15s",
-        "Hasarının Yetenek Gücü Oranı: %35 → %50"
+      { skill: "Dur Ve Rapor Ver", changes: [
+        "Bekleme Süresi: 60/55/50s → 80/70/60s"
       ]},
     ],
-    yuumi: [
-      { skill: "Sen ve Ben!", changes: [
-        "Bekleme Süresi: 10/5/0s → 8/4/0s",
-        "Pasifin Sağladığı İyileştirme ve Kalkan Gücü: %6/7/8/9 → %8/9/10/11"
-      ]},
-      { skill: "Çıldırr", changes: [
-        "Bekleme Süresi: 10s → 9s",
-        "Kalkan: 85/110/135/160 + %30 Yetenek Gücü → 80/110/140/170 + %40 Yetenek Gücü"
+    janna: [
+      { skill: "Fırtınanın Gözü", changes: [
+        "Kalkan Değeri: 65/90/115/140 + %45 Yetenek Gücü → 80/120/160/200 + %50 Yetenek Gücü"
       ]},
     ],
-    vladimir: [
-      { skill: "Kızıl Akit", changes: [
-        "İlave Canın Yetenek Gücüne Dönüşüm Oranı: %4,5 → %5",
-        "Yetenek Gücünün Cana Dönüşüm Oranı: %140 → %150"
-      ]},
-      { skill: "Kan Nakli", changes: [
-        "Kızıl Akım İlave Hasar Oranı: %75 → %85"
-      ]},
-      { skill: "Kan Yağmuru", changes: [
-        "Asgari Hasar: 20/40/60/80 + %35 Yetenek Gücü + Azami Canın %2,5'i → 30/50/70/90 + %35 Yetenek Gücü + Azami Canın %3'ü"
+    swain: [
+      { skill: "İblisleşme", changes: [
+        "Saniye Başına Hasar: 10/25/40 + %15 Yetenek Gücü → 15/25/35 + %6 Yetenek Gücü",
+        "Saniye Başına İyileştirme: 20/30/40 + %20 Yetenek Gücü → 15/30/45 + %10 Yetenek Gücü"
       ]},
     ],
-    veigar: [
-      { skill: "Uğursuz Saldırı", changes: [
-        "Menzil: 7,75 → 9"
+    nautilus: [
+      { skill: "Titan'ın Gazabı", changes: [
+        "Kalkan Değeri: 65/75/85/95 + %9/10/11/12 Azami Can → 70/80/90/100 + %11/12/13/14 Azami Can"
       ]},
     ],
-    mordekaiser: [
-      { skill: "Karanlık Azap", changes: [
-        "Büyü Nüfuzu: %1/3/5/7 → %3/6/9/12"
-      ]},
-      { skill: "Ecelin Eli", changes: [
-        "Bekleme Süresi: 17,5/15/12,5/10s → 15/13/11/9s"
-      ]},
-    ],
-    fiora: [
-      { skill: "Düellocunun Dansı", changes: [
-        "Hasar: %3,5 + %0,05 İlave Saldırı Gücü → %4 + %0,055 İlave Saldırı Gücü"
-      ]},
-    ],
-    renekton: [
-      { skill: "Ezik Katili", changes: [
-        "Normal Hasar İçin İlave Saldırı Gücü Oranı: %90 → %100"
-      ]},
-      { skill: "İnsafsız Yırtıcı", changes: [
-        "Taban Hasar: 24/48/72/96 → 20/60/100/140",
-        "Hiddet Saltanatı Taban Hasarı: 36/72/108/144 → 30/90/150/210"
-      ]},
-    ],
-    caitlyn: [
-      { skill: "Tam Kafadan", changes: [
-        "Hasar: %50-%100 (seviyeye bağlı) Saldırı Gücü + 125 × Kritik Vuruş İhtimali → %60-%110 (seviyeye bağlı) Saldırı Gücü + 200 × Kritik Vuruş İhtimali"
-      ]},
-      { skill: "Yordle Kapanı", changes: [
-        "Dolma Süresi: 27/22/17/12s → 25/20/15/10s"
-      ]},
-    ],
-    pantheon: [
-      { skill: "Meteor Mızrağı", changes: [
-        "Cana Bağlı Kritik Vuruş Eşiği: %35 → %25"
-      ]},
-    ],
-    twistedfate: [
-      { skill: "Şans Destesi", changes: [
-        "Yetenek Gücü Oranı: %45 Yetenek Gücü → %35 Yetenek Gücü"
-      ]},
-    ],
-    gwen: [
-      { skill: "Kırt Kırt!", changes: [
-        "İsabet Başına Yetenek Gücü Oranı: %7 → %6",
-        "Son İsabet Yetenek Gücü Oranı: %35 → %30",
-        "Orman Canavarlarına Karşı Hasar Çarpanı: %105 → %100"
-      ]},
-    ],
-    yone: [
+    malphite: [
       { skill: "Taban İstatistikler", changes: [
-        "Taban Zırh: 43 → 37"
+        "Seviye Başına Zırh: 4,3 → 5"
       ]},
-    ],
-    thresh: [
-      { skill: "Ölüm Cezası", changes: [
-        "İsabet Halinde Bekleme Süresinde Azalma: 3s → 2s"
+      { skill: "Sismik Kırıntı", changes: [
+        "Yavaşlatma Etkisi: %15/20/25/30 → %20/25/30/35"
+      ]},
+      { skill: "Gök Gürültüsü", changes: [
+        "Ardışık Temel Saldırıların Taban Hasarı: 10/20/30/40 → 20/30/40/50"
       ]},
     ],
   },
-  // ── İTEM YAMA NOTLARI (7.2d resmi yama notlarına göre) ──
+  // ── İTEM YAMA NOTLARI (7.2e resmi yama notlarına göre) ──
   // Anahtarlar ITEM_IMG içindeki item key'leriyle birebir aynı olmalı
-  itemBuffs:  ["edge_of_night","stormsurge"],
-  itemNerfs:  [],
+  itemBuffs:  ["eclipse","unending_despair"],
+  itemNerfs:  ["seekers_armguard","verdant_barrier"],
   itemNew:    [],
   itemDetails: {
-    edge_of_night: "Fiyatı düştükten sonra bile diğer zırh delme seçenekleriyle boy ölçüşemediği için sabit zırh delme değeri arttırıldı — Zırh Delme: 8 → 12",
-    stormsurge: "Yüksek bedeli birçok dizilime rahatça dahil edilmesini zorlaştırdığı için daha erişilebilir olması amacıyla bedeli düşürüldü — Bedel: 2900 → 2800",
+    eclipse: "Diğer dövüşçü item'larıyla rekabet etmekte zorlandığı için daha cazip bir seçenek olması amacıyla bedeli düşürüldü ve yakın dövüş kalkan gücü arttırıldı — Bedel: 3000 → 2900, Kalkan (Yakın Dövüş): 140 + %35 İlave Saldırı Gücü → 150 + %40 İlave Saldırı Gücü",
+    unending_despair: "Sadece takım savaşlarına odaklı kalması onu birçok oyunda durağan bir seçim haline getirdiği için daha geniş bir yelpazede güvenilir olması amacıyla genel etkinliği arttırıldı — Can: 200 → 300, Zırh: 45 → 40, Büyü Direnci: 45 → 40, [Yeni] Yetenek Hızlanması: 10",
+    seekers_armguard: "Orta seviye bir bileşen için fazla güç sağladığından tamamlanmadan üstünde oturulabilir hale geldiği için etkinliği düşürüldü, böylece tam item'a tamamlamak daha anlamlı bir yatırım oldu — Bekleme Süresi (Sekme): 120s → 150s",
+    verdant_barrier: "Seeker's Armguard ile aynı durumda, orta seviye bir bileşen için fazla güç sağladığı için etkisinin gücü düşürüldü, böylece tam item'a tamamlamak daha anlamlı bir yatırım oldu — Bekleme Süresi (İptal): 50s → 65s",
   },
   // ── RÜN YAMA NOTLARI ── (dokunulmadı)
   // Anahtarlar RUNE_IMG içindeki rün key'leriyle birebir aynı olmalı
@@ -6063,8 +5997,11 @@ function patchBadge(id, small=false) {
   </span>`;
 }
 
-// Otomatik çek (APK'da çalışır, file:// da mevcut veri kullanılır)
-fetchLatestPatch();
+// Otomatik çek DEVRE DIŞI — kaba web scraping patchData'yı (özellikle
+// itemBuffs/itemNerfs/itemDetails/detailsFull alanlarını) elle girilen
+// doğru veriyle birlikte SİLİP eziyordu. Yama notları artık elle,
+// resmi kaynaktan okunarak patchData içine giriliyor.
+// fetchLatestPatch();
 
 // ─── SERİ DURUMU ─────────────────────────────────────────────
 let seriesFormat  = null;
@@ -6547,6 +6484,7 @@ const ITEM_IMG = {
   unending_despair: "assets/items/unending_despair.png",
   vampiric_scepter: "assets/items/vampiric_scepter.png",
   veil_enchant: "assets/items/veil_enchant.png",
+  verdant_barrier: "assets/items/verdant_barrier.png",
   vigilant_wardstone: "assets/items/vigilant_wardstone.png",
   void_staff: "assets/items/void_staff.png",
   wardens_mail: "assets/items/wardens_mail.png",
@@ -6880,6 +6818,7 @@ const ASSET_NAME = {
   vigilant_wardstone: "Vigilant Wardstone",
   void_staff: "Void Staff",
   veil_enchant: "Veil Enchant",
+  verdant_barrier: "Verdant Barrier",
   wardens_mail: "Warden's Mail",
   warding_totem: "Warding Totem",
   warmogs_armor: "Warmog's Armor",
@@ -7140,6 +7079,7 @@ const ITEM_NAME_TR = {
   vigilant_wardstone: "Tetikte Gözcü Taşı",
   void_staff: "Boşluk Asası",
   veil_enchant: "Peçe Efsunu",
+  verdant_barrier: "Yeşeren Engel",
   wardens_mail: "Bekçinin Zırhı",
   warding_totem: "Gözcü Totemi",
   warmogs_armor: "Warmog'un Zırhı",
