@@ -207,16 +207,15 @@
   "Support": {
     "S+": [
       "bard",
-      "zilean"
+      "zilean",
+      "nautilus",
+      "rell"
     ],
     "S": [
       "braum",
       "nami",
-      "thresh",
       "rakan",
       "senna",
-      "rell",
-      "nautilus",
       "poppy_sup"
     ],
     "A": [
@@ -234,7 +233,9 @@
       "sett_sup",
       "sona",
       "singed_sup",
-      "pyke"
+      "pyke",
+      "gragas_sup",
+      "thresh"
     ],
     "B": [
       "janna",
@@ -242,11 +243,9 @@
       "swain",
       "zyra",
       "maokai",
-      "gragas_sup",
-      "shen_sup"
-    ],
-    "C": [
+      "shen_sup",
       "yuumi"
-    ]
+    ],
+    "C": []
   }
 }
