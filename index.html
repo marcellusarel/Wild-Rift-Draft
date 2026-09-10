@@ -7134,8 +7134,9 @@ function openBuilder(id){
     runes: [...(existing.runes||[])].slice(0,5),
     spells: [...(existing.spells||[])].slice(0,2),
     skillOrder: existing.skillOrder ? [...existing.skillOrder] : ["1","2","3"],
-    tier: existing.tier || "A"
-  } : { starter:"", boots:"", enchant:"", items:[], runes:[], spells:[], skillOrder:["1","2","3"], tier:"A" };
+    tier: existing.tier || "A",
+    situational: (existing.situational||[]).map(s=>({out:s.out||"",in:s.in||"",note:s.note||""}))
+  } : { starter:"", boots:"", enchant:"", items:[], runes:[], spells:[], skillOrder:["1","2","3"], tier:"A", situational:[] };
   while(builderDraft.items.length<4) builderDraft.items.push("");
   while(builderDraft.runes.length<5) builderDraft.runes.push("");
   while(builderDraft.spells.length<2) builderDraft.spells.push("");
@@ -7477,11 +7478,28 @@ function builderPickAsset(name){
   if(slot==="starter") builderDraft.starter = name;
   else if(slot==="boots") builderDraft.boots = name;
   else if(slot==="enchant") builderDraft.enchant = name;
+  else if(slot.startsWith("sitOut")) builderDraft.situational[+slot.slice(6)].out = name;
+  else if(slot.startsWith("sitIn")) builderDraft.situational[+slot.slice(5)].in = name;
   else if(slot.startsWith("item")) builderDraft.items[+slot.slice(4)] = name;
   else if(slot.startsWith("rune")) builderDraft.runes[+slot.slice(4)] = name;
   else if(slot.startsWith("spell")) builderDraft.spells[+slot.slice(5)] = name;
   builderPicking = null;
   render();
+}
+function addSituationalRow(){
+  if(!builderDraft) return;
+  builderDraft.situational = builderDraft.situational || [];
+  builderDraft.situational.push({out:"",in:"",note:""});
+  render();
+}
+function removeSituationalRow(i){
+  if(!builderDraft || !builderDraft.situational) return;
+  builderDraft.situational.splice(i,1);
+  render();
+}
+function setSituationalNote(i, val){
+  if(!builderDraft || !builderDraft.situational || !builderDraft.situational[i]) return;
+  builderDraft.situational[i].note = val;
 }
 function builderClearSlot(slot){
   builderPicking = slot;
@@ -7502,7 +7520,8 @@ async function saveBuilderDraft(){
     runes: d.runes.filter(Boolean),
     spells: d.spells.filter(Boolean),
     skillOrder: d.skillOrder,
-    tier: d.tier
+    tier: d.tier,
+    situational: (d.situational||[]).filter(s=>s.out && s.in)
   };
   CUSTOM_BUILDS[builderChampId] = entry;
   saveCustomBuilds();
@@ -8457,6 +8476,19 @@ function render() {
                   </div>
                 </div>
               </div>
+              ${(build && build.situational && build.situational.length) ? `
+              <div style="margin-top:14px;padding-top:12px;border-top:1px solid #1e1e35">
+                <div style="font-size:8.5px;color:#ff9d33;font-weight:700;margin-bottom:8px;letter-spacing:.4px">🔀 DURUMA GÖRE</div>
+                ${build.situational.map(s => `
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+                    <div style="width:30px;height:30px;border-radius:7px;overflow:hidden;flex-shrink:0;
+                      background:#101022;border:1px solid #2a2a48">${itemImg(s.out,30)}</div>
+                    <div style="color:#ff9d33;font-size:13px;font-weight:800;flex-shrink:0">→</div>
+                    <div style="width:30px;height:30px;border-radius:7px;overflow:hidden;flex-shrink:0;
+                      background:#101022;border:1px solid #2a2a48">${itemImg(s.in,30)}</div>
+                    <div style="font-size:10px;color:#aaa;flex:1">${escHtml(s.note||"")}</div>
+                  </div>`).join("")}
+              </div>` : ""}
               ${!build ? `<div style="font-size:9px;color:#555;margin-top:10px;text-align:center">
                 ${t('cd_no_build_data')}</div>` : ""}
             </div>`;
@@ -8626,6 +8658,29 @@ function render() {
             <div style="display:flex;gap:10px;flex-wrap:wrap">
               ${[0,1,2,3].map(n=>miniSlot(`Item ${n+1}`, d.items[n], "item"+n, "square")).join("")}
             </div>
+          </div>
+
+          <div style="margin-bottom:14px;background:#0d0d1e;border:1px solid #ff9d3333;border-radius:12px;padding:14px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+              <div style="font-size:8.5px;color:#777;font-weight:700;letter-spacing:.4px;flex:1">🔀 DURUMA GÖRE DEĞİŞİKLİKLER</div>
+              <button onclick="addSituationalRow()" style="padding:4px 10px;border-radius:7px;
+                border:1px solid #ff9d3355;background:#ff9d3318;color:#ff9d33;font-size:9px;font-weight:800">+ Ekle</button>
+            </div>
+            ${(d.situational||[]).length===0 ? `<div style="font-size:9px;color:#555;text-align:center;padding:6px 0">
+              Henüz yok. "+ Ekle" ile bir durum ekleyebilirsin (ör: rakipte çok kalkan varsa).</div>` : ""}
+            ${(d.situational||[]).map((s,i) => `
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:${i<(d.situational.length-1)?'12px':'0'};
+                padding-bottom:${i<(d.situational.length-1)?'12px':'0'};
+                border-bottom:${i<(d.situational.length-1)?'1px solid #1a1a2e':'none'}">
+                ${miniSlot("Çıkar", s.out, "sitOut"+i, "square")}
+                <div style="color:#ff9d33;font-size:16px;font-weight:800;flex-shrink:0">→</div>
+                ${miniSlot("Koy", s.in, "sitIn"+i, "square")}
+                <input value="${escHtml(s.note)}" oninput="setSituationalNote(${i},this.value)"
+                  placeholder="ör: Rakipte çok kalkan varsa" style="flex:1;min-width:0;padding:8px 10px;
+                  border-radius:8px;background:#101022;border:1px solid #252540;color:#e0e0f0;font-size:11px;outline:none">
+                <button onclick="removeSituationalRow(${i})" style="flex-shrink:0;width:26px;height:26px;
+                  border-radius:7px;border:1px solid #ff444455;background:#ff444418;color:#ff6060;font-size:12px">✕</button>
+              </div>`).join("")}
           </div>
 
           <div style="display:flex;gap:8px">
