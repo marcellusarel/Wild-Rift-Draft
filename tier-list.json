@@ -59,10 +59,7 @@
     "S": [
       "hecarim",
       "nocturne",
-      "pantheon_jg",
-      "jarvaniv",
-      "rammus",
-      "vi"
+      "jarvaniv"
     ],
     "A": [
       "ekko_jg",
@@ -71,7 +68,6 @@
       "evelynn",
       "diana_jg",
       "rengar",
-      "yone_jg",
       "khazix",
       "aatrox_jg",
       "shyvana",
@@ -90,24 +86,28 @@
       "wukong_jg",
       "poppy_jg",
       "camille_jg",
-      "gwen_jg"
+      "gwen_jg",
+      "rammus",
+      "ambessa_jg",
+      "vi",
+      "pantheon_jg"
     ],
     "B": [
       "zed_jg",
-      "ambessa_jg",
       "fizz_jg",
       "skarner",
       "tryndamere_jg",
       "shen_jg",
-      "drmundo_jg",
       "gragas_jg",
       "graves",
       "amumu",
       "morgana_jg",
-      "nautilus_jg"
+      "nautilus_jg",
+      "yone_jg"
     ],
     "C": [
-      "maokai_jg"
+      "maokai_jg",
+      "drmundo_jg"
     ]
   },
   "Mid": {
