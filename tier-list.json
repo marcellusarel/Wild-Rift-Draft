@@ -3,7 +3,9 @@
     "S+": [
       "aatrox",
       "gwen",
-      "rumble"
+      "rumble",
+      "fiora",
+      "renekton"
     ],
     "S": [
       "darius",
@@ -14,7 +16,6 @@
       "jax",
       "poppy_baron",
       "malphite",
-      "renekton",
       "wukong"
     ],
     "A": [
@@ -23,19 +24,17 @@
       "ambessa",
       "garen",
       "mordekaiser",
-      "fiora",
       "irelia",
       "singed",
-      "ryze_baron",
       "sett",
       "olaf_baron",
       "ornn",
       "chogath",
-      "yone_baron"
+      "yone_baron",
+      "jayce"
     ],
     "B": [
       "drmundo",
-      "jayce",
       "riven",
       "shen",
       "teemo",
@@ -43,7 +42,11 @@
       "kayle",
       "tryndamere",
       "akali_baron",
-      "galio_baron"
+      "galio_baron",
+      "gragas_baron",
+      "ryze_baron",
+      "vladimir_baron",
+      "zed_baron"
     ],
     "C": [
       "urgot",
