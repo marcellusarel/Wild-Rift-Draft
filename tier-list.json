@@ -177,28 +177,28 @@
       "smolder",
       "aurelionsol_adc",
       "ziggs_adc",
+      "corki",
       "orianna_adc"
     ],
     "A": [
       "jinx",
       "samira",
       "lucian",
-      "corki",
-      "kalista",
       "kaisa",
       "draven",
       "mel_adc",
       "kogmaw",
       "vayne",
-      "xayah",
       "missfortune",
-      "caitlyn"
+      "caitlyn",
+      "xayah",
+      "sivir"
     ],
     "B": [
-      "sivir",
       "twitch",
       "tristana",
-      "ashe"
+      "ashe",
+      "kalista"
     ],
     "C": [
       "nilah"
