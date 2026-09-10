@@ -117,7 +117,6 @@
       "syndra"
     ],
     "S": [
-      "galio_mid",
       "taliyah",
       "aurelionsol",
       "ahri",
@@ -146,7 +145,8 @@
       "yasuo",
       "twisted_fate",
       "swain_mid",
-      "irelia_mid"
+      "irelia_mid",
+      "galio_mid"
     ],
     "B": [
       "akshan_mid",
@@ -156,7 +156,8 @@
       "fizz",
       "katarina",
       "zyra_mid",
-      "heimerdinger"
+      "heimerdinger",
+      "pantheon_mid"
     ],
     "C": [
       "brand_mid",
