@@ -78,7 +78,6 @@
       "fiddlesticks",
       "olaf_jg",
       "master_yi",
-      "kayn",
       "warwick",
       "kindred",
       "volibear_jg",
@@ -91,7 +90,8 @@
       "ambessa_jg",
       "vi",
       "pantheon_jg",
-      "zed_jg"
+      "zed_jg",
+      "jax_jg"
     ],
     "B": [
       "fizz_jg",
@@ -103,11 +103,13 @@
       "amumu",
       "morgana_jg",
       "nautilus_jg",
-      "yone_jg"
+      "yone_jg",
+      "kayn"
     ],
     "C": [
       "maokai_jg",
-      "drmundo_jg"
+      "drmundo_jg",
+      "urgot_jg"
     ]
   },
   "Mid": {
