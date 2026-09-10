@@ -185,21 +185,21 @@
       "kalista",
       "kaisa",
       "draven",
-      "ashe",
       "mel_adc",
       "kogmaw",
       "vayne",
       "xayah",
-      "missfortune"
+      "missfortune",
+      "caitlyn"
     ],
     "B": [
       "sivir",
       "twitch",
       "tristana",
-      "nilah"
+      "ashe"
     ],
     "C": [
-      "caitlyn"
+      "nilah"
     ]
   },
   "Support": {
