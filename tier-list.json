@@ -113,15 +113,12 @@
   "Mid": {
     "S+": [
       "ryze",
-      "orianna"
+      "orianna",
+      "syndra"
     ],
     "S": [
-      "yone",
-      "annie",
       "galio_mid",
       "taliyah",
-      "twisted_fate",
-      "kassadin",
       "aurelionsol",
       "ahri",
       "aurora"
@@ -131,7 +128,6 @@
       "morgana_mid",
       "velkoz",
       "viktor",
-      "syndra",
       "norra",
       "kennen_mid",
       "akali_mid",
@@ -141,26 +137,30 @@
       "lissandra",
       "mel",
       "ekko",
-      "singed_mid"
+      "singed_mid",
+      "kassadin",
+      "yone",
+      "annie",
+      "ziggs",
+      "vladimir",
+      "yasuo",
+      "twisted_fate"
     ],
     "B": [
       "akshan_mid",
-      "ziggs",
       "diana",
       "veigar",
-      "yasuo",
-      "vladimir",
       "lux_mid",
       "fizz",
       "katarina",
       "zyra_mid",
-      "kayle_mid",
       "heimerdinger"
     ],
     "C": [
       "brand_mid",
       "teemo_mid",
-      "talon"
+      "talon",
+      "kayle_mid"
     ]
   },
   "ADC": {
