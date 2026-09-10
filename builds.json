@@ -229,18 +229,7 @@
       "3"
     ],
     "tier": "A",
-    "situational": [
-      {
-        "out": "Spear of Shojin",
-        "in": "B. F. Sword",
-        "note": "Rakipte çok kalkan varsa "
-      },
-      {
-        "out": "Spear of Shojin",
-        "in": "Serylda's Grudge",
-        "note": "Rakipte can çalma varsa"
-      }
-    ]
+    "situational": []
   },
   "ambessa_jg": {
     "starter": "Gluttonous Greaves",
