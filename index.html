@@ -1437,7 +1437,39 @@ const META_TIER = {
   pyke:2,       rakan:2,      seraphine:2,  soraka:2,     zyra:2,
 };
 
-function getMetaTier(id) { return META_TIER[id] || 0; }
+// Tier bandını (S+/S/A/B/C) sayısal skora çevirir — draft önerisi bu skoru kullanır
+const TIER_BAND_SCORE = { "S+": 6, "S": 4, "A": 2, "B": 0, "C": -1 };
+
+// Bir şampiyonun GÜNCEL tier list'teki (uygulama içi editörle düzenlenen,
+// GitHub'daki tier-list.json'dan gelen) bandını bulur. 5 koridorun tamamını
+// tarar çünkü id'ler zaten koridora özel (ör. "poppy_sup", "poppy_jg").
+function findTierBand(id) {
+  const roles = ["Baron","Jungle","Mid","ADC","Support"];
+  for (const role of roles) {
+    const list = getTierListForRole(role);
+    if (!list) continue;
+    for (const band of ["S+","S","A","B","C"]) {
+      if ((list[band]||[]).includes(id)) return band;
+    }
+  }
+  return null;
+}
+
+// Bir koridorun güncel tier list'ini S+→S→A→B→C sırasına göre düzleştirir.
+// Eskiden sabit META_POWER kullanılıyordu, artık düzenlediğin tier list'ten üretiliyor.
+function tierListRankedIds(role) {
+  const list = getTierListForRole(role);
+  if (!list) return [];
+  return ["S+","S","A","B","C"].flatMap(band => list[band]||[]);
+}
+
+function getMetaTier(id) {
+  const band = findTierBand(id);
+  if (band) return TIER_BAND_SCORE[band];
+  // Şampiyon güncel tier list'te hiç yoksa (ör. çok yeni eklendiyse) eski sabit
+  // veriye düşülür — böylece hiçbir şampiyon önerisiz kalmaz.
+  return META_TIER[id] || 0;
+}
 
 function getTier(id) { return getMetaTier(id); }
 
@@ -1460,8 +1492,10 @@ const META_POWER = {
            "alistar","blitzcrank","janna","karma","maokai","pyke","rakan","seraphine","soraka","zyra"],
 };
 
-// ─── GÖRSEL TIER LIST (S+/S/A/B) — sadece bilgi amaçlı, draft önerisini etkilemez ──
-// B tier çampionları öneri sistemine hiç girmez (META_TIER/META_POWER'da yer almazlar)
+// ─── GÖRSEL TIER LIST (S+/S/A/B) — artık draft önerisini de besliyor ──
+// (getTier/tierListRankedIds bu veriyi CUSTOM_TIER_LIST > LIVE_TIER_LIST_FULL > TIER_LIST_FULL
+// önceliğiyle okur; eski META_TIER/META_POWER sadece hiçbir tier list'te olmayan
+// şampiyonlar için yedek/fallback olarak kullanılır)
 // Uygulama içi tier list editörüyle düzenlenip dışa aktarılan son sürüm buraya işlendi.
 // NOT: Bu, tier-list.json fetch edilemezse kullanılan YEDEK (fallback) veridir.
 // GitHub'a bağlıysan gerçek/güncel veri LIVE_TIER_LIST_FULL üzerinden (tier-list.json) gelir.
@@ -3682,7 +3716,8 @@ function baseTierListFull(){
 
 // ─── GİZLİ TIER LIST EDİTÖRÜ ────────────────────────────────────
 // Görsel Tier List (S+/S/A/B/C) ekranındaki dağılımı elden düzenlemeyi sağlar.
-// Sadece görsel amaçlıdır — draft önerisi motorunu (META_TIER/META_POWER) etkilemez.
+// Artık draft önerisi motorunu da (getTier/tierListRankedIds üzerinden) etkiler —
+// buradan yaptığın değişiklikler doğrudan draft ekranındaki "Meta Pick" önerilerine yansır.
 let CUSTOM_TIER_LIST = {};   // { role: { "S+":[...], "S":[...], "A":[...], "B":[...], "C":[...] } }
 function loadCustomTierList(){
   try {
@@ -6209,7 +6244,7 @@ function computeSugg() {
       .map(c => {
         const tierScore = getTier(c.id) * 3;
         const laneBonus = c.lanes.includes(lastEnLane) ? 4 : 0;
-        const laneArr = META_POWER[lastEnLane] || [];
+        const laneArr = tierListRankedIds(lastEnLane);
         const mi = laneArr.indexOf(c.id);
         const metaBonus = mi >= 0 ? (laneArr.length - mi) / laneArr.length * 2 : 0;
         const isBuff    = getPatchStatus(c.id) === "buff";
@@ -6230,8 +6265,8 @@ function computeSugg() {
   // ── BÖLÜM 2: GENEL META GÜÇ PİCKLERİ ───────────────────
   // Tüm koridorların meta listesini tier'a göre birleştir
   const ctIds = new Set(ctList.map(c=>c.id));
-  const allMetaFlat = Object.entries(META_POWER).flatMap(([ln, arr]) =>
-    arr.map((id, i) => ({ id, lane: ln, metaRank: i, tier: getTier(id) }))
+  const allMetaFlat = ["Baron","Jungle","Mid","ADC","Support"].flatMap(ln =>
+    tierListRankedIds(ln).map((id, i) => ({ id, lane: ln, metaRank: i, tier: getTier(id) }))
   );
   // Tekrar eden id'leri kaldır, tier > metaRank'e göre sırala
   const seen = new Set();
@@ -6252,7 +6287,7 @@ function computeSugg() {
   const fillerList = [];
 
   emptyLanes.forEach(el => {
-    const laneArr = META_POWER[el] || [];
+    const laneArr = tierListRankedIds(el);
     const candidates = laneArr
       .map((id, idx) => ({ id, idx }))
       .filter(x => DB[x.id] && !used.has(x.id) && !fillerIds.has(x.id))
