@@ -1,7 +1,6 @@
 {
   "Baron": {
     "S+": [
-      "yone_baron",
       "aatrox",
       "gwen",
       "rumble"
@@ -31,7 +30,8 @@
       "sett",
       "olaf_baron",
       "ornn",
-      "chogath"
+      "chogath",
+      "yone_baron"
     ],
     "B": [
       "drmundo",
