@@ -221,7 +221,14 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": [
+      {
+        "out": "Spear of Shojin",
+        "in": "Serpent's Fang",
+        "note": "Rakipte çok kalkan varsa "
+      }
+    ]
   },
   "ambessa_jg": {
     "starter": "Gluttonous Greaves",
