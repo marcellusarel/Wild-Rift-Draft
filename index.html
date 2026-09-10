@@ -33,7 +33,23 @@
 <link rel="icon" type="image/png" sizes="16x16" href="icon-16.png"/>
 <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png"/>
 <link rel="manifest" href="manifest.json"/>
-<title>Wild Rift Draft</title>
+<title>Wild Rift Draft — Şampiyon Counter, Build ve Tier Listesi</title>
+<meta name="description" content="Wild Rift için güncel şampiyon counter (ct/ctby) listeleri, önerilen item build'leri, rün dizilimleri, tier listesi ve yama notları. Draft aşamasında rakibine göre en iyi seçimi yap."/>
+<link rel="canonical" href="https://marcellusarel.github.io/Wild-Rift-Draft/"/>
+
+<!-- Open Graph (WhatsApp/Discord/Facebook önizleme kartı) -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://marcellusarel.github.io/Wild-Rift-Draft/"/>
+<meta property="og:title" content="Wild Rift Draft — Şampiyon Counter, Build ve Tier Listesi"/>
+<meta property="og:description" content="Wild Rift için güncel şampiyon counter listeleri, item build'leri, rün dizilimleri, tier listesi ve yama notları."/>
+<meta property="og:image" content="https://marcellusarel.github.io/Wild-Rift-Draft/icon-512.png"/>
+<meta property="og:locale" content="tr_TR"/>
+
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Wild Rift Draft — Şampiyon Counter, Build ve Tier Listesi"/>
+<meta name="twitter:description" content="Wild Rift için güncel şampiyon counter listeleri, item build'leri, rün dizilimleri, tier listesi ve yama notları."/>
+<meta name="twitter:image" content="https://marcellusarel.github.io/Wild-Rift-Draft/icon-512.png"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{background:#07080f;color:#e0e0f0;font-family:system-ui,sans-serif;min-height:100vh;padding-bottom:90px}
@@ -5883,8 +5899,8 @@ let patchData = {
   itemDetails: {
     eclipse: "Diğer dövüşçü item'larıyla rekabet etmekte zorlandığı için daha cazip bir seçenek olması amacıyla bedeli düşürüldü ve yakın dövüş kalkan gücü arttırıldı — Bedel: 3000 → 2900, Kalkan (Yakın Dövüş): 140 + %35 İlave Saldırı Gücü → 150 + %40 İlave Saldırı Gücü",
     unending_despair: "Sadece takım savaşlarına odaklı kalması onu birçok oyunda durağan bir seçim haline getirdiği için daha geniş bir yelpazede güvenilir olması amacıyla genel etkinliği arttırıldı — Can: 200 → 300, Zırh: 45 → 40, Büyü Direnci: 45 → 40, [Yeni] Yetenek Hızlanması: 10",
-    seekers_armguard: "Orta seviye bir bileşen için fazla güç sağladığından tamamlanmadan üstünde oturulabilir hale geldiği için etkinliği düşürüldü, böylece tam item'a tamamlamak daha anlamlı bir yatırım oldu — Bekleme Süresi (Sekme): 120s → 150s",
-    verdant_barrier: "Seeker's Armguard ile aynı durumda, orta seviye bir bileşen için fazla güç sağladığı için etkisinin gücü düşürüldü, böylece tam item'a tamamlamak daha anlamlı bir yatırım oldu — Bekleme Süresi (İptal): 50s → 65s",
+    seekers_armguard: "Orta seviye bir bileşen için fazla güç sağladığından tamamlanmadan üstünde oturulabilir hale geldiği için etkinliği düşürüldü, böylece tam item'a tamamlamak daha anlamlı bir yatırım oldu — Bekleme Süresi (Zamanı Durdurma): 120s → 150s",
+    verdant_barrier: "Seeker's Armguard ile aynı durumda, orta seviye bir bileşen için fazla güç sağladığı için etkisinin gücü düşürüldü, böylece tam item'a tamamlamak daha anlamlı bir yatırım oldu — Bekleme Süresi (Feshet): 50s → 65s",
   },
   // ── RÜN YAMA NOTLARI ── (dokunulmadı)
   // Anahtarlar RUNE_IMG içindeki rün key'leriyle birebir aynı olmalı
@@ -5970,9 +5986,13 @@ function champNormName(id) {
 function getPatchStatus(id) {
   const base = id.replace(/_.*$/,"").toLowerCase();
   const name = champNormName(id);
-  const match = (arr) => arr.some(b =>
-    base === b || name === b || name.startsWith(b) || b.startsWith(base)
-  );
+  // Önce TAM eşleşme; sadece yeterince uzun isimlerde esnek eşleşmeye izin ver
+  // (kısa isimlerde — ör. "vi" — esnek eşleşme "Viktor" gibi yanlış sonuçlara yol açıyordu)
+  const match = (arr) => arr.some(b => {
+    if (base === b || name === b) return true;
+    if (b.length < 5 || base.length < 5) return false;
+    return name.startsWith(b) || b.startsWith(base);
+  });
   if (match(patchData.newChamps||[])) return "new";
   if (match(patchData.buffs))   return "buff";
   if (match(patchData.nerfs))   return "nerf";
@@ -5985,7 +6005,8 @@ function getPatchDetail(id) {
   const base = id.replace(/_.*$/,"").toLowerCase();
   const name = champNormName(id);
   const keys = Object.keys(patchData.details||{});
-  const key = keys.find(k => base===k || name===k || name.startsWith(k) || k.startsWith(base));
+  const key = keys.find(k => base===k || name===k)
+    || keys.find(k => k.length>=5 && base.length>=5 && (name.startsWith(k) || k.startsWith(base)));
   return key ? (patchData.details[key]||"") : "";
 }
 
@@ -5994,7 +6015,8 @@ function getPatchDetailFull(id) {
   const base = id.replace(/_.*$/,"").toLowerCase();
   const name = champNormName(id);
   const keys = Object.keys(patchData.detailsFull||{});
-  const key = keys.find(k => base===k || name===k || name.startsWith(k) || k.startsWith(base));
+  const key = keys.find(k => base===k || name===k)
+    || keys.find(k => k.length>=5 && base.length>=5 && (name.startsWith(k) || k.startsWith(base)));
   return key ? (patchData.detailsFull[key]||null) : null;
 }
 
@@ -7097,7 +7119,7 @@ const ITEM_NAME_TR = {
   vigilant_wardstone: "Tetikte Gözcü Taşı",
   void_staff: "Boşluk Asası",
   veil_enchant: "Peçe Efsunu",
-  verdant_barrier: "Yeşeren Engel",
+  verdant_barrier: "Yeşil Bariyer",
   wardens_mail: "Bekçinin Zırhı",
   warding_totem: "Gözcü Totemi",
   warmogs_armor: "Warmog'un Zırhı",
@@ -7959,13 +7981,19 @@ function render() {
       { key:"runeNerfs", label:t('patch_nerf'),    icon:"🔻", color:"#ff4444", border:"#ff444433", bg:"#ff444410" },
     ];
 
-    function findChampByNorm(normName) {
-      return ALL.find(c => {
-        const n = c.name.toLowerCase().replace(/[^a-z0-9]/g,"");
-        const base = normName.replace(/_.*$/,"");
-        return n === base || n.startsWith(base) || base.startsWith(n);
-      });
-    }
+function findChampByNorm(normName) {
+  const base = normName.replace(/_.*$/,"");
+  // Önce TAM eşleşme aranır (ör. "vi" → sadece "Vi", "Viktor" değil)
+  const exact = ALL.find(c => c.name.toLowerCase().replace(/[^a-z0-9]/g,"") === base);
+  if (exact) return exact;
+  // Tam eşleşme yoksa, sadece yeterince uzun isimlerde esnek (prefix) eşleşmeye izin ver.
+  // Kısa isimlerde (ör. "vi") esnek eşleşme "Viktor" gibi yanlış sonuçlara yol açıyordu.
+  if (base.length < 5) return null;
+  return ALL.find(c => {
+    const n = c.name.toLowerCase().replace(/[^a-z0-9]/g,"");
+    return n.startsWith(base) || base.startsWith(n);
+  });
+}
 
     // İtem/rün için genel satır oluşturucu (şampiyon kartıyla aynı görünümde)
     function assetPatchRow(key, g, imgMap, imgFn, detailMap) {
