@@ -235,16 +235,16 @@
       "singed_sup",
       "pyke",
       "gragas_sup",
-      "thresh"
+      "thresh",
+      "janna",
+      "yuumi"
     ],
     "B": [
-      "janna",
       "lux",
       "swain",
       "zyra",
       "maokai",
-      "shen_sup",
-      "yuumi"
+      "shen_sup"
     ],
     "C": []
   }
