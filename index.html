@@ -5742,6 +5742,7 @@ function exportAllBuilds(){
 }
 function showExportModal(json){
   const wrap = document.createElement("div");
+  wrap.id = "exportModalOverlay";
   wrap.style.cssText = "position:fixed;inset:0;background:#000000cc;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px";
   wrap.innerHTML = `<div style="background:#0a0a18;border:1px solid #1a1a2e;border-radius:14px;
       max-width:420px;width:100%;max-height:80vh;display:flex;flex-direction:column;padding:16px">
@@ -5812,6 +5813,7 @@ function exportAllProfiles(){
 }
 function showProfileExportModal(txt){
   const wrap = document.createElement("div");
+  wrap.id = "profileExportModalOverlay";
   wrap.style.cssText = "position:fixed;inset:0;background:#000000cc;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px";
   wrap.innerHTML = `<div style="background:#0a0a18;border:1px solid #1a1a2e;border-radius:14px;
       max-width:420px;width:100%;max-height:80vh;display:flex;flex-direction:column;padding:16px">
@@ -9978,6 +9980,99 @@ if (window.visualViewport) {
 // ═══════════════════════════════════════════════════════════════
 // ÇEVİRİ SÖZLÜKLERİ (i18n dictionaries) — ekran ekran eklenir
 // ═══════════════════════════════════════════════════════════════
+
+// ═══════════════════════════════════════════════════════════════
+// GERİ TUŞU / NAVİGASYON GEÇMİŞİ
+// ═══════════════════════════════════════════════════════════════
+// Uygulama "ana ekrana ekle" (PWA) ile açıldığında telefonun geri
+// tuşu/jesti tarayıcının kendi history'sine bakar. Bu uygulama ekran
+// ve pencere (builder, profil editörü, ct editörü, tier editörü,
+// bug report, export pencereleri vb.) değişimlerini sadece bir
+// değişkeni değiştirip render() çağırarak yaptığı için, tarayıcıya
+// hiçbir zaman "yeni bir adım oldu" bildirilmiyordu — bu yüzden geri
+// tuşu direkt uygulamayı kapatıyordu.
+//
+// Bu blok, HİÇBİR mevcut onclick'e dokunmadan, her tıklamadan sonra
+// durumun (appScreen, açık editörler, açık pencereler...) değişip
+// değişmediğini otomatik kontrol eder. Değiştiyse tarayıcı geçmişine
+// bir adım ekler. Geri tuşuna basıldığında (popstate) bir önceki
+// duruma otomatik döner. Kullanıcı bir pencereyi kendi arayüzünden
+// (Kapat/dışarı tıklama ile) kapatırsa, tarayıcı geçmişini de
+// senkron tutar — böylece geri tuşu az önce kapatılan şeyi tekrar
+// açmaz.
+
+const NAV_OVERLAY_IDS = ["bugReportOverlay","exportModalOverlay","profileExportModalOverlay"];
+
+function navGetState(){
+  return {
+    appScreen, champDetailId, builderChampId, builderPicking,
+    profileChampId, ctEditorChampId, ctEditorPicking,
+    tierEditorRole, tierEditorPicking,
+    overlays: NAV_OVERLAY_IDS.filter(id => !!document.getElementById(id))
+  };
+}
+function navSetState(s){
+  appScreen = s.appScreen; champDetailId = s.champDetailId;
+  builderChampId = s.builderChampId; builderPicking = s.builderPicking;
+  profileChampId = s.profileChampId; ctEditorChampId = s.ctEditorChampId;
+  ctEditorPicking = s.ctEditorPicking;
+  tierEditorRole = s.tierEditorRole; tierEditorPicking = s.tierEditorPicking;
+  NAV_OVERLAY_IDS.forEach(id => {
+    if(!s.overlays.includes(id)){
+      const el = document.getElementById(id);
+      if(el) el.remove();
+    }
+  });
+}
+function navStatesEqual(a,b){
+  return a.appScreen===b.appScreen && a.champDetailId===b.champDetailId &&
+    a.builderChampId===b.builderChampId && a.builderPicking===b.builderPicking &&
+    a.profileChampId===b.profileChampId && a.ctEditorChampId===b.ctEditorChampId &&
+    a.ctEditorPicking===b.ctEditorPicking && a.tierEditorRole===b.tierEditorRole &&
+    a.tierEditorPicking===b.tierEditorPicking &&
+    a.overlays.length===b.overlays.length && a.overlays.every(o=>b.overlays.includes(o));
+}
+
+let _navStack = [];
+let _navRestoring = false;
+let _navIgnoreNextPop = false;
+
+document.addEventListener("click", function(){
+  if(_navRestoring) return;
+  const before = navGetState();
+  setTimeout(() => {
+    if(_navRestoring) return;
+    const after = navGetState();
+    if(navStatesEqual(before, after)) return; // navigasyonla ilgisiz bir tıklama
+
+    // Yeni durum, yığındaki bir önceki adımla birebir aynıysa kullanıcı
+    // kendi arayüzünden "geri/kapat" yapmış demektir — tarayıcı geçmişini
+    // de eşitlemek için gerçek bir geri gidiş tetikleriz.
+    if(_navStack.length > 0 && navStatesEqual(after, _navStack[_navStack.length-1])){
+      _navStack.pop();
+      _navIgnoreNextPop = true;
+      history.back();
+      return;
+    }
+    _navStack.push(before);
+    history.pushState({navDepth:_navStack.length}, "", location.href);
+  }, 0);
+}, true);
+
+window.addEventListener("popstate", function(){
+  if(_navIgnoreNextPop){ _navIgnoreNextPop = false; return; }
+  if(_navStack.length > 0){
+    _navRestoring = true;
+    const prev = _navStack.pop();
+    navSetState(prev);
+    render();
+    _navRestoring = false;
+  }
+  // Yığın boşsa (en baş ekrandayız) tarayıcının/PWA kabuğunun normal
+  // davranışına (uygulamayı kapatma) izin verilir — en baş ekranda doğru olan budur.
+});
+
+history.replaceState({navDepth:0}, "", location.href);
 
 // İlk render — son bırakılan ekran (varsa) geri yüklenir, yoksa Ana Menü
 loadAppState();
