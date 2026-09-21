@@ -773,6 +773,8 @@ const DB = {
     sy:["nautilus","leona","blitzcrank","thresh","rakan"]},
 
   // ── MID ──────────────────────────────────────────────────────
+  hwei:       {name:"Hwei",        lanes:["Mid"],    dmg:"AP",    cls:"Mage",
+    ct:[], ctBy:[], sy:[]},
   ahri:       {name:"Ahri",        lanes:["Mid"],    dmg:"AP",    cls:"Mage",
     ct:["akali","orianna","fizz","yasuo","diana","annie","syndra"],
     ctBy:["twisted_fate","lux","ziggs","zed","galio","morgana"],
@@ -5876,75 +5878,136 @@ let builderPickSearch  = "";
 
 // ─── YAMA VERİSİ ─────────────────────────────────────────────
 let patchData = {
-  version: "7.2e",
-  date: "9 Eylül 2026",
-  newChamps: [],
-  buffs:   ["janna","nautilus","malphite"],
-  nerfs:   ["vi","swain"],
-  changes: [],
+  version: "7.3",
+  date: "21 Eylül 2026",
+  newChamps: ["hwei"],
+  buffs:   ["caitlyn","lucian"],
+  nerfs:   ["olaf"],
+  changes: ["twitch","tryndamere"],
   details: {
-    vi:        "Ormanda uzun süredir baskın kaldığı için hem takip hasarı düşürüldü hem de büyük yeteneğinin bekleme süresi arttırılarak rakiplere ve diğer ormancılara nefes alacak alan tanındı",
-    janna:     "Hem koridorda hem de takım arkadaşlarını korurken yeterli kalkan sağlayamadığı için kalkan gücü arttırıldı",
-    swain:     "Büyük yeteneği yetenek gücüyle fazla iyi ölçeklendiği ve tam yetenek gücü dizilimlerinde takım savaşlarında yüksek sürdürülebilir hasarla birlikte ciddi iyileşme sağladığı için yetenek gücü oranı bir miktar düşürüldü",
-    nautilus:  "Son zayıflatmalardan sonra dayanıklılığını kaybedip düşman takımına dalma ve savaş başlatma gücünden yoksun kaldığı için ikinci yeteneğinin taban kalkanı ve azami can oranı arttırıldı",
-    malphite:  "Baron koridorunda etki yaratmakta zorlandığı için oyunun her aşamasında daha tutarlı performans göstermesine yardımcı olacak küçük güçlendirmeler yapıldı",
+    caitlyn:     "Kritik vuruşa odaklı bir nişancı için yeterince güç sağlamadığı için koridor baskısını arttırmak ve iyi yerleştirilmiş Alnından Vuruş'ların gerçekten acıtması için taban istatistikleri ve pasifi güçlendirildi",
+    lucian:      "İleri oyun hasar penceresi sınırlı kaldığı için, orta/geç oyun çatışmalarında saldırıya daha güvenilir başlayabilmesi adına büyük yeteneği (Ayıklama) güçlendirildi",
+    olaf:        "Erken oyunda fazla dayanıklı kaldığı için taban canı düşürüldü, ayrıca 1. yeteneğinin saldırı gücü oranı ve büyük yeteneğinin sağladığı direnç bonusu azaltıldı",
+    twitch:      "Gizlenme sonrası oynanışı yeterince ödüllendirmediği için pasifi ve yetenekleri, gizlenmeden çıkışta doğru pozisyon bulup ardından yüksek patlama hasarı açmayı ödüllendirecek şekilde yeniden tasarlandı",
+    tryndamere:  "Çok sayıda düşük hasarlı vuruşa güvenmek yerine tek vuruşlarının daha çok acıtması istendiği için pasifindeki saldırı hızı bonusu kaldırılıp gücü temel hasara aktarıldı, 2. yeteneğinin etkinliği de yatırılan seviyeye göre ölçeklenecek şekilde değiştirildi",
   },
   // Şampiyon detay sayfasında gösterilen, yetenek bazlı ayrıntılı yama notları
   detailsFull: {
-    vi: [
-      { skill: "Kasa Kırıcı", changes: [
-        "Asgari Hasarın İlave Saldırı Gücü Oranı: %80 İlave Saldırı Gücü → %60 İlave Saldırı Gücü",
-        "Azami Hasarın İlave Saldırı Gücü Oranı: %160 İlave Saldırı Gücü → %120 İlave Saldırı Gücü"
-      ]},
-      { skill: "Dur Ve Rapor Ver", changes: [
-        "Bekleme Süresi: 60/55/50s → 80/70/60s"
-      ]},
-    ],
-    janna: [
-      { skill: "Fırtınanın Gözü", changes: [
-        "Kalkan Değeri: 65/90/115/140 + %45 Yetenek Gücü → 80/120/160/200 + %50 Yetenek Gücü"
-      ]},
-    ],
-    swain: [
-      { skill: "İblisleşme", changes: [
-        "Saniye Başına Hasar: 10/25/40 + %15 Yetenek Gücü → 15/25/35 + %6 Yetenek Gücü",
-        "Saniye Başına İyileştirme: 20/30/40 + %20 Yetenek Gücü → 15/30/45 + %10 Yetenek Gücü"
-      ]},
-    ],
-    nautilus: [
-      { skill: "Titan'ın Gazabı", changes: [
-        "Kalkan Değeri: 65/75/85/95 + %9/10/11/12 Azami Can → 70/80/90/100 + %11/12/13/14 Azami Can"
-      ]},
-    ],
-    malphite: [
+    caitlyn: [
       { skill: "Taban İstatistikler", changes: [
-        "Seviye Başına Zırh: 4,3 → 5"
+        "Taban Saldırı Gücü: 54 → 60",
+        "Seviye Başına Saldırı Gücü: 4,5 → 4,2"
       ]},
-      { skill: "Sismik Kırıntı", changes: [
-        "Yavaşlatma Etkisi: %15/20/25/30 → %20/25/30/35"
+      { skill: "Alnından Vuruş", changes: [
+        "Kafa Vuruşu İlave Hasarı: (%60-%110) Saldırı Gücü + 200 × Kritik Vuruş İhtimali → (%60-%100) Saldırı Gücü + %100 Kritik Vuruş İhtimali + Kritik Hasar Bonusuna Bağlı İlave Hasar"
       ]},
-      { skill: "Gök Gürültüsü", changes: [
-        "Ardışık Temel Saldırıların Taban Hasarı: 10/20/30/40 → 20/30/40/50"
+      { skill: "Piltover Barış Yapıcısı", changes: [
+        "Hasar: 60/110/160/210 + %125/140/155/170 Saldırı Gücü → 50/100/150/200 + %125/145/165/185 Saldırı Gücü"
+      ]},
+      { skill: "Yordle Tuzağı", changes: [
+        "[Yeni] Tuzağa düşmüş rakiplere Kafa Vuruşu artık 40/90/140/190 (+%30 İlave Saldırı Gücü) ekstra fiziksel hasar veriyor"
+      ]},
+    ],
+    lucian: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Saldırı Gücü: 58 → 60",
+        "Seviye Başına Saldırı Gücü: 4 → 3,5"
+      ]},
+      { skill: "Işık Mızrağı", changes: [
+        "İkincil Vuruş Hasarı: %35/50/65 Saldırı Gücü → %40/50/60 Saldırı Gücü"
+      ]},
+      { skill: "Delici Işık", changes: [
+        "Hasar: 80/125/170/215 + %65/85/105/125 İlave Saldırı Gücü → 75/125/175/225 + %100 İlave Saldırı Gücü"
+      ]},
+      { skill: "Ayıklama", changes: [
+        "Mermi Sayısı: 22/26/30 → Kritik Vuruş İhtimaline ve Kritik Hasara bağlı dinamik hesaplama",
+        "Mermi Başına Hasar: 20/35/50 + %25 Saldırı Gücü + %10 Yetenek Gücü → 20/25/30 + %25 Saldırı Gücü + %15 Yetenek Gücü"
+      ]},
+    ],
+    olaf: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Can: 690 → 660",
+        "Seviye Başına Can: 112 → 140"
+      ]},
+      { skill: "Anafor", changes: [
+        "İlave Saldırı Gücü Oranı: %120 → %105"
+      ]},
+      { skill: "Ragnarok", changes: [
+        "Zırh ve Büyü Direnci Artışı: 25/35/45 → 15/25/35"
+      ]},
+    ],
+    twitch: [
+      { skill: "Ölümcül Zehir", changes: [
+        "Yığın Başına Hasar: 1/2/3/4/5 + %2,5 Yetenek Gücü → 1/2/3/4/5 + %3 Yetenek Gücü",
+        "[Kaldırıldı] Rakip azami zehir yığınına ulaştığında Twitch'e sağlanan saldırı hızı bonusu"
+      ]},
+      { skill: "Pusu", changes: [
+        "[Yeni] Gizlenmeden çıktıktan sonra 6 saniye boyunca %35/40/45/50 ilave saldırı hızı kazanılıyor",
+        "[Kaldırıldı] Gizlenmeden çıkışta 3 saniye boyunca temel saldırılara 2 kat Ölümcül Zehir uygulanması"
+      ]},
+      { skill: "Kirletme", changes: [
+        "Doğrudan Patlama Hasarı: 25/35/45/55 → 30/40/50/60",
+        "Yığın Başına Fiziksel Hasar: 20/25/30/35 + %42 İlave Saldırı Gücü + %18 Yetenek Gücü → 20/25/30/35 + %35 İlave Saldırı Gücü",
+        "[Yeni] Yığın Başına Büyü Hasarı: %35 Yetenek Gücü"
+      ]},
+    ],
+    tryndamere: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Saldırı Gücü: 54 → 64",
+        "Seviye Başına Saldırı Gücü: 5,5 → 5"
+      ]},
+      { skill: "Savaş Öfkesi", changes: [
+        "[Kaldırıldı] Düşman şampiyona temel saldırı isabet ettirince 5 saniye boyunca %30 saldırı hızı kazanılması"
+      ]},
+      { skill: "Kan Susuzluğu", changes: [
+        "Saldırı Gücü: 7/12/17/22 → 0",
+        "Eksik Can Yüzdesi Başına İlave Saldırı Gücü: 0,35/0,40/0,45/0,5 → 0,3/0,5/0,7/0,9"
+      ]},
+      { skill: "Alaycı Çığlık", changes: [
+        "Saldırı Gücü Azaltması: %40 (sabit) → %20/40/60/80 (seviyeye göre)"
       ]},
     ],
   },
-  // ── İTEM YAMA NOTLARI (7.2e resmi yama notlarına göre) ──
-  // Anahtarlar ITEM_IMG içindeki item key'leriyle birebir aynı olmalı
-  itemBuffs:  ["eclipse","unending_despair"],
-  itemNerfs:  ["seekers_armguard","verdant_barrier"],
-  itemNew:    [],
+  // ── İTEM YAMA NOTLARI (7.3 resmi yama notlarına göre) ──
+  // Anahtarlar ITEM_IMG içindeki item key'leriyle birebir aynı olmalı.
+  // Not: 7.3'te nişancı item sistemi neredeyse baştan yazıldı (~50 item
+  // etkilendi) — sadece uygulamanın veritabanında görseli olan ve yönü net
+  // olan item'lar işlendi. Görselleri eklenen 11 yeni item aşağıda itemNew'e
+  // eklendi (endless_hunger, Summoner's Rift mağazasının değil, AAA ARAM
+  // (Sonic Waves sezonu) modunun yeni item'ı — açıklamada belirtildi).
+  itemBuffs:  ["infinity_edge"],
+  itemNerfs:  [],
+  itemNew:    [
+    "pickaxe", "hearthbound_axe", "hexoptics_c44", "yun_tal_wildarrows",
+    "stormrazor", "rapid_firecannon", "fiendhunter_bolts",
+    "bandleglass_mirror", "whispering_circlet", "diadem_of_songs",
+    "endless_hunger",
+  ],
   itemDetails: {
-    eclipse: "Diğer dövüşçü item'larıyla rekabet etmekte zorlandığı için daha cazip bir seçenek olması amacıyla bedeli düşürüldü ve yakın dövüş kalkan gücü arttırıldı — Bedel: 3000 → 2900, Kalkan (Yakın Dövüş): 140 + %35 İlave Saldırı Gücü → 150 + %40 İlave Saldırı Gücü",
-    unending_despair: "Sadece takım savaşlarına odaklı kalması onu birçok oyunda durağan bir seçim haline getirdiği için daha geniş bir yelpazede güvenilir olması amacıyla genel etkinliği arttırıldı — Can: 200 → 300, Zırh: 45 → 40, Büyü Direnci: 45 → 40, [Yeni] Yetenek Hızlanması: 10",
-    seekers_armguard: "Orta seviye bir bileşen için fazla güç sağladığından tamamlanmadan üstünde oturulabilir hale geldiği için etkinliği düşürüldü, böylece tam item'a tamamlamak daha anlamlı bir yatırım oldu — Bekleme Süresi (Zamanı Durdurma): 120s → 150s",
-    verdant_barrier: "Seeker's Armguard ile aynı durumda, orta seviye bir bileşen için fazla güç sağladığı için etkisinin gücü düşürüldü, böylece tam item'a tamamlamak daha anlamlı bir yatırım oldu — Bekleme Süresi (Feshet): 50s → 65s",
+    infinity_edge: "Taban kritik vuruş hasarı artışıyla birlikte zaten güçlü kalması amaçlandığından pasifi sadeleştirildi, buna karşılık taban saldırı gücü ve kritik hasar bonusu arttırıldı — Saldırı Gücü: 65 → 75, Kritik Hasar: %200 → %230, [Kaldırıldı] Limit Break pasifi",
+    pickaxe: "Nişancı item sisteminin yeniden yapılandırılmasıyla mağazaya eklenen temel saldırı gücü bileşeni; Vampirik Asa ve Caulfield'ın Harp Çekici gibi düşük saldırı gücü sağlayan item'ların yapım yolunu düzenlemek için tasarlandı — Fiyat: 800, Yapım: Uzun Kılıç (500) + 300, Saldırı Gücü: 20",
+    hearthbound_axe: "Öğle Sadağı'nın yerini alan yeni orta seviye saldırı hızı/saldırı gücü bileşeni — Fiyat: 1200, Yapım: Uzun Kılıç (500) + Hançer (400) + 300, Saldırı Gücü: 20, Saldırı Hızı: %15",
+    hexoptics_c44: "Kritik nişancılara ilk item'larını tamamladıktan sonra takım savaşlarını ele geçirmek için yeni bir seçenek sunuyor — Fiyat: 2900, Yapım: Kazma (800) + Öğle Sadağı (1300) + Uzun Kılıç (500) + 300, Saldırı Gücü: 55, Kritik İhtimali: %25. Büyüteç: hedef ne kadar uzaktaysa saldırılar o kadar fazla hasar veriyor (azami 550 birimde). Gizli Nişan: son 3 saniyede hasar verdiğin bir şampiyon ölürse 8 saniye boyunca 100 ilave saldırı menzili kazanılıyor",
+    yun_tal_wildarrows: "Kritik nişancılar için oldukça altın-verimli bir ilk item seçeneği; saldırı gücü, kritik vuruş ihtimali ve saldırı hızı sağlıyor — ancak benzersiz kritik ihtimali biriktirme mekaniği tam potansiyeline ulaşmak için zaman istiyor — Fiyat: 3100, Yapım: Öğle Sadağı (1300) + Kazma (800) + Kircheis Parçası (800) + 200, Saldırı Gücü: 50, Saldırı Hızı: %25. Mükemmelleşme Alıştırması: temel saldırılar kalıcı olarak kritik ihtimali biriktiriyor (yakın dövüş %0,4 / menzilli %0,2, azami %25). Çabukluk: bir şampiyona saldırınca 6 saniye boyunca %25 saldırı hızı kazanılıyor (20 sn bekleme süresi)",
+    stormrazor: "Enerjilenmiş ailesinin eski bir dostu geri döndü — erken oyunda en güçlü koridor baskısı ve kovalama gücünü sunuyor, ağır hasarlı temel saldırılara veya Enerjilenmiş etkilerine güvenen şampiyonlar için — Fiyat: 3000, Yapım: B. F. Kılıç (1500) + Kircheis Parçası (800) + Kavgacı Eldivenleri (500) + 200, Saldırı Gücü: 50, Kritik İhtimali: %25, Saldırı Hızı: %20. Enerjilenmiş - Cıvata: enerjilenmiş saldırı 120 ilave büyü hasarı verip 1,5 saniye boyunca %45 hareket hızı sağlıyor",
+    rapid_firecannon: "Magnetic Blaster'ın yerini alan, çatışmalarda ekstra menzile ihtiyaç duyan nişancılar için daha özelleşmiş bir seçenek — Fiyat: 2650, Yapım: Şevk (1400) + Kircheis Parçası (800) + 450, Kritik İhtimali: %25, Saldırı Hızı: %40, Hareket Hızı: %4. Enerjilenmiş - Keskin Nişancı: enerjilenmiş saldırı 80 ilave büyü hasarı verip azami 150'ye kadar %35 ilave saldırı menzili sağlıyor",
+    fiendhunter_bolts: "Büyük yeteneğini kullandıktan sonra güçlü bir pencere sunuyor; Twitch, Zeri ve Yunara gibi büyük yeteneği etrafında oynayan nişancılar için patlama hasarını artırmanın harika bir yolu — Fiyat: 2650, Yapım: Şevk (1400) + Kircheis Parçası (800) + 450, Kritik İhtimali: %25, Saldırı Hızı: %45, Hareket Hızı: %4. Gece Nöbeti: 20 büyük yetenek hızı kazandırıyor. Açılış Yaylımı: büyük yeteneği kullandıktan sonraki 8 saniye içindeki 3 saldırı %50 saldırı hızı kazanıp garantili kritik vuruş yapıyor (normal kritik hasarın %80'i); zaten kritik olacaksa bunun yerine %15 ilave gerçek hasar veriyor (20 sn bekleme süresi)",
+    bandleglass_mirror: "Yasak İdol ailesinin yenilenmesiyle gelen, yetenek gücü ve yetenek hızı sağlayan yeni orta seviye destek bileşeni — Fiyat: 900, Yapım: Güçlendirme Kitabı (500) + İfşa Halkası (300) + 100, Yetenek Gücü: 20, Taban Mana Yenilenmesi: %50, Yetenek Hızı: 10",
+    whispering_circlet: "Destek item ailesinin yeni orta seviye bileşeni; can, mana ve iyileştirme/kalkan gücü sağlıyor, azami mana yığınına ulaşınca otomatik olarak Şarkıların Tacı'na dönüşüyor — Fiyat: 2400, Yapım: Yasak İdol (700) + Tanrıçanın Gözyaşı (400) + Yakut Kristal (500) + 800, Can: 200, Azami Mana: 500, Taban Mana Yenilenmesi: %50, İyileştirme ve Kalkan Gücü: %8",
+    diadem_of_songs: "Whispering Circlet'ın azami mana yığınında dönüştüğü son hâli; yakındaki en düşük canlı müttefiki her saniye iyileştiriyor — Yapım: Whispering Circlet, Can: 200, Mana: 1200, Taban Mana Yenilenmesi: %50, İyileştirme ve Kalkan Gücü: %8. Taç: son 3 saniyede sen ya da iyileştirdiğin/kalkanladığın bir müttefik çatışmadaysa, 800 birim içindeki en düşük canlı müttefiki her saniye azami mananın %0,8'i kadar iyileştiriyor",
+    endless_hunger: "AAA ARAM (Sonic Waves sezonu) moduna eklenen yeni item — Summoner's Rift mağazasında değil, sadece bu modda mevcut. Son 3 saniyede hasar verdiğin bir şampiyon ölürse 8 saniye boyunca %15 tüm-emme (omnivamp) kazanılıyor, bu etki üst üste birikebiliyor",
   },
-  // ── RÜN YAMA NOTLARI ── (dokunulmadı)
-  // Anahtarlar RUNE_IMG içindeki rün key'leriyle birebir aynı olmalı
+  // ── RÜN YAMA NOTLARI (7.3) ──
+  // Anahtarlar RUNE_IMG içindeki rün key'leriyle birebir aynı olmalı.
+  // Not: "Legend: Haste" adında yeni bir rün Legend: Tenacity'nin yerini
+  // alıyor ama DB'de/varlıklarda henüz tanımlı değil (görseli yok),
+  // bu yüzden runeNew'e eklemedim — istersen görseliyle birlikte ekleriz.
   runeBuffs:  [],
-  runeNerfs:  [],
+  runeNerfs:  ["lethal_tempo"],
   runeNew:    [],
-  runeDetails: {},
+  runeDetails: {
+    lethal_tempo: "Tek başına fazla saldırı hızı ve menzil bonusu sağlayıp nişancılar için aşırı güç dalgalanmalarına yol açtığı için, gücünün daha çok diğer saldırı hızı kaynaklarıyla sinerjiye dayanmasını sağlayacak şekilde yeniden düzenlendi",
+  },
 };
 
 // Riot sitesinden otomatik yama çek
@@ -6340,7 +6403,7 @@ const CHAMP_ID = {
   nilah:895, kalista:429, zeri:221, corki:42,
   // MID
   ahri:103, aurelionsol:136, aurelionsol_adc:136,
-  akali_mid:84, annie:1, aurora:893,
+  akali_mid:84, annie:1, aurora:893, hwei:910,
   brand_mid:63, corki_mid:42, diana:131, ekko:245, fizz:105,
   galio_mid:3, heimerdinger:74, irelia_mid:39, jayce_mid:126,
   karma_mid:43, kassadin:38, katarina:55, kayle_mid:10, kennen:85, kennen_mid:85,
@@ -6574,6 +6637,18 @@ const ITEM_IMG = {
   youmuus_ghostblade: "assets/items/youmuus_ghostblade.png",
   zeal: "assets/items/zeal.png",
   zekes_convergence: "assets/items/zekes_convergence.png",
+  // ── Yeni eklenenler (2026 sezonu itemleri) ──
+  bandleglass_mirror: "assets/items/bandleglass_mirror.png",
+  diadem_of_songs: "assets/items/diadem_of_songs.png",
+  endless_hunger: "assets/items/endless_hunger.png",
+  fiendhunter_bolts: "assets/items/fiendhunter_bolts.png",
+  hearthbound_axe: "assets/items/hearthbound_axe.png",
+  hexoptics_c44: "assets/items/hexoptics_c44.png",
+  pickaxe: "assets/items/pickaxe.png",
+  rapid_firecannon: "assets/items/rapid_firecannon.png",
+  stormrazor: "assets/items/stormrazor.png",
+  whispering_circlet: "assets/items/whispering_circlet.png",
+  yun_tal_wildarrows: "assets/items/yun_tal_wildarrows.png",
 };
 const RUNE_IMG = {
   absolute_focus: "assets/runes/absolute_focus.png",
@@ -6907,6 +6982,18 @@ const ASSET_NAME = {
   zeal: "Zeal",
   zekes_convergence: "Zeke's Convergence",
   zombie_ward: "Zombie Ward",
+  // ── Yeni eklenenler (2026 sezonu itemleri) ──
+  bandleglass_mirror: "Bandleglass Mirror",
+  diadem_of_songs: "Diadem of Songs",
+  endless_hunger: "Endless Hunger",
+  fiendhunter_bolts: "Fiendhunter Bolts",
+  hearthbound_axe: "Hearthbound Axe",
+  hexoptics_c44: "Hexoptics C44",
+  pickaxe: "Pickaxe",
+  rapid_firecannon: "Rapid Firecannon",
+  stormrazor: "Stormrazor",
+  whispering_circlet: "Whispering Circlet",
+  yun_tal_wildarrows: "Yun Tal Wildarrows",
 };
 
 const ITEM_NAME_TR = {
@@ -7168,6 +7255,18 @@ const ITEM_NAME_TR = {
   zeal: "Şevk",
   zekes_convergence: "Zeke'nin Yakınsaması",
   zombie_ward: "Zombi Gözcü",
+  // ── Yeni eklenenler (2026 sezonu itemleri) — taslak çeviri, kontrol et ──
+  bandleglass_mirror: "Bandle Camı Ayna",
+  diadem_of_songs: "Şarkıların Tacı",
+  endless_hunger: "Sonsuz Açlık",
+  fiendhunter_bolts: "İblis Avcısı Okları",
+  hearthbound_axe: "Ocak Baltası",
+  hexoptics_c44: "Hexoptics C44",
+  pickaxe: "Kazma",
+  rapid_firecannon: "Hızlı Ateş Topu",
+  stormrazor: "Fırtına Ustura",
+  whispering_circlet: "Fısıldayan Taç",
+  yun_tal_wildarrows: "Yun Tal Yaban Okları",
 };
 
 // Dile göre item/rün/büyü ismini döndürür (an = asset name)
@@ -8239,7 +8338,6 @@ function findChampByNorm(normName) {
             border:1px solid #252540;background:#0d0d1e;color:#888;font-size:12px">← ${t('back')}</button>
           <div style="flex:1">
             <div style="font-size:14px;font-weight:800;color:#fff">📊 Tier List</div>
-            <div style="font-size:9px;color:#ff4d6d">${patchData.version} · ${patchData.date}</div>
           </div>
           ${BUILDER_ENABLED && tierListRole!=="Tümü" ? `<button onclick="openTierEditor('${tierListRole}')" style="padding:6px 12px;
             border-radius:8px;border:1px solid #ff4d6d55;background:#ff4d6d18;color:#ff4d6d;
