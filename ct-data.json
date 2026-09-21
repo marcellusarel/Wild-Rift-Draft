@@ -1213,7 +1213,8 @@
       "mel",
       "swain_mid",
       "talon",
-      "akshan_mid"
+      "akshan_mid",
+      "hwei"
     ],
     "ctBy": [
       "twisted_fate",
@@ -1225,7 +1226,8 @@
       "morgana_mid",
       "pantheon_mid",
       "smolder_mid",
-      "yone"
+      "yone",
+      "hwei"
     ]
   },
   "aurelionsol": {
@@ -1312,7 +1314,8 @@
       "twisted_fate",
       "veigar",
       "zoe",
-      "zyra_mid"
+      "zyra_mid",
+      "hwei"
     ],
     "ctBy": [
       "yasuo",
@@ -3460,7 +3463,8 @@
       "ambessa",
       "fiora",
       "jax",
-      "tryndamere"
+      "tryndamere",
+      "hwei"
     ],
     "ctBy": [
       "sion",
@@ -3477,7 +3481,8 @@
       "poppy_baron",
       "rumble",
       "ryze_baron",
-      "vladimir_baron"
+      "vladimir_baron",
+      "hwei"
     ]
   },
   "akali_baron": {
@@ -4653,6 +4658,17 @@
       "teemo",
       "vayne",
       "jayce"
+    ]
+  },
+  "hwei": {
+    "ct": [
+      "aatrox",
+      "ahri"
+    ],
+    "ctBy": [
+      "aatrox",
+      "ahri",
+      "annie"
     ]
   }
 }
