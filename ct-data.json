@@ -562,14 +562,7 @@
       "seraphine",
       "bard",
       "swain",
-      "ahri",
-      "corki_mid",
-      "lucian_mid",
-      "morgana_mid",
-      "smolder_mid",
-      "velkoz",
-      "akshan_mid",
-      "yasuo_baron"
+      "lucian_mid"
     ],
     "ctBy": [
       "rakan",
@@ -577,14 +570,7 @@
       "braum",
       "leona",
       "maokai",
-      "rell",
-      "akali_mid",
-      "jayce_mid",
-      "lissandra",
-      "twisted_fate",
-      "vex",
-      "diana",
-      "akali_baron"
+      "rell"
     ]
   },
   "maokai": {
@@ -1219,7 +1205,6 @@
       "twisted_fate",
       "ziggs",
       "zed_mid",
-      "galio",
       "corki_mid",
       "galio_mid",
       "morgana_mid",
@@ -1269,7 +1254,6 @@
       "lissandra",
       "twisted_fate",
       "akshan_mid",
-      "galio",
       "pantheon_mid",
       "annie",
       "kennen",
@@ -1374,7 +1358,6 @@
       "orianna"
     ],
     "ctBy": [
-      "galio",
       "diana"
     ]
   },
@@ -1512,7 +1495,6 @@
   "jayce_mid": {
     "ct": [
       "syndra",
-      "galio",
       "zed_mid",
       "fizz",
       "yasuo",
@@ -1619,7 +1601,6 @@
   "lissandra": {
     "ct": [
       "kassadin",
-      "galio",
       "ziggs",
       "akshan_mid",
       "orianna",
@@ -1711,7 +1692,6 @@
     ],
     "ctBy": [
       "twisted_fate",
-      "galio",
       "veigar",
       "vex",
       "zoe",
@@ -1852,7 +1832,6 @@
       "orianna"
     ],
     "ctBy": [
-      "galio",
       "kassadin"
     ]
   },
@@ -1965,7 +1944,6 @@
       "yasuo",
       "fizz",
       "zed_mid",
-      "galio",
       "vladimir",
       "talon",
       "aurora",
@@ -2032,8 +2010,7 @@
     ],
     "ctBy": [
       "aurelionsol",
-      "lissandra",
-      "galio"
+      "lissandra"
     ]
   },
   "vex": {
@@ -2041,7 +2018,6 @@
       "lissandra",
       "veigar",
       "annie",
-      "galio",
       "galio_mid",
       "lux_mid",
       "morgana_mid",
@@ -2289,7 +2265,6 @@
       "ahri",
       "orianna",
       "akali_mid",
-      "galio",
       "singed",
       "vladimir",
       "corki_mid",
@@ -2455,7 +2430,6 @@
   "diana": {
     "ct": [
       "vex",
-      "galio",
       "ziggs",
       "akali_mid",
       "fizz",
@@ -3487,7 +3461,6 @@
       "aatrox",
       "fiora",
       "jax",
-      "galio",
       "drmundo",
       "nasus",
       "sion"
@@ -4612,7 +4585,6 @@
       "gragas_baron",
       "wukong",
       "kennen",
-      "galio",
       "gwen",
       "gnar"
     ]
