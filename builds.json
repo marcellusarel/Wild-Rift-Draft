@@ -5656,5 +5656,34 @@
       "3"
     ],
     "tier": "A"
+  },
+  "hwei": {
+    "starter": "Boots of Mana",
+    "items": [
+      "Infinity Orb",
+      "Rabadon's Deathcap",
+      "Void Staff",
+      "Stasis Enchant"
+    ],
+    "boots": "Spellslinger's Shoes",
+    "enchant": "Blackfire Torch",
+    "runes": [
+      "Arcane Comet",
+      "Manaflow Band",
+      "Transcendence",
+      "Gathering Storm",
+      "Bone Plating"
+    ],
+    "spells": [
+      "Flash",
+      "Ignite"
+    ],
+    "skillOrder": [
+      "1",
+      "2",
+      "3"
+    ],
+    "tier": "A",
+    "situational": []
   }
 }
