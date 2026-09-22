@@ -5881,15 +5881,47 @@ let patchData = {
   version: "7.3",
   date: "21 Eylül 2026",
   newChamps: ["hwei"],
-  buffs:   ["caitlyn","lucian"],
-  nerfs:   ["olaf"],
-  changes: ["twitch","tryndamere"],
+  // Not: "Nişancı Ekosistemi" baştan yazıldı — kritik hasar sistemi (175%→200%)
+  // ve saldırı hızı formülleri (melee/menzilli ayrımı kalktı, her şampiyonun
+  // kendi oranı var) tüm nişancıları etkiliyor. Aşağıdaki liste, yönü net
+  // olan şampiyonları içeriyor; Ezreal/Xayah/Tristana/Yunara gibi karışık
+  // yönlü (hem güçlenen hem zayıflayan yetenekleri olan) şampiyonlar
+  // "changes" içinde. Ayrıca ~50 şampiyonun dayanıklılığı (can/zırh)
+  // düzenlendi — bu, tek başına buff/nerf değil "erken kırılgan, geç güçlü"
+  // türünde bir yeniden dengeleme olduğu için veri yapısına eklenmedi.
+  buffs:   ["ashe","caitlyn","vayne","zeri","lucian","graves","kalista","kogmaw","varus","sivir"],
+  nerfs:   ["olaf","kaisa","draven","missfortune","samira","jinx","akshan","corki","viego","yasuo","yone","jhin","senna"],
+  changes: ["twitch","tryndamere","ezreal","xayah","tristana","yunara"],
   details: {
+    ashe:        "Son sürümlerde geride kaldığı için saldırı hızı büyümesi neredeyse ikiye katlandı, Buz Atışı'nın kritiğe bağlı ilave hasarı ve Yaylım Ateşi'nin hasarı ciddi şekilde arttırıldı",
     caitlyn:     "Kritik vuruşa odaklı bir nişancı için yeterince güç sağlamadığı için koridor baskısını arttırmak ve iyi yerleştirilmiş Alnından Vuruş'ların gerçekten acıtması için taban istatistikleri ve pasifi güçlendirildi",
+    vayne:       "Takla ve Gümüş Ok'un hasarı arttırıldı, büyük yeteneğinin verdiği saldırı gücü bonusu da ciddi şekilde yükseltildi",
+    zeri:        "Tarama'nın saldırı gücüne dönüşüm oranı, Yıldırım Patlaması'nın hasarı ve Yıldırım Çöküşü'nün nova hasarı/kritik ölçeklenmesi güçlendirildi",
     lucian:      "İleri oyun hasar penceresi sınırlı kaldığı için, orta/geç oyun çatışmalarında saldırıya daha güvenilir başlayabilmesi adına büyük yeteneği (Ayıklama) güçlendirildi",
+    graves:      "Büyük yeteneğinin (New Destiny) kritik vuruş hasar oranı arttırılarak geç oyun patlama potansiyeli güçlendirildi",
+    kalista:     "Taban saldırı gücü ve seviye başına saldırı gücü arttırıldı",
+    kogmaw:      "Taban saldırı gücü arttırıldı",
+    varus:       "Taban saldırı gücü arttırıldı",
+    sivir:       "Taban saldırı gücü, Çevik Adımlar'ın hareket hızı bonusu ve Bumerang Kılıç/Sekme'nin hasarı belirgin şekilde güçlendirildi, büyük yeteneği de daha güvenilir hale getirildi",
     olaf:        "Erken oyunda fazla dayanıklı kaldığı için taban canı düşürüldü, ayrıca 1. yeteneğinin saldırı gücü oranı ve büyük yeteneğinin sağladığı direnç bonusu azaltıldı",
+    kaisa:       "Taban saldırı gücü düşürüldü; ikinci deri ve büyük yeteneğinin mekanikleri de yeniden ayarlanarak daha dengeli bir güç eğrisine oturtuldu",
+    draven:      "Seviye başına saldırı gücü büyümesi, Draven Ligi'nin altın ödülü ve Dönen Balta'nın hasarı düşürüldü",
+    missfortune: "Şıpsevdi ve İkili Vuruş artık düşük kritik vuruş ihtimalinde daha az hasar veriyor, bu yüzden düşük-kritik dizilimlerde zayıfladı; hedef seçim mantığı da daha öngörülebilir hale getirildi",
+    samira:      "Taban saldırı gücü, saldırı gücü büyümesi ve Kılıç Fırtınası'nın oranı düşürüldü — buna karşın büyük yeteneği (İnferno Tetikleyici) canlanma emme kazandı ve mana maliyeti kaldırıldı",
+    jinx:        "Saldırı gücü büyümesi ve büyük yeteneğinin (Süper Mega Ölüm Roketi) hasar oranı düşürüldü",
+    akshan:      "Saldırı gücü büyümesi ve Kahramanca Sallanış'ın kritik hasar oranı düşürüldü",
+    corki:       "Saldırı gücü büyümesi düşürüldü, Fosfor Bombası ve Füze Yaylımı'nın hasar oranları da genel olarak azaltıldı",
+    viego:       "Taban saldırı gücü ve büyümesi, Hükümdarın Hakimiyeti'nin iyileştirmesi ve Avlanan Yol'un saldırı hızı bonusu düşürüldü",
+    yasuo:       "Fazla kritik vuruş ihtimalinin saldırı gücüne dönüşüm oranı düşürüldü, ayrıca temel saldırıları ve 1. yeteneğinin kritikleri artık tam kritik hasarın %90'ı kadar hasar veriyor",
+    yone:        "Yasuo ile aynı mantıkla, fazla kritik vuruş ihtimalinin saldırı gücüne dönüşüm oranı düşürüldü ve kritikleri artık tam hasarın %90'ı kadar veriyor",
+    jhin:        "Taban kritik vuruş hasarındaki genel artıştan aşırı faydalanmaması için Fısıltı'nın kritikleri artık tam kritik hasarın %80'i kadar veriyor, saldırı gücüne dönüşüm oranı da bir miktar düşürüldü",
+    senna:       "Jhin ile aynı sistemsel ayardan dolayı temel saldırıları artık kritikte tam hasarın %90'ı kadar veriyor, ayrıca Mist başına kazanılan kritik vuruş ihtimali düşürüldü",
     twitch:      "Gizlenme sonrası oynanışı yeterince ödüllendirmediği için pasifi ve yetenekleri, gizlenmeden çıkışta doğru pozisyon bulup ardından yüksek patlama hasarı açmayı ödüllendirecek şekilde yeniden tasarlandı",
     tryndamere:  "Çok sayıda düşük hasarlı vuruşa güvenmek yerine tek vuruşlarının daha çok acıtması istendiği için pasifindeki saldırı hızı bonusu kaldırılıp gücü temel hasara aktarıldı, 2. yeteneğinin etkinliği de yatırılan seviyeye göre ölçeklenecek şekilde değiştirildi",
+    ezreal:      "Gizemli Atış'ın hasarı düşürülüp bekleme süresi uzatıldı (ama artık kendi bekleme süresini de azaltıyor), Gerçek Nişan'ın bekleme süresi de arttı — karşılığında taban saldırı gücü ve ultinin yetenek gücü oranı yükseltildi",
+    xayah:       "Öldürücü Tüyler'in saldırı hızı bonusu düşürüldü ama tüy hasarı ve Tüy Fırtınası'nın hasarı arttırıldı; taban saldırı gücü de yükseltildi — karışık yönlü bir ayar",
+    tristana:    "Roket Sıçrama ve Patlayıcı Şarj'ın hasar formülleri saldırı gücüne bağlı hale getirilerek yeniden tasarlandı, Ana Top ise artık yetenek gücünün yanında saldırı gücüne de bağlı — karışık yönlü bir yeniden dengeleme",
+    yunara:      "Kritik vuruş bonus hasarının yetenek gücüne dönüşüm oranı düşürüldü ama 2. yeteneğinin sağladığı saldırı hızı bonusu arttırıldı — küçük, karışık yönlü bir ayar",
   },
   // Şampiyon detay sayfasında gösterilen, yetenek bazlı ayrıntılı yama notları
   detailsFull: {
@@ -5967,46 +5999,298 @@ let patchData = {
         "Saldırı Gücü Azaltması: %40 (sabit) → %20/40/60/80 (seviyeye göre)"
       ]},
     ],
+    ashe: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Saldırı Gücü: 58 → 60",
+        "Seviye Başına Saldırı Gücü: 2,65 → 4"
+      ]},
+      { skill: "Buz Atışı", changes: [
+        "İlave Hasar: %10 + Kritik İhtimaline Bağlı Sabit Oran → Kritik İhtimali ve Kritik Hasarına Bağlı Dinamik Oran"
+      ]},
+      { skill: "Yaylım Ateşi", changes: [
+        "Bekleme Süresi: 16/13,5/11/8,5s → 15/12/9/6s",
+        "Hasar: 20/35/50/65 + %115 Saldırı Gücü → 70/110/150/190 + %100 İlave Saldırı Gücü"
+      ]},
+    ],
+    vayne: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Saldırı Gücü: 54 → 60"
+      ]},
+      { skill: "Takla", changes: [
+        "Hasar: %35/45/55/65 Saldırı Gücü → %50/60/70/80 Saldırı Gücü"
+      ]},
+      { skill: "Gümüş Ok", changes: [
+        "Azami Cana Bağlı Gerçek Hasar: %2/5/8/11 → %6/7/8/9"
+      ]},
+      { skill: "Son Saat", changes: [
+        "Saldırı Gücü: 15/25/35 → 30/40/50"
+      ]},
+    ],
+    zeri: [
+      { skill: "Canlı Pil", changes: [
+        "Fazla Saldırı Hızının Saldırı Gücüne Dönüşüm Oranı: %50 → %60"
+      ]},
+      { skill: "Ani Ateş", changes: [
+        "Hasar: 35/60/85/110 + %55/70/85/100 Saldırı Gücü + %30/35/40/45 Yetenek Gücü → 70/100/130/160 + %80 İlave Saldırı Gücü + %30/35/40/45 Yetenek Gücü"
+      ]},
+      { skill: "Ultrashock Lazer", changes: [
+        "Hasar: 30/70/110/150 + %80 Saldırı Gücü + %40 Yetenek Gücü → 60/100/140/180 + %100 Saldırı Gücü + %50 Yetenek Gücü"
+      ]},
+      { skill: "Yıldırım Çöküşü", changes: [
+        "Nova Hasarı: 150/200/250 + %70 İlave Saldırı Gücü + %80 Yetenek Gücü → 150/225/300 + %60 İlave Saldırı Gücü + %100 Yetenek Gücü"
+      ]},
+    ],
+    graves: [
+      { skill: "New Destiny", changes: [
+        "Av Tüfeği Kritik Vuruş Hasar Oranı: 1,3 → 1,5"
+      ]},
+    ],
+    kalista: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Saldırı Gücü: 54 → 57",
+        "Seviye Başına Saldırı Gücü: 5 → 5,2"
+      ]},
+    ],
+    kogmaw: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Saldırı Gücü: 54 → 58"
+      ]},
+    ],
+    varus: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Saldırı Gücü: 54 → 58"
+      ]},
+    ],
+    sivir: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Saldırı Gücü: 58 → 60"
+      ]},
+      { skill: "Çevik Adımlar", changes: [
+        "Hareket Hızı Bonusu: 31-45 (seviyeye göre) → 55-70 (seviyeye göre)"
+      ]},
+      { skill: "Bumerang Kılıç", changes: [
+        "Hasar: 10/30/50/70 + %75/80/85/90 Saldırı Gücü → 70/100/130/160 + %70 İlave Saldırı Gücü (kritik ihtimaline göre ekstra hasar)"
+      ]},
+      { skill: "Yaklaşan Tehlike", changes: [
+        "Başlangıç Bekleme Süresi Azaltma Oranı: %30/35/40 → %20/25/30",
+        "Yeniden tetiklendiğinde süre yenileniyor"
+      ]},
+    ],
+    kaisa: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Saldırı Gücü: 62 → 59"
+      ]},
+      { skill: "İkinci Deri", changes: [
+        "Eksik Cana Bağlı Hasar: (%15 + %2,5 Yetenek Gücü) → (%15 + %5 Yetenek Gücü)"
+      ]},
+      { skill: "Boşluk Arayıcı", changes: [
+        "Hasar Oranı: %110 Saldırı Gücü + %60 Yetenek Gücü → %130 Saldırı Gücü + %50 Yetenek Gücü"
+      ]},
+    ],
+    draven: [
+      { skill: "Taban İstatistikler", changes: [
+        "Seviye Başına Saldırı Gücü: 4,5 → 3,8"
+      ]},
+      { skill: "Draven Ligi", changes: [
+        "Ödül: 80 + yığın × 4 → 60 + yığın × 3"
+      ]},
+      { skill: "Dönen Balta", changes: [
+        "Hasar: 45/50/55/60 + %100/110/120/130 → 45/50/55/60 + %80/90/100/110"
+      ]},
+    ],
+    missfortune: [
+      { skill: "Şıpsevdi", changes: [
+        "Hasar Çarpanı: (1 + Kritik İhtimali) → (0,6 + Kritik İhtimali × 0,4)"
+      ]},
+      { skill: "İkili Vuruş", changes: [
+        "İkinci Vuruş Hasar Oranı: %120 → Güncel Kritik Hasarının %60'ı"
+      ]},
+      { skill: "Cazibe", changes: [
+        "Azami Hareket Hızı: 80/90/100/110 → 70/80/90/100"
+      ]},
+    ],
+    samira: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Saldırı Gücü: 62 → 60",
+        "Seviye Başına Saldırı Gücü: 4 → 3,5"
+      ]},
+      { skill: "Kılıç Fırtınası", changes: [
+        "İlave Saldırı Gücü Oranı: %80 → %50"
+      ]},
+      { skill: "İnferno Tetikleyici", changes: [
+        "Bekleme Süresi: 8s → 6s",
+        "Mana Bedeli: 60/30/0 → 0/0/0",
+        "[Yeni] Bu yetenek artık %66,7 can çalma tetikleyebiliyor"
+      ]},
+    ],
+    jinx: [
+      { skill: "Taban İstatistikler", changes: [
+        "Seviye Başına Saldırı Gücü: 4,5 → 4"
+      ]},
+      { skill: "Süper Mega Ölüm Roketi!", changes: [
+        "Bekleme Süresi: 50/45/40s → 60/50/40s",
+        "İlave Saldırı Gücü Oranı (Azami): %150 → %120"
+      ]},
+    ],
+    akshan: [
+      { skill: "Taban İstatistikler", changes: [
+        "Seviye Başına Saldırı Gücü: 5,5 → 4,5"
+      ]},
+      { skill: "Kahramanca Sallanış", changes: [
+        "Kritik Hasar: %150 (sabit) → Güncel Kritik Hasarının %70'i"
+      ]},
+    ],
+    corki: [
+      { skill: "Taban İstatistikler", changes: [
+        "Seviye Başına Saldırı Gücü: 3 → 2,5"
+      ]},
+      { skill: "Fosfor Bombası", changes: [
+        "Hasar: 65/125/185/245 + %125 İlave Saldırı Gücü + %80 Yetenek Gücü → 60/120/185/240 + %110 İlave Saldırı Gücü + %100 Yetenek Gücü"
+      ]},
+      { skill: "Füze Yaylımı", changes: [
+        "Mermi İlave Saldırı Gücü Oranı: %70 → %65",
+        "Büyük Mermi Oranı: %140 → %130"
+      ]},
+    ],
+    viego: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Saldırı Gücü: 62 → 60",
+        "Saldırı Gücü Büyümesi: 4,5 → 4,2"
+      ]},
+      { skill: "Hükümdarın Hakimiyeti", changes: [
+        "Taban İyileştirme: %7 → %5"
+      ]},
+      { skill: "Avlanan Yol", changes: [
+        "Saldırı Hızı: %45/50/55/60 → %35/40/45/50"
+      ]},
+    ],
+    yasuo: [
+      { skill: "Gezginin Yolu", changes: [
+        "Fazla Kritik İhtimalinin Saldırı Gücüne Dönüşüm Oranı: 0,6 → 0,5",
+        "[Yeni] Temel saldırılar ve 1. yeteneğin kritikleri artık normal kritik hasarının %90'ı kadar hasar veriyor"
+      ]},
+      { skill: "Son Nefes", changes: [
+        "Hasar: 250/400/550 + %160 İlave Saldırı Gücü → 200/350/500 + %150 İlave Saldırı Gücü"
+      ]},
+    ],
+    yone: [
+      { skill: "Avcının Yolu", changes: [
+        "Fazla Kritik İhtimalinin Saldırı Gücüne Dönüşüm Oranı: 0,6 → 0,5",
+        "[Yeni] Temel saldırılar ve 1. yeteneğin kritikleri artık normal kritik hasarının %90'ı kadar hasar veriyor"
+      ]},
+      { skill: "Ruh Yarığı", changes: [
+        "Kalkan: 45 + %80 İlave Saldırı Gücü → 40/55/70/85 + %60 İlave Saldırı Gücü"
+      ]},
+      { skill: "Kader Mühürlendi", changes: [
+        "Hasar: 200/350/500 + %80 Saldırı Gücü → 200/375/550 + %60 Saldırı Gücü"
+      ]},
+    ],
+    jhin: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Saldırı Gücü: 58 → 60",
+        "Saldırı Gücü Büyümesi: 4,55 → 5"
+      ]},
+      { skill: "Fısıltı", changes: [
+        "[Yeni] Kritik vuruşlar artık sadece normal kritik hasarının %80'i kadar hasar veriyor",
+        "Saldırı Gücüne Dönüşüm Oranı: fazla saldırı hızı × %30 + kritik ihtimali × %45 + seviye × %4,5 → fazla saldırı hızı × %30 + kritik ihtimali × %40 + seviye × %3"
+      ]},
+    ],
+    senna: [
+      { skill: "Mutlak Bağışlama", changes: [
+        "20 Mist Başına Kazanılan Kritik İhtimali: %15 → %10",
+        "[Yeni] Temel saldırılar artık kritik vuruşta normal kritik hasarının %90'ı kadar hasar veriyor"
+      ]},
+      { skill: "Delici Karanlık", changes: [
+        "Taban Hasar: 50/90/130/170 → 50/80/110/140"
+      ]},
+    ],
+    ezreal: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Saldırı Gücü: 58 → 60"
+      ]},
+      { skill: "Gizemli Atış", changes: [
+        "Bekleme Süresi: 4,5/4/3,5/3s → 5,5/5/4,5/4s",
+        "Hasar: 50/85/120/155 + %135 Saldırı Gücü + %30 Yetenek Gücü → 25/55/85/115 + %135 Saldırı Gücü + %30 Yetenek Gücü",
+        "[Değişti] Bekleme süresi iadesi artık tüm yetenekleri (kendisi dahil) etkiliyor"
+      ]},
+      { skill: "Gerçek Nişan", changes: [
+        "Bekleme Süresi: 70/65/60s → 80/70/60s",
+        "Yetenek Gücü Oranı: %90 → %100"
+      ]},
+    ],
+    xayah: [
+      { skill: "Taban İstatistikler", changes: [
+        "Taban Saldırı Gücü: 54 → 60",
+        "Seviye Başına Saldırı Gücü: 5 → 4,2"
+      ]},
+      { skill: "Öldürücü Tüyler", changes: [
+        "Saldırı Hızı: %45/50/55/60 → %40/45/50/55",
+        "İlave Tüy Hasar Oranı: %20 → %25"
+      ]},
+      { skill: "Tüy Fırtınası", changes: [
+        "Hasar: 125/250/375 + %100 İlave Saldırı Gücü → 150/250/350 + %100 İlave Saldırı Gücü"
+      ]},
+    ],
+    tristana: [
+      { skill: "Roket Sıçrama", changes: [
+        "Hasar: 85/155/225/295 + %50 Yetenek Gücü → 80/120/160/200 + %80 İlave Saldırı Gücü + %50 Yetenek Gücü",
+        "Yavaşlatma: %60 → %50"
+      ]},
+      { skill: "Patlayıcı Şarj", changes: [
+        "Aktif Patlama Hasarı: 50/75/100/125 + %75/110/145/180 İlave Saldırı Gücü + %50 Yetenek Gücü → (80/100/120/140 + %100 İlave Saldırı Gücü + %50 Yetenek Gücü) × kritik ihtimaline bağlı çarpan"
+      ]},
+      { skill: "Ana Top", changes: [
+        "Hasar: 350/450/550 + %100 Yetenek Gücü → 300/350/400 + %70 İlave Saldırı Gücü + %100 Yetenek Gücü"
+      ]},
+    ],
+    yunara: [
+      { skill: "Toprakların Yemini", changes: [
+        "Kritik Bonus Hasarı: %10 (her 100 Yetenek Gücünde +%10) → %8 (her 100 Yetenek Gücünde +%8)"
+      ]},
+      { skill: "Ruhun Yetiştirilmesi", changes: [
+        "İlave Saldırı Hızı: %22,5/35/47,5/60 → %25/35/45/55"
+      ]},
+    ],
   },
   // ── İTEM YAMA NOTLARI (7.3 resmi yama notlarına göre) ──
   // Anahtarlar ITEM_IMG içindeki item key'leriyle birebir aynı olmalı.
   // Not: 7.3'te nişancı item sistemi neredeyse baştan yazıldı (~50 item
   // etkilendi) — sadece uygulamanın veritabanında görseli olan ve yönü net
-  // olan item'lar işlendi. Görselleri eklenen 11 yeni item aşağıda itemNew'e
-  // eklendi (endless_hunger, Summoner's Rift mağazasının değil, AAA ARAM
-  // (Sonic Waves sezonu) modunun yeni item'ı — açıklamada belirtildi).
-  itemBuffs:  ["infinity_edge"],
-  itemNerfs:  [],
+  // olan item'lar işlendi. Mortal Reminder, Guinsoo's Rageblade, Essence
+  // Reaver, The Collector, Galeforce, Terminus, Navori, Lord Dominik's gibi
+  // birçok item de değişti ama hem buff hem nerf içeren karışık yapım yolu
+  // değişiklikleri olduğu için buff/nerf listesine eklenmedi.
+  itemBuffs:  [
+    "infinity_edge","last_whisper","seryldas_grudge","kraken_slayer",
+    "runaans_hurricane","muramana","manamune","statikk_shiv",
+  ],
+  itemNerfs:  ["dagger","kircheis_shard","phantom_dancer","force_of_nature"],
   itemNew:    [
     "pickaxe", "hearthbound_axe", "hexoptics_c44", "yun_tal_wildarrows",
     "stormrazor", "rapid_firecannon", "fiendhunter_bolts",
     "bandleglass_mirror", "whispering_circlet", "diadem_of_songs",
-    "endless_hunger",
+    "endless_hunger", "echoes_of_helia", "immortal_shieldbow",
   ],
   itemDetails: {
     infinity_edge: "Taban kritik vuruş hasarı artışıyla birlikte zaten güçlü kalması amaçlandığından pasifi sadeleştirildi, buna karşılık taban saldırı gücü ve kritik hasar bonusu arttırıldı — Saldırı Gücü: 65 → 75, Kritik Hasar: %200 → %230, [Kaldırıldı] Limit Break pasifi",
-    pickaxe: "Nişancı item sisteminin yeniden yapılandırılmasıyla mağazaya eklenen temel saldırı gücü bileşeni; Vampirik Asa ve Caulfield'ın Harp Çekici gibi düşük saldırı gücü sağlayan item'ların yapım yolunu düzenlemek için tasarlandı — Fiyat: 800, Yapım: Uzun Kılıç (500) + 300, Saldırı Gücü: 20",
-    hearthbound_axe: "Öğle Sadağı'nın yerini alan yeni orta seviye saldırı hızı/saldırı gücü bileşeni — Fiyat: 1200, Yapım: Uzun Kılıç (500) + Hançer (400) + 300, Saldırı Gücü: 20, Saldırı Hızı: %15",
-    hexoptics_c44: "Kritik nişancılara ilk item'larını tamamladıktan sonra takım savaşlarını ele geçirmek için yeni bir seçenek sunuyor — Fiyat: 2900, Yapım: Kazma (800) + Öğle Sadağı (1300) + Uzun Kılıç (500) + 300, Saldırı Gücü: 55, Kritik İhtimali: %25. Büyüteç: hedef ne kadar uzaktaysa saldırılar o kadar fazla hasar veriyor (azami 550 birimde). Gizli Nişan: son 3 saniyede hasar verdiğin bir şampiyon ölürse 8 saniye boyunca 100 ilave saldırı menzili kazanılıyor",
-    yun_tal_wildarrows: "Kritik nişancılar için oldukça altın-verimli bir ilk item seçeneği; saldırı gücü, kritik vuruş ihtimali ve saldırı hızı sağlıyor — ancak benzersiz kritik ihtimali biriktirme mekaniği tam potansiyeline ulaşmak için zaman istiyor — Fiyat: 3100, Yapım: Öğle Sadağı (1300) + Kazma (800) + Kircheis Parçası (800) + 200, Saldırı Gücü: 50, Saldırı Hızı: %25. Mükemmelleşme Alıştırması: temel saldırılar kalıcı olarak kritik ihtimali biriktiriyor (yakın dövüş %0,4 / menzilli %0,2, azami %25). Çabukluk: bir şampiyona saldırınca 6 saniye boyunca %25 saldırı hızı kazanılıyor (20 sn bekleme süresi)",
-    stormrazor: "Enerjilenmiş ailesinin eski bir dostu geri döndü — erken oyunda en güçlü koridor baskısı ve kovalama gücünü sunuyor, ağır hasarlı temel saldırılara veya Enerjilenmiş etkilerine güvenen şampiyonlar için — Fiyat: 3000, Yapım: B. F. Kılıç (1500) + Kircheis Parçası (800) + Kavgacı Eldivenleri (500) + 200, Saldırı Gücü: 50, Kritik İhtimali: %25, Saldırı Hızı: %20. Enerjilenmiş - Cıvata: enerjilenmiş saldırı 120 ilave büyü hasarı verip 1,5 saniye boyunca %45 hareket hızı sağlıyor",
-    rapid_firecannon: "Magnetic Blaster'ın yerini alan, çatışmalarda ekstra menzile ihtiyaç duyan nişancılar için daha özelleşmiş bir seçenek — Fiyat: 2650, Yapım: Şevk (1400) + Kircheis Parçası (800) + 450, Kritik İhtimali: %25, Saldırı Hızı: %40, Hareket Hızı: %4. Enerjilenmiş - Keskin Nişancı: enerjilenmiş saldırı 80 ilave büyü hasarı verip azami 150'ye kadar %35 ilave saldırı menzili sağlıyor",
-    fiendhunter_bolts: "Büyük yeteneğini kullandıktan sonra güçlü bir pencere sunuyor; Twitch, Zeri ve Yunara gibi büyük yeteneği etrafında oynayan nişancılar için patlama hasarını artırmanın harika bir yolu — Fiyat: 2650, Yapım: Şevk (1400) + Kircheis Parçası (800) + 450, Kritik İhtimali: %25, Saldırı Hızı: %45, Hareket Hızı: %4. Gece Nöbeti: 20 büyük yetenek hızı kazandırıyor. Açılış Yaylımı: büyük yeteneği kullandıktan sonraki 8 saniye içindeki 3 saldırı %50 saldırı hızı kazanıp garantili kritik vuruş yapıyor (normal kritik hasarın %80'i); zaten kritik olacaksa bunun yerine %15 ilave gerçek hasar veriyor (20 sn bekleme süresi)",
-    bandleglass_mirror: "Yasak İdol ailesinin yenilenmesiyle gelen, yetenek gücü ve yetenek hızı sağlayan yeni orta seviye destek bileşeni — Fiyat: 900, Yapım: Güçlendirme Kitabı (500) + İfşa Halkası (300) + 100, Yetenek Gücü: 20, Taban Mana Yenilenmesi: %50, Yetenek Hızı: 10",
-    whispering_circlet: "Destek item ailesinin yeni orta seviye bileşeni; can, mana ve iyileştirme/kalkan gücü sağlıyor, azami mana yığınına ulaşınca otomatik olarak Şarkıların Tacı'na dönüşüyor — Fiyat: 2400, Yapım: Yasak İdol (700) + Tanrıçanın Gözyaşı (400) + Yakut Kristal (500) + 800, Can: 200, Azami Mana: 500, Taban Mana Yenilenmesi: %50, İyileştirme ve Kalkan Gücü: %8",
-    diadem_of_songs: "Whispering Circlet'ın azami mana yığınında dönüştüğü son hâli; yakındaki en düşük canlı müttefiki her saniye iyileştiriyor — Yapım: Whispering Circlet, Can: 200, Mana: 1200, Taban Mana Yenilenmesi: %50, İyileştirme ve Kalkan Gücü: %8. Taç: son 3 saniyede sen ya da iyileştirdiğin/kalkanladığın bir müttefik çatışmadaysa, 800 birim içindeki en düşük canlı müttefiki her saniye azami mananın %0,8'i kadar iyileştiriyor",
-    endless_hunger: "AAA ARAM (Sonic Waves sezonu) moduna eklenen yeni item — Summoner's Rift mağazasında değil, sadece bu modda mevcut. Son 3 saniyede hasar verdiğin bir şampiyon ölürse 8 saniye boyunca %15 tüm-emme (omnivamp) kazanılıyor, bu etki üst üste birikebiliyor",
+    last_whisper: "Artık taban istatistiklere entegre edildiği için ayrı bir bileşen gibi davranmıyor, zırh delme gücü arttırıldı ve az miktarda saldırı gücü eklendi — Fiyat: 800 → 1200, Zırh Delme: %12 → %15, [Yeni] Saldırı Gücü: 15",
+    seryldas_grudge: "Amaçlanan kitlesinin dışındaki şampiyonlara da fazla fayda sağladığı için yavaşlatma/yara açma etkileri sadeleştirildi, buna karşılık taban gücü arttırılıp kendi zırh delmesi eklendi — Fiyat: 3300 → 3100, Saldırı Gücü: 40 → 50, [Yeni] Zırh Delme: %35, [Kaldırıldı] Donma (Frostbite) pasifi",
+    kraken_slayer: "Saldırı gücü ve saldırı hızı arttırıldı, Yunara'nın 1. yeteneğiyle etkileşimi de iyileştirildi — Fiyat: 2800 → 2900, Saldırı Gücü: 40 → 45, Saldırı Hızı: %30 → %35",
+    runaans_hurricane: "Yapım yolu değişti ve saldırı hızı arttırıldı, üstüne hareket hızı da eklendi — Fiyat: 2900 → 2650, Saldırı Hızı: %35 → %40, [Yeni] Hareket Hızı: %4, [Kaldırıldı] Rüzgar Bıçağı pasifi",
+    muramana: "Mana harcamaya bağımlı tüketim mekaniği güncelliğini yitirdiği için kaldırıldı, karşılığında taban saldırı gücü ve mana ciddi şekilde arttırıldı — Saldırı Gücü: 25 → 40, Mana: 300 → 500",
+    manamune: "Muramana ile aynı mantıkla mana tüketim mekaniği sadeleştirildi, taban saldırı gücü ve mana arttırıldı — Fiyat: 2700 → 2900, Saldırı Gücü: 25 → 40, Mana: 300 → 500",
+    statikk_shiv: "Vuruş-etkili (on-hit) dizilimler için özel bir seçenek olacak şekilde tamamen yenilendi — artık enerjilenmiş saldırısı zincirleme yıldırımla birden fazla hedefe vuruş-etkili etkileri uyguluyor — Fiyat: 3000, Yapım: Esir Rüzgar (950) + Kazma (800) + Kircheis Parçası (800) + 450, Saldırı Gücü: 40, Yetenek Gücü: 40, Saldırı Hızı: %30",
+    echoes_of_helia: "Hasarını iyileştirmeye çeviren saldırgan destekler için tasarlanmış yeni bir destek item'ı — Fiyat: 2400, Yapım: Bandleglass Mirror (900) + Kindlegem (1000) + 500, Can: 200, Yetenek Gücü: 40, Yetenek Hızı: 20. Ruh Emişi: düşman şampiyonlara verilen hasarın %30'u Ruh Parçası olarak biriktiriliyor (azami 80-250, seviyeye göre); kendin dışında bir müttefiği iyileştirdiğinde/kalkanladığında tüm parçalar o hedefi iyileştirmek için harcanıyor",
+    immortal_shieldbow: "Nişancılara geç oyunda hayatta kalma sağlayan savunma odaklı bir seçenek olarak geri döndü — Fiyat: 3000, Yapım: Öğle Sadağı (1300) + Kazma (800) + 900, Saldırı Gücü: 55, Kritik İhtimali: %25. Can Hattı: canın %35'inin altına düşürecek bir hasar aldığında 3 saniyeliğine kalkan kazanılıyor (seviyeye göre 300-650) (70 sn bekleme süresi)",
   },
   // ── RÜN YAMA NOTLARI (7.3) ──
   // Anahtarlar RUNE_IMG içindeki rün key'leriyle birebir aynı olmalı.
-  // Not: "Legend: Haste" adında yeni bir rün Legend: Tenacity'nin yerini
-  // alıyor ama DB'de/varlıklarda henüz tanımlı değil (görseli yok),
-  // bu yüzden runeNew'e eklemedim — istersen görseliyle birlikte ekleriz.
   runeBuffs:  [],
   runeNerfs:  ["lethal_tempo"],
-  runeNew:    [],
+  runeNew:    ["legend_haste"],
   runeDetails: {
-    lethal_tempo: "Tek başına fazla saldırı hızı ve menzil bonusu sağlayıp nişancılar için aşırı güç dalgalanmalarına yol açtığı için, gücünün daha çok diğer saldırı hızı kaynaklarıyla sinerjiye dayanmasını sağlayacak şekilde yeniden düzenlendi",
+    lethal_tempo: "Tek başına fazla saldırı hızı ve menzil bonusu sağlayıp nişancılar için aşırı güç dalgalanmalarına yol açtığı için, gücünün daha çok diğer saldırı hızı kaynaklarıyla sinerjiye dayanmasını sağlayacak şekilde yeniden düzenlendi — artık isabet başına yığın kazanılıyor (yakın dövüş %8, menzilli %6,4; azami 6 yığın), tam yığında ekstra uyarlanabilir hasar veriyor",
+    legend_haste: "Legend: Tenacity'nin yerini alan yeni rün — Mercury's Treads zaten ciddi azim sağladığı için, rünlerden de kolayca azim kazanmak kontrolü fazla kolay etkisizleştiriyordu. Takedown, canavar ve minyon öldürmeleri artık yetenek hızlanması kazandırıyor (azami 15 Yetenek Hızlanması, yığın başına 1,5)",
   },
 };
 
@@ -6649,6 +6933,9 @@ const ITEM_IMG = {
   stormrazor: "assets/items/stormrazor.png",
   whispering_circlet: "assets/items/whispering_circlet.png",
   yun_tal_wildarrows: "assets/items/yun_tal_wildarrows.png",
+  statikk_shiv: "assets/items/statikk_shiv.png",
+  echoes_of_helia: "assets/items/echoes_of_helia.png",
+  immortal_shieldbow: "assets/items/immortal_shieldbow.png",
 };
 const RUNE_IMG = {
   absolute_focus: "assets/runes/absolute_focus.png",
@@ -6688,6 +6975,7 @@ const RUNE_IMG = {
   legend_alacrity: "assets/runes/legend_alacrity.png",
   legend_bloodline: "assets/runes/legend_bloodline.png",
   legend_tenacity: "assets/runes/legend_tenacity.png",
+  legend_haste: "assets/runes/legend_haste.png",
   lethal_tempo: "assets/runes/lethal_tempo.png",
   manaflow_band: "assets/runes/manaflow_band.png",
   nimbus_cloak: "assets/runes/nimbus_cloak.png",
@@ -6864,6 +7152,7 @@ const ASSET_NAME = {
   legend_alacrity: "Legend- Alacrity",
   legend_bloodline: "Legend- Bloodline",
   legend_tenacity: "Legend- Tenacity",
+  legend_haste: "Legend: Haste",
   lethal_tempo: "Lethal Tempo",
   lich_bane: "Lich Bane",
   liandrys_torment: "Liandry's Torment",
@@ -6994,6 +7283,9 @@ const ASSET_NAME = {
   stormrazor: "Stormrazor",
   whispering_circlet: "Whispering Circlet",
   yun_tal_wildarrows: "Yun Tal Wildarrows",
+  statikk_shiv: "Statikk Shiv",
+  echoes_of_helia: "Echoes of Helia",
+  immortal_shieldbow: "Immortal Shieldbow",
 };
 
 const ITEM_NAME_TR = {
@@ -7137,6 +7429,7 @@ const ITEM_NAME_TR = {
   legend_alacrity: "Efsane: Çeviklik",
   legend_bloodline: "Efsane: Kan Bağı",
   legend_tenacity: "Efsane: Azim",
+  legend_haste: "Efsane: Hız",
   lethal_tempo: "Öldürücü Tempo",
   lich_bane: "Lich'in Laneti",
   liandrys_torment: "Liandry'nin İşkencesi",
@@ -7267,6 +7560,9 @@ const ITEM_NAME_TR = {
   stormrazor: "Fırtına Ustura",
   whispering_circlet: "Fısıldayan Taç",
   yun_tal_wildarrows: "Yun Tal Yaban Okları",
+  statikk_shiv: "Statikk Hançeri",
+  echoes_of_helia: "Helia'nın Yankıları",
+  immortal_shieldbow: "Ölümsüz Kalkan Yayı",
 };
 
 // Dile göre item/rün/büyü ismini döndürür (an = asset name)
