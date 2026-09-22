@@ -6262,14 +6262,14 @@ let patchData = {
   // değişiklikleri olduğu için buff/nerf listesine eklenmedi.
   itemBuffs:  [
     "infinity_edge","last_whisper","seryldas_grudge","kraken_slayer",
-    "runaans_hurricane","muramana","manamune","statikk_shiv",
+    "runaans_hurricane","muramana","manamune",
   ],
   itemNerfs:  ["dagger","kircheis_shard","phantom_dancer","force_of_nature"],
   itemNew:    [
     "pickaxe", "hearthbound_axe", "hexoptics_c44", "yun_tal_wildarrows",
     "stormrazor", "rapid_firecannon", "fiendhunter_bolts",
     "bandleglass_mirror", "whispering_circlet", "diadem_of_songs",
-    "endless_hunger", "echoes_of_helia", "immortal_shieldbow",
+    "endless_hunger", "echoes_of_helia", "immortal_shieldbow", "statikk_shiv",
   ],
   itemDetails: {
     infinity_edge: "Taban kritik vuruş hasarı artışıyla birlikte zaten güçlü kalması amaçlandığından pasifi sadeleştirildi, buna karşılık taban saldırı gücü ve kritik hasar bonusu arttırıldı — Saldırı Gücü: 65 → 75, Kritik Hasar: %200 → %230, [Kaldırıldı] Limit Break pasifi",
@@ -6279,9 +6279,20 @@ let patchData = {
     runaans_hurricane: "Yapım yolu değişti ve saldırı hızı arttırıldı, üstüne hareket hızı da eklendi — Fiyat: 2900 → 2650, Saldırı Hızı: %35 → %40, [Yeni] Hareket Hızı: %4, [Kaldırıldı] Rüzgar Bıçağı pasifi",
     muramana: "Mana harcamaya bağımlı tüketim mekaniği güncelliğini yitirdiği için kaldırıldı, karşılığında taban saldırı gücü ve mana ciddi şekilde arttırıldı — Saldırı Gücü: 25 → 40, Mana: 300 → 500",
     manamune: "Muramana ile aynı mantıkla mana tüketim mekaniği sadeleştirildi, taban saldırı gücü ve mana arttırıldı — Fiyat: 2700 → 2900, Saldırı Gücü: 25 → 40, Mana: 300 → 500",
-    statikk_shiv: "Vuruş-etkili (on-hit) dizilimler için özel bir seçenek olacak şekilde tamamen yenilendi — artık enerjilenmiş saldırısı zincirleme yıldırımla birden fazla hedefe vuruş-etkili etkileri uyguluyor — Fiyat: 3000, Yapım: Esir Rüzgar (950) + Kazma (800) + Kircheis Parçası (800) + 450, Saldırı Gücü: 40, Yetenek Gücü: 40, Saldırı Hızı: %30",
-    echoes_of_helia: "Hasarını iyileştirmeye çeviren saldırgan destekler için tasarlanmış yeni bir destek item'ı — Fiyat: 2400, Yapım: Bandleglass Mirror (900) + Kindlegem (1000) + 500, Can: 200, Yetenek Gücü: 40, Yetenek Hızı: 20. Ruh Emişi: düşman şampiyonlara verilen hasarın %30'u Ruh Parçası olarak biriktiriliyor (azami 80-250, seviyeye göre); kendin dışında bir müttefiği iyileştirdiğinde/kalkanladığında tüm parçalar o hedefi iyileştirmek için harcanıyor",
-    immortal_shieldbow: "Nişancılara geç oyunda hayatta kalma sağlayan savunma odaklı bir seçenek olarak geri döndü — Fiyat: 3000, Yapım: Öğle Sadağı (1300) + Kazma (800) + 900, Saldırı Gücü: 55, Kritik İhtimali: %25. Can Hattı: canın %35'inin altına düşürecek bir hasar aldığında 3 saniyeliğine kalkan kazanılıyor (seviyeye göre 300-650) (70 sn bekleme süresi)",
+    pickaxe: "Fiyat: 800, Yapım: Uzun Kılıç (500) + 300, Saldırı Gücü: 20",
+    hearthbound_axe: "Fiyat: 1200, Yapım: Uzun Kılıç (500) + Hançer (400) + 300, Saldırı Gücü: 20, Saldırı Hızı: %15",
+    hexoptics_c44: "Fiyat: 2900, Yapım: Kazma (800) + Doruk Sadağı (1300) + Uzun Kılıç (500) + 300, Saldırı Gücü: 55, Kritik Vuruş İhtimali: %25. Yakınlaştırma: saldırılar rakibin uzaklığına bağlı %0-%10 ilave hasar verir, 550 birimde maksimuma ulaşır. Sihirli Nişan: son 3 saniyede hasar verdiğin bir şampiyon katledilirse 8 saniyeliğine 100 İlave Saldırı Menzili kazandırır.",
+    yun_tal_wildarrows: "Fiyat: 3100, Yapım: Doruk Sadağı (1300) + Kazma (800) + Kircheis Parçacığı (800) + 200, Saldırı Gücü: 50, Saldırı Hızı: %25. Eğitim Şart: normal saldırılar kalıcı olarak kritik vuruş ihtimaline katkı sağlar (yakın dövüş %0,4 / menzilli %0,2 artışla, en fazla %25). Artçı Rüzgâr: bir rakip şampiyona saldırmak 6 saniyeliğine %25 Saldırı Hızı sağlar (20 sn bekleme süresi).",
+    stormrazor: "Fiyat: 3000, Yapım: B. F. Kılıç (1500) + Kircheis Parçacığı (800) + Dövüşçü Eldiveni (500) + 200, Saldırı Gücü: 50, Kritik Vuruş İhtimali: %25, Saldırı Hızı: %20. Enerji Dolu - Şimşek: enerji dolu saldırılar 120 İlave Büyü Hasarı verir ve 1,5 saniyeliğine %45 Hareket Hızı sağlar.",
+    rapid_firecannon: "Fiyat: 2650, Yapım: Coşku (1400) + Kircheis Parçacığı (800) + 450, Kritik Vuruş İhtimali: %25, Saldırı Hızı: %40, Hareket Hızı: %4. Enerji Dolu - Keskin Nişancı: enerji dolu saldırılar 80 İlave Büyü Hasarı verir ve en fazla 150 olmak üzere %35 İlave Saldırı Menzili sağlar.",
+    fiendhunter_bolts: "Fiyat: 2650, Yapım: Coşku (1400) + Kircheis Parçacığı (800) + 450, Kritik Vuruş İhtimali: %25, Saldırı Hızı: %45, Hareket Hızı: %4. Gece Nöbeti: 20 Ulti Hızı kazandırır. Öncü Yaylım: ulti kullandıktan sonraki 8 saniye içindeki sonraki 3 saldırı %50 Saldırı Hızı kazanır ve garanti kritik vuruş yapar (normal kritik hasarının %80'i); zaten kritikse bunun yerine %15 İlave Gerçek Hasar verir (45 sn bekleme süresi).",
+    bandleglass_mirror: "Fiyat: 900, Yapım: Kuvvet Kitabı (500) + İlham Çemberi (300) + 100, Yetenek Gücü: 20, Taban Mana Yenilenmesi: %50, Yetenek Hızı: 10",
+    whispering_circlet: "Fiyat: 2400, Yapım: Yasak İdol (700) + Tanrıça'nın Gözyaşı (400) + Yakut Kristal (500) + 800, Can: 200, Azami Mana: 500, Taban Mana Yenilenmesi: %50, İyileştirme ve Kalkan Gücü: %8. Ahenk: azami mananın %0,5'i kadar İlave İyileştirme ve Kalkan Gücü kazandırır, harcanan mananın %25'ini iade eder. Mana Yüklemesi: mana harcamak 14'ten 700'e Azami Mana kazandırır (10 sn'de en fazla 2 kez); azami yükte otomatik olarak Ezgi Diyademi'ne yükselir.",
+    diadem_of_songs: "Yapım: Fısıldayan Taç, Can: 200, Mana: 1200, Taban Mana Yenilenmesi: %50, İyileştirme ve Kalkan Gücü: %8. Ahenk: azami mananın %0,5'i kadar İlave İyileştirme ve Kalkan Gücü kazandırır, harcanan mananın %25'ini iade eder. Diyadem: sen veya son 3 saniyede iyileştirdiğin/kalkanladığın bir müttefik çatışmadaysa, 800 birim içindeki en düşük canlı müttefiki her saniye azami mananın %0,8'i kadar iyileştirir.",
+    endless_hunger: "AAA ARAM (Ses Dalgaları Sezonu) moduna özel, Summoner's Rift mağazasında yok. Son 3 saniyede hasar verdiğin bir şampiyon katledilirse 8 saniyeliğine %15 Mutlak Sömürü kazandırır, bu etki birikebilir.",
+    echoes_of_helia: "Fiyat: 2400, Yapım: Bandle Camı Ayna (900) + Alazcevher (1000) + 500, Can: 200, Yetenek Gücü: 40, Yetenek Hızı: 20, Taban Mana Yenilenmesi: %50. Ruh Sömürüsü: rakip şampiyonlara verilen hasarın %30'u Ruh Parçacığı olarak birikir (seviyeye göre azami 80-250); kendin dışında bir müttefiği iyileştirdiğinde/kalkanladığında tüm parçalar o hedefi iyileştirmek için harcanır.",
+    immortal_shieldbow: "Fiyat: 3000, Yapım: Doruk Sadağı (1300) + Kazma (800) + 900, Saldırı Gücü: 55, Kritik Vuruş İhtimali: %25. Can Simidi: canın %35'inin altına düşürecek bir hasar aldığında 3 saniyeliğine kalkan kazanılır (yakın dövüş 350-650 / menzilli 300-550, seviyeye göre) (70 sn bekleme süresi).",
+    statikk_shiv: "Fiyat: 3000, Yapım: Ruh Yeli (950) + Kazma (800) + Kircheis Parçacığı (800) + 450, Saldırı Gücü: 40, Yetenek Gücü: 40, Saldırı Hızı: %30, Hareket Hızı: %4. Enerji Dolu: hareket etmek ve saldırı yapmak enerji dolu bir saldırı üretir. Elektrokıvılcım: enerji dolu saldırılar ilave hedeflere seken zincirleme yıldırım ateşler (1/5/9/13. seviyelerde 3/4/5/6 sekme, 60 Büyü Hasarı, minyon/canavara 90) ve isabet etkilerini sekme hedeflerine de uygular. Elektroşok: normal saldırılar 5 İlave Enerji Dolu Yükü kazandırır.",
   },
   // ── RÜN YAMA NOTLARI (7.3) ──
   // Anahtarlar RUNE_IMG içindeki rün key'leriyle birebir aynı olmalı.
