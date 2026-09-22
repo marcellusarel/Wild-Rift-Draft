@@ -1226,7 +1226,8 @@
       "taliyah",
       "velkoz",
       "zoe",
-      "diana"
+      "diana",
+      "hwei"
     ],
     "ctBy": [
       "annie",
@@ -1421,7 +1422,8 @@
       "zoe",
       "zyra_mid",
       "diana",
-      "pantheon_mid"
+      "pantheon_mid",
+      "hwei"
     ]
   },
   "galio_mid": {
@@ -1433,7 +1435,8 @@
       "pantheon_mid",
       "yasuo",
       "zed_mid",
-      "akali_mid"
+      "akali_mid",
+      "hwei"
     ],
     "ctBy": [
       "irelia_mid",
@@ -1488,7 +1491,8 @@
       "kennen_mid",
       "ziggs",
       "lux_mid",
-      "jayce_mid"
+      "jayce_mid",
+      "hwei"
     ]
   },
   "jayce_mid": {
@@ -1505,7 +1509,8 @@
       "aurelionsol",
       "veigar",
       "kassadin",
-      "singed_mid"
+      "singed_mid",
+      "hwei"
     ]
   },
   "karma_mid": {
@@ -1532,7 +1537,8 @@
       "heimerdinger",
       "jayce_mid",
       "lucian_mid",
-      "smolder_mid"
+      "smolder_mid",
+      "hwei"
     ],
     "ctBy": [
       "katarina",
@@ -1590,7 +1596,8 @@
       "katarina",
       "akshan_mid",
       "orianna",
-      "kennen_mid"
+      "kennen_mid",
+      "hwei"
     ],
     "ctBy": [
       "aurelionsol",
@@ -1666,7 +1673,8 @@
     "ctBy": [
       "ahri",
       "ryze",
-      "lux_mid"
+      "lux_mid",
+      "hwei"
     ]
   },
   "mel_adc": {
@@ -1928,7 +1936,8 @@
       "annie",
       "brand_mid",
       "akali_mid",
-      "kennen_mid"
+      "kennen_mid",
+      "hwei"
     ],
     "ctBy": [
       "twisted_fate",
@@ -2176,7 +2185,8 @@
       "galio_mid",
       "lux_mid",
       "morgana_mid",
-      "yasuo"
+      "yasuo",
+      "hwei"
     ]
   },
   "ziggs": {
@@ -2244,7 +2254,8 @@
       "zed_mid",
       "yasuo",
       "akali_mid",
-      "diana"
+      "diana",
+      "hwei"
     ],
     "ctBy": [
       "annie",
@@ -2449,7 +2460,8 @@
       "ekko",
       "mel",
       "talon",
-      "zyra_mid"
+      "zyra_mid",
+      "hwei"
     ]
   },
   "diana_jg": {
@@ -4624,7 +4636,21 @@
     ]
   },
   "hwei": {
-    "ct": [],
-    "ctBy": []
+    "ct": [
+      "irelia_mid",
+      "fizz",
+      "zed_mid",
+      "jayce_mid",
+      "mel",
+      "diana"
+    ],
+    "ctBy": [
+      "kayle_mid",
+      "teemo_mid",
+      "aurelionsol",
+      "zyra_mid",
+      "kassadin",
+      "galio_mid"
+    ]
   }
 }
