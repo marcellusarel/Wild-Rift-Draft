@@ -6293,6 +6293,10 @@ let patchData = {
     echoes_of_helia: "Fiyat: 2400, Yapım: Bandle Camı Ayna (900) + Alazcevher (1000) + 500, Can: 200, Yetenek Gücü: 40, Yetenek Hızı: 20, Taban Mana Yenilenmesi: %50. Ruh Sömürüsü: rakip şampiyonlara verilen hasarın %30'u Ruh Parçacığı olarak birikir (seviyeye göre azami 80-250); kendin dışında bir müttefiği iyileştirdiğinde/kalkanladığında tüm parçalar o hedefi iyileştirmek için harcanır.",
     immortal_shieldbow: "Fiyat: 3000, Yapım: Doruk Sadağı (1300) + Kazma (800) + 900, Saldırı Gücü: 55, Kritik Vuruş İhtimali: %25. Can Simidi: canın %35'inin altına düşürecek bir hasar aldığında 3 saniyeliğine kalkan kazanılır (yakın dövüş 350-650 / menzilli 300-550, seviyeye göre) (70 sn bekleme süresi).",
     statikk_shiv: "Fiyat: 3000, Yapım: Ruh Yeli (950) + Kazma (800) + Kircheis Parçacığı (800) + 450, Saldırı Gücü: 40, Yetenek Gücü: 40, Saldırı Hızı: %30, Hareket Hızı: %4. Enerji Dolu: hareket etmek ve saldırı yapmak enerji dolu bir saldırı üretir. Elektrokıvılcım: enerji dolu saldırılar ilave hedeflere seken zincirleme yıldırım ateşler (1/5/9/13. seviyelerde 3/4/5/6 sekme, 60 Büyü Hasarı, minyon/canavara 90) ve isabet etkilerini sekme hedeflerine de uygular. Elektroşok: normal saldırılar 5 İlave Enerji Dolu Yükü kazandırır.",
+    dagger: "Erken oyunda ölçek dışı kalan bir saldırı hızı sağladığı için hafifçe zayıflatıldı — Saldırı Hızı: %15 → %12",
+    kircheis_shard: "Sadece geçiş bileşeni olması gerekirken kalıcı yapım yollarında da fazla güç kattığı için saldırı gücü tamamen kaldırıldı, sadece enerji dolu saldırı pasifi kaldı — [Kaldırıldı] Saldırı Gücü: 15",
+    phantom_dancer: "Kritik/saldırı hızı odaklı bir item olmasına rağmen üstüne saldırı gücü de vermesi diğer kritik item'larla dengesini bozduğu için saldırı gücü kaldırıldı, hareket hızı pasifi korundu — [Kaldırıldı] Saldırı Gücü: 15",
+    force_of_nature: "Büyü hasarına karşı hem direnç hem de aldığı hasarı azaltan (Absorb) bir pasif barındırması tek bir item için fazla güçlü bir savunma kombinasyonu oluşturduğundan hasar azaltma etkisi tamamen kaldırıldı, sadece büyü direnci ve hareket hızı pasifleri kaldı — [Kaldırıldı] Emme Kalkanı Etkisi (art arda büyü hasarı alındıkça artan %hasar azaltma)",
   },
   // ── RÜN YAMA NOTLARI (7.3) ──
   // Anahtarlar RUNE_IMG içindeki rün key'leriyle birebir aynı olmalı.
@@ -8815,7 +8819,7 @@ function findChampByNorm(normName) {
                     return `<button onclick="champDetailId='${v.id}';render()" style="
                       padding:3px 10px;border-radius:6px;font-size:9px;font-weight:700;
                       background:${vlc}18;border:1px solid ${vlc}44;color:${vlc}">
-                      ${v.lanes?.[0]}
+                      ${tl(v.lanes?.[0])}
                     </button>`;
                   }).join("")}
                   <button onclick="champDetailId='${champDetailId}';render()" style="
@@ -9803,7 +9807,7 @@ function findChampByNorm(normName) {
             <span style="font-size:10px;font-weight:800;color:#ff6060">🚨 ${t('draft_lane_ct_suggestion')}</span>
             ${last?`<span style="font-size:8px;padding:1px 7px;border-radius:4px;
               background:#ff303020;border:1px solid #ff303050;color:#ff9090;margin-left:auto">
-              vs ${last.name} (${last.lanes?.[0]})
+              vs ${last.name} (${tl(last.lanes?.[0])})
             </span>`:""}
           </div>
           ${sugg.ct.length
