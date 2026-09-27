@@ -17,6 +17,12 @@
     if(!sessionStorage.getItem('wrFreshLoad')){
       sessionStorage.setItem('wrFreshLoad','1');
       location.replace(location.pathname + '?_fresh=' + Date.now());
+    } else if (location.search.indexOf('_fresh=') !== -1) {
+      // Taze yükleme tamamlandı — artık adres çubuğunda ve kopyalanan/
+      // paylaşılan linkte bu geçici parametre görünmesin diye temizleniyor.
+      // history.replaceState sayfayı YENİDEN YÜKLEMEZ, sadece adres
+      // çubuğundaki görünen adresi günceller.
+      history.replaceState(null, '', location.pathname);
     }
   }catch(e){}
 })();
