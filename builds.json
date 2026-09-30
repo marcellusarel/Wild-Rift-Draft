@@ -2749,13 +2749,13 @@
   "vayne": {
     "starter": "Berserker's Greaves",
     "items": [
-      "Guinsoo's Rageblade",
-      "Blade of the Ruined King",
-      "Terminus",
+      "Essence Reaver",
+      "Lord Dominik's Regards",
+      "Infinity Edge",
       "Guardian Angel"
     ],
     "boots": "Gunmetal Greaves",
-    "enchant": "Kraken Slayer",
+    "enchant": "Stormrazor",
     "runes": [
       "Lethal Tempo",
       "Brutal",
@@ -2772,7 +2772,8 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": []
   },
   "jhin": {
     "starter": "Boots of Dynamism",
