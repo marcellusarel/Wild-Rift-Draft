@@ -4893,10 +4893,10 @@
   "akshan_mid": {
     "starter": "Berserker's Greaves",
     "items": [
-      "Kraken Slayer",
-      "Magnetic Blaster",
+      "Stormrazor",
+      "Lord Dominik's Regards",
       "Infinity Edge",
-      "Mortal Reminder"
+      "Lord Dominik's Regards"
     ],
     "boots": "Gunmetal Greaves",
     "enchant": "The Collector",
@@ -4916,7 +4916,8 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": []
   },
   "annie": {
     "starter": "Boots of Mana",
