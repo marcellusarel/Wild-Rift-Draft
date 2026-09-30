@@ -2776,7 +2776,7 @@
   "jhin": {
     "starter": "Boots of Dynamism",
     "items": [
-      "Magnetic Blaster",
+      "Stormrazor",
       "Infinity Edge",
       "Lord Dominik's Regards",
       "Guardian Angel"
@@ -2799,7 +2799,8 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": []
   },
   "ashe": {
     "starter": "Berserker's Greaves",
