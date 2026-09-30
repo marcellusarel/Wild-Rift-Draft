@@ -2920,13 +2920,13 @@
   "draven": {
     "starter": "Gluttonous Greaves",
     "items": [
-      "Essence Reaver",
-      "Infinity Edge",
+      "The Collector",
       "Lord Dominik's Regards",
+      "Infinity Edge",
       "Guardian Angel"
     ],
     "boots": "Immortal Path",
-    "enchant": "Bloodthirster",
+    "enchant": "Stormrazor",
     "runes": [
       "Conqueror",
       "Brutal",
@@ -2943,7 +2943,8 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": []
   },
   "jinx": {
     "starter": "Berserker's Greaves",
