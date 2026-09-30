@@ -2833,10 +2833,10 @@
   "caitlyn": {
     "starter": "Gluttonous Greaves",
     "items": [
-      "Magnetic Blaster",
+      "Hexoptics C44",
       "Lord Dominik's Regards",
-      "Galeforce",
-      "Infinity Edge"
+      "Infinity Edge",
+      "Rapid Firecannon"
     ],
     "boots": "Immortal Path",
     "enchant": "The Collector",
@@ -2856,7 +2856,8 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": []
   },
   "corki": {
     "starter": "Gluttonous Greaves",
