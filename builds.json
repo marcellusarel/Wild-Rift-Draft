@@ -2891,10 +2891,10 @@
   "corki_mid": {
     "starter": "Gluttonous Greaves",
     "items": [
-      "Bloodthirster",
-      "Magnetic Blaster",
+      "Stormrazor",
+      "Lord Dominik's Regards",
       "Infinity Edge",
-      "Lord Dominik's Regards"
+      "Guardian Angel"
     ],
     "boots": "Immortal Path",
     "enchant": "Essence Reaver",
@@ -2914,7 +2914,8 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": []
   },
   "draven": {
     "starter": "Gluttonous Greaves",
