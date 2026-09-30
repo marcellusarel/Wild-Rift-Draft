@@ -2950,13 +2950,13 @@
   "jinx": {
     "starter": "Berserker's Greaves",
     "items": [
-      "Blade of the Ruined King",
       "Runaan's Hurricane",
       "Lord Dominik's Regards",
-      "Infinity Edge"
+      "Infinity Edge",
+      "Guardian Angel"
     ],
     "boots": "Gunmetal Greaves",
-    "enchant": "The Collector",
+    "enchant": "Stormrazor",
     "runes": [
       "Lethal Tempo",
       "Brutal",
@@ -2973,7 +2973,8 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": []
   },
   "kaisa": {
     "starter": "Gluttonous Greaves",
