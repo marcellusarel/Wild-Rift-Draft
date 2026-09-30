@@ -3347,13 +3347,13 @@
   "tristana": {
     "starter": "Berserker's Greaves",
     "items": [
-      "Lord Dominik's Regards",
-      "Magnetic Blaster",
+      "Stormrazor",
       "Infinity Edge",
-      "Navori Quickblades"
+      "Lord Dominik's Regards",
+      "Guardian Angel"
     ],
     "boots": "Gunmetal Greaves",
-    "enchant": "Bloodthirster",
+    "enchant": "Yun Tal Wildarrows",
     "runes": [
       "Lethal Tempo",
       "Brutal",
@@ -3370,7 +3370,8 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": []
   },
   "twitch": {
     "starter": "Berserker's Greaves",
