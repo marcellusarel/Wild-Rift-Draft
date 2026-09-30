@@ -3491,7 +3491,7 @@
   "zeri": {
     "starter": "Berserker's Greaves",
     "items": [
-      "Bloodthirster",
+      "Fiendhunter Bolts",
       "Lord Dominik's Regards",
       "Infinity Edge",
       "Guardian Angel"
@@ -3514,7 +3514,8 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": []
   },
   "ziggs": {
     "starter": "Boots of Mana",
