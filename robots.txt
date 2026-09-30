@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marcellusarel.github.io/Wild-Rift-Draft/sitemap.xml

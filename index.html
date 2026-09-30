@@ -2,31 +2,6 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8"/>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-<meta http-equiv="Pragma" content="no-cache"/>
-<meta http-equiv="Expires" content="0"/>
-<script>
-// ─── AÇILIŞTA TEK SEFERLİK ZORUNLU TAZE YÜKLEME ─────────────────
-// Telefon (özellikle "ana ekrana ekle" ile açılan PWA'larda) sayfayı bazen
-// eski önbellekten/askıya alınmış haliyle gösterebiliyor. Uygulama her
-// GERÇEKTEN yeni açıldığında (yeni sekme/oturum), sunucudan taze bir kopya
-// zorunlu olarak indirilsin diye bir kerelik otomatik yenileme yapıyoruz.
-// sessionStorage sayesinde sonsuz döngü olmuyor — aynı oturumda tekrar tetiklenmez.
-(function(){
-  try{
-    if(!sessionStorage.getItem('wrFreshLoad')){
-      sessionStorage.setItem('wrFreshLoad','1');
-      location.replace(location.pathname + '?_fresh=' + Date.now());
-    } else if (location.search.indexOf('_fresh=') !== -1) {
-      // Taze yükleme tamamlandı — artık adres çubuğunda ve kopyalanan/
-      // paylaşılan linkte bu geçici parametre görünmesin diye temizleniyor.
-      // history.replaceState sayfayı YENİDEN YÜKLEMEZ, sadece adres
-      // çubuğundaki görünen adresi günceller.
-      history.replaceState(null, '', location.pathname);
-    }
-  }catch(e){}
-})();
-</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
@@ -148,9 +123,22 @@ input{font-family:inherit}
 .wr-section-label::after{content:"";flex:1;height:1px;
   background:linear-gradient(90deg,#7a7a9a44,transparent)}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Wild Rift Draft Asistanı","url":"https://marcellusarel.github.io/Wild-Rift-Draft/","inLanguage":"tr","applicationCategory":"GameApplication","operatingSystem":"Web","description":"Wild Rift için draft simülatörü (Bo1/Bo3/Bo5), şampiyon counter listeleri, item build'leri, rün dizilimleri ve tier listesi."}
+</script>
 </head>
 <body>
-<div id="app"></div>
+<div id="app"><main style="max-width:640px;margin:0 auto;padding:32px 20px;line-height:1.6">
+<h1 style="font-size:24px;color:#ffcc02;margin-bottom:12px">Wild Rift Draft Asistanı</h1>
+<p>Wild Rift Draft Asistanı; Bo1, Bo3 ve Bo5 formatlarında draft simülasyonu yapmanı, şampiyonların counter (ct) ve güçlü olduğu eşleşmeleri görmeni sağlayan ücretsiz bir araçtır.</p>
+<ul style="margin:12px 0 0 20px">
+<li>Draft simülatörü: ban ve pick aşamalarını takım arkadaşlarınla dene.</li>
+<li>Şampiyon rehberi: counter listeleri, sinerjiler, item build'leri ve rün dizilimleri.</li>
+<li>Tier listesi ve güncel yama notları.</li>
+</ul>
+<p style="margin-top:12px;color:#7a7a9a">Yükleniyor…</p>
+<noscript><p>Bu uygulamanın çalışması için JavaScript gereklidir.</p></noscript>
+</main></div>
 <div id="builderFab" style="display:none;position:fixed;bottom:16px;right:16px;z-index:9997;
   padding-bottom:env(safe-area-inset-bottom)"></div>
 <div id="profileFab" style="display:none;position:fixed;bottom:64px;right:16px;z-index:9997;
