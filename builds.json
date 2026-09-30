@@ -3376,13 +3376,13 @@
   "twitch": {
     "starter": "Berserker's Greaves",
     "items": [
-      "Blade of the Ruined King",
-      "Infinity Edge",
+      "Fiendhunter Bolts",
+      "Runaan's Hurricane",
       "Lord Dominik's Regards",
-      "Guardian Angel"
+      "Infinity Edge"
     ],
     "boots": "Gunmetal Greaves",
-    "enchant": "Runaan's Hurricane",
+    "enchant": "The Collector",
     "runes": [
       "Lethal Tempo",
       "Brutal",
@@ -3399,7 +3399,8 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": []
   },
   "varus": {
     "starter": "Berserker's Greaves",
