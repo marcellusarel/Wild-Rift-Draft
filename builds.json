@@ -3262,13 +3262,13 @@
   "sivir": {
     "starter": "Berserker's Greaves",
     "items": [
-      "Magnetic Blaster",
-      "Lord Dominik's Regards",
+      "Yun Tal Wildarrows",
       "Navori Quickblades",
+      "Lord Dominik's Regards",
       "Infinity Edge"
     ],
     "boots": "Gunmetal Greaves",
-    "enchant": "Bloodthirster",
+    "enchant": "Stormrazor",
     "runes": [
       "Lethal Tempo",
       "Brutal",
@@ -3285,7 +3285,8 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": []
   },
   "smolder": {
     "starter": "Ionian Boots of Lucidity",
