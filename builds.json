@@ -3434,13 +3434,13 @@
   "xayah": {
     "starter": "Berserker's Greaves",
     "items": [
-      "Magnetic Blaster",
+      "Essence Reaver",
       "Lord Dominik's Regards",
       "Infinity Edge",
       "Guardian Angel"
     ],
     "boots": "Gunmetal Greaves",
-    "enchant": "Bloodthirster",
+    "enchant": "Stormrazor",
     "runes": [
       "Conqueror",
       "Brutal",
@@ -3457,7 +3457,8 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": []
   },
   "yunara": {
     "starter": "Berserker's Greaves",
