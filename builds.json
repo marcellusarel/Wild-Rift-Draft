@@ -2804,10 +2804,10 @@
   "ashe": {
     "starter": "Berserker's Greaves",
     "items": [
-      "Guinsoo's Rageblade",
-      "Blade of the Ruined King",
+      "Hexoptics C44",
+      "Lord Dominik's Regards",
       "Runaan's Hurricane",
-      "Galeforce"
+      "Infinity Edge"
     ],
     "boots": "Gunmetal Greaves",
     "enchant": "Kraken Slayer",
@@ -2827,7 +2827,8 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": []
   },
   "caitlyn": {
     "starter": "Gluttonous Greaves",
