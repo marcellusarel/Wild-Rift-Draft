@@ -3463,13 +3463,13 @@
   "yunara": {
     "starter": "Berserker's Greaves",
     "items": [
-      "Magnetic Blaster",
-      "Infinity Edge",
+      "Stormrazor",
+      "Runaan's Hurricane",
       "Lord Dominik's Regards",
-      "Guardian Angel"
+      "Infinity Edge"
     ],
     "boots": "Gunmetal Greaves",
-    "enchant": "Kraken Slayer",
+    "enchant": "Yun Tal Wildarrows",
     "runes": [
       "Lethal Tempo",
       "Brutal",
@@ -3486,7 +3486,8 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": []
   },
   "zeri": {
     "starter": "Berserker's Greaves",
