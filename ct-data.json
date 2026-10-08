@@ -2473,7 +2473,6 @@
   },
   "drmundo_jg": {
     "ct": [
-      "fiora",
       "aatrox_jg",
       "gwen_jg",
       "lillia",
@@ -2631,7 +2630,6 @@
       "jarvaniv",
       "amumu",
       "kayn",
-      "fiora",
       "aatrox_jg",
       "viego",
       "fiddlesticks",
@@ -2837,7 +2835,6 @@
       "nunu",
       "shyvana",
       "olaf_jg",
-      "fiora",
       "gragas_jg",
       "kindred",
       "lee_sin",
@@ -3169,7 +3166,6 @@
     ],
     "ctBy": [
       "amumu",
-      "fiora",
       "hecarim",
       "irelia_jg",
       "jarvaniv"
@@ -3614,11 +3610,9 @@
       "malphite",
       "jayce",
       "kennen",
-      "hecarim",
-      "lillia",
-      "riven_jg",
       "kayle",
-      "wukong"
+      "wukong",
+      "riven"
     ],
     "ctBy": [
       "aatrox",
@@ -3641,7 +3635,6 @@
       "poppy_baron",
       "chogath",
       "gragas_jg",
-      "drmundo_jg",
       "gwen_jg",
       "jax_jg",
       "nautilus_jg",
@@ -4245,7 +4238,8 @@
       "jax",
       "rumble",
       "sion",
-      "yone_baron"
+      "yone_baron",
+      "fiora"
     ]
   },
   "rumble": {
