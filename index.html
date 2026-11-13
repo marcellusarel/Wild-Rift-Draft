@@ -769,6 +769,10 @@ const DB = {
   // ── MID ──────────────────────────────────────────────────────
   hwei:       {name:"Hwei",        lanes:["Mid"],    dmg:"AP",    cls:"Mage",
     ct:[], ctBy:[], sy:[]},
+  sylas:      {name:"Sylas",       lanes:["Mid"],    dmg:"AP",    cls:"Fighter",
+    ct:[], ctBy:[], sy:[]},
+  sylas_jg:   {name:"Sylas",       lanes:["Jungle"], dmg:"AP",    cls:"Fighter",
+    ct:[], ctBy:[], sy:[]},
   ahri:       {name:"Ahri",        lanes:["Mid"],    dmg:"AP",    cls:"Mage",
     ct:["akali","orianna","fizz","yasuo","diana","annie","syndra"],
     ctBy:["twisted_fate","lux","ziggs","zed","galio","morgana"],
@@ -5872,161 +5876,121 @@ let builderPickSearch  = "";
 
 // ─── YAMA VERİSİ ─────────────────────────────────────────────
 let patchData = {
-  version: "7.3a",
-  date: "29 Eylül 2026",
-  newChamps: [],
-  buffs:   ["samira","tristana","draven","swain","viego"],
-  nerfs:   ["hwei","rammus","malphite","caitlyn","senna","syndra","yuumi"],
-  changes: [],
+  version: "7.3f",
+  date: "11 Kasım 2026",
+  newChamps: ["sylas"],
+  buffs:   ["graves","akshan","lucian","rumble","yasuo"],
+  nerfs:   ["kalista","shen","kassadin"],
+  changes: ["viktor","irelia"],
   details: {
-    hwei:      "Oyuncular yetenek setinde ustalaştıkça performansı beklenenden hızlı arttığı için, artan gücünü dizginlemek amacıyla genel hasarı düşürüldü",
-    samira:    "Tüm beceri düzeylerinde hem anlık hasarı hem hayatta kalma becerisi yetersiz kaldığı için çatışmaya daldığında daha büyük etki yaratabilmesi adına hasarı ve dayanıklılığı arttırıldı",
-    rammus:    "Yeni orman sisteminde ormanı çok hızlı temizlediği için, geç oyun takım savaşı gücü korunurken orman temizleme hızını ve erken oyun çatışma gücünü yavaşlatmak amacıyla ilk seviyelerdeki zırhı düşürüldü",
-    malphite:  "Birden fazla konumda fazla güçlü kaldığı için tank rolüyle daha uyumlu hale getirmek amacıyla hasarı ve oyun kurma gücü azaltıldı",
-    tristana:  "Diğer kritik vuruş odaklı nişancıların gerisinde kaldığı için onlara ayak uydurabilmesi adına anlık ve sürekli hasarı arttırıldı",
-    draven:    "Gücü yerinde olmadığı ve anlık hasarı diğer nişancıların gerisinde kaldığı için baltalarının daha sert vurması adına hasarının bir kısmı geri verildi",
-    caitlyn:   "Saldırı hızına yatırım yapmaya gerek duymadan fazla güçlendiği için makul bir seviyeye çekmek amacıyla sürekli hasarı düşürüldü, anlık hasarı da bir miktar azaltıldı",
-    senna:     "Saldırı hızı kısıtlamaları kaldırıldığından beri tüm beceri düzeylerinde gereğinden fazla iyi performans gösterdiği için saldırı hızıyla güçlenme etkisi azaltıldı",
-    syndra:    "Önceki hasar güçlendirmelerinin ardından çok hızlı güçlenmeye başladığı için gücünü kontrol altında tutmak amacıyla güçlenmesi ve hasarı bir miktar azaltıldı",
-    swain:     "Şu anki anlık-hasar-ağırlıklı ortamda zorlandığı için çatışmada daha uzun süre kalabilmesi adına iyileşmesi ve hasarı arttırıldı",
-    yuumi:     "Azalan can niteliklerinden pek etkilenmediği için son destek item değişikliklerinden amaçlanandan fazla fayda sağladı; bunu dengelemek için takım arkadaşlarına sunduğu hayatta kalma gücü bir miktar azaltıldı",
-    viego:     "Kritik vuruş sistemine gelen değişikliklerden diğer şampiyonlar kadar faydalanamayıp geride kaldığı için arayı kapatması amacıyla kritik vuruşla daha çok güçlenmesi sağlandı",
+    sylas:     "İsyanın Zinciri Sylas Vadi'ye geldi — düşmanların ultisini çalıp kendi hasar ve oyun kurma aracı olarak kullanabiliyor",
+    kalista:   "Baron koridorunda erken safhalarda fazla baskın olduğu için rakiplerine karşılık verme fırsatı tanımak adına erken baskısı azaltıldı — Delici'nin ilk seviyedeki taban hasarı düşürüldü, ileri seviyelerde artırıldı",
+    viktor:    "Önemli anlarda ağırlığını koymakta zorlandığı için gücünün bir kısmı güvenilir alan hasarından düello potansiyeline ve yetenek atışlarına kaydırıldı",
+    shen:      "Son kule değişiklikleriyle birlikte harita baskısından ödün vermeden ultisiyle takım arkadaşlarını koruyabildiği için harita çapındaki hamlelerini daha anlamlı bir karar haline getirmek amacıyla ultisinin bekleme süresi uzatıldı ve kalkan gücü azaltıldı",
+    irelia:    "Saldırı gücü eşyalarına yatırım yapmadan fazla hasar verdiği için taban hasarının bir kısmı saldırı hızı ve saldırı gücü oranlarına kaydırıldı; saldırıya yönelik eşya dizmesi daha iyi ödüllendirilecek",
+    graves:    "Hasarı fazlasıyla yüksek ama çatışmada yeterince uzun kalamadığı için orman çatışmalarında ve takım savaşlarında ayakta kalabilmesi adına zırhı arttırıldı",
+    akshan:    "Orta koridorda, özellikle büyücülere karşı ayakta kalmakta zorlandığı için koridorda takaslara daha rahat girebilmesi adına büyü direnci arttırıldı",
+    lucian:    "En son yamadan beri ayak uydurmakta zorlandığı için orta ve ileri safhalarda daha sağlam hasar çıkarabilmesi adına yeteneklerinin saldırı gücü oranları arttırıldı",
+    rumble:    "Baron koridorunda ivme kaybettiği için rakiplerine kafa tutabilmesi adına yetenek setine birkaç güçlendirme getirildi",
+    kassadin:  "Yüksek beceri düzeylerinde fazla rahat güçlendiği ve Asırlık Sopa güçlendirmesiyle çok daha güçlü olması beklendiği için oyunun ileri safhalarındaki gücü dizginlendi",
+    yasuo:     "Zorlanmaya devam ettiği için takım savaşlarında hayatta kalabilmesi adına dayanıklılığı, rakiplerin arasında atılırken verdiği hasar ise arttırıldı",
   },
   // Şampiyon detay sayfasında gösterilen, yetenek bazlı ayrıntılı yama notları
   detailsFull: {
-    hwei: [
-      { skill: "Vizyonerin İmzası", changes: [
-        "Hasar: (seviyeye bağlı) 33-333 + %33 Yetenek Gücü → (seviyeye bağlı) 40-285 + %30 Yetenek Gücü"
-      ]},
-      { skill: "Öz: Facia - Mahveden Alev", changes: [
-        "Hasar: 50/90/130/170 + %75 Yetenek Gücü + %4/5/6/7 Azami Can → 50/85/120/155 + %70 Yetenek Gücü + %4/5/6/7 Azami Can"
-      ]},
-      { skill: "Öz: Facia - Sinsi Yıldırım", changes: [
-        "Eksik Cana Bağlı Hasar Oranı: %150/200/250/300 → %100/150/200/250"
-      ]},
-      { skill: "Umutsuzluğun Tablosu", changes: [
-        "Patlama Hasarı: 250/350/450 + %75 Yetenek Gücü → 200/300/400 + %70 Yetenek Gücü"
+    kalista: [
+      { skill: "Delici", changes: [
+        "Taban Hasar: 70/135/200/265 → 30/110/190/270"
       ]},
     ],
-    samira: [
+    viktor: [
+      { skill: "Güç Aktarımı", changes: [
+        "İlk Hasar: 45/60/75/90 + %30 Yetenek Gücü → 50/70/90/110 + %40 Yetenek Gücü"
+      ]},
+      { skill: "Hextech Işını", changes: [
+        "İlk Hasar: 75/120/165/210 + %30 Yetenek Gücü → 70/115/160/205 + %40 Yetenek Gücü",
+        "Sarsan Patlama Hasarı: 30/70/110/150 + %60 Yetenek Gücü → 20/60/100/140 + %75 Yetenek Gücü"
+      ]},
+      { skill: "Sihir Fırtınası", changes: [
+        "Zamanla Verilen Hasar Yetenek Gücü Oranı: %40 → %35"
+      ]},
+    ],
+    shen: [
+      { skill: "Birlikten Kuvvet Doğar", changes: [
+        "Bekleme Süresi: 110/100/90 saniye → 120/110/100 saniye",
+        "Taban Kalkan Değeri: 170/340/510 → 160/260/360"
+      ]},
+    ],
+    irelia: [
+      { skill: "Ionia Azmi", changes: [
+        "Saldırı Hızı: %3 ila 17 (seviyeye bağlı) → %11 ila 25 (seviyeye bağlı)",
+        "Hasar: 25 ila 150 (seviyeye bağlı) + %30 İlave Saldırı Gücü → 10 ila 80 (seviyeye bağlı) + %20 İlave Saldırı Gücü"
+      ]},
+      { skill: "Uçarbıçak", changes: [
+        "Saldırı Gücü Oranı: %65 → %80",
+        "İyileştirme: %11/%14/%17/%20 Saldırı Gücü → %9/%11/%13/%15 Saldırı Gücü"
+      ]},
+    ],
+    graves: [
       { skill: "Taban İstatistikler", changes: [
-        "Seviye Başına Can: 128 → 136",
-        "Seviye Başına Zırh: 5 → 5,5",
-        "Seviye Başına Büyü Direnci: 1,4 → 2"
-      ]},
-      { skill: "Deliduman", changes: [
-        "Yakın Dövüş Hasarı Asgari Saldırı Gücü Oranı: (seviyeye bağlı) %3,5-10,5 → %5,8-17",
-        "Yakın Dövüş Hasarı Azami Saldırı Gücü Oranı: (seviyeye bağlı) %7-21 → %11,6-34"
-      ]},
-      { skill: "Gösteriş", changes: [
-        "Saldırı Gücü Oranı: %110 → %125"
-      ]},
-      { skill: "Cehennem Tetiği", changes: [
-        "Atış Başına Saldırı Gücü Oranı: %40 → %50"
+        "Zırh: 36 → 40",
+        "Seviye Başına Zırh: 4,5 → 5"
       ]},
     ],
-    rammus: [
+    akshan: [
       { skill: "Taban İstatistikler", changes: [
-        "Zırh: 45 → 40"
-      ]},
-      { skill: "Tortop", changes: [
-        "Zırh Oranı: %45/50/55/60 → %30/40/50/60"
+        "Büyü Direnci: 30 → 34"
       ]},
     ],
-    malphite: [
-      { skill: "Gök Gürültüsü", changes: [
-        "Zırh Hasar Oranı: %20 → %15"
+    lucian: [
+      { skill: "Işık Silahşoru", changes: [
+        "İkinci Atış Saldırı Gücü Oranı: %40/50/60 → %45/55/65"
       ]},
-      { skill: "Yeri Sars", changes: [
-        "Zırh Hasar Oranı: %45 → %40"
-      ]},
-      { skill: "Önlenemez Güç", changes: [
-        "Bekleme Süresi: 75/70/65s → 85/80/75s"
+      { skill: "Işık Atışı", changes: [
+        "İlave Saldırı Gücü Oranı: %100 → %120"
       ]},
     ],
-    tristana: [
-      { skill: "Seri Ateş", changes: [
-        "Saldırı Hızı: %50/75/100/125 → %60/80/100/120"
+    rumble: [
+      { skill: "Hurdalık Devi", changes: [
+        "Normal Saldırı Büyü Hasarı Yetenek Gücü Oranı: %20 → %25"
       ]},
-      { skill: "Roket Atlayışı", changes: [
-        "Bekleme Süresi: 22/20/18/16s → 20/18/16/14s"
-      ]},
-      { skill: "Patlayıcı Yük", changes: [
-        "Patlama Hasarı: (80/100/120/140 + %100 İlave Saldırı Gücü + %50 Yetenek Gücü) × kritik çarpanı → (80/110/140/170 + %120 İlave Saldırı Gücü + %50 Yetenek Gücü) × kritik çarpanı (kritik ihtimali/hasarı katkısı %40'tan %50'ye çıktı)"
+      { skill: "Dengeleyici", changes: [
+        "Hasar: 700/1050/1400 + %200 Yetenek Gücü → 800/1200/1600 + %220 Yetenek Gücü"
       ]},
     ],
-    draven: [
-      { skill: "Dönen Balta", changes: [
-        "İlave Saldırı Gücü Oranı: %80/90/100/110 → %90/100/110/120"
-      ]},
-      { skill: "Adrenalin Seli", changes: [
-        "Saldırı Hızı: %20/25/30/35 → %25/30/35/40"
-      ]},
-      { skill: "Ölüm Pervanesi", changes: [
-        "İlave Saldırı Gücü Oranı: %130 → %150"
-      ]},
-    ],
-    caitlyn: [
+    kassadin: [
       { skill: "Taban İstatistikler", changes: [
-        "Seviye Başına Saldırı Hızı: 0,04 → 0,025"
+        "Büyü Direnci: 38 → 34"
       ]},
-      { skill: "Tam Kafadan", changes: [
-        "Oran: (seviyeye bağlı) %60-100 → %60-90"
+      { skill: "Güç Darbesi", changes: [
+        "Yetenek Gücü Oranı: %60 → %50"
       ]},
     ],
-    senna: [
+    yasuo: [
       { skill: "Taban İstatistikler", changes: [
-        "Saldırı Hızı Oranı: 0,4 → 0,3",
-        "Taban Saldırı Hızı: 0,4 → 0,3",
-        "Taban İlave Saldırı Hızı: 0,6 → 1,1",
-        "Seviye Başına Saldırı Hızı: 0,05 → 0,025",
-        "[Değişti] İlave saldırı hızının normal saldırı hazırlık süresini kısaltmadaki etkisi azaltıldı"
+        "Seviye Başına Zırh: 4,3 → 5,2"
       ]},
-    ],
-    syndra: [
-      { skill: "Sınır Tanımaz", changes: [
-        "Geliştirme Eşiği: 40/60/80/100/120 → 50/75/100/125/150"
-      ]},
-      { skill: "İrade Gücü", changes: [
-        "Yetenek Gücü Oranı: %60 → %50",
-        "Yavaşlatma: %20/25/30/35 → %25 (sabit)"
-      ]},
-    ],
-    swain: [
-      { skill: "Kuzgun Sürüsü", changes: [
-        "Yenilenen Can: (seviyeye bağlı) %3-4,5 + %0,5 Yetenek Gücü → %4,5-6 + %0,2 Yetenek Gücü"
-      ]},
-      { skill: "Kımıldama", changes: [
-        "Tekrarlanan Hasarın Yetenek Gücü Oranı: %25 → %40"
-      ]},
-    ],
-    yuumi: [
-      { skill: "Sen ve Ben!", changes: [
-        "İyileştirme ve Kalkan Gücü: %8/9/10/11 + %0,02 Yetenek Gücü → %6/7/8/9 + %0,01 Yetenek Gücü"
-      ]},
-    ],
-    viego: [
-      { skill: "Mahvolmuş Kralın Kılıcı", changes: [
-        "Pasif Hasarı: %2/3/4/5 → %3/4/5/6",
-        "Kritik Vuruş Hasarı Oranı: %80 → %85"
-      ]},
-      { skill: "Kederli Yürek", changes: [
-        "Kritik Vuruş Nitelik Oranı: %50 → %70"
+      { skill: "Atılgan Kılıç", changes: [
+        "Taban Hasar: 70/80/90/100 → 70/90/110/130"
       ]},
     ],
   },
-  // ── İTEM YAMA NOTLARI (7.3a resmi yama notlarına göre) ──
+  // ── İTEM YAMA NOTLARI (7.3f resmi yama notlarına göre) ──
   // Anahtarlar ITEM_IMG içindeki item key'leriyle birebir aynı olmalı.
-  itemBuffs:  ["yun_tal_wildarrows"],
-  itemNerfs:  ["whispering_circlet","diadem_of_songs","deaths_dance"],
+  itemBuffs:  ["ludens_echo","rod_of_ages","lich_bane","morellonomicon","kaenic_rookern"],
+  itemNerfs:  ["liandrys_torment","bulwark_of_the_mountain","black_mist_scythe","eclipse"],
   itemNew:    [],
   itemDetails: {
-    yun_tal_wildarrows: "İlk item seçeneği olarak diğerlerinin gerisinde kaldığı için erken oyunda daha rekabetçi olması amacıyla taban saldırı hızı ve Artçı Rüzgâr pasifinin sağladığı saldırı hızı arttırıldı — Saldırı Hızı: %25 → %35, Artçı Rüzgâr Saldırı Hızı: %25 → %35, Artçı Rüzgâr Bekleme Süresi: 20s → 25s",
-    whispering_circlet: "Ezgi Diyademi'ndeki değişikliklere uyacak şekilde düzenlendi, Ahenk pasifinin iyileştirme/kalkan gücü düşürüldü — İyileştirme ve Kalkan Gücü: %0,5 → %0,25",
-    diadem_of_songs: "Whispering Circlet ile aynı düzenleme — diğer destek item seçeneklerinden daha iyi performans gösterdiği için çoğu destek şampiyonunun otomatik ilk tercihi olmaktan çıkarılıp daha duruma bağlı bir seçenek haline getirildi — İyileştirme ve Kalkan Gücü: %0,5 → %0,25",
-    deaths_dance: "Bedeline göre çok fazla değer sağladığı için, temel bir dövüşçü item'ı olarak gücü doğrudan azaltmak yerine bedeli arttırılarak erişimi zorlaştırıldı — Bedel: 3200 → 3300",
+    ludens_echo: "Büyücü eşya seçenekleri kısıtlı hissettirdiği için daha fazla işlevsel dizilim sunmak amacıyla güçlendirildi — Uyumsuz Feryat İlk Atış Hasarı: 75 + %8 YG → 80 + %9 YG, Sonraki Atış Hasarı: 20 + %1,2 YG → 22,5 + %1,4 YG",
+    rod_of_ages: "Düşük performans gösteren büyücü eşyası olduğu için güçlendirildi — Bedel: 2700 → 2600, Antik Dönüşüm Mana İadesi: %15 → %20, Eski Toprak Yük Başına İlave Can: 15 → 20, Yük Başına İlave Mana: 30 → 40",
+    lich_bane: "Düşük performans gösteren büyücü eşyası olduğu için güçlendirildi — Hareket Hızı: %5 → %6, Büyülü Kılıç Yetenek Gücü Oranı: %45 → %50",
+    morellonomicon: "Düşük performans gösteren büyücü eşyası olduğu için erişimi kolaylaştırıldı — Bedel: 2650 → 2550",
+    kaenic_rookern: "Diğer dövüşçü eşyalarına ayak uydurmakta zorlandığı için daha rekabetçi hale getirildi — Saldırı Gücü: 40 → 45, Can: 350 → 400",
+    liandrys_torment: "Yakma dizilimleri fazla iyi performans gösterdiği için eşyanın saf yetenek gücünden ziyade pasif etkilerine odaklanması amacıyla zayıflatıldı — Yetenek Gücü: 70 → 60",
+    bulwark_of_the_mountain: "Destekler son destek eşyası bedel indirimlerinin ardından fazla hızlı altın kazandığı için ekonomiyi dengelemek amacıyla zayıflatıldı — Ruhdökümü Dakika Başına Kazanılan Altın: 75 → 60",
+    black_mist_scythe: "Destekler son destek eşyası bedel indirimlerinin ardından fazla hızlı altın kazandığı için ekonomiyi dengelemek amacıyla zayıflatıldı — Ruhdökümü Dakika Başına Kazanılan Altın: 75 → 60",
+    eclipse: "Hem Baron koridorunda hem de ormanda dövüşçüler için baskın bir seçim haline geldiği için gücü kısıldı (yamada \"Kararma\" olarak geçiyor) — Saldırı Gücü: 65 → 60",
   },
-  // ── RÜN YAMA NOTLARI ── (7.3a'da rün değişikliği yok)
+  // ── RÜN YAMA NOTLARI ── (7.3f'de rün değişikliği yok)
   runeBuffs:  [],
   runeNerfs:  [],
   runeNew:    [],
@@ -6426,7 +6390,7 @@ const CHAMP_ID = {
   nilah:895, kalista:429, zeri:221, corki:42,
   // MID
   ahri:103, aurelionsol:136, aurelionsol_adc:136,
-  akali_mid:84, annie:1, aurora:893, hwei:910,
+  akali_mid:84, annie:1, aurora:893, hwei:910, sylas:517,
   brand_mid:63, corki_mid:42, diana:131, ekko:245, fizz:105,
   galio_mid:3, heimerdinger:74, irelia_mid:39, jayce_mid:126,
   karma_mid:43, kassadin:38, katarina:55, kayle_mid:10, kennen:85, kennen_mid:85,
@@ -6443,7 +6407,7 @@ const CHAMP_ID = {
   khazix:121, fiddlesticks:9, pantheon_jg:80, kayn:141, zed_jg:238,
   nocturne:56, olaf_jg:2, camille_jg:164, master_yi:11, jarvaniv:59, gragas_jg:79,
   rengar:107, graves:104, warwick:19, kindred:203, rammus:33, amumu:32,
-  volibear_jg:106, jax_jg:24, gwen_jg:887, irelia_jg:39, fizz_jg:105,
+  volibear_jg:106, jax_jg:24, gwen_jg:887, irelia_jg:39, sylas_jg:517, fizz_jg:105,
   tryndamere_jg:23, ekko_jg:245, nautilus_jg:111, morgana_jg:25,
   skarner:72, nunu:20, ksante:897, drmundo_jg:36, urgot_jg:6,
   maokai_jg:57, poppy_jg:78, shen_jg:98, yone_jg:777, diana_jg:131,
