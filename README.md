@@ -1,2 +1,2 @@
 # Wild-Rift-Draft
-League of legends wild rfit draft uygulaması 
+League of legends wild rift draft uygulaması 
