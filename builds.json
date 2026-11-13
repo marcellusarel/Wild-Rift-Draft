@@ -2670,7 +2670,7 @@
       "Guardian Angel"
     ],
     "boots": "Immortal Path",
-    "enchant": "Trinity Force",
+    "enchant": "Essence Reaver",
     "runes": [
       "Conqueror",
       "Brutal",
@@ -2687,7 +2687,8 @@
       "2",
       "3"
     ],
-    "tier": "A"
+    "tier": "A",
+    "situational": []
   },
   "kalista": {
     "starter": "Berserker's Greaves",
