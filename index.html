@@ -16,6 +16,8 @@
 <link rel="manifest" href="manifest.json"/>
 <title>Wild Rift Draft — Şampiyon Counter, Build ve Tier Listesi</title>
 <meta name="description" content="Wild Rift için güncel şampiyon counter (ct/ctby) listeleri, önerilen item build'leri, rün dizilimleri, tier listesi ve yama notları. Draft aşamasında rakibine göre en iyi seçimi yap."/>
+<link rel="preconnect" href="https://ddragon.leagueoflegends.com" crossorigin>
+<link rel="preconnect" href="https://raw.communitydragon.org" crossorigin>
 <link rel="canonical" href="https://marcellusarel.github.io/Wild-Rift-Draft/"/>
 
 <!-- Open Graph (WhatsApp/Discord/Facebook önizleme kartı) -->
@@ -7825,7 +7827,40 @@ const DDRAGON_FALLBACK = {
   aurelionsol_adc:"AurelionSol", orianna_adc:"Orianna",
   ziggs_adc:"Ziggs", yunara:"Yunara",
 };
-const DD_VER = "16.13.1";
+let DD_VER = "16.13.1";
+// numId -> Data Dragon id eşlemesi (otomatik, localStorage'da cache'li)
+let DD_MAP = {};
+try{
+  const c = JSON.parse(localStorage.getItem("ddMapV1")||"null");
+  if(c && c.map){ DD_MAP = c.map; if(c.ver) DD_VER = c.ver; }
+}catch(e){}
+const _ddUrl = (numId)=> DD_MAP[numId] ? `https://ddragon.leagueoflegends.com/cdn/${DD_VER}/img/champion/${DD_MAP[numId]}.png` : null;
+function champImgErr(el){
+  if(el.dataset.tried){ el.style.opacity='0'; return; }
+  el.dataset.tried = "1";
+  const alt = el.dataset.alt;
+  if(alt && alt !== el.src){ el.src = alt; } else { el.style.opacity='0'; }
+}
+async function loadDDMap(){
+  try{
+    const vs = await (await fetch("https://ddragon.leagueoflegends.com/api/versions.json")).json();
+    const ver = vs[0];
+    const data = await (await fetch(`https://ddragon.leagueoflegends.com/cdn/${ver}/data/en_US/champion.json`)).json();
+    const map = {};
+    Object.values(data.data).forEach(c => { map[parseInt(c.key,10)] = c.id; });
+    DD_VER = ver; DD_MAP = map;
+    try{ localStorage.setItem("ddMapV1", JSON.stringify({ver, map})); }catch(e){}
+    // Ekrandaki yüklenmemiş / hatalı ikonları hızlı kaynağa çevir
+    document.querySelectorAll("img[data-cid]").forEach(img=>{
+      if(img.complete && img.naturalWidth>0) return;
+      const u = _ddUrl(img.dataset.cid);
+      if(u){ img.dataset.tried=""; img.style.opacity=""; img.src = u; }
+    });
+    // Tüm ikonları arka planda ısıt (cache)
+    Object.keys(CHAMP_ID).forEach(k=>{ const u=_ddUrl(CHAMP_ID[k]); if(u){ const i=new Image(); i.src=u; } });
+  }catch(e){ console.warn("DD map yüklenemedi", e); }
+}
+setTimeout(loadDDMap, 0);
 
 function champImg(id, size=36) {
   const numId = CHAMP_ID[id];
@@ -7845,7 +7880,7 @@ function champImg(id, size=36) {
   } else if (id === "norra") {
     url = NORRA_PHOTO;
   } else if (numId) {
-    url = `${CDN}${numId}.png`;
+    url = _ddUrl(numId) || `${CDN}${numId}.png`;
   } else if (DDRAGON_FALLBACK[id]) {
     url = `https://ddragon.leagueoflegends.com/cdn/${DD_VER}/img/champion/${DDRAGON_FALLBACK[id]}.png`;
   }
@@ -7862,8 +7897,9 @@ function champImg(id, size=36) {
     overflow:hidden;flex-shrink:0;background:#111128;position:relative;
     display:flex;align-items:center;justify-content:center">
     ${fallbackDiv}
-    <img src="${url}" alt="" width="${size}" height="${size}"
-      onerror="this.style.opacity='0'"
+    <img src="${url}" alt="" width="${size}" height="${size}" decoding="async"
+      ${numId?`data-cid="${numId}" data-alt="${_ddUrl(numId)?CDN+numId+'.png':'https://ddragon.leagueoflegends.com/cdn/'+DD_VER+'/img/champion/'+(DD_MAP[numId]||'')+'.png'}"`:''}
+      onerror="champImgErr(this)"
       style="border-radius:${r}px;object-fit:cover;object-position:top;
       position:relative;z-index:2;display:block"/>
   </div>`;
